@@ -54,6 +54,19 @@ Measured on samples (probe, F_3): two_pairs needs 1 510 candidates against 675 0
 survivors; K3_srcout needs 950 against 125 388. At p = 5 the ratio grows as 5^(kdim−f). The workload shifts from
 "p^kdim tiny checks per parent" to "one small batched elimination per parent": GPU-shaped either way, and far less work.
 
+### Measured (torch engine on 4 CPU threads, this container; the pool engine with 4 workers)
+
+| job | torch | pool | per column: candidates checked / children (worst column) |
+|---|---|---|---|
+| pair_tgtfork / F_3 | 52 s | 564 s | c=10: 179 650 / 64 906 (brute force: 91 286·3^5 = 22.2 M) |
+| K3_after / F_3 | 69 s | 706 s | c=8: 784 280 / 248 704 (brute force: 74 130·3^5 = 18.0 M) |
+| two_pairs / F_3 | 55 s | 1260 s (logged) | c=9: 364 130 / 95 268 (brute force: 35 630·3^6 = 26.0 M) |
+
+The JSON output is identical between engines; for two_pairs it matches the logged CPU run except `transversal.lifted`
+and `lifted_transversal` (§4). The deep columns carry the frontier mass, where the remaining nonlinear conditions (V3,
+ineligible V1/V2) leave ≈ 2–4 candidates per child. That is the next lever if needed (§6). On a GPU the same tensors
+run with larger batches; raise `ETF_MEM` there.
+
 ## 3. Nu side: the driver
 
 `fibre_torch.run` is a Mealy machine. State: (stack of (column, batch), fibres dict). Step: pop a batch. If it is
@@ -82,9 +95,12 @@ schedule-independence of the output is therefore exact, and `tests/test_engines.
 - **L3, interpretive (inherited from the reference, flagged).** `transversal.lifted` and `lifted_transversal` count
   properties of the *chosen representative* of each orbit (whether its residues lift to an exact Q-fold with p−1 ↦ −1).
   They are not orbit invariants. In the pool engine they depended on task-completion order:
-  `logs/results_here.jsonl` has two_pairs/F_3 with lifted 343 vs 336, and K3_after/F_3 with 62 vs 59. Canonical
-  ordering makes them deterministic, but they are still not invariants: read them as "for the lexicographically
-  first representative". `transversal_modp`, N, the fibre histogram and the orbit counts are invariant.
+  `logs/results_here.jsonl` has two_pairs/F_3 with lifted 343 vs 336, and K3_after/F_3 with 62 vs 59. With
+  canonical (lexicographically first) representatives, two_pairs/F_3 gives lifted 597 and lifted_transversal **21**,
+  where the logged runs give 23. So lifted_transversal is representative-dependent too. Canonical ordering makes these
+  fields deterministic, but they are still not invariants: read them as "for the lexicographically first
+  representative". An invariant version would count orbits with *some* member that lifts; that is a change in the
+  mathematics, not in the port, so it is not made here. `transversal_modp`, N, the fibre histogram and the orbit counts are invariant.
 
 ## 5. Structural axioms: working set (Mode 1)
 
