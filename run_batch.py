@@ -1,8 +1,12 @@
-"""run_batch.py — the long censuses for v2.23, to be run on a machine with more cores.
+"""run_batch.py — the long censuses for v2.23.
 
-Each job runs pcensus.py with all cores (override with JOBS=n), a per-job checkpoint in checkpoints/, and appends one JSON
-line to results.jsonl. Rerunning skips finished jobs and resumes interrupted ones, so it is safe to stop at any time
-(Ctrl-C) and start again. Send back results.jsonl (and batch.log).
+Each job runs pcensus.py with the torch fibre engine (fibre_torch.py: GPU via ROCm/CUDA when torch sees one, else CPU),
+a per-job checkpoint in checkpoints/, and appends one JSON line to results.jsonl. Rerunning skips finished jobs and
+resumes interrupted ones, so it is safe to stop at any time (Ctrl-C) and start again. Send back results.jsonl (and
+batch.log). Checkpoints are engine-independent: a job started with one engine can be resumed with the other.
+
+Env: ENGINE=torch|pool (default torch), DEVICE=cuda|cpu|... (torch engine; default: GPU if available),
+     JOBS=n (pool engine: worker processes, default all cores), ETF_MEM / ETF_GROUP (see fibre_torch.py).
 
   python3 run_batch.py              # all jobs, cheapest first
   python3 run_batch.py 3 5          # only jobs 3 and 5 (numbers as in the listing printed at start)
@@ -12,6 +16,11 @@ Predictions (made before these runs, from smaller primes) are printed next to ea
 import sys, os, json, subprocess, time
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
 JOBS = os.environ.get('JOBS', str(os.cpu_count()))
+ENGINE = os.environ.get('ENGINE', 'torch')
+DEVICE = os.environ.get('DEVICE')
+def engine_args():
+    if ENGINE == 'pool': return ['--engine', 'pool', '--jobs', JOBS]
+    return ['--engine', 'torch'] + (['--device', DEVICE] if DEVICE else [])
 # (quiver, p, predictions {field: value} or {}, note)
 BATCH = [
     ('pair_tgtfork', 5, {'orbits_G': 428, 'orbits_GxGr': 428}, "1⇉2, 2→3, 2→4: stalled here at q=5; fork rule predicts no families"),
@@ -53,7 +62,7 @@ if __name__ == '__main__':
         if (q, p) in done(): continue
         print(f"\n=== job {i}: {q} over F_{p} ({time.strftime('%H:%M:%S')}) ===", flush=True)
         with open('batch.log', 'a') as log:
-            pr = subprocess.Popen([sys.executable, '-u', 'pcensus.py', q, str(p), '--jobs', JOBS,
+            pr = subprocess.Popen([sys.executable, '-u', 'pcensus.py', q, str(p), *engine_args(),
                                    '--checkpoint', f'checkpoints/{q}_{p}.pkl', '--out', 'results.jsonl'],
                                   stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             for line in pr.stdout:

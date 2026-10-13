@@ -1,0 +1,8 @@
+__pycache__/
+.hypothesis/
+.pytest_cache/
+checkpoints/
+results.jsonl
+batch.log
+*.pkl
+*.pkl.tmp

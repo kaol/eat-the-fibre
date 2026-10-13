@@ -16,8 +16,12 @@ Env: PCENSUS_STRIDE (default 4), PCENSUS_MAXB (default 1024; a task stops extend
 holds more than MAXB survivors), PCENSUS_XCHECK=1 to cross-check lift/check against the reference implementations
 at every step (slow, for validation runs on small primes).
 
+Engines (--engine): 'pool' = the process pool above (default); 'torch' = fibre_torch.py (GPU via ROCm/CUDA, or CPU):
+same fibres as sets, same checkpoint, so a run may be resumed with either engine. Fibres are sorted canonically before
+materialization, so the output JSON (including representative-dependent fields) is engine- and schedule-independent.
+
 Usage:
-  python3 pcensus.py QUIVER p [--jobs J] [--checkpoint FILE] [--out results.jsonl]"""
+  python3 pcensus.py QUIVER p [--engine pool|torch] [--device DEV] [--jobs J] [--checkpoint FILE] [--out results.jsonl]"""
 import sys, os, json, time, pickle, argparse, itertools, collections
 import numpy as np
 from concurrent.futures import ProcessPoolExecutor, FIRST_COMPLETED, wait
@@ -374,6 +378,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument('quiver'); ap.add_argument('p', type=int)
     ap.add_argument('--jobs', type=int, default=os.cpu_count()); ap.add_argument('--checkpoint'); ap.add_argument('--out')
     ap.add_argument('--no-orbits', action='store_true'); ap.add_argument('--save-folds')
+    ap.add_argument('--engine', choices=('pool', 'torch'), default='pool'); ap.add_argument('--device')
     a = ap.parse_args(); name, p = a.quiver, a.p
     t0 = time.time(); ctx = setup(name, p); C.update(ctx)
     d, kdim, B, Binv, Kmat, basis = ctx['d'], ctx['kdim'], ctx['B'], ctx['Binv'], ctx['Kmat'], ctx['basis']
@@ -389,7 +394,8 @@ def main():
             PKl = PKl @ (Binv @ phi_ @ Kmat % p)[:kdim] % p
             torb.setdefault(kkey(PKl), l)
         done_k |= set(torb); reps.append((PK, list(torb.values())))
-    print(f"{name} F_{p}: d={d}, dim K={kdim}, {len(Kf)} kernel folds in {len(reps)} torus orbits; jobs={a.jobs}", flush=True)
+    eng = f"jobs={a.jobs}" if a.engine == 'pool' else "engine=torch"
+    print(f"{name} F_{p}: d={d}, dim K={kdim}, {len(Kf)} kernel folds in {len(reps)} torus orbits; {eng}", flush=True)
     fibres = {}
     if a.checkpoint and os.path.exists(a.checkpoint):
         ck = pickle.load(open(a.checkpoint, 'rb'))
@@ -401,16 +407,26 @@ def main():
         tmp = a.checkpoint + '.tmp'
         pickle.dump(dict(name=name, p=p, nreps=len(reps), fibres=fibres), open(tmp, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
         os.replace(tmp, a.checkpoint); last_save[0] = time.time()
+    if a.engine == 'torch':
+        import fibre_torch
+        fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device)
+    else:
+        pool_fibres(name, p, a.jobs, ctx, reps, fibres, save, t0)
+    save(force=True)
+    finish(a, name, p, ctx, Kf, reps, phis, fibres, t0)
+
+def pool_fibres(name, p, jobs, ctx, reps, fibres, save, t0):
+    d, kdim, Kmat = ctx['d'], ctx['kdim'], ctx['Kmat']
     stack = []; outstanding = collections.Counter(); partial = collections.defaultdict(list)
     todo = [r for r in range(len(reps)) if r not in fibres]
     for r in reversed(todo):
         X = np.zeros((d, d), dtype=np.int64); X[:, :kdim] = Kmat @ reps[r][0] % p
         if kdim == d: fibres[r] = [X.astype(np.int16)]; continue
         stack.append((r, X.astype(np.int16), kdim)); outstanding[r] += 1
-    with ProcessPoolExecutor(a.jobs, initializer=init_worker, initargs=(name, p)) as ex:
+    with ProcessPoolExecutor(jobs, initializer=init_worker, initargs=(name, p)) as ex:
         inflight = set(); lastlog = time.time(); ntasks = 0
         while stack or inflight:
-            while stack and len(inflight) < 4 * a.jobs:
+            while stack and len(inflight) < 4 * jobs:
                 inflight.add(ex.submit(extend, stack.pop()))
             fin, inflight = wait(inflight, return_when=FIRST_COMPLETED)
             for fu in fin:
@@ -423,11 +439,13 @@ def main():
             if time.time() - lastlog > 60:
                 print(f"  {len(fibres)}/{len(reps)} fibres done, {len(outstanding)} open, {len(stack)} queued tasks, "
                       f"{ntasks} tasks run, t={time.time()-t0:.0f}s", flush=True); lastlog = time.time()
-    save(force=True)
-    # materialize all folds (old coordinates) via the grading on each torus orbit
+
+def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
+    d, kdim, B, Binv, Kmat, basis = ctx['d'], ctx['kdim'], ctx['B'], ctx['Binv'], ctx['Kmat'], ctx['basis']
+    # materialize all folds (old coordinates) via the grading on each torus orbit; canonical order within each fibre
     folds = []; fib = collections.Counter()
     for r, (PK, ls) in enumerate(reps):
-        base = [X.astype(np.int64) @ Binv % p for X in fibres[r]]
+        base = [X.astype(np.int64) @ Binv % p for X in sorted(fibres[r], key=lambda X: (X % p).astype(np.int8).tobytes())]
         for l in ls:
             ph, phi_ = phis[l]; fib[len(base)] += 1
             folds += [ph @ P_ @ phi_ % p for P_ in base]
