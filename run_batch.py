@@ -44,7 +44,7 @@ def done():
 def show(i, q, p, pred, note, r=None):
     s = f"[{i}] {q} over F_{p}: {note}"
     if r:
-        got = {k: r.get(k) for k in ('N', 'orbits_G', 'orbits_GxGr')}
+        got = {k: r.get(k) for k in ('N', 'orbits_G', 'orbits_GxGr', 'orbits_GxT', 'orbits_GxTloc') if k in r}
         chk = " ".join(f"{k}={got[k]}" + ("" if k not in pred else (" ok" if got[k] == pred[k] else f" (predicted {pred[k]}) MISMATCH")) for k in got)
         s += f"\n      {chk}; transversal={r.get('transversal')}; t={r.get('t')}s"
     else:

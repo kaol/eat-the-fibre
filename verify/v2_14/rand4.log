@@ -1,0 +1,26 @@
+[(3, 1), (1, 2)]: 171 folds, max nullity 0
+[(2, 1), (2, 0), (1, 0), (0, 3)]: 90 folds, max nullity 0
+[(3, 0), (3, 2), (0, 2), (0, 1)]: 99 folds, max nullity 0
+[(2, 3), (3, 0), (1, 0)]: 109 folds, max nullity 0
+[(1, 0), (1, 2), (0, 2), (2, 3)]: 90 folds, max nullity 0
+[(3, 0), (1, 0), (0, 2)]: 148 folds, max nullity 0
+[(3, 1), (3, 2), (3, 0), (1, 2), (2, 0)]: 81 folds, max nullity 0
+[(0, 1), (0, 3), (0, 2), (1, 3), (1, 2), (3, 2)]: 76 folds, max nullity 0
+[(2, 0), (2, 1), (0, 1), (0, 3), (1, 3)]: 72 folds, max nullity 0
+[(1, 0), (1, 3), (0, 3)]: 131 folds, max nullity 0
+[(0, 1), (0, 2)]: 189 folds, max nullity 0
+[(3, 2), (3, 1), (2, 0), (2, 1)]: 99 folds, max nullity 0
+[(0, 3)]: 250 folds, max nullity 0
+[(1, 0), (1, 3), (0, 2), (0, 3), (2, 3)]: 81 folds, max nullity 0
+[(1, 0), (1, 3), (0, 3), (0, 2), (3, 2)]: 72 folds, max nullity 0
+[(3, 2), (3, 0), (1, 2), (1, 0), (2, 0)]: 97 folds, max nullity 0
+[(3, 0), (3, 2), (3, 1), (0, 1)]: 111 folds, max nullity 0
+[(3, 2)]: 250 folds, max nullity 0
+[(2, 1)]: 250 folds, max nullity 0
+[(0, 2), (0, 1)]: 189 folds, max nullity 0
+[(2, 3)]: 250 folds, max nullity 0
+[(1, 2), (1, 0), (1, 3), (2, 0), (2, 3), (0, 3)]: 76 folds, max nullity 0
+[(2, 1), (0, 3), (3, 1)]: 109 folds, max nullity 0
+[(1, 0), (2, 3), (0, 3)]: 109 folds, max nullity 0
+[(2, 0)]: 250 folds, max nullity 0
+25 random quivers on 4 vertices: Conjecture 4 holds on all: True

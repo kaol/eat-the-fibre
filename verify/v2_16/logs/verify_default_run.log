@@ -1,0 +1,12 @@
+[W1] PASS  proof steps P1–P4 (forest data; Hodge expansion path-supported; diagonal endpoints Hodge; run decomposition exact with path-supported, T-killed factors) on named quivers and on a hand-built run of two consecutive Podge vertices
+       6 quivers, 1083 vertex folds, 2 run terms: P1 forest data True, P2 Hodge expansion path-supported True, P3 diagonal endpoints Hodge True, P4 run decomposition exact with admissible factors True | proof check P1..P4: (True, True, True, True)  run terms: 1 linear certificate nullities by length: [0, 0, 0]
+[W2] PASS  proof steps P1–P4 on all nonempty DAGs on 4 vertices
+       30 quivers, 3645 vertex folds, 4 run terms: P1 forest data True, P2 Hodge expansion path-supported True, P3 diagonal endpoints Hodge True, P4 run decomposition exact with admissible factors True
+[W4] PASS  independent cross-check: linear uniqueness certificate on random 4-vertex quivers
+       8 random quivers on 4 vertices: Conjecture 4 holds on all: True
+[W5] PASS  fold counts: star = (n+1)^{n−1} + 2(n+1)^{n−2} + 2^{n−1} − 1 (n ≤ 6), and the linear Aₙ count equals v2.11's a(n)
+       star [2, 6, 27, 182, 1743, 21640] | formula [2, 6, 27, 182, 1743, 21640] | linear [2, 6, 23, 100, 563, 3734]
+[W6] PASS  the explicit forest description S_v = subtree(v) / subtree(v)∖{v} reproduces the matrix-based arrow-rule counts (zigzag Aₙ, n ≤ 6)
+       [2, 6, 27, 123, 669, 4371] vs [2, 6, 27, 123, 669, 4371]
+
+5/5 checks pass

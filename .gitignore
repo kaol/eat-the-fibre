@@ -6,3 +6,4 @@ results.jsonl
 batch.log
 *.pkl
 *.pkl.tmp
+results_v224.jsonl

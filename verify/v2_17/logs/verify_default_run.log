@@ -1,0 +1,10 @@
+[X1] PASS  all 10 loopless cyclic 3-vertex quivers: the linear certificate fails for exactly 4 vertex folds, and these are exactly the (H)-violations (= the closed-walk predictor)
+       4 suspicious; cyclic 3-vertex quivers: (H) violated by 4 vertex folds; predictor flags 4; same set: True
+[X2] PASS  the (H)-violations carry genuine fold families, stable in the truncation: dimension 1 for cyc A (0⇄1, 0→2) and cyc B (0⇄1, 2→0), 2 for cyc C (0⇄1, 0⇄2)
+       {('cyc A', 3): [1], ('cyc A', 4): [1], ('cyc B', 3): [1], ('cyc B', 4): [1], ('cyc C', 3): [2, 2], ('cyc C', 4): [2, 2]}
+[X3] PASS  cyc A has no Δ-compatible derivations: its family is a genuine 1-parameter modulus (fibre 1, orbit 0)
+       cyc A: dim of filtered Δ-compatible derivations (on generators) = 0 | P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: fibre dim 1, orbit dim of the canonical fold 0
+[X4] PASS  acyclic quivers satisfy (H) automatically: no violation among the arrow-rule vertex folds of all 4-vertex DAGs
+       3645 vertex folds checked
+
+4/4 checks pass

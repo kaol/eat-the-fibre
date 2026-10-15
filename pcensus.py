@@ -440,6 +440,38 @@ def pool_fibres(name, p, jobs, ctx, reps, fibres, save, t0):
                 print(f"  {len(fibres)}/{len(reps)} fibres done, {len(outstanding)} open, {len(stack)} queued tasks, "
                       f"{ntasks} tasks run, t={time.time()-t0:.0f}s", flush=True); lastlog = time.time()
 
+def build_G(ctx):
+    """G = ∏ over parallel classes of the column-sum-1 substitution group, as (Φ, Φ⁻¹) pairs acting on A = kQ."""
+    p, d, basis = ctx['p'], ctx['d'], ctx['basis']
+    # column-sum-1 substitutions on every parallel class (as in gcensus.py), stacked
+    F = ctx['F']; arrows = ctx['arrows']
+    classes = collections.defaultdict(list)
+    for ai, (s_, t_) in enumerate(arrows): classes[(s_, t_)].append(ai)
+    classes = [c for c in classes.values() if len(c) > 1]
+    def mats(m):      # column sums 1: the last row is determined by the first m − 1
+        out = []
+        for vals in itertools.product(range(p), repeat=(m - 1) * m):
+            top = np.array(vals, dtype=np.int64).reshape(m - 1, m)
+            g = np.vstack([top, (1 - top.sum(axis=0)) % p])
+            if F.rank(g) == m: out.append(g)
+        return out
+    idxb = {b: i for i, b in enumerate(basis)}
+    def phi(subs):
+        Phi = np.zeros((d, d), dtype=np.int64)
+        for i, b in enumerate(basis):
+            if b[0] == 'v': Phi[i, i] = 1; continue
+            for choice in itertools.product(*[list(subs.get(x, {x: 1}).items()) for x in b[1]]):
+                j = idxb[('p', tuple(x for x, _ in choice))]
+                Phi[j, i] = (Phi[j, i] + int(np.prod([c for _, c in choice]))) % p
+        return Phi
+    G = []
+    for gs in itertools.product(*[mats(len(c)) for c in classes]):
+        subs = {}
+        for c, g in zip(classes, gs):
+            for jc, x in enumerate(c): subs[x] = {c[ir]: int(g[ir, jc]) for ir in range(len(c)) if g[ir, jc]}
+        Phi = phi(subs); G.append((Phi, F.inv(Phi)))
+    return G
+
 def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
     d, kdim, B, Binv, Kmat, basis = ctx['d'], ctx['kdim'], ctx['B'], ctx['Binv'], ctx['Kmat'], ctx['basis']
     # materialize all folds (old coordinates) via the grading on each torus orbit; canonical order within each fibre
@@ -453,33 +485,8 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
     assert len({P_.astype(np.int8).tobytes() for P_ in folds}) == len(folds)
     res = dict(name=name, p=p, d=d, kdim=kdim, nK=len(Kf), reps=len(reps), N=len(folds), fib=dict(sorted(fib.items())))
     if not a.no_orbits:
-        # G: column-sum-1 substitutions on every parallel class (as in gcensus.py), stacked
         F = ctx['F']; arrows = ctx['arrows']
-        classes = collections.defaultdict(list)
-        for ai, (s_, t_) in enumerate(arrows): classes[(s_, t_)].append(ai)
-        classes = [c for c in classes.values() if len(c) > 1]
-        def mats(m):      # column sums 1: the last row is determined by the first m − 1
-            out = []
-            for vals in itertools.product(range(p), repeat=(m - 1) * m):
-                top = np.array(vals, dtype=np.int64).reshape(m - 1, m)
-                g = np.vstack([top, (1 - top.sum(axis=0)) % p])
-                if F.rank(g) == m: out.append(g)
-            return out
-        idxb = {b: i for i, b in enumerate(basis)}
-        def phi(subs):
-            Phi = np.zeros((d, d), dtype=np.int64)
-            for i, b in enumerate(basis):
-                if b[0] == 'v': Phi[i, i] = 1; continue
-                for choice in itertools.product(*[list(subs.get(x, {x: 1}).items()) for x in b[1]]):
-                    j = idxb[('p', tuple(x for x, _ in choice))]
-                    Phi[j, i] = (Phi[j, i] + int(np.prod([c for _, c in choice]))) % p
-            return Phi
-        G = []
-        for gs in itertools.product(*[mats(len(c)) for c in classes]):
-            subs = {}
-            for c, g in zip(classes, gs):
-                for jc, x in enumerate(c): subs[x] = {c[ir]: int(g[ir, jc]) for ir in range(len(c)) if g[ir, jc]}
-            Phi = phi(subs); G.append((Phi, F.inv(Phi)))
+        G = build_G(ctx)
         Gg = (np.array([g for g, _ in G]), np.array([gi for _, gi in G]))
         lab, greps, gsizes = orbit_label(folds, Gg, p)
         res['G'] = len(G); res['orbits_G'] = len(greps); res['sizes_G'] = dict(sorted(collections.Counter(gsizes).items()))
@@ -496,6 +503,43 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
             if all(((ph @ P_ @ phi_) % p).astype(np.int8).tobytes() in FS for P_ in folds): Tpres.append((ph, phi_))
         res['classes'] = len(cl); res['torus_preserving'] = len(Tpres); res['torus_all'] = (p - 1) ** len(cl)
         res['orbits_GxT'], res['sizes_GxT'], _ = merge(lab, greps, gsizes, Tpres, p)
+        # local class torus (v2.24): for each G-orbit representative P, every weighting w with P compatible with
+        # Δ_w = Σ_c w_c Δ_c moves P to a fold φ_w P φ_w⁻¹ (v2.23 Lemma, applied to Δ_w directly). W(P) is constant on
+        # G-orbits (G substitutes within classes, so Δ_w g = (g⊗g)Δ_w). Merge G-orbits along these moves.
+        idxb = {b: i for i, b in enumerate(basis)}
+        DLc = []
+        for c in cl:
+            D_ = np.zeros((d, d, d), dtype=np.int64)
+            for l, b in enumerate(basis):
+                if b[0] == 'v': continue
+                for k, x in enumerate(b[1]):
+                    if x not in c: continue
+                    pre = idxb[('p', b[1][:k])] if k > 0 else idxb[('v', arrows[x][0])]
+                    suf = idxb[('p', b[1][k + 1:])] if k + 1 < len(b[1]) else idxb[('v', arrows[x][1])]
+                    D_[l, pre, suf] += 1
+            DLc.append(D_)
+        DLc = np.array(DLc)                                              # (classes, d, d, d)
+        par = list(range(len(greps)))
+        def find(x):
+            while par[x] != x: par[x] = par[par[x]]; x = par[x]
+            return x
+        wcount = collections.Counter()
+        for i, P_ in enumerate(greps):
+            ok_w = 0
+            for w in itertools.product(range(1, p), repeat=len(cl)):
+                Dw = np.einsum('c,cmab->mab', np.array(w), DLc) % p
+                if not all(((np.einsum('m,mab->ab', P_[:, l], Dw) - P_ @ Dw[l] @ P_.T) % p == 0).all() for l in range(d)): continue
+                ok_w += 1
+                wa = {a: w[k] for k, c in enumerate(cl) for a in c}
+                diag = [1 if b[0] == 'v' else int(np.prod([wa[x] for x in b[1]])) % p for b in basis]
+                Q_ = (np.diag(diag) @ P_ @ np.diag([pow(x, p - 2, p) for x in diag])) % p
+                kq = Q_.astype(np.int8).tobytes(); assert kq in lab, "local torus move left the fold set"
+                a_, b_ = find(i), find(lab[kq])
+                if a_ != b_: par[a_] = b_
+            wcount[ok_w] += 1
+        comp = collections.Counter(find(i) for i in range(len(greps)))
+        res['orbits_GxTloc'] = len(comp)
+        res['local_torus_sizes'] = dict(sorted(wcount.items()))         # how many weightings each G-orbit admits
     res['t'] = round(time.time() - t0)
     line = json.dumps(res); print(line, flush=True)
     if a.out: open(a.out, 'a').write(line + "\n")

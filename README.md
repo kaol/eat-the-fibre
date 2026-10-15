@@ -1,5 +1,10 @@
 # eat-the-fibre
 
+Census of Δ-compatible folds of path algebras over finite fields, plus the mathematical project it serves: the
+Discordianism Mu–Nu axioms and their open-question explorations (`docs/`, start at `docs/README.md`), with the machine
+checks for every round (`verify/`) and the analysis scripts used from v2.23 on (`analysis/`).
+
+
 The v2.23 fold census (`pcensus.py`, `run_batch.py`) with a second fibre engine, `fibre_torch.py`. It runs on a GPU
 through PyTorch (ROCm/HIP on AMD, e.g. the Radeon 890M in Strix Point, or CUDA), or on the CPU through torch.
 Same mathematics and same output JSON as the process-pool engine, with a shared checkpoint format.
@@ -59,14 +64,29 @@ Send back `results.jsonl` and `batch.log`. At the end of every run the engine lo
 | `ETF_XCHECK` | 0 | 1 = compare lift/children with `pcensus.lift`/`check` for every parent (slow) |
 | `JOBS`, `PCENSUS_*` | | pool engine, as before |
 
+## After a batch: re-finish from checkpoints (v2.24)
+
+v2.24 adds `orbits_GxTloc`: G-orbits merged along local class-torus moves (see
+`docs/explorations/discordianism-open-questions-explored-v2.24.md` §2). Finished checkpoints already hold every fibre, so the
+new statistics need only the orbit stage:
+
+```bash
+python3 refinish.py                # every complete checkpoint in checkpoints/ -> results_v224.jsonl, with predictions
+python3 refinish.py pair_tgtfork   # just one
+```
+
 ## Files
 
 - `gcensus.py`: quiver data, path algebra, `Field` (unchanged reference).
-- `pcensus.py`: setup, kernel folds, torus reps, pool engine, orbit statistics, CLI. Changes from the Le Chat version:
+- `pcensus.py`: setup, kernel folds, torus reps, pool engine, `build_G`, orbit statistics (G, G × grading, G × T_Q, local torus), CLI. Changes from the v2.23 version (`verify/v2_23/pcensus.py`):
   `--engine/--device`, main split into `pool_fibres`/`finish`, and fibres sorted canonically before materialization.
 - `fibre_torch.py`: the torch engine (`Plan`, `lift`, `Parents`, `prefilter`/`solve_affine`/`rref`, `check`,
   `level`, `run`).
-- `run_batch.py`: the v2.23 batch, using the torch engine by default.
+- `run_batch.py`: the v2.23 batch, using the torch engine by default. It now also prints `orbits_GxT` and `orbits_GxTloc`.
+- `refinish.py`: recompute orbit statistics from finished checkpoints (no fibres recomputed).
+- `analysis/`: exact tangent spaces, local dimension, class-torus and orbit checks (`orbitcheck.py`); run from anywhere, they
+  read `logs/folds_QUIVER_p.pkl` (`pcensus.py ... --save-folds logs/folds_QUIVER_p.pkl`).
+- `docs/`, `verify/`: the project documents and the per-round verifiers (see `docs/README.md`).
 - `tests/`: `test_solve_affine.py` (hypothesis vs brute force) and `test_engines.py` (whole-pipeline equivalence and
   cross-engine checkpoint resume).
 - `logs/results_here.jsonl`: reference results from the CPU runs.

@@ -1,0 +1,10 @@
+[L=3] cyc A L=3 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 27 unknowns, fibre dimension 1
+[L=4] cyc A L=4 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 36 unknowns, fibre dimension 1
+[L=5] cyc A L=5 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 45 unknowns, fibre dimension 1
+[L=3] cyc B L=3 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 27 unknowns, fibre dimension 1
+[L=4] cyc B L=4 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 36 unknowns, fibre dimension 1
+[L=5] cyc B L=5 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 45 unknowns, fibre dimension 1
+[L=3] cyc C L=3 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 54 unknowns, fibre dimension 2
+[L=3] cyc C L=3 P0=[(1, 0, 0), (0, 0, 0), (0, -1, 1)]: 54 unknowns, fibre dimension 2
+[L=4] cyc C L=4 P0=[(1, 0, 0), (0, 1, -1), (0, 0, 0)]: 90 unknowns, fibre dimension 2
+[L=4] cyc C L=4 P0=[(1, 0, 0), (0, 0, 0), (0, -1, 1)]: 90 unknowns, fibre dimension 2

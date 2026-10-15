@@ -8,7 +8,7 @@ Dense reference for AI readers. Human quickstart is in `README.md`.
 ΔP = (P⊗P)Δ). Kernel fibration: K = ker Δ. P|_K is an algebra fold of K (`kernel_folds`), one rep per grading-torus
 orbit. Over each rep the fibre is filled column by column in the new basis (K first, then the complement in length
 order): `X[:, c] = L(X_{<c}) + k`, with L the unique Δ-preimage in the complement and k ∈ K. A masked check prunes
-after every column. The hot loop is `extend = check ∘ enumerate ∘ lift` (the Le Chat version runs it in a process pool).
+after every column. The hot loop is `extend = check ∘ enumerate ∘ lift` (the v2.23 version, `verify/v2_23/pcensus.py`, runs it in a process pool).
 `run_batch.py` sequences the long jobs. This repo adds a second fibre engine, `fibre_torch.py`, behind
 `pcensus.py --engine torch`. `run_batch.py` uses it by default.
 

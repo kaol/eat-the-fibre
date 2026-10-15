@@ -1,0 +1,10 @@
+[V1] PASS  Podge half structure: at length 1 the diagonal components 1_X Q₁ 1_X vanish (proved for loopless quivers); at length ≥ 2 they lie in the span of glued products Q_i·Q_{m−i} (spanning lemma)
+       A3: 23 folds | 1→2←3: 27 folds | A4: 100 folds | A4 →→←: 109 folds | D4: 182 folds | diamond: 88 folds
+[V2] PASS  chain theorem, intermediate claim: on Aₙ every diagonal Podge element is carried by paths through an interior Podge leaf (so it is a glued product Q·Q), hence |Folds(kAₙ)| = a(n) for all n
+       A_3: 23 vertex folds (= a(3)); every diagonal Podge element lies on paths through an interior Podge leaf: True; max diagonal dim 1 | A_4: 100 vertex folds (= a(4)); every diagonal Podge element lies on paths through an interior Podge leaf: True; max diagonal dim 1
+[V4] PASS  all 7 looped 2-vertex quivers: every positive fibre is a loop-collapse family of the predicted dimension, except the H₀ = k·1 'total loop' fibre of the complete digraph (an orbit, V5)
+       [(0, 0)]: [] | [(0, 0), (0, 1)]: [1] | [(0, 0), (1, 0)]: [1] | [(0, 0), (0, 1), (1, 0)]: [2] | [(0, 0), (1, 1)]: [1, 1] | [(0, 0), (0, 1), (1, 1)]: [2, 2] | [(0, 0), (0, 1), (1, 0), (1, 1)]: [1, 1, 3, 3]
+[V5] PASS  loop source fork (loop at 0, arrows 0→1, 0→2): block-collapse fibres of dimension 2 against orbit dimension 1, a genuine modulus without any 2-cycle; every other positive fibre is an orbit
+       [(1, 1), (2, 1), (1, 1), (1, 1), (2, 1), (1, 1), (1, 1), (1, 1)]
+
+4/4 checks pass

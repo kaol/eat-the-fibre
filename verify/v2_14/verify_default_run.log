@@ -1,0 +1,16 @@
+[U1] PASS  Hodge half (proved): with a = 0 on the Podge part, HL, HR, HH alone force a = 0; Podge half: with a = 0 on the Hodge part, Q₀-multiples and Q·Q force a = 0 (A4, diamond, A4 →→←)
+       {1: 0, 2: 0, 3: 0} | {1: 0, 2: 0, 3: 0} | {1: 0, 2: 0} | {1: 0, 2: 0} | {1: 0, 2: 0} | {1: 0, 2: 0}
+[U2] PASS  Conjecture 4 (unique extension) on random acyclic quivers without parallel arrows (linear certificate, all lengths)
+       4 vertices: True | 10 quivers certified
+[U3] PASS  k⟨a,u⟩ with a-deletion ≅ path algebra of the 2-loop quiver (a ↦ α, u ↦ α − β) as ε-bialgebras
+       Δφ = (φ⊗φ)Δ on all words of length ≤ 6: True; φ bijective in each length ≤ 5 (det ±1): True
+[U4] PASS  cycles without loops are rigid: every fibre over an arrow-rule vertex fold is a single point (2-cycle up to L = 4/5, 3-cycle L = 3)
+       35 fibres, all single points
+[U5] PASS  loops create positive-dimensional fibres, of exactly the dimension of the loop-collapse family (parameters = arrows among {s, s′} other than u)
+       loop+arrow L=3: positive fibres [1] | arrow+loop at target L=3: positive fibres [1] | two loops+arrow L=3: positive fibres [2, 2] | 2-cycle+loop L=3: positive fibres [2]
+[U6] PASS  loop-collapse folds P = χ(·)e_s with σ = (1, −1) on {s, s′} and monic linear weights are Δ-compatible folds (symbolic parameters); three-vertex support, equal signs, non-monic weights and a translated loop at s all fail
+       2-cycle+loop+tail, σ=(1,−1,0): fold equations hold: True | NEG three-vertex support σ=(1,−1,1): fold equations hold: False | NEG equal signs σ=(1,1,0): fold equations hold: False | NEG non-monic weight 2u − c: fold equations hold: False | NEG translated loop at s, w(u)=u−c: fold equations hold: False | triangle+loop, σ=(1,−1,0): fold equations hold: True | collapse theorem and all negative controls behave as predicted: True
+[U7] PASS  loop translations u ↦ u − c·e_s are Δ-compatible; the loop+arrow and two-loops+arrow families are single orbits, the 2-cycle+loop family has a genuine 1-dimensional modulus (fibre 2, orbit 1)
+       loop+arrow: dim of filtered Δ-compatible derivations (on generators) = 1 | P0=[(1, -1), (0, 0)]: fibre dim 1, orbit dim of the canonical fold 1 | two loops+arrow: dim of filtered Δ-compatible derivations (on generators) = 2 | P0=[(1, -1), (0, 0)]: fibre dim 2, orbit dim of the canonical fold 2 | P0=[(0, 0), (-1, 1)]: fibre dim 2, orbit dim of the canonical fold 2 | 2-cycle+loop: dim of filtered Δ-compatible derivations (on generators) = 1 | P0=[(1, -1), (0, 0)]: fibre dim 2, orbit dim of the canonical fold 1
+
+7/7 checks pass
