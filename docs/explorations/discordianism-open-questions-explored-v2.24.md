@@ -2,7 +2,7 @@
 
 *Reads the v2.23 batch, which the user ran on a GPU port of the census (`fibre_torch.py`, written by another instance; repository `kaol/eat-the-fibre`). Four predictions made before the runs are confirmed at new primes. One prediction fails, and the failure is explained by a **local** form of the v2.23 class torus. Conjecture 3\* is restated accordingly.*
 
-*Scripts: `pcensus.py` (root; new fields `orbits_GxTloc`, `local_torus_sizes`), `refinish.py` (recomputes orbit statistics from finished checkpoints), `analysis/orbitcheck.py` (exact tangent spaces at one lifted member of every G-orbit, plus a generic-point local-dimension test). Logs are in `logs/`. Labels: **proved**, **verified (exact)**, **numerical**, **conjectured**, **pending**. Discordian glosses are descriptive labels (L3): nothing in the mathematics forces them.*
+*Scripts: `pcensus.py` (root; new fields `orbits_GxTloc`, `local_torus_sizes`), `refinish.py` (recomputes orbit statistics from finished checkpoints), `analysis/orbitcheck.py` (exact tangent spaces at one lifted member of every G-orbit, plus a generic-point local-dimension test). Logs are in `logs/`. Raw data: `data/` (the batch checkpoints and results). Labels: **proved**, **verified (exact)**, **numerical**, **conjectured**, **pending**. Discordian glosses are descriptive labels (L3): nothing in the mathematics forces them.*
 
 ---
 
@@ -12,8 +12,8 @@
 |---|---|---|
 | batch | Predictions from smaller primes | **Confirmed** (exact census): 1⇉2, 1→3, 4→2 over 𝔽₇ (14928 folds, 615 G-orbits, 485 with grading); 1⇉2→3→4 over 𝔽₇ (5257, 334); 1→2⇉3→4 over 𝔽₇ (3276, 257); 1⇉2, 1→3 over 𝔽₁₁ (8474, 137, 101) |
 | batch | 1⇉2, 2→3, 2→4 over 𝔽₅ | **Prediction failed**: 456 G-orbits (and 456 with grading), against 428 over 𝔽₃. G-orbits = 400 + 14(q − 1): 14 one-parameter families that the grading does not see |
-| — | Why | **A local class torus.** For a fold P, the weightings w with P compatible with Δ_w = Σ_c w_c Δ_c form a linear subspace W(P) containing (1, …, 1). Every w ∈ W(P) with nonzero entries moves P to a fold (proved). W is constant on G-orbits (proved). The census's T_Q (weightings preserving *all* folds) is only the part common to every P, and here it is too small. Exactly 28 G-orbits over 𝔽₃ have r_T = r_G + 1 = tangent dimension, all split compatible. Merging along local torus moves gives **414 over 𝔽₃** **[exact]**, and the prediction for 𝔽₅ is 414 (**pending**: `refinish.py` on the user's checkpoint) |
-| v2.23 Conj. 3\* | Restated | **Conjecture 3\*ˡ: Folds(kQ) has finitely many classes under Aut_Δ and local class-torus moves.** Consistent with every count so far. For 1⇉2⇉3 over 𝔽₃ every fold admits the whole torus, so the count is 716 either way. Its 𝔽₅ value is **pending** (the batch printed only 1112 G-orbits and 790 with grading) |
+| — | Why | **A local class torus.** For a fold P, the weightings w with P compatible with Δ_w = Σ_c w_c Δ_c form a linear subspace W(P) containing (1, …, 1). Every w ∈ W(P) with nonzero entries moves P to a fold (proved). W is constant on G-orbits (proved). The census's T_Q (weightings preserving *all* folds) is only the part common to every P, and here it is too small. Exactly 28 G-orbits over 𝔽₃ have r_T = r_G + 1 = tangent dimension, all split compatible. Merging along local torus moves gives **414 over 𝔽₃ and 414 over 𝔽₅** **[exact; the 𝔽₅ value was predicted before the re-finish]**, while the global T_Q count stays at 456 over 𝔽₅ |
+| v2.23 Conj. 3\* | Restated | **Conjecture 3\*ˡ: Folds(kQ) has finitely many classes under Aut_Δ and local class-torus moves.** It holds in every count except one: **1⇉2⇉3 gives 716 over 𝔽₃ but 754 over 𝔽₅** (every fold there admits the whole torus, so local and global agree). The extra 38 orbits are lower-dimensional orbits with connected-looking stabilizers (§2a). Two readings remain: orbits defined over ℚ(i) (𝔽_q-points only when 4 ∣ q − 1), or one-parameter families of lower-dimensional orbits, which would refute 3\*ˡ. **𝔽₇ decides: 716 or 792** (batch job 11) |
 | — | K₃ + arrow over 𝔽₅ | 1⇛2→3: 54687 folds, **120** orbits as over 𝔽₃ (G = G × grading). 1⇛2, 1→3: 128640 folds; G-orbits 191 → 207 = 175 + 8(q − 1); **183** with grading at both primes. So 8 families, absorbed by the grading |
 | — | New data over 𝔽₃ | 1⇉2→3⇉4: 11008 folds, 1158 G-orbits. 1⇉2→3→4→5: 5405 folds, 1770 G-orbits. Equal counts with grading prove nothing about families (see 1⇉2, 2→3, 2→4), so the r_T test is still to run |
 | — | Engine | The GPU port passes its tests here (7/7, CPU torch) and reproduces the CPU censuses. Its exact affine prefilter cuts candidates by 2–3 orders of magnitude. 1⇉2, 2→3, 2→4 over 𝔽₅, which stalled at 85 CPU-minutes in v2.22, took 2.6 GPU-hours |
@@ -33,7 +33,7 @@
 | 1⇛2→3 / 𝔽₅ | 54687 | 120 | 120 | — | constant |
 | 1⇉2→3⇉4 / 𝔽₃ | 11008 | 1158 | 1158 | — | new |
 | 1⇉2→3→4→5 / 𝔽₃ | 5405 | 1770 | 1770 | — | new |
-| 1⇉2⇉3 / 𝔽₅ | 251550 | 1112 | 790 | — | 3\*ˡ count pending |
+| 1⇉2⇉3 / 𝔽₅ | 251550 | 1112 | 790 | — | 754 under G × T (716 over 𝔽₃); see §2a |
 
 Families show up as G-orbit counts linear in q. Each one-parameter family of G-orbits contributes q − 1 orbits over 𝔽_q:
 
@@ -69,11 +69,43 @@ So "P ~ φ_w P φ_w⁻¹ for w ∈ W(P) ∩ (k^×)^classes" together with G-conj
 | 1⇉2⇉3 | 814 | 728 | 716 | 716 | 4 (all) |
 | 1⇉2, 2→3, 2→4 | 428 | 428 | 428 | **414** | 4 (64), 8 (364) |
 
-**Local test [exact; numerical part pending] (`analysis/orbitcheck.py`, `logs/orbitcheck_tgtfork_3.log`).** Every one of the 428 G-orbits of 1⇉2, 2→3, 2→4 has a member that lifts to an exact ℚ-fold. Tabulated by (r_G, r_T, tangent dimension), the torus enlarges the orbit at exactly **28 orbits, (2, 3, 3), all split compatible**. There tangent = r_T, so the fold variety is locally one orbit of Aut_Δ ⋊ T. Grading alone gives r_H = r_G there (transversal count 0), which is why the grading-based census could not see them. At many other orbits the tangent space is larger than r_T (e.g. 82 of type (0, 0, 1) and 14 of type (1, 1, 2)). The generic-point local-dimension test there was stopped by its 2-hour limit before reporting. So this check shows that the torus accounts for the 28 family orbits, but **not yet** that no other moduli exist; the 𝔽₅ count 414 (pending) tests that globally.
+**Local test [exact; numerical part pending] (`analysis/orbitcheck.py`, `logs/orbitcheck_tgtfork_3.log`).** Every one of the 428 G-orbits of 1⇉2, 2→3, 2→4 has a member that lifts to an exact ℚ-fold. Tabulated by (r_G, r_T, tangent dimension), the torus enlarges the orbit at exactly **28 orbits, (2, 3, 3), all split compatible**. There tangent = r_T, so the fold variety is locally one orbit of Aut_Δ ⋊ T. Grading alone gives r_H = r_G there (transversal count 0), which is why the grading-based census could not see them. At many other orbits the tangent space is larger than r_T (e.g. 82 of type (0, 0, 1) and 14 of type (1, 1, 2)). The generic-point local-dimension test there was stopped by its 2-hour limit before reporting. So this check shows that the torus accounts for the 28 family orbits, but not that no other moduli exist. The 𝔽₅ count tests that globally, and it came out as predicted: **414**.
 
 **A calibration lesson.** On 1⇉2, 1→3, the first version of the generic-point test flagged one class (local dimension 3, orbit rank 2). The flagged points lay about 0.01 from a degenerate fold, where orbit-rank singular values are O(distance) (e.g. 2.0, 0.013, 0, 0). Replacing the single 1e-2 step with a projected random walk (12 tangent steps of 0.05) gives well-conditioned ranks (smallest retained singular value ≥ 0.017) and no flags. That agrees with the 101-orbit count at four primes.
 
 **Gloss.** *When a step forks after the twins, the two branches may keep separate clocks, but only for the splits that do not tie the branches together. A split that binds them must keep one clock for both.*
+
+## 2a. 1⇉2⇉3 over 𝔽₅: 754, not 716
+
+Every fold of 1⇉2⇉3 admits all class weightings (over 𝔽₅, local torus sizes are 16 for all 1112 G-orbits), so H = G × T²,
+of dimension 6, acts on the whole fold set. Its orbit count is 716 over 𝔽₃ and 754 over 𝔽₅. `analysis/stabtype.py`
+tabulates, for every H-orbit, its size against its orbit dimension r (rank of the Lie-algebra action mod p).
+Logs: `logs/stabtype_two_pairs_{3,5}.log`.
+
+| r = orbit dim | dim Stab | \|Stab(𝔽₃)\| | orbits / 𝔽₃ | \|Stab(𝔽₅)\| | orbits / 𝔽₅ | change |
+|---|---|---|---|---|---|---|
+| 0 | 6 | 144 | 23 | 6400 | 23 | |
+| 1 | 5 | 72, 48 | 35, 32 | 1600, 1280 | 35, 32 | |
+| 2 | 4 | 36, 24, 16 | 20, 82, 43 | 400, 320, 256 | 22, 82, 43 | **+2** among orbits of size (q − 1)² (\|Stab\| = q²(q − 1)²) |
+| 3 | 3 | 12, 8 | 54, 196 | 80, 64 | 62, 196 | **+8** among orbits of size q(q − 1)² (\|Stab\| = q(q − 1)²) |
+| 4 | 2 | 4 | 179 | 16 | 207 | **+28** among orbits of size q²(q − 1)² (\|Stab\| = (q − 1)²) |
+| 5 | 1 | 2 | 40 | 4 | 40 | |
+| 6 | 0 | 1 | 12 | 1 | 12 | |
+
+The orbit types match one for one between the primes. Each stabilizer's point count fits a connected group of the
+stated dimension: for example (q − 1)² for the 2-dimensional stabilizers, 4 and then 16. So a finite stabilizer whose
+𝔽_q-points depend on q (such as μ₄ × μ₄) does **not** explain the change. Every extra orbit is a *non-generic* orbit
+(r = 2, 3, 4 < 6), with 2, 8 and 28 more of them over 𝔽₅.
+
+Two readings fit both primes:
+- **Galois.** Some H-orbits are defined over ℚ(i) and not over ℚ, so they have 𝔽_q-points only when 4 ∣ q − 1 (true for
+  5, false for 3). Then there are finitely many orbits over the algebraic closure, and **𝔽₇ gives 716**.
+- **Families.** One-parameter families of r-dimensional orbits inside lower strata of the fold variety. Each family
+  contributes about q − 1 orbits, and **𝔽₇ gives 792** (per type: 24, 70, 235). Conjecture 3\*ˡ would then be false.
+  v2.23's generic-point test could not have seen this: it walks into the top stratum, where everything checked was a
+  single orbit.
+
+(Any other continuous family also grows with q. Any other Galois effect would show up as a dependence on q mod n.)
 
 ---
 
@@ -97,15 +129,19 @@ So "P ~ φ_w P φ_w⁻¹ for w ∈ W(P) ∩ (k^×)^classes" together with G-conj
 | amendment | content |
 |---|---|
 | **Q1²⁴ Local class torus (proved)** | Lemma 2 and Lemma 3: W(P) is a linear space of weightings, constant on G-orbits, and its torus part moves P to folds |
-| **Q2²⁴ Conjecture 3\*ˡ** | Finitely many classes of folds under Aut_Δ and local class-torus moves. This replaces 3\* (global T_Q), which 1⇉2, 2→3, 2→4 refutes unless its 𝔽₅ G × T_Q count drops to 414 |
+| **Q2²⁴ Conjecture 3\*ˡ** | Finitely many classes of folds under Aut_Δ and local class-torus moves. This replaces 3\* (global T_Q). 1⇉2, 2→3, 2→4 has 456 orbits under G × T_Q over 𝔽₅ against 428 over 𝔽₃, but 414 under the local torus at both, which refutes 3\* in its global form. Open for 1⇉2⇉3 (𝔽₇ decides) |
 | **Q3²⁴ Families** | Families of G-orbits are recognized exactly by r_T > r_G at a lifted member, with r_T computed from W(P); counts over 𝔽₃ alone cannot see them |
 
 ---
 
 ## 5. Pending (user's machine)
 
-1. `python3 refinish.py` on the existing checkpoints. Predictions: 1⇉2, 2→3, 2→4 / 𝔽₅ → orbits_GxTloc = **414**. The others keep their grading counts (101, 485, 334, 257, 120, 183). 1⇉2⇉3 / 𝔽₅ → orbits_GxT and orbits_GxTloc: 3\*ˡ predicts **716**.
-2. `analysis/orbitcheck.py` on 1⇉2→3⇉4 and 1⇉2→3→4→5 over 𝔽₃ (needs `--save-folds`), to see whether they have torus families; and `analysis/orbitcheck.py pair_tgtfork 3 1` to finish the generic-point test for 1⇉2, 2→3, 2→4 (stopped here at 2 hours).
+1. **Done.** `refinish.py` on the batch checkpoints (now committed as `data/checkpoints.tar.gz`): 1⇉2, 2→3, 2→4 / 𝔽₅ gives
+   orbits_GxTloc = **414** as predicted, and all others keep their grading counts. 1⇉2⇉3 / 𝔽₅ gives **754, not 716**
+   (§2a). All ten re-finish here to identical JSON (`data/README.md`).
+2. **1⇉2⇉3 over 𝔽₇** (`python3 run_batch.py 11`): 716 (Galois) or 792 (families; 3\*ˡ fails).
+3. `analysis/orbitcheck.py` on 1⇉2→3⇉4 and 1⇉2→3→4→5 over 𝔽₃, and `analysis/orbitcheck.py pair_tgtfork 3 1` to finish
+   the generic-point test (stopped here at 2 hours).
 
 ## 6. Open questions
 

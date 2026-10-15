@@ -1,0 +1,13 @@
+two_pairs F_5: |H| = 6400, dim H = 6, 754 H-orbits
+  (orbit size, orbit dimension r) : orbits    [dim Stab = dim H − r; |Stab(F_p)| = |H|/size]
+  size      1  r = 0  dim Stab = 6  |Stab(F_p)| =  6400 : 23
+  size      4  r = 1  dim Stab = 5  |Stab(F_p)| =  1600 : 35
+  size      5  r = 1  dim Stab = 5  |Stab(F_p)| =  1280 : 32
+  size     16  r = 2  dim Stab = 4  |Stab(F_p)| =   400 : 22
+  size     20  r = 2  dim Stab = 4  |Stab(F_p)| =   320 : 82
+  size     25  r = 2  dim Stab = 4  |Stab(F_p)| =   256 : 43
+  size     80  r = 3  dim Stab = 3  |Stab(F_p)| =    80 : 62
+  size    100  r = 3  dim Stab = 3  |Stab(F_p)| =    64 : 196
+  size    400  r = 4  dim Stab = 2  |Stab(F_p)| =    16 : 207
+  size   1600  r = 5  dim Stab = 1  |Stab(F_p)| =     4 : 40
+  size   6400  r = 6  dim Stab = 0  |Stab(F_p)| =     1 : 12
