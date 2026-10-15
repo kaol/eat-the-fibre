@@ -7,3 +7,4 @@ batch.log
 *.pkl
 *.pkl.tmp
 results_v224.jsonl
+logs/*_container.log
