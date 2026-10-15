@@ -34,7 +34,7 @@ BATCH = [
     ('pair_after3', 3, {}, "1⇉2→3→4→5: new"),
     ('two_pairs', 5, {}, "1⇉2⇉3: heaviest job (dim K = 6, ~197k kernel folds; tens of core-hours) — decides whether its families persist"),
     ('two_pairs', 7, {}, "1⇉2⇉3 over F_7 (v2.24): G×T orbits 716 = F_3 count if the extra F_5 orbits are defined over Q(i); "
-                     "792 if they are one-parameter families (Conjecture 3*ˡ fails). Kernel stage: 62M subspaces, single-threaded"),
+                     "792 if they are one-parameter families (Conjecture 3*ˡ fails). Kernel stage: 62M subspaces, now batched on the GPU"),
 ]
 def done():
     out = {}

@@ -1,5 +1,6 @@
 """Peer equivalence of the two fibre engines, observed through the whole pipeline: `pcensus.py --engine pool` and
-`--engine torch` must print the same JSON (all fields but wall time t). Fibres are sorted canonically before
+`--engine torch` must print the same JSON (all fields but wall time t). The pool side uses the numpy kernel stage
+(--kernel ref), the torch side kernel_torch, so the kernel stages are compared through the whole pipeline too. Fibres are sorted canonically before
 materialization, so representative-dependent fields (transversal.lifted) are compared too.
 The torch runs also set ETF_XCHECK=1: per parent and column, lift and children are compared with pcensus.lift/check."""
 import json, os, subprocess, sys
@@ -18,7 +19,8 @@ def run(q, p, *extra, env=None):
 
 @pytest.mark.parametrize('q,p', CASES)
 def test_pool_equals_torch(q, p):
-    assert run(q, p, '--engine', 'pool', '--jobs', '2') == run(q, p, '--engine', 'torch', env={'ETF_XCHECK': '1'})
+    assert (run(q, p, '--engine', 'pool', '--jobs', '2', '--kernel', 'ref')
+            == run(q, p, '--engine', 'torch', '--kernel', 'torch', env={'ETF_XCHECK': '1'}))
 
 
 def test_checkpoint_crosses_engines(tmp_path):
@@ -30,3 +32,8 @@ def test_checkpoint_crosses_engines(tmp_path):
     c = run('pair_after', 3, '--engine', 'torch', '--checkpoint', ck)
     d = run('pair_after', 3, '--engine', 'pool', '--jobs', '2', '--checkpoint', ck)
     assert a == b == c == d
+
+
+def test_symmetry_transport():
+    """G × T transport (default) ≡ computing every fibre (--no-symmetry); K3_srcout has 4028 torus reps in fewer H-orbits."""
+    assert run('K3_srcout', 3, '--engine', 'torch') == run('K3_srcout', 3, '--engine', 'torch', '--no-symmetry')

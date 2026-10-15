@@ -143,6 +143,118 @@ def kernel_folds(ctx):
             out.append(Bt @ E @ F.inv(Bt) % p)
     return out
 
+def grading(ctx):
+    """φ_l = diag(l^len(b)) for l ∈ F_p^×, with inverses: the grading torus."""
+    p, basis = ctx['p'], ctx['basis']; lens = [0 if b[0] == 'v' else len(b[1]) for b in basis]
+    return {l: (np.diag([pow(l, k, p) for k in lens]), np.diag([pow(pow(l, p - 2, p), k, p) for k in lens])) for l in range(1, p)}
+
+def torus_reps(ctx, Kf, phis):
+    """Reference: one rep per grading-torus orbit of Kf (first in Kf order), with the first l of each distinct conjugate."""
+    p, kdim, Binv, Kmat = ctx['p'], ctx['kdim'], ctx['Binv'], ctx['Kmat']
+    kkey = lambda A: (A % p).astype(np.int8).tobytes(); done_k = set(); reps = []      # (PK, {kkey: l})
+    for PK in Kf:
+        PK = np.asarray(PK, dtype=np.int64)
+        if kkey(PK) in done_k: continue
+        torb = {}
+        for l, (ph, phi_) in phis.items():
+            PKl = (Binv @ ph @ (Kmat @ PK % p) % p)[:kdim] % p
+            PKl = PKl @ (Binv @ phi_ @ Kmat % p)[:kdim] % p
+            torb.setdefault(kkey(PKl), l)
+        done_k |= set(torb); reps.append((PK, list(torb.values())))
+    return reps
+
+KERNEL_CACHE_VERSION = 1
+
+def kernel_digest(ctx):
+    """Version manifest of the kernel stage's seed: (Kf, reps) is a pure function of these, so a cache keyed by it is sound."""
+    import hashlib
+    h = hashlib.sha256(f"kernel-v{KERNEL_CACHE_VERSION} p={ctx['p']}".encode())
+    for k in ('M', 'DL', 'Kmat', 'Binv'): h.update(np.ascontiguousarray(np.asarray(ctx[k], dtype=np.int64) % ctx['p']).tobytes())
+    return h.hexdigest()
+
+def kernel_stage(ctx, phis, engine='auto', device=None, cache=None):
+    """(Kf, reps): algebra folds of K and their grading-torus reps. Engines 'ref' (kernel_folds + torus_reps, numpy) and
+    'torch' (kernel_torch, GPU) give equal lists in equal order. Memoized in `cache` (npz) under kernel_digest."""
+    p, kdim = ctx['p'], ctx['kdim']; dig = kernel_digest(ctx)
+    if cache and os.path.exists(cache):
+        z = np.load(cache)
+        if str(z['digest']) == dig:
+            Kf = z['Kf']; reps = [(Kf[i].astype(np.int64), [int(l) for l in ls[:n]]) for i, ls, n in zip(z['ri'], z['rl'], z['rn'])]
+            print(f"  kernel stage: cached in {cache}", flush=True)
+            return Kf, reps
+        print(f"  kernel cache {cache} is for another setup (digest mismatch), recomputing", flush=True)
+    if engine == 'auto':
+        try: import torch; engine = 'torch'
+        except ImportError: engine = 'ref'
+    if engine == 'torch':
+        import kernel_torch
+        Kf, reps = kernel_torch.kernel_stage(ctx, phis, device=device, log=lambda s: print(s, flush=True))
+    else:
+        Kf = np.array(kernel_folds(ctx), dtype=np.int8).reshape(-1, kdim, kdim); reps = torus_reps(ctx, Kf, phis)
+    if cache:
+        pos = {(Kf[i] % p).astype(np.int8).tobytes(): i for i in range(len(Kf))}
+        ri = np.array([pos[(PK % p).astype(np.int8).tobytes()] for PK, _ in reps], dtype=np.int64)
+        rl = np.zeros((len(reps), max(p - 1, 1)), np.int64); rn = np.array([len(ls) for _, ls in reps], dtype=np.int64)
+        for i, (_, ls) in enumerate(reps): rl[i, :len(ls)] = ls
+        tmp = cache + '.tmp.npz'
+        np.savez(tmp, Kf=Kf, ri=ri, rl=rl, rn=rn, digest=np.array(dig)); os.replace(tmp, cache)
+    return Kf, reps
+
+def symmetry_plan(ctx, reps, phis):
+    """H = G × T (substitutions × grading torus). Every h ∈ H is an algebra automorphism with Δh = (h⊗h)Δ (column sums
+    1), so h maps folds to folds and fibre(h·PK) = h·fibre(PK)·h⁻¹; K is H-stable, with h|_K = hK.
+      transport  Each H-orbit of torus reps is computed once, at its first rep (the source); the other reps get
+                 X' = Lh X Rh with Lh = h, Rh = Binv h⁻¹ B (X = P B in the new basis).
+      kernel     N = ker(H → H|_K) fixes every PK, so it acts on every fibre; the torch engine quotients its frontier by N.
+    → (sources, {r: (source, Lh, Rh)}, N = (h (m,d,d), h⁻¹ (m,d,d)) for h ∈ N)."""
+    p, d, kdim = ctx['p'], ctx['d'], ctx['kdim']
+    B, Binv, Kmat = ctx['B'] % p, ctx['Binv'] % p, ctx['Kmat'] % p; Kinv = Binv[:kdim]
+    Hd, HKd = {}, {}                                                    # h bytes → (h, h⁻¹, q); hK bytes → q
+    for g, gi in build_G(ctx):
+        for l, (ph, phi_) in phis.items():
+            h, hi = ph @ g % p, gi @ phi_ % p
+            hK = Kinv @ h @ Kmat % p
+            assert ((h @ Kmat - Kmat @ hK) % p == 0).all(), "K is not H-stable"
+            q = HKd.setdefault(hK.astype(np.int8).tobytes(), len(HKd))
+            Hd.setdefault(h.astype(np.int8).tobytes(), (h, hi, q))
+    Hl = list(Hd.values())
+    H, Hi, q = np.array([x[0] for x in Hl]), np.array([x[1] for x in Hl]), np.array([x[2] for x in Hl])
+    first = {}                                                          # q → one h with that restriction
+    for i, qi in enumerate(q): first.setdefault(int(qi), i)
+    rep_h = [first[k] for k in range(len(HKd))]
+    HK = np.array([Kinv @ H[i] @ Kmat % p for i in rep_h]); HKi = np.array([Kinv @ Hi[i] @ Kmat % p for i in rep_h])
+    qid = q[(H == np.eye(d, dtype=np.int64)).all((1, 2))][0]
+    N = (H[q == qid], Hi[q == qid])
+    R = len(reps)
+    if R == 0: return [], {}, N
+    PK = np.array([PK_ for PK_, _ in reps], dtype=np.int64)
+    rk = fold_keys(PK % p); order = np.argsort(rk); srk = rk[order]
+    Mx = np.empty((R, len(HK)), np.int64)                              # Mx[r, q] = rep index of hK PK_r hK⁻¹, or −1
+    CH = max(1, (1 << 22) // (len(HK) * kdim * kdim))
+    for s0 in range(0, R, CH):
+        conj = (HK[None] @ PK[s0:s0 + CH, None] @ HKi[None]) % p               # (c, nq, kdim, kdim)
+        ck = fold_keys(conj.reshape(-1, kdim, kdim))
+        j = np.minimum(np.searchsorted(srk, ck), R - 1)
+        Mx[s0:s0 + CH] = np.where(srk[j] == ck, order[j], -1).reshape(-1, len(HK))
+    src = np.where(Mx >= 0, Mx, R).min(1)                               # first rep of the H-orbit (the orbit is H·PK_r)
+    assert (src <= np.arange(R)).all()
+    sources = [int(r) for r in np.nonzero(src == np.arange(R))[0]]
+    trans = {}
+    for r in np.nonzero(src != np.arange(R))[0]:
+        s_ = int(src[r]); i = rep_h[int(np.nonzero(Mx[s_] == r)[0][0])]       # h·PK_source = PK_r
+        trans[int(r)] = (s_, H[i], Binv @ Hi[i] @ B % p)
+    return sources, trans, N
+
+def transport(ctx, reps, fibres, trans):
+    """Fill fibres[r] for transported reps whose source is done (see symmetry_plan)."""
+    p, kdim, Kmat = ctx['p'], ctx['kdim'], ctx['Kmat'] % ctx['p']
+    for r, (s_, Lh, Rh) in trans.items():
+        if r in fibres or s_ not in fibres: continue
+        Xs = np.array(fibres[s_], dtype=np.int64).reshape(-1, ctx['d'], ctx['d'])
+        Xt = (Lh @ Xs @ Rh % p).astype(np.int16)
+        assert (Xt[:, :, :kdim] == (Kmat @ reps[r][0] % p)).all(), "transported fibre is not over its kernel fold"
+        fibres[r] = list(Xt)
+
 def lift_ref(X, col):
     """Reference lift (per-task Gauss solve), kept for PCENSUS_XCHECK."""
     p, d, I, DL, Binv, DC, Cidx, kdim, F = (C[k] for k in ('p', 'd', 'I', 'DL', 'Binv', 'DC', 'Cidx', 'kdim', 'F'))
@@ -282,15 +394,20 @@ def extend(task):
         Xs = np.concatenate(nxt); col += 1; steps -= 1
     return rep, col, Xs.astype(np.int16)
 
+def fold_keys(A):
+    """(N, d, d) residues → (N,) byte-row keys (the int8 bytes used as fold keys everywhere), for np.unique / np.isin."""
+    A = np.ascontiguousarray(A, dtype=np.int8); n = A.shape[1] * A.shape[2]
+    return A.reshape(len(A), n).view(np.dtype((np.void, n)))[:, 0]
+
 def orbit_label(folds, mats, p, chunk=4096):
     """G-orbits: dict fold-key -> orbit id, list of representatives, list of orbit sizes."""
-    g, gi = mats; lab = {}; reps = []; sizes = []; key = lambda A: (A % p).astype(np.int8).tobytes()
-    for P in folds:
-        if key(P) in lab: continue
+    g, gi = mats; lab = {}; reps = []; sizes = []; keys = fold_keys(folds)
+    for i, P in enumerate(folds):
+        if keys[i].tobytes() in lab: continue
         o = set()
         for s_ in range(0, len(g), chunk):
-            Q = np.einsum('gij,jk,gkl->gil', g[s_:s_ + chunk], P, gi[s_:s_ + chunk]) % p
-            o.update(q.astype(np.int8).tobytes() for q in Q)
+            Q = (g[s_:s_ + chunk] @ P.astype(np.int64)) @ gi[s_:s_ + chunk] % p        # g P g⁻¹ (matmul, not 5-index einsum)
+            o.update(k.tobytes() for k in np.unique(fold_keys(Q)))
         for k in o: lab[k] = len(reps)
         reps.append(P); sizes.append(len(o))
     return lab, reps, sizes
@@ -319,7 +436,7 @@ def orbit_stats(folds, mats, p, chunk=4096):
         if key(P) in seen: continue
         o = set()
         for s in range(0, len(g), chunk):
-            Q = np.einsum('gij,jk,gkl->gil', g[s:s + chunk], P, gi[s:s + chunk]) % p
+            Q = (g[s:s + chunk] @ P.astype(np.int64)) @ gi[s:s + chunk] % p
             o.update(q.astype(np.int8).tobytes() for q in Q)
         seen |= o; sizes[len(o)] += 1
     return sum(sizes.values()), dict(sorted(sizes.items()))
@@ -344,32 +461,47 @@ def lie_G(ctx):
     E = np.diag([0 if b[0] == 'v' else len(b[1]) for b in basis]).astype(np.int64)
     return gens, E
 
+def rank_Q(rows):
+    """Exact rank over Q of an integer matrix (rows of ints): fraction-free elimination in Python ints, each new row
+    divided by its content (gcd) so the entries stay small. Replaces sympy.Matrix.rank (same value, ~10³× faster)."""
+    import math
+    A = [[int(x) for x in r] for r in rows]; A = [r for r in A if any(r)]; r = 0
+    for c in range(len(A[0]) if A else 0):
+        piv = next((i for i in range(r, len(A)) if A[i][c]), None)
+        if piv is None: continue
+        A[r], A[piv] = A[piv], A[r]; a = A[r][c]
+        for i in range(r + 1, len(A)):
+            b = A[i][c]
+            if b:
+                row = [a * x - b * y for x, y in zip(A[i], A[r])]
+                g = math.gcd(*row) or 1; A[i] = [x // g for x in row]
+        r += 1
+    return r
+
+def q_fold(P, ctx):
+    """The representative read over Z with p−1 ↦ −1, if that is an exact fold over Q (idempotent, image and kernel
+    subalgebras, Δ-compatible); else None. All conditions as batched integer contractions."""
+    p, M, DL, d = ctx['p'], ctx['M'], ctx['DL'], ctx['d']
+    Pq = np.where(P == p - 1, -1, P).astype(np.int64); I = np.eye(d, dtype=np.int64)
+    if (Pq @ Pq != Pq).any(): return None
+    h = np.einsum('ia,jb,ijk->abk', Pq, Pq, M); q = np.einsum('ia,jb,ijk->abk', I - Pq, I - Pq, M)   # P b_a·P b_b, ...
+    if (np.einsum('xk,abk->abx', Pq, h) != h).any() or np.einsum('xk,abk->abx', Pq, q).any(): return None
+    if (np.einsum('ml,mab->lab', Pq, DL) != np.einsum('ai,lij,bj->lab', Pq, DL, Pq)).any(): return None
+    return Pq
+
 def transversal(reps, ctx):
     """For one representative per (G × grading)-orbit: r_G = rank{[D,P]}, r_H = rank with E added (mod p, and over Q
     when the representative lifts to an exact Q-fold with entries p−1 ↦ −1). Counts orbits with r_H > r_G."""
-    import sympy as sp
     p, F = ctx['p'], ctx['F']; gens, E = lie_G(ctx)
     cnt = collections.Counter()
-    M, DL, d = ctx['M'], ctx['DL'], ctx['d']
-    def q_fold(P):
-        Pq = np.where(P == p - 1, -1, P).astype(np.int64)
-        if (Pq @ Pq != Pq).any(): return None
-        I = np.eye(d, dtype=np.int64)
-        for i in range(d):
-            for j in range(d):
-                h = np.einsum('i,j,ijk->k', Pq[:, i], Pq[:, j], M); q = np.einsum('i,j,ijk->k', (I - Pq)[:, i], (I - Pq)[:, j], M)
-                if (Pq @ h != h).any() or (Pq @ q).any(): return None
-        for l in range(d):
-            lhs = np.einsum('m,mab->ab', Pq[:, l], DL)
-            if (lhs != Pq @ DL[l] @ Pq.T).any(): return None
-        return Pq
     for P in reps:
+        P = np.asarray(P, dtype=np.int64)
         rows = [((D @ P - P @ D) % p).ravel() for D in gens]
         rG = F.rank(np.array(rows)) if rows else 0; rH = F.rank(np.array(rows + [((E @ P - P @ E) % p).ravel()]))
-        Pq = q_fold(P); tag = 'modp'
+        Pq = q_fold(P, ctx)
         if Pq is not None:
-            rowsq = [(D @ Pq - Pq @ D).ravel().tolist() for D in gens]
-            rGq = sp.Matrix(rowsq).rank() if rowsq else 0; rHq = sp.Matrix(rowsq + [(E @ Pq - Pq @ E).ravel().tolist()]).rank()
+            rowsq = [(D @ Pq - Pq @ D).ravel() for D in gens]
+            rGq = rank_Q(rowsq); rHq = rank_Q(rowsq + [(E @ Pq - Pq @ E).ravel()])
             cnt['lifted'] += 1; cnt['lifted_transversal'] += int(rHq > rGq)
         cnt['transversal_modp'] += int(rH > rG)
     return dict(cnt)
@@ -379,21 +511,16 @@ def main():
     ap.add_argument('--jobs', type=int, default=os.cpu_count()); ap.add_argument('--checkpoint'); ap.add_argument('--out')
     ap.add_argument('--no-orbits', action='store_true'); ap.add_argument('--save-folds')
     ap.add_argument('--engine', choices=('pool', 'torch'), default='pool'); ap.add_argument('--device')
+    ap.add_argument('--kernel', choices=('auto', 'torch', 'ref'), default='auto')   # auto: torch if importable
+    ap.add_argument('--kernel-cache')                                    # default: CHECKPOINT minus .pkl, + .kernel.npz
+    ap.add_argument('--no-symmetry', action='store_true')                # compute every fibre (no G × T transport)
     a = ap.parse_args(); name, p = a.quiver, a.p
     t0 = time.time(); ctx = setup(name, p); C.update(ctx)
-    d, kdim, B, Binv, Kmat, basis = ctx['d'], ctx['kdim'], ctx['B'], ctx['Binv'], ctx['Kmat'], ctx['basis']
-    Kf = kernel_folds(ctx)
-    lens = [0 if b[0] == 'v' else len(b[1]) for b in basis]
-    phis = {l: (np.diag([pow(l, k, p) for k in lens]), np.diag([pow(pow(l, p - 2, p), k, p) for k in lens])) for l in range(1, p)}
-    kkey = lambda A: (A % p).tobytes(); done_k = set(); reps = []      # (PK, {kkey: l})
-    for PK in Kf:
-        if kkey(PK) in done_k: continue
-        torb = {}
-        for l, (ph, phi_) in phis.items():
-            PKl = (Binv @ ph @ (Kmat @ PK % p) % p)[:kdim] % p
-            PKl = PKl @ (Binv @ phi_ @ Kmat % p)[:kdim] % p
-            torb.setdefault(kkey(PKl), l)
-        done_k |= set(torb); reps.append((PK, list(torb.values())))
+    d, kdim = ctx['d'], ctx['kdim']
+    phis = grading(ctx)
+    cache = a.kernel_cache or (a.checkpoint[:-4] if a.checkpoint and a.checkpoint.endswith('.pkl') else a.checkpoint)
+    Kf, reps = kernel_stage(ctx, phis, a.kernel, a.device, cache and cache + '.kernel.npz')
+    print(f"  kernel stage: {time.time() - t0:.1f}s", flush=True)
     eng = f"jobs={a.jobs}" if a.engine == 'pool' else "engine=torch"
     print(f"{name} F_{p}: d={d}, dim K={kdim}, {len(Kf)} kernel folds in {len(reps)} torus orbits; {eng}", flush=True)
     fibres = {}
@@ -407,18 +534,25 @@ def main():
         tmp = a.checkpoint + '.tmp'
         pickle.dump(dict(name=name, p=p, nreps=len(reps), fibres=fibres), open(tmp, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
         os.replace(tmp, a.checkpoint); last_save[0] = time.time()
+    if a.no_symmetry: src, trans = list(range(len(reps))), {}
+    else:
+        src, trans, ctx['N'] = symmetry_plan(ctx, reps, phis)
+        print(f"  symmetry: {len(reps)} torus orbits in {len(src)} H-orbits (H = G × T); {len(trans)} fibres by transport; "
+              f"|N| = |ker(H → H|_K)| = {len(ctx['N'][0])}", flush=True)
     if a.engine == 'torch':
         import fibre_torch
-        fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device)
+        fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device, only=src)
     else:
-        pool_fibres(name, p, a.jobs, ctx, reps, fibres, save, t0)
+        pool_fibres(name, p, a.jobs, ctx, reps, fibres, save, t0, only=src)
+    transport(ctx, reps, fibres, trans)
+    assert len(fibres) == len(reps)
     save(force=True)
     finish(a, name, p, ctx, Kf, reps, phis, fibres, t0)
 
-def pool_fibres(name, p, jobs, ctx, reps, fibres, save, t0):
+def pool_fibres(name, p, jobs, ctx, reps, fibres, save, t0, only=None):
     d, kdim, Kmat = ctx['d'], ctx['kdim'], ctx['Kmat']
     stack = []; outstanding = collections.Counter(); partial = collections.defaultdict(list)
-    todo = [r for r in range(len(reps)) if r not in fibres]
+    todo = [r for r in (range(len(reps)) if only is None else only) if r not in fibres]
     for r in reversed(todo):
         X = np.zeros((d, d), dtype=np.int64); X[:, :kdim] = Kmat @ reps[r][0] % p
         if kdim == d: fibres[r] = [X.astype(np.int16)]; continue
@@ -441,7 +575,12 @@ def pool_fibres(name, p, jobs, ctx, reps, fibres, save, t0):
                       f"{ntasks} tasks run, t={time.time()-t0:.0f}s", flush=True); lastlog = time.time()
 
 def build_G(ctx):
-    """G = ∏ over parallel classes of the column-sum-1 substitution group, as (Φ, Φ⁻¹) pairs acting on A = kQ."""
+    """G = ∏ over parallel classes of the column-sum-1 substitution group, as (Φ, Φ⁻¹) pairs acting on A = kQ.
+    Memoized in ctx (the symmetry plan and finish both use it)."""
+    if 'G' not in ctx: ctx['G'] = _build_G(ctx)
+    return ctx['G']
+
+def _build_G(ctx):
     p, d, basis = ctx['p'], ctx['d'], ctx['basis']
     # column-sum-1 substitutions on every parallel class (as in gcensus.py), stacked
     F = ctx['F']; arrows = ctx['arrows']
@@ -475,14 +614,18 @@ def build_G(ctx):
 def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
     d, kdim, B, Binv, Kmat, basis = ctx['d'], ctx['kdim'], ctx['B'], ctx['Binv'], ctx['Kmat'], ctx['basis']
     # materialize all folds (old coordinates) via the grading on each torus orbit; canonical order within each fibre
-    folds = []; fib = collections.Counter()
+    # (one int8 (N, d, d) array; φ_l is diagonal, so φ_l P φ_l⁻¹ = P ∘ (diag φ_l ⊗ diag φ_l⁻¹), batched per fibre)
+    fib = collections.Counter(); n_out = sum(len(fibres[r]) * len(ls) for r, (_, ls) in enumerate(reps))
+    folds = np.empty((n_out, d, d), np.int8); at = 0
+    scale = {l: np.outer(np.diag(ph), np.diag(phi_)) for l, (ph, phi_) in phis.items()}
     for r, (PK, ls) in enumerate(reps):
-        base = [X.astype(np.int64) @ Binv % p for X in sorted(fibres[r], key=lambda X: (X % p).astype(np.int8).tobytes())]
+        Xs = sorted(fibres[r], key=lambda X: (X % p).astype(np.int8).tobytes())
+        base = np.array(Xs, dtype=np.int64).reshape(-1, d, d) @ Binv % p
         for l in ls:
-            ph, phi_ = phis[l]; fib[len(base)] += 1
-            folds += [ph @ P_ @ phi_ % p for P_ in base]
-    assert sum(fib.values()) == len(Kf)
-    assert len({P_.astype(np.int8).tobytes() for P_ in folds}) == len(folds)
+            fib[len(base)] += 1
+            folds[at:at + len(base)] = base * scale[l] % p; at += len(base)
+    assert sum(fib.values()) == len(Kf) and at == n_out
+    assert len(np.unique(fold_keys(folds))) == len(folds)
     res = dict(name=name, p=p, d=d, kdim=kdim, nK=len(Kf), reps=len(reps), N=len(folds), fib=dict(sorted(fib.items())))
     if not a.no_orbits:
         F = ctx['F']; arrows = ctx['arrows']
@@ -495,12 +638,14 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
         # class-weight torus: φ_w scales each parallel class (single arrows included) by w_c; keep the w preserving Folds
         cls = collections.defaultdict(list)
         for ai, st in enumerate(arrows): cls[st].append(ai)
-        cl = list(cls.values()); FS = set(lab); Tpres = []
+        # Folds is a union of G-orbits (FS = set(lab)) and φ_w commutes with G (it scales each parallel class by one
+        # scalar), so φ_w preserves Folds iff it maps every G-orbit representative into FS.
+        cl = list(cls.values()); Tpres = []; FS = set(lab)
         for w in itertools.product(range(1, p), repeat=len(cl)):
             wa = {a: w[k] for k, c in enumerate(cl) for a in c}
             diag = [1 if b[0] == 'v' else int(np.prod([wa[x] for x in b[1]])) % p for b in basis]
             ph, phi_ = np.diag(diag), np.diag([pow(x, p - 2, p) for x in diag])
-            if all(((ph @ P_ @ phi_) % p).astype(np.int8).tobytes() in FS for P_ in folds): Tpres.append((ph, phi_))
+            if all(((ph @ P_ @ phi_) % p).astype(np.int8).tobytes() in FS for P_ in greps): Tpres.append((ph, phi_))
         res['classes'] = len(cl); res['torus_preserving'] = len(Tpres); res['torus_all'] = (p - 1) ** len(cl)
         res['orbits_GxT'], res['sizes_GxT'], _ = merge(lab, greps, gsizes, Tpres, p)
         # local class torus (v2.24): for each G-orbit representative P, every weighting w with P compatible with
@@ -524,26 +669,29 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
             while par[x] != x: par[x] = par[par[x]]; x = par[x]
             return x
         wcount = collections.Counter()
+        Ws = list(itertools.product(range(1, p), repeat=len(cl)))
+        Dws = np.einsum('wc,cmab->wmab', np.array(Ws, dtype=np.int64), DLc) % p          # (W, d, d, d): Δ_w
+        scs = []
+        for w in Ws:
+            wa = {a: w[k] for k, c in enumerate(cl) for a in c}
+            diag = [1 if b[0] == 'v' else int(np.prod([wa[x] for x in b[1]])) % p for b in basis]
+            scs.append(np.outer(diag, [pow(x, p - 2, p) for x in diag]))
         for i, P_ in enumerate(greps):
-            ok_w = 0
-            for w in itertools.product(range(1, p), repeat=len(cl)):
-                Dw = np.einsum('c,cmab->mab', np.array(w), DLc) % p
-                if not all(((np.einsum('m,mab->ab', P_[:, l], Dw) - P_ @ Dw[l] @ P_.T) % p == 0).all() for l in range(d)): continue
-                ok_w += 1
-                wa = {a: w[k] for k, c in enumerate(cl) for a in c}
-                diag = [1 if b[0] == 'v' else int(np.prod([wa[x] for x in b[1]])) % p for b in basis]
-                Q_ = (np.diag(diag) @ P_ @ np.diag([pow(x, p - 2, p) for x in diag])) % p
-                kq = Q_.astype(np.int8).tobytes(); assert kq in lab, "local torus move left the fold set"
+            P_ = P_.astype(np.int64)
+            # P compatible with Δ_w: Σ_m P[m,l] Δ_w[m] = P Δ_w[l] Pᵀ for every l, all weightings w at once
+            ok = ((np.einsum('ml,wmab->wlab', P_, Dws) - np.einsum('ai,wlij,bj->wlab', P_, Dws, P_)) % p == 0).all((1, 2, 3))
+            for q in np.nonzero(ok)[0]:
+                kq = (P_ * scs[q] % p).astype(np.int8).tobytes(); assert kq in lab, "local torus move left the fold set"
                 a_, b_ = find(i), find(lab[kq])
                 if a_ != b_: par[a_] = b_
-            wcount[ok_w] += 1
+            wcount[int(ok.sum())] += 1
         comp = collections.Counter(find(i) for i in range(len(greps)))
         res['orbits_GxTloc'] = len(comp)
         res['local_torus_sizes'] = dict(sorted(wcount.items()))         # how many weightings each G-orbit admits
     res['t'] = round(time.time() - t0)
     line = json.dumps(res); print(line, flush=True)
     if a.out: open(a.out, 'a').write(line + "\n")
-    if a.save_folds: pickle.dump(dict(name=name, p=p, folds=[P_.astype(np.int8) for P_ in folds]), open(a.save_folds, 'wb'))
+    if a.save_folds: pickle.dump(dict(name=name, p=p, folds=list(folds)), open(a.save_folds, 'wb'))
 
 if __name__ == '__main__':
     main()
