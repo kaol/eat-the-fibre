@@ -27,6 +27,7 @@ EXACT = 1 << 24
 MEM = int(os.environ.get('ETF_MEM', '1024') or 1024) << 20
 GROUP = int(os.environ.get('ETF_GROUP', '4096') or 4096)
 XCHECK = int(os.environ.get('ETF_XCHECK', '0') or 0)
+QUOTIENT = int(os.environ.get('ETF_QUOTIENT', '1') or 0)             # 0: no frontier quotient (fibre_torch.quotient)
 F32 = 4
 
 
@@ -90,6 +91,16 @@ class Plan(Fp):
         self.LopK = self.lop(self.Kmat.T)                                    # (kdim, d_y, d_k): Lop(K_t)
         assert d * d * (p - 1) ** 2 < EXACT, "float32 contractions would not be exact"
         self.selftest()
+        # frontier quotient (pcensus.symmetry_plan): N = ker(H → H|_K), H = G × T, acting as X ↦ Lh X Rh
+        N = C.get('N'); self.sym = N is not None and len(N[0]) > 1 and QUOTIENT
+        if self.sym:
+            Binv_, B_ = np.asarray(C['Binv']) % p, np.asarray(C['B']) % p
+            Rh = np.einsum('ij,hjk,kl->hil', Binv_, np.asarray(N[1]) % p, B_) % p
+            self.HL, self.HR = t(N[0]), t(Rh)                                    # (|N|, d, d)
+            self.Nc = {c: torch.as_tensor(np.nonzero(~Rh[:, c:, :c].any((1, 2)))[0], dtype=torch.long, device=dev)
+                       for c in range(kdim + 1, d)}                              # N_c = {n : Rn[c:, :c] = 0}
+        self.packw = max(1, int(62 / np.log2(p)))                            # base-p digits per int64 key word
+        self.pw = torch.as_tensor([p ** e for e in range(self.packw - 1, -1, -1)], dtype=torch.long, device=dev)
 
     def lop(self, x):  # (..., d) → (..., d_y, d_k): left multiplication by x, i.e. y ↦ x·y is y @ lop(x)
         return self.mm(x, self.Mx).reshape(*x.shape[:-1], self.d, self.d)
@@ -209,13 +220,14 @@ def solve_affine(P, Ab):
     return cons, kap0, N, ~isp
 
 
-def rref(P, A):
-    """Batched reduced row echelon form mod p of A (n, R, k+1) = [E | r]. → (A, pivot row per column or −1, consistent)."""
+def rref(P, A, ncols=None):
+    """Batched reduced row echelon form mod p of A (n, R, k+1) = [E | r]. → (A, pivot row per column or −1, consistent).
+    ncols < k: pivot only in the first ncols columns (the rest are carried along, e.g. [B | I | 0] for B⁻¹)."""
     n, Rn, K1 = A.shape; k = K1 - 1
     ar = torch.arange(n, device=P.dev)
     used = torch.zeros(n, Rn, dtype=torch.bool, device=P.dev)
     prow = torch.full((n, k), -1, dtype=torch.long, device=P.dev)
-    for j in range(k if Rn else 0):
+    for j in range(min(k, k if ncols is None else ncols) if Rn else 0):
         cand = (A[:, :, j] != 0) & ~used
         has = cand.any(1)
         pr_i = cand.to(torch.uint8).argmax(1)
@@ -253,6 +265,71 @@ def check(P, S, pi, w):
 
 
 STATS = collections.defaultdict(lambda: np.zeros(4, dtype=np.int64))   # c ↦ [parents, lifted, candidates, children]
+QSTATS = collections.defaultdict(lambda: np.zeros(2, dtype=np.int64))  # c ↦ [frontier, kept] of the N-quotient
+
+
+def pack(P, v):
+    """(..., L) residues → (..., ⌈L/w⌉) int64 words of w base-p digits: lexicographic order on rows is preserved."""
+    w = P.packw; L = v.shape[-1]
+    v = torch.nn.functional.pad(v, (0, (-L) % w)).long().reshape(*v.shape[:-1], -1, w)
+    return (v * P.pw).sum(-1)
+
+
+def lexmin(keys):
+    """(n, m, q) int64 → (n,) index along m of the lexicographically smallest row."""
+    cand = torch.ones(keys.shape[:2], dtype=torch.bool, device=keys.device)
+    for j in range(keys.shape[2]):
+        col = torch.where(cand, keys[:, :, j], torch.iinfo(torch.long).max)
+        cand &= col == col.min(1, keepdim=True).values
+    return cand.to(torch.uint8).argmax(1)
+
+
+def first_unique(rows):
+    """(n, q) int64 → indices of one row per distinct value (the first), ascending."""
+    _, inv = torch.unique(rows, dim=0, return_inverse=True)
+    first = torch.full((int(inv.max()) + 1,), rows.shape[0], dtype=torch.long, device=rows.device)
+    first.scatter_reduce_(0, inv, torch.arange(rows.shape[0], device=rows.device), 'amin')
+    return first.sort().values
+
+
+def orbit_keys(P, X, g, c):
+    """X (n, d, d) with columns < c filled, g: indices into N with Rn[c:, :c] = 0 → (n, words) int64: the
+    lexicographically smallest image over n ∈ g of (n·X)[:, kdim:c] = Ln (X[:, :c] Rn[:c, kdim:c]), packed. The K columns
+    are left out: n fixes PK, so (n·X)[:, :kdim] = X[:, :kdim]."""
+    k = P.kdim
+    L_, R_ = P.HL[g], P.HR[g][:, :c, k:c]; m = len(g); keys = []
+    CB = max(1, MEM // (3 * F32 * m * P.d * (c - k + 1)))
+    for s in range(0, X.shape[0], CB):
+        img = P.mm(L_[None], P.mm(X[s:s + CB, None, :, :c].to(torch.float32), R_[None]))    # (n, m, d, c − kdim)
+        kw = pack(P, img.transpose(2, 3).reshape(*img.shape[:2], -1))                      # (n, m, words)
+        keys.append(kw[torch.arange(kw.shape[0], device=P.dev), lexmin(kw)])
+    return torch.cat(keys)
+
+
+def quotient(P, rid, X, c):
+    """Frontier at column c → one member per (fibre, N_c-orbit). N = ker(H → H|_K) fixes every PK and maps folds to
+    folds; for n ∈ N_c = {n : Rn[c:, :c] = 0}, (n·X)[:, :c] depends on X[:, :c] alone, so completions(n·X) =
+    n·completions(X). Of the frontier members in one orbit only the first is kept. Kept members are genuine frontier
+    nodes, never images, so the engine's skipping of already-verified conditions stays exact. The orbit key is the
+    lexicographically smallest image. Invariant: fibre = N · completions(frontier); expand() restores it."""
+    g = P.Nc[c]
+    if len(g) <= 1: return rid, X
+    keep = first_unique(torch.cat([rid[:, None].long(), orbit_keys(P, X, g, c)], 1))
+    QSTATS[c] += [len(rid), len(keep)]
+    return rid[keep], X[keep]
+
+
+def expand(P, rid, X):
+    """Complete folds (c = d) → their N-orbits, deduplicated per fibre (inverse of the quotients on the way)."""
+    if not P.sym or not len(rid): return rid, X
+    m = P.HL.shape[0]; out_r, out_X = [], []
+    CB = max(1, MEM // (3 * F32 * m * P.d * P.d))
+    for s in range(0, len(rid), CB):
+        img = P.mm(P.mm(P.HL[None], X[s:s + CB, None].to(torch.float32)), P.HR[None])   # (n, m, d, d)
+        out_r.append(rid[s:s + CB, None].expand(-1, m).reshape(-1)); out_X.append(img.reshape(-1, P.d, P.d).to(torch.int8))
+    rid2, X2 = torch.cat(out_r), torch.cat(out_X)
+    keep = first_unique(torch.cat([rid2[:, None].long(), pack(P, X2.transpose(1, 2).reshape(len(rid2), -1))], 1))
+    return rid2[keep], X2[keep]
 
 
 def level(P, rid, X, c):
@@ -318,8 +395,9 @@ def _xcheck_end(P, rid, Xf, L, c, rid2, X2):
     assert got == want, f"column {c}: engine children differ from pcensus.check"
 
 
-def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None):
-    """Fill fibres[r] (list of int16 (d,d) arrays, columns in the new basis) for every torus rep r not yet in fibres.
+def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, only=None):
+    """Fill fibres[r] (list of int16 (d,d) arrays, columns in the new basis) for every torus rep r (r ∈ only, if given)
+    not yet in fibres.
     Same checkpoint content as the process-pool engine. Work order: groups of GROUP fibres, each driven to completion
     by a stack of (column, batch) frontiers, so memory is bounded by the batch budgets, not by the fibre sizes."""
     dev = pick_device(device)
@@ -327,8 +405,8 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None):
     log(f"  torch engine on {describe(dev)}; mem budget {MEM >> 20} MiB, group {GROUP}")
     d, kdim, p = P.d, P.kdim, P.p
     Kmat = np.asarray(C['Kmat'])
-    todo = [r for r in range(len(reps)) if r not in fibres]
-    t0 = last = time.time(); ndone = len(fibres)
+    todo = [r for r in (range(len(reps)) if only is None else only) if r not in fibres]
+    t0 = last = time.time(); ndone = 0
     for g0 in range(0, len(todo), GROUP):
         grp = todo[g0:g0 + GROUP]
         X0 = np.zeros((len(grp), d, d), dtype=np.int8)
@@ -338,6 +416,7 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None):
         while stack:
             c, rid, X = stack.pop()
             if c == d:
+                rid, X = expand(P, rid, X)
                 for r, x in zip(rid.cpu().numpy(), X.cpu().numpy()): out[int(r)].append(x.astype(np.int16))
                 continue
             nb = P.parent_batch(c)
@@ -345,12 +424,16 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None):
                 stack += [(c, rid[s:s + nb], X[s:s + nb]) for s in range(0, len(rid), nb)][::-1]
                 continue
             rid2, X2 = level(P, rid, X, c)
+            if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
             if len(rid2): stack.append((c + 1, rid2, X2))
             if time.time() - last > 60:
-                log(f"  {ndone}/{len(reps)} fibres done, group {g0 // GROUP + 1}/{-(-len(todo) // GROUP)}, "
+                log(f"  {ndone}/{len(todo)} fibres computed, group {g0 // GROUP + 1}/{-(-len(todo) // GROUP)}, "
                     f"{len(stack)} stacked batches at column {c}, t={time.time() - t0:.0f}s"); last = time.time()
-        for r in grp: fibres[r] = out.get(r, [])
+        for r in grp:                    # orbits split across batches can expand to the same folds: dedupe per fibre
+            fibres[r] = list({x.tobytes(): x for x in out.get(r, [])}.values())
         ndone += len(grp); save()
     log(f"  done in {time.time() - t0:.0f}s; per column [parents, lifted, candidates, children] (brute force would "
-        f"check lifted·{p}^{kdim}): " + ", ".join(f"{c}: {list(map(int, STATS[c]))}" for c in sorted(STATS)))
+        f"check lifted·{p}^{kdim}): " + ", ".join(f"{c}: {list(map(int, STATS[c]))}" for c in sorted(STATS))
+        + (f"; N-quotient (|N| = {P.HL.shape[0]}) per column [frontier, kept]: "
+           + ", ".join(f"{c}: {list(map(int, QSTATS[c]))}" for c in sorted(QSTATS)) if QSTATS else ""))
     return fibres

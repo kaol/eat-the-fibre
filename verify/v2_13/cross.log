@@ -1,0 +1,7 @@
+A2: |X_H| = 6, isolated Q-cell points = 8, positive-dim Q pieces = 0; folds = 6 (all satisfy the fold equations exactly: True); positive-dim Q pieces admit no complement: True; rank distribution {0: 1, 1: 4, 3: 1}
+A2: 38 numerical folds, all among the 6 exact folds; distinct exact folds hit: 4
+A3: |X_H| = 20, isolated Q-cell points = 49, positive-dim Q pieces = 0; folds = 23 (all satisfy the fold equations exactly: True); positive-dim Q pieces admit no complement: True; rank distribution {0: 1, 1: 16, 2: 3, 3: 2, 6: 1}
+A3: 38 numerical folds, all among the 23 exact folds; distinct exact folds hit: 7
+1→2←3: |X_H| = 21, isolated Q-cell points = 34, positive-dim Q pieces = 2; folds = 27 (all satisfy the fold equations exactly: True); positive-dim Q pieces admit no complement: True; rank distribution {0: 1, 1: 16, 2: 3, 3: 6, 5: 1}
+1→2←3: 36 numerical folds, all among the 27 exact folds; distinct exact folds hit: 7
+numerical folds ⊂ exact list: True

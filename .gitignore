@@ -6,3 +6,7 @@ results.jsonl
 batch.log
 *.pkl
 *.pkl.tmp
+results_v224.jsonl
+logs/*_container.log
+!data/results.jsonl
+*.kernel.npz

@@ -1,0 +1,20 @@
+[T1] PASS  every c.e. tree without dead ends carries a COMPUTABLE law in S (stage weights): positive set = U, S-bound, lower approximations sound and exhaustive
+       (a) positive set is exactly U: True | (a) S-lower bound c ≥ 2^{-(s+1)} holds: True | (a) stagewise lower approximations never exceed μ: True | (a) lower approximations at stage 1000 capture all but < 2^-500 of the mass at depth 9: True
+[T2] PASS  coding at designated branching nodes: y and every displaced conditional decode exactly (μ′ ≡ μ ⊕ y)
+       (b) 64 designated nodes: y and the displaced conditionals decode exactly: True; other nodes untouched: True; designated conditionals stay in (0,1): True
+[T3] PASS  Schubert-cell classification: A₂, A₃, 1→2←3 have exactly 6, 23, 27 folds; every reconstructed P satisfies the fold equations; positive-dimensional Q-pieces have no complement
+       A2: |X_H| = 6, isolated Q-cell points = 8, positive-dim Q pieces = 0; folds = 6 (all satisfy the fold equations exactly: True); positive-dim Q pieces admit no complement: True; rank distribution {0: 1, 1: 4, 3: 1} | A3: |X_H| = 20, isolated Q-cell points = 49, positive-dim Q pieces = 0; folds = 23 (all satisfy the fold equations exactly: True); positive-dim Q pieces admit no complement: True; rank distribution {0: 1, 1: 16, 2: 3, 3: 2, 6: 1} | 1→2←3: |X_H| = 21, isolated Q-cell points = 34, positive-dim Q pieces = 2; folds = 27 (all satisfy the fold equations exactly: True); positive-dim Q pieces admit no complement: True; rank distribution {0: 1, 1: 16, 2: 3, 3: 6, 5: 1}
+[T4] PASS  open-chart pairs + minimal primes + orbit-rank recursion: the fold variety is a finite union of Aut_Δ-orbits for A2, K2, A3, 1→2←3, K3
+       A2 6 [0] True | K2 46 [0, 1, 2] True | A3 16 [0] True | 1→2←3 26 [0] True | K3 192 [0, 2, 4] True
+[T5] PASS  no parallel arrows: every vertex fold passing the arrow rule extends to exactly ONE fold, the canonical tensor extension P₀^{⊗•}; fold counts = arrow-rule counts
+       A1: 2 = 2 | A2: 6 = 6 | A3: 23 = 23 | 1→2←3: 27 = 27 | 1←2→3: 27 = 27 | D4: 182 = 182 | 1→2→3, 1→3: 21 = 21 | A4: 100 = 100 | A4 alt: 123 = 123 | diamond: 88 = 88
+[T6] PASS  ker Δ = A₀ exactly when there are no parallel arrows (11 quivers, exact rank)
+       ker Δ = A_0 exactly when there are no parallel arrows: True
+[T7] PASS  dim Lie Aut_Δ = Σ m_ij(m_ij − 1) on 11 quivers (exact nullspace)
+       A2: dim A = 3, dim g = 0, Σ m(m−1) = 0 | A3: dim A = 6, dim g = 0, Σ m(m−1) = 0 | 1→2←3: dim A = 5, dim g = 0, Σ m(m−1) = 0 | K2: dim A = 4, dim g = 2, Σ m(m−1) = 2 | K3: dim A = 5, dim g = 6, Σ m(m−1) = 6 | K4: dim A = 6, dim g = 12, Σ m(m−1) = 12 | 1⇉2→3: dim A = 8, dim g = 2, Σ m(m−1) = 2 | 1⇉2⇉3: dim A = 11, dim g = 4, Σ m(m−1) = 4 | diamond: dim A = 10, dim g = 0, Σ m(m−1) = 0 | 1→2, 1→3, 2→3: dim A = 7, dim g = 0, Σ m(m−1) = 0 | K2+K3 (1⇉2, 2⇛3): dim A = 14, dim g = 8, Σ m(m−1) = 8
+[T8] PASS  the arrow-rule count on Aₙ reproduces v2.11's sequence a(1…6) = 2, 6, 23, 100, 563, 3734, so a(n) ≤ |Folds(kAₙ)| with equality under the extension conjecture
+       [2, 6, 23, 100, 563, 3734]
+[T9] PASS  every fold found by v2.12's numerical sampler is one of the exact folds
+       A2: 38 numerical folds, all among the 6 exact folds; distinct exact folds hit: 4 | A3: 38 numerical folds, all among the 23 exact folds; distinct exact folds hit: 7 | 1→2←3: 36 numerical folds, all among the 27 exact folds; distinct exact folds hit: 7 | numerical folds ⊂ exact list: True
+
+9/9 checks pass

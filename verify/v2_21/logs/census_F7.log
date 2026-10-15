@@ -1,0 +1,19 @@
+algebra folds of K over F_7: 1528
+  reps 20  kernel folds covered 80/1528  folds 101  t=2s
+  reps 40  kernel folds covered 150/1528  folds 120  t=4s
+  reps 60  kernel folds covered 250/1528  folds 213  t=5s
+  reps 80  kernel folds covered 325/1528  folds 331  t=8s
+  reps 100  kernel folds covered 430/1528  folds 374  t=9s
+  reps 120  kernel folds covered 550/1528  folds 458  t=10s
+  reps 140  kernel folds covered 655/1528  folds 506  t=11s
+  reps 160  kernel folds covered 770/1528  folds 590  t=12s
+  reps 180  kernel folds covered 870/1528  folds 591  t=12s
+  reps 200  kernel folds covered 955/1528  folds 605  t=14s
+  reps 220  kernel folds covered 1025/1528  folds 633  t=15s
+  reps 240  kernel folds covered 1120/1528  folds 683  t=18s
+  reps 260  kernel folds covered 1215/1528  folds 738  t=24s
+  reps 280  kernel folds covered 1305/1528  folds 976  t=60s
+  reps 300  kernel folds covered 1420/1528  folds 1018  t=62s
+  reps 320  kernel folds covered 1470/1528  folds 1026  t=72s
+F_7: 1083 folds (prediction 21p²+6p+12 = 1083), |G| = 42, orbits = 71, orbit sizes {1: 23, 6: 11, 7: 16, 42: 21}, non-length-filtered folds = 6; 338 torus reps, t=133s
+F_7: fibre sizes over the 1528 kernel folds: {0: 1327, 1: 89, 7: 110, 49: 1, 175: 1}

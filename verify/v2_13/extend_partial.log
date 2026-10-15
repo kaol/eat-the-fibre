@@ -1,0 +1,5 @@
+A4: dim A = 10; folds = 100; fibre sizes over vertex splittings: {1: 100}
+A4 alt: dim A = 7; folds = 123; fibre sizes over vertex splittings: {1: 123}
+D4: dim A = 7; folds = 182; fibre sizes over vertex splittings: {1: 182}
+1→2→3, 1→3: dim A = 7; folds = 21; fibre sizes over vertex splittings: {1: 21}
+diamond: dim A = 10; folds = 88; fibre sizes over vertex splittings: {1: 88}

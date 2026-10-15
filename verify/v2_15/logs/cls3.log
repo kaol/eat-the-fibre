@@ -1,0 +1,7 @@
+[(0, 0), (0, 1), (1, 2)]: 17 vertex folds; positive fibres [1]; prediction matches: True
+[(1, 1), (0, 1), (1, 2)]: 24 vertex folds; positive fibres [1, 1, 1, 1]; prediction matches: False MISMATCH [(1, 0), (1, 0)]
+[(0, 0), (0, 1), (0, 2)]: 32 vertex folds; positive fibres [1, 1, 1, 1, 1, 1, 2, 2]; prediction matches: False MISMATCH [(1, 0), (2, 0), (1, 0), (2, 0), (1, 0), (1, 0)]
+[(0, 0), (0, 1), (1, 0), (1, 2)]: 19 vertex folds; positive fibres [2, 2]; prediction matches: False MISMATCH [(2, 0)]
+[(0, 0), (1, 1), (0, 1), (1, 2)]: 18 vertex folds; positive fibres [1, 1, 2, 2, 2]; prediction matches: False MISMATCH [(1, 0), (2, 0)]
+[(0, 0), (1, 0), (2, 0)]: 32 vertex folds; positive fibres [1, 1, 1, 1, 1, 1, 2, 2]; prediction matches: False MISMATCH [(1, 0), (2, 0), (1, 0), (2, 0), (1, 0), (1, 0)]
+collapse classification matches on all 6 quivers: False

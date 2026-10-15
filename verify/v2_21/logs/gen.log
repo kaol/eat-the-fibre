@@ -1,0 +1,56 @@
+algebra folds of K over F_3: 384
+  K-fold 0/384 folds 1 t=2s
+  K-fold 8/384 folds 7 t=16s
+  K-fold 24/384 folds 19 t=40s
+  K-fold 40/384 folds 31 t=67s
+  K-fold 64/384 folds 47 t=101s
+  K-fold 72/384 folds 55 t=120s
+  K-fold 88/384 folds 69 t=151s
+  K-fold 104/384 folds 76 t=166s
+  K-fold 120/384 folds 88 t=190s
+  K-fold 128/384 folds 92 t=199s
+  K-fold 136/384 folds 95 t=207s
+  K-fold 144/384 folds 102 t=221s
+  K-fold 168/384 folds 111 t=240s
+  K-fold 184/384 folds 115 t=247s
+  K-fold 200/384 folds 116 t=253s
+  K-fold 208/384 folds 118 t=258s
+  K-fold 224/384 folds 124 t=273s
+  K-fold 264/384 folds 144 t=335s
+  K-fold 272/384 folds 150 t=346s
+  K-fold 288/384 folds 154 t=378s
+  K-fold 304/384 folds 163 t=396s
+  K-fold 312/384 folds 196 t=417s
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 4, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 4, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 3, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 3, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 3, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 3, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 3, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 3, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 1, orbit 0;  at generic nearby fold: local 1, orbit 1
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+  at P: local 2, orbit 1;  at generic nearby fold: local 2, orbit 2
+flagged folds: 31  (local, orbit) at P → (local, orbit) nearby: [((1, 0, 1, 1), 11), ((2, 1, 2, 2), 12), ((3, 1, 2, 2), 6), ((4, 1, 2, 2), 2)]
+generic local dim = generic orbit dim at all flagged folds: True

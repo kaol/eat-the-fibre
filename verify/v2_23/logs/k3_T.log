@@ -1,0 +1,32 @@
+K3_after F_3: d=10, dim K=5, 7356 kernel folds in 4028 torus orbits; jobs=1
+  1954/4028 fibres done, 2074 open, 2213 queued tasks, 10387 tasks run, t=62s
+  1983/4028 fibres done, 2045 open, 2150 queued tasks, 23850 tasks run, t=122s
+  2016/4028 fibres done, 2012 open, 2055 queued tasks, 38011 tasks run, t=182s
+  3071/4028 fibres done, 957 open, 1037 queued tasks, 46912 tasks run, t=242s
+  3218/4028 fibres done, 810 open, 967 queued tasks, 60590 tasks run, t=302s
+  3358/4028 fibres done, 670 open, 886 queued tasks, 75120 tasks run, t=362s
+  3527/4028 fibres done, 501 open, 707 queued tasks, 89504 tasks run, t=422s
+  3561/4028 fibres done, 467 open, 628 queued tasks, 103201 tasks run, t=482s
+  3603/4028 fibres done, 425 open, 625 queued tasks, 113991 tasks run, t=542s
+  3603/4028 fibres done, 425 open, 604 queued tasks, 122953 tasks run, t=602s
+  3603/4028 fibres done, 425 open, 549 queued tasks, 134163 tasks run, t=662s
+  3622/4028 fibres done, 406 open, 676 queued tasks, 147320 tasks run, t=722s
+  3622/4028 fibres done, 406 open, 642 queued tasks, 156636 tasks run, t=782s
+  3622/4028 fibres done, 406 open, 635 queued tasks, 167754 tasks run, t=842s
+  3645/4028 fibres done, 383 open, 716 queued tasks, 177556 tasks run, t=902s
+  3645/4028 fibres done, 383 open, 474 queued tasks, 187486 tasks run, t=962s
+  3645/4028 fibres done, 383 open, 564 queued tasks, 198316 tasks run, t=1022s
+  3664/4028 fibres done, 364 open, 563 queued tasks, 212386 tasks run, t=1082s
+  3664/4028 fibres done, 364 open, 526 queued tasks, 221996 tasks run, t=1142s
+  3664/4028 fibres done, 364 open, 506 queued tasks, 233279 tasks run, t=1202s
+  3678/4028 fibres done, 350 open, 422 queued tasks, 247342 tasks run, t=1262s
+  3713/4028 fibres done, 315 open, 521 queued tasks, 262596 tasks run, t=1322s
+  3713/4028 fibres done, 315 open, 629 queued tasks, 282550 tasks run, t=1382s
+  3713/4028 fibres done, 315 open, 462 queued tasks, 300130 tasks run, t=1442s
+  3792/4028 fibres done, 236 open, 392 queued tasks, 317659 tasks run, t=1502s
+  4018/4028 fibres done, 10 open, 265 queued tasks, 335246 tasks run, t=1562s
+{"name": "K3_after", "p": 3, "d": 10, "kdim": 5, "nK": 7356, "reps": 4028, "N": 5439, "fib": {"0": 6381, "1": 111, "3": 672, "9": 142, "27": 36, "57": 12, "81": 1, "297": 1}, "G": 432, "orbits_G": 120, "sizes_G": {"1": 23, "8": 11, "9": 16, "36": 16, "72": 49, "144": 3, "216": 1, "432": 1}, "orbits_GxGr": 120, "sizes_GxGr": {"1": 23, "8": 11, "9": 16, "36": 16, "72": 49, "144": 3, "216": 1, "432": 1}, "transversal": {"lifted": 59, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 2, "torus_preserving": 4, "torus_all": 4, "orbits_GxT": 120, "sizes_GxT": {"1": 23, "8": 11, "9": 16, "36": 16, "72": 49, "144": 3, "216": 1, "432": 1}, "t": 1585}
+K3_srcout F_3: d=7, dim K=5, 7356 kernel folds in 4028 torus orbits; jobs=1
+{"name": "K3_srcout", "p": 3, "d": 7, "kdim": 5, "nK": 7356, "reps": 4028, "N": 10410, "fib": {"0": 5826, "1": 105, "3": 888, "9": 498, "81": 39}, "G": 432, "orbits_G": 191, "sizes_G": {"1": 25, "8": 10, "9": 29, "36": 25, "72": 84, "108": 2, "144": 8, "216": 8}, "orbits_GxGr": 183, "sizes_GxGr": {"1": 25, "8": 10, "9": 29, "36": 25, "72": 76, "108": 2, "144": 12, "432": 4}, "transversal": {"lifted": 84, "lifted_transversal": 4, "transversal_modp": 8}, "classes": 2, "torus_preserving": 2, "torus_all": 4, "orbits_GxT": 183, "sizes_GxT": {"1": 25, "8": 10, "9": 29, "36": 25, "72": 76, "108": 2, "144": 12, "432": 4}, "t": 33}
+K2 F_3: d=4, dim K=3, 60 kernel folds in 38 torus orbits; jobs=1
+{"name": "K2", "p": 3, "d": 4, "kdim": 3, "nK": 60, "reps": 38, "N": 64, "fib": {"0": 32, "1": 10, "3": 18}, "G": 6, "orbits_G": 20, "sizes_G": {"1": 6, "2": 2, "3": 6, "6": 6}, "orbits_GxGr": 20, "sizes_GxGr": {"1": 6, "2": 2, "3": 6, "6": 6}, "transversal": {"lifted": 20, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 1, "torus_preserving": 2, "torus_all": 2, "orbits_GxT": 20, "sizes_GxT": {"1": 6, "2": 2, "3": 6, "6": 6}, "t": 0}

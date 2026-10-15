@@ -1,0 +1,10 @@
+[(0, 0)] positive fibre ⇔ (H) violated: True []
+[(0, 0), (0, 1)] positive fibre ⇔ (H) violated: True []
+[(0, 0), (1, 0)] positive fibre ⇔ (H) violated: True []
+[(0, 0), (0, 1), (1, 0)] positive fibre ⇔ (H) violated: True []
+[(0, 0), (1, 1)] positive fibre ⇔ (H) violated: True []
+[(0, 0), (0, 1), (1, 1)] positive fibre ⇔ (H) violated: True []
+[(0, 0), (0, 1), (1, 0), (1, 1)] positive fibre ⇔ (H) violated: False [([[0, 0], [1, 1]], 1), ([[1, 1], [0, 0]], 1)]
+all looped 2-vertex quivers: False
+
+[exited with code 0]

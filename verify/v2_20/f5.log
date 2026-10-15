@@ -1,0 +1,3 @@
+algebra folds of K over F_5: 860
+F_5: algebra folds of K: 860; fibre-size histogram over them: {0: 713, 1: 67, 5: 78, 25: 1, 85: 1}; t=835s
+F_5: 567 folds (prediction 21p²+6p+12 = 567), |G| = 20, orbits = 71, orbit sizes {1: 23, 4: 11, 5: 16, 20: 21}, non-length-filtered folds = 4

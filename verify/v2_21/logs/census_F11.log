@@ -1,0 +1,24 @@
+algebra folds of K over F_11: 3440
+  reps 20  kernel folds covered 155/3440  folds 134  t=10s
+  reps 40  kernel folds covered 301/3440  folds 267  t=19s
+  reps 60  kernel folds covered 438/3440  folds 392  t=28s
+  reps 80  kernel folds covered 602/3440  folds 535  t=38s
+  reps 100  kernel folds covered 694/3440  folds 780  t=49s
+  reps 120  kernel folds covered 894/3440  folds 780  t=50s
+  reps 140  kernel folds covered 1094/3440  folds 1000  t=54s
+  reps 160  kernel folds covered 1294/3440  folds 1110  t=58s
+  reps 180  kernel folds covered 1494/3440  folds 1230  t=61s
+  reps 200  kernel folds covered 1658/3440  folds 1340  t=65s
+  reps 220  kernel folds covered 1858/3440  folds 1450  t=67s
+  reps 240  kernel folds covered 2022/3440  folds 1451  t=69s
+  reps 260  kernel folds covered 2222/3440  folds 1461  t=72s
+  reps 280  kernel folds covered 2305/3440  folds 1484  t=81s
+  reps 300  kernel folds covered 2424/3440  folds 1639  t=125s
+  reps 320  kernel folds covered 2624/3440  folds 1749  t=159s
+  reps 340  kernel folds covered 2779/3440  folds 1770  t=214s
+  reps 360  kernel folds covered 2925/3440  folds 2364  t=1176s
+  reps 380  kernel folds covered 3125/3440  folds 2474  t=1211s
+  reps 400  kernel folds covered 3298/3440  folds 2474  t=1211s
+  reps 420  kernel folds covered 3372/3440  folds 2486  t=1514s
+F_11: 2619 folds (prediction 21p²+6p+12 = 2619), |G| = 110, orbits = 71, orbit sizes {1: 23, 10: 11, 11: 16, 110: 21}, non-length-filtered folds = 10; 434 torus reps, t=4535s
+F_11: fibre sizes over the 3440 kernel folds: {0: 3131, 1: 133, 11: 174, 121: 1, 451: 1}

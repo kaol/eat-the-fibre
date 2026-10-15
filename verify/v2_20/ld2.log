@@ -1,0 +1,79 @@
+algebra folds of K over F_3: 384
+  K-fold 0/384 folds 1 t=2s
+  K-fold 8/384 folds 7 t=15s
+  K-fold 24/384 folds 19 t=41s
+  K-fold 40/384 folds 31 t=66s
+  K-fold 64/384 folds 47 t=99s
+  K-fold 72/384 folds 55 t=115s
+  K-fold 88/384 folds 69 t=142s
+  K-fold 104/384 folds 76 t=156s
+  K-fold 120/384 folds 88 t=178s
+  K-fold 128/384 folds 92 t=187s
+  K-fold 136/384 folds 95 t=193s
+  K-fold 144/384 folds 102 t=206s
+  K-fold 168/384 folds 111 t=230s
+  K-fold 184/384 folds 115 t=237s
+  K-fold 200/384 folds 116 t=243s
+  K-fold 208/384 folds 118 t=248s
+  K-fold 224/384 folds 124 t=260s
+  K-fold 264/384 folds 144 t=320s
+  K-fold 272/384 folds 150 t=331s
+  K-fold 288/384 folds 154 t=362s
+  K-fold 304/384 folds 163 t=379s
+  K-fold 312/384 folds 196 t=400s
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 5, Aut orbit 1, Aut+grading orbit 1, numerical local dim 4
+  tangent 5, Aut orbit 1, Aut+grading orbit 1, numerical local dim 4
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 3
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 3
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 1
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 1
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 3
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 3
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 3
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 3
+  tangent 1, Aut orbit 0, Aut+grading orbit 0, numerical local dim 1
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 2, Aut+grading orbit 2, numerical local dim 2
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 3, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 5, Aut orbit 1, Aut+grading orbit 1, numerical local dim 1
+  tangent 5, Aut orbit 1, Aut+grading orbit 1, numerical local dim 1
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+  tangent 2, Aut orbit 1, Aut+grading orbit 1, numerical local dim 2
+lifted folds: 161  (tangent, Aut orbit, Aut+grading orbit, local) distribution: [((0, 0, 0, 0), 12), ((1, 0, 0, 1), 11), ((1, 1, 1, 1), 32), ((2, 1, 1, 1), 2), ((2, 1, 1, 2), 8), ((2, 2, 2, 2), 64), ((3, 1, 1, 2), 2), ((3, 1, 1, 3), 6), ((3, 2, 2, 2), 20), ((5, 1, 1, 1), 2), ((5, 1, 1, 4), 2)]
+local dim ≤ Aut+grading orbit dim at every lifted fold: False
+folds with local dim > Aut+grading orbit dim: 29

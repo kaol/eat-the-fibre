@@ -1,0 +1,14 @@
+algebra folds of K over F_7: 1528
+  reps 20  kernel folds covered 80/1528  folds 101  t=25s
+  reps 40  kernel folds covered 150/1528  folds 120  t=36s
+  reps 60  kernel folds covered 250/1528  folds 213  t=56s
+  reps 80  kernel folds covered 325/1528  folds 331  t=91s
+  reps 100  kernel folds covered 430/1528  folds 374  t=102s
+  reps 120  kernel folds covered 550/1528  folds 458  t=119s
+  reps 140  kernel folds covered 655/1528  folds 506  t=127s
+  reps 160  kernel folds covered 770/1528  folds 590  t=143s
+  reps 180  kernel folds covered 870/1528  folds 591  t=146s
+  reps 200  kernel folds covered 955/1528  folds 605  t=161s
+  reps 220  kernel folds covered 1025/1528  folds 633  t=196s
+  reps 240  kernel folds covered 1120/1528  folds 683  t=323s
+  reps 260  kernel folds covered 1215/1528  folds 738  t=682s

@@ -33,6 +33,8 @@ BATCH = [
     ('two_pairs_sep', 3, {}, "1⇉2→3⇉4: new"),
     ('pair_after3', 3, {}, "1⇉2→3→4→5: new"),
     ('two_pairs', 5, {}, "1⇉2⇉3: heaviest job (dim K = 6, ~197k kernel folds; tens of core-hours) — decides whether its families persist"),
+    ('two_pairs', 7, {}, "1⇉2⇉3 over F_7 (v2.24): G×T orbits 716 = F_3 count if the extra F_5 orbits are defined over Q(i); "
+                     "792 if they are one-parameter families (Conjecture 3*ˡ fails). Kernel stage: 62M subspaces, now batched on the GPU"),
 ]
 def done():
     out = {}
@@ -44,7 +46,7 @@ def done():
 def show(i, q, p, pred, note, r=None):
     s = f"[{i}] {q} over F_{p}: {note}"
     if r:
-        got = {k: r.get(k) for k in ('N', 'orbits_G', 'orbits_GxGr')}
+        got = {k: r.get(k) for k in ('N', 'orbits_G', 'orbits_GxGr', 'orbits_GxT', 'orbits_GxTloc') if k in r}
         chk = " ".join(f"{k}={got[k]}" + ("" if k not in pred else (" ok" if got[k] == pred[k] else f" (predicted {pred[k]}) MISMATCH")) for k in got)
         s += f"\n      {chk}; transversal={r.get('transversal')}; t={r.get('t')}s"
     else:
