@@ -69,7 +69,7 @@ So "P ~ φ_w P φ_w⁻¹ for w ∈ W(P) ∩ (k^×)^classes" together with G-conj
 | 1⇉2⇉3 | 814 | 728 | 716 | 716 | 4 (all) |
 | 1⇉2, 2→3, 2→4 | 428 | 428 | 428 | **414** | 4 (64), 8 (364) |
 
-**Local test [exact + numerical] (`analysis/orbitcheck.py`, `logs/orbitcheck_tgtfork_3.log`).** Every one of the 428 G-orbits of 1⇉2, 2→3, 2→4 has a member that lifts to an exact ℚ-fold. Tabulated by (r_G, r_T, tangent dimension), the torus enlarges the orbit at exactly **28 orbits, (2, 3, 3), all split compatible**. There tangent = r_T, so the fold variety is locally one orbit of Aut_Δ ⋊ T. Grading alone gives r_H = r_G there (transversal count 0), which is why the grading-based census could not see them.
+**Local test [exact; numerical part pending] (`analysis/orbitcheck.py`, `logs/orbitcheck_tgtfork_3.log`).** Every one of the 428 G-orbits of 1⇉2, 2→3, 2→4 has a member that lifts to an exact ℚ-fold. Tabulated by (r_G, r_T, tangent dimension), the torus enlarges the orbit at exactly **28 orbits, (2, 3, 3), all split compatible**. There tangent = r_T, so the fold variety is locally one orbit of Aut_Δ ⋊ T. Grading alone gives r_H = r_G there (transversal count 0), which is why the grading-based census could not see them. At many other orbits the tangent space is larger than r_T (e.g. 82 of type (0, 0, 1) and 14 of type (1, 1, 2)). The generic-point local-dimension test there was stopped by its 2-hour limit before reporting. So this check shows that the torus accounts for the 28 family orbits, but **not yet** that no other moduli exist; the 𝔽₅ count 414 (pending) tests that globally.
 
 **A calibration lesson.** On 1⇉2, 1→3, the first version of the generic-point test flagged one class (local dimension 3, orbit rank 2). The flagged points lay about 0.01 from a degenerate fold, where orbit-rank singular values are O(distance) (e.g. 2.0, 0.013, 0, 0). Replacing the single 1e-2 step with a projected random walk (12 tangent steps of 0.05) gives well-conditioned ranks (smallest retained singular value ≥ 0.017) and no flags. That agrees with the 101-orbit count at four primes.
 
@@ -105,7 +105,7 @@ So "P ~ φ_w P φ_w⁻¹ for w ∈ W(P) ∩ (k^×)^classes" together with G-conj
 ## 5. Pending (user's machine)
 
 1. `python3 refinish.py` on the existing checkpoints. Predictions: 1⇉2, 2→3, 2→4 / 𝔽₅ → orbits_GxTloc = **414**. The others keep their grading counts (101, 485, 334, 257, 120, 183). 1⇉2⇉3 / 𝔽₅ → orbits_GxT and orbits_GxTloc: 3\*ˡ predicts **716**.
-2. `analysis/orbitcheck.py` on 1⇉2→3⇉4 and 1⇉2→3→4→5 over 𝔽₃ (needs `--save-folds`), to see whether they have torus families.
+2. `analysis/orbitcheck.py` on 1⇉2→3⇉4 and 1⇉2→3→4→5 over 𝔽₃ (needs `--save-folds`), to see whether they have torus families; and `analysis/orbitcheck.py pair_tgtfork 3 1` to finish the generic-point test for 1⇉2, 2→3, 2→4 (stopped here at 2 hours).
 
 ## 6. Open questions
 
