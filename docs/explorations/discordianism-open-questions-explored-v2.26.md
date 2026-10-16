@@ -104,8 +104,10 @@ Caveats:
 1. **Conjecture 3ᵖ**: with one parallel class, ker Δ = A₀ ⊕ D has no products of differences. Is that enough for a proof
    through the kernel fibration?
 2. Classify the 19 families of 1⇉2⇉3 (one is Theorem 1) and their parameter curves.
-3. 1⇉2→3⇉4: are the two pairs, separated by an arrow, still coupled through ker Δ (δ_α β δ_γ)? Its 𝔽₅ census is
-   running.
+3. 1⇉2→3⇉4: are the two pairs, separated by an arrow, still coupled? **No, through ker Δ:** its kernel is spanned by
+   the four vertices, δ_α and δ_γ, and δ_α·β·δ_γ is not in it (deleting β leaves δ_α ⊗ δ_γ). It has no fork either.
+   **Prediction, recorded before the 𝔽₅ census finishes: no families, 1158 orbits over 𝔽₅ under G, G × grading and
+   G × T, as over 𝔽₃.**
 4. Carried: unobstructed violations; Kronecker plus a loop; zigzag; dihedral; ρ.
 
 ---
