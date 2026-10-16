@@ -1,0 +1,4 @@
+1. P_t is a Δ-compatible fold for all t (symbolic): True
+   (the general member with coefficients (a, b, c) is idempotent: True; it is P_t after scaling δa, δb when ab ≠ 0, t = c/(ab))
+2. F_3: every element of H (|H| = 144) preserves t on the family: True; all P_t are census folds: True; the 3 members lie in pairwise distinct H-orbits: True; H-orbit sizes [4]
+3. F_5: every element of H (|H| = 6400) preserves t on the family: True; all P_t are census folds: True; the 5 members lie in pairwise distinct H-orbits: True; H-orbit sizes [16]

@@ -1,0 +1,10 @@
+two_pairs: family component of type (4, 2, 4, 23, 2, 3): free parameters [y9, y15, y19]
+  X(u) is a Δ-compatible fold for all parameter values: True
+  Lie N: 6 generators; vector fields on the parameters: [[y9, 0, y19 - 1], [0, y15 + 1, y19 - 1], [y9, 0, y19 - 1], [0, y15 + 1, y19 - 1], [0, 0, 0], [0, 0, 0]]
+  monomial-ratio invariants (degree ≤ 2): []
+  polynomial invariants (degree ≤ 2): [a0]
+  generic rank of Lie H at X(u): 2  (dim H = 6, dim S = 4)
+  N-invariant (shifted monomial): t = (y19 - 1)/(y9*(y15 + 1))
+  family X(u), columns P(b) = Σ X[i, b] i:
+    P(e1) = (1)·e1 + (-y9)·a1 + (y9)·a2 + (-y15*y9 - y19 - y9 + 1)·a1b1 + (y15*y9 + y19 + y9 - 1)·a1b2 + (y15*y9 + y19 + y9 - 1)·a2b1 + (-y15*y9 - y19 - y9 + 1)·a2b2
+    P(e3) = (1)·e3 + (-y15 - 1)·b1 + (y15 + 1)·b2 + (y19 - 1)·a1b1 + (1 - y19)·a1b2 + (1 - y19)·a2b1 + (y19 - 1)·a2b2
