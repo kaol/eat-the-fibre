@@ -19,6 +19,7 @@ mathematics forces them.*
 | v2.25 Q1 | An explicit family for 1⇉2⇉3 | **Theorem 1:** P_t (below) is a Δ-compatible fold for every t, and t is invariant under H = G × T² (Aut_Δ° times the class torus). So Folds(k(1⇉2⇉3)) has infinitely many H-orbits, over any field with infinitely many elements **[proved; checked symbolically and over 𝔽₃, 𝔽₅]** |
 | — | Where the families are | Fixed-point loci locate families of non-generic orbits exactly. Over 𝔽₃, **82 H-orbits** lie on families, all in the three orbit types whose counts grow with q (sizes (q − 1)², q(q − 1)², q²(q − 1)²). No family occurs in any type whose count is constant **[exact candidates; numerical verdicts; one exact Gröbner confirmation each way]** |
 | — | Why two pairs | The family uses δ_αδ_β, the product of the two parallel differences. It lies in ker Δ, and a quiver with one parallel class has no such element. This supports Conjecture 3ᵖ (v2.25) and suggests where a proof should look |
+| — | Test of the mechanism | 1⇉2→3⇉4 (pairs separated by an arrow, no product in ker Δ): no families, predicted before the run. **1158 orbits over 𝔽₃ and 𝔽₅** under every group; N(q) = 79q⁴ + 156q³ + 30q² + 34q + 25 **[verified (exact)]** |
 
 ---
 
@@ -108,6 +109,10 @@ Caveats:
    the four vertices, δ_α and δ_γ, and δ_α·β·δ_γ is not in it (deleting β leaves δ_α ⊗ δ_γ). It has no fork either.
    **Prediction, recorded before the 𝔽₅ census finishes: no families, 1158 orbits over 𝔽₅ under G, G × grading and
    G × T, as over 𝔽₃.**
+   **Confirmed:** 69 820 folds over 𝔽₅ in **1158** orbits under G, G × grading, G × T and the local torus, with every
+   orbit-type count equal to its 𝔽₃ value. The 𝔽₃ orbit types give N(q) = 79q⁴ + 156q³ + 30q² + 34q + 25, which
+   matches 11 008 and 69 820. Separating the pairs by an arrow removes the moduli, as the kernel mechanism predicts.
+   (Computed in the container with the v2.25 engine, 8918 s on 2 CPU threads; raw data `data/two_pairs_sep_5.pkl.gz`.)
 4. Carried: unobstructed violations; Kronecker plus a loop; zigzag; dihedral; ρ.
 
 ---

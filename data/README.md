@@ -4,6 +4,7 @@
 |---|---|
 | `checkpoints.tar.gz` | the 10 checkpoints of the v2.23 batch (`run_batch.py` jobs 1–10), as produced on the user's machine (torch engine, ROCm on an AMD Radeon 880M/890M iGPU, 2026-10-14/15). Extracts to `checkpoints/*.pkl`, 44 MB |
 | `results.jsonl` | the JSON lines `pcensus.py` wrote for those runs (one per job, v2.24 fields included), plus job 11 |
+| `two_pairs_sep_5.pkl.gz` | 1⇉2→3⇉4 over 𝔽₅ (v2.26), computed in the container with the v2.25 engine; its line is the last in `results.jsonl` |
 | `two_pairs_7.pkl.gz` | job 11: 1⇉2⇉3 over 𝔽₇ (153 480 fibres, 336 866 base folds; 92 MB uncompressed). Computed on the user's machine with the pre-v2.25 engine; re-finished here with the v2.25 code (kernel stage reproduced its 153 480 torus representatives) |
 
 A checkpoint is the raw census: `{name, p, nreps, fibres: {torus-orbit index: [int16 (d, d) arrays]}}`. Each fibre over a
@@ -44,5 +45,6 @@ file itself, but the content written back is the same.
 | 1⇉2→3→4→5 / 𝔽₃ | 5405 | 1770 | 1770 | 1770 | 1770 |
 | 1⇉2⇉3 / 𝔽₅ | 251550 | 1112 | 790 | 754 | 754 |
 | 1⇉2⇉3 / 𝔽₇ (job 11, v2.25) | 1682084 | 1506 | 852 | 792 | 792 |
+| 1⇉2→3⇉4 / 𝔽₅ (v2.26, container) | 69820 | 1158 | 1158 | 1158 | 1158 |
 
 Job 11 (1⇉2⇉3 over 𝔽₇), received 2026-10-16: the same checks pass (numpy-only pickle, 153 480 / 153 480 fibres). Its line in `results.jsonl` is the v2.25 re-finish of the checkpoint.
