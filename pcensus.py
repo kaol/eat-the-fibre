@@ -40,6 +40,14 @@ QUIVERS.update({
     'two_pairs_post': (4, [(0, 1), (0, 1), (1, 2), (1, 2), (2, 3)]),    # 1⇉2⇉3→4
     'two_pairs_short': (3, [(0, 1), (0, 1), (1, 2), (1, 2), (0, 2)]),   # 1⇉2⇉3 with 1→3 (Theorem 2's hypothesis fails)
     'pairs_in':     (3, [(0, 1), (0, 1), (2, 1), (2, 1)]),              # 1⇉2⇇3 (two classes, not consecutive)
+    # v2.27: converging / diverging parallel classes (Theorem 3) and controls
+    'pairs_out':    (3, [(1, 0), (1, 0), (1, 2), (1, 2)]),              # 1⇇2⇉3 (opposite of pairs_in)
+    'pairs_in_tail': (4, [(0, 1), (0, 1), (2, 1), (2, 1), (1, 3)]),     # 1⇉2⇇3, 2→4
+    'pairs_in_extra': (4, [(0, 1), (0, 1), (2, 1), (2, 1), (3, 1)]),    # 1⇉2⇇3, 4→2
+    'pairs_in_pre': (4, [(3, 0), (0, 1), (0, 1), (2, 1), (2, 1)]),      # 4→1⇉2⇇3
+    'pairs_in_side': (4, [(0, 3), (0, 1), (0, 1), (2, 1), (2, 1)]),     # 4←1⇉2⇇3
+    'pairs_in_short': (3, [(0, 1), (0, 1), (2, 1), (2, 1), (0, 2)]),    # 1⇉2⇇3, 1→3 (hypothesis fails)
+    'triple_pair_in': (3, [(0, 1), (0, 1), (0, 1), (2, 1), (2, 1)]),    # 1⇛2⇇3
 })
 
 def _rref_fast(self, A):

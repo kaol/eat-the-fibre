@@ -27,7 +27,7 @@ gens_ = [sp.sympify(g, locals={f'y{i}': ys[i] for i in range(k)}) for g in fam['
 # 1. parametrize: repeatedly substitute, and solve any generator for a variable it contains linearly with a constant
 #    coefficient; then (rationally) for a variable occurring linearly with a polynomial coefficient.
 sol = {}
-def subst(e): return sp.expand(e.subs(sol))
+def subst(e): return sp.expand(sp.numer(sp.together(e.subs(sol))))   # numerator: rational substitutions stay polynomial
 def step(const_only):
     for g in gens_:
         g2 = subst(g)

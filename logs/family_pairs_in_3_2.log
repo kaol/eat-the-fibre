@@ -1,0 +1,8 @@
+pairs_in F_3: candidate type (36, 4, 2, 27, 2, 3) #0; dim C_S = 27; 469 equations
+  Krull dimension of Folds ∩ C_S (all components): 3
+  129 components; 1 through P; dims of those: [3]
+  component dim 3: 20 linear and 9 nonlinear generators; nonlinear: [y8*y18 + y26^2 - y18 + y26, y9*y18 - y20*y26 + y18 - y20, y8*y20 + y9*y26 - y20 + y26, y8*y24 - y25*y26 - y24 + y26, y9*y24 - y26^2 + y24 - y26, y20*y24 - y18*y26]
+pairs_in F_3: candidate type (36, 4, 2, 27, 2, 3) #1; dim C_S = 27; 469 equations
+  Krull dimension of Folds ∩ C_S (all components): 3
+  129 components; 1 through P; dims of those: [3]
+  component dim 3: 20 linear and 9 nonlinear generators; nonlinear: [y8*y18 + y26^2 - y18 - y26, y9*y18 - y20*y26 + y18 + y26, y8*y20 + y9*y26 - y8 - y9 - y20 + y26, y8*y24 - y25*y26 - y24 + y25, y9*y24 - y26^2 + y24 + y26, y20*y24 - y18*y26 + y18 - y24]

@@ -1,0 +1,21 @@
+1. P_s is a Δ-compatible fold for all s (symbolic):
+   pairs_in       : in u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; in u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   pairs_out      : out u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; out u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   pairs_in_tail  : in u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; in u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   pairs_in_extra : in u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; in u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   pairs_in_pre   : in u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; in u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   pairs_in_side  : in u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; in u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   triple_pair_in : in u=1, w=3, v=2, hypothesis True: F1 True, F2 True, F4 True; in u=3, w=1, v=2, hypothesis True: F1 True, F2 True, F4 True
+   pairs_in_short : in u=1, w=3, v=2, hypothesis False: F1 False, F2 False, F4 False; in u=3, w=1, v=2, hypothesis False: F1 False, F2 False, F4 False
+   two_pairs      : no converging or diverging pair of classes
+   two_pairs_sep  : no converging or diverging pair of classes
+2. Lie(Aut_Δ) (Δ-derivations): dimension vs dim Lie(G); all kill the vertices (the class torus is not in
+   Aut_Δ: it rescales Δ, and moves folds to folds only through the class-weight lemma):
+   pairs_in       : dim 4, dim Lie(G) 4, vertices fixed: True
+   pairs_out      : dim 4, dim Lie(G) 4, vertices fixed: True
+   two_pairs      : dim 4, dim Lie(G) 4, vertices fixed: True
+   pairs_in_tail  : dim 4, dim Lie(G) 4, vertices fixed: True
+3. Over F_p (pairs_in): families in the census, vertex blocks, orbits (H = G × fold-preserving torus):
+   F_3: p = 3, N = 6376, families_in_census = {'F1': True, 'F2': True, 'F4': True, 'F3': True}, vertex_blocks = 31, orbits = 453, family_orbits = {'F1': 3, 'F2': 3, 'F4': 3, 'F3': 3}, family_orbit_sizes = {'F1': [36, 36, 12], 'F2': [36, 36, 36], 'F4': [36, 36, 36], 'F3': [36, 36, 12]}, orbits_per_block_hist = {1: 4, 6: 2, 8: 2, 9: 4, 12: 4, 13: 3, 18: 3, 20: 1, 24: 4, 31: 2, 33: 2}, generic_members_per_family = {'F1': 1, 'F2': 1, 'F4': 1, 'F3': 1}, single_orbit_blocks = 4, single_orbit_blocks_are_generic_family_members = True, other_blocks_orbit_total = 449
+   F_5: p = 5, N = 59972, families_in_census = {'F1': True, 'F2': True, 'F4': True, 'F3': True}, vertex_blocks = 39, orbits = 461, family_orbits = {'F1': 5, 'F2': 5, 'F4': 5, 'F3': 5}, family_orbit_sizes = {'F1': [400, 400, 400, 400, 80], 'F2': [400, 400, 400, 400, 400], 'F4': [400, 400, 400, 400, 400], 'F3': [400, 400, 400, 400, 80]}, orbits_per_block_hist = {1: 12, 6: 2, 8: 2, 9: 4, 12: 4, 13: 3, 18: 3, 20: 1, 24: 4, 31: 2, 33: 2}, generic_members_per_family = {'F1': 3, 'F2': 3, 'F4': 3, 'F3': 3}, single_orbit_blocks = 12, single_orbit_blocks_are_generic_family_members = True, other_blocks_orbit_total = 449
+   F_7: p = 7, N = 281568, families_in_census = {'F1': True, 'F2': True, 'F4': True, 'F3': True}, vertex_blocks = 47
