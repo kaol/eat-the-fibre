@@ -34,6 +34,12 @@ QUIVERS.update({
     'two_pairs': (3, [(0, 1), (0, 1), (1, 2), (1, 2)]),                 # 1⇉2⇉3
     'two_pairs_sep': (4, [(0, 1), (0, 1), (1, 2), (2, 3), (2, 3)]),     # 1⇉2→3⇉4
     'pair_after3': (5, [(0, 1), (0, 1), (1, 2), (2, 3), (3, 4)]),       # 1⇉2→3→4→5
+    # v2.27: consecutive parallel classes (Theorem 2) and controls
+    'pair_triple':  (3, [(0, 1), (0, 1), (1, 2), (1, 2), (1, 2)]),      # 1⇉2⇛3
+    'two_pairs_pre':  (4, [(0, 1), (1, 2), (1, 2), (2, 3), (2, 3)]),    # 1→2⇉3⇉4
+    'two_pairs_post': (4, [(0, 1), (0, 1), (1, 2), (1, 2), (2, 3)]),    # 1⇉2⇉3→4
+    'two_pairs_short': (3, [(0, 1), (0, 1), (1, 2), (1, 2), (0, 2)]),   # 1⇉2⇉3 with 1→3 (Theorem 2's hypothesis fails)
+    'pairs_in':     (3, [(0, 1), (0, 1), (2, 1), (2, 1)]),              # 1⇉2⇇3 (two classes, not consecutive)
 })
 
 def _rref_fast(self, A):

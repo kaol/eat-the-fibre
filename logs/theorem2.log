@@ -1,0 +1,7 @@
+two_pairs       : classes 1⇉2⇉3: hypothesis True, P_t is a fold for all t: True
+pair_triple     : classes 1⇉2⇉3: hypothesis True, P_t is a fold for all t: True
+two_pairs_pre   : classes 2⇉3⇉4: hypothesis True, P_t is a fold for all t: True
+two_pairs_post  : classes 1⇉2⇉3: hypothesis True, P_t is a fold for all t: True
+two_pairs_short : classes 1⇉2⇉3: hypothesis False, P_t is a fold for all t: False
+pairs_in        : no consecutive parallel classes
+two_pairs_sep   : no consecutive parallel classes
