@@ -3,13 +3,14 @@
 *Takes up v2.26's mechanism claim ("the moduli come from the product of parallel differences") and tests it. It is half
 right. Consecutive parallel classes always carry a family (Theorem 2, the general form of Theorem 1). But a census
 designed to confirm the converse failed: 1⇉2⇇3 has no such product, and it still has infinitely many orbits. The cause
-is a second, simpler mechanism (Theorem 3). There the modulus is a vertex coefficient of P, which no symmetry can move.*
+is a second, simpler mechanism (Theorem 3). There the modulus is a vertex coefficient of P, which no symmetry can move. Two finiteness conjectures proposed
+along the way were each refuted by the census recorded as their test (§5).*
 
 *Scripts (in `analysis/`): `theorem2.py`, `theorem3.py`, `fixedlocus.py`, `family.py`, `family_invariant.py` (patched:
-rational substitutions keep numerators). Logs: `logs/theorem2.log`, `logs/theorem3.log`,
+rational substitutions keep numerators), `vertex_blocks.py`. Logs: `logs/theorem2.log`, `logs/theorem3.log`, `logs/vertex_blocks_*.log`,
 `logs/fixedlocus_pairs_in_3.log`, `logs/family_pairs_in_3_2.log`, `logs/results_container.jsonl`. Labels: **proved**,
 **verified (exact)**, **numerical**, **conjectured**. Predictions were committed to git before each census ran
-(commits 2d85cef, 2e088c2, e398159). Discordian glosses are descriptive labels (L3): nothing in the mathematics forces them.*
+(commits 2d85cef, 2e088c2, e398159, 48cc6c5). Discordian glosses are descriptive labels (L3): nothing in the mathematics forces them.*
 
 ---
 
@@ -17,12 +18,12 @@ rational substitutions keep numerators). Logs: `logs/theorem2.log`, `logs/theore
 
 | # | Question | Answer |
 |---|---|---|
-| v2.26 Q3 | Do consecutive parallel classes always give moduli? | **Theorem 2:** yes. For classes A: u→v, B: v→w (|A|, |B| ≥ 2, u ≠ w, no arrow between u and w), P_t is a fold for every t, and t is invariant **[proved; symbolic on 4 quivers, fails on the control]** |
+| v2.26 Q3 | Do consecutive parallel classes always give moduli? | **Theorem 2:** yes. For classes A: u→v, B: v→w (both of size ≥ 2, u ≠ w, no arrow between u and w), P_t is a fold for every t, and t is invariant **[proved; symbolic on 4 quivers, fails on the control]** |
 | — | Converse: no consecutive classes ⇒ finitely many orbits? | **False.** The prediction for 1⇉2⇇3 (committed first) failed. Local-torus orbits: 453, 461, 469, 485 over 𝔽₃, 𝔽₅, 𝔽₇, 𝔽₁₁ **[verified (exact)]** |
 | — | The second mechanism | **Theorem 3:** for converging classes A: u→v, B: w→v (or diverging ones), there are three explicit one-parameter families of folds. Their invariant is the **vertex block** of P (P's coefficients of vertices on vertices). G, the class weightings and (on the quivers checked) Aut_Δ° fix it **[proved; symbolic on 7 quivers, fails on the control]** |
 | — | Is that all of 1⇉2⇇3? | Yes over 𝔽₃ and 𝔽₅. Orbits = 449 + 4(q − 2): every vertex block carrying exactly one orbit is a generic member of a family, and the rest total 449 at both primes. Vertex blocks: 4q + 19 (q = 3, 5, 7) **[verified (exact)]** |
 | — | Contrast | 1⇉2⇉3 has 23 vertex blocks over 𝔽₃ and over 𝔽₅. Its moduli sit in the radical (Theorem 1). The two mechanisms differ |
-| — | Conjectures | **3ᵛ** (finite iff no two classes of size ≥ 2 share a vertex) was refuted by its own recorded test: 1⇉2⇇3 + 1→3 has 366 local-torus orbits over 𝔽₃ and 𝔽₅. **3ʰ:** infinitely many iff Theorem 2 or 3 applies. Tests: §5 |
+| — | Conjectures | Two were proposed and both were **refuted by their recorded tests**. **3ᵛ** (finite iff no two classes share a vertex): 1⇉2⇇3 + 1→3 has 366 local-torus orbits over 𝔽₃ and 𝔽₅. **3ʰ** (infinite iff Theorem 2 or 3 applies): 1⇉2⇉3 + 1→3 grows, 1668 → 1840. Data table: §5 |
 
 ---
 
@@ -68,7 +69,7 @@ Prediction (commit 2d85cef): the local-torus count would be the same over 𝔽�
 | 7 | 281 568 | 629 | 469 |
 | 11 | 2 385 368 | 773 | 485 |
 
-**The prediction failed:** 445 + 4(q − 1). The growth sits in one orbit type, size q²(q − 1)²: 63, 71, 79, 95 orbits.
+**The prediction failed:** 445 + 4(q − 1) (= 449 + 4(q − 2), the form used in §3). The growth sits in one orbit type, size q²(q − 1)²: 63, 71, 79, 95 orbits.
 Only the grading preserves the whole fold set (torus_preserving = q − 1 of (q − 1)²). Some folds mix the two classes, so
 a class weighting is not a symmetry there.
 
@@ -89,9 +90,9 @@ It is **y₂₆, the e₂-coefficient of P(e₁)**: a vertex coefficient.
 
 **Lemma (vertex block).** Let Q be acyclic, and let π₀: kQ → kQ₀ be the projection along the radical (the paths of
 positive length). Let h be an algebra automorphism with h(e_i) = e_i for all i. Then π₀(hPh⁻¹)|_{kQ₀} = π₀P|_{kQ₀}
-for every linear P. This applies to every element of G, to every class weighting, and to the identity component of
-Aut_Δ: every Δ-derivation of kQ kills the vertices (`theorem3.py`, check 2: dim Lie(Aut_Δ) = dim Lie G = 4 on 1⇉2⇇3,
-1⇇2⇉3, 1⇉2⇉3 and 1⇉2⇇3→4).
+for every linear P. This applies to every element of G and to every class weighting. On the quivers checked it also
+applies to the identity component of Aut_Δ, because every Δ-derivation kills the vertices (`theorem3.py`, check 2:
+dim Lie(Aut_Δ) = dim Lie G = 4 on 1⇉2⇇3, 1⇇2⇉3, 1⇉2⇉3 and 1⇉2⇇3 with 2→4).
 
 *Proof.* For an arrow c: s → t, h(c) = h(e_s c e_t) = e_s h(c) e_t ∈ e_s·kQ·e_t, which lies in rad because s ≠ t
 (Q is acyclic, so it has no loops). So h(rad) ⊆ rad and h fixes kQ₀; hence π₀h = π₀ and h⁻¹|_{kQ₀} = id. Then
@@ -172,7 +173,7 @@ to the meeting place. No relabelling of twins, and no clock, touches a home: wha
 | **Q2²⁷ Vertex-block lemma** | Every vertex-fixing automorphism preserves the vertex block of P (π₀P restricted to kQ₀); on the quivers checked this includes Aut_Δ° |
 | **Q3²⁷ Theorem 3** | Converging or diverging parallel classes (outer ends distinct and non-adjacent) ⇒ three explicit families with distinct vertex blocks |
 | **Q4²⁷ Retraction** | v2.26 Q3²⁶ ("the moduli come from the product of parallel differences") is withdrawn as a characterization. It describes Theorem 2's mechanism only |
-| **Q5²⁷ Conjecture 3ʰ** | Infinitely many local-torus orbits ⟺ two parallel classes of size ≥ 2 share a vertex with outer ends distinct and non-adjacent (the hypotheses of Theorems 2 and 3). Conjecture 3ᵖ (one class) is a special case. (3ᵛ, without the adjacency clause, is refuted: §5) |
+| **Q5²⁷ Refutations** | 3ᵛ and 3ʰ are recorded as false (§5). Conjecture 3ᵖ (one class) stands. No finiteness criterion for two classes is proposed |
 
 ---
 
@@ -230,17 +231,40 @@ parallel classes of size ≥ 2 share a vertex and their outer ends are distinct 
 Theorem 3 applies. **Prediction for 1⇉2⇉3 + 1→3** (consecutive classes with adjacent outer ends): the local-torus count
 is the same over 𝔽₃ and 𝔽₅.
 
+4. 1⇉2⇉3 + 1→3: **the prediction failed.** The local-torus count is 1668 over 𝔽₃ and 1840 over 𝔽₅ (G-orbits 2824 → 8148,
+   G × T 1984 → 3000; N = 77 576 and 2 656 570). Conjecture 3ʰ is refuted by its own recorded test. The arrow u → w
+   breaks Theorem 2's family, but moduli survive by some other route. Which route is not yet known; a deformation of
+   Theorem 2's family that compensates for the arrow is the obvious suspect.
+
+**Where this leaves the finiteness question.** Two conjectures fell in this round, each to the test recorded for it. The
+data on two parallel classes of size ≥ 2:
+
+| configuration | example | local-torus orbits | status |
+|---|---|---|---|
+| consecutive, outer ends non-adjacent | 1⇉2⇉3 | 678 + 19(q − 1) | infinite (Theorems 1, 2) |
+| consecutive, outer ends adjacent | 1⇉2⇉3 + 1→3 | 1668, 1840 | grows (𝔽₃, 𝔽₅) |
+| converging/diverging, outer ends non-adjacent | 1⇉2⇇3 | 449 + 4(q − 2) | infinite (Theorem 3) |
+| converging, outer ends adjacent | 1⇉2⇇3 + 1→3 | 366, 366 | constant (𝔽₃, 𝔽₅) |
+| vertex-disjoint | 1⇉2→3⇉4 | 1158, 1158 | constant (𝔽₃, 𝔽₅) |
+
+The one reading consistent with every row is: infinite iff there are consecutive classes, or converging/diverging
+classes with non-adjacent outer ends. It is fitted after the fact, so it is recorded as a question (§6, Q1), not as a
+conjecture.
+
 ---
 
 ## 6. Open questions
 
-1. **Conjecture 3ʰ**: why does an arrow between the outer ends remove the moduli (1⇉2⇇3 + 1→3: 366 orbits at 𝔽₃ and
-   𝔽₅)? A proof needs the "only if" direction, i.e. a finiteness argument.
-2. Finiteness when classes are pairwise vertex-disjoint (1⇉2→3⇉4 is finite; v2.26). Is there a proof through the
+1. Is the post hoc reading of §5 right: infinite iff there are consecutive classes, or converging/diverging classes with
+   non-adjacent outer ends? Test it first on 1⇉2⇇3 + 1→3 over 𝔽₇, then on diverging classes with adjacent ends
+   (1⇇2⇉3 + 1→3).
+2. 1⇉2⇉3 + 1→3: find its families (fixed-point loci over 𝔽₃, as in v2.26), and decide whether the invariant lives in
+   the vertex block or in the radical.
+3. 1⇉2⇇3, 2→4: prove that the 18 lines of vertex blocks (5 + 5 + 3 + 5 over F1, F3, F2, F4) are folds for every
+   parameter value, and give the rule for how a vertex downstream of v multiplies the families.
+4. Finiteness when classes are pairwise vertex-disjoint (1⇉2→3⇉4: 1158 orbits over 𝔽₃ and 𝔽₅; v2.26). Is there a proof through the
    kernel fibration, by showing that the vertex block and the radical invariants are both discrete?
-3. Are F1–F4 the complete list of vertex-block families for converging classes, on every quiver satisfying the
-   hypothesis?
-4. Carried: classify the 19 families of 1⇉2⇉3; Conjecture 3ᵖ; unobstructed violations; Kronecker plus a loop; zigzag;
+5. Carried: classify the 19 families of 1⇉2⇉3; Conjecture 3ᵖ; unobstructed violations; Kronecker plus a loop; zigzag;
    dihedral; ρ.
 
 ---

@@ -34,4 +34,4 @@ mathematics forces them.
 | converging or diverging classes u⇉v⇇w: three families whose invariant is the vertex block (π₀P on kQ₀) | proved (Theorem 3); 1⇉2⇇3 has 449 + 4(q − 2) orbits at q = 3, 5, 7, 11 | v2.27 |
 | Conjecture 3ᵖ (3\*ˡ for one parallel class) | supported by every one-class quiver tested | v2.25 |
 | Conjecture 3ᵛ (finite iff no two classes of size ≥ 2 share a vertex) | **false**: 1⇉2⇇3 + 1→3 (366 orbits over 𝔽₃ and 𝔽₅) | v2.27 |
-| Conjecture 3ʰ (infinite iff Theorem 2 or 3 applies) | conjectured | v2.27 |
+| Conjecture 3ʰ (infinite iff Theorem 2 or 3 applies) | **false**: 1⇉2⇉3 + 1→3 (1668 → 1840 over 𝔽₃, 𝔽₅) | v2.27 |

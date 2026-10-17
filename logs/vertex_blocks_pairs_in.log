@@ -1,0 +1,8 @@
+pairs_in F_3: N = 6376, H-orbits = 453, vertex blocks = 31, F1–F4 members in census: {'F1': True, 'F2': True, 'F4': True, 'F3': True}
+  orbits per block: {1: 4, 6: 2, 8: 2, 9: 4, 12: 4, 13: 3, 18: 3, 20: 1, 24: 4, 31: 2, 33: 2}
+  single-orbit blocks: 4, by restriction to (u, v, w) = (1, 2, 3): {'F1': 1, 'F2': 1, 'F3': 1, 'F4': 1}
+  orbits on all other blocks: 449
+pairs_in F_5: N = 59972, H-orbits = 461, vertex blocks = 39, F1–F4 members in census: {'F1': True, 'F2': True, 'F4': True, 'F3': True}
+  orbits per block: {1: 12, 6: 2, 8: 2, 9: 4, 12: 4, 13: 3, 18: 3, 20: 1, 24: 4, 31: 2, 33: 2}
+  single-orbit blocks: 12, by restriction to (u, v, w) = (1, 2, 3): {'F1': 3, 'F2': 3, 'F3': 3, 'F4': 3}
+  orbits on all other blocks: 449

@@ -1,0 +1,11 @@
+  kernel stage on cpu: 3583232 subspaces, subalgebras by dimension [1, 162, 757, 546, 134, 16, 1]
+  kernel stage: 10.4s
+two_pairs_short F_5: d=12, dim K=6, 196788 kernel folds in 49984 torus orbits; engine=torch
+  symmetry: 49984 torus orbits in 14206 H-orbits (H = G × T); 35778 fibres by transport; |N| = |ker(H → H|_K)| = 100
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 512
+  3584/14206 fibres computed, group 8/28, 1 stacked batches at column 10, t=60s
+  6656/14206 fibres computed, group 14/28, 1 stacked batches at column 8, t=123s
+  9728/14206 fibres computed, group 20/28, 1 stacked batches at column 8, t=185s
+  13824/14206 fibres computed, group 28/28, 1 stacked batches at column 7, t=249s
+  done in 286s; per column [parents, lifted, candidates, children] (brute force would check lifted·5^6): 6: [14206, 3013, 336125, 271693], 7: [23453, 6103, 143655, 119791], 8: [24324, 23511, 51779, 42739], 9: [8083, 7623, 10255, 10255], 10: [10047, 8240, 22442, 20510], 11: [10187, 9827, 21972, 20040]; N-quotient (|N| = 100) per column [frontier, kept]: 7: [271693, 23453], 8: [119791, 24324], 9: [42739, 8083], 10: [10255, 10047], 11: [20510, 10187]
+{"name": "two_pairs_short", "p": 5, "d": 12, "kdim": 6, "nK": 196788, "reps": 49984, "N": 2656570, "fib": {"0": 191862, "1": 240, "5": 1081, "25": 617, "125": 2312, "425": 2, "625": 260, "1125": 8, "1325": 2, "3125": 391, "12125": 1, "78125": 12}, "G": 400, "orbits_G": 8148, "sizes_G": {"1": 19, "4": 23, "5": 34, "16": 9, "20": 194, "25": 49, "40": 8, "80": 544, "100": 960, "200": 60, "400": 6248}, "orbits_GxGr": 3000, "sizes_GxGr": {"1": 19, "4": 23, "5": 34, "16": 9, "20": 106, "25": 49, "40": 12, "80": 116, "100": 296, "160": 16, "200": 16, "320": 104, "400": 748, "800": 60, "1600": 1392}, "transversal": {"lifted": 1322, "lifted_transversal": 427, "transversal_modp": 1766}, "classes": 3, "torus_preserving": 4, "torus_all": 64, "orbits_GxT": 3000, "sizes_GxT": {"1": 19, "4": 23, "5": 34, "16": 9, "20": 106, "25": 49, "40": 12, "80": 116, "100": 296, "160": 16, "200": 16, "320": 104, "400": 748, "800": 60, "1600": 1392}, "orbits_GxTloc": 1840, "local_torus_sizes": {"4": 5, "16": 4238, "64": 3905}, "t": 542}

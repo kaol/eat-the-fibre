@@ -1,0 +1,14 @@
+pairs_in_tail F_3: N = 27233, H-orbits = 1919, vertex blocks = 166, F1–F4 members in census: {'F1': True, 'F2': True, 'F4': True, 'F3': True}
+  orbits per block: {1: 21, 2: 30, 4: 28, 6: 2, 8: 2, 9: 12, 12: 8, 13: 17, 18: 7, 19: 2, 20: 4, 24: 17, 28: 2, 31: 4, 33: 6, 51: 2, 59: 1, 82: 1}
+  single-orbit blocks: 21, by restriction to (u, v, w) = (1, 2, 3): {'F1': 5, 'F2': 3, 'F3': 5, 'F4': 5, 'other': 3}
+    other: [[0, 0, 0, 0], [0, 0, 0, 0], [1, 1, 1, 0], [-1, -1, -1, 0]]
+    other: [[1, 1, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [-1, -1, -1, 0]]
+    other: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 1, 1, 1]]
+  orbits on all other blocks: 1898
+pairs_in_tail F_5: N = 271713, H-orbits = 1955, vertex blocks = 202, F1–F4 members in census: {'F1': True, 'F2': True, 'F4': True, 'F3': True}
+  orbits per block: {1: 57, 2: 30, 4: 28, 6: 2, 8: 2, 9: 12, 12: 8, 13: 17, 18: 7, 19: 2, 20: 4, 24: 17, 28: 2, 31: 4, 33: 6, 51: 2, 59: 1, 82: 1}
+  single-orbit blocks: 57, by restriction to (u, v, w) = (1, 2, 3): {'F1': 15, 'F2': 9, 'F3': 15, 'F4': 15, 'other': 3}
+    other: [[0, 0, 0, 0], [0, 0, 0, 0], [1, 1, 1, 0], [-1, -1, -1, 0]]
+    other: [[1, 1, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [-1, -1, -1, 0]]
+    other: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 1, 1, 1]]
+  orbits on all other blocks: 1898

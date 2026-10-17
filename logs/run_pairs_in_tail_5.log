@@ -1,0 +1,13 @@
+  kernel stage on cpu: 3583232 subspaces, subalgebras by dimension [1, 149, 588, 531, 162, 20, 1]
+  kernel stage: 8.9s
+pairs_in_tail F_5: d=13, dim K=6, 169696 kernel folds in 45016 torus orbits; engine=torch
+  symmetry: 45016 torus orbits in 17434 H-orbits (H = G × T); 27582 fibres by transport; |N| = |ker(H → H|_K)| = 100
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 512
+  14848/17434 fibres computed, group 30/35, 1 stacked batches at column 10, t=144s
+  14848/17434 fibres computed, group 30/35, 2 stacked batches at column 11, t=205s
+  15360/17434 fibres computed, group 31/35, 11 stacked batches at column 11, t=270s
+  16384/17434 fibres computed, group 33/35, 1 stacked batches at column 10, t=411s
+  16896/17434 fibres computed, group 34/35, 1 stacked batches at column 10, t=483s
+  16896/17434 fibres computed, group 34/35, 5 stacked batches at column 11, t=545s
+  done in 562s; per column [parents, lifted, candidates, children] (brute force would check lifted·5^6): 6: [17434, 4972, 190256, 157856], 7: [8566, 6252, 14253, 14253], 8: [3432, 2977, 6345, 5245], 9: [3544, 3387, 27223, 22419], 10: [16495, 13689, 965030, 597439], 11: [270291, 270291, 29482, 28478], 12: [28444, 28165, 7385, 2561]; N-quotient (|N| = 100) per column [frontier, kept]: 7: [157856, 8566], 8: [14253, 3432], 9: [5245, 3544], 10: [22419, 16495], 11: [597439, 270291], 12: [28478, 28444]
+{"name": "pairs_in_tail", "p": 5, "d": 13, "kdim": 6, "nK": 169696, "reps": 45016, "N": 271713, "fib": {"0": 160935, "1": 1468, "5": 2514, "25": 4557, "85": 2, "125": 10, "265": 8, "425": 2, "505": 2, "625": 185, "1325": 12, "6825": 1}, "G": 400, "orbits_G": 2441, "sizes_G": {"1": 140, "4": 160, "5": 174, "16": 43, "20": 528, "25": 95, "80": 358, "100": 498, "400": 445}, "orbits_GxGr": 1957, "sizes_GxGr": {"1": 140, "4": 160, "5": 174, "16": 43, "20": 376, "25": 95, "80": 228, "100": 338, "160": 4, "320": 40, "400": 317, "1600": 42}, "transversal": {"lifted": 1893, "lifted_transversal": 160, "transversal_modp": 164}, "classes": 3, "torus_preserving": 16, "torus_all": 64, "orbits_GxT": 1955, "sizes_GxT": {"1": 140, "4": 160, "5": 174, "16": 43, "20": 376, "25": 95, "80": 228, "100": 338, "320": 42, "400": 317, "1600": 42}, "orbits_GxTloc": 1955, "local_torus_sizes": {"16": 160, "64": 2281}, "t": 669}

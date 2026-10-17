@@ -5,6 +5,7 @@
 | `checkpoints.tar.gz` | the 10 checkpoints of the v2.23 batch (`run_batch.py` jobs 1–10), as produced on the user's machine (torch engine, ROCm on an AMD Radeon 880M/890M iGPU, 2026-10-14/15). Extracts to `checkpoints/*.pkl`, 44 MB |
 | `results.jsonl` | the JSON lines `pcensus.py` wrote for those runs (one per job, v2.24 fields included), plus job 11 |
 | `two_pairs_sep_5.pkl.gz` | 1⇉2→3⇉4 over 𝔽₅ (v2.26), computed in the container with the v2.25 engine; its line is the last in `results.jsonl` |
+| `checkpoints_v227.tar.gz` | v2.27 censuses, computed in the container (torch engine on CPU, 2026-10-17): 1⇉2⇇3 over 𝔽₃, 𝔽₅, 𝔽₇, 𝔽₁₁; 1⇇2⇉3, 1⇉2⇇3 with 2→4, 1⇉2⇇3 + 1→3 and 1⇉2⇉3 + 1→3 over 𝔽₃ and 𝔽₅. Extracts to `checkpoints/*.pkl` (431 MB). Their JSON lines are in `logs/results_container.jsonl` |
 | `two_pairs_7.pkl.gz` | job 11: 1⇉2⇉3 over 𝔽₇ (153 480 fibres, 336 866 base folds; 92 MB uncompressed). Computed on the user's machine with the pre-v2.25 engine; re-finished here with the v2.25 code (kernel stage reproduced its 153 480 torus representatives) |
 
 A checkpoint is the raw census: `{name, p, nreps, fibres: {torus-orbit index: [int16 (d, d) arrays]}}`. Each fibre over a
@@ -20,6 +21,8 @@ gunzip -c data/two_pairs_7.pkl.gz > data/checkpoints/two_pairs_7.pkl          # 
 python3 refinish.py --dir data/checkpoints --out /tmp/refinished.jsonl     # recompute every statistic, no fibre work
 python3 pcensus.py two_pairs 5 --checkpoint COPY.pkl --no-orbits --save-folds logs/folds_two_pairs_5.pkl   # all folds
 ```
+
+For the v2.27 data: `tar xzf data/checkpoints_v227.tar.gz -C data/`, then `refinish.py --dir data/checkpoints` as above.
 
 Pass a *copy* of a checkpoint to `pcensus.py`, because it rewrites the checkpoint file on exit. `refinish.py` passes the
 file itself, but the content written back is the same.
