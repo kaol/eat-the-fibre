@@ -6,3 +6,8 @@
   orbit count under the local class torus (`orbits_GxTloc`) is the same over 𝔽₃ and 𝔽₅. (G-orbit counts may grow: the
   quiver has a same-orientation fork at vertex 2, which v2.22 showed gives grading/torus-absorbed families.)
 - **1⇉2⇉3 + 1→3** (consecutive classes, but Theorem 2's hypothesis fails): no prediction.
+
+**Outcome (recorded before any analysis of it): the 1⇉2⇇3 prediction failed.** Local-torus orbit counts over
+𝔽₃, 𝔽₅, 𝔽₇, 𝔽₁₁: 453, 461, 469, 485 = 445 + 4(q − 1). G-orbits 485, 557, 629, 773. G × grading = G × T = local torus
+at every prime. The only orbit type whose count grows is the one of size q²(q − 1)² (63, 71, 79, 95). Raw lines:
+`logs/results_container.jsonl`.
