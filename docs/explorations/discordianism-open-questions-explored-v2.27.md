@@ -19,3 +19,11 @@ at every prime. The only orbit type whose count grows is the one of size q²(q �
 - **1⇉2⇇3, 2→4**: the four families of Theorem 3 persist (symbolic check), and no other mechanism is present. Prediction:
   the local-torus orbit count grows by exactly 8 from 𝔽₃ to 𝔽₅, and every vertex block that carries exactly one orbit is a
   generic member of one of the four families.
+
+**1⇇2⇉3 outcome:** N = 6376 / 59 972 and 485 / 557 G-orbits, 453 / 461 under every larger group, over 𝔽₃ / 𝔽₅: identical
+to 1⇉2⇇3, as op-duality requires.
+
+**Third prediction (recorded before the census):** Conjecture 3ᵛ (below) says the local-torus orbit count is finite iff no
+two parallel classes of size ≥ 2 share a vertex. **1⇉2⇇3 + 1→3** violates the hypothesis of Theorem 3 (the families
+P_s are not folds there), but its classes share vertex 2. Prediction under 3ᵛ: its local-torus count grows from 𝔽₃ to
+𝔽₅. A constant count refutes 3ᵛ as stated.
