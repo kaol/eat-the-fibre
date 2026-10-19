@@ -222,6 +222,99 @@ def symmetry_plan(ctx, reps, phis):
       transport  Each H-orbit of torus reps is computed once, at its first rep (the source); the other reps get
                  X' = Lh X Rh with Lh = h, Rh = Binv h⁻¹ B (X = P B in the new basis).
       kernel     N = ker(H → H|_K) fixes every PK, so it acts on every fibre; the torch engine quotients its frontier by N.
+    → (sources, {r: (source, Lh, Rh)}, N = (h (m,d,d), h⁻¹ (m,d,d)) for h ∈ N).
+    Streaming version (v2.28): H is never stored. Only one h per restriction hK and the elements of N are kept, and the
+    rep-to-rep table is recomputed in chunks (two passes), so memory is O(|H_K| + |N| + chunk). Same output as
+    symmetry_plan_ref: same sources, and for each transported rep the same source and the same choice of h (the first h,
+    in G × T enumeration order, with the needed restriction)."""
+    p, d, kdim = ctx['p'], ctx['d'], ctx['kdim']
+    B, Binv, Kmat = ctx['B'] % p, ctx['Binv'] % p, ctx['Kmat'] % p; Kinv = Binv[:kdim]
+    HKd = {}; firsth = []; Nd = {}; seen_h = set()
+    Id8 = np.eye(d, dtype=np.int8).tobytes()
+    for g, gi in build_G(ctx):
+        for l, (ph, phi_) in phis.items():
+            h, hi = ph @ g % p, gi @ phi_ % p
+            hb = h.astype(np.int8).tobytes()
+            if hb in seen_h: continue                                   # (the reference dedups h the same way)
+            seen_h.add(hb)
+            hK = Kinv @ h @ Kmat % p
+            assert ((h @ Kmat - Kmat @ hK) % p == 0).all(), "K is not H-stable"
+            k = hK.astype(np.int8).tobytes()
+            if k not in HKd: HKd[k] = len(HKd); firsth.append((h, hi, hK))
+            if k == np.eye(kdim, dtype=np.int8).tobytes(): Nd.setdefault(hb, (h, hi))
+    seen_h = None
+    Nl = list(Nd.values()); N = (np.array([x[0] for x in Nl]), np.array([x[1] for x in Nl]))
+    R = len(reps)
+    if R == 0: return [], {}, N
+    # generators of H_K: greedily add an element outside the subgroup generated so far (closure by BFS on restrictions)
+    key = lambda A: (A % p).astype(np.int8).tobytes()
+    gens = []; sub = {key(np.eye(kdim, dtype=np.int64))}
+    for h, hi, hK in firsth:
+        if key(hK) in sub: continue
+        gens.append((h, hi, hK)); I_ = np.eye(kdim, dtype=np.int64); frontier = [I_]; sub = {key(I_)}
+        while frontier:
+            nxt = []
+            for A in frontier:
+                for _, _, gK in gens:
+                    Bk = gK @ A % p; kb = key(Bk)
+                    if kb not in sub: sub.add(kb); nxt.append(Bk)
+            frontier = nxt
+    assert len(sub) == len(firsth), "generators do not generate H_K"
+    PK = np.array([PK_ for PK_, _ in reps], dtype=np.int64)
+    rk = fold_keys(PK % p); order = np.argsort(rk); srk = rk[order]
+    # the image of a torus rep is a kernel fold in some torus orbit; φ_l moves it to that orbit's rep. So each edge is
+    # labelled by (generator, l) and carries the element φ_l·g.
+    tor = [(ph, phi_, Kinv @ ph @ Kmat % p, Kinv @ phi_ @ Kmat % p) for ph, phi_ in phis.values()]
+    def image(gK, gKi):                                                  # (rep index, torus index) of the image of every r
+        out = np.full(R, -1, np.int64); tl = np.full(R, -1, np.int64); CH = 1 << 16
+        for s0 in range(0, R, CH):
+            Cg = (gK[None] @ PK[s0:s0 + CH] @ gKi[None]) % p
+            for li, (_, _, tK, tKi) in enumerate(tor):
+                ck = fold_keys((tK[None] @ Cg @ tKi[None]) % p)
+                jj = np.minimum(np.searchsorted(srk, ck), R - 1)
+                hit = (srk[jj] == ck) & (out[s0:s0 + len(ck)] < 0)
+                out[s0:s0 + len(ck)][hit] = order[jj][hit]; tl[s0:s0 + len(ck)][hit] = li
+        assert (out >= 0).all(), "an image lies in no torus orbit of a rep"
+        return out, tl
+    imgs_tl = [image(gK, Kinv @ hi @ Kmat % p) for _, hi, gK in gens]
+    imgs = [x[0] for x in imgs_tl]
+    # orbits = connected components of the generator graph; scanning r in index order makes each source the least
+    # index of its orbit (as in symmetry_plan_ref). A BFS tree from the source gives, for every other r, an h ∈ H with
+    # h·PK_source = PK_r (a product of generators). The choice of h may differ from the reference; any such h transports
+    # the fibre, which is the same set.
+    par = np.full(R, -1, np.int64); pgen = np.full(R, -1, np.int64); root = np.full(R, -1, np.int64)
+    ptor = np.full(R, -1, np.int64)
+    sources = []; bfs = []
+    for r0 in range(R):
+        if root[r0] >= 0: continue
+        sources.append(r0); root[r0] = r0; frontier = np.array([r0], np.int64)
+        while len(frontier):
+            nxt = []
+            for gi_, im in enumerate(imgs):
+                tg = im[frontier]; new_ = root[tg] < 0
+                tg_new, par_new = tg[new_], frontier[new_]
+                tg_new, first = np.unique(tg_new, return_index=True); par_new = par_new[first]
+                root[tg_new] = r0; par[tg_new] = par_new; pgen[tg_new] = gi_; ptor[tg_new] = imgs_tl[gi_][1][par_new]
+                bfs.append(tg_new); nxt.append(tg_new)
+            frontier = np.concatenate(nxt)
+    Lh = {}; trans = {}
+    for blk in bfs:                                                      # parents precede children in BFS order
+        for r in blk:
+            r = int(r); g0, gi0, _ = gens[int(pgen[r])]; pr = int(par[r]); ph, phi_ = tor[int(ptor[r])][:2]
+            g, gi_ = ph @ g0 % p, gi0 @ phi_ % p                               # edge element φ_l·g
+            h0, hi0 = Lh.get(pr, (None, None))
+            h, hi = (g, gi_) if h0 is None else (g @ h0.astype(np.int64) % p, hi0.astype(np.int64) @ gi_ % p)
+            h8 = h.astype(np.int8); Lh[r] = (h8, hi.astype(np.int8))           # entries < p ≤ 127: int8 is exact
+            trans[r] = (int(root[r]), h8, (Binv @ hi % p @ B % p).astype(np.int8))
+    return sources, trans, N
+
+def symmetry_plan_ref(ctx, reps, phis):
+    """(Reference implementation, kept for cross-checks: stores all of H and an R × |H_K| table.)"""
+    """H = G × T (substitutions × grading torus). Every h ∈ H is an algebra automorphism with Δh = (h⊗h)Δ (column sums
+    1), so h maps folds to folds and fibre(h·PK) = h·fibre(PK)·h⁻¹; K is H-stable, with h|_K = hK.
+      transport  Each H-orbit of torus reps is computed once, at its first rep (the source); the other reps get
+                 X' = Lh X Rh with Lh = h, Rh = Binv h⁻¹ B (X = P B in the new basis).
+      kernel     N = ker(H → H|_K) fixes every PK, so it acts on every fibre; the torch engine quotients its frontier by N.
     → (sources, {r: (source, Lh, Rh)}, N = (h (m,d,d), h⁻¹ (m,d,d)) for h ∈ N)."""
     p, d, kdim = ctx['p'], ctx['d'], ctx['kdim']
     B, Binv, Kmat = ctx['B'] % p, ctx['Binv'] % p, ctx['Kmat'] % p; Kinv = Binv[:kdim]
@@ -267,7 +360,7 @@ def transport(ctx, reps, fibres, trans):
     for r, (s_, Lh, Rh) in trans.items():
         if r in fibres or s_ not in fibres: continue
         Xs = np.array(fibres[s_], dtype=np.int64).reshape(-1, ctx['d'], ctx['d'])
-        Xt = (Lh @ Xs @ Rh % p).astype(np.int16)
+        Xt = (Lh.astype(np.int64) @ Xs @ Rh.astype(np.int64) % p).astype(np.int16)
         assert (Xt[:, :, :kdim] == (Kmat @ reps[r][0] % p)).all(), "transported fibre is not over its kernel fold"
         fibres[r] = list(Xt)
 
@@ -526,6 +619,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument('quiver'); ap.add_argument('p', type=int)
     ap.add_argument('--jobs', type=int, default=os.cpu_count()); ap.add_argument('--checkpoint'); ap.add_argument('--out')
     ap.add_argument('--no-orbits', action='store_true'); ap.add_argument('--save-folds')
+    ap.add_argument('--save-reps')                                       # pickle G-orbit reps + local-torus components
     ap.add_argument('--engine', choices=('pool', 'torch'), default='pool'); ap.add_argument('--device')
     ap.add_argument('--kernel', choices=('auto', 'torch', 'ref'), default='auto')   # auto: torch if importable
     ap.add_argument('--kernel-cache')                                    # default: CHECKPOINT minus .pkl, + .kernel.npz
@@ -703,6 +797,9 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
             wcount[int(ok.sum())] += 1
         comp = collections.Counter(find(i) for i in range(len(greps)))
         res['orbits_GxTloc'] = len(comp)
+        if getattr(a, 'save_reps', None):      # G-orbit representatives, sizes, and their local-torus components
+            pickle.dump(dict(name=name, p=p, basis=basis, greps=np.array(greps, dtype=np.int8), gsizes=gsizes,
+                             loc=[find(i) for i in range(len(greps))]), open(a.save_reps, 'wb'))
         res['local_torus_sizes'] = dict(sorted(wcount.items()))         # how many weightings each G-orbit admits
     res['t'] = round(time.time() - t0)
     line = json.dumps(res); print(line, flush=True)
