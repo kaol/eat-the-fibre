@@ -48,6 +48,8 @@ QUIVERS.update({
     'pairs_in_side': (4, [(0, 3), (0, 1), (0, 1), (2, 1), (2, 1)]),     # 4←1⇉2⇇3
     'pairs_in_short': (3, [(0, 1), (0, 1), (2, 1), (2, 1), (0, 2)]),    # 1⇉2⇇3, 1→3 (hypothesis fails)
     'triple_pair_in': (3, [(0, 1), (0, 1), (0, 1), (2, 1), (2, 1)]),    # 1⇛2⇇3
+    # v2.28: tests of the post hoc reading (converging classes with adjacent outer ends)
+    'triple_pair_in_short': (3, [(0, 1), (0, 1), (0, 1), (2, 1), (2, 1), (0, 2)]),   # 1⇛2⇇3, 1→3
 })
 
 def _rref_fast(self, A):
