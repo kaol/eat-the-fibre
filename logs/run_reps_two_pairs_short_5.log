@@ -1,0 +1,8 @@
+  kernel stage: cached in /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/tps5.kernel.npz
+  kernel stage: 0.2s
+two_pairs_short F_5: d=12, dim K=6, 196788 kernel folds in 49984 torus orbits; engine=torch
+  resumed: 49984/49984 fibres done
+  symmetry: 49984 torus orbits in 14206 H-orbits (H = G × T); 35778 fibres by transport; |N| = |ker(H → H|_K)| = 100
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  done in 0s; per column [parents, lifted, candidates, children] (brute force would check lifted·5^6): 
+{"name": "two_pairs_short", "p": 5, "d": 12, "kdim": 6, "nK": 196788, "reps": 49984, "N": 2656570, "fib": {"0": 191862, "1": 240, "5": 1081, "25": 617, "125": 2312, "425": 2, "625": 260, "1125": 8, "1325": 2, "3125": 391, "12125": 1, "78125": 12}, "G": 400, "orbits_G": 8148, "sizes_G": {"1": 19, "4": 23, "5": 34, "16": 9, "20": 194, "25": 49, "40": 8, "80": 544, "100": 960, "200": 60, "400": 6248}, "orbits_GxGr": 3000, "sizes_GxGr": {"1": 19, "4": 23, "5": 34, "16": 9, "20": 106, "25": 49, "40": 12, "80": 116, "100": 296, "160": 16, "200": 16, "320": 104, "400": 748, "800": 60, "1600": 1392}, "transversal": {"lifted": 1322, "lifted_transversal": 427, "transversal_modp": 1766}, "classes": 3, "torus_preserving": 4, "torus_all": 64, "orbits_GxT": 3000, "sizes_GxT": {"1": 19, "4": 23, "5": 34, "16": 9, "20": 106, "25": 49, "40": 12, "80": 116, "100": 296, "160": 16, "200": 16, "320": 104, "400": 748, "800": 60, "1600": 1392}, "orbits_GxTloc": 1840, "local_torus_sizes": {"4": 5, "16": 4238, "64": 3905}, "t": 260}

@@ -1,0 +1,7 @@
+  kernel stage: cached in checkpoints/pairs_in_short_tail_3.kernel.npz
+  kernel stage: 0.1s
+pairs_in_short_tail F_3: d=18, dim K=6, 32904 kernel folds in 17748 torus orbits; engine=torch
+  resumed: 4096/17748 fibres done
+  symmetry: 17748 torus orbits in 12210 H-orbits (H = G × T); 5538 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  0/8114 fibres computed, group 1/2, 7 stacked batches at column 13, t=67s

@@ -1,0 +1,5 @@
+  kernel stage: cached in checkpoints/triple_pair_in_short_5.kernel.npz
+  kernel stage: 3.3s
+triple_pair_in_short F_5: d=11, dim K=6, 2256256 kernel folds in 572944 torus orbits; engine=torch
+  symmetry: 572944 torus orbits in 5080 H-orbits (H = G × T); 567864 fibres by transport; |N| = |ker(H → H|_K)| = 500
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
