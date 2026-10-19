@@ -84,6 +84,25 @@ def is_fold(P, M, DL, d):
         ok &= sp.expand(lhs - P * sp.Matrix(DL[l].tolist()) * P.T) == sp.zeros(d, d)
     return bool(ok)
 
+def delta_derivations(name):
+    """an integer basis of {D : D derivation of kQ, ΔD = (D⊗1 + 1⊗D)Δ} (d × d matrices, columns = images of basis paths)"""
+    nv, arrows = QUIVERS[name]; basis, M, DL = build(nv, arrows); d = len(basis)
+    Ds = sp.symbols(f'D0:{d * d}'); D = sp.Matrix(d, d, Ds); eqs = []
+    for i in range(d):
+        for j in range(d):
+            prod = sp.Matrix(M[i, j].tolist())
+            rhs = sum((D[k, i] * sp.Matrix(M[k, j].tolist()) + D[k, j] * sp.Matrix(M[i, k].tolist()) for k in range(d)), sp.zeros(d, 1))
+            eqs += list(D * prod - rhs)
+    for l in range(d):
+        lhs = sum((D[m, l] * sp.Matrix(DL[m].tolist()) for m in range(d)), sp.zeros(d, d))
+        eqs += list(lhs - D * sp.Matrix(DL[l].tolist()) - sp.Matrix(DL[l].tolist()) * D.T)
+    A_, _ = sp.linear_eq_to_matrix([e for e in eqs if e != 0], Ds)
+    out = []
+    for v_ in A_.nullspace():
+        den = sp.ilcm(*[sp.fraction(sp.nsimplify(x_))[1] for x_ in v_])
+        out.append([[int(v_[r * d + c] * den) for c in range(d)] for r in range(d)])
+    return out
+
 def lie_aut_delta(name):
     """dim of {D : D derivation of kQ, ΔD = (D⊗1 + 1⊗D)Δ}, and whether all such D kill the vertices (exact, over Q)"""
     nv, arrows = QUIVERS[name]; basis, M, DL = build(nv, arrows); d = len(basis)

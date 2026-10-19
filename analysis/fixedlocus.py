@@ -23,7 +23,7 @@ from sympy import QQ as SQQ
 from scipy.optimize import least_squares
 name, p = sys.argv[1], int(sys.argv[2]); per_type = int(sys.argv[3]) if len(sys.argv) > 3 else 3
 stage = sys.argv[4] if len(sys.argv) > 4 else 'all'          # 'exact' | 'numeric' | 'all'
-CANDS = f'logs/fixedlocus_cands_{name}_{p}' + ('_local' if _os.environ.get('FL_LOCAL') == '1' else '') + '.pkl'
+CANDS = f'logs/fixedlocus_cands_{name}_{p}' + ('_local' if _os.environ.get('FL_LOCAL') == '1' else '') + ('_aut' if _os.environ.get('FL_AUT') == '1' else '') + '.pkl'
 sys.argv = ['x']
 exec(open(_os.path.join(ROOT, 'pcensus.py')).read().split("if __name__ == '__main__':")[0])
 ctx = setup(name, p); C.update(ctx); F = ctx['F']; basis, arrows, d, M, DL = ctx['basis'], ctx['arrows'], ctx['d'], ctx['M'], ctx['DL']
@@ -44,6 +44,10 @@ members = collections.defaultdict(list)
 for P in folds: members[lab[(P % p).astype(np.int8).tobytes()]].append(P)
 # ---- Lie H over Q
 gens, E = lie_G(ctx)
+if _os.environ.get('FL_AUT') == '1':      # v2.28: Lie(Aut_Δ) (all Δ-derivations) instead of Lie G; larger where an
+    import runpy as _rp                   # arrow runs parallel to a product of parallel differences
+    _T3 = _rp.run_path(_os.path.join(AN if 'AN' in globals() else _os.path.join(ROOT, 'analysis'), 'theorem3.py'), run_name='t3')
+    gens = [np.array(m, dtype=np.int64) for m in _T3['delta_derivations'](name)]
 Ec = [np.diag([0 if b[0] == 'v' else sum(1 for x in b[1] if x in c) for b in basis]).astype(np.int64) for c in cl]
 LH = [sp.Matrix(x.tolist()) for x in gens + Ec]
 def qfold(P):

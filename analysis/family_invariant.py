@@ -17,7 +17,8 @@ if 'ROOT' not in globals():
     __file__ = _os.path.join(ROOT, 'pcensus.py')
 import sys, pickle, itertools, collections, numpy as np, sympy as sp
 name, p, ki, w = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])
-fam = pickle.load(open(f'logs/family_{name}_{p}_{ki}_{w}.pkl', 'rb'))
+SUF = '_local' if _os.environ.get('FL_LOCAL') == '1' else ''
+fam = pickle.load(open(f'logs/family_{name}_{p}{SUF}_{ki}_{w}.pkl', 'rb'))
 sys.argv = ['x']
 exec(open(_os.path.join(ROOT, 'pcensus.py')).read().split("if __name__ == '__main__':")[0])
 ctx = setup(name, p); basis, arrows, d, M, DL = ctx['basis'], ctx['arrows'], ctx['d'], ctx['M'], ctx['DL']
@@ -73,6 +74,24 @@ gens, E = lie_G(ctx)
 cls = collections.defaultdict(list)
 for a, st in enumerate(arrows): cls[st].append(a)
 Ec = [np.diag([0 if b[0] == 'v' else sum(1 for x in b[1] if x in c) for b in basis]).astype(np.int64) for c in cls.values()]
+if SUF:      # local torus at the base point: E_w for w with P compatible with Δ_w (v2.28)
+    idxb_ = {b: i for i, b in enumerate(basis)}; DLc = []
+    for c in cls.values():
+        D_ = np.zeros((d, d, d), dtype=np.int64)
+        for l, b in enumerate(basis):
+            if b[0] == 'v': continue
+            for k_, x in enumerate(b[1]):
+                if x not in c: continue
+                pre = idxb_[('p', b[1][:k_])] if k_ > 0 else idxb_[('v', arrows[x][0])]
+                suf = idxb_[('p', b[1][k_ + 1:])] if k_ + 1 < len(b[1]) else idxb_[('v', arrows[x][1])]
+                D_[l, pre, suf] += 1
+        DLc.append(D_)
+    Pq_ = np.array(Pq, dtype=np.int64)
+    cols_ = [(np.einsum('ml,mab->lab', Pq_, D_) - np.einsum('ai,lij,bj->lab', Pq_, D_, Pq_)).ravel() for D_ in DLc]
+    Wn = sp.Matrix(np.array(cols_).T.tolist()).nullspace()
+    Ec = [sum((int(sp.Rational(w_[k_]) * sp.ilcm(*[sp.Rational(x).q for x in w_])) * Ec[k_] for k_ in range(len(Ec))),
+              np.zeros((d, d), dtype=np.int64)) for w_ in Wn]
+    print(f"  local torus at P: dim {len(Ec)} of {len(cls)}")
 LH = [sp.Matrix(x.tolist()) for x in gens + Ec]
 P0 = sp.Matrix(Pq.tolist())
 A = sp.Matrix([list(x * P0 - P0 * x) for x in LH]).T

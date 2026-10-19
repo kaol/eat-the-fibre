@@ -13,7 +13,8 @@ if 'ROOT' not in globals():
     __file__ = _os.path.join(ROOT, 'pcensus.py')
 import sys, pickle, collections, numpy as np
 name, p = sys.argv[1], int(sys.argv[2])
-cd = pickle.load(open(f'logs/fixedlocus_cands_{name}_{p}.pkl', 'rb'))
+SUF = '_local' if _os.environ.get('FL_LOCAL') == '1' else ''
+cd = pickle.load(open(f'logs/fixedlocus_cands_{name}_{p}{SUF}.pkl', 'rb'))
 types = sorted({c[0] for c in cd['cands']}, key=str)
 if '--list' in sys.argv:
     for i, t in enumerate(types): print(i, t, sum(1 for c in cd['cands'] if c[0] == t))
@@ -60,4 +61,4 @@ for c in through:
     nonlin = [g for g in c.groebner_basis() if g.degree() > 1]
     print(f"  component dim {c.dimension()}: {len(lin)} linear and {len(nonlin)} nonlinear generators; nonlinear: {nonlin[:6]}", flush=True)
 pickle.dump(dict(key=key_, P=Pq, Cb=Cb, through=[[str(g) for g in c.gens()] for c in through]),
-            open(f'logs/family_{name}_{p}_{ki}_{which}.pkl', 'wb'))
+            open(f'logs/family_{name}_{p}{SUF}_{ki}_{which}.pkl', 'wb'))

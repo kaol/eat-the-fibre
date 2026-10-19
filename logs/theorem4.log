@@ -1,0 +1,12 @@
+1. symbolic fold check (general member over Q(x, y, z); normal form over Q(t)):
+   two_pairs        classes 1⇉2⇉3: general member a fold: True; normal form: True
+   two_pairs_short  classes 1⇉2⇉3: general member a fold: True; normal form: True
+   pair_triple      classes 1⇉2⇉3: general member a fold: True; normal form: True
+   two_pairs_pre    classes 2⇉3⇉4: general member a fold: True; normal form: True
+   two_pairs_post   classes 1⇉2⇉3: general member a fold: True; normal form: True
+   two_pairs_dense  classes 1⇉2⇉3: general member a fold: True; normal form: True
+2. over F_p:
+   two_pairs_short F_3: t read off P_t is t: True; all 864 fold conjugates under G × T keep t: True; the 3 members lie in pairwise distinct local-torus orbits: True
+   two_pairs_short F_5: t read off P_t is t: True; all 128000 fold conjugates under G × T keep t: True; the 5 members lie in pairwise distinct local-torus orbits: True
+   two_pairs F_3: t read off P_t is t: True; all 432 fold conjugates under G × T keep t: True
+   two_pairs F_5: t read off P_t is t: True; all 32000 fold conjugates under G × T keep t: True
