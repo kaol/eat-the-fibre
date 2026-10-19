@@ -9,7 +9,7 @@ import EatTheFibre.Examples
 import EatTheFibre.Gen.two_pairs_short
 import EatTheFibre.Gen.pairs_in_short
 import EatTheFibre.Discordia.Bridge
-import EatTheFibre.Discordia.Completion
+import EatTheFibre.Discordia.Exact
 import EatTheFibre.Discordia.Logic
 import EatTheFibre.Discordia.Ops
 
@@ -83,3 +83,12 @@ open EatTheFibre
 #print axioms Discordia.Ops.B3_periods
 #print axioms Discordia.Ops.hand
 #print axioms Discordia.Ops.calendar
+
+-- δ-D2 exactly (v2.32)
+#print axioms Discordia.Completion.mult_iff
+#print axioms Discordia.Completion.point0_iff
+#print axioms Discordia.Completion.line1_iff
+#print axioms Discordia.Completion.pointB_iff
+#print axioms Discordia.Completion.line2_iff
+#print axioms Discordia.Completion.line0_iff
+#print axioms Discordia.Completion.lineB_iff

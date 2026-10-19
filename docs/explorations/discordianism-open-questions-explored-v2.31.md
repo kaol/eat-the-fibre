@@ -7,7 +7,7 @@ remains informal. It then applies the algebraic layer to the folds of the resear
 - *the dendriform layer transfers to folds; the Loday layer does not;*
 - *v2's δ-D2 classification refines into four strata, keyed to how the kernel of the fold sits over its image.*
 
-*The 65 audited results (22 earlier, 43 new) all depend only on Lean's standard axioms. No `sorry`, no `native_decide`
+*The 66 audited results (22 earlier, 44 new) all depend only on Lean's standard axioms (one, `calendar`, on none; count corrected in v2.32). No `sorry`, no `native_decide`
 (`lean/EatTheFibre/Audit.lean`).*
 
 ---

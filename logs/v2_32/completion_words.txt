@@ -1,0 +1,5 @@
+K3_after p=5: 120/120 orbits agree; 22 vanishing patterns
+K3_srcout p=5: 207/207 orbits agree; 20 vanishing patterns
+pair_after2 p=7: 334/334 orbits agree; 26 vanishing patterns
+pairs_in p=3: 485/485 orbits agree; 25 vanishing patterns
+pairs_out p=3: 485/485 orbits agree; 25 vanishing patterns

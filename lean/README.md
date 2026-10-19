@@ -1,4 +1,4 @@
-# Lean 4 formalization (v2.29–v2.31)
+# Lean 4 formalization (v2.29–v2.32)
 
 Lean 4 (v4.35.0) with Mathlib (v4.35.0, pinned in `lake-manifest.json`). Mathlib is used from its prebuilt cache; `.lake/`
 (packages, oleans, ~7 GB) is git-ignored and never committed.
@@ -24,6 +24,7 @@ python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census
 | `Examples.lean` | The general theorems applied to 1⇉2⇉3 + 1→3, 1⇉2⇇3 + 2→4, 4→1⇉2⇇3 |
 | `Discordia/Fold.lean` | The v2 algebra layer derived: M4, RB(−1), δ-L A1–A5, δ-L1, E1 from M3 (idempotent ring endomorphism); δ-D, δ-D1 from RB(−1); E1⋆ from idempotence |
 | `Discordia/Completion.lean` | δ-D2 derived and refined: dendriform completions of a fold by class (any fold / `ker·im ⊆ ker` / bimodule / `ker·im·ker = 0`); every idempotent endomorphism is in the bimodule class (`endo_bimod`) |
+| `Discordia/Exact.lean` | δ-D2 exactly (v2.32): exact defects of every completion family for an arbitrary fold; in a unital algebra each stratum is present iff an explicit condition holds (`point0_iff`, `line1_iff`, `pointB_iff`, `line2_iff`, `line0_iff`, `lineB_iff`); `mult_iff` (fold multiplicative ⟺ kernel an image-bimodule) |
 | `Discordia/Bridge.lean` | **`isFold_iff_rb`**: folds = idempotent RB(−1) operators commuting with Δ; `fold_star` (δ-D1 for folds); `thm3_isRB`, `thm4_isRB`; δ-L fails for Theorem 4's fold (`thm4_not_dialgebra`, `thm4_not_multiplicative`, `thm4_not_module`) |
 | `Discordia/Logic.lean` | 𝔼: seven values, collapse homomorphism to S_fde (L2), L3 (`Γ ⊨ φ ⟺ Γ ⊨_LP φ ∧ Var φ ⊆ Var Γ`), L4, the L5 reduction, Meta-1 (4 of 49) |
 | `Discordia/Ops.lean` | M2, N5 (zero counit ⇒ trivial coalgebra), N6 on ℤ/5, β4, B4 (Eckmann–Hilton, and B4 ⇒ no neutral chaos), B1 (countable vs continuum; grid-named set null under i.i.d. Bernoulli products), B3 periods, §9 arithmetic |
@@ -39,6 +40,7 @@ python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census
 | Theorem 4 on every acyclic quiver with consecutive classes (v2.28) | `thm4_general`, rigidity `thm4_general_rigid` |
 | Theorem 3 on every acyclic quiver with converging classes, `u ≠ w`, no arrow between `u` and `w` (v2.27) | `thm3_general`, rigidity `thm3_general_rigid` |
 | Folds are idempotent RB(−1) operators commuting with Δ (v2.31) | `CoordAlg.isFold_iff_rb` |
+| δ-D2 exact (v2.32) | `Discordia.Completion.*_iff`, `mult_iff` |
 | v2 axioms M2–M4, N5, N6, β4, δ-L, δ-D, δ-D1, δ-D2, E1, E1⋆, B1, B3, B4, L2–L5, Meta-1 (v2.31) | `Discordia/*.lean` |
 
 Not formalized (v2 axioms): see v2.31 §6. Not formalized: Theorem 2 in general (only on 1⇉2⇉3); that the class substitutions of an arbitrary quiver satisfy the
