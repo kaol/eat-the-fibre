@@ -9,7 +9,7 @@ present under a class hypothesis on the fold. This round makes δ-D2 exact and t
 - *Every fold orbit of 21 stored censuses is classified by these conditions. The polynomial growth of the orbit
   counts splits cleanly by class, and matches the families of Theorems 2–4.*
 - *The extra completions, points outside the predicted strata, are explained orbit by orbit by which typed products
-  vanish (confirmed on every orbit of the five censuses tested so far).*
+  vanish (confirmed on every orbit of the six censuses tested so far).*
 
 *Audit: 73 results, all on Lean's standard axioms (one on none). v2.31's figure "65" should have read 66. One entry
 (`calendar`) depends on no axioms, and that count had missed it; corrected there.*
@@ -26,7 +26,7 @@ present under a class hypothesis on the fold. This round makes δ-D2 exact and t
 | 4 | Census: the module class (L, R, K, E) is an invariant of every orbit notion. Its distribution is given for 21 censuses. Every orbit's completion variety contains exactly the strata that item 3 predicts | computed (exact, over 𝔽_p), `analysis/module_classes.py`, `logs/v2_32/` |
 | 5 | Growth by class. On 1⇉2⇉3 the local-torus count 678 + 19(q−1) splits as 12 (no class) + 3 (L) + 3 (R) + 1 (LRKE). On 1⇉2⇇3 the count 449 + 4(q−2) splits as 3 (no class) + 1 (L). All other classes are constant in q | computed at q = 5, 7 (1⇉2⇉3) and q = 3, 5, 7, 11 (1⇉2⇇3) |
 | 6 | Opposite duality: pairs_in and pairs_out swap L and R counts; every self-opposite quiver has #L = #R | computed |
-| 7 | Extra completions are determined by which of 18 typed words vanish (all orbits of 1⇉2⇇3 and 1⇇2⇉3 over 𝔽₃, 1⇛2→3 and 1⇛2, 1→3 over 𝔽₅, 1⇉2→3→4 over 𝔽₇; the other 16 censuses pending) | computed on 5 of 21 censuses (1631 orbits, no mismatch), `analysis/completion_words.py` |
+| 7 | Extra completions are determined by which of 18 typed words vanish (all orbits of 1⇉2⇇3 and 1⇇2⇉3 over 𝔽₃, 1⇛2→3 and 1⇛2, 1→3 over 𝔽₅, 1⇉2→3→4 and 1⇉2⇉3 over 𝔽₇; the other 15 censuses pending) | computed on 6 of 21 censuses (3137 orbits, no mismatch), `analysis/completion_words.py` |
 
 ## 1. Exact δ-D2
 
@@ -126,7 +126,7 @@ that vanish outright, not merely under P. `analysis/completion_words.py` tests t
   - P(ker·im) and P(im·ker).
 - It then solves the dendriform equations in the free model where exactly those words are killed.
 
-Result so far: on every orbit of the five censuses tested, the predicted set equals the actual completion variety.
+Result so far: on every orbit of the six censuses tested, the predicted set equals the actual completion variety.
 
 | census | orbits agreeing | distinct vanishing patterns |
 |---|---|---|
@@ -135,9 +135,10 @@ Result so far: on every orbit of the five censuses tested, the predicted set equ
 | 1⇛2→3 / 𝔽₅ | 120 / 120 | 22 |
 | 1⇛2, 1→3 / 𝔽₅ | 207 / 207 | 20 |
 | 1⇉2→3→4 / 𝔽₇ | 334 / 334 | 26 |
+| 1⇉2⇉3 / 𝔽₇ | 1506 / 1506 | 54 |
 
 So in these censuses the completion variety of a fold is a function of its vanishing pattern alone: nonzero words
-behave as if free, and no linear relation among them creates a completion. The run over the remaining 16 censuses
+behave as if free, and no linear relation among them creates a completion. The run over the remaining 15 censuses
 (`python3 analysis/completion_words.py` on the dumps in `logs/v2_32/reps.tar.gz`) was cut off with the session turn and
 is pending.
 
