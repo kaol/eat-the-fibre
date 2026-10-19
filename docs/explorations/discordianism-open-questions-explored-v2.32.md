@@ -9,7 +9,7 @@ present under a class hypothesis on the fold. This round makes δ-D2 exact and t
 - *Every fold orbit of 21 stored censuses is classified by these conditions. The polynomial growth of the orbit
   counts splits cleanly by class, and matches the families of Theorems 2–4.*
 - *The extra completions, points outside the predicted strata, are explained orbit by orbit by which typed products
-  vanish (confirmed on every orbit of the seven censuses tested so far).*
+  vanish (confirmed on all 16983 orbits of the 21 censuses).*
 
 *Audit: 73 results, all on Lean's standard axioms (one on none). v2.31's figure "65" should have read 66. One entry
 (`calendar`) depends on no axioms, and that count had missed it; corrected there.*
@@ -26,7 +26,7 @@ present under a class hypothesis on the fold. This round makes δ-D2 exact and t
 | 4 | Census: the module class (L, R, K, E) is an invariant of every orbit notion. Its distribution is given for 21 censuses. Every orbit's completion variety contains exactly the strata that item 3 predicts | computed (exact, over 𝔽_p), `analysis/module_classes.py`, `logs/v2_32/` |
 | 5 | Growth by class. On 1⇉2⇉3 the local-torus count 678 + 19(q−1) splits as 12 (no class) + 3 (L) + 3 (R) + 1 (LRKE). On 1⇉2⇇3 the count 449 + 4(q−2) splits as 3 (no class) + 1 (L). All other classes are constant in q | computed at q = 5, 7 (1⇉2⇉3) and q = 3, 5, 7, 11 (1⇉2⇇3) |
 | 6 | Opposite duality: pairs_in and pairs_out swap L and R counts; every self-opposite quiver has #L = #R | computed |
-| 7 | Extra completions are determined by which of 18 typed words vanish (all orbits of 1⇉2⇇3 and 1⇇2⇉3 over 𝔽₃, 1⇛2→3 and 1⇛2, 1→3 over 𝔽₅, 1⇉2→3→4 and 1⇉2⇉3 over 𝔽₇, 1⇉2→3→4→5 over 𝔽₃; the other 14 censuses pending) | computed on 7 of 21 censuses (4907 orbits, no mismatch), `analysis/completion_words.py` |
+| 7 | Extra completions are determined by which of 18 typed words vanish (all 16983 orbits of the 21 censuses) | computed on all 21 censuses (16983 orbits, no mismatch), `analysis/completion_words.py` |
 
 ## 1. Exact δ-D2
 
@@ -126,22 +126,35 @@ that vanish outright, not merely under P. `analysis/completion_words.py` tests t
   - P(ker·im) and P(im·ker).
 - It then solves the dendriform equations in the free model where exactly those words are killed.
 
-Result so far: on every orbit of the seven censuses tested, the predicted set equals the actual completion variety.
+Result: on every orbit of all 21 censuses (16983 orbits), the predicted set equals the actual completion variety.
 
 | census | orbits agreeing | distinct vanishing patterns |
 |---|---|---|
-| 1⇉2⇇3 / 𝔽₃ | 485 / 485 | 25 |
-| 1⇇2⇉3 / 𝔽₃ | 485 / 485 | 25 |
 | 1⇛2→3 / 𝔽₅ | 120 / 120 | 22 |
 | 1⇛2, 1→3 / 𝔽₅ | 207 / 207 | 20 |
-| 1⇉2→3→4 / 𝔽₇ | 334 / 334 | 26 |
+| 1⇉2⇉3 / 𝔽₅ | 1112 / 1112 | 54 |
 | 1⇉2⇉3 / 𝔽₇ | 1506 / 1506 | 54 |
+| 1⇉2→3⇉4 / 𝔽₃ | 1158 / 1158 | 50 |
 | 1⇉2→3→4→5 / 𝔽₃ | 1770 / 1770 | 26 |
+| 1⇉2⇉3 + 1→3 / 𝔽₃ | 2824 / 2824 | 56 |
+| 1⇉2⇇3 / 𝔽₃ | 485 / 485 | 25 |
+| 1⇉2⇇3 / 𝔽₅ | 557 / 557 | 25 |
+| 1⇉2⇇3 / 𝔽₇ | 629 / 629 | 25 |
+| 1⇉2⇇3 / 𝔽₁₁ | 773 / 773 | 25 |
+| 1⇇2⇉3 / 𝔽₃ | 485 / 485 | 25 |
+| 1⇇2⇉3 / 𝔽₅ | 557 / 557 | 25 |
+| 1⇉2⇇3 + 2→4 / 𝔽₃ | 2081 / 2081 | 35 |
+| 1⇉2⇇3 + 1→3 / 𝔽₃ | 407 / 407 | 30 |
+| 1⇉2⇇3 + 1→3 / 𝔽₅ | 513 / 513 | 30 |
+| 1⇉2, 1→3 / 𝔽₁₁ | 137 / 137 | 20 |
+| 1⇉2→3→4 / 𝔽₇ | 334 / 334 | 26 |
+| 1→2⇉3→4 / 𝔽₇ | 257 / 257 | 24 |
+| 1⇉2, 2→3, 2→4 / 𝔽₅ | 456 / 456 | 22 |
+| 1⇉2, 1→3, 4→2 / 𝔽₇ | 615 / 615 | 26 |
 
-So in these censuses the completion variety of a fold is a function of its vanishing pattern alone: nonzero words
-behave as if free, and no linear relation among them creates a completion. The run over the remaining 14 censuses
-(`python3 analysis/completion_words.py` on the dumps in `logs/v2_32/reps.tar.gz`) was cut off with the session turn and
-is pending.
+So the completion variety of a fold is a function of its vanishing pattern alone. The words that do not vanish behave
+as if free: no linear relation among them creates a completion. At most 56 of the 2¹⁸ possible patterns occur on any
+one quiver.
 
 ## 4. Next
 
