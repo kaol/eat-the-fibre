@@ -4,3 +4,4 @@ pair_after2 p=7: 334/334 orbits agree; 26 vanishing patterns
 pairs_in p=3: 485/485 orbits agree; 25 vanishing patterns
 pairs_out p=3: 485/485 orbits agree; 25 vanishing patterns
 two_pairs p=7: 1506/1506 orbits agree; 54 vanishing patterns
+pair_after3 p=3: 1770/1770 orbits agree; 26 vanishing patterns
