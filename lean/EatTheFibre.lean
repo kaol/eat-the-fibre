@@ -10,4 +10,9 @@ import EatTheFibre.Reduction
 import EatTheFibre.Path
 import EatTheFibre.General
 import EatTheFibre.Examples
+import EatTheFibre.Discordia.Fold
+import EatTheFibre.Discordia.Completion
+import EatTheFibre.Discordia.Logic
+import EatTheFibre.Discordia.Ops
+import EatTheFibre.Discordia.Bridge
 import EatTheFibre.Audit

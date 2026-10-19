@@ -8,6 +8,10 @@ The build log prints the lists below.
 import EatTheFibre.Examples
 import EatTheFibre.Gen.two_pairs_short
 import EatTheFibre.Gen.pairs_in_short
+import EatTheFibre.Discordia.Bridge
+import EatTheFibre.Discordia.Completion
+import EatTheFibre.Discordia.Logic
+import EatTheFibre.Discordia.Ops
 
 open EatTheFibre
 
@@ -33,3 +37,49 @@ open EatTheFibre
 #print axioms thm4_general_rigid
 #print axioms thm4_two_pairs_short
 #print axioms thm3_pairs_in_tail
+
+-- Discordianism v2, derived (v2.31)
+#print axioms Discordia.M4_split
+#print axioms Discordia.M4_rotaBaxter
+#print axioms Discordia.dL_A1
+#print axioms Discordia.dL1_leibniz
+#print axioms Discordia.E1_left
+#print axioms Discordia.dD_3
+#print axioms Discordia.dD1_split
+#print axioms Discordia.dD1_hom
+#print axioms Discordia.E1star
+#print axioms Discordia.M3_isRB
+#print axioms Discordia.Completion.baxter
+#print axioms Discordia.Completion.line1
+#print axioms Discordia.Completion.point0
+#print axioms Discordia.Completion.line2
+#print axioms Discordia.Completion.pointB
+#print axioms Discordia.Completion.line0
+#print axioms Discordia.Completion.lineB
+#print axioms Discordia.Completion.endo_bimod
+#print axioms CoordAlg.isFold_iff_rb
+#print axioms CoordAlg.fold_star
+#print axioms thm4_isRB
+#print axioms thm3_isRB
+#print axioms Q_two_pairs.thm4_not_dialgebra
+#print axioms Q_two_pairs.thm4_not_multiplicative
+#print axioms Q_two_pairs.thm4_not_module
+#print axioms Discordia.Logic.E_iff_Sfde
+#print axioms Discordia.Logic.L3
+#print axioms Discordia.Logic.L4_no_tautology
+#print axioms Discordia.Logic.L4_all_satisfiable
+#print axioms Discordia.Logic.L5
+#print axioms Discordia.Logic.meta1
+#print axioms Discordia.Logic.meta1_card
+#print axioms Discordia.Ops.M2
+#print axioms Discordia.Ops.N5
+#print axioms Discordia.Ops.N6_nonassoc
+#print axioms Discordia.Ops.N6_no_unit
+#print axioms Discordia.Ops.β4
+#print axioms Discordia.Ops.B4
+#print axioms Discordia.Ops.B4_no_neutral_chaos
+#print axioms Discordia.Ops.B1_chaos_uncountable
+#print axioms Discordia.Ops.B1_named_null
+#print axioms Discordia.Ops.B3_periods
+#print axioms Discordia.Ops.hand
+#print axioms Discordia.Ops.calendar
