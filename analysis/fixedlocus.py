@@ -187,7 +187,9 @@ for k_, v in sorted(tab.items(), key=lambda kv: str(kv[0])): print(f"   {k_}: {v
 if stage in ('numeric', 'all'):
     ver = collections.Counter(); seen_type = collections.Counter(); nfam = ntest = 0
     print("  numerical local dimension of Folds^S where tangent > dim N·P (at most %d per type):" % per_type, flush=True)
+    sizes_only = {int(x) for x in _os.environ.get('FL_SIZES', '').split(',') if x}     # optional filter on orbit size
     for key_, Pq, Cb in cands:
+        if sizes_only and key_[0] not in sizes_only: continue
         if seen_type[key_] >= per_type: continue
         seen_type[key_] += 1; ld = local_dim_in(Pq, Cb); ntest += 1
         fam = ld > key_[4]; nfam += fam

@@ -1,4 +1,4 @@
-"""run_batch.py — the long censuses for v2.23.
+"""run_batch.py — the long censuses (v2.23; jobs 12–15 added in v2.28).
 
 Each job runs pcensus.py with the torch fibre engine (fibre_torch.py: GPU via ROCm/CUDA when torch sees one, else CPU),
 a per-job checkpoint in checkpoints/, and appends one JSON line to results.jsonl. Rerunning skips finished jobs and
@@ -35,6 +35,12 @@ BATCH = [
     ('two_pairs', 5, {}, "1⇉2⇉3: heaviest job (dim K = 6, ~197k kernel folds; tens of core-hours) — decides whether its families persist"),
     ('two_pairs', 7, {}, "1⇉2⇉3 over F_7 (v2.24): G×T orbits 716 = F_3 count if the extra F_5 orbits are defined over Q(i); "
                      "792 if they are one-parameter families (Conjecture 3*ˡ fails). Kernel stage: 62M subspaces, now batched on the GPU"),
+    # v2.28 (predictions committed in docs/explorations/...-v2.28.md before these runs; jobs 1–11 are already done)
+    ('triple_pair_in_short', 5, {'orbits_GxTloc': 752}, "P2: 1⇛2⇇3 + 1→3; local-torus count as over F_3 (752). OOM in the "
+                     "container (~5.7e5 torus orbits, 5080 H-orbits after symmetry)"),
+    ('pairs_in_short_tail', 3, {}, "P4 (part 1): 1⇉2⇇3 + 1→3 + 2→4, d = 18; too slow in the container"),
+    ('pairs_in_short_tail', 5, {}, "P4 (part 2): orbits_GxTloc should equal job 13's"),
+    ('pairs_in_short', 11, {'orbits_GxTloc': 366}, "1⇉2⇇3 + 1→3: 366 over F_3, F_5, F_7; one more prime"),
 ]
 def done():
     out = {}
