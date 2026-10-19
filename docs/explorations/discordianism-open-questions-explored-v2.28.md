@@ -6,8 +6,8 @@ every vertex, whatever other arrows are present (Theorem 4). With Theorem 3, thi
 reading of v2.27. The "only if" half has passed every test that has finished, and the two remaining tests are handed
 over.*
 
-*Scripts: `analysis/theorem4.py`, `analysis/loc_blocks.py`, `analysis/unipotent_merge.py`, `analysis/fixedlocus.py` (new local-torus mode
-`FL_LOCAL=1`, and `FL_SIZES`), `analysis/family.py` and `analysis/family_invariant.py` (both local-aware),
+*Scripts: `analysis/theorem4.py`, `analysis/loc_blocks.py`, `analysis/unipotent_merge.py`, `analysis/aut_audit.py`, `analysis/fixedlocus.py` (new modes
+`FL_LOCAL=1` for the local torus and `FL_AUT=1` for Lie(Aut_Δ), and the filter `FL_SIZES`), `analysis/family.py` and `analysis/family_invariant.py` (both local-aware),
 `tests/test_symmetry_plan.py`. Logs: `logs/theorem4.log`, `logs/fixedlocus_two_pairs_short_3_local_*.log`,
 `logs/fixedlocus_pairs_in_3_local_exact.log`, `logs/results_container.jsonl`. Raw data: `logs/reps_two_pairs_short_{3,5}.pkl`
 (G-orbit representatives and their local-torus components). Labels: **proved**, **verified (exact)**, **numerical**,
@@ -24,8 +24,8 @@ descriptive labels (L3).*
 | v2.27 Q1 | The post hoc reading | **"If" half proved** (Theorems 3 and 4). **"Only if" half:** P1 holds (366 over 𝔽₇ too). P2 and P4 are too large for the container and are handed over (`run_batch.py` jobs 12–15) |
 | — | Where the 1⇉2⇉3 + 1→3 moduli sit | P3 holds: 21 vertex blocks over 𝔽₃ and 𝔽₅, so the moduli lie in the radical. Theorem 4 lies in the zero block; the full accounting is open |
 | — | **Correction** | On 1⇉2⇉3 + 1→3, Aut_Δ° is larger than the census group G: c ↦ c + s·δ_aδ_b. With it, the orbit count is **939 over 𝔽₃ and 983 over 𝔽₅** (not 1668, 1840). It still grows. The converging quivers are unaffected |
-| — | Method | The fixed-point-locus test (v2.26) used the whole class torus. That is wrong where weightings are not symmetries. **Local mode:** use the Lie algebra of the local torus at P, {E_w : P compatible with Δ_w}. On 1⇉2⇇3 it gives the same 39 candidates and removes all 36 anomalous rows |
-| — | Engine | The census symmetry plan no longer stores H (10⁶ elements for a triple class over 𝔽₅). It uses generators of H restricted to K and BFS transport, and was checked identical to the old plan and to six full 𝔽₃ censuses |
+| — | Method | The fixed-point-locus test (v2.26) used the whole class torus. That is wrong where weightings are not symmetries. **Local mode:** use the Lie algebra of the local torus at P, {E_w : P compatible with Δ_w}. On 1⇉2⇇3 it gives the same 39 candidates and removes all 36 anomalous rows. **Aut mode:** use Lie(Aut_Δ) in place of Lie G, needed on 1⇉2⇉3 + 1→3 |
+| — | Engine | The census symmetry plan no longer stores H (10⁶ elements for a triple class over 𝔽₅). It uses generators of H restricted to K and BFS transport. Checked against the old plan on six quivers, and by three full 𝔽₃ censuses with identical results |
 
 ---
 
@@ -106,9 +106,22 @@ The count still grows, as Theorem 4 requires: U fixes V pointwise, so t is a U-i
 
 The two largest increases are in the block P(e₁) = 0, P(e₂) = e₁ + e₂, P(e₃) = e₃ and its mirror (224 → 274 each). In
 the zero block the growth is in the types q²(q − 1)² (109 → 127) and q²(q − 1)³ (86 → 98). Theorem 4's family lies in
-the zero block (it kills every vertex). The other blocks need other families, plausibly Theorem 4 composed with vertex
-idempotents. They are not yet classified. Numerical family tests in local mode (one candidate per type):
-NUMERIC_PLACEHOLDER
+the zero block (it kills every vertex). The other blocks need other families, which are not yet classified.
+
+Numerical family tests at the Aut_Δ° level (`FL_LOCAL=1 FL_AUT=1`: Lie(Aut_Δ), including c ↦ δ_aδ_b, plus the local torus;
+one candidate per type, sizes 36, 72, 144 over 𝔽₃):
+- 202 candidates in 16 types (288 with Lie G alone);
+- 12 tested, and 7 carry a family, in types of size 36, 72 and 144;
+- the Theorem 4 shape (vertex block 0, image of the form in §1) occurs among the candidates of all six FAMILY types
+  of size 36 and 72.
+
+The G-level run (`FL_LOCAL=1` only) is superseded on this quiver, because its N omits U's direction. Its one
+Singular-confirmed family is Theorem 4's, whose invariant is U-invariant, so that confirmation stands. A sanity check:
+on 1⇉2⇇3, where Lie(Aut_Δ) = Lie G, the Aut_Δ-mode table is identical to the local-mode table.
+
+**Audit** (`analysis/aut_audit.py`, `logs/aut_audit.log`): of the 31 quivers in the census table, only 1⇉2⇉3 + 1→3 and
+the dense control have dim Lie(Aut_Δ) > dim Lie G. Every other census count in v2.16–v2.28 is a count for Aut_Δ° (with
+the torus variants as stated).
 
 ---
 
@@ -183,7 +196,7 @@ local-torus count is the same over 𝔽₃ and 𝔽₅.
 
 **Final status:**
 - P1 holds.
-- P3 holds.
+- P3 holds. (Its orbit figures, 1668 → 1840, are counts under G; with all of Aut_Δ° they are 939 → 983, §2.)
 - P2 and P4 are open: `run_batch.py` jobs 12 (P2), 13–14 (P4) and 15 (1⇉2⇇3 + 1→3 over 𝔽₁₁, predicted 366).
   - The 𝔽₃ census for P4 has 18 basis paths. In the container it did 4096 of 17 748 fibres in 30 minutes, so it was
     stopped.
@@ -197,7 +210,8 @@ local-torus count is the same over 𝔽₃ and 𝔽₅.
 | **Q1²⁸ Theorem 4** | Consecutive parallel classes on any acyclic quiver ⇒ a one-parameter family vanishing on vertices, with an image invariant |
 | **Q2²⁸ Criterion, "if" half** | Consecutive classes, or converging/diverging classes with unjoined ends ⇒ infinitely many local-torus orbits (Theorems 3, 4) |
 | **Q3²⁸ Conjecture 3ᶜ** | The converse (§3), with Conjecture 3ᵖ as its one-class case |
-| **Q4²⁸ Method** | Fixed-point loci use the local torus at P (`FL_LOCAL=1`); full-torus verdicts are void where weightings are not symmetries |
+| **Q4²⁸ Method** | Fixed-point loci use the local torus at P (`FL_LOCAL=1`) and Lie(Aut_Δ) (`FL_AUT=1`); full-torus or Lie G verdicts are void where those are not the true symmetries |
+| **Q5²⁸ Census group** | The census group G equals Aut_Δ° at the Lie level on every quiver censused, except 1⇉2⇉3 + 1→3, where c ↦ c + s·δ_aδ_b is missing (939 and 983 orbits with it) |
 
 ---
 

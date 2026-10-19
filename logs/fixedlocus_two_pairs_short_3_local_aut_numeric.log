@@ -166,3 +166,16 @@ two_pairs_short F_3: 1668 H-orbits, 199 with no member lifting to Q
   numerical local dimension of Folds^S where tangent > dim N·P (at most 1 per type):
 /usr/local/lib/python3.13/dist-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
   warnings.warn(
+   (36, 5, 3, 46, 2, 4): local dim of Folds^S = 3 -> FAMILY
+   (72, 5, 3, 46, 2, 4): local dim of Folds^S = 3 -> FAMILY
+   (36, 4, 4, 40, 2, 3): local dim of Folds^S = 3 -> FAMILY
+   (36, 3, 4, 25, 0, 1): local dim of Folds^S = 0 -> no family
+   (36, 5, 3, 46, 2, 3): local dim of Folds^S = 2 -> no family
+   (72, 5, 3, 46, 2, 3): local dim of Folds^S = 2 -> no family
+   (36, 4, 4, 28, 1, 2): local dim of Folds^S = 1 -> no family
+   (36, 5, 3, 46, 2, 5): local dim of Folds^S = 4 -> FAMILY
+   (72, 5, 3, 46, 2, 5): local dim of Folds^S = 4 -> FAMILY
+   (36, 4, 4, 40, 2, 4): local dim of Folds^S = 4 -> FAMILY
+   (36, 4, 3, 32, 1, 2): local dim of Folds^S = 1 -> no family
+   (144, 6, 1, 90, 4, 5): local dim of Folds^S = 5 -> FAMILY
+  tested 12 of 202 candidates; with a family through them (local dim Folds^S > dim N·P): 7

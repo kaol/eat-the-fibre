@@ -1,0 +1,30 @@
+K2                     d =   4: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+K3                     d =   5: dim Lie(Aut_Δ) = 6, dim Lie G = 6, vertices fixed: True
+K3_after               d =  10: dim Lie(Aut_Δ) = 6, dim Lie G = 6, vertices fixed: True
+K3_srcout              d =   7: dim Lie(Aut_Δ) = 6, dim Lie G = 6, vertices fixed: True
+pair_after             d =   8: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_after2            d =  13: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_after3            d =  19: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_before            d =   8: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_mid               d =  14: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_srcboth           d =   8: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_srcout            d =   6: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_tgtfork           d =  12: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_tgtin             d =   6: dim Lie(Aut_Δ) = 2, dim Lie G = 2, vertices fixed: True
+pair_triple            d =  14: dim Lie(Aut_Δ) = 8, dim Lie G = 8, vertices fixed: True
+pairs_in               d =   7: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_in_extra         d =   9: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_in_pre           d =  11: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_in_short         d =  10: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_in_short_tail    d =  18: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_in_side          d =   9: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_in_tail          d =  13: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+pairs_out              d =   7: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+triple_pair_in         d =   8: dim Lie(Aut_Δ) = 8, dim Lie G = 8, vertices fixed: True
+triple_pair_in_short   d =  11: dim Lie(Aut_Δ) = 8, dim Lie G = 8, vertices fixed: True
+two_pairs              d =  11: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+two_pairs_dense        d =  22: dim Lie(Aut_Δ) = 5, dim Lie G = 4, vertices fixed: True   <-- larger
+two_pairs_post         d =  19: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+two_pairs_pre          d =  19: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+two_pairs_sep          d =  17: dim Lie(Aut_Δ) = 4, dim Lie G = 4, vertices fixed: True
+two_pairs_short        d =  12: dim Lie(Aut_Δ) = 5, dim Lie G = 4, vertices fixed: True   <-- larger
