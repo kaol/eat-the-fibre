@@ -18,7 +18,7 @@ namespace EatTheFibre
 variable {d : ℕ}
 
 /-- the coordinate algebra with integer structure constants, over any commutative ring -/
-def CoordAlg.ofInt (k : Type*) [CommRing k] (c D : Fin d → Fin d → Fin d → ℤ) : CoordAlg k d :=
+def CoordAlg.ofInt (k : Type*) [CommRing k] (c D : Fin d → Fin d → Fin d → ℤ) : CoordAlg k (Fin d) :=
   ⟨fun i j m => (c i j m : k), fun l a b => (D l a b : k)⟩
 
 namespace Reflect

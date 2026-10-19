@@ -1,7 +1,7 @@
 /-
 # Folds of coordinate algebras
 
-A finite-dimensional algebra is given by structure constants on the coordinate space `Fin d → k`:
+A finite-dimensional algebra is given by structure constants on the coordinate space `ι → k` (`ι` a finite basis):
 `(v * w) m = ∑ i, ∑ j, v i * w j * c i j m`. Arrow deletion `Δ : A → A ⊗ A` is given by
 `Δ(v) a b = ∑ l, v l * D l a b` (a `d × d` matrix per vector).
 
@@ -18,32 +18,32 @@ open Matrix
 
 namespace EatTheFibre
 
-variable {k : Type*} [CommRing k] {d : ℕ}
+variable {k : Type*} [CommRing k] {ι : Type*} [Fintype ι] [DecidableEq ι]
 
-/-- structure constants of an algebra on `Fin d → k`, and of arrow deletion `Δ` -/
-structure CoordAlg (k : Type*) (d : ℕ) where
-  c : Fin d → Fin d → Fin d → k
-  D : Fin d → Fin d → Fin d → k
+/-- structure constants of an algebra on `ι → k` (`ι` a finite basis), and of arrow deletion `Δ` -/
+structure CoordAlg (k : Type*) (ι : Type*) where
+  c : ι → ι → ι → k
+  D : ι → ι → ι → k
 
 namespace CoordAlg
 
-variable (A : CoordAlg k d)
+variable (A : CoordAlg k ι)
 
 /-- multiplication from structure constants -/
-def mul (v w : Fin d → k) : Fin d → k := fun m => ∑ i, ∑ j, v i * w j * A.c i j m
+def mul (v w : ι → k) : ι → k := fun m => ∑ i, ∑ j, v i * w j * A.c i j m
 
 /-- arrow deletion, as a matrix: `Δ v a b = ∑ l, v l * D l a b` -/
-def delta (v : Fin d → k) : Matrix (Fin d) (Fin d) k := fun a b => ∑ l, v l * A.D l a b
+def delta (v : ι → k) : Matrix (ι) (ι) k := fun a b => ∑ l, v l * A.D l a b
 
 /-- the defining conditions of a fold, for all vectors -/
-structure IsFold (P : Matrix (Fin d) (Fin d) k) : Prop where
+structure IsFold (P : Matrix (ι) (ι) k) : Prop where
   idem : P * P = P
   image : ∀ v w, P *ᵥ A.mul (P *ᵥ v) (P *ᵥ w) = A.mul (P *ᵥ v) (P *ᵥ w)
   kernel : ∀ v w, P *ᵥ A.mul ((1 - P) *ᵥ v) ((1 - P) *ᵥ w) = 0
   delta : ∀ v, A.delta (P *ᵥ v) = P * A.delta v * Pᵀ
 
 /-- the same conditions on the standard basis only (what the computer checks) -/
-structure IsFoldBasis (P : Matrix (Fin d) (Fin d) k) : Prop where
+structure IsFoldBasis (P : Matrix (ι) (ι) k) : Prop where
   idem : P * P = P
   image : ∀ i j, P *ᵥ A.mul (P *ᵥ Pi.single i 1) (P *ᵥ Pi.single j 1) =
     A.mul (P *ᵥ Pi.single i 1) (P *ᵥ Pi.single j 1)
@@ -51,7 +51,7 @@ structure IsFoldBasis (P : Matrix (Fin d) (Fin d) k) : Prop where
   delta : ∀ l, A.delta (P *ᵥ Pi.single l 1) = P * A.delta (Pi.single l 1) * Pᵀ
 
 /-- multiplication as a bilinear map -/
-def mulₗ : (Fin d → k) →ₗ[k] (Fin d → k) →ₗ[k] (Fin d → k) :=
+def mulₗ : (ι → k) →ₗ[k] (ι → k) →ₗ[k] (ι → k) :=
   LinearMap.mk₂ k A.mul
     (fun u v w => by ext m; simp [mul, add_mul, Finset.sum_add_distrib])
     (fun a v w => by ext m; simp [mul, Finset.mul_sum, mul_assoc])
@@ -60,29 +60,29 @@ def mulₗ : (Fin d → k) →ₗ[k] (Fin d → k) →ₗ[k] (Fin d → k) :=
       ext m; simp only [mul, Pi.smul_apply, smul_eq_mul, Finset.mul_sum]
       exact Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => by ring)
 
-@[simp] lemma mulₗ_apply (v w : Fin d → k) : A.mulₗ v w = A.mul v w := rfl
+@[simp] lemma mulₗ_apply (v w : ι → k) : A.mulₗ v w = A.mul v w := rfl
 
 /-- arrow deletion as a linear map -/
-def deltaₗ : (Fin d → k) →ₗ[k] Matrix (Fin d) (Fin d) k where
+def deltaₗ : (ι → k) →ₗ[k] Matrix (ι) (ι) k where
   toFun := A.delta
   map_add' u v := by ext a b; simp [delta, add_mul, Finset.sum_add_distrib]
   map_smul' c v := by ext a b; simp [delta, Finset.mul_sum, mul_assoc]
 
-@[simp] lemma deltaₗ_apply (v : Fin d → k) : A.deltaₗ v = A.delta v := rfl
+@[simp] lemma deltaₗ_apply (v : ι → k) : A.deltaₗ v = A.delta v := rfl
 
 /-- **Basis criterion.** The fold conditions hold for all vectors iff they hold on the standard basis. -/
-theorem isFold_iff_basis (P : Matrix (Fin d) (Fin d) k) : A.IsFold P ↔ A.IsFoldBasis P := by
+theorem isFold_iff_basis (P : Matrix (ι) (ι) k) : A.IsFold P ↔ A.IsFoldBasis P := by
   constructor
   · intro h; exact ⟨h.idem, fun i j => h.image _ _, fun i j => h.kernel _ _, fun l => h.delta _⟩
   · intro h
-    have hb : ∀ i, (Pi.basisFun k (Fin d)) i = Pi.single i 1 := fun i => by simp
+    have hb : ∀ i, (Pi.basisFun k (ι)) i = Pi.single i 1 := fun i => by simp
     refine ⟨h.idem, ?_, ?_, ?_⟩
     · -- both sides are bilinear in (v, w)
-      have := LinearMap.ext_basis (Pi.basisFun k (Fin d)) (Pi.basisFun k (Fin d))
+      have := LinearMap.ext_basis (Pi.basisFun k (ι)) (Pi.basisFun k (ι))
         (B := (A.mulₗ.compl₁₂ P.mulVecLin P.mulVecLin).compr₂ P.mulVecLin)
         (B' := A.mulₗ.compl₁₂ P.mulVecLin P.mulVecLin) (fun i j => by simpa [hb] using h.image i j)
       intro v w; simpa using LinearMap.congr_fun₂ this v w
-    · have := LinearMap.ext_basis (Pi.basisFun k (Fin d)) (Pi.basisFun k (Fin d))
+    · have := LinearMap.ext_basis (Pi.basisFun k (ι)) (Pi.basisFun k (ι))
         (B := (A.mulₗ.compl₁₂ (1 - P).mulVecLin (1 - P).mulVecLin).compr₂ P.mulVecLin) (B' := 0)
         (fun i j => by
           simpa only [LinearMap.compr₂_apply, LinearMap.compl₁₂_apply, Matrix.mulVecLin_apply, mulₗ_apply, hb,
@@ -91,11 +91,11 @@ theorem isFold_iff_basis (P : Matrix (Fin d) (Fin d) k) : A.IsFold P ↔ A.IsFol
       simpa only [LinearMap.compr₂_apply, LinearMap.compl₁₂_apply, Matrix.mulVecLin_apply, mulₗ_apply,
         LinearMap.zero_apply] using LinearMap.congr_fun₂ this v w
     · -- both sides are linear in v
-      let R : Matrix (Fin d) (Fin d) k →ₗ[k] Matrix (Fin d) (Fin d) k :=
+      let R : Matrix (ι) (ι) k →ₗ[k] Matrix (ι) (ι) k :=
         { toFun := fun M => P * M * Pᵀ
           map_add' := fun M N => by simp [Matrix.mul_add, Matrix.add_mul]
           map_smul' := fun c M => by simp }
-      have := (Pi.basisFun k (Fin d)).ext (f₁ := A.deltaₗ ∘ₗ P.mulVecLin) (f₂ := R ∘ₗ A.deltaₗ)
+      have := (Pi.basisFun k (ι)).ext (f₁ := A.deltaₗ ∘ₗ P.mulVecLin) (f₂ := R ∘ₗ A.deltaₗ)
         (fun l => by simpa [hb, R] using h.delta l)
       intro v; simpa [R] using LinearMap.congr_fun this v
 
@@ -105,17 +105,17 @@ end EatTheFibre
 
 namespace EatTheFibre.CoordAlg
 
-variable {k : Type*} [CommRing k] {d : ℕ} (A : CoordAlg k d)
+variable {k : Type*} [CommRing k] {ι : Type*} [Fintype ι] [DecidableEq ι] (A : CoordAlg k ι)
 
 /-- `h` is a Δ-compatible algebra automorphism with inverse `hi` -/
-structure IsDeltaAut (h hi : Matrix (Fin d) (Fin d) k) : Prop where
+structure IsDeltaAut (h hi : Matrix (ι) (ι) k) : Prop where
   left : h * hi = 1
   right : hi * h = 1
   mul : ∀ v w, h *ᵥ A.mul v w = A.mul (h *ᵥ v) (h *ᵥ w)
   delta : ∀ v, A.delta (h *ᵥ v) = h * A.delta v * hᵀ
 
 /-- **Orbits.** Conjugating a fold by a Δ-compatible algebra automorphism gives a fold. -/
-theorem IsFold.conj {P h hi : Matrix (Fin d) (Fin d) k} (hP : A.IsFold P) (hh : A.IsDeltaAut h hi) :
+theorem IsFold.conj {P h hi : Matrix (ι) (ι) k} (hP : A.IsFold P) (hh : A.IsDeltaAut h hi) :
     A.IsFold (h * P * hi) := by
   have hhi : ∀ v, h *ᵥ (hi *ᵥ v) = v := fun v => by rw [Matrix.mulVec_mulVec, hh.left, Matrix.one_mulVec]
   have hih : ∀ v, hi *ᵥ (h *ᵥ v) = v := fun v => by rw [Matrix.mulVec_mulVec, hh.right, Matrix.one_mulVec]
@@ -144,14 +144,14 @@ theorem IsFold.conj {P h hi : Matrix (Fin d) (Fin d) k} (hP : A.IsFold P) (hh : 
 /-- **Vertex-block lemma.** Let `isV` mark the vertex coordinates. If `h` fixes every vertex basis vector and maps
 non-vertex basis vectors into the span of non-vertex ones, and `hi` is its inverse, then conjugation by `h` does not
 change the vertex-to-vertex entries of any matrix `P`. -/
-theorem vertex_block (isV : Fin d → Prop) [DecidablePred isV] {h hi : Matrix (Fin d) (Fin d) k}
+theorem vertex_block (isV : ι → Prop) [DecidablePred isV] {h hi : Matrix (ι) (ι) k}
     (hinv : hi * h = 1) (hfix : ∀ a, isV a → ∀ i, h i a = if i = a then 1 else 0)
-    (hrad : ∀ a, ¬ isV a → ∀ i, isV i → h i a = 0) (P : Matrix (Fin d) (Fin d) k)
-    {i v : Fin d} (hi_ : isV i) (hv : isV v) : (h * P * hi) i v = P i v := by
+    (hrad : ∀ a, ¬ isV a → ∀ i, isV i → h i a = 0) (P : Matrix (ι) (ι) k)
+    {i v : ι} (hi_ : isV i) (hv : isV v) : (h * P * hi) i v = P i v := by
   -- the column of `hi` at a vertex is the basis vector: hi = hi * (h * e_v) = e_v
   have hcol : ∀ b, hi b v = if b = v then 1 else 0 := by
     intro b
-    have : (hi * h) b v = (1 : Matrix (Fin d) (Fin d) k) b v := by rw [hinv]
+    have : (hi * h) b v = (1 : Matrix (ι) (ι) k) b v := by rw [hinv]
     rw [Matrix.mul_apply] at this
     rw [Finset.sum_eq_single v (fun a _ hav => by simp [hfix v hv a, hav])
       (by simp)] at this

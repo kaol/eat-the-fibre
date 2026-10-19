@@ -133,28 +133,22 @@ lemma thm4_apply (t : k) (w : Fin 11 → k) (i : Fin 11) :
       w 6 * (![1, 1, 0, 0, 0, -1, 1, 1, -1, -1, 1] : Fin 11 → k) i := by
   fin_cases i <;> simp [evalM, thm4P, Matrix.mulVec, dotProduct, Fin.sum_univ_succ] <;> ring
 
-/-- **Theorem 4, invariance.** If `h` acts on `V` by the scalings of a substitution or weighting and intertwines
-`P_t` with `P_t'`, then `t = t'`. (It also forces `λ = μ = 1` on the image.) -/
-theorem thm4_rigid {t t' l m : k} {h : Matrix (Fin 11) (Fin 11) k} (hV : ScalesV h l m)
-    (hc : h * evalM thm4P t = evalM thm4P t' * h) : t = t' := by
-  -- the images of b₂ and a₂ under P_t, written in V
-  have Yv : evalM thm4P t *ᵥ Pi.single 6 1 = ve1 + ve2 - δb + δab := by
-    rw [thm4_b2]; funext i; fin_cases i <;> simp [ve1, ve2, δb, δab]
-  have Xv : evalM thm4P t *ᵥ Pi.single 4 1 = (t - 1) • ve1 - δa + t • δab := by
-    rw [thm4_a2]; funext i; fin_cases i <;> simp [ve1, δa, δab] <;> ring
-  have hY := congrArg (· *ᵥ Pi.single (6 : Fin 11) (1 : k)) hc
-  have hX := congrArg (· *ᵥ Pi.single (4 : Fin 11) (1 : k)) hc
-  simp only [← Matrix.mulVec_mulVec] at hY hX
-  rw [Yv, Matrix.mulVec_add, Matrix.mulVec_sub, Matrix.mulVec_add, hV.e1, hV.e2, hV.db, hV.dab] at hY
-  rw [Xv, Matrix.mulVec_add, Matrix.mulVec_sub, Matrix.mulVec_smul, Matrix.mulVec_smul, hV.e1, hV.da, hV.dab] at hX
-  set w := h *ᵥ Pi.single (6 : Fin 11) (1 : k)
-  set u := h *ᵥ Pi.single (4 : Fin 11) (1 : k)
+/-- the images of `b₂` and `a₂` under `P_t`, written in `V` -/
+lemma thm4_Y (t : k) : evalM thm4P t *ᵥ Pi.single 6 1 = ve1 + ve2 - δb + δab := by
+  rw [thm4_b2]; funext i; fin_cases i <;> simp [ve1, ve2, δb, δab]
+
+lemma thm4_X (t : k) : evalM thm4P t *ᵥ Pi.single 4 1 = (t - 1) • ve1 - δa + t • δab := by
+  rw [thm4_a2]; funext i; fin_cases i <;> simp [ve1, δa, δab] <;> ring
+
+/-- **Theorem 4, the core of invariance.** If the scaled images of `b₂` and `a₂` are images under `P_t'`, then the
+scalings are trivial and `t = t'`. -/
+theorem thm4_core {t t' l m : k} (w u : Fin 11 → k)
+    (hY : ve1 + ve2 - m • δb + (l * m) • δab = evalM thm4P t' *ᵥ w)
+    (hX : (t - 1) • ve1 - l • δa + t • ((l * m) • δab) = evalM thm4P t' *ᵥ u) : t = t' := by
   have y1 := congrFun hY 1; have y3 := congrFun hY 3; have y5 := congrFun hY 5; have y7 := congrFun hY 7
   have x1 := congrFun hX 1; have x3 := congrFun hX 3; have x7 := congrFun hX 7
   simp only [thm4_apply] at y1 y3 y5 y7 x1 x3 x7
   simp [ve1, ve2, δa, δb, δab] at y1 y3 y5 y7 x1 x3 x7
-  -- y1: 1 = w 6;  y3: 0 = -w 4;  y5: -m = -w 6;  y7: l*m = t'*w 4 + w 6
-  -- x1: 0 = u 6;  x3: -l = -u 4;  x7: t*(l*m) = t'*u 4 + u 6
   have hw6 : w 6 = 1 := by linear_combination -y1
   have hw4 : w 4 = 0 := by linear_combination y3
   have hm : m = 1 := by linear_combination y5 + hw6
@@ -162,6 +156,18 @@ theorem thm4_rigid {t t' l m : k} {h : Matrix (Fin 11) (Fin 11) k} (hV : ScalesV
   have hu6 : u 6 = 0 := by linear_combination -x1
   have hu4 : u 4 = 1 := by rw [hl] at x3; linear_combination -x3
   rw [hl, hm, hu4, hu6] at x7; linear_combination x7
+
+/-- **Theorem 4, invariance.** If `h` acts on `V` by the scalings of a substitution or weighting and intertwines
+`P_t` with `P_t'`, then `t = t'`. (It also forces `λ = μ = 1` on the image.) -/
+theorem thm4_rigid {t t' l m : k} {h : Matrix (Fin 11) (Fin 11) k} (hV : ScalesV h l m)
+    (hc : h * evalM thm4P t = evalM thm4P t' * h) : t = t' := by
+  have hY := congrArg (· *ᵥ Pi.single (6 : Fin 11) (1 : k)) hc
+  have hX := congrArg (· *ᵥ Pi.single (4 : Fin 11) (1 : k)) hc
+  simp only [← Matrix.mulVec_mulVec] at hY hX
+  rw [thm4_Y, Matrix.mulVec_add, Matrix.mulVec_sub, Matrix.mulVec_add, hV.e1, hV.e2, hV.db, hV.dab] at hY
+  rw [thm4_X, Matrix.mulVec_add, Matrix.mulVec_sub, Matrix.mulVec_smul, Matrix.mulVec_smul, hV.e1, hV.da,
+    hV.dab] at hX
+  exact thm4_core _ _ hY hX
 
 /-- the automorphism of `k(1⇉2⇉3)` substituting `{a₁, a₂}` by `ga` and `{b₁, b₂}` by `gb`; on paths
 `a_i b_j ↦ Σ ga p i · gb q j · a_p b_q` -/

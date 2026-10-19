@@ -88,7 +88,7 @@ def emit_quiver(name, families, header, extra="", negatives=()):
          f"/-- structure constants: `b_i * b_j = Σ_m c i j m • b_m` -/\ndef c : Fin {d} → Fin {d} → Fin {d} → ℤ :=\n  {arr3(M, d)}\n",
          f"/-- arrow deletion: `Δ b_l = Σ_(a,b) D l a b • b_a ⊗ b_b` -/\ndef D : Fin {d} → Fin {d} → Fin {d} → ℤ :=\n  {arr3(DL, d)}\n",
          f"/-- the path algebra of `{name}` with arrow deletion, over any commutative ring -/\n"
-         f"abbrev alg (k : Type*) [CommRing k] : CoordAlg k {d} := CoordAlg.ofInt k c D\n"]
+         f"abbrev alg (k : Type*) [CommRing k] : CoordAlg k (Fin {d}) := CoordAlg.ofInt k c D\n"]
     for fname, x, P, doc in families:
         if x is not None and str(x) != 't':                 # Lean parameter is always `t` (no clash with `c`, `D`)
             doc = f"{doc}; parameter {x} written t"; P = P.subs(x, sp.Symbol('t')); x = sp.Symbol('t')

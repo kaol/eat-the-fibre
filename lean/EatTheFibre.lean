@@ -6,4 +6,8 @@ import EatTheFibre.Gen.two_pairs
 import EatTheFibre.Gen.two_pairs_short
 import EatTheFibre.Gen.pairs_in_short
 import EatTheFibre.Invariants
+import EatTheFibre.Reduction
+import EatTheFibre.Path
+import EatTheFibre.General
+import EatTheFibre.Examples
 import EatTheFibre.Audit

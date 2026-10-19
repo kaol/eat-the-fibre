@@ -10,17 +10,17 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.29) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.30) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
-| `../lean/` | Lean 4 + Mathlib formalization (v2.29): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, rigidity, controls; see `lean/README.md` |
+| `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.30): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; see `lean/README.md` |
 | `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine |
 
 Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of the same round. Labels used throughout:
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.29)
+## Where the fold story stands (v2.30)
 
 | result | status | round |
 |---|---|---|
@@ -38,4 +38,5 @@ mathematics forces them.
 | Conjecture 3ʰ (infinite iff Theorem 2 or 3 applies) | **false**: 1⇉2⇉3 + 1→3 grows (by Theorem 4; with all of Aut_Δ°, 939 → 983 over 𝔽₃, 𝔽₅) | v2.27, v2.28 |
 | consecutive classes on any acyclic quiver: family vanishing on all vertices, invariant read off the image | proved (Theorem 4) | v2.28 |
 | Theorems 1–4 on their base quivers, with rigidity under class substitutions and weightings; basis criterion; vertex-block lemma | **Lean 4 (kernel-checked)** | v2.29 |
+| Theorems 3 and 4 on every acyclic quiver (path algebras, reduction to the two-class subalgebra), with rigidity | **Lean 4 (kernel-checked)** | v2.30 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |
