@@ -23,7 +23,7 @@ from sympy import QQ as SQQ
 from scipy.optimize import least_squares
 name, p = sys.argv[1], int(sys.argv[2]); per_type = int(sys.argv[3]) if len(sys.argv) > 3 else 3
 stage = sys.argv[4] if len(sys.argv) > 4 else 'all'          # 'exact' | 'numeric' | 'all'
-CANDS = f'logs/fixedlocus_cands_{name}_{p}.pkl'
+CANDS = f'logs/fixedlocus_cands_{name}_{p}' + ('_local' if _os.environ.get('FL_LOCAL') == '1' else '') + '.pkl'
 sys.argv = ['x']
 exec(open(_os.path.join(ROOT, 'pcensus.py')).read().split("if __name__ == '__main__':")[0])
 ctx = setup(name, p); C.update(ctx); F = ctx['F']; basis, arrows, d, M, DL = ctx['basis'], ctx['arrows'], ctx['d'], ctx['M'], ctx['DL']
@@ -131,27 +131,48 @@ def dm_rank(rows):
     if not rows: return 0
     return DomainMatrix([[SQQ(int(x)) for x in r] for r in rows], (len(rows), len(rows[0])), SQQ).rank()
 LHn = [x.astype(np.int64) for x in gens + Ec]; I_d = np.eye(d, dtype=np.int64)
+# v2.28, FL_LOCAL=1: the torus part of Lie H at P is the Lie algebra of the local torus, {E_w : P compatible with Δ_w}
+# (a linear condition on w), instead of all class generators. Needed where class weightings are not symmetries.
+LOCAL = _os.environ.get('FL_LOCAL') == '1'
+idxb_ = {b: i for i, b in enumerate(basis)}
+DLc = []
+for c in cl:
+    D_ = np.zeros((d, d, d), dtype=np.int64)
+    for l, b in enumerate(basis):
+        if b[0] == 'v': continue
+        for k, x in enumerate(b[1]):
+            if x not in c: continue
+            pre = idxb_[('p', b[1][:k])] if k > 0 else idxb_[('v', arrows[x][0])]
+            suf = idxb_[('p', b[1][k + 1:])] if k + 1 < len(b[1]) else idxb_[('v', arrows[x][1])]
+            D_[l, pre, suf] += 1
+    DLc.append(D_)
+def lie_at(Pq):
+    if not LOCAL: return LHn
+    cols_ = [(np.einsum('ml,mab->lab', Pq, D_) - np.einsum('ai,lij,bj->lab', Pq, D_, Pq)).ravel() for D_ in DLc]
+    W = dm_null([list(r) for r in np.array(cols_).T])                    # w with Σ_c w_c (...)_c = 0
+    return [x.astype(np.int64) for x in gens] + [sum(w[k] * Ec[k] for k in range(len(cl))).astype(np.int64) for w in W]
 tab = collections.Counter(); cands = []; nolift = 0
 if stage in ('exact', 'all'):
   for oid in range(len(reps)):
     Pq = next((q for q in (qfold(P) for P in members[oid]) if q is not None), None)
     if Pq is None: nolift += 1; continue
-    br = [(x @ Pq - Pq @ x).ravel() for x in LHn]                              # [x_i, P]
+    LHP = lie_at(Pq)
+    br = [(x @ Pq - Pq @ x).ravel() for x in LHP]                              # [x_i, P]
     r = dm_rank([list(v) for v in br])
     kerS = dm_null([list(row) for row in np.array(br).T])                      # coefficient vectors c with Σ c_i [x_i,P] = 0
-    S = [sum(c[i] * LHn[i] for i in range(len(LHn))) for c in kerS]
+    S = [sum(c[i] * LHP[i] for i in range(len(LHP))) for c in kerS]
     if not S: tab[(sizes[oid], r, 'free')] += 1; continue
     # commutant: (I⊗s − sᵀ⊗I) vec(X) = 0, row-major vec: [s,X] = sX − Xs  ->  kron(s, I) − kron(I, sᵀ)
     Acs = np.vstack([np.kron(s_, I_d) - np.kron(I_d, s_.T) for s_ in S])
     Cb = np.array(dm_null([list(row) for row in Acs]), dtype=np.int64)
     # normalizer: unknowns (c, m): Σ c_i [x_i, s_a] − Σ_b m_ab s_b = 0
     cols = []
-    for x in LHn: cols.append(np.concatenate([(x @ s_ - s_ @ x).ravel() for s_ in S]))
+    for x in LHP: cols.append(np.concatenate([(x @ s_ - s_ @ x).ravel() for s_ in S]))
     for a_ in range(len(S)):
         for b_ in range(len(S)):
             v = np.zeros(len(S) * d * d, dtype=np.int64); v[a_ * d * d:(a_ + 1) * d * d] = -S[b_].ravel(); cols.append(v)
     Nk = dm_null([list(row) for row in np.array(cols).T])
-    Nv = [sum(c[i] * LHn[i] for i in range(len(LHn))) for c in Nk]
+    Nv = [sum(c[i] * LHP[i] for i in range(len(LHP))) for c in Nk]
     n = dm_rank([list((x @ Pq - Pq @ x).ravel()) for x in Nv]) if Nv else 0
     J = jac_matrix(Pq); tS = Cb.shape[0] - rank_mod(J @ Cb.T)
     key_ = (sizes[oid], r, len(S), Cb.shape[0], n, tS)
