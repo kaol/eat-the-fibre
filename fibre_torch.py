@@ -18,6 +18,8 @@ Arithmetic: residues in [0, p) stored as float32. Every contraction goes through
 len · (p−1)² < 2^24 (exact in float32). Plan() also runs a device self-test against int64 numpy.
 
 Env: ETF_MEM (MiB per working set, default 1024), ETF_GROUP (fibres per checkpoint group, default 4096),
+     ETF_OUT (MiB of children per chunk yielded by level(), default ETF_MEM),
+     ETF_HOST_STACK=0 (keep pending batches on the device instead of in host memory),
      ETF_XCHECK=1 (per-parent comparison with pcensus.lift/check; slow, for validation)."""
 import os, time, itertools, collections
 import numpy as np
@@ -27,6 +29,9 @@ EXACT = 1 << 24
 MEM = int(os.environ.get('ETF_MEM', '1024') or 1024) << 20
 GROUP = int(os.environ.get('ETF_GROUP', '4096') or 4096)
 XCHECK = int(os.environ.get('ETF_XCHECK', '0') or 0)
+OUT = (int(os.environ.get('ETF_OUT_BYTES', '0') or 0)                 # children (int8 bytes) per yielded chunk;
+       or int(os.environ.get('ETF_OUT', '0') or 0) << 20 or MEM)      # ETF_OUT_BYTES is for the tests
+HOST_STACK = int(os.environ.get('ETF_HOST_STACK', '1') or 0)          # pending batches wait in host memory
 QUOTIENT = int(os.environ.get('ETF_QUOTIENT', '1') or 0)             # 0: no frontier quotient (fibre_torch.quotient)
 F32 = 4
 
@@ -333,14 +338,24 @@ def expand(P, rid, X):
 
 
 def level(P, rid, X, c):
-    """One column for a batch of parents: (rid (n,), X (n,d,d) int8) → children (rid', X') at column c+1."""
+    """One column for a batch of parents: (rid (n,), X (n,d,d) int8) → children (rid', X') at column c+1, yielded in
+    chunks of at most about OUT bytes. The children of one parent batch are unbounded (up to p^kdim per parent; run_batch job 14:
+    44 M children = 13.4 GiB on 1⇉2⇇3 + 1→3 + 2→4 over 𝔽₅), so they are never concatenated as a whole."""
     Xf = X.to(torch.float32)
     L, ok = lift(P, Xf, c)
     st = STATS[c]; st[0] += len(rid); st[1] += int(ok.sum())
     if XCHECK: _xcheck_lift(P, Xf, L, ok, c)
     keep = ok.nonzero()[:, 0]
     rid, Xf, L = rid[keep], Xf[keep], L[keep]
-    out_r, out_X = [], []
+    out_r, out_X, acc = [], [], 0
+    seen_r, seen_X = [], []                                              # only for XCHECK
+    def flush():
+        nonlocal out_r, out_X, acc
+        r2, x2 = torch.cat(out_r), torch.cat(out_X)
+        out_r, out_X, acc = [], [], 0
+        st[3] += len(r2)
+        if XCHECK: seen_r.append(r2); seen_X.append(x2)
+        return r2, x2
     if len(rid):
         S = Parents(P, Xf, L, c)
         cons, kap0, N, free = prefilter(P, S)
@@ -359,13 +374,15 @@ def level(P, rid, X, c):
                 w = P.md(L[idx[li]] + P.mm(kap, P.Kmat.T))
                 sv = check(P, S, idx[li], w); st[2] += len(flat)
                 pi = idx[li][sv]
+                if not len(pi): continue
                 Xn = Xf[pi].clone(); Xn[:, :, c] = w[sv]
-                out_r.append(rid[pi]); out_X.append(Xn.to(torch.int8))
-    rid2 = torch.cat(out_r) if out_r else rid[:0]
-    X2 = torch.cat(out_X) if out_X else X[:0]
-    st[3] += len(rid2)
-    if XCHECK: _xcheck_end(P, rid, Xf, L, c, rid2, X2)
-    return rid2, X2
+                out_r.append(rid[pi]); out_X.append(Xn.to(torch.int8)); acc += Xn.shape[0] * P.d * P.d
+                if acc >= OUT: yield flush()
+    if out_r: yield flush()
+    if XCHECK:
+        rid2 = torch.cat(seen_r) if seen_r else rid[:0]
+        X2 = torch.cat(seen_X) if seen_X else X[:0]
+        _xcheck_end(P, rid, Xf, L, c, rid2, X2)
 
 
 # ---- validation against the numpy reference (pcensus.lift / pcensus.check over all of K)
@@ -411,21 +428,26 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
         grp = todo[g0:g0 + GROUP]
         X0 = np.zeros((len(grp), d, d), dtype=np.int8)
         for i, r in enumerate(grp): X0[i, :, :kdim] = Kmat @ reps[r][0] % p
-        stack = [(kdim, torch.as_tensor(grp, device=dev), torch.as_tensor(X0, device=dev))]
+        home = torch.device('cpu') if HOST_STACK else dev               # where pending batches wait
+        stack = [(kdim, torch.as_tensor(grp, device=home), torch.as_tensor(X0, device=home))]
         out = collections.defaultdict(list)
         while stack:
             c, rid, X = stack.pop()
-            if c == d:
-                rid, X = expand(P, rid, X)
-                for r, x in zip(rid.cpu().numpy(), X.cpu().numpy()): out[int(r)].append(x.astype(np.int16))
+            rid, X = rid.to(dev), X.to(dev)
+            if c == d:                   # expand multiplies by |N|: slice so each image set fits the budget
+                ne = max(1, MEM // (P.HL.shape[0] * d * d)) if P.sym else len(rid)
+                for s in range(0, len(rid), ne):
+                    r_, X_ = expand(P, rid[s:s + ne], X[s:s + ne])
+                    for r, x in zip(r_.cpu().numpy(), X_.cpu().numpy()): out[int(r)].append(x.astype(np.int16))
                 continue
             nb = P.parent_batch(c)
             if len(rid) > nb:
-                stack += [(c, rid[s:s + nb], X[s:s + nb]) for s in range(0, len(rid), nb)][::-1]
+                stack += [(c, rid[s:s + nb].to(home), X[s:s + nb].to(home)) for s in range(0, len(rid), nb)][::-1]
                 continue
-            rid2, X2 = level(P, rid, X, c)
-            if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
-            if len(rid2): stack.append((c + 1, rid2, X2))
+            for rid2, X2 in level(P, rid, X, c):
+                if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
+                if len(rid2): stack.append((c + 1, rid2.to(home), X2.to(home)))
+            del rid, X
             if time.time() - last > 60:
                 log(f"  {ndone}/{len(todo)} fibres computed, group {g0 // GROUP + 1}/{-(-len(todo) // GROUP)}, "
                     f"{len(stack)} stacked batches at column {c}, t={time.time() - t0:.0f}s"); last = time.time()

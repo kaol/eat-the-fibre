@@ -37,3 +37,12 @@ def test_checkpoint_crosses_engines(tmp_path):
 def test_symmetry_transport():
     """G × T transport (default) ≡ computing every fibre (--no-symmetry); K3_srcout has 4028 torus reps in fewer H-orbits."""
     assert run('K3_srcout', 3, '--engine', 'torch') == run('K3_srcout', 3, '--engine', 'torch', '--no-symmetry')
+
+
+@pytest.mark.parametrize('q,p', [('pair_tgtin', 3), ('K3_srcout', 3)])
+def test_chunked_children(q, p):
+    """level() yields its children in chunks (ETF_OUT_BYTES) and pending batches wait in host memory (default) or on
+    the device (ETF_HOST_STACK=0); a 1 kB chunk forces many chunks per parent batch, and the census must not change."""
+    ref = run(q, p, '--engine', 'pool', '--jobs', '2', '--kernel', 'ref')
+    assert ref == run(q, p, '--engine', 'torch', env={'ETF_OUT_BYTES': '1000', 'ETF_XCHECK': '1'})
+    assert ref == run(q, p, '--engine', 'torch', env={'ETF_OUT_BYTES': '1000', 'ETF_HOST_STACK': '0'})
