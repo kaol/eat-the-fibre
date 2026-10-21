@@ -150,10 +150,18 @@ So prediction 4 holds at the behaviour level, and fails at the strictly finer cl
    each component over k̄.
 3. Uniformity in q (from finite over k̄ to bounded over 𝔽_q) needs a separate argument.
 
-The missing lemma is local: **(L) on an unobstructed quiver, for every fold P, every Δ-twist direction tangent to X_P
-at the identity is, modulo Lie Stab(P), a census-symmetry direction**, i.e. T_e X_P = Lie H + Lie Stab(P). (L) is
-linear algebra in the derivations of kQ. Its failure on the Theorem 3 and 4 configurations is exactly the
-one-parameter twist found in v2.33 (u = 1 + s·δ_aδ_b, the class scaling, and so on).
+The missing lemma is local, but it cannot be pointwise. Its pointwise form, "every Δ-twist direction tangent to X_P at
+the identity is, modulo Lie Stab(P), a census-symmetry direction" (T_e X_P = Lie H + Lie Stab(P) for every P), is
+exactly e(P) = 0. The first-order table above refutes it at special points, even on unobstructed quivers.
+
+The correct form is generic: **(L) on an unobstructed quiver, for every fold P and every irreducible component Z of the
+twist variety X_P (over k̄), dim Z_red = dim of the double coset H φ Stab(P) through a generic point φ of Z.**
+Equivalently, H \ X_P / Stab(P) is finite. The second-order computation is evidence for (L) at the 𝔽_p-points. On the
+Theorem 3 and 4 configurations (L) fails, by exactly the one-parameter twist found in v2.33 (u = 1 + s·δ_aδ_b, the class
+scaling, and so on).
+
+*(Corrected after publication: the first version of this paragraph stated the pointwise form, which §5's own data
+refutes.)*
 
 ## 6. Counterexample report
 
@@ -185,7 +193,8 @@ one-parameter twist found in v2.33 (u = 1 + s·δ_aδ_b, the class scaling, and 
 
 ## 8. Next action
 
-**Prove lemma (L) for the joined-ends configuration u ⇉ v ⇇ w, u → w**, as a statement about derivations. Compute
+**Prove lemma (L) for the joined-ends configuration u ⇉ v ⇇ w, u → w**, as a statement about the generic points of
+the twist varieties. Compute
 T_e X_P symbolically on the subalgebra spanned by the two classes and the arrow u → w; this is the reduction of v2.30
 applied to tangent spaces. Show that the twists the arrow makes available (a_i ↦ a_i + λ c b_j and its inner partners)
 absorb the direction u = 1 + s(δ_b − δ_a) that carries Theorem 3's families. If (L) holds there, the converging case is
