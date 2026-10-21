@@ -1,0 +1,2 @@
+{"name": "pairs_in_short", "p": 3, "N": 6766, "orbits_G": 407, "behaviours_Aut0": 302, "behaviours_Aut": 302, "quiver_automorphisms": 1, "inner": 2187, "coset_reps": 128, "G_orbits_per_behaviour": {"1": 220, "2": 72, "3": 1, "4": 8, "8": 1}}
+exit=0 730s

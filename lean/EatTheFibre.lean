@@ -20,4 +20,5 @@ import EatTheFibre.OrbitReflect
 import EatTheFibre.Gen.orbits_thm2
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
+import EatTheFibre.Transport
 import EatTheFibre.Audit

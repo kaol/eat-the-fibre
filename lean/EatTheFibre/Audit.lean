@@ -11,6 +11,7 @@ import EatTheFibre.Gen.pairs_in_short
 import EatTheFibre.Discordia.Bridge
 import EatTheFibre.Discordia.Exact
 import EatTheFibre.Gen.orbits_thm2
+import EatTheFibre.Transport
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -101,3 +102,7 @@ open EatTheFibre
 #print axioms Q_two_pairs.thm2_one_orbit
 #print axioms Q_pairs_in.thm3F2_one_orbit
 #print axioms Q_pairs_in.thm3F4_one_orbit
+
+-- the fibre over a behaviour is a set of coproduct twists (v2.34)
+#print axioms CoordAlg.twist_delta
+#print axioms CoordAlg.transport

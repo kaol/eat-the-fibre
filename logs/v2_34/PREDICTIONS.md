@@ -25,3 +25,11 @@ on 1⇉2⇇3 (𝔽₃) it is 1 on exactly the four Theorem 3 fibres and 0 on the
 Prediction 4 (the joined-ends case): on 1⇉2⇇3 + 1→3 over 𝔽₃, using the classes of Inn ⋊ Sub (finer than behaviours,
 since the substitutions a_i ↦ a_i + λ c b_j are left out, which can only make the test stricter), the second-order excess
 is 0 on every class.
+
+## Outcomes
+
+1. Refuted: e > 0 at representatives of unobstructed quivers (1⇉2, 1→3 / 𝔽₁₁: 15 of 137).
+2. Holds: e > 0 somewhere on each obstructed quiver tested (but it does not discriminate).
+3. Refuted: b > 0 widely, on both sides of the obstruction.
+4. Holds at the behaviour level (all 18 behaviours containing the 20 apparent excess classes have second-order excess 0);
+   fails at the finer Inn ⋊ Sub class level.

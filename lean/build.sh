@@ -4,7 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 lake exe cache get
-for m in Basic Poly Reflect Gen.pairs_in Gen.pairs_in_short Gen.two_pairs Gen.two_pairs_short Invariants Reduction Path General Examples Discordia.Fold Discordia.Completion Discordia.Exact Discordia.Logic Discordia.Ops Discordia.Bridge OrbitReflect Gen.orbits_thm2 Gen.orbits_thm3F2 Gen.orbits_thm3F4 Audit; do
+for m in Basic Poly Reflect Gen.pairs_in Gen.pairs_in_short Gen.two_pairs Gen.two_pairs_short Invariants Reduction Path General Examples Discordia.Fold Discordia.Completion Discordia.Exact Discordia.Logic Discordia.Ops Discordia.Bridge OrbitReflect Gen.orbits_thm2 Gen.orbits_thm3F2 Gen.orbits_thm3F4 Transport Audit; do
   echo "== EatTheFibre.$m"; lake build "EatTheFibre.$m"
 done
 lake build

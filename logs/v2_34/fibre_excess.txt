@@ -1,0 +1,22 @@
+pair_srcout_11
+    4 ('first-order excess 0', 'second-order excess 0', 'width 10')
+    82 ('first-order excess 0', 'second-order excess 0', 'width ≤4')
+    5 ('first-order excess 1', 'second-order excess 0', 'width ≤4')
+pairs_in_3
+    289 ('first-order excess 0', 'second-order excess 0', 'width ≤4')
+    12 ('first-order excess 1', 'second-order excess 0', 'width ≤4')
+    4 ('first-order excess 1', 'second-order excess 1', 'width 11')
+    14 ('first-order excess 2', 'second-order excess 0', 'width ≤4')
+pairs_in_5
+    289 ('first-order excess 0', 'second-order excess 0', 'width ≤4')
+    12 ('first-order excess 1', 'second-order excess 0', 'width ≤4')
+    4 ('first-order excess 1', 'second-order excess 1', 'width 21')
+    14 ('first-order excess 2', 'second-order excess 0', 'width ≤4')
+pairs_in_short_3
+    1 ('first-order excess 0', 'second-order excess 0', 'width 8')
+    232 ('first-order excess 0', 'second-order excess 0', 'width ≤4')
+    49 ('first-order excess 1', 'second-order excess 0', 'width ≤4')
+    16 ('first-order excess 1', 'second-order excess 1', 'width ≤4')
+    1 ('first-order excess 2', 'second-order excess 1', 'width ≤4')
+    3 ('first-order excess 2', 'second-order excess 2', 'width ≤4')
+{'second-order excess 0': 18}
