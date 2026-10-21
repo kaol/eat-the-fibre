@@ -1,0 +1,11 @@
+{"name": "two_pairs", "q": [5, 7], "local_orbits": [754, 792], "signatures": [179, 179], "growing": 9}
+  class -     im (2, (2, 2), 0, 0, 2)  ker (9, (9, 9), 0, 0, 1)  local orbits 61 → 79  (slope 9)
+  class -     im (3, (3, 3), 0, 0, 3)  ker (8, (8, 8), 0, 0, 0)  local orbits 35 → 41  (slope 3)
+  class L     im (2, (2, 2), 0, 0, 2)  ker (9, (9, 9), 0, 0, 0)  local orbits 17 → 19  (slope 1)
+  class L     im (2, (2, 2), 0, 0, 2)  ker (9, (9, 9), 0, 5, 0)  local orbits 11 → 13  (slope 1)
+  class L     im (3, (3, 3), 0, 0, 3)  ker (8, (8, 8), 0, 4, 0)  local orbits 12 → 14  (slope 1)
+  class LRKE  im (2, (2, 2), 0, 0, 2)  ker (9, (9, 9), 6, 6, 4)  local orbits 11 → 13  (slope 1)
+  class R     im (2, (2, 2), 0, 0, 2)  ker (9, (9, 9), 0, 0, 0)  local orbits 17 → 19  (slope 1)
+  class R     im (2, (2, 2), 0, 0, 2)  ker (9, (9, 9), 5, 0, 0)  local orbits 11 → 13  (slope 1)
+  class R     im (3, (3, 3), 0, 0, 3)  ker (8, (8, 8), 4, 0, 0)  local orbits 12 → 14  (slope 1)
+  total slope 19.0
