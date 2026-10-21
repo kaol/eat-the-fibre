@@ -1,0 +1,9 @@
+family: 3 local orbits, from rep 9 along (1, -2, 0), signature classes ['LRE']
+family: 3 local orbits, from rep 10 along (1, -2, 0), signature classes ['LRE']
+family: 3 local orbits, from rep 30 along (1, -2, 0), signature classes ['LRKE']
+family: 7 local orbits, from rep 63 along (1, 1, 0), signature classes ['-']
+family: 7 local orbits, from rep 129 along (1, 1, 0), signature classes ['-']
+family: 3 local orbits, from rep 131 along (1, -2, 0), signature classes ['LRKE']
+family: 7 local orbits, from rep 242 along (1, 1, 0), signature classes ['-']
+family: 7 local orbits, from rep 338 along (1, 1, 0), signature classes ['L']
+{"name": "pairs_in", "p": 7, "local_orbits": 469, "liftable": 465, "directions": 8, "fold_curves": 472, "families": 8, "family_signatures": ["('-', (2, (2, 2), 0, 0, 2), (5, (5, 5), 0, 0, 1))", "('L', (3, (3, 3), 0, 0, 3), (4, (4, 4), 0, 3, 0))", "('LRE', (1, (1, 1), 0, 0, 1), (6, (6, 6), 0, 2, 0))", "('LRKE', (1, (1, 1), 0, 0, 1), (6, (6, 6), 4, 0, 0))", "('LRKE', (2, (2, 2), 0, 0, 2), (5, (5, 5), 0, 4, 0))"]}

@@ -1,0 +1,20 @@
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δb    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δaδb  meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δb    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δaδb  meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δb    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δaδb  meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(3, (3, 3), 0, 0, 3)|(8, (8, 8), 0, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(3, (3, 3), 0, 0, 3)|(8, (8, 8), 0, 0, x=δb    meets 5 local orbits over 𝔽_5; classes {'-'}
+-|(3, (3, 3), 0, 0, 3)|(8, (8, 8), 0, 0, x=δaδb  meets 5 local orbits over 𝔽_5; classes {'-'}
+LRKE|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 6, x=δa    meets 5 local orbits over 𝔽_5; classes {'LRKE'}
+L|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'L'}
+L|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 5, x=δb    meets 5 local orbits over 𝔽_5; classes {'L'}
+L|(3, (3, 3), 0, 0, 3)|(8, (8, 8), 0, 4, x=δb    meets 5 local orbits over 𝔽_5; classes {'L'}
+R|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 0, 0, x=δb    meets 5 local orbits over 𝔽_5; classes {'R'}
+R|(2, (2, 2), 0, 0, 2)|(9, (9, 9), 5, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'R'}
+R|(3, (3, 3), 0, 0, 3)|(8, (8, 8), 4, 0, x=δa    meets 5 local orbits over 𝔽_5; classes {'R'}
+pairwise shared local orbits among the 19 families over 𝔽_5: 0

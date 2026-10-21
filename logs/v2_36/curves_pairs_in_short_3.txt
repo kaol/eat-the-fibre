@@ -1,0 +1,4 @@
+family: 3 local orbits, from rep 7 along (1, -2, 0), signature classes ['LRE']
+family: 3 local orbits, from rep 8 along (1, -2, 0), signature classes ['LRE']
+family: 3 local orbits, from rep 26 along (1, -2, 0), signature classes ['LRKE']
+{"name": "pairs_in_short", "p": 3, "local_orbits": 366, "liftable": 359, "directions": 8, "fold_curves": 260, "families": 3, "family_signatures": ["('LRE', (1, (1, 1), 0, 0, 1), (9, (9, 9), 0, 0, 0))", "('LRE', (1, (1, 1), 0, 0, 1), (9, (9, 9), 0, 5, 0))", "('LRKE', (1, (1, 1), 0, 0, 1), (9, (9, 9), 6, 0, 0))"]}
