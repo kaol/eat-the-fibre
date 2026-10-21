@@ -10,7 +10,9 @@ import EatTheFibre.Gen.two_pairs_short
 import EatTheFibre.Gen.pairs_in_short
 import EatTheFibre.Discordia.Bridge
 import EatTheFibre.Discordia.Exact
-import EatTheFibre.Gen.orbits
+import EatTheFibre.Gen.orbits_thm2
+import EatTheFibre.Gen.orbits_thm3F2
+import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
 import EatTheFibre.Discordia.Ops
 

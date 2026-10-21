@@ -3,3 +3,4 @@
 {"name": "pair_srcout", "p": 11, "N": 8474, "orbits_G": 137, "behaviours_Aut0": 91, "behaviours_Aut": 91, "quiver_automorphisms": 1, "inner": 1331, "coset_reps": 1200, "G_orbits_per_behaviour": {"1": 77, "2": 10, "10": 4}}
 {"name": "pairs_in", "p": 3, "N": 6376, "orbits_G": 485, "behaviours_Aut0": 319, "behaviours_Aut": 170, "quiver_automorphisms": 2, "inner": 81, "coset_reps": 64, "G_orbits_per_behaviour": {"1": 213, "2": 90, "4": 12, "11": 4}}
 {"name": "pairs_out", "p": 3, "N": 6376, "orbits_G": 485, "behaviours_Aut0": 319, "behaviours_Aut": 170, "quiver_automorphisms": 2, "inner": 81, "coset_reps": 64, "G_orbits_per_behaviour": {"1": 213, "2": 90, "4": 12, "11": 4}}
+{"name": "pairs_out", "p": 5, "N": 59972, "orbits_G": 557, "behaviours_Aut0": 319, "behaviours_Aut": 170, "quiver_automorphisms": 2, "inner": 625, "coset_reps": 576, "G_orbits_per_behaviour": {"1": 213, "2": 74, "4": 28, "21": 4}}

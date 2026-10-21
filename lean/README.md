@@ -1,4 +1,4 @@
-# Lean 4 formalization (v2.29–v2.32)
+# Lean 4 formalization (v2.29–v2.33)
 
 Lean 4 (v4.35.0) with Mathlib (v4.35.0, pinned in `lake-manifest.json`). Mathlib is used from its prebuilt cache; `.lake/`
 (packages, oleans, ~7 GB) is git-ignored and never committed.
@@ -7,6 +7,7 @@ Lean 4 (v4.35.0) with Mathlib (v4.35.0, pinned in `lake-manifest.json`). Mathlib
 curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
 cd lean && ./build.sh        # lake exe cache get, then each module in turn (the kernel checks need ~5 GB each)
 python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census engine (pcensus.build)
+python3 gen/gen_orbit.py     # regenerate EatTheFibre/Gen/orbits_*.lean (v2.33)
 ```
 
 ## What is proved
@@ -28,6 +29,7 @@ python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census
 | `Discordia/Bridge.lean` | **`isFold_iff_rb`**: folds = idempotent RB(−1) operators commuting with Δ; `fold_star` (δ-D1 for folds); `thm3_isRB`, `thm4_isRB`; δ-L fails for Theorem 4's fold (`thm4_not_dialgebra`, `thm4_not_multiplicative`, `thm4_not_module`) |
 | `Discordia/Logic.lean` | 𝔼: seven values, collapse homomorphism to S_fde (L2), L3 (`Γ ⊨ φ ⟺ Γ ⊨_LP φ ∧ Var φ ⊆ Var Γ`), L4, the L5 reduction, Meta-1 (4 of 49) |
 | `Discordia/Ops.lean` | M2, N5 (zero counit ⇒ trivial coalgebra), N6 on ℤ/5, β4, B4 (Eckmann–Hilton, and B4 ⇒ no neutral chaos), B1 (countable vs continuum; grid-named set null under i.i.d. Bernoulli products), B3 periods, §9 arithmetic |
+| `OrbitReflect.lean`, `Gen/orbits_*.lean` | v2.33: `orbit_sound` (kernel checks ⇒ `Φ_s` is a multiplicative bijection with `Φ_s P_0 = P_s Φ_s`); Theorem 2, F2, F4 are single inner orbits (`thm2_one_orbit`, `thm3F2_one_orbit`, `thm3F4_one_orbit`) |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 
 | result (docs) | Lean |
@@ -40,6 +42,7 @@ python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census
 | Theorem 4 on every acyclic quiver with consecutive classes (v2.28) | `thm4_general`, rigidity `thm4_general_rigid` |
 | Theorem 3 on every acyclic quiver with converging classes, `u ≠ w`, no arrow between `u` and `w` (v2.27) | `thm3_general`, rigidity `thm3_general_rigid` |
 | Folds are idempotent RB(−1) operators commuting with Δ (v2.31) | `CoordAlg.isFold_iff_rb` |
+| Theorem 2, F2, F4 families are single inner orbits (v2.33) | `Q_two_pairs.thm2_one_orbit`, `Q_pairs_in.thm3F{2,4}_one_orbit` |
 | δ-D2 exact (v2.32) | `Discordia.Completion.*_iff`, `mult_iff` |
 | v2 axioms M2–M4, N5, N6, β4, δ-L, δ-D, δ-D1, δ-D2, E1, E1⋆, B1, B3, B4, L2–L5, Meta-1 (v2.31) | `Discordia/*.lean` |
 

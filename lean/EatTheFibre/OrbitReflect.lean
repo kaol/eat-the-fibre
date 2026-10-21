@@ -26,9 +26,15 @@ def eP (i : Fin d) : Fin d → Poly := fun j => if j = i then [1] else []
 /-- the constant-term matrix -/
 def constP (P : Fin d → Fin d → Poly) (i j : Fin d) : Poly := match P i j with | [] => [] | a :: _ => [a]
 
-def homOK (Φ : Fin d → Fin d → Poly) : Bool :=
-  (List.finRange d).all fun i => (List.finRange d).all fun j => (List.finRange d).all fun m =>
+/-- multiplicativity on the products `e_i · e_j`, all `j` (one row, for a separate kernel check) -/
+def homRow (Φ : Fin d → Fin d → Poly) (i : Fin d) : Bool :=
+  (List.finRange d).all fun j => (List.finRange d).all fun m =>
     isZero (sub (mulVecP Φ (algMulP c (eP i) (eP j)) m) (algMulP c (colP Φ i) (colP Φ j) m))
+
+def homOK (Φ : Fin d → Fin d → Poly) : Bool := (List.finRange d).all fun i => homRow c Φ i
+
+lemma homOK_of_rows (Φ : Fin d → Fin d → Poly) (h : ∀ i, homRow c Φ i = true) : homOK c Φ = true := by
+  simp only [homOK, all_finRange]; exact h
 
 def idP (i j : Fin d) : Poly := if i = j then [1] else []
 
@@ -65,7 +71,7 @@ theorem orbit_sound (D : Fin d → Fin d → Fin d → ℤ) (Φ Ψ P : Fin d →
       (CoordAlg.ofInt k c D).mul (evalM Φ s *ᵥ v) (evalM Φ s *ᵥ w)) ∧
     evalM Ψ s * evalM Φ s = 1 ∧ evalM Φ s * evalM Ψ s = 1 ∧
     evalM Φ s * evalM P 0 = evalM P s * evalM Φ s := by
-  simp only [homOK, invOK, interOK, Bool.and_eq_true, all_finRange] at hh hi hc
+  simp only [homOK, homRow, invOK, interOK, Bool.and_eq_true, all_finRange] at hh hi hc
   refine ⟨?_, ?_, ?_, ?_⟩
   · -- on the basis, then by bilinearity
     set A := CoordAlg.ofInt k c D

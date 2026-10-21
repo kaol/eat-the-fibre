@@ -1,4 +1,4 @@
-"""Generate lean/EatTheFibre/Gen/orbits.lean (v2.33): conjugating inner automorphisms Φ_s = Inn(1 + s·w) for the
+"""Generate lean/EatTheFibre/Gen/orbits_*.lean (v2.33): conjugating inner automorphisms Φ_s = Inn(1 + s·w) for the
 families whose connecting automorphisms are polynomial (Theorem 2 on 1⇉2⇉3; Theorem 3 F2, F4 on 1⇉2⇇3).
 w = δ_a δ_b (Theorem 2), w = δ_b − δ_a (F2, F4), with δ_a = a1 − a2, δ_b = b1 − b2. Ψ_s = Inn((1 + s·w)⁻¹).
 Usage: python3 lean/gen/gen_orbit.py"""
@@ -40,7 +40,7 @@ dbda = {'a1': -1, 'a2': 1, 'b1': 1, 'b2': -1}
 fams = [('Q_two_pairs', 'two_pairs', 'thm2', dadb, 'Theorem 2 (1⇉2⇉3)', 'δ_a δ_b'),
         ('Q_pairs_in', 'pairs_in', 'thm3F2', dbda, 'Theorem 3 F2 (1⇉2⇇3)', 'δ_b − δ_a'),
         ('Q_pairs_in', 'pairs_in', 'thm3F4', dbda, 'Theorem 3 F4 (1⇉2⇇3)', 'δ_b − δ_a')]
-out = ['''/-
+HEADER = '''/-
 # The polynomial families are single inner orbits (v2.33)
 
 For Theorem 2 and Theorem 3 F2, F4, the inner automorphism `Φ_s = Inn(1 + s·w)` carries the base member `P_0` to
@@ -55,9 +55,13 @@ import EatTheFibre.Gen.two_pairs
 import EatTheFibre.Gen.pairs_in
 
 open Matrix EatTheFibre.Reflect
-''']
+'''
+written = []
+out = []
 for ns, q, fam, w, doc, wdoc in fams:
     d, Phi, Psi = inner(q, w)
+    rows = "\n".join(f"lemma {fam}_hom{i} : homRow c {fam}PhiP {i} = true := by decide +kernel" for i in range(d))
+    cases = "\n".join(f"  · exact {fam}_hom{i}" for i in range(d))
     out.append(f'''
 namespace EatTheFibre.{ns}
 
@@ -69,7 +73,10 @@ def {fam}PhiP : Fin {d} → Fin {d} → Poly :=
 def {fam}PsiP : Fin {d} → Fin {d} → Poly :=
   {lean_mat(Psi, d)}
 
-lemma {fam}_homOK : homOK c {fam}PhiP = true := by decide +kernel
+{rows}
+lemma {fam}_homOK : homOK c {fam}PhiP = true := by
+  apply homOK_of_rows; intro i; fin_cases i
+{cases}
 lemma {fam}_invOK : invOK {fam}PhiP {fam}PsiP = true := by decide +kernel
 lemma {fam}_interOK : interOK {fam}PhiP {fam}P = true := by decide +kernel
 
@@ -82,5 +89,6 @@ theorem {fam}_one_orbit {{k : Type*}} [CommRing k] (s : k) :
 
 end EatTheFibre.{ns}
 ''')
-open(os.path.join(GEN, 'orbits.lean'), 'w').write(''.join(out))
-print("wrote", os.path.join(GEN, 'orbits.lean'))
+    fn = os.path.join(GEN, f'orbits_{fam}.lean')
+    open(fn, 'w').write(HEADER + out.pop()); written.append(fn)
+print("wrote", *written)

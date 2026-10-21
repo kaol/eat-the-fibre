@@ -18,7 +18,7 @@ two points in it, and tests it. Predictions were committed before the census was
 | 4 | The degenerate parameters are exactly the poles of φ: t = 1 for Theorem 4, t ∈ {0, −1} for F1 and F3. At t = 1 (Theorem 4) and t = 0 (F1, F3) the image is not semisimple; t = −1 (F1, F3) is a different embedding of the same algebra. The census ranges q − 1 (Theorem 4) and q − 2 (Theorem 3) are exactly the generic ranges | computed |
 | 5 | Behaviour census: 1⇉2, 1→3 has **91 behaviours over both 𝔽₃ and 𝔽₁₁**; its G-orbit growth (105 → 137) lies entirely in the fibres. 1⇉2⇇3 has **319 behaviours (170 with the 1↔3 quiver automorphism) over both 𝔽₃ and 𝔽₅**, with 485 → 557 G-orbits | computed, `analysis/behaviour_census.py`; all four pre-registered predictions hold |
 | 6 | Module class (v2.32) is constant on behaviours. Theorem 3's vertex block is **not**: it is the coordinate along the four wide fibres of 1⇉2⇇3 | computed |
-| 7 | Theorem 2, F2 and F4 are single orbits of `s ↦ Inn(1 + s·w)` over every commutative ring and every s | **proved (Lean)**, `thm2_one_orbit`, `thm3F2_one_orbit`, `thm3F4_one_orbit` (`Gen/orbits.lean`, `OrbitReflect.lean`) |
+| 7 | Theorem 2, F2 and F4 are single orbits of `s ↦ Inn(1 + s·w)` over every commutative ring and every s | **proved (Lean)**, `thm2_one_orbit`, `thm3F2_one_orbit`, `thm3F4_one_orbit` (`Gen/orbits_*.lean`, `OrbitReflect.lean`); audit 77 results, standard axioms only |
 
 ## 1. What a behaviour is
 
@@ -90,7 +90,7 @@ With δ_a = a₁ − a₂ and δ_b = b₁ − b₂ (the two parallel classes), �
 | 1⇉2⇇3 / 𝔽₃ | 485 | 319 | 170 | 81 | 64 | 1 (213), 2 (90), 4 (12), 11 (4) |
 | 1⇉2⇇3 / 𝔽₅ | 557 | 319 | 170 | 625 | 576 | 1 (213), 2 (74), 4 (28), 21 (4) |
 | 1⇇2⇉3 / 𝔽₃ | 485 | 319 | 170 | 81 | 64 | 1 (213), 2 (90), 4 (12), 11 (4) |
-| 1⇇2⇉3 / 𝔽₅ | 557 | (run in progress) | | 625 | 576 | |
+| 1⇇2⇉3 / 𝔽₅ | 557 | 319 | 170 | 625 | 576 | 1 (213), 2 (74), 4 (28), 21 (4) |
 
 Aut⁰ = Inn ⋊ Sub; Aut adds the quiver automorphisms. Checks built into the runs: the G-orbit counts reproduce the
 census; module class is constant on every behaviour.
@@ -104,6 +104,17 @@ Reading the table:
 - **1⇉2⇇3 and its opposite agree** behaviour for behaviour in the counts, as duality requires.
 - **Not run:** 𝔽₇ for 1⇉2⇇3. The method costs |cosets| × |Inn| = 2304 × 2401 conjugations per representative, which
   puts it out of reach in this container. 1⇉2⇉3 (Inn = q⁸) is out of reach for the same reason.
+
+**Pre-registered predictions** (`logs/v2_33/PREDICTIONS.md`):
+
+| # | prediction | outcome |
+|---|---|---|
+| 1 | behaviour count independent of q | holds: 91 (1⇉2, 1→3, q = 3, 11); 319 / 170 (1⇉2⇇3, q = 3, 5) |
+| 2 | the 4(q−2) growth of 1⇉2⇇3 disappears; the Theorem 3 families are 4 wide behaviours | holds: 4 behaviours of width 11 → 21 |
+| 3 | module class constant on behaviours | holds |
+| 4 | pairs_in and pairs_out agree | holds, at both primes |
+
+The run over 𝔽₇ named in the pre-registration was not done (cost, §3).
 
 ## 4. Le Chat's three sub-questions
 
@@ -131,4 +142,5 @@ Reading the table:
    canonical form under Inn).
 3. Characterise the fibres as Δ-compatible positions: the set {φ ∈ Aut(kQ) : φ P φ⁻¹ is a fold} modulo G.
 
-Files: `analysis/behaviour_census.py`, `analysis/family_behaviour.py`, `logs/v2_33/`.
+Files: `analysis/behaviour_census.py`, `analysis/family_behaviour.py`, `lean/gen/gen_orbit.py`,
+`lean/EatTheFibre/OrbitReflect.lean`, `lean/EatTheFibre/Gen/orbits_*.lean`, `logs/v2_33/`.
