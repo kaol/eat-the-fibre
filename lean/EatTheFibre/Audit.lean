@@ -31,6 +31,7 @@ import EatTheFibre.Gen.two_pairs_fam16
 import EatTheFibre.Gen.two_pairs_fam17
 import EatTheFibre.Gen.two_pairs_fam18
 import EatTheFibre.Gen.two_pairs_fam19
+import EatTheFibre.Gen.two_pairs_rigid
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -165,3 +166,22 @@ open EatTheFibre
 #print axioms Q_two_pairs.fam18_one_orbit
 #print axioms Q_two_pairs.fam19_isFold
 #print axioms Q_two_pairs.fam19_one_orbit
+#print axioms Q_two_pairs.fam1_rigid_GT
+#print axioms Q_two_pairs.fam2_rigid_GT
+#print axioms Q_two_pairs.fam3_rigid_GT
+#print axioms Q_two_pairs.fam4_rigid_GT
+#print axioms Q_two_pairs.fam5_rigid_GT
+#print axioms Q_two_pairs.fam6_rigid_GT
+#print axioms Q_two_pairs.fam7_rigid_GT
+#print axioms Q_two_pairs.fam8_rigid_GT
+#print axioms Q_two_pairs.fam9_rigid_GT
+#print axioms Q_two_pairs.fam10_rigid_GT
+#print axioms Q_two_pairs.fam11_rigid_GT
+#print axioms Q_two_pairs.fam12_rigid_GT
+#print axioms Q_two_pairs.fam13_rigid_GT
+#print axioms Q_two_pairs.fam14_rigid_GT
+#print axioms Q_two_pairs.fam15_rigid_GT
+#print axioms Q_two_pairs.fam16_rigid_GT
+#print axioms Q_two_pairs.fam17_rigid_GT
+#print axioms Q_two_pairs.fam18_rigid_GT
+#print axioms Q_two_pairs.fam19_rigid_GT

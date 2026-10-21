@@ -1,0 +1,20 @@
+family 1: x δa, nz ['b2', 'a2b2'], eqs 20, certificate degree 1
+family 2: x δb, nz ['a2', 'a2b2'], eqs 20, certificate degree 1
+family 3: x δaδb, nz ['a2', 'b2'], eqs 20, certificate degree 2
+family 4: x δa, nz ['b2', 'a2b2'], eqs 20, certificate degree 1
+family 5: x δb, nz ['a2', 'a2b2'], eqs 20, certificate degree 1
+family 6: x δaδb, nz ['a2', 'b2'], eqs 20, certificate degree 2
+family 7: x δa, nz ['b2', 'a2b2'], eqs 20, certificate degree 1
+family 8: x δb, nz ['a2', 'a2b2'], eqs 20, certificate degree 1
+family 9: x δaδb, nz ['a2', 'b2'], eqs 20, certificate degree 2
+family 10: x δa, nz ['e2', 'b2', 'a2b2'], eqs 33, certificate degree 1
+family 11: x δb, nz ['e2', 'a2', 'a2b2'], eqs 33, certificate degree 1
+family 12: x δaδb, nz ['e2', 'a2', 'b2'], eqs 33, certificate degree 2
+family 13: x δa, nz ['e1', 'e3'], eqs 20, certificate degree 2
+family 14: x δa, nz ['e2', 'b2'], eqs 20, certificate degree 2
+family 15: x δb, nz ['e1', 'a2'], eqs 20, certificate degree 2
+family 16: x δb, nz ['e1', 'a2', 'a2b2'], eqs 33, certificate degree 1
+family 17: x δb, nz ['e2', 'a2'], eqs 20, certificate degree 2
+family 18: x δa, nz ['e3', 'b2'], eqs 20, certificate degree 2
+family 19: x δa, nz ['e3', 'b2', 'a2b2'], eqs 33, certificate degree 1
+denominators: [1]
