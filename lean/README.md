@@ -1,4 +1,4 @@
-# Lean 4 formalization (v2.29–v2.34)
+# Lean 4 formalization (v2.29–v2.36)
 
 Lean 4 (v4.35.0) with Mathlib (v4.35.0, pinned in `lake-manifest.json`). Mathlib is used from its prebuilt cache; `.lake/`
 (packages, oleans, ~7 GB) is git-ignored and never committed.
@@ -8,6 +8,7 @@ curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh
 cd lean && ./build.sh        # lake exe cache get, then each module in turn (the kernel checks need ~5 GB each)
 python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census engine (pcensus.build)
 python3 gen/gen_orbit.py     # regenerate EatTheFibre/Gen/orbits_*.lean (v2.33)
+python3 gen/gen_families.py NF.pkl REPS.pkl   # regenerate Gen/two_pairs_fam*.lean (v2.36; inputs in logs/v2_36, logs/v2_32)
 ```
 
 ## What is proved
@@ -30,6 +31,7 @@ python3 gen/gen_orbit.py     # regenerate EatTheFibre/Gen/orbits_*.lean (v2.33)
 | `Discordia/Logic.lean` | 𝔼: seven values, collapse homomorphism to S_fde (L2), L3 (`Γ ⊨ φ ⟺ Γ ⊨_LP φ ∧ Var φ ⊆ Var Γ`), L4, the L5 reduction, Meta-1 (4 of 49) |
 | `Discordia/Ops.lean` | M2, N5 (zero counit ⇒ trivial coalgebra), N6 on ℤ/5, β4, B4 (Eckmann–Hilton, and B4 ⇒ no neutral chaos), B1 (countable vs continuum; grid-named set null under i.i.d. Bernoulli products), B3 periods, §9 arithmetic |
 | `OrbitReflect.lean`, `Gen/orbits_*.lean` | v2.33: `orbit_sound` (kernel checks ⇒ `Φ_s` is a multiplicative bijection with `Φ_s P_0 = P_s Φ_s`); Theorem 2, F2, F4 are single inner orbits (`thm2_one_orbit`, `thm3F2_one_orbit`, `thm3F4_one_orbit`) |
+| `Gen/two_pairs_fam{1..19}.lean` | v2.36: the 19 families of 1⇉2⇉3 in closed form; `fam{k}_isFold` (fold over every commutative ring, every t) and `fam{k}_one_orbit` (one inner orbit) |
 | `Transport.lean` | v2.34: `twist` (Δ transported along an algebra automorphism), `twist_delta`, **`transport`**: φPφ⁻¹ is a fold iff P is a fold for Δ^φ |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 
@@ -43,6 +45,7 @@ python3 gen/gen_orbit.py     # regenerate EatTheFibre/Gen/orbits_*.lean (v2.33)
 | Theorem 4 on every acyclic quiver with consecutive classes (v2.28) | `thm4_general`, rigidity `thm4_general_rigid` |
 | Theorem 3 on every acyclic quiver with converging classes, `u ≠ w`, no arrow between `u` and `w` (v2.27) | `thm3_general`, rigidity `thm3_general_rigid` |
 | Folds are idempotent RB(−1) operators commuting with Δ (v2.31) | `CoordAlg.isFold_iff_rb` |
+| All 19 families of 1⇉2⇉3 (v2.36) | `Q_two_pairs.fam{1..19}_isFold`, `fam{1..19}_one_orbit` |
 | Transport: fibres over behaviours are coproduct twists (v2.34) | `CoordAlg.transport` |
 | Theorem 2, F2, F4 families are single inner orbits (v2.33) | `Q_two_pairs.thm2_one_orbit`, `Q_pairs_in.thm3F{2,4}_one_orbit` |
 | δ-D2 exact (v2.32) | `Discordia.Completion.*_iff`, `mult_iff` |

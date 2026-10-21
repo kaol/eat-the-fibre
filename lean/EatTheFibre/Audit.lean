@@ -12,6 +12,25 @@ import EatTheFibre.Discordia.Bridge
 import EatTheFibre.Discordia.Exact
 import EatTheFibre.Gen.orbits_thm2
 import EatTheFibre.Transport
+import EatTheFibre.Gen.two_pairs_fam1
+import EatTheFibre.Gen.two_pairs_fam2
+import EatTheFibre.Gen.two_pairs_fam3
+import EatTheFibre.Gen.two_pairs_fam4
+import EatTheFibre.Gen.two_pairs_fam5
+import EatTheFibre.Gen.two_pairs_fam6
+import EatTheFibre.Gen.two_pairs_fam7
+import EatTheFibre.Gen.two_pairs_fam8
+import EatTheFibre.Gen.two_pairs_fam9
+import EatTheFibre.Gen.two_pairs_fam10
+import EatTheFibre.Gen.two_pairs_fam11
+import EatTheFibre.Gen.two_pairs_fam12
+import EatTheFibre.Gen.two_pairs_fam13
+import EatTheFibre.Gen.two_pairs_fam14
+import EatTheFibre.Gen.two_pairs_fam15
+import EatTheFibre.Gen.two_pairs_fam16
+import EatTheFibre.Gen.two_pairs_fam17
+import EatTheFibre.Gen.two_pairs_fam18
+import EatTheFibre.Gen.two_pairs_fam19
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -106,3 +125,43 @@ open EatTheFibre
 -- the fibre over a behaviour is a set of coproduct twists (v2.34)
 #print axioms CoordAlg.twist_delta
 #print axioms CoordAlg.transport
+
+-- all nineteen families of 1⇉2⇉3 (v2.36)
+#print axioms Q_two_pairs.fam1_isFold
+#print axioms Q_two_pairs.fam1_one_orbit
+#print axioms Q_two_pairs.fam2_isFold
+#print axioms Q_two_pairs.fam2_one_orbit
+#print axioms Q_two_pairs.fam3_isFold
+#print axioms Q_two_pairs.fam3_one_orbit
+#print axioms Q_two_pairs.fam4_isFold
+#print axioms Q_two_pairs.fam4_one_orbit
+#print axioms Q_two_pairs.fam5_isFold
+#print axioms Q_two_pairs.fam5_one_orbit
+#print axioms Q_two_pairs.fam6_isFold
+#print axioms Q_two_pairs.fam6_one_orbit
+#print axioms Q_two_pairs.fam7_isFold
+#print axioms Q_two_pairs.fam7_one_orbit
+#print axioms Q_two_pairs.fam8_isFold
+#print axioms Q_two_pairs.fam8_one_orbit
+#print axioms Q_two_pairs.fam9_isFold
+#print axioms Q_two_pairs.fam9_one_orbit
+#print axioms Q_two_pairs.fam10_isFold
+#print axioms Q_two_pairs.fam10_one_orbit
+#print axioms Q_two_pairs.fam11_isFold
+#print axioms Q_two_pairs.fam11_one_orbit
+#print axioms Q_two_pairs.fam12_isFold
+#print axioms Q_two_pairs.fam12_one_orbit
+#print axioms Q_two_pairs.fam13_isFold
+#print axioms Q_two_pairs.fam13_one_orbit
+#print axioms Q_two_pairs.fam14_isFold
+#print axioms Q_two_pairs.fam14_one_orbit
+#print axioms Q_two_pairs.fam15_isFold
+#print axioms Q_two_pairs.fam15_one_orbit
+#print axioms Q_two_pairs.fam16_isFold
+#print axioms Q_two_pairs.fam16_one_orbit
+#print axioms Q_two_pairs.fam17_isFold
+#print axioms Q_two_pairs.fam17_one_orbit
+#print axioms Q_two_pairs.fam18_isFold
+#print axioms Q_two_pairs.fam18_one_orbit
+#print axioms Q_two_pairs.fam19_isFold
+#print axioms Q_two_pairs.fam19_one_orbit

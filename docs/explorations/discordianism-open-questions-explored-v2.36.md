@@ -2,7 +2,8 @@
 
 *v2.35 located the 19 families behind 1⇉2⇉3's local-torus count 678 + 19(q−1) by behaviour type. This round gives every
 one of them a closed form, P_t = Inn(1 + t·x)·P₀·Inn(1 + t·x)⁻¹, with P₀ an integer fold and x ∈ {δ_a, δ_b, δ_aδ_b}. It
-checks the forms at two primes, and kernel-checks them in Lean. Theorems 2 and 4 are two of the nineteen; seventeen
+checks the forms at two primes, and kernel-checks them in Lean. The audit now has 117 results, all on the standard
+axioms (one on none). Theorems 2 and 4 are two of the nineteen; seventeen
 are new. This answers v2.28 open question 2 for 1⇉2⇉3.*
 
 ---
