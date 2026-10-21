@@ -16,4 +16,6 @@ import EatTheFibre.Discordia.Exact
 import EatTheFibre.Discordia.Logic
 import EatTheFibre.Discordia.Ops
 import EatTheFibre.Discordia.Bridge
+import EatTheFibre.OrbitReflect
+import EatTheFibre.Gen.orbits
 import EatTheFibre.Audit

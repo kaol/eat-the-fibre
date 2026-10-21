@@ -1,0 +1,6 @@
+thm2P    φ P_t = P_t' φ in Q(t, t'): True;  denominators of φ: none
+thm4P    φ P_t = P_t' φ in Q(t, t'): True;  denominators of φ: ['t2 - 1']
+thm3F2P  φ P_t = P_t' φ in Q(t, t'): True;  denominators of φ: none
+thm3F4P  φ P_t = P_t' φ in Q(t, t'): True;  denominators of φ: none
+thm3F1P  φ P_t = P_t' φ in Q(t, t'): True;  denominators of φ: ['t2', 't2 + 1']
+thm3F3P  φ P_t = P_t' φ in Q(t, t'): True;  denominators of φ: ['t2', 't2 + 1']

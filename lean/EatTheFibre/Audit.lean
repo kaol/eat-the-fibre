@@ -10,6 +10,7 @@ import EatTheFibre.Gen.two_pairs_short
 import EatTheFibre.Gen.pairs_in_short
 import EatTheFibre.Discordia.Bridge
 import EatTheFibre.Discordia.Exact
+import EatTheFibre.Gen.orbits
 import EatTheFibre.Discordia.Logic
 import EatTheFibre.Discordia.Ops
 
@@ -92,3 +93,9 @@ open EatTheFibre
 #print axioms Discordia.Completion.line2_iff
 #print axioms Discordia.Completion.line0_iff
 #print axioms Discordia.Completion.lineB_iff
+
+-- the polynomial families are single inner orbits (v2.33)
+#print axioms Reflect.orbit_sound
+#print axioms Q_two_pairs.thm2_one_orbit
+#print axioms Q_pairs_in.thm3F2_one_orbit
+#print axioms Q_pairs_in.thm3F4_one_orbit
