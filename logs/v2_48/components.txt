@@ -1,0 +1,10 @@
+chart 0: comp 1 dim 5; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp0.sing:14; comp 2 dim 5; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp0.sing:14; comp 3 dim 6; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp0.sing:14; comp 4 dim 5
+chart 1: comp 1 dim 5; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp1.sing:14; comp 2 dim 5; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp1.sing:14; comp 3 dim 6; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp1.sing:14; comp 4 dim 5
+chart 3: comp 1 dim 5; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp3.sing:14; comp 2 dim 5; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp3.sing:14; comp 3 dim 6; // ** redefining Gi (  ideal Gi = std(L[i]);) /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/divA_comp3.sing:14; comp 4 dim 5
+6-dimensional primes found: 3
+(29) prime (0, 'divA_comp0.txt.3') vs (1, 'divA_comp1.txt.3'): equal = True
+(29) prime (0, 'divA_comp0.txt.3') vs (3, 'divA_comp3.txt.3'): equal = True
+(29) prime (1, 'divA_comp1.txt.3') vs (3, 'divA_comp3.txt.3'): equal = True
+(30) prime (0, 'divA_comp0.txt.3'): P1 on it; dim T_P1 D = 6; dim(T_P1 D ∩ [Der, P1]) = 5; directions outside [Der, P1]: 1
+(30) prime (1, 'divA_comp1.txt.3'): P1 on it; dim T_P1 D = 6; dim(T_P1 D ∩ [Der, P1]) = 5; directions outside [Der, P1]: 1
+(30) prime (3, 'divA_comp3.txt.3'): P1 on it; dim T_P1 D = 6; dim(T_P1 D ∩ [Der, P1]) = 5; directions outside [Der, P1]: 1
