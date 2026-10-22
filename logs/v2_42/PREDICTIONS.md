@@ -81,3 +81,22 @@ run_batch.py job 16 with this prediction (unmerged count 2012, merged 1027). Log
 - **Merged count (prediction 1027): not yet testable.** run_batch.py never passed `--save-reps` on to pcensus.py (the
   flag was accepted and ignored), so no representatives were written. Fixed in run_batch.py; rerunning job 16 with
   `--save-reps` resumes from its checkpoint.
+
+### Outcome of 6 (merged): **held**
+
+With the representatives from the rerun (`logs/reps_two_pairs_short_7.pkl`), the shear merge gives **1027** at q = 7
+(`logs/v2_43/merge_two_pairs_short_7.txt`). So the merged counts are 939, 983, 1027 = 873 + 22q at q = 3, 5, 7. The
+non-linearity of the unmerged count (1668, 1840, 2028) disappears under the full Δ-compatible group.
+
+## Prediction 7 (committed before the three-prime checks)
+
+7. At q = 7, against the merged labels:
+   - the 18 integer closed forms of v2.42 meet 7 orbits each, pairwise disjoint;
+   - the 17 bounded curves meet 3 orbits each;
+   - after removing the 18 families, 901 orbits remain (873 + 4·7), with the two image-dimension-7 target groups at
+     31 orbits each (23, 27, 31).
+
+**Process note.** Prediction 7 was written before the computation, but its commit failed: `logs/reps_*.pkl` is
+gitignored, so `git add` aborted. The cross-prime run then started anyway, because the commands were chained with
+`;`. The text above is unchanged from what was written, but it was **not committed before the run**. Treat it as
+written-before, committed-after.

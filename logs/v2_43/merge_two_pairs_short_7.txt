@@ -1,0 +1,2 @@
+two_pairs_short F_7: local-torus orbits 2028; with U = {c ↦ c + s·δ_aδ_b} as well: 1027
+wrote /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/tps_merged_7.pkl
