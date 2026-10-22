@@ -12,3 +12,25 @@ merged orbit suffices.
 9. In the two dim-7 image groups, the per-(b, e) orbit counts at q = 3, 5, 7 grow only in classes with e = 0.
    Together they grow by 4 per unit of q, 2 per group. That is, the 4 missing families are not orbits of automorphism
    groups to first order: along them the splitting itself, its behaviour, varies.
+
+## Outcomes of 8 and 9: both **held** (`be_orbits_L.txt`)
+
+- 8: points of the inner families have (b, e) ∈ {(0, 1), (0, 2)}.
+- 9: in the L target group only the classes (1, 0) (6, 8, 10) and (2, 0) (8, 10, 12) grow, by q each.
+
+Exploration (not predicted): at rep 5107 (class (1, 0), q = 5), T_P has dimension 8 and [Der, P] ∩ T has dimension 7.
+The kernel-moving idempotent line P₀ + t·N, with rank-one integer N on rows (e₃, b₁, b₂) and columns
+(a₁, a₂, c, a₁b₁ or a₁b₂, a₂b₂), is Δ-compatible and idempotent over ℚ[t]. Its points meet exactly q orbits at
+q = 3, 5, 7 (`lines_5107.txt`).
+
+## Predictions 10–12 (committed before the exact checks and the other searches)
+
+10. For that line (the first N in lines_5107.txt):
+    (a) ker P(t) is a subalgebra for all t, exactly over ℚ[t], so P(t) is a fold over ℚ for every t;
+    (b) N ∉ [Der(kQ), P₀] over ℚ, by an exact rank computation. Hence in characteristic 0 the curve is not contained in
+        one Aut(kQ)-orbit: Aut(kQ) is an algebraic group with Lie algebra Der(kQ), so a curve inside the orbit of P₀
+        would have tangent in [Der, P₀]. Its members realise infinitely many behaviours.
+11. The mirror R group has the same structure: an image- or kernel-moving line from a (1, 0) representative that meets
+    q orbits at q = 3, 5, 7.
+12. The (2, 0)-class family of each group is also an idempotent line from one of its representatives, found by the
+    same search.
