@@ -32,6 +32,7 @@ import EatTheFibre.Gen.two_pairs_fam17
 import EatTheFibre.Gen.two_pairs_fam18
 import EatTheFibre.Gen.two_pairs_fam19
 import EatTheFibre.Gen.two_pairs_rigid
+import EatTheFibre.Gen.two_pairs_disjoint
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -185,3 +186,4 @@ open EatTheFibre
 #print axioms Q_two_pairs.fam17_rigid_GT
 #print axioms Q_two_pairs.fam18_rigid_GT
 #print axioms Q_two_pairs.fam19_rigid_GT
+#print axioms Q_two_pairs.fam_orbits_injective

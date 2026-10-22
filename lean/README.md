@@ -1,4 +1,4 @@
-# Lean 4 formalization (v2.29–v2.37)
+# Lean 4 formalization (v2.29–v2.38)
 
 Lean 4 (v4.35.0) with Mathlib (v4.35.0, pinned in `lake-manifest.json`). Mathlib is used from its prebuilt cache; `.lake/`
 (packages, oleans, ~7 GB) is git-ignored and never committed.
@@ -10,6 +10,7 @@ python3 gen/gen.py           # regenerate EatTheFibre/Gen/*.lean from the census
 python3 gen/gen_orbit.py     # regenerate EatTheFibre/Gen/orbits_*.lean (v2.33)
 python3 gen/gen_families.py NF.pkl REPS.pkl   # regenerate Gen/two_pairs_fam*.lean (v2.36; inputs in logs/v2_36, logs/v2_32)
 python3 gen/gen_rigid.py CERT.pkl              # regenerate Gen/two_pairs_rigid.lean (v2.37; input logs/v2_37/certificates_two_pairs_7.pkl)
+python3 gen/gen_disjoint.py CERT.pkl           # regenerate Gen/two_pairs_disjoint.lean (v2.38; same input)
 ```
 
 ## What is proved
@@ -34,6 +35,7 @@ python3 gen/gen_rigid.py CERT.pkl              # regenerate Gen/two_pairs_rigid.
 | `OrbitReflect.lean`, `Gen/orbits_*.lean` | v2.33: `orbit_sound` (kernel checks ⇒ `Φ_s` is a multiplicative bijection with `Φ_s P_0 = P_s Φ_s`); Theorem 2, F2, F4 are single inner orbits (`thm2_one_orbit`, `thm3F2_one_orbit`, `thm3F4_one_orbit`) |
 | `Gen/two_pairs_fam{1..19}.lean` | v2.36: the 19 families of 1⇉2⇉3 in closed form; `fam{k}_isFold` (fold over every commutative ring, every t) and `fam{k}_one_orbit` (one inner orbit) |
 | `Gen/two_pairs_rigid.lean` | v2.37: `fam{k}_rigid` (an intertwiner acting on V by `ScalesV` and fixing e₃ forces t = t′) and `fam{k}_rigid_GT` (the same for every class substitution with column sums 1 and class weights), by integer `linear_combination` certificates |
+| `Gen/two_pairs_disjoint.lean` | v2.38: `fam{k}_fam{k'}_disjoint` for all 342 ordered pairs (one constant entry of `h·P − P'·h`; no hypotheses on `h = subst (wa • ga) (wb • gb)`), and `fam_orbits_injective` ((family, t) ↦ (G × T²)-orbit is injective) |
 | `Transport.lean` | v2.34: `twist` (Δ transported along an algebra automorphism), `twist_delta`, **`transport`**: φPφ⁻¹ is a fold iff P is a fold for Δ^φ |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 
@@ -49,6 +51,7 @@ python3 gen/gen_rigid.py CERT.pkl              # regenerate Gen/two_pairs_rigid.
 | Folds are idempotent RB(−1) operators commuting with Δ (v2.31) | `CoordAlg.isFold_iff_rb` |
 | All 19 families of 1⇉2⇉3 (v2.36) | `Q_two_pairs.fam{1..19}_isFold`, `fam{1..19}_one_orbit` |
 | Rigidity of the 19 families (v2.37) | `Q_two_pairs.fam{1..19}_rigid_GT` |
+| Families inject into census orbits (v2.38) | `Q_two_pairs.fam_orbits_injective` |
 | Transport: fibres over behaviours are coproduct twists (v2.34) | `CoordAlg.transport` |
 | Theorem 2, F2, F4 families are single inner orbits (v2.33) | `Q_two_pairs.thm2_one_orbit`, `Q_pairs_in.thm3F{2,4}_one_orbit` |
 | δ-D2 exact (v2.32) | `Discordia.Completion.*_iff`, `mult_iff` |

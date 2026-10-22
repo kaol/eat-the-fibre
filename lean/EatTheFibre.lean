@@ -41,4 +41,5 @@ import EatTheFibre.Gen.two_pairs_fam17
 import EatTheFibre.Gen.two_pairs_fam18
 import EatTheFibre.Gen.two_pairs_fam19
 import EatTheFibre.Gen.two_pairs_rigid
+import EatTheFibre.Gen.two_pairs_disjoint
 import EatTheFibre.Audit

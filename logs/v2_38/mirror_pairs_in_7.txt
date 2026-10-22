@@ -1,0 +1,9 @@
+σ-images of the families:
+  family from rep 63: σ-image is family [242]
+  family from rep 129: σ-image is family [129]
+  family from rep 242: σ-image is family [63]
+  family from rep 338: σ-image is family [338]
+F1: Lean table meets 7 local orbits; shares 5 with family from rep 63
+F2: Lean table meets 7 local orbits; shares 7 with family from rep 129
+F3: Lean table meets 7 local orbits; shares 5 with family from rep 242
+F4: Lean table meets 7 local orbits; shares 7 with family from rep 338

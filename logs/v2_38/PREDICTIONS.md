@@ -46,3 +46,15 @@ and rank εP|_{rad^n}, is an Aut(kQ)-invariant D(P) (for 1⇉2⇉3, where Aut(Q)
 5a. (sanity) D is constant along each of the 19 families (all t ∈ 𝔽₇ and generic t).
 5b. D, together with the v2.35 signature, takes 19 distinct values on the 19 families: they are 19 distinct behaviours.
 5c. On 1⇉2⇇3, D (symmetrised under the vertex swap) separates F1, F2 and F3 (v2.35 open question 2).
+
+### Outcome of 5 (`depth.txt`, `mirror_pairs_in_7.txt`)
+
+- 5a **held**: D is constant along each of the 19 families, at every t ∈ 𝔽₇ and generically.
+- 5b **held, more strongly**: the depth vector (d₁, d₂, d₃) alone takes 19 distinct values. The 19 families are 19
+  distinct Aut(kQ)-orbits.
+- 5c **failed as written**, for a structural reason. The families are F1 = rep 63, F2 = rep 129, F3 = rep 242 and
+  F4 = rep 338, matched against the Lean tables. The source swap σ maps F1 ↔ F3 and fixes F2 and F4, so F1 and F3
+  are one Aut(kQ)-orbit type and no Aut(kQ)-invariant separates them.
+  - The unsymmetrised depth vectors are F1 (0, 1, −1), F2 (1, −1, 1) and F3 (−1, 1, 0). They separate all three
+    modulo Inn ⋊ Sub, the group v2.33 used when it reported Aut(Q) separately.
+  - The symmetrised D separates F2 from {F1, F3}.
