@@ -44,3 +44,9 @@
 - The maximum, 6, matches the prediction only if generic fibres are points, i.e. the stabiliser jumps by exactly 1.
   To make it unconditional, the next run eliminates the c-variables (projection to V_A) in the dimension-6 charts and
   takes dim D directly. The prediction is unchanged: dim D = 6.
+
+### Outcome of 28: **held** (`divisor_A_elim.txt`)
+
+After eliminating the c-variables in charts 0, 1 and 3, Singular reports dimension 11 in the ring that still carries
+the 5 free coefficient variables. So dim D = 11 − 5 = 6 in each chart. The incidence variety also has dimension 6, so
+generic fibres are points: generic points of D have a stabiliser exactly 1 larger, with orbits of dimension 5.
