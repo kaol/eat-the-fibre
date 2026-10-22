@@ -1,0 +1,2 @@
+target orbits at q=5: 94
+genuine (q orbits at both primes): 0; total curves kept: 0

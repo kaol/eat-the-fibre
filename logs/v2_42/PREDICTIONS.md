@@ -34,3 +34,15 @@ The missing growth sits in exactly two signature groups, an L/R pair with image 
 4. Inner curves Inn(1 + t·x)·P₀ with x ∈ rad, *including the arrow c: 1→3 and the paths a_ib_j*, found by a tangent
    computation at liftable representatives of those two groups, give exactly the 4 missing families: 2 L and 2 R,
    each meeting q orbits at q = 3 and 5.
+
+### Outcome of 4 (tangent search) and prediction 5
+
+- 4 **failed**: at every liftable representative of the target groups, no nonzero inner direction x ∈ rad is
+  tangent to Folds to first order (`tangent_search.txt`).
+- (b, e) on these groups (`be_targets.txt`): b > 0 almost everywhere, also at constant orbits, so it does not
+  discriminate. e = 1 at 4 orbits at both primes.
+
+5. (committed before the run) The missing families are orbits of the shears σ_w : c ↦ c + t·w, with
+   w ∈ ⟨a_ib_j⟩ \ k·δ_aδ_b. These are automorphisms of kQ but not Δ-compatible. They may be composed with an
+   inner δ-direction. Each such curve, from a liftable representative, meets q orbits at q = 3 and 5, and together
+   they account for the growth 23 → 27 in both target groups.
