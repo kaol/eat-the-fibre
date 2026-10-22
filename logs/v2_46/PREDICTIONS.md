@@ -19,3 +19,19 @@ Let 𝔥 = {D ∈ Der_Δ ⊕ span(E_a, E_b, E_c) : D(A) ⊆ A}, the Lie algebra 
     one rational point.)
 24. (Task 1) Among the 32 lines of v2.44 (`driver_L_20.txt`, `driver_R_10.txt`, `lines_5107.txt`), the images
     (exactly over ℚ) fall into exactly 2 distinct subspaces within the L lines and 2 within the R lines.
+
+## Outcomes of 21, 22 (`slice_5107.txt`)
+
+- 21 **failed as stated**. Over ℚ[t], P_t is compatible with Δ_b (class 2→3) but not with Δ_a (1→2) or Δ_c (1→3)
+  separately. Compatibility is linear in the weights, so the admissible set W(P_t) is a subspace. It contains
+  (1, 1, 1) and (0, 1, 0), hence (1, 0, 1), but not E_a or E_c alone. The 𝔥 used (dim 6) wrongly included E_a and E_c
+  separately.
+- 22 **failed as stated**: at t = 1 the rank is 5 (6 with N), so t = 1 is a special point. At t = 2 the rank is 6
+  (7 with N).
+- dim Der = 22, dim Der_Δ = 5, as before.
+
+## Prediction 22′ (committed before the corrected run)
+
+22′. Let W = {w : P_t is compatible with Δ_w for all t} (a subspace, computed exactly) and
+     𝔥′ = {D ∈ Der_Δ ⊕ {Σ w_c E_c : w ∈ W} : D(A) ⊆ A}. Then at t = 2 (exactly over ℚ),
+     rank [𝔥′, P_2] = 6 and adding N gives rank 7.

@@ -1,0 +1,5 @@
+(21) classes [(0, 1), (1, 2), (0, 2)]: P_t compatible with Δ_c over Q[t]: [False, True, False]
+dim Der = 22, dim Der_Δ = 5, torus derivations 3
+dim 𝔥 (stabiliser of A in the census Lie algebra) = 6
+(22) t = 1: rank [𝔥, P_t] = 5; with N: 6
+(22) t = 2: rank [𝔥, P_t] = 6; with N: 7
