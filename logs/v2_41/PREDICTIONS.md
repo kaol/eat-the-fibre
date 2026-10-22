@@ -15,3 +15,15 @@ this file): S·F1_t·S = F3_t, S·F2_t·S = F2_{1−t}, S·F4_t·S = F4_{1−t}.
    {i, j} = {1, 3}. F1_t and F3_t are intertwined by S. So, at nonzero parameters, the four families of Theorem 3 are
    at most three behaviours, with F1 ≅ F3. Exactly three would also need that F1_t and F1_t' are always intertwined,
    which this round does not prove.
+
+## Outcomes
+
+1. **Held** (`Mult.filt_or_swap`, and `Mult.cases` for the pair Φ, Ψ).
+2. **Held** (`S_mult`, `S_sq`, and `thm3F{1,2,3,4}P_mirror`, over every commutative ring).
+3. **Held** (`thm3_behaviours_aut`).
+   - The open part, F1_t ≅ F1_t', was also done this round (not predicted). The v2.33 witness, an arrow scaling then
+     Inn(1 + x), is proved over a field for t, t' ∉ {0, −1}.
+   - With F2 and F4 single orbits (v2.33) this gives `thm3_exactly_three`: F_i(t) ≅ F_j(t') iff i = j or
+     {i, j} = {F1, F3}.
+   - The extra hypothesis t + 1 ≠ 0 is the pole of the witness. For t = −1 the census reading (v2.33) is a different
+     embedding of the same algebra; this round does not settle it.

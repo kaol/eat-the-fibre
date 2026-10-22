@@ -36,6 +36,9 @@ import EatTheFibre.Gen.two_pairs_disjoint
 import EatTheFibre.Gen.two_pairs_behaviour
 import EatTheFibre.Gen.pairs_in_behaviour
 import EatTheFibre.AutFilt
+import EatTheFibre.AutFiltIn
+import EatTheFibre.Gen.pairs_in_aut
+import EatTheFibre.Thm3Behaviours
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -196,3 +199,7 @@ open EatTheFibre
 #print axioms Q_pairs_in.thm3_behaviours_distinct
 #print axioms Q_two_pairs.Mult.filt
 #print axioms Q_two_pairs.fam_behaviours_distinct_aut
+#print axioms Q_pairs_in.Mult.filt_or_swap
+#print axioms Q_pairs_in.thm3_F1_F3
+#print axioms Q_pairs_in.thm3_behaviours_aut
+#print axioms Q_pairs_in.thm3_exactly_three
