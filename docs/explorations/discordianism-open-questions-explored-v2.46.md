@@ -3,8 +3,8 @@
 *Following a ChatGPT brief (docs/briefs/chatgpt-v2.45-frontier.md) with three tasks. Task 3, the dominant-slice
 lemma, is proved in characteristic 0 from exact computations over ℚ and existing lemmas. Task 2's generic tangent
 statement is certified exactly at a rational point. Task 1's image comparison is done exactly and corrects a premise:
-there is one image per signature group, not one per family. Of five predictions, three held as stated (22′, 23, 25)
-and three failed as stated (21, 22, 24); 22 was then refined into 22′.*
+there is one image per signature group, not one per family. Of six predictions (21–25 and the refined 22′), three held (22′, 23,
+25) and three failed as stated (21, 22, 24).*
 
 ---
 
