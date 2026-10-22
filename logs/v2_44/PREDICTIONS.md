@@ -52,3 +52,7 @@ q = 3, 5, 7 (`lines_5107.txt`).
 
 13. The line family from rep 5107 (first N in `lines_5107.txt`) passes the reflection fold check
     (`check c D lineP = true`, one `decide +kernel` per row). So it is a fold over every commutative ring for every t.
+
+## Outcome of 13: **held**
+
+`line_isFold` builds; each of the 37 row checks is one `decide +kernel` (about 12 min).

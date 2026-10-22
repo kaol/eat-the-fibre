@@ -39,6 +39,7 @@ import EatTheFibre.AutFilt
 import EatTheFibre.AutFiltIn
 import EatTheFibre.Gen.pairs_in_aut
 import EatTheFibre.Thm3Behaviours
+import EatTheFibre.Gen.two_pairs_short_line
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -203,3 +204,4 @@ open EatTheFibre
 #print axioms Q_pairs_in.thm3_F1_F3
 #print axioms Q_pairs_in.thm3_behaviours_aut
 #print axioms Q_pairs_in.thm3_exactly_three
+#print axioms Q_two_pairs_short.line_isFold

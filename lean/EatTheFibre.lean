@@ -48,4 +48,5 @@ import EatTheFibre.AutFilt
 import EatTheFibre.AutFiltIn
 import EatTheFibre.Gen.pairs_in_aut
 import EatTheFibre.Thm3Behaviours
+import EatTheFibre.Gen.two_pairs_short_line
 import EatTheFibre.Audit
