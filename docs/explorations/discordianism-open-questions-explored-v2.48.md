@@ -35,7 +35,7 @@ Exactness ("= 1") would follow as in v2.46 from a dominant slice inside D. That 
 The count is 873 + 22q at q = 3, 5, 7. The correspondence of each piece with q census orbits remains the heuristic
 of v2.47.
 
-## 2a. Next
+## 3. Next
 
 1. The divisor of V_B, computed directly rather than by symmetry.
 2. Lean closed forms for the 18 inner families on this quiver.
