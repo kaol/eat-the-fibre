@@ -15,3 +15,25 @@
     - dim T_{P₂}V_B = 7.
 
     So the dominant-slice theorem of v2.46 holds for B as well.
+
+## Outcomes of 26, 27
+
+- 26 **failed** (`slice_5103.txt`). The line through the (2, 0) representative 5103 is generic in V_A:
+  - W = span{(0, 1, 0), (1, 0, 1)} as for 5107, dim 𝔥′ = 6;
+  - rank 6 (7 with N) at t = 2, 3, and 5 (6 with N) at t = 1.
+
+  The (2, 0) points are special points on generic lines; the line does not lie in a divisor.
+- 27 **held** (`VB_6118.txt`, `slice_6118.txt`, `exact_6118.txt`). For image B (R group):
+  - V_B is irreducible of dimension 7 and dim T_{P₂}V_B = 7;
+  - W = span{(1, 0, 0), (0, 1, 1)}, the mirror of L under swapping classes a and b;
+  - rank 6, and 7 with N, at t = 1, 2, 3;
+  - N ∉ [Der, P₂] (22 → 23);
+  - the 6 R lines share image B.
+
+  The dominant-slice theorem holds for B.
+
+## Prediction 28 (committed before the Singular run)
+
+28. The rank-drop locus D = {P ∈ V_A : rank [𝔥′, P] ≤ 5}, with 𝔥′ as for the 5107 line, has dimension 6, so it is
+    a divisor of V_A. Computed as the incidence variety {(c, Z) : Z ∈ V_A, Σ cᵢ[Dᵢ, P(Z)] = 0} in the charts cₖ = 1,
+    which has dimension dim D when the drop is exactly 1. The maximum over the charts is 6.

@@ -1,0 +1,6 @@
+dim A = 7, dim ker = 5, unknowns 35, equations 995, max degree 2
+tangent dimension at Z = 0: 7
+dim 7
+components 1
+component 1 dim 7 contains 0: 1
+ 

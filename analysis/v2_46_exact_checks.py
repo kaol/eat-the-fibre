@@ -17,7 +17,7 @@ def rank_rows(rows):
     return DomainMatrix.from_list_sympy(len(rows), len(rows[0]), rows).convert_to(QQ).rank() if rows else 0
 I = sp.eye(d)
 P0 = sp.Matrix(g['lifted'](ri).tolist())
-Nd = [ast.literal_eval(m.group(1)) for m in re.finditer(r"N \(nonzero entries\): (\{.*\})", open(logf).read())][0]
+Nd = [ast.literal_eval(m.group(1)) for m in re.finditer(r"N(?: \(nonzero entries\):| =) (\{.*\})", open(logf).read())][0]
 N = sp.zeros(d, d)
 for (i, j), v in Nd.items(): N[i, j] = sp.Rational(v)
 # --- (25a) tangent of V_A at P₂

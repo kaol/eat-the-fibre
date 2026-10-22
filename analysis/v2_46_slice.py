@@ -5,7 +5,7 @@
 Der(kQ) and Der_Δ are computed exactly over ℚ from their linear defining equations:
   D(e_i e_j) = D(e_i) e_j + e_i D(e_j);   Σ_m D[m, l] DL[m] = D·DL[l] + DL[l]·Dᵀ  (Δ∘D = (D⊗1 + 1⊗D)∘Δ).
 E_c = diag(number of arrows of class c in each basis path).
-Usage: python3 analysis/v2_46_slice.py REPS.pkl REP_INDEX LINES_LOG [which-N]"""
+Usage: python3 analysis/v2_46_slice.py REPS.pkl REP_INDEX LINES_LOG [which-N]  (lines_*.txt or driver_*.txt format; v2.47)"""
 import os, sys, io, re, ast, contextlib, collections
 import numpy as np, sympy as sp
 from sympy.polys.matrices import DomainMatrix
@@ -44,7 +44,7 @@ for c in cl:
 DLs = [sp.Matrix(DL[l].tolist()) for l in range(d)]
 assert all(sum((DLc[c][l] for c in range(len(cl))), sp.zeros(d, d)) == DLs[l] for l in range(d)), "class split ≠ Δ"
 # the line
-Nd = [ast.literal_eval(m.group(1)) for m in re.finditer(r"N \(nonzero entries\): (\{.*\})", open(logf).read())][which]
+Nd = [ast.literal_eval(m.group(1)) for m in re.finditer(r"N(?: \(nonzero entries\):| =) (\{.*\})", open(logf).read())][which]
 N = sp.zeros(d, d)
 for (i, j), v in Nd.items(): N[i, j] = sp.Rational(v)
 P0 = sp.Matrix(g['lifted'](ri).tolist()); t = sp.Symbol('t')
