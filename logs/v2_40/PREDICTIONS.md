@@ -10,3 +10,13 @@ Goal: remove the generation hypothesis from v2.39 on 1⇉2⇉3.
 2. Corollary, on the standard axioms: over a reduced nontrivial commutative ring, an algebra automorphism intertwining
    members of families i and j forces i = j. So the 19 families are 19 behaviours with no appeal to v2.33's
    generation statement.
+
+## Outcomes
+
+1. **Held** (`Mult.filt`, `lean/EatTheFibre/AutFilt.lean`), by the planned proof. The first build had mechanical
+   failures, none mathematical:
+   - `rw` on `fin_cases`-shaped terms;
+   - `col` rewriting the wrong occurrence;
+   - one sign in a `linear_combination`;
+   - a `simp_all` timeout.
+2. **Held** (`fam_behaviours_distinct_aut`), on the standard axioms.
