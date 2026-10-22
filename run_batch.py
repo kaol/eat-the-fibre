@@ -11,6 +11,9 @@ Env: ENGINE=torch|pool (default torch), DEVICE=cuda|cpu|... (torch engine; defau
   python3 run_batch.py              # all jobs, cheapest first
   python3 run_batch.py 3 5          # only jobs 3 and 5 (numbers as in the listing printed at start)
   python3 run_batch.py --list       # just list the jobs and predictions
+  python3 run_batch.py 16 --save-reps   # also write logs/reps_QUIVER_p.pkl (G-orbit reps + local-torus labels); a job
+                                        # counts as done only when its reps file exists too, and a finished job is
+                                        # redone from its checkpoint (fibres are not recomputed)
 
 Predictions (made before these runs, from smaller primes) are printed next to each result: "ok" means it matches."""
 import sys, os, json, subprocess, time
@@ -45,6 +48,9 @@ BATCH = [
     ('two_pairs_short', 7, {'orbits_GxTloc': 2012}, "v2.42: 1⇉2⇉3 + 1→3 over F_7, linear in q (1668, 1840, 2012); "
                      "merged with c ↦ c + s·δ_aδ_b, 873 + 22q = 1027. OOM in the container (est. 1e7 folds)"),
 ]
+SAVE_REPS = '--save-reps' in sys.argv          # (before v2.43 this flag was accepted but silently not passed on)
+def reps_path(q, p): return os.path.join('logs', f'reps_{q}_{p}.pkl')
+def complete(q, p, res): return (q, p) in res and (not SAVE_REPS or os.path.exists(reps_path(q, p)))
 def done():
     out = {}
     if os.path.exists('results.jsonl'):
@@ -70,11 +76,12 @@ if __name__ == '__main__':
     os.makedirs('checkpoints', exist_ok=True)
     for i, (q, p, pred, note) in enumerate(BATCH, 1):
         if sel and i not in sel: continue
-        if (q, p) in done(): continue
+        if complete(q, p, done()): continue
         print(f"\n=== job {i}: {q} over F_{p} ({time.strftime('%H:%M:%S')}) ===", flush=True)
         with open('batch.log', 'a') as log:
             pr = subprocess.Popen([sys.executable, '-u', 'pcensus.py', q, str(p), *engine_args(),
-                                   '--checkpoint', f'checkpoints/{q}_{p}.pkl', '--out', 'results.jsonl'],
+                                   '--checkpoint', f'checkpoints/{q}_{p}.pkl', '--out', 'results.jsonl',
+                                   *(['--save-reps', reps_path(q, p)] if SAVE_REPS else [])],
                                   stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             for line in pr.stdout:
                 log.write(line); log.flush()

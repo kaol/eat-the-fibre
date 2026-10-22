@@ -72,3 +72,12 @@ Not decided in the container. The q = 7 census was OOM-killed three times:
 `finish()` materialises all folds and keys them by bytes, so q = 7 needs a machine with more memory. It was added as
 run_batch.py job 16 with this prediction (unmerged count 2012, merged 1027). Logs:
 `logs/run_reps_two_pairs_short_7{_oom,_oom2,}.log`.
+
+### Outcome of 6 (partial), from the GPU machine (logs/results_strix.jsonl, logs/batch_strix_job16.log)
+
+- **Unmerged local-torus count: failed.** Predicted 2012 (linear 1668, 1840, …); got **2028**. The differences are
+  172 and 188, so the count is not linear in q. Three primes fit 2q² + 70q + 1440, but any three points fit some
+  quadratic, so this only shows non-linearity.
+- **Merged count (prediction 1027): not yet testable.** run_batch.py never passed `--save-reps` on to pcensus.py (the
+  flag was accepted and ignored), so no representatives were written. Fixed in run_batch.py; rerunning job 16 with
+  `--save-reps` resumes from its checkpoint.
