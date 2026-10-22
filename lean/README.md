@@ -14,6 +14,7 @@ python3 gen/gen_disjoint.py CERT.pkl           # regenerate Gen/two_pairs_disjoi
 python3 gen/gen_behaviour.py CERT.pkl          # regenerate Gen/{two_pairs,pairs_in}_behaviour.lean (v2.39; same input)
 python3 gen/gen_swap.py                       # regenerate Gen/pairs_in_aut.lean (v2.41)
 python3 gen/gen_line.py REPS.pkl 5107 LOG 0    # regenerate Gen/two_pairs_short_line.lean (v2.44; logs/v2_44/lines_5107.txt, merged F_5 reps)
+python3 gen/gen_short_families.py ../logs/v2_42/curves_two_pairs_short_5_merged.txt REPS_5_merged.pkl   # Gen/two_pairs_short_fam{1..18}.lean (v2.49)
 ```
 
 ## What is proved
@@ -45,6 +46,7 @@ python3 gen/gen_line.py REPS.pkl 5107 LOG 0    # regenerate Gen/two_pairs_short_
 | `Gen/pairs_in_aut.lean` | v2.41: mirror tables `S·F_j·S`, swap-case cross lemmas, `thm3_F1_F3`, `thm3_behaviours_aut` |
 | `Thm3Behaviours.lean` | v2.41 (handwritten): `Conj` (conjugacy by an automorphism), the F1 witness `conj_F1`, `thm3_exactly_three` |
 | `Gen/two_pairs_short_line.lean` | v2.44: a kernel-tilting line P₀ + t·N on 1⇉2⇉3 + 1→3, `line_isFold` (fold over every commutative ring, every t); N is not a derivation direction (computed, `analysis/v2_44_exact.py`) |
+| `Gen/two_pairs_short_fam{1..18}.lean` | v2.49: the 18 inner families of 1⇉2⇉3 + 1→3, P_t = Inn(1 + t·x)·P₀·Inn⁻¹; `famk_isFold`, `famk_one_orbit` (fam1, fam2 built in the container; the rest ~5 GB each) |
 | `Transport.lean` | v2.34: `twist` (Δ transported along an algebra automorphism), `twist_delta`, **`transport`**: φPφ⁻¹ is a fold iff P is a fold for Δ^φ |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 
@@ -65,6 +67,7 @@ python3 gen/gen_line.py REPS.pkl 5107 LOG 0    # regenerate Gen/two_pairs_short_
 | Every automorphism is filtered; 19 Aut(kQ)-orbits (v2.40) | `Q_two_pairs.Mult.filt`, `Q_two_pairs.fam_behaviours_distinct_aut` |
 | Theorem 3's families: exactly three behaviours (v2.41) | `Q_pairs_in.Mult.filt_or_swap`, `Q_pairs_in.thm3_behaviours_aut`, `Q_pairs_in.thm3_exactly_three` |
 | A behaviour-varying line of folds (v2.44) | `Q_two_pairs_short.line_isFold` |
+| The 18 inner families of 1⇉2⇉3 + 1→3 (v2.49) | `Q_two_pairs_short.famk_isFold`, `Q_two_pairs_short.famk_one_orbit`, k = 1..18 |
 | Transport: fibres over behaviours are coproduct twists (v2.34) | `CoordAlg.transport` |
 | Theorem 2, F2, F4 families are single inner orbits (v2.33) | `Q_two_pairs.thm2_one_orbit`, `Q_pairs_in.thm3F{2,4}_one_orbit` |
 | δ-D2 exact (v2.32) | `Discordia.Completion.*_iff`, `mult_iff` |
