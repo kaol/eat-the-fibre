@@ -64,3 +64,9 @@ form at least 1 dimension.
     𝔽₅, lifted). So V_A = V_{A'}, with rep 5088 a special point.
 20. At generic points of V_A, namely the line P₀ + t·N of v2.44 at random t mod a 7-digit prime, m = 1. The
     behaviours with image A form a 1-dimensional family.
+
+## Outcomes of 19, 20: both **held** (`generic_m.txt`)
+
+- 19: im P for rep 5107 = im P for rep 5088 over ℚ (joint rank 7). V_A = V_{A'}, and rep 5088 (m = 3) is a special
+  point.
+- 20: m = 1 at t = 0 and at 4 random points of the line, mod 9999991. dim Der_A = 12 throughout.

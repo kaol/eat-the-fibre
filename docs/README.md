@@ -10,17 +10,17 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.44) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.45) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
-| `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine. `completion_*.py` (v2.31) read the generated Lean tables; `module_classes.py`, `completion_words.py` (v2.32) classify census orbits from `--save-reps` dumps (`logs/v2_32/`); `behaviour_census.py`, `family_behaviour.py` (v2.33); `fibre_rigidity.py`, `v2_34/` (v2.34); `family_signatures.py`, `v2_35/` (v2.35); `family_normal_forms.py`, `family_curves.py`, `v2_36_*.py` (v2.36); `v2_37_certificates.py` (v2.37); `v2_38_*.py` (v2.38); `v2_42_*.py` (v2.42); `v2_44_*.py` (v2.44) |
+| `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine. `completion_*.py` (v2.31) read the generated Lean tables; `module_classes.py`, `completion_words.py` (v2.32) classify census orbits from `--save-reps` dumps (`logs/v2_32/`); `behaviour_census.py`, `family_behaviour.py` (v2.33); `fibre_rigidity.py`, `v2_34/` (v2.34); `family_signatures.py`, `v2_35/` (v2.35); `family_normal_forms.py`, `family_curves.py`, `v2_36_*.py` (v2.36); `v2_37_certificates.py` (v2.37); `v2_38_*.py` (v2.38); `v2_42_*.py` (v2.42); `v2_44_*.py` (v2.44); `v2_45_*.py` (v2.45) |
 
 Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of the same round. Labels used throughout:
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.44)
+## Where the fold story stands (v2.45)
 
 | result | status | round |
 |---|---|---|
@@ -54,4 +54,5 @@ mathematics forces them.
 | 1⇉2⇉3 + 1→3 (full Δ-compatible group, slope 22): 18 inner-curve families found and cross-checked at q = 3, 5; 4 missing, in two large-image (dim im 7) groups, not inner or shear curves; q = 7 handed to the GPU (job 16) | computed (5 predictions failed or partly) | v2.42 |
 | GPU: 1⇉2⇇3 + 1→3 constant 366 at q = 3, 5, 7, 11; 1⇛2⇇3 + 1→3 constant 752 at q = 3, 5; 1⇉2⇉3 + 1→3: unmerged 1668, 1840, 2028 not linear, but merged with the shear 939, 983, 1027 = 873 + 22q: 18 inner families + 4 open large-image families | computed (pre-registered; two held, one failed) | v2.43 |
 | 1⇉2⇉3 + 1→3: the 4 large-image families are kernel-tilting lines P₀ + t·u·wᵀ (image fixed), not automorphism orbits: N ∉ [Der, P₀] over ℚ, so in characteristic 0 they carry infinitely many behaviours; one line a fold over every ring | **Lean 4** (fold) + exact over ℚ (non-derivation) | v2.44 |
+| the folds with that fixed image form an irreducible 7-dimensional variety V_A over ℚ (Singular), smooth at the base point; automorphisms preserving A cover 6 of 7 tangent directions generically, so the behaviours with image A form a ≥ 1-dimensional family (= 1 to first order) | computed exactly / mod p (7 predictions: 3 held, 2 held in part, 2 failed) | v2.45 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |

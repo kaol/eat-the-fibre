@@ -1,0 +1,6 @@
+(19) im P(rep 5107) = im P(rep 5088) over Q: True  (dims 7, 7, joint rank 7)
+(20) at t = 0: (dim T_V, dim Der_A, m) = (7, 12, 1)
+     at random t: (dim T_V, dim Der_A, m) = (7, 12, 1)
+     at random t: (dim T_V, dim Der_A, m) = (7, 12, 1)
+     at random t: (dim T_V, dim Der_A, m) = (7, 12, 1)
+     at random t: (dim T_V, dim Der_A, m) = (7, 12, 1)
