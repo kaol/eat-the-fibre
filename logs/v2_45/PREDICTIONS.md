@@ -45,3 +45,22 @@ form at least 1 dimension.
     is ≤ 4.
 18. With exact signature matching, the R group has 27 orbits at q = 5. Its growing classes (1, 0) and (2, 0) have
     m = 1 and m = 2 except at most 2 orbits, mirroring L.
+
+## Outcomes of 17, 18
+
+- 17 **failed** (`VA_5088.txt`; "rep 5097" in the prediction is orbit 5097, whose representative is rep 5088).
+  V_{A'} is irreducible of dimension 7 and smooth at P₀, with tangent dimension 7, so m = 3 is not a tangent
+  overcount.
+- 18 **failed** (`fixed_image_R_exact.txt`). The R group does have 27 orbits at q = 5, but:
+  - growing (1, 0): m = 1 at 1 orbit, 2 at 5, 3 at 2;
+  - growing (2, 0): m = 2 at 6, 3 at 4.
+- **Revised reading:** m is the codimension of the orbit tangent at one point. At special points of an irreducible
+  V_A the automorphism orbits are smaller, so m rises without any moduli. The behaviour-moduli dimension is m at a
+  generic point of V_A.
+
+## Predictions 19, 20 (committed before the run)
+
+19. im P₀ for rep 5088 and im P₀ for rep 5107 are the same subspace A (both are representatives of the L group over
+    𝔽₅, lifted). So V_A = V_{A'}, with rep 5088 a special point.
+20. At generic points of V_A, namely the line P₀ + t·N of v2.44 at random t mod a 7-digit prime, m = 1. The
+    behaviours with image A form a 1-dimensional family.
