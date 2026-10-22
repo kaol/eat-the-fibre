@@ -12,3 +12,14 @@ entries of h·P^{(k)}_t − P^{(k')}_{t'}·h. Computed with Singular (std over �
 2. For every unordered pair k ≠ k' (171 pairs), 1 ∈ I_{k,k'} ⊗ ℚ: no two families share an orbit over any field of
    characteristic 0.
 3. Over ℤ, I_{k,k'} ∩ ℤ = (N_{k,k'}) with every prime factor of every N_{k,k'} in {2, 3}.
+
+## Added after predictions 1–3 were checked, before running the stratification (committed first)
+
+Results of 1–3 so far: (1) held; (2) held; (3) held vacuously and much more strongly: I ∩ ℤ = (1) for all 171 pairs,
+because some entry of h·P − P'·h is the constant ±1 (no prime is special; the unit hypothesis is not even needed).
+
+τ(P) := (vertex block εPι, and for each vertex i and block X ∈ {A, B, AB} whether the row-block ε_i P|_X vanishes,
+and whether the column-block P|_X ι e_i vanishes). It is a (G × T²)-invariant.
+
+4. The number of nonempty τ-strata of local-torus orbits of 1⇉2⇉3 is the same at q = 5 and q = 7, and in each stratum
+   (count at q = 7) − (count at q = 5) = 2 × (number of the 19 families in it).
