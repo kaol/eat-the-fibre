@@ -1,0 +1,5 @@
+genuine families (meet q orbits at every prime): 18 of 35
+q=3: remaining orbits 885
+q=5: remaining orbits 893
+  grows: ('L', ("('Uki', 'i')", "('Uki', 'k')", "('i', 'Uki')", "('k', 'Uki')", 'Uki'), (7, (7, 7), 0, 0, 1), (5, (5, 5), 0, 4, 0)): 23 -> 27
+  grows: ('R', ("('Uik', 'i')", "('Uik', 'k')", "('i', 'Uik')", "('k', 'Uik')", 'Uik'), (7, (7, 7), 0, 0, 1), (5, (5, 5), 4, 0, 0)): 23 -> 27
