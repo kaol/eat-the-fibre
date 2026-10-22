@@ -1,0 +1,5 @@
+orbits searched at q=5: 94
+  orbit 5093 rep 5087 (0s)
+  orbit 5097 rep 5088 (36s)
+  orbit 5101 rep 5092 (71s)
+  orbit 5131 rep 5103 (104s)

@@ -26,17 +26,46 @@ def shear(w, s):
     return S
 r = gp['r']; sig = gp['sig_of_loc']
 tlocs = sorted(l for l, s in sig.items() if not targets or any(tg in str(s) for tg in targets))
+SH, NSH = (int(x) for x in os.environ.get('SHARD', '0/1').split('/'))
+tlocs = tlocs[SH::NSH]
 print(f"orbits searched at q={p}: {len(tlocs)}", flush=True)
+import time; T0 = time.time()
 ws = [w for w in itertools.product(range(-1, 2), repeat=4) if any(w) and next(c for c in w if c) > 0
       and not (w[0] == -w[1] == -w[2] == w[3])]                      # exclude multiples of δ_aδ_b (census symmetry)
 inns = [None] + list(gp['INN'].items())
+BIG = 1000003
+DLn = np.array(gp['DL'], dtype=object)
+def numfold(Pn):
+    """Δ-compatibility of a numeric matrix mod BIG (image/kernel closure hold along automorphism orbits)"""
+    Pn = np.array(Pn, dtype=object) % BIG
+    for l in range(d):
+        lhs = sum(Pn[m, l] * DLn[m] for m in range(d))
+        if ((lhs - Pn.dot(DLn[l]).dot(Pn.T)) % BIG).any(): return False
+    return True
+tsamp = [3, 17, 101, 9999]
+INNnum = {vec: [(np.array(Inn.subs(t, tv).tolist(), dtype=object) % BIG, np.array(Innv.subs(t, tv).tolist(), dtype=object) % BIG)
+                for tv in tsamp] for vec, (Inn, Innv) in gp['INN'].items()}
+def shear_num(w, s_):
+    S_ = np.eye(d, dtype=object)
+    for j, wj in zip(ab, w): S_[j, ci] = (S_[j, ci] + s_ * wj) % BIG
+    return S_
+def num_curve(w, vec, P):
+    Pn = np.array(P.tolist(), dtype=object) % BIG
+    for k_, tv in enumerate(tsamp):
+        A = shear_num(w, tv); B = shear_num(w, -tv)
+        if vec is not None:
+            I_, Iv = INNnum[vec][k_]; A = I_.dot(A) % BIG; B = B.dot(Iv) % BIG
+        if not numfold(A.dot(Pn).dot(B) % BIG): return False
+    return True
 found = []
 for l in tlocs:
     i = next((i for i, li in enumerate(r['loc']) if li == l and gp['lifted'](i) is not None), None)
     if i is None: continue
     P = sp.Matrix(gp['lifted'](i).tolist())
+    print(f"  orbit {l} rep {i} ({time.time() - T0:.0f}s)", flush=True)
     for w in ws:
         for inn in inns:
+            if not num_curve(w, inn[0] if inn else None, P): continue
             Phi = shear(w, t); Phiv = shear(w, -t)
             if inn is not None:
                 (vec, (Inn, Innv)) = inn

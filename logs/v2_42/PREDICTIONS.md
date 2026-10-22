@@ -46,3 +46,17 @@ The missing growth sits in exactly two signature groups, an L/R pair with image 
    w ∈ ⟨a_ib_j⟩ \ k·δ_aδ_b. These are automorphisms of kQ but not Δ-compatible. They may be composed with an
    inner δ-direction. Each such curve, from a liftable representative, meets q orbits at q = 3 and 5, and together
    they account for the growth 23 → 27 in both target groups.
+
+### Outcome of 5 and prediction 6
+
+- 5 **failed**: no shear curve σ_w, alone or composed with an inner δ-direction, from any liftable representative of
+  the two target groups is a fold curve at all (`shear_search_{0,1}.txt`). The numeric filter was sanity-checked on
+  a known family (rep 75 along δ_a passes).
+- The vertex block does not carry the parameter: each target group has one block, and it grows by 4
+  (`vblock_targets.txt`).
+- Two primes cannot distinguish "2 families of q orbits per group" from other q-dependence, e.g. terms in (q − 1)/2.
+
+6. (committed before the q = 7 census of 1⇉2⇉3 + 1→3) The merged orbit count at q = 7 is
+   873 + 22·7 = **1027**. Within that:
+   - the 18 integer closed forms meet 7 orbits each, pairwise disjoint;
+   - the remaining growth is 4 per target group per unit of q.

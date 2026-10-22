@@ -1,0 +1,4 @@
+q=3: 66 orbits, 2 vertex blocks
+q=5: 74 orbits, 2 vertex blocks
+  grows: (0, 1, 0, 0, 1, 0, 0, 0, 1) 43 -> 47
+  grows: (1, 0, 0, 0, 1, 0, 0, 1, 0) 23 -> 27
