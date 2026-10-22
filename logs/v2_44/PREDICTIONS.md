@@ -34,3 +34,21 @@ q = 3, 5, 7 (`lines_5107.txt`).
     q orbits at q = 3, 5, 7.
 12. The (2, 0)-class family of each group is also an idempotent line from one of its representatives, found by the
     same search.
+
+## Outcomes of 10–12
+
+- 10 **held** (`exact_5107_N0.txt`):
+  - (a) P(t) = P₀ + t·N is a fold over ℚ[t]: idempotent, image and kernel closed, Δ-compatible.
+  - (b) dim Der(kQ) = 22 over ℚ, rank [Der, P₀] = 22, and with N the rank is 23. So N ∉ [Der, P₀].
+- 11 **held as stated**: the R group has kernel-moving lines meeting q orbits at q = 3, 5, 7 (`driver_R_10.txt`).
+- 12 **held as stated**: the L group's (2, 0) representatives give such lines (`driver_L_20.txt`).
+- **Caveat on 11–12:** lines are abundant. 32 distinct lines were found from 16 representatives, overlapping in
+  orbits, so lines are not in one-to-one correspondence with the 4 families. Coverage (`coverage.txt`): the lines
+  meet q + 1 of the L group's (1, 0) orbits and q + 3 of its (2, 0) orbits at q = 3, 5, 7. Coverage of the R group is
+  partial (6, 7, 9 and 8, 8, 9), because only 6 representatives were searched. Every line found moves the kernel and
+  fixes the image.
+
+## Prediction 13 (committed before the Lean build)
+
+13. The line family from rep 5107 (first N in `lines_5107.txt`) passes the reflection fold check
+    (`check c D lineP = true`, one `decide +kernel` per row). So it is a fold over every commutative ring for every t.

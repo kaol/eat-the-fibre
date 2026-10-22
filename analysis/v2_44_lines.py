@@ -12,11 +12,14 @@ import numpy as np, sympy as sp
 HERE = os.path.dirname(os.path.abspath(__file__))
 rf, ri = sys.argv[1], int(sys.argv[2]); others = sys.argv[3:]
 PR = 9999991
+_FC = {}
 def load_fc(f):
+    if f in _FC: return _FC[f]
     sys.argv = ['family_curves.py', f]
     g = {'__name__': 'fc', '__file__': os.path.join(HERE, 'family_curves.py')}
     with contextlib.redirect_stdout(io.StringIO()):
         exec(open(os.path.join(HERE, 'family_curves.py')).read().split("fams = []; nlift")[0], g)
+    _FC[f] = g
     return g
 g = load_fc(rf); d = g['d']
 M = np.array(g['M'], np.int64); DL = np.array(g['DL'], np.int64)
@@ -61,7 +64,7 @@ def ratrec(a):
     while r1 * r1 * 2 > PR: qq = r0 // r1; r0, r1 = r1, r0 - qq * r1; s0, s1 = s1, s0 - qq * s1
     return sp.Rational(r1, s1)
 t = sp.Symbol('t')
-seen = set()
+seen = set(); FAMS = []
 for name, c, N in cands:
     # normalise: scale so the first nonzero entry is 1, then reconstruct over Q
     k = np.flatnonzero(N)[0]; inv = pow(int(N.flat[k]), PR - 2, PR)
@@ -75,9 +78,14 @@ for name, c, N in cands:
     print(f"{name}, X-coefficients {c}: exact Δ-compatible and idempotent over Q[t]: {exact}; "
           f"denominators {sorted({x.q for x in Nq})}", flush=True)
     if not exact: continue
+    hits = {}
     for f2 in [rf] + others:
         g2 = load_fc(f2); q = g2['p']
         if any(x.q % q == 0 for x in Nq): print(f"  F_{q}: denominator divisible by q"); continue
         hit = [g2['key2loc'].get(g2['key'](np.array(Pt.subs(t, s).applyfunc(lambda z: int(z.p * pow(z.q, -1, q)) % q).tolist(), dtype=np.int64) % q)) for s in range(q)]
+        hits[q] = frozenset(hit)
         print(f"  F_{q}: points lie in {len(set(hit))} orbits; all census folds: {None not in hit}", flush=True)
+    same = [k for k, h in enumerate(FAMS) if h == hits]
+    print(f"  same orbits as line #{same[0]}" if same else f"  new line #{len(FAMS)}", flush=True)
+    if not same: FAMS.append(hits)
     print("  N (nonzero entries):", {(i, j): str(Nq[i, j]) for i in range(d) for j in range(d) if Nq[i, j] != 0}, flush=True)

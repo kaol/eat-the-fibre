@@ -1,0 +1,3 @@
+(a) over Q[t]: idempotent True, image closed True, kernel closed True, Δ-compatible True
+(b) dim Der(kQ) over Q = 22
+    rank [Der, P0] = 22; with N: 23 -> N in [Der, P0]: False

@@ -1,0 +1,12 @@
+mod 9999991: dim T = 8, dim [Der, P] = 22, dim [Der,P] ∩ T = 7
+non-derivation idempotent lines that are fold curves mod 9999991: 6
+kernel moves, X-coefficients (0, 0, 1, -1, 0, 0, 0, 0): exact Δ-compatible and idempotent over Q[t]: True; denominators [1]
+  F_5: points lie in 5 orbits; all census folds: True
+  F_3: points lie in 3 orbits; all census folds: True
+  F_7: points lie in 7 orbits; all census folds: True
+  N (nonzero entries): {(2, 3): '1', (2, 4): '1', (2, 7): '-1', (2, 8): '1', (2, 11): '-1', (5, 3): '1', (5, 4): '1', (5, 7): '-1', (5, 8): '1', (5, 11): '-1', (6, 3): '-1', (6, 4): '-1', (6, 7): '1', (6, 8): '-1', (6, 11): '1'}
+kernel moves, X-coefficients (1, 0, 1, -1, 0, 0, 0, 0): exact Δ-compatible and idempotent over Q[t]: True; denominators [1]
+  F_5: points lie in 5 orbits; all census folds: True
+  F_3: points lie in 3 orbits; all census folds: True
+  F_7: points lie in 7 orbits; all census folds: True
+  N (nonzero entries): {(2, 3): '1', (2, 4): '1', (2, 7): '-1', (2, 9): '-1', (2, 11): '-1', (5, 3): '1', (5, 4): '1', (5, 7): '-1', (5, 9): '-1', (5, 11): '-1', (6, 3): '-1', (6, 4): '-1', (6, 7): '1', (6, 9): '1', (6, 11): '1'}
