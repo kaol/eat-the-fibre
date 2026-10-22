@@ -1,0 +1,11 @@
+(21) classes [(0, 1), (1, 2), (0, 2)]: P_t compatible with Δ_c over Q[t]: [False, True, False]
+dim Der = 22, dim Der_Δ = 5, torus derivations 3
+admissible weights W (all t): [[0, 1, 0], [1, 0, 1]]
+dim 𝔥 (stabiliser of A in the census Lie algebra) = 6
+V_A: 995 equations; dim 𝔥′ = 6; incidence equations 87
+chart 0: dim 6
+chart 1: dim 6
+chart 2: dim 5
+chart 3: dim 6
+chart 4: dim 5
+chart 5: dim 5

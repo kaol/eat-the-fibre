@@ -37,3 +37,10 @@
 28. The rank-drop locus D = {P ∈ V_A : rank [𝔥′, P] ≤ 5}, with 𝔥′ as for the 5107 line, has dimension 6, so it is
     a divisor of V_A. Computed as the incidence variety {(c, Z) : Z ∈ V_A, Σ cᵢ[Dᵢ, P(Z)] = 0} in the charts cₖ = 1,
     which has dimension dim D when the drop is exactly 1. The maximum over the charts is 6.
+
+### Outcome of 28 (partial, `divisor_A.txt`)
+
+- Incidence dimensions by chart c_k = 1, k = 0..5: 6, 6, 5, 6, 5, 5.
+- The maximum, 6, matches the prediction only if generic fibres are points, i.e. the stabiliser jumps by exactly 1.
+  To make it unconditional, the next run eliminates the c-variables (projection to V_A) in the dimension-6 charts and
+  takes dim D directly. The prediction is unchanged: dim D = 6.
