@@ -1,0 +1,31 @@
+  kernel stage on cpu: 61946920 subspaces, subalgebras by dimension [1, 310, 1745, 1126, 226, 20, 1]
+  kernel stage: 58.5s
+two_pairs_short F_7: d=12, dim K=6, 915048 kernel folds in 153480 torus orbits; engine=torch
+  symmetry: 153480 torus orbits in 27994 H-orbits (H = G × T); 125486 fibres by transport; |N| = |ker(H → H|_K)| = 294
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  0/27994 fibres computed, group 1/7, 1 stacked batches at column 6, t=81s
+  0/27994 fibres computed, group 1/7, 2 stacked batches at column 8, t=197s
+  4096/27994 fibres computed, group 2/7, 1 stacked batches at column 6, t=315s
+  8192/27994 fibres computed, group 3/7, 1 stacked batches at column 6, t=432s
+  12288/27994 fibres computed, group 4/7, 1 stacked batches at column 8, t=502s
+  20480/27994 fibres computed, group 6/7, 1 stacked batches at column 6, t=691s
+  20480/27994 fibres computed, group 6/7, 1 stacked batches at column 8, t=752s
+  24576/27994 fibres computed, group 7/7, 1 stacked batches at column 6, t=887s
+  24576/27994 fibres computed, group 7/7, 2 stacked batches at column 7, t=1010s
+Traceback (most recent call last):
+  File "/home/claude/eat-the-fibre/pcensus.py", line 812, in <module>
+    main()
+    ~~~~^^
+  File "/home/claude/eat-the-fibre/pcensus.py", line 656, in main
+    fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device, only=src)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/eat-the-fibre/fibre_torch.py", line 440, in run
+    r_, X_ = expand(P, rid[s:s + ne], X[s:s + ne])
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/eat-the-fibre/fibre_torch.py", line 336, in expand
+    keep = first_unique(torch.cat([rid2[:, None].long(), pack(P, X2.transpose(1, 2).reshape(len(rid2), -1))], 1))
+                                                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/eat-the-fibre/fibre_torch.py", line 279, in pack
+    v = torch.nn.functional.pad(v, (0, (-L) % w)).long().reshape(*v.shape[:-1], -1, w)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: [enforce fail at alloc_cpu.cpp:127] err == 0. DefaultCPUAllocator: can't allocate memory: you tried to allocate 9186319296 bytes. Error code 12 (Cannot allocate memory)

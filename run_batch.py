@@ -1,4 +1,4 @@
-"""run_batch.py — the long censuses (v2.23; jobs 12–15 added in v2.28).
+"""run_batch.py — the long censuses (v2.23; jobs 12–15 added in v2.28, job 16 in v2.42).
 
 Each job runs pcensus.py with the torch fibre engine (fibre_torch.py: GPU via ROCm/CUDA when torch sees one, else CPU),
 a per-job checkpoint in checkpoints/, and appends one JSON line to results.jsonl. Rerunning skips finished jobs and
@@ -41,6 +41,9 @@ BATCH = [
     ('pairs_in_short_tail', 3, {}, "P4 (part 1): 1⇉2⇇3 + 1→3 + 2→4, d = 18; too slow in the container"),
     ('pairs_in_short_tail', 5, {}, "P4 (part 2): orbits_GxTloc should equal job 13's"),
     ('pairs_in_short', 11, {'orbits_GxTloc': 366}, "1⇉2⇇3 + 1→3: 366 over F_3, F_5, F_7; one more prime"),
+    # v2.42 (prediction committed in logs/v2_42/PREDICTIONS.md before this run): needs --save-reps for the shear merge
+    ('two_pairs_short', 7, {'orbits_GxTloc': 2012}, "v2.42: 1⇉2⇉3 + 1→3 over F_7, linear in q (1668, 1840, 2012); "
+                     "merged with c ↦ c + s·δ_aδ_b, 873 + 22q = 1027. OOM in the container (est. 1e7 folds)"),
 ]
 def done():
     out = {}

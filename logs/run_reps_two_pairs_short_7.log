@@ -1,0 +1,10 @@
+  kernel stage: cached in /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/tps7.kernel.npz
+  kernel stage: 0.8s
+two_pairs_short F_7: d=12, dim K=6, 915048 kernel folds in 153480 torus orbits; engine=torch
+  resumed: 24576/153480 fibres done
+  symmetry: 153480 torus orbits in 27994 H-orbits (H = G × T); 125486 fibres by transport; |N| = |ker(H → H|_K)| = 294
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  0/3418 fibres computed, group 1/1, 3 stacked batches at column 7, t=136s
+  0/3418 fibres computed, group 1/1, 9 stacked batches at column 8, t=269s
+  0/3418 fibres computed, group 1/1, 8 stacked batches at column 8, t=391s
+  0/3418 fibres computed, group 1/1, 2 stacked batches at column 7, t=452s

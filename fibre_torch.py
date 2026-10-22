@@ -432,10 +432,21 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
         stack = [(kdim, torch.as_tensor(grp, device=home), torch.as_tensor(X0, device=home))]
         out = collections.defaultdict(list)
         while stack:
-            c, rid, X = stack.pop()
+            item = stack.pop()
+            if item[0] == 'gen':         # a parent batch's children, produced lazily one chunk at a time, so the stack
+                _, c, gen = item         # holds at most one pending chunk per column instead of all of them
+                for rid2, X2 in gen:
+                    stack.append(item)
+                    if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
+                    if len(rid2): stack.append((c + 1, rid2.to(home), X2.to(home)))
+                    break
+                continue
+            c, rid, X = item
             rid, X = rid.to(dev), X.to(dev)
-            if c == d:                   # expand multiplies by |N|: slice so each image set fits the budget
-                ne = max(1, MEM // (P.HL.shape[0] * d * d)) if P.sym else len(rid)
+            if c == d:                   # expand multiplies by |N|: slice so each image set fits the budget.
+                # Peak per slice ≈ 10× the int8 images: int8 images (1×), pack()'s int64 copy (8×), the key concat (≈1×).
+                # (Sizing by the int8 images alone asked for 9.2 GB on 1⇉2⇉3 + 1→3 over 𝔽₇, |N| = 294.)
+                ne = max(1, MEM // (10 * P.HL.shape[0] * d * d)) if P.sym else len(rid)
                 for s in range(0, len(rid), ne):
                     r_, X_ = expand(P, rid[s:s + ne], X[s:s + ne])
                     for r, x in zip(r_.cpu().numpy(), X_.cpu().numpy()): out[int(r)].append(x.astype(np.int16))
@@ -444,9 +455,7 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
             if len(rid) > nb:
                 stack += [(c, rid[s:s + nb].to(home), X[s:s + nb].to(home)) for s in range(0, len(rid), nb)][::-1]
                 continue
-            for rid2, X2 in level(P, rid, X, c):
-                if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
-                if len(rid2): stack.append((c + 1, rid2.to(home), X2.to(home)))
+            stack.append(('gen', c, level(P, rid, X, c)))
             del rid, X
             if time.time() - last > 60:
                 log(f"  {ndone}/{len(todo)} fibres computed, group {g0 // GROUP + 1}/{-(-len(todo) // GROUP)}, "

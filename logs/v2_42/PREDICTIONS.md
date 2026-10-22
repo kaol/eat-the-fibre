@@ -60,3 +60,15 @@ The missing growth sits in exactly two signature groups, an L/R pair with image 
    873 + 22·7 = **1027**. Within that:
    - the 18 integer closed forms meet 7 orbits each, pairwise disjoint;
    - the remaining growth is 4 per target group per unit of q.
+
+### Status of 6
+
+Not decided in the container. The q = 7 census was OOM-killed three times:
+1. `expand` sized its slices by the int8 images while `pack` makes an int64 copy, 8× larger. Fixed in `fibre_torch.py`.
+2. The engine stack held every child chunk of a parent batch. Made lazy in `fibre_torch.py`; this is an improvement,
+   but it was not the cause.
+3. Storing every fold of every fibre: cgroup OOM at 6.1 GB RSS.
+
+`finish()` materialises all folds and keys them by bytes, so q = 7 needs a machine with more memory. It was added as
+run_batch.py job 16 with this prediction (unmerged count 2012, merged 1027). Logs:
+`logs/run_reps_two_pairs_short_7{_oom,_oom2,}.log`.
