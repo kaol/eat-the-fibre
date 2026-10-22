@@ -26,8 +26,8 @@ not composites of the two, and their nature is open. Five predictions were commi
 ## 1. What the 18 are
 
 They are the analogues of the 1⇉2⇉3 families: one-parameter inner orbits Inn(1 + t·x)·P₀ with image dimension 2 or 3.
-- 13 are unclassed (none of the module conditions L, R, K, E holds).
-- 3 are class L and 2 class R.
+- 12 are unclassed (none of the module conditions L, R, K, E holds).
+- 3 are class L and 3 class R.
 
 The search found no LRKE family. On 1⇉2⇉3 that was Theorem 2's family 13, and the joining arrow kills Theorem 2
 (v2.28).
