@@ -40,6 +40,24 @@ import EatTheFibre.AutFiltIn
 import EatTheFibre.Gen.pairs_in_aut
 import EatTheFibre.Thm3Behaviours
 import EatTheFibre.Gen.two_pairs_short_line
+import EatTheFibre.Gen.two_pairs_short_fam1
+import EatTheFibre.Gen.two_pairs_short_fam2
+import EatTheFibre.Gen.two_pairs_short_fam3
+import EatTheFibre.Gen.two_pairs_short_fam4
+import EatTheFibre.Gen.two_pairs_short_fam5
+import EatTheFibre.Gen.two_pairs_short_fam6
+import EatTheFibre.Gen.two_pairs_short_fam7
+import EatTheFibre.Gen.two_pairs_short_fam8
+import EatTheFibre.Gen.two_pairs_short_fam9
+import EatTheFibre.Gen.two_pairs_short_fam10
+import EatTheFibre.Gen.two_pairs_short_fam11
+import EatTheFibre.Gen.two_pairs_short_fam12
+import EatTheFibre.Gen.two_pairs_short_fam13
+import EatTheFibre.Gen.two_pairs_short_fam14
+import EatTheFibre.Gen.two_pairs_short_fam15
+import EatTheFibre.Gen.two_pairs_short_fam16
+import EatTheFibre.Gen.two_pairs_short_fam17
+import EatTheFibre.Gen.two_pairs_short_fam18
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -205,3 +223,39 @@ open EatTheFibre
 #print axioms Q_pairs_in.thm3_behaviours_aut
 #print axioms Q_pairs_in.thm3_exactly_three
 #print axioms Q_two_pairs_short.line_isFold
+#print axioms Q_two_pairs_short.fam1_isFold
+#print axioms Q_two_pairs_short.fam1_one_orbit
+#print axioms Q_two_pairs_short.fam2_isFold
+#print axioms Q_two_pairs_short.fam2_one_orbit
+#print axioms Q_two_pairs_short.fam3_isFold
+#print axioms Q_two_pairs_short.fam3_one_orbit
+#print axioms Q_two_pairs_short.fam4_isFold
+#print axioms Q_two_pairs_short.fam4_one_orbit
+#print axioms Q_two_pairs_short.fam5_isFold
+#print axioms Q_two_pairs_short.fam5_one_orbit
+#print axioms Q_two_pairs_short.fam6_isFold
+#print axioms Q_two_pairs_short.fam6_one_orbit
+#print axioms Q_two_pairs_short.fam7_isFold
+#print axioms Q_two_pairs_short.fam7_one_orbit
+#print axioms Q_two_pairs_short.fam8_isFold
+#print axioms Q_two_pairs_short.fam8_one_orbit
+#print axioms Q_two_pairs_short.fam9_isFold
+#print axioms Q_two_pairs_short.fam9_one_orbit
+#print axioms Q_two_pairs_short.fam10_isFold
+#print axioms Q_two_pairs_short.fam10_one_orbit
+#print axioms Q_two_pairs_short.fam11_isFold
+#print axioms Q_two_pairs_short.fam11_one_orbit
+#print axioms Q_two_pairs_short.fam12_isFold
+#print axioms Q_two_pairs_short.fam12_one_orbit
+#print axioms Q_two_pairs_short.fam13_isFold
+#print axioms Q_two_pairs_short.fam13_one_orbit
+#print axioms Q_two_pairs_short.fam14_isFold
+#print axioms Q_two_pairs_short.fam14_one_orbit
+#print axioms Q_two_pairs_short.fam15_isFold
+#print axioms Q_two_pairs_short.fam15_one_orbit
+#print axioms Q_two_pairs_short.fam16_isFold
+#print axioms Q_two_pairs_short.fam16_one_orbit
+#print axioms Q_two_pairs_short.fam17_isFold
+#print axioms Q_two_pairs_short.fam17_one_orbit
+#print axioms Q_two_pairs_short.fam18_isFold
+#print axioms Q_two_pairs_short.fam18_one_orbit

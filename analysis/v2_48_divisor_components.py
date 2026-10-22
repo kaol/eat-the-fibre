@@ -3,7 +3,7 @@
 (29) For each chart k: eliminate the c-variables from the incidence ideal (scripts written by v2_47_divisor.py),
      map to the ring of the z-variables, minAssGTZ; report the components' dimensions; dump the 6-dimensional primes
      and compare them across charts (mutual ideal containment via reduction modulo Gröbner bases).
-(30) At P₁ = P₀ + N (the v2.44 line at t = 1): whether P₁ lies on the divisorial component, dim T_{P₁}D (exact rank
+(30) At P₁ = P₀ + T·N (env T, default 1; the v2.44 line at t = T): whether P₁ lies on the divisorial component, dim T_{P₁}D (exact rank
      of the Jacobian of the prime's generators), and dim(T_{P₁}D ∩ [Der(kQ), P₁]).
 Usage: python3 analysis/v2_48_divisor_components.py REPS.pkl REP_INDEX LINES_LOG CHART_PREFIX CHARTS(e.g. 0,1,3)"""
 import os, sys, io, re, ast, contextlib, subprocess
@@ -67,10 +67,11 @@ N = sp.zeros(d, d)
 for (i, j), v in Nd.items(): N[i, j] = sp.Rational(v)
 BA = P0.columnspace(); BK = (I - P0).columnspace(); nA, nK = len(BA), len(BK)
 B = sp.Matrix.hstack(*BA, *BK); Binv = B.inv(); RK = Binv[nA:, :]; BAm = sp.Matrix.hstack(*BA)
-ZN = Binv[:nA, :] * N * sp.Matrix.hstack(*BK)
+TV = sp.Rational(os.environ.get('T', '1'))           # the point P_T = P₀ + T·N (v2.49: T = −1 for the R line)
+ZN = TV * Binv[:nA, :] * N * sp.Matrix.hstack(*BK)
 zsyms = [sp.Symbol(f'z{i}_{j}') for i in range(nA) for j in range(nK)]
 pt = {sp.Symbol(f'z{i}_{j}'): ZN[i, j] for i in range(nA) for j in range(nK)}
-P1 = P0 + N
+P1 = P0 + TV * N
 # derivations over Q
 Mi = [[[int(M[i, j, m]) for m in range(d)] for j in range(d)] for i in range(d)]
 rows = []
