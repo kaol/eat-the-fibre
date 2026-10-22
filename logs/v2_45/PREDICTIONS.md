@@ -29,3 +29,19 @@ Setting: 1⇉2⇉3 + 1→3, the two image-dimension-7 groups (L, R). For a fold 
 16. For P₀ = rep 5107 (L, class (1, 0)), V_A ⊂ 𝔸³⁵ (N = B_A·Z·R_K, Z a 7×5 matrix of unknowns) has Krull dimension 7
     over ℚ. That is the tangent dimension, so V_A is smooth of dimension 7 at P₀, and the local behaviour dimension is
     m = 1.
+
+## Outcome of 16: **held** (`VA_5107.txt`)
+
+V_A for rep 5107: 35 unknowns, 995 equations, max degree 2. Singular: dim 7, one minimal associated prime, of
+dimension 7, containing Z = 0. The tangent dimension at Z = 0 is 7. So V_A is irreducible of dimension 7 and smooth at
+P₀. Within it, the derivation directions [Der_A, P₀] ∩ T have dimension 6, so the behaviours with image A near P₀
+form at least 1 dimension.
+
+## Predictions 17, 18 (committed before the runs)
+
+17. For rep 5097 (L, class (3, 0), constant), dim V_{A'} ≤ dim([Der_A', P₀] ∩ T_{P₀}V_{A'}) = 7 − 3 = 4, at least
+    near P₀. So there are no behaviour moduli at a constant orbit, and its tangent count m = 3 is an overcount
+    (singular or non-reduced point). Concretely: Singular's dimension of the component(s) of V_{A'} through Z = 0
+    is ≤ 4.
+18. With exact signature matching, the R group has 27 orbits at q = 5. Its growing classes (1, 0) and (2, 0) have
+    m = 1 and m = 2 except at most 2 orbits, mirroring L.
