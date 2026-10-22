@@ -100,3 +100,11 @@ non-linearity of the unmerged count (1668, 1840, 2028) disappears under the full
 gitignored, so `git add` aborted. The cross-prime run then started anyway, because the commands were chained with
 `;`. The text above is unchanged from what was written, but it was **not committed before the run**. Treat it as
 written-before, committed-after.
+
+### Outcome of 7: **held** (written before, committed after; see the process note)
+
+- At q = 7 the 18 closed forms meet 7 orbits each and the 17 bounded curves meet 3, all pairwise disjoint
+  (`logs/v2_43/crossprime_q7.txt`).
+- After removing the 18, the remaining counts are 885, 893, 901 at q = 3, 5, 7. Both target groups go 23, 27, 31
+  = 17 + 2q (`logs/v2_43/growth_3_5_7.txt`). So the merged count is 873 + 22q at three primes: 18 known families,
+  plus 4 more (2 per target group) of unknown form.

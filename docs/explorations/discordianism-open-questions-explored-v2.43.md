@@ -44,6 +44,27 @@ is that the first count is not linear. This revisits v2.42's picture of 22 one-p
 - **The four missing families of v2.42**, in the two image-dimension-7 groups, are the natural suspects for the
   non-linear part. This is not checked.
 
+## 2a. Update (same day): the representatives arrived; the merged count is linear
+
+With `logs/reps_two_pairs_short_7.pkl` from the rerun:
+
+| | q = 3 | q = 5 | q = 7 | |
+|---|---|---|---|---|
+| merged with the shear U (full Δ-compatible group) | 939 | 983 | **1027** | = 873 + 22q; **v2.42 prediction 6 held** |
+| the 18 inner-curve families of v2.42 | 3 orbits each | 5 each | **7 each** | pairwise disjoint at every prime |
+| the 17 bounded curves | 3 each | 3 each | **3 each** | |
+| remaining after the 18 | 885 | 893 | **901** | = 873 + 4q |
+| each of the two dim-7 image groups | 23 | 27 | **31** | = 17 + 2q |
+
+So the non-linear part of the unmerged count is exactly what the shear absorbs. Under the full Δ-compatible group,
+1⇉2⇉3 + 1→3 has 22 one-parameter families at three primes:
+- 18 are inner curves Inn(1 + t·x)·P₀ with integer closed forms;
+- 4 lie in the two mirror-image groups with dim im P = 7, two per group. They are not inner curves or shear curves
+  (v2.42), and their form is still open.
+
+Prediction 7 (the q = 7 checks above) held, but it was committed after the run: a gitignore error stopped the commit
+and the chained command ran on (logs/v2_42/PREDICTIONS.md, process note).
+
 ## 3. Tooling fix
 
 `run_batch.py` accepted `--save-reps` and silently dropped it, which I should have caught when I recommended the flag
@@ -56,9 +77,10 @@ This was tested with a stub pcensus.py: the flag is forwarded for job 16, and th
 
 ## 4. Next
 
-1. `python3 run_batch.py 16 --save-reps` (with `HSA_OVERRIDE_GFX_VERSION=11.0.0` on the Strix Point). This resumes
-   from `checkpoints/two_pairs_short_7.pkl`, so only the orbit stage reruns. Send back
-   `logs/reps_two_pairs_short_7.pkl`.
-2. Then: the shear merge (`analysis/v2_42_merge_dump.py`), the merged count against 1027, and the cross-prime family
-   analysis at three primes.
-3. Job 14 (1⇉2⇇3 + 1→3 + 2→4 over 𝔽₅), to compare with job 13's 1220.
+1. Find the 4 large-image families. Candidates:
+   - torus composites with rational coefficients, as Theorem 3's F1 needed (v2.33);
+   - class substitutions outside G;
+   - or families that are not single automorphism orbits at all, i.e. moduli of the splitting itself. Here
+     Aut(kQ) is larger than Inn ⋊ Sub (shears), so v2.33's behaviour census would need extending to decide this.
+2. Lean closed forms for the 18 inner-curve families, with rigidity and disjointness, as for 1⇉2⇉3 (v2.36–v2.38).
+3. Job 14 (1⇉2⇇3 + 1→3 + 2→4 over 𝔽₅).
