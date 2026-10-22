@@ -50,3 +50,17 @@ Exactly over ℚ:
     - rank [Der(kQ), P₂] = 22, and N is not in its span.
 
     So m(P₂) = 1 exactly, and P₂ is a smooth point of V_A.
+
+## Outcomes of 25, 24 (`exact_checks.txt`)
+
+- 25 **held**, exactly over ℚ:
+  - dim T_{P₂}V_A = 7 (995 equations, 35 unknowns);
+  - dim Der = 22, rank [Der, P₂] = 22, and 23 with N.
+
+  So P₂ is a smooth point and m(P₂) = 1.
+- 24 **failed**. The 14 base representatives have exactly 2 distinct images: all 8 L-group lines share image A, and
+  all 6 R-group lines share image B. So it is one fixed image per group, not two.
+
+Hypothesis for the 2q growth per group with one image (to be pre-registered as a prediction next round): the (2, 0)
+points of V_A form a divisor D on which H′ has 5-dimensional orbits. So D/H′ is one-dimensional as well, giving the
+q orbits of class (2, 0) next to the q orbits of class (1, 0) from the generic stratum.

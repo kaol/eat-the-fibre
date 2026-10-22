@@ -1,0 +1,5 @@
+(25a) V_A: 995 equations in 35 unknowns; dim T_{P2} V_A = 7
+(25b) dim Der = 22; rank [Der, P2] = 22; with N: 23; N in [Der, P2]: False
+(24) 14 base representatives, 2 distinct images (exact over Q):
+  image #0 (dim 7): [('lines_5107.txt', 5107), ('driver_L_20.txt', 5103), ('driver_L_20.txt', 5228), ('driver_L_20.txt', 5288), ('driver_L_20.txt', 5428), ('driver_L_20.txt', 5430), ('driver_L_20.txt', 5431), ('driver_L_20.txt', 5435)]
+  image #1 (dim 7): [('driver_R_10.txt', 6118), ('driver_R_10.txt', 6314), ('driver_R_10.txt', 6318), ('driver_R_10.txt', 6319), ('driver_R_10.txt', 6321), ('driver_R_10.txt', 6323)]
