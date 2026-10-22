@@ -84,13 +84,25 @@ cx = nullsp([list(r) for r in sp.Matrix(cond).T.tolist()], len(Der))
 DerD = [sum((c[k] * Der[k] for k in range(len(Der))), sp.zeros(d, d)) for c in cx]
 Ec = [sp.diag(*[0 if b[0] == 'v' else sum(1 for x in b[1] if x in c) for b in basis]) for c in cl]
 print(f"dim Der = {len(Der)}, dim Der_Δ = {len(DerD)}, torus derivations {len(Ec)}", flush=True)
-# 𝔥 = stabiliser of A in Der_Δ ⊕ span(E_c)
-L = DerD + Ec
+# admissible weights W = {w : P_t compatible with Δ_w for all t}: linear in w; coefficients of t must vanish
+wv = sp.symbols(f'w0:{len(cl)}')
+lin = []
+for l in range(d):
+    DLw = [sum((wv[c] * DLc[c][m] for c in range(len(cl))), sp.zeros(d, d)) for m in range(d)]
+    E = (sum((Pt[m, l] * DLw[m] for m in range(d)), sp.zeros(d, d)) - Pt * DLw[l] * Pt.T).applyfunc(sp.expand)
+    for e in E:
+        if e != 0:
+            for coeff in sp.Poly(e, t).all_coeffs(): lin.append([sp.expand(coeff).coeff(w) for w in wv])
+W = nullsp(lin, len(cl))
+print(f"admissible weights W (all t): {[list(w) for w in W]}", flush=True)
+Ew = [sum((w[c] * Ec[c] for c in range(len(cl))), sp.zeros(d, d)) for w in W]
+# 𝔥′ = stabiliser of A in Der_Δ ⊕ {Σ w_c E_c : w ∈ W}
+L = DerD + Ew
 I = sp.eye(d); Q0 = I - P0
 hc = nullsp([list(r) for r in sp.Matrix([list(Q0 * D * P0) for D in L]).T.tolist()], len(L))
 h = [sum((c[k] * L[k] for k in range(len(L))), sp.zeros(d, d)) for c in hc]
 print(f"dim 𝔥 (stabiliser of A in the census Lie algebra) = {len(h)}", flush=True)
-for tv in (1, 2):
+for tv in (1, 2, 3):
     P1 = Pt.subs(t, tv)
     brs = [list((D * P1 - P1 * D)) for D in h]
     r1 = rank(brs); r2 = rank(brs + [list(N)])

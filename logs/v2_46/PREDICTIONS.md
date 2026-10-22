@@ -35,3 +35,18 @@ Let 𝔥 = {D ∈ Der_Δ ⊕ span(E_a, E_b, E_c) : D(A) ⊆ A}, the Lie algebra 
 22′. Let W = {w : P_t is compatible with Δ_w for all t} (a subspace, computed exactly) and
      𝔥′ = {D ∈ Der_Δ ⊕ {Σ w_c E_c : w ∈ W} : D(A) ⊆ A}. Then at t = 2 (exactly over ℚ),
      rank [𝔥′, P_2] = 6 and adding N gives rank 7.
+
+## Outcome of 22′: **held** (`slice_5107_W.txt`)
+
+Exactly over ℚ:
+- W = span{(0, 1, 0), (1, 0, 1)};
+- dim 𝔥′ = 6;
+- at t = 2 and t = 3, rank [𝔥′, P_t] = 6, and 7 with N. (t = 1 is special: 5 and 6.)
+
+## Prediction 25 (committed before the run)
+
+25. At P₂ = P₀ + 2N, exactly over ℚ:
+    - dim T_{P₂}V_A = 7 (Jacobian of the 995 V_A equations at Z = 2·Z_N);
+    - rank [Der(kQ), P₂] = 22, and N is not in its span.
+
+    So m(P₂) = 1 exactly, and P₂ is a smooth point of V_A.
