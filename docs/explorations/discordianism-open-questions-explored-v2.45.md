@@ -4,7 +4,7 @@
 and a tilting kernel. This round studies the variety V_A of all folds with a given image A. For the image of those
 lines it is irreducible of dimension 7 over ℚ and smooth at the base point. Automorphisms preserving A sweep out 6 of
 those 7 directions at generic points, which leaves (at least) a one-dimensional family of behaviours. Seven
-predictions were committed before the computations. Three held as stated, two held in part, and two failed. The
+predictions were committed before the computations. Three held (16, 19, 20), one held in part (15, in the L group only), and three failed (14, 17, 18). The
 failures corrected a wrong reading of the tangent invariants.*
 
 ---
