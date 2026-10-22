@@ -23,3 +23,26 @@ and whether the column-block P|_X ι e_i vanishes). It is a (G × T²)-invariant
 
 4. The number of nonempty τ-strata of local-torus orbits of 1⇉2⇉3 is the same at q = 5 and q = 7, and in each stratum
    (count at q = 7) − (count at q = 5) = 2 × (number of the 19 families in it).
+
+### Outcome of 4
+
+- First run (`strata_two_pairs_5_7_residue_keys.txt`) keyed vertex blocks by residues in [0, q), so −1 read as 4 at
+  q = 5 and 6 at q = 7: 44 spurious one-prime strata. This was a comparison bug, fixed by symmetric residues; the rerun
+  is `strata_two_pairs_5_7.txt`.
+- **First half held:** 222 nonempty strata at both primes, the same set.
+- **Second half failed as written (18 violations):** a family is not τ-constant. Its special members (t where an entry
+  such as t or t + 1 vanishes) fall into other strata, which then contain family points but do not grow.
+- **Refined form (post hoc) holds with 0 violations:** in every stratum, (count at 7) − (count at 5) equals the growth
+  in the number of family points there. Non-family orbits: 659 at both primes, in 193 strata; 8 strata mix family and
+  non-family orbits.
+
+## Prediction 5 (committed before computing)
+
+Every automorphism φ of kQ (Q = 1⇉2⇉3 or 1⇉2⇇3) satisfies ε∘φ = φ̄∘ε with φ̄ a permutation of vertex idempotents
+(Aut(Q) acting on Q₀), and preserves rad^n. Hence, for φPφ⁻¹: ε(φPφ⁻¹) = φ̄ εP φ⁻¹, so the multiset over vertices i of
+the depth d_i(P) = max{n : ε_i P (rad^n) ≠ 0} (−1 if ε_i P = 0), together with dim(im P ∩ rad^n), dim(ker P ∩ rad^n)
+and rank εP|_{rad^n}, is an Aut(kQ)-invariant D(P) (for 1⇉2⇉3, where Aut(Q) fixes Q₀, the vector (d_1, d_2, d_3) itself).
+
+5a. (sanity) D is constant along each of the 19 families (all t ∈ 𝔽₇ and generic t).
+5b. D, together with the v2.35 signature, takes 19 distinct values on the 19 families: they are 19 distinct behaviours.
+5c. On 1⇉2⇇3, D (symmetrised under the vertex swap) separates F1, F2 and F3 (v2.35 open question 2).
