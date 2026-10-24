@@ -471,12 +471,15 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
 
 
 PORTFOLIO_CAP = int(float(os.environ.get('ETF_PCAP', '3e6')))      # frontier rows per fibre before trying the next order
+PORTFOLIO_TIME = float(os.environ.get('ETF_PTIME', '300'))          # seconds per attempt, for every order but the last
 
 
-def bfs_fibre(P, x0, cap):
+def bfs_fibre(P, x0, cap, tmax=None):
     """One fibre breadth-first, column by column, with P's column order: x0 (d, d) int8 with the K columns filled →
     (rid, X) of its complete N-orbit representatives, or None as soon as a frontier exceeds `cap` rows. The children of
-    a column are the engine's own (level, quotient), so the result equals run()'s fibre after expand()."""
+    a column are the engine's own (level, quotient), so the result equals run()'s fibre after expand(). Also None when
+    tmax seconds pass."""
+    t0 = time.time()
     rid, X = torch.zeros(1, dtype=torch.long, device=P.dev), torch.as_tensor(x0[None], device=P.dev)
     for c in range(P.kdim, P.d):
         nb = P.parent_batch(c); kr, kx = [], []; n = 0
@@ -484,7 +487,7 @@ def bfs_fibre(P, x0, cap):
             for r2, x2 in level(P, rid[s:s + nb], X[s:s + nb], c):
                 if P.sym and c + 1 < P.d and len(r2): r2, x2 = quotient(P, r2, x2, c + 1)
                 kr.append(r2); kx.append(x2); n += len(r2)
-                if n > cap: return None
+                if n > cap or (tmax and time.time() - t0 > tmax): return None
         if n == 0: return rid[:0], X[:0]
         rid, X = torch.cat(kr), torch.cat(kx)
     return rid, X
@@ -510,7 +513,10 @@ def portfolio(C, alts, reps, fibres, save=lambda force=False: None, log=print, d
     for i, r in enumerate(todo):
         x0 = np.zeros((d, d), dtype=np.int8); x0[:, :kdim] = Kmat @ reps[r][0] % p
         for k, P in enumerate(plans):
-            res = bfs_fibre(P, x0, cap)
+            ta = time.time()
+            res = bfs_fibre(P, x0, cap, PORTFOLIO_TIME if k + 1 < len(plans) else None)
+            if time.time() - ta > 60 or res is None:
+                log(f"  portfolio: fibre {r}, order {k}: {'gave up' if res is None else 'done'} after {time.time() - ta:.0f}s")
             if res is None: continue
             rid, X = res
             if P.sym and len(rid): rid, X = expand(P, rid, X)

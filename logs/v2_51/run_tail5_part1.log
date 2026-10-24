@@ -1,0 +1,9 @@
+  kernel stage on cpu: 3583232 subspaces, subalgebras by dimension [1, 149, 588, 531, 162, 20, 1]
+  kernel stage: 6.6s
+pairs_in_short_tail F_5: d=18, dim K=6, 169696 kernel folds in 45016 torus orbits; engine=torch
+  symmetry: 45016 torus orbits in 17434 H-orbits (H = G × T); 27582 fibres by transport; |N| = |ker(H → H|_K)| = 100
+  order portfolio: 2 column orders, cap 3000000 rows, 17434 fibres
+  portfolio: 370/17434 fibres, by order {0: 370}, t=111s
+  portfolio: 4291/17434 fibres, by order {0: 4291}, t=171s
+  portfolio: 6132/17434 fibres, by order {0: 6132}, t=232s
+  portfolio: 6159/17434 fibres, by order {0: 6159}, t=313s
