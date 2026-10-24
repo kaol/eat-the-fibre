@@ -9,3 +9,13 @@ per source fibre, the engine's frontier width after each column (after the N-quo
     and the peak is at least 10× the fibre's final leaf count (N-orbit representatives).
 39. At q = 5, at least one source fibre exceeds 2·10⁶ rows at some column (the cap), consistent with the 44 M children
     recorded at one column in fibre_torch's docstring.
+
+## Added after the q = 3 profile and the column-order experiments on three fibres (before the runs below)
+
+The order experiments (fibres 5973, 14916, 5965 at q = 3) suggest filling the paths through the joining arrow first
+(c·b₁, c·b₂, right after a₁, b₁, c and before the tail arrow t = 2→4 and the paths a_i·t, b_j·t):
+ETF_CORDER = 4,6,8,14,15,9,10,12,11,13 (basis indices).
+
+40. With that order, the full q = 3 census of pairs_in_short_tail in the container reproduces job 13 exactly:
+    N = 25622, orbits_G = 1443, orbits_GxGr = 1281, orbits_GxT = 1281, orbits_GxTloc = 1220.
+41. With that order, the q = 5 profile of every source fibre stays below the 2·10⁶-row cap.
