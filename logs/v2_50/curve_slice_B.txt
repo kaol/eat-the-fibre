@@ -1,0 +1,12 @@
+L: 29 affine-linear forms, dim 6 (free [z2_2, z2_4, z5_2, z5_3, z5_4, z6_4])
+(33a) fold equations not vanishing on L: 0 of 995
+p = P0 + (-1)·N lies on L at u = [-1, 0, 0, 0, 0, 0]
+(33c′) common centraliser of L in Der: dim 0, so rank [Der, P] ≤ 22 on L; basis (nonzero entries): []
+(33b) dim 𝔤_L = 6; dim 𝔥′ = 6; 𝔥′ ⊆ 𝔤_L: True
+[33b-d at p] rank [𝔤_L, P] = 5; rank [Der, P] = 21 (dim Der 22); dim(L⃗ ∩ [Der, P]) = 5; directions of L⃗ outside [Der, P]: ['z2_2', 'z2_4', 'z5_3', 'z5_4']
+[33f at p + 2v] rank [𝔤_L, P] = 5; rank [Der, P] = 21 (dim Der 22); dim(L⃗ ∩ [Der, P]) = 5; directions of L⃗ outside [Der, P]: ['z2_2', 'z2_4', 'z5_3', 'z5_4', 'z6_4']
+(33e) C = p + s·v with v = 1·∂/∂z2_2 written to logs/v2_50/curve_B.json
+[33g random u = [0, 3, -1, -1, 2, -2]] rank [𝔤_L, P] = 5; rank [Der, P] = 21 (dim Der 22); dim(L⃗ ∩ [Der, P]) = 5; directions of L⃗ outside [Der, P]: ['z2_2']
+[33g random u = [2, 0, 3, -1, -3, 1]] rank [𝔤_L, P] = 5; rank [Der, P] = 21 (dim Der 22); dim(L⃗ ∩ [Der, P]) = 5; directions of L⃗ outside [Der, P]: ['z2_2', 'z2_4', 'z5_3', 'z5_4', 'z6_4']
+[33g random u = [-1, -2, 2, 1, -3, -2]] rank [𝔤_L, P] = 5; rank [Der, P] = 21 (dim Der 22); dim(L⃗ ∩ [Der, P]) = 5; directions of L⃗ outside [Der, P]: ['z2_2', 'z2_4', 'z5_3', 'z5_4', 'z6_4']
+[33g random u = [-1, 3, -3, -1, -1, -2]] rank [𝔤_L, P] = 5; rank [Der, P] = 21 (dim Der 22); dim(L⃗ ∩ [Der, P]) = 5; directions of L⃗ outside [Der, P]: ['z2_2', 'z2_4', 'z5_3', 'z5_4', 'z6_4']

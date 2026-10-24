@@ -10,17 +10,17 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.49) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.50) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
-| `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine. `completion_*.py` (v2.31) read the generated Lean tables; `module_classes.py`, `completion_words.py` (v2.32) classify census orbits from `--save-reps` dumps (`logs/v2_32/`); `behaviour_census.py`, `family_behaviour.py` (v2.33); `fibre_rigidity.py`, `v2_34/` (v2.34); `family_signatures.py`, `v2_35/` (v2.35); `family_normal_forms.py`, `family_curves.py`, `v2_36_*.py` (v2.36); `v2_37_certificates.py` (v2.37); `v2_38_*.py` (v2.38); `v2_42_*.py` (v2.42); `v2_44_*.py` (v2.44); `v2_45_*.py` (v2.45); `v2_46_*.py` (v2.46); `v2_47_divisor.py` (v2.47); `v2_48_divisor_components.py` (v2.48; env `T` v2.49) |
+| `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine. `completion_*.py` (v2.31) read the generated Lean tables; `module_classes.py`, `completion_words.py` (v2.32) classify census orbits from `--save-reps` dumps (`logs/v2_32/`); `behaviour_census.py`, `family_behaviour.py` (v2.33); `fibre_rigidity.py`, `v2_34/` (v2.34); `family_signatures.py`, `v2_35/` (v2.35); `family_normal_forms.py`, `family_curves.py`, `v2_36_*.py` (v2.36); `v2_37_certificates.py` (v2.37); `v2_38_*.py` (v2.38); `v2_42_*.py` (v2.42); `v2_44_*.py` (v2.44); `v2_45_*.py` (v2.45); `v2_46_*.py` (v2.46); `v2_47_divisor.py` (v2.47); `v2_48_divisor_components.py` (v2.48; env `T` v2.49); `v2_50_curve_slice.py`, `v2_50_invariants.py` (v2.50) |
 
 Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of the same round. Labels used throughout:
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.49)
+## Where the fold story stands (v2.50)
 
 | result | status | round |
 |---|---|---|
@@ -59,4 +59,5 @@ mathematics forces them.
 | mirror theorem for the R image B; the rank-drop locus of the stabiliser on V_A is a divisor (dim 6) with 5-dimensional orbits, giving the second one-parameter family per group (2q growth) | Singular over ℚ / exact ranks | v2.47 |
 | the divisor D has a unique divisorial component; at a smooth rational point one tangent direction of D is not a derivation direction, so D also carries a ≥ 1-dimensional family of behaviours | Singular / exact ranks over ℚ | v2.48 |
 | the R divisor D_B computed directly: unique 6-dimensional component, smooth at the line's point t = −1 with one non-derivation tangent direction; the 18 inner families of 1⇉2⇉3 + 1→3 as closed forms over ℤ[t], each a fold over every ring and one inner orbit | Singular / exact over ℚ; **Lean 4** (all 18 built and audited) | v2.49 |
+| V_A, V_B are affine-linear 7-spaces and their divisor components affine 6-spaces L_A, L_B; on each L the behaviours form **exactly** a one-parameter family (curve slice: Stab(L) has Lie algebra 𝔥′, dominant onto L from a line C; the generic Der-orbit dimension 21 gives the lower bound; the invariant κ restricts to 1 − s on C) | **proved** (char 0: exact ℚ computations + Lean `curveA_isFold`, `curveB_isFold` + paper algebraic-group steps) | v2.50 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |

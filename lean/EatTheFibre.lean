@@ -67,4 +67,6 @@ import EatTheFibre.Gen.two_pairs_short_fam15
 import EatTheFibre.Gen.two_pairs_short_fam16
 import EatTheFibre.Gen.two_pairs_short_fam17
 import EatTheFibre.Gen.two_pairs_short_fam18
+import EatTheFibre.Gen.two_pairs_short_curveA
+import EatTheFibre.Gen.two_pairs_short_curveB
 import EatTheFibre.Audit

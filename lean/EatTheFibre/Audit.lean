@@ -58,6 +58,8 @@ import EatTheFibre.Gen.two_pairs_short_fam15
 import EatTheFibre.Gen.two_pairs_short_fam16
 import EatTheFibre.Gen.two_pairs_short_fam17
 import EatTheFibre.Gen.two_pairs_short_fam18
+import EatTheFibre.Gen.two_pairs_short_curveA
+import EatTheFibre.Gen.two_pairs_short_curveB
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -259,3 +261,5 @@ open EatTheFibre
 #print axioms Q_two_pairs_short.fam17_one_orbit
 #print axioms Q_two_pairs_short.fam18_isFold
 #print axioms Q_two_pairs_short.fam18_one_orbit
+#print axioms Q_two_pairs_short.curveA_isFold
+#print axioms Q_two_pairs_short.curveB_isFold
