@@ -24,7 +24,7 @@ DEVICE = os.environ.get('DEVICE')
 def engine_args():
     if ENGINE == 'pool': return ['--engine', 'pool', '--jobs', JOBS]
     return ['--engine', 'torch'] + (['--device', DEVICE] if DEVICE else [])
-# (quiver, p, predictions {field: value} or {}, note)
+# (quiver, p, predictions {field: value} or {}, note[, extra env for pcensus.py])
 BATCH = [
     ('pair_tgtfork', 5, {'orbits_G': 428, 'orbits_GxGr': 428}, "1⇉2, 2→3, 2→4: stalled here at q=5; fork rule predicts no families"),
     ('pair_srcboth', 7, {'N': 14928, 'orbits_G': 615, 'orbits_GxGr': 485}, "double fork: 26q³+115q²+45q+60, G-orbits 26q+433, 485"),
@@ -42,7 +42,9 @@ BATCH = [
     ('triple_pair_in_short', 5, {'orbits_GxTloc': 752}, "P2: 1⇛2⇇3 + 1→3; local-torus count as over F_3 (752). OOM in the "
                      "container (~5.7e5 torus orbits, 5080 H-orbits after symmetry)"),
     ('pairs_in_short_tail', 3, {}, "P4 (part 1): 1⇉2⇇3 + 1→3 + 2→4, d = 18; too slow in the container"),
-    ('pairs_in_short_tail', 5, {}, "P4 (part 2): orbits_GxTloc should equal job 13's"),
+    ('pairs_in_short_tail', 5, {}, "P4 (part 2): orbits_GxTloc should equal job 13's. v2.51: column order fills c·b_j "
+                     "before the tail arrow (the default order ran out of memory inside one fibre)",
+     {'ETF_CORDER': '4,6,8,14,15,9,12,16,13,17,10,11'}),
     ('pairs_in_short', 11, {'orbits_GxTloc': 366}, "1⇉2⇇3 + 1→3: 366 over F_3, F_5, F_7; one more prime"),
     # v2.42 (prediction committed in logs/v2_42/PREDICTIONS.md before this run): needs --save-reps for the shear merge
     ('two_pairs_short', 7, {'orbits_GxTloc': 2012}, "v2.42: 1⇉2⇉3 + 1→3 over F_7, linear in q (1668, 1840, 2012); "
@@ -70,19 +72,21 @@ def show(i, q, p, pred, note, r=None):
 if __name__ == '__main__':
     sel = [int(x) for x in sys.argv[1:] if x.isdigit()]
     res = done()
-    for i, (q, p, pred, note) in enumerate(BATCH, 1):
+    for i, (q, p, pred, note, *_) in enumerate(BATCH, 1):
         show(i, q, p, pred, note, res.get((q, p)))
     if '--list' in sys.argv: sys.exit()
     os.makedirs('checkpoints', exist_ok=True)
-    for i, (q, p, pred, note) in enumerate(BATCH, 1):
+    for i, (q, p, pred, note, *rest) in enumerate(BATCH, 1):
+        env = dict(os.environ, **(rest[0] if rest else {}))
         if sel and i not in sel: continue
         if complete(q, p, done()): continue
-        print(f"\n=== job {i}: {q} over F_{p} ({time.strftime('%H:%M:%S')}) ===", flush=True)
+        print(f"\n=== job {i}: {q} over F_{p} ({time.strftime('%H:%M:%S')})"
+              + "".join(f" {k}={v}" for k, v in (rest[0] if rest else {}).items()) + " ===", flush=True)
         with open('batch.log', 'a') as log:
             pr = subprocess.Popen([sys.executable, '-u', 'pcensus.py', q, str(p), *engine_args(),
                                    '--checkpoint', f'checkpoints/{q}_{p}.pkl', '--out', 'results.jsonl',
                                    *(['--save-reps', reps_path(q, p)] if SAVE_REPS else [])],
-                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env)
             for line in pr.stdout:
                 log.write(line); log.flush()
                 if not line.startswith('{'): print("   ", line, end="", flush=True)
