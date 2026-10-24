@@ -73,20 +73,26 @@ STRIDE = int(os.environ.get('PCENSUS_STRIDE', '4') or 4)
 MAXB = int(os.environ.get('PCENSUS_MAXB', '1024') or 1024)
 XCHECK = int(os.environ.get('PCENSUS_XCHECK', '0') or 0)
 
-def column_order(basis, d):
-    """Order in which complement basis vectors are tried (and hence the engine's column schedule). Default: basis order.
-    ETF_CORDER=a,b,... (basis indices) puts those first, in that order, then the rest in basis order. The Δ-lift needs
-    every column's Δ-support earlier (fibre_torch.Plan asserts it); a valid order has nondecreasing path length."""
-    pref = [int(x) for x in os.environ.get('ETF_CORDER', '').split(',') if x.strip()]
-    return pref + [i for i in range(d) if i not in pref]
+def corders():
+    """Column orders from the environment, each a list of basis indices to put first. ETF_CORDERS = o1;o2;... (an order
+    portfolio, v2.51: fibres are tried with o1, then o2, ..., see fibre_torch.portfolio) or ETF_CORDER = o1 (one order)."""
+    spec = os.environ.get('ETF_CORDERS') or os.environ.get('ETF_CORDER') or ''
+    return [[int(x) for x in o.split(',') if x.strip()] for o in spec.split(';') if o.strip()]
 
-def setup(name, p):
+def column_order(basis, d, pref=None):
+    """Order in which complement basis vectors are tried (and hence the engine's column schedule). Default: basis order,
+    or the first order of corders(). pref (basis indices) goes first, in that order, then the rest in basis order. The
+    Δ-lift needs every column's Δ-support earlier (fibre_torch.Plan asserts it)."""
+    if pref is None: pref = (corders() or [[]])[0]
+    return list(pref) + [i for i in range(d) if i not in pref]
+
+def setup(name, p, order=None):
     nv, arrows = QUIVERS[name]; F = Field(p)
     basis, M, DL = build(nv, arrows); d = len(basis); I = np.eye(d, dtype=np.int64)
     Dmat = DL.reshape(d, d * d).T % p
     Kb = F.nullspace(Dmat); kdim = len(Kb)
     Cidx = []; cur = list(Kb)
-    for i in column_order(basis, d):
+    for i in column_order(basis, d, order):
         if F.rank(np.array(cur + [I[i]])) > len(cur): cur.append(I[i]); Cidx.append(i)
     B = np.array(cur).T % p; Binv = F.inv(B)
     DC = Dmat[:, Cidx]; assert F.rank(DC) == len(Cidx)
@@ -648,8 +654,8 @@ def main():
         assert (ck['name'], ck['p'], ck['nreps']) == (name, p, len(reps)), "checkpoint is for another run"
         # fibres are stored in the column basis B, which depends on the column order (ETF_CORDER); checkpoints from
         # before v2.51 carry no Cidx and were made with the default order
-        assert ck.get('Cidx', None if os.environ.get('ETF_CORDER') else list(ctx['Cidx'])) == list(ctx['Cidx']), \
-            "checkpoint was made with another column order (ETF_CORDER)"
+        assert ck.get('Cidx', None if corders() else list(ctx['Cidx'])) == list(ctx['Cidx']), \
+            "checkpoint was made with another column order (ETF_CORDER / first of ETF_CORDERS)"
         fibres = ck['fibres']; print(f"  resumed: {len(fibres)}/{len(reps)} fibres done", flush=True)
     last_save = [time.time()]
     def save(force=False):
@@ -664,6 +670,13 @@ def main():
               f"|N| = |ker(H → H|_K)| = {len(ctx['N'][0])}", flush=True)
     if a.engine == 'torch':
         import fibre_torch
+        orders = corders()
+        if len(orders) > 1:                  # order portfolio: per-fibre breadth-first search, each order in turn
+            alts = []
+            for o in orders[1:]:
+                c2 = setup(name, p, order=o); c2['N'] = ctx.get('N'); alts.append(c2)
+            fibre_torch.portfolio(ctx, alts, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device,
+                                  only=src)
         fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device, only=src)
     else:
         pool_fibres(name, p, a.jobs, ctx, reps, fibres, save, t0, only=src)

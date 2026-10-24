@@ -1,0 +1,21 @@
+  kernel stage on cpu: 56632 subspaces, subalgebras by dimension [1, 67, 250, 251, 96, 16, 1]
+  kernel stage: 2.4s
+pairs_in_short_tail F_3: d=18, dim K=6, 32904 kernel folds in 17748 torus orbits; engine=torch
+  symmetry: 17748 torus orbits in 12210 H-orbits (H = G × T); 5538 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  8192/12210 fibres computed, group 3/3, 26 stacked batches at column 16, t=62s
+  8192/12210 fibres computed, group 3/3, 48 stacked batches at column 16, t=125s
+  8192/12210 fibres computed, group 3/3, 37 stacked batches at column 16, t=187s
+  8192/12210 fibres computed, group 3/3, 27 stacked batches at column 16, t=248s
+  8192/12210 fibres computed, group 3/3, 53 stacked batches at column 16, t=308s
+  8192/12210 fibres computed, group 3/3, 43 stacked batches at column 16, t=370s
+  8192/12210 fibres computed, group 3/3, 34 stacked batches at column 16, t=431s
+  8192/12210 fibres computed, group 3/3, 24 stacked batches at column 16, t=494s
+  8192/12210 fibres computed, group 3/3, 78 stacked batches at column 16, t=612s
+  8192/12210 fibres computed, group 3/3, 58 stacked batches at column 16, t=674s
+  8192/12210 fibres computed, group 3/3, 35 stacked batches at column 16, t=735s
+  8192/12210 fibres computed, group 3/3, 84 stacked batches at column 16, t=883s
+  8192/12210 fibres computed, group 3/3, 59 stacked batches at column 16, t=946s
+  8192/12210 fibres computed, group 3/3, 36 stacked batches at column 16, t=1007s
+  8192/12210 fibres computed, group 3/3, 22 stacked batches at column 16, t=1067s
+  8192/12210 fibres computed, group 3/3, 75 stacked batches at column 16, t=1167s

@@ -42,9 +42,9 @@ BATCH = [
     ('triple_pair_in_short', 5, {'orbits_GxTloc': 752}, "P2: 1⇛2⇇3 + 1→3; local-torus count as over F_3 (752). OOM in the "
                      "container (~5.7e5 torus orbits, 5080 H-orbits after symmetry)"),
     ('pairs_in_short_tail', 3, {}, "P4 (part 1): 1⇉2⇇3 + 1→3 + 2→4, d = 18; too slow in the container"),
-    ('pairs_in_short_tail', 5, {}, "P4 (part 2): orbits_GxTloc should equal job 13's. v2.51: column order fills c·b_j "
-                     "before the tail arrow (the default order ran out of memory inside one fibre)",
-     {'ETF_CORDER': '4,6,8,14,15,9,12,16,13,17,10,11'}),
+    ('pairs_in_short_tail', 5, {}, "P4 (part 2): orbits_GxTloc should equal job 13's. v2.51: per-fibre column-order portfolio "
+                     "(the default order ran out of memory inside one fibre; no single order suits every fibre)",
+     {'ETF_CORDERS': '4,6,8,14,15,9,10,12,11,13;4,6,8,14,15,9,12,16,13,17,10,11'}),
     ('pairs_in_short', 11, {'orbits_GxTloc': 366}, "1⇉2⇇3 + 1→3: 366 over F_3, F_5, F_7; one more prime"),
     # v2.42 (prediction committed in logs/v2_42/PREDICTIONS.md before this run): needs --save-reps for the shear merge
     ('two_pairs_short', 7, {'orbits_GxTloc': 2012}, "v2.42: 1⇉2⇉3 + 1→3 over F_7, linear in q (1668, 1840, 2012); "

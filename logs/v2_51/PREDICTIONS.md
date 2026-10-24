@@ -30,3 +30,15 @@ a₁, b₁, c, cb₁, cb₂, t, b₁t, cb₁t, b₂t, cb₂t, a₁t, a₂t) fini
     source fibre finishes within 120 s with peak frontier below 10⁶ rows.
 43. Job 14 itself (q = 5) then completes in the container, and orbits_GxTloc = 1220, the q = 3 value (the run_batch
     note's prediction: the local-torus count is constant in q, as Conjecture 3ᶜ requires for this unobstructed quiver).
+
+## Outcome of 42 (recorded before 44), and the next prediction
+
+42 failed at q = 3: with the path-tree order alone, four q = 3 fibres (17663, 14964, 15009, 17727) exploded at columns
+13–16, fibres that the first order handles easily. No single order suits every fibre. fibre_torch.portfolio now tries
+the orders per fibre (breadth-first with a row cap, first success kept, converted to the main column basis). Check at
+q = 3 with ETF_CORDERS = path-tree;first and cap 5·10⁴: 12206 fibres by the first order and 4 by the second. The census is
+identical to job 13 in all 21 fields, and all 17748 fibres are identical as sets of folds to the single-order run.
+
+44. Job 14 with ETF_CORDERS = 4,6,8,14,15,9,10,12,11,13;4,6,8,14,15,9,12,16,13,17,10,11 and cap 3·10⁶: every q = 5 source
+    fibre is completed by one of the two orders (none left for run()), and the census completes in the container.
+    (Prediction 43, orbits_GxTloc = 1220, stands for this run.)

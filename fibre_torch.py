@@ -468,3 +468,59 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
         + (f"; N-quotient (|N| = {P.HL.shape[0]}) per column [frontier, kept]: "
            + ", ".join(f"{c}: {list(map(int, QSTATS[c]))}" for c in sorted(QSTATS)) if QSTATS else ""))
     return fibres
+
+
+PORTFOLIO_CAP = int(float(os.environ.get('ETF_PCAP', '3e6')))      # frontier rows per fibre before trying the next order
+
+
+def bfs_fibre(P, x0, cap):
+    """One fibre breadth-first, column by column, with P's column order: x0 (d, d) int8 with the K columns filled →
+    (rid, X) of its complete N-orbit representatives, or None as soon as a frontier exceeds `cap` rows. The children of
+    a column are the engine's own (level, quotient), so the result equals run()'s fibre after expand()."""
+    rid, X = torch.zeros(1, dtype=torch.long, device=P.dev), torch.as_tensor(x0[None], device=P.dev)
+    for c in range(P.kdim, P.d):
+        nb = P.parent_batch(c); kr, kx = [], []; n = 0
+        for s in range(0, len(rid), nb):
+            for r2, x2 in level(P, rid[s:s + nb], X[s:s + nb], c):
+                if P.sym and c + 1 < P.d and len(r2): r2, x2 = quotient(P, r2, x2, c + 1)
+                kr.append(r2); kx.append(x2); n += len(r2)
+                if n > cap: return None
+        if n == 0: return rid[:0], X[:0]
+        rid, X = torch.cat(kr), torch.cat(kx)
+    return rid, X
+
+
+def portfolio(C, alts, reps, fibres, save=lambda force=False: None, log=print, device=None, only=None, cap=None):
+    """Fill fibres[r] for the torus reps r (r ∈ only) not yet in fibres, trying for each fibre the column orders of
+    C, alts[0], alts[1], ... in turn (each a pcensus.setup context of the same quiver and prime, differing only in the
+    column order) and keeping the first breadth-first search whose frontier stays within `cap` rows. Fibres are stored
+    in C's column basis: X = P·B, so X_C = X_o · Binv_o · B_C. Fibres no order manages are left for run() (v2.51: the
+    explosion column depends on the fibre, so no single order is good for every fibre of 1⇉2⇇3 + 1→3 + 2→4)."""
+    cap = cap or PORTFOLIO_CAP
+    dev = pick_device(device)
+    ctxs = [C] + list(alts); plans = [Plan(c, dev) for c in ctxs]
+    p, d, kdim = C['p'], C['d'], C['kdim']
+    for c in ctxs: assert (np.asarray(c['Kmat']) % p == np.asarray(C['Kmat']) % p).all(), "orders must share K"
+    BC = np.asarray(C['B']) % p
+    conv = [torch.as_tensor((np.asarray(c['Binv']) % p) @ BC % p, dtype=torch.float32, device=dev) for c in ctxs]
+    Kmat = np.asarray(C['Kmat'])
+    todo = [r for r in (range(len(reps)) if only is None else only) if r not in fibres]
+    log(f"  order portfolio: {len(ctxs)} column orders, cap {cap} rows, {len(todo)} fibres")
+    t0 = last = time.time(); used = collections.Counter(); left = []
+    for i, r in enumerate(todo):
+        x0 = np.zeros((d, d), dtype=np.int8); x0[:, :kdim] = Kmat @ reps[r][0] % p
+        for k, P in enumerate(plans):
+            res = bfs_fibre(P, x0, cap)
+            if res is None: continue
+            rid, X = res
+            if P.sym and len(rid): rid, X = expand(P, rid, X)
+            Xc = P.md(P.mm(X.to(torch.float32), conv[k])).to(torch.int16).cpu().numpy() if len(X) else []
+            fibres[r] = list({x.astype(np.int8).tobytes(): x for x in Xc}.values())
+            used[k] += 1; save(); break
+        else:
+            left.append(r); used['none'] += 1
+        if time.time() - last > 60:
+            log(f"  portfolio: {i + 1}/{len(todo)} fibres, by order {dict(used)}, t={time.time() - t0:.0f}s"); last = time.time()
+    log(f"  portfolio done in {time.time() - t0:.0f}s: fibres by order {dict(used)}; left for run(): {left[:20]}"
+        + (" ..." if len(left) > 20 else ""))
+    return fibres
