@@ -73,13 +73,20 @@ STRIDE = int(os.environ.get('PCENSUS_STRIDE', '4') or 4)
 MAXB = int(os.environ.get('PCENSUS_MAXB', '1024') or 1024)
 XCHECK = int(os.environ.get('PCENSUS_XCHECK', '0') or 0)
 
+def column_order(basis, d):
+    """Order in which complement basis vectors are tried (and hence the engine's column schedule). Default: basis order.
+    ETF_CORDER=a,b,... (basis indices) puts those first, in that order, then the rest in basis order. The Δ-lift needs
+    every column's Δ-support earlier (fibre_torch.Plan asserts it); a valid order has nondecreasing path length."""
+    pref = [int(x) for x in os.environ.get('ETF_CORDER', '').split(',') if x.strip()]
+    return pref + [i for i in range(d) if i not in pref]
+
 def setup(name, p):
     nv, arrows = QUIVERS[name]; F = Field(p)
     basis, M, DL = build(nv, arrows); d = len(basis); I = np.eye(d, dtype=np.int64)
     Dmat = DL.reshape(d, d * d).T % p
     Kb = F.nullspace(Dmat); kdim = len(Kb)
     Cidx = []; cur = list(Kb)
-    for i in range(d):
+    for i in column_order(basis, d):
         if F.rank(np.array(cur + [I[i]])) > len(cur): cur.append(I[i]); Cidx.append(i)
     B = np.array(cur).T % p; Binv = F.inv(B)
     DC = Dmat[:, Cidx]; assert F.rank(DC) == len(Cidx)
@@ -639,12 +646,16 @@ def main():
     if a.checkpoint and os.path.exists(a.checkpoint):
         ck = pickle.load(open(a.checkpoint, 'rb'))
         assert (ck['name'], ck['p'], ck['nreps']) == (name, p, len(reps)), "checkpoint is for another run"
+        # fibres are stored in the column basis B, which depends on the column order (ETF_CORDER); checkpoints from
+        # before v2.51 carry no Cidx and were made with the default order
+        assert ck.get('Cidx', None if os.environ.get('ETF_CORDER') else list(ctx['Cidx'])) == list(ctx['Cidx']), \
+            "checkpoint was made with another column order (ETF_CORDER)"
         fibres = ck['fibres']; print(f"  resumed: {len(fibres)}/{len(reps)} fibres done", flush=True)
     last_save = [time.time()]
     def save(force=False):
         if not a.checkpoint or (not force and time.time() - last_save[0] < 30): return
         tmp = a.checkpoint + '.tmp'
-        pickle.dump(dict(name=name, p=p, nreps=len(reps), fibres=fibres), open(tmp, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
+        pickle.dump(dict(name=name, p=p, nreps=len(reps), fibres=fibres, Cidx=list(ctx['Cidx'])), open(tmp, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
         os.replace(tmp, a.checkpoint); last_save[0] = time.time()
     if a.no_symmetry: src, trans = list(range(len(reps))), {}
     else:
