@@ -46,7 +46,7 @@ python3 gen/gen_short_families.py ../logs/v2_42/curves_two_pairs_short_5_merged.
 | `Gen/pairs_in_aut.lean` | v2.41: mirror tables `S·F_j·S`, swap-case cross lemmas, `thm3_F1_F3`, `thm3_behaviours_aut` |
 | `Thm3Behaviours.lean` | v2.41 (handwritten): `Conj` (conjugacy by an automorphism), the F1 witness `conj_F1`, `thm3_exactly_three` |
 | `Gen/two_pairs_short_line.lean` | v2.44: a kernel-tilting line P₀ + t·N on 1⇉2⇉3 + 1→3, `line_isFold` (fold over every commutative ring, every t); N is not a derivation direction (computed, `analysis/v2_44_exact.py`) |
-| `Gen/two_pairs_short_fam{1..18}.lean` | v2.49: the 18 inner families of 1⇉2⇉3 + 1→3, P_t = Inn(1 + t·x)·P₀·Inn⁻¹; `famk_isFold`, `famk_one_orbit` (fam1, fam2 built in the container; the rest ~5 GB each) |
+| `Gen/two_pairs_short_fam{1..18}.lean` | v2.49: the 18 inner families of 1⇉2⇉3 + 1→3, P_t = Inn(1 + t·x)·P₀·Inn⁻¹; `famk_isFold`, `famk_one_orbit` (all built; audit 184 results, standard axioms only) |
 | `Transport.lean` | v2.34: `twist` (Δ transported along an algebra automorphism), `twist_delta`, **`transport`**: φPφ⁻¹ is a fold iff P is a fold for Δ^φ |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 

@@ -60,3 +60,15 @@ cd lean && for k in $(seq 3 18); do lake build EatTheFibre.Gen.two_pairs_short_f
 - lean/gen/gen_short_families.py → lean/EatTheFibre/Gen/two_pairs_short_fam{1..18}.lean
 - analysis/v2_48_divisor_components.py (new env `T`: test point P₀ + T·N)
 - logs/v2_49/: PREDICTIONS.md, divisor_B.txt, components_B.txt, lean_fam1.log, lean_fam2.log
+
+---
+
+## Addendum (2026-10-24): all 18 family files built
+
+The remaining 16 files (fam3–fam18) were built on the Strix machine, followed by a full `./build.sh`. The run had no
+errors and ended "Build completed successfully (9118 jobs)". The audit now has 184 results, up from 148: 183 depend
+only on standard axioms ([propext, Classical.choice, Quot.sound] or a subset) and one depends on none. All 36 new
+results (`famk_isFold`, `famk_one_orbit`, k = 1..18) depend on [propext, Classical.choice, Quot.sound].
+
+So the inner-curve row of §2 is complete: **all 18 inner families of 1⇉2⇉3 + 1→3 are machine-checked.** Each is a fold
+over every commutative ring for every t, and each is one inner orbit. Excerpt: logs/v2_49/strix_build_audit.txt.
