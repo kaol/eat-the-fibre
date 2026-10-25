@@ -26,3 +26,10 @@ degree 1). Its counts 748, 7036, 31732 fit q⁵ + about 6q⁴, so the estimator,
     strata, analysis/v2_53_orbits.py finds a rational point where rank [𝔥_Z, P] = dim Z. Here 𝔥_Z = Der_Δ ⊕ E_{W_Z},
     with W_Z the class weightings compatible on all of Z. So every component has an open orbit of the connected census
     group.
+
+## Outcomes of 51–52
+51 held: all 40 components of maximal dimension (over the 21 strata) are absolutely irreducible (one absolute prime,
+extension degree 1).
+52 held: all 118 components of the 21 strata have a rational point with rank [𝔥_Z, P] = dim Z. A first run with one
+random point per component (logs/v2_53/strata_orbits_single_point.txt) found two components below full rank. Both
+were special points: the rerun takes the best of several points and reaches full rank on both.

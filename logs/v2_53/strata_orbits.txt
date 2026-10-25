@@ -1,0 +1,140 @@
+== 000,000,000 | census loc orbits: 45
+  component 1: dim 0; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 0; open census orbit: True
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 4: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 5: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 6: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 5; open census orbit: True
+  component 7: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 2 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 5; open census orbit: True
+  component 8: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 9: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 10: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 12; open census orbit: True
+  component 11: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 12; open census orbit: True
+  component 12: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 15; open census orbit: True
+  component 13: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 12; open census orbit: True
+  component 14: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 15; open census orbit: True
+== 000,000,001 | census loc orbits: 15
+  component 1: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 3; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 9; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 9; open census orbit: True
+  component 4: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 5; open census orbit: True
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 12; open census orbit: True
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 2 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 12; open census orbit: True
+== 000,001,001 | census loc orbits: 11
+  component 1: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 5; open census orbit: True
+  component 2: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 9; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 9; open census orbit: True
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+== 000,010,000 | census loc orbits: 14
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 6; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 4: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 14; open census orbit: True
+== 000,010,001 | census loc orbits: 13
+  component 1: dim 0; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 5; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 9; open census orbit: True
+  component 4: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 9; open census orbit: True
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 15; open census orbit: True
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 15; open census orbit: True
+== 000,010,010 | census loc orbits: 11
+  component 1: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 5; open census orbit: True
+  component 2: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 9; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 9; open census orbit: True
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+== 001,000,001 | census loc orbits: 14
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 6; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 4: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 14; open census orbit: True
+== 001,001,001 | census loc orbits: 25
+  component 1: dim 0; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 0; open census orbit: True
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 4: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 5; open census orbit: True
+  component 5: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 6: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 12; open census orbit: True
+  component 7: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 15; open census orbit: True
+== 001,010,001 | census loc orbits: 20
+  component 1: dim 2; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 12; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 16; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 4: dim 3; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 5: dim 5; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 18; open census orbit: True
+  component 6: dim 5; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 18; open census orbit: True
+== 010,010,000 | census loc orbits: 11
+  component 1: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 3; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 9; open census orbit: True
+  component 3: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 5; open census orbit: True
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 12; open census orbit: True
+== 010,010,010 | census loc orbits: 25
+  component 1: dim 0; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 0; open census orbit: True
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 4: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 5; open census orbit: True
+  component 5: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 6: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 15; open census orbit: True
+  component 7: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 12; open census orbit: True
+== 100,000,000 | census loc orbits: 10
+  component 1: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 14; open census orbit: True
+  component 2: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 15; open census orbit: True
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 11; open census orbit: True
+  component 4: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 14; open census orbit: True
+  component 5: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 5; open census orbit: True
+  component 6: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 9; open census orbit: True
+== 100,000,001 | census loc orbits: 22
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+  component 2: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 17; open census orbit: True
+  component 3: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 6; open census orbit: True
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 13; open census orbit: True
+== 100,000,100 | census loc orbits: 8
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 6; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+== 100,001,001 | census loc orbits: 36
+  component 1: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 6, rank [Der, P] = 19; open census orbit: True
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 6, rank [Der, P] = 17; open census orbit: True
+  component 3: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 14; open census orbit: True
+  component 4: dim 1; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 8; open census orbit: True
+== 100,010,000 | census loc orbits: 15
+  component 1: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 8; open census orbit: True
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+  component 4: dim 1; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 9; open census orbit: True
+  component 5: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 2 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 11; open census orbit: True
+  component 6: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 11; open census orbit: True
+== 100,010,001 | census loc orbits: 42
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 14; open census orbit: True
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 15; open census orbit: True
+  component 4: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 11; open census orbit: True
+  component 5: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 15; open census orbit: True
+  component 6: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 11; open census orbit: True
+  component 7: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 8: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 5, rank [Der, P] = 17; open census orbit: True
+  component 9: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 10: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 12; open census orbit: True
+  component 11: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 12; open census orbit: True
+  component 12: dim 0; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 0; open census orbit: True
+  component 13: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 14: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 15: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+  component 16: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+== 100,010,010 | census loc orbits: 12
+  component 1: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 10; open census orbit: True
+  component 2: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 13; open census orbit: True
+  component 3: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 4, rank [Der, P] = 13; open census orbit: True
+  component 4: dim 0; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 9; open census orbit: True
+  component 5: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 10; open census orbit: True
+  component 6: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; best of 2 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 10; open census orbit: True
+== 100,010,100 | census loc orbits: 5
+  component 1: dim 2; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 12; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 12; open census orbit: True
+== 100,100,000 | census loc orbits: 6
+  component 1: dim 1; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 1, rank [Der, P] = 3; open census orbit: True
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 9; open census orbit: True
+== 100,100,100 | census loc orbits: 6
+  component 1: dim 0; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 0, rank [Der, P] = 0; open census orbit: True
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 2, rank [Der, P] = 7; open census orbit: True
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; best of 1 rational points: rank [𝔥_Z, P] = 3, rank [Der, P] = 8; open census orbit: True
+ALLDONE

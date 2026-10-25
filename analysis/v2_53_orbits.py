@@ -164,7 +164,7 @@ for i_, dim_, gens, indep, nf in comps:
             for co in (sp.Poly(e, *[sp.Symbol(v) for v in vs]).coeffs() if vs else [e]): lin.append([sp.expand(co).coeff(w) for w in wv])
     W = nullsp(lin, len(cl))
     h = DerD + [sum((w[c] * Ec[c] for c in range(len(cl))), sp.zeros(d, d)) for w in W]
-    found = None
+    found = None; best = (-1, -1); npts = 0
     for t in range(a.tries):
         vals = {sp.Symbol(vs[k]): sp.Integer(random.randint(-4, 4)) for k in range(len(vs)) if indep[k] == 1}
         g2 = [sp.expand(g.subs(vals)) for g in gens]; g2 = [g for g in g2 if g != 0]
@@ -179,10 +179,13 @@ for i_, dim_, gens, indep, nf in comps:
             env = full_point({sp.Symbol(v): pt[sp.Symbol(v)] for v in vs})
             Pn = P.subs(env)
             if fold_eqs(Pn, I - Pn): continue
-            found = Pn; break
-        if found is not None: break
+            npts += 1
+            rh_ = rank([list(D * Pn - Pn * D) for D in h])
+            if rh_ > best[0]: best = (rh_, rank([list(D * Pn - Pn * D) for D in Der])); found = Pn
+            break
+        if found is not None and best[0] == dim_: break
     if found is None:
         print(f"  component {i_}: dim {dim_}, W_Z = {[list(w) for w in W]}; no rational point found in {a.tries} tries", flush=True); continue
-    rh = rank([list(D * found - found * D) for D in h]); rD = rank([list(D * found - found * D) for D in Der])
-    print(f"  component {i_}: dim {dim_}; W_Z = {[list(w) for w in W]}; at a rational point: rank [𝔥_Z, P] = {rh}, "
+    rh, rD = best
+    print(f"  component {i_}: dim {dim_}; W_Z = {[list(w) for w in W]}; best of {npts} rational points: rank [𝔥_Z, P] = {rh}, "
           f"rank [Der, P] = {rD}; open census orbit: {rh == dim_}", flush=True)
