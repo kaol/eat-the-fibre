@@ -1,0 +1,13 @@
+pairs_in F_3: 3936 fibre folds (torus reps), 31 distinct vertex blocks; entries [-1, 0, 1]
+pairs_in F_5: 20804 fibre folds (torus reps), 39 distinct vertex blocks; entries [-2, -1, 0, 1, 2]
+pairs_in F_7: 67848 fibre folds (torus reps), 47 distinct vertex blocks; entries [-3, -2, -1, 0, 1, 2, 3]
+pairs_in F_11: 356912 fibre folds (torus reps), 63 distinct vertex blocks; entries [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+vertex blocks common to all primes: 29; per prime: [31, 39, 47, 63]
+  F_3: 2 blocks not in every prime, e.g. [((-1, 0, 1), (0, 0, 0), (1, 0, -1)), ((1, 0, 0), (-1, 0, -1), (0, 0, 1))]
+  F_5: 10 blocks not in every prime, e.g. [((-2, 0, 2), (0, 0, 0), (2, 0, -2)), ((-1, 0, 1), (0, 0, 0), (-2, 0, 2)), ((0, 0, 0), (-2, 0, 2), (-1, 0, 1))]
+  F_7: 18 blocks not in every prime, e.g. [((-3, 0, 3), (0, 0, 0), (3, 0, -3)), ((-2, 0, 2), (0, 0, 0), (-3, 0, 3)), ((-1, 0, 1), (0, 0, 0), (-2, 0, 2))]
+  F_11: 34 blocks not in every prime, e.g. [((-5, 0, 5), (0, 0, 0), (5, 0, -5)), ((-4, 0, 4), (0, 0, 0), (-5, 0, 5)), ((-3, 0, 3), (0, 0, 0), (-4, 0, 4))]
+    ((0, 0, 0), (-1, 0, 1), (-1, 0, 1))
+    ((0, 0, 0), (0, 0, 0), (-1, 0, 1))
+    ((0, 0, 0), (0, 0, 0), (0, 0, 0))
+    ((0, 0, 0), (0, 0, 0), (0, 0, 1))

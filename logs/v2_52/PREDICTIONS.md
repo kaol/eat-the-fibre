@@ -9,3 +9,11 @@ the Δ condition of the arrow 1→3. Question: does the arrow kill the vertex-bl
        q = 3, 5, 7;
     b. on 1⇉2⇇3 (pairs_in) the number of distinct vertex blocks grows with q (q = 3, 5, 7, 11), by Theorem 3.
 46. On pairs_in_short, every vertex block has entries in {−1, 0, 1}.
+
+## Added after 45–46 (which held), before the elimination below
+
+47. A necessary system over ℚ: P_K (P restricted to K = ker Δ, 25 unknowns) is idempotent with image and kernel closed
+    under products, and P(c) (10 unknowns) satisfies Δ(P c) = P(e₁) ⊗ P(e₃). Projected to the vertex block (9 unknowns),
+    it has finitely many points, and they are exactly the 21 census blocks.
+48. The same system without the arrow-c condition (which is all of P_K's conditions on the unjoined 1⇉2⇇3, whose K is
+    the same 5-dimensional algebra) projects onto a positive-dimensional set of vertex blocks.
