@@ -23,3 +23,9 @@ N = dim Z + 2.
   and add an (r+1)-minor that is nonzero there (pivot rows and columns of M at the point). Stop when no component of
   dimension > r is left; that gives dim Z_r ≤ r. If every sampled point of such a component has rank ≤ r, that is
   reported as a (probable) failure of the criterion.
+
+## Outcomes
+53 held. All 118 components pass: 7 are points, and for the other 111 every r < dim Z has dim Z_r ≤ r
+(logs/v2_54/orbit_strata.txt). No probable failures, no Singular timeouts.
+54 was not computed. The point-guided method certifies dim Z_r ≤ r without counting the r-dimensional components of
+Z_r, so this run gives no orbit-count bound.
