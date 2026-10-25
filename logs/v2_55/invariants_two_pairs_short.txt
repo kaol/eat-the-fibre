@@ -1,0 +1,37 @@
+== 000,001,001 component 2
+two_pairs_short V = 000,001,001, component 2: dim 4, coordinates [k14, k34, k52, y6_1]; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; dim 𝔥_Z = 8
+semi-invariants (constant characters): 10
+INVARIANT κ = k34/(k14**2*k52): annihilated by every field of 𝔥_Z: True; on Z: k34/(k14**2*k52)
+== 100,100,000 component 2
+two_pairs_short V = 100,100,000, component 2: dim 4, coordinates [k13, k43, k50, y4_0]; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; dim 𝔥_Z = 8
+semi-invariants (constant characters): 10
+INVARIANT κ = k13**2*k50/k43: annihilated by every field of 𝔥_Z: True; on Z: k13**2*k50/k43
+== 001,001,001 component 5
+two_pairs_short V = 001,001,001, component 5: dim 6, coordinates [k05, k14, k35, y6_1, y9_2, y9_4]; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; dim 𝔥_Z = 8
+semi-invariants (constant characters): 10
+INVARIANT κ = k14/k35 (character [1, 0, 1, 2, -1, -1, -2, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k14/k35 (character [1, 0, 0, 1, 0, 0, -1, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k14/k35 (character [2, 0, 0, 2, 0, 0, -2, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k35/k14: annihilated by every field of 𝔥_Z: True; on Z: k35/k14
+== 100,100,100 component 5
+two_pairs_short V = 100,100,100, component 5: dim 6, coordinates [k13, k25, k45, y4_0, y9_2, y9_5]; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; dim 𝔥_Z = 8
+semi-invariants (constant characters): 10
+INVARIANT κ = k45**2/k13**2 (character [-2, 0, 2, 0, -2, -2, 0, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k45/k13 (character [-1, 0, 2, 1, -2, -2, -1, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k13/k45 (character [-1, 0, 1, 0, -1, -1, 0, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k45/k13: annihilated by every field of 𝔥_Z: True; on Z: k45/k13
+== 000,010,010 component 3
+two_pairs_short V = 000,010,010, component 3: dim 4, coordinates [k24, k31, k54, y9_1]; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; dim 𝔥_Z = 8
+semi-invariants (constant characters): 10
+INVARIANT κ = k31/k54 (character [1, 0, -1, 0, 1, 1, 0, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k31/k54 (character [2, 0, -2, 0, 2, 2, 0, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k31/k54 (character [2, 0, -1, 1, 1, 1, -1, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k54/k31: annihilated by every field of 𝔥_Z: True; on Z: k54/k31
+== 010,010,000 component 2
+two_pairs_short V = 010,010,000, component 2: dim 4, coordinates [k03, k41, k53, y9_0]; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; dim 𝔥_Z = 8
+semi-invariants (constant characters): 10
+INVARIANT κ = k41/k53 (character [-2, 0, 1, -1, -1, -1, 1, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k41/k53 (character [-2, 0, 0, -2, 0, 0, 2, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k41/k53 (character [-1, 0, 0, -1, 0, 0, 1, 0]): annihilated by every field of 𝔥_Z: True
+INVARIANT κ = k53/k41: annihilated by every field of 𝔥_Z: True; on Z: k53/k41
+ALLDONE

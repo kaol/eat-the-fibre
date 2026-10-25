@@ -9,3 +9,12 @@ constant.
     no open H_Z-orbit, or some r has dim Z_r > r (reported as rank ≤ r at every sampled point).
 56. Failures occur only in strata whose local-torus count grows with q. Every component of the 8 constant-count
     strata passes.
+
+## Outcomes (14 of the 21 control blocks finished; the 7 largest, all with growing counts, were stopped unfinished)
+55 held. Each of the 6 finished growing blocks has exactly one component with no open orbit (r = dim − 1 fails). In
+each, analysis/v2_55_invariant.py finds an explicit invariant rational function of the connected census group: a ratio
+of semi-invariants (logs/v2_55/invariants_two_pairs_short.txt).
+56 held. All 8 constant-count blocks pass: 59 components, every one with finitely many orbits.
+Infrastructure: Singular's minAssGTZ overflowed silently on this quiver ("overflow at t^24" in hilb, returning no
+components). analysis/singular_nohilb.py loads a copy of primdec.lib without Hilbert-driven std. Rerunning all 21
+pairs_in_short blocks with it reproduces v2.53–v2.54 exactly: 118 components, 111 pass plus 7 points.

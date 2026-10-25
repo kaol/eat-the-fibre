@@ -61,3 +61,64 @@ two_pairs_short V = 000,000,001: presolved to 2555 equations in 45 coordinates; 
   component 12: dim 5; W_Z = [[1, 0, 0], [0, 1, 1]]; finitely many orbits: True; t = 674s
   component 13: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 687s
 == 100,000,000 | census:  756 45 40 | 8050 53 40 | 39984 61 40 | 5 | True
+two_pairs_short V = 100,000,000: presolved to 2555 equations in 45 coordinates; 13 components; dim Der = 22, dim Der_Δ = 5, classes 3; t = 216s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 221s
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 231s
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 240s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 265s
+  component 5: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 278s
+  component 6: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 290s
+  component 7: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 302s
+  component 8: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 308s
+  component 9: dim 3; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 317s
+  component 10: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 347s
+  component 11: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 378s
+  component 12: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 416s
+  component 13: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 426s
+== 000,010,000 | census:  1080 49 40 | 14450 67 40 | 79380 85 40 | 5 | True
+two_pairs_short V = 000,010,000: presolved to 2038 equations in 32 coordinates; 8 components; dim Der = 22, dim Der_Δ = 5, classes 3; t = 148s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 152s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 155s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 158s
+  component 4: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 196s
+  component 5: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 248s
+  component 6: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 283s
+  component 7: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 317s
+  component 8: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 334s
+== 001,001,001 | census:  1207 47 37 | 21851 75 41 | 151215 111 45 | 6 | False
+two_pairs_short V = 001,001,001: presolved to 1357 equations in 19 coordinates; 6 components; dim Der = 22, dim Der_Δ = 5, classes 3; t = 121s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 125s
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 129s
+  component 4: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 140s
+  component 5: dim 6; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; FAILS at r = 5: rank ≤ 5 at every sampled point of a component of dim 6; t = 142s
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 147s
+== 100,100,100 | census:  1207 47 37 | 21851 75 41 | 151215 111 45 | 6 | False
+two_pairs_short V = 100,100,100: presolved to 1357 equations in 19 coordinates; 6 components; dim Der = 22, dim Der_Δ = 5, classes 3; t = 128s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 132s
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 136s
+  component 4: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 147s
+  component 5: dim 6; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; FAILS at r = 5: rank ≤ 5 at every sampled point of a component of dim 6; t = 149s
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 154s
+== 000,010,010 | census:  1332 59 49 | 22650 87 51 | 154056 123 53 | 6 | False
+two_pairs_short V = 000,010,010: presolved to 2040 equations in 33 coordinates; 8 components; dim Der = 22, dim Der_Δ = 5, classes 3; t = 149s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 152s
+  component 2: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 160s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; FAILS at r = 3: rank ≤ 3 at every sampled point of a component of dim 4; t = 163s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 171s
+  component 5: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 197s
+  component 6: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 240s
+  component 7: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 248s
+  component 8: dim 6; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 275s
+== 010,010,000 | census:  1332 59 49 | 22650 87 51 | 154056 123 53 | 6 | False
+two_pairs_short V = 010,010,000: presolved to 2040 equations in 33 coordinates; 8 components; dim Der = 22, dim Der_Δ = 5, classes 3; t = 143s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 147s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; FAILS at r = 3: rank ≤ 3 at every sampled point of a component of dim 4; t = 151s
+  component 3: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 157s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 163s
+  component 5: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 184s
+  component 6: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 212s
+  component 7: dim 3; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 220s
+  component 8: dim 6; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 250s
+== 100,010,001 | census:  5680 232 171 | 100026 378 175 | 676740 556 179 | 6 | False
