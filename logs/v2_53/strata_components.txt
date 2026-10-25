@@ -1,0 +1,94 @@
+== 000,000,000 | census folds/G/loc at q=7:  79990 70 45 
+remaining: 1277 equations in 30 unknowns; 0 unknowns free (dimension offset)
+dim 5 (add the offset)
+components 14
+component 1 dim 0
+component 2 dim 2
+component 3 dim 2
+component 4 dim 3
+component 5 dim 3
+component 6 dim 2
+component 7 dim 2
+component 8 dim 3
+component 9 dim 3
+component 10 dim 5
+component 11 dim 5
+component 12 dim 5
+component 13 dim 5
+component 14 dim 5
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 10: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 11: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 12: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 13: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 14: absolute primes 1, extension degrees 1 
+== 000,000,001 | census folds/G/loc at q=7:  5110 15 15 
+remaining: 855 equations in 17 unknowns; 0 unknowns free (dimension offset)
+dim 4 (add the offset)
+components 6
+component 1 dim 1
+component 2 dim 3
+component 3 dim 3
+component 4 dim 1
+component 5 dim 4
+component 6 dim 4
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 5: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 6: absolute primes 1, extension degrees 1 
+== 000,001,001 | census folds/G/loc at q=7:  2758 11 11 
+remaining: 853 equations in 17 unknowns; 0 unknowns free (dimension offset)
+dim 4 (add the offset)
+components 4
+component 1 dim 1
+component 2 dim 1
+component 3 dim 3
+component 4 dim 4
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 4: absolute primes 1, extension degrees 1 
+== 000,010,000 | census folds/G/loc at q=7:  1078 14 14 
+remaining: 698 equations in 16 unknowns; 0 unknowns free (dimension offset)
+dim 3 (add the offset)
+components 4
+component 1 dim 2
+component 2 dim 3
+component 3 dim 3
+component 4 dim 3
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 2: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 3: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 4: absolute primes 1, extension degrees 1 
+== 000,010,001 | census folds/G/loc at q=7:  4894 13 13 
+remaining: 547 equations in 14 unknowns; 0 unknowns free (dimension offset)
+dim 4 (add the offset)
+components 6
+component 1 dim 0
+component 2 dim 3
+component 3 dim 2
+component 4 dim 2
+component 5 dim 4
+component 6 dim 4
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 5: absolute primes 1, extension degrees 1
+// absolute prime components) and primary_decomp (the primary and prime
+// components over the current basering) are stored.
+top component 6: absolute primes 1, extension degrees 1 
+== 000,010,010 | census folds/G/loc at q=7:  2758 11 11 

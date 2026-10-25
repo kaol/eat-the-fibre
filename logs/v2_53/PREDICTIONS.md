@@ -20,3 +20,9 @@ degree 1). Its counts 748, 7036, 31732 fit q⁵ + about 6q⁴, so the estimator,
 
 51. Every component of maximal dimension of every one of the 21 strata is absolutely irreducible (absPrimdecGTZ
     extension degree 1, one absolute prime per ℚ-prime).
+
+52. (Registered while the absolute decompositions for 51 run, before any orbit computation except the test on
+    100,100,100, whose 3 components all have open orbits.) For every irreducible component Z of every one of the 21
+    strata, analysis/v2_53_orbits.py finds a rational point where rank [𝔥_Z, P] = dim Z. Here 𝔥_Z = Der_Δ ⊕ E_{W_Z},
+    with W_Z the class weightings compatible on all of Z. So every component has an open orbit of the connected census
+    group.
