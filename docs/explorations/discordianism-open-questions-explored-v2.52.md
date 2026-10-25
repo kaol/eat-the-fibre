@@ -55,7 +55,7 @@ part e₁ + e₃, P(e₂) has e₂, and P(e₃) has 0.
    census blocks above. So V(E) over ℚ̄ is these 21 points, and every fold's V lies among them.
 5. Realisation: for each block, a symmetric lift of a census fold over 𝔽₇ is a fold over ℤ, by an exact check
    (`analysis/v2_52_realise.py`). Lean then proves `vbk_isFold`, k = 1..21, by reflection, over every commutative ring
-   (`Gen/pairs_in_short_vblocks.lean`, LEANSTATUS). ∎
+   (`Gen/pairs_in_short_vblocks.lean`, built in 1732 s). ∎
 
 **What each condition contributes.**
 

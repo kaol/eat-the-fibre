@@ -60,6 +60,7 @@ import EatTheFibre.Gen.two_pairs_short_fam17
 import EatTheFibre.Gen.two_pairs_short_fam18
 import EatTheFibre.Gen.two_pairs_short_curveA
 import EatTheFibre.Gen.two_pairs_short_curveB
+import EatTheFibre.Gen.pairs_in_short_vblocks
 import EatTheFibre.Gen.orbits_thm3F2
 import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
@@ -263,3 +264,24 @@ open EatTheFibre
 #print axioms Q_two_pairs_short.fam18_one_orbit
 #print axioms Q_two_pairs_short.curveA_isFold
 #print axioms Q_two_pairs_short.curveB_isFold
+#print axioms Q_pairs_in_short.vb1_isFold
+#print axioms Q_pairs_in_short.vb2_isFold
+#print axioms Q_pairs_in_short.vb3_isFold
+#print axioms Q_pairs_in_short.vb4_isFold
+#print axioms Q_pairs_in_short.vb5_isFold
+#print axioms Q_pairs_in_short.vb6_isFold
+#print axioms Q_pairs_in_short.vb7_isFold
+#print axioms Q_pairs_in_short.vb8_isFold
+#print axioms Q_pairs_in_short.vb9_isFold
+#print axioms Q_pairs_in_short.vb10_isFold
+#print axioms Q_pairs_in_short.vb11_isFold
+#print axioms Q_pairs_in_short.vb12_isFold
+#print axioms Q_pairs_in_short.vb13_isFold
+#print axioms Q_pairs_in_short.vb14_isFold
+#print axioms Q_pairs_in_short.vb15_isFold
+#print axioms Q_pairs_in_short.vb16_isFold
+#print axioms Q_pairs_in_short.vb17_isFold
+#print axioms Q_pairs_in_short.vb18_isFold
+#print axioms Q_pairs_in_short.vb19_isFold
+#print axioms Q_pairs_in_short.vb20_isFold
+#print axioms Q_pairs_in_short.vb21_isFold

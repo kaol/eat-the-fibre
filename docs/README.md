@@ -10,17 +10,17 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.51) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.52) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
-| `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine. `completion_*.py` (v2.31) read the generated Lean tables; `module_classes.py`, `completion_words.py` (v2.32) classify census orbits from `--save-reps` dumps (`logs/v2_32/`); `behaviour_census.py`, `family_behaviour.py` (v2.33); `fibre_rigidity.py`, `v2_34/` (v2.34); `family_signatures.py`, `v2_35/` (v2.35); `family_normal_forms.py`, `family_curves.py`, `v2_36_*.py` (v2.36); `v2_37_certificates.py` (v2.37); `v2_38_*.py` (v2.38); `v2_42_*.py` (v2.42); `v2_44_*.py` (v2.44); `v2_45_*.py` (v2.45); `v2_46_*.py` (v2.46); `v2_47_divisor.py` (v2.47); `v2_48_divisor_components.py` (v2.48; env `T` v2.49); `v2_50_curve_slice.py`, `v2_50_invariants.py` (v2.50); `v2_51_profile.py` (v2.51) |
+| `../analysis/` | analysis scripts used from v2.23 on (tangent spaces, local dimension, class torus, orbit checks); they run against the root engine. `completion_*.py` (v2.31) read the generated Lean tables; `module_classes.py`, `completion_words.py` (v2.32) classify census orbits from `--save-reps` dumps (`logs/v2_32/`); `behaviour_census.py`, `family_behaviour.py` (v2.33); `fibre_rigidity.py`, `v2_34/` (v2.34); `family_signatures.py`, `v2_35/` (v2.35); `family_normal_forms.py`, `family_curves.py`, `v2_36_*.py` (v2.36); `v2_37_certificates.py` (v2.37); `v2_38_*.py` (v2.38); `v2_42_*.py` (v2.42); `v2_44_*.py` (v2.44); `v2_45_*.py` (v2.45); `v2_46_*.py` (v2.46); `v2_47_divisor.py` (v2.47); `v2_48_divisor_components.py` (v2.48; env `T` v2.49); `v2_50_curve_slice.py`, `v2_50_invariants.py` (v2.50); `v2_51_profile.py` (v2.51); `v2_52_vertex_blocks.py`, `v2_52_vertex_ideal.py`, `v2_52_realise.py` (v2.52) |
 
 Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of the same round. Labels used throughout:
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.51)
+## Where the fold story stands (v2.52)
 
 | result | status | round |
 |---|---|---|
@@ -61,4 +61,5 @@ mathematics forces them.
 | the R divisor D_B computed directly: unique 6-dimensional component, smooth at the line's point t = −1 with one non-derivation tangent direction; the 18 inner families of 1⇉2⇉3 + 1→3 as closed forms over ℤ[t], each a fold over every ring and one inner orbit | Singular / exact over ℚ; **Lean 4** (all 18 built and audited) | v2.49 |
 | V_A, V_B are affine-linear 7-spaces and their divisor components affine 6-spaces L_A, L_B; on each L the behaviours form **exactly** a one-parameter family (curve slice: Stab(L) has Lie algebra 𝔥′, dominant onto L from a line C; the generic Der-orbit dimension 21 gives the lower bound; the invariant κ restricts to 1 − s on C) | **proved** (char 0: exact ℚ computations + Lean `curveA_isFold`, `curveB_isFold` + paper algebraic-group steps) | v2.50 |
 | 1⇉2⇇3 + 1→3 + 2→4 (P4, job 14): local-torus count 1220 at q = 3 and q = 5. Job 14's OOM was the column order: a per-fibre order portfolio (fibre_torch.portfolio) finishes it in the container | computed (pre-registered; job 14 reproduces job 13's 1220) | v2.51 |
+| joined ends freeze Theorem 3's modulus: on 1⇉2⇇3 + 1→3 (char 0) the vertex block of a fold takes exactly 21 values, all 0/1, each realised; on 1⇉2⇇3 the same conditions leave a 1-dimensional set (census: 4q + 19 blocks) | **proved** (Singular elimination over ℚ + Lean realisations) | v2.52 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |

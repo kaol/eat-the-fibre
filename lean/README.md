@@ -16,6 +16,7 @@ python3 gen/gen_swap.py                       # regenerate Gen/pairs_in_aut.lean
 python3 gen/gen_line.py REPS.pkl 5107 LOG 0    # regenerate Gen/two_pairs_short_line.lean (v2.44; logs/v2_44/lines_5107.txt, merged F_5 reps)
 python3 gen/gen_short_families.py ../logs/v2_42/curves_two_pairs_short_5_merged.txt REPS_5_merged.pkl   # Gen/two_pairs_short_fam{1..18}.lean (v2.49)
 python3 gen/gen_curve.py ../logs/v2_50/curve_A.json A   # Gen/two_pairs_short_curve{A,B}.lean (v2.50; B with curve_B.json)
+python3 gen/gen_vblocks.py ../logs/v2_52/realise_7.json   # Gen/pairs_in_short_vblocks.lean (v2.52)
 ```
 
 ## What is proved
@@ -49,6 +50,7 @@ python3 gen/gen_curve.py ../logs/v2_50/curve_A.json A   # Gen/two_pairs_short_cu
 | `Gen/two_pairs_short_line.lean` | v2.44: a kernel-tilting line P₀ + t·N on 1⇉2⇉3 + 1→3, `line_isFold` (fold over every commutative ring, every t); N is not a derivation direction (computed, `analysis/v2_44_exact.py`) |
 | `Gen/two_pairs_short_fam{1..18}.lean` | v2.49: the 18 inner families of 1⇉2⇉3 + 1→3, P_t = Inn(1 + t·x)·P₀·Inn⁻¹; `famk_isFold`, `famk_one_orbit` (all built; audit 184 results, standard axioms only) |
 | `Gen/two_pairs_short_curve{A,B}.lean` | v2.50: the slice line C = p + s·v inside the divisor component L_A / L_B; `curveA_isFold`, `curveB_isFold` |
+| `Gen/pairs_in_short_vblocks.lean` | v2.52: an integer fold for each of the 21 vertex blocks of 1⇉2⇇3 + 1→3; `vbk_isFold`, k = 1..21 (that there are no others is a Singular elimination, `analysis/v2_52_vertex_ideal.py`) |
 | `Transport.lean` | v2.34: `twist` (Δ transported along an algebra automorphism), `twist_delta`, **`transport`**: φPφ⁻¹ is a fold iff P is a fold for Δ^φ |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 
@@ -71,6 +73,7 @@ python3 gen/gen_curve.py ../logs/v2_50/curve_A.json A   # Gen/two_pairs_short_cu
 | A behaviour-varying line of folds (v2.44) | `Q_two_pairs_short.line_isFold` |
 | The 18 inner families of 1⇉2⇉3 + 1→3 (v2.49) | `Q_two_pairs_short.famk_isFold`, `Q_two_pairs_short.famk_one_orbit`, k = 1..18 |
 | The slice lines in the divisor components (v2.50) | `Q_two_pairs_short.curveA_isFold`, `Q_two_pairs_short.curveB_isFold` |
+| The 21 vertex blocks of 1⇉2⇇3 + 1→3 are realised (v2.52) | `Q_pairs_in_short.vb1_isFold` … `vb21_isFold` |
 | Transport: fibres over behaviours are coproduct twists (v2.34) | `CoordAlg.transport` |
 | Theorem 2, F2, F4 families are single inner orbits (v2.33) | `Q_two_pairs.thm2_one_orbit`, `Q_pairs_in.thm3F{2,4}_one_orbit` |
 | δ-D2 exact (v2.32) | `Discordia.Completion.*_iff`, `mult_iff` |

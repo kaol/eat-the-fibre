@@ -14,3 +14,9 @@ consider restructuring your `variable` declarations so that the variables are no
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
 ⚠ [9048/9051] Replayed EatTheFibre.Poly
 warning: EatTheFibre/Poly.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [9051/9051] Built EatTheFibre.Gen.pairs_in_short_vblocks (1732s)
+Build completed successfully (9051 jobs).
+
+real	29m9.308s
+user	27m0.932s
+sys	1m58.463s
