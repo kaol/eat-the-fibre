@@ -1,0 +1,182 @@
+"""v2.55: the v2.53–v2.54 pipeline for any quiver, built on fold_ideal.py (fast sparse polynomials).
+
+For a vertex block V of QUIVER:
+1. the stratum's fold ideal, presolved (fold_ideal.stratum, fold_ideal.presolve);
+2. its components over ℚ (Singular minAssGTZ), with dimension, independent set and the normal forms of the class
+   Δ-defects modulo each prime;
+3. per component Z: W_Z (weightings compatible on all of Z), 𝔥_Z = Der_Δ ⊕ E_{W_Z};
+4. the orbit-dimension criterion (v2.54): for r = dim Z − 1, …, 0, an upper bound dim Z_r ≤ r by point-guided
+   (r+1)-minors of M(P) = ([h, P])_{h ∈ 𝔥_Z}. r = dim Z − 1 failing with "rank ≤ r at every sampled point" means no
+   open orbit; lower r failing means a boundary locus of dimension > r with orbits of dimension ≤ r (a modulus).
+Usage: python3 analysis/v2_55_pipeline.py QUIVER BLOCK OUT_PREFIX [--seed S]   (BLOCK: rows of V, e.g. 100,000,001)"""
+import os, sys, re, random, subprocess, argparse, collections, time
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
+import numpy as np, sympy as sp
+from sympy.polys.matrices import DomainMatrix
+import fold_ideal as fi
+import singular_nohilb; singular_nohilb.install()   # minAssGTZ without the overflowing Hilbert series
+ap = argparse.ArgumentParser(); ap.add_argument('quiver'); ap.add_argument('block'); ap.add_argument('out')
+ap.add_argument('--seed', type=int, default=55)
+A = ap.parse_args(); rng = random.Random(A.seed); t0 = time.time()
+V = [[int(ch) for ch in r] for r in A.block.split(',')]
+S = fi.stratum(A.quiver, V)
+R, P, ctx = S['R'], S['P'], S['ctx']
+d, basis, arrows = ctx['d'], ctx['basis'], ctx['arrows']
+M = np.asarray(ctx['M']); DL = np.asarray(ctx['DL'])
+idx = {b: i for i, b in enumerate(basis)}
+rem, subs = fi.presolve(S['eqs'], R)
+elim = {str(x) for x, _ in subs}
+vs = [n for n in S['names'] if n not in elim]                    # coordinates of the presolved stratum
+Pr = [[e for e in row] for row in P]
+for x, val in subs: Pr = [[e.compose(x, val) for e in row] for row in Pr]
+# class defects (ring arithmetic)
+cls = collections.defaultdict(list)
+for a_, st in enumerate(arrows): cls[st].append(a_)
+cl = list(cls.values())
+def DLclass(c):
+    D_ = np.zeros((d, d, d), dtype=np.int64)
+    for l, b in enumerate(basis):
+        if b[0] == 'v': continue
+        for k, x in enumerate(b[1]):
+            if x not in c: continue
+            pre = idx[('p', b[1][:k])] if k > 0 else idx[('v', arrows[x][0])]
+            suf = idx[('p', b[1][k + 1:])] if k + 1 < len(b[1]) else idx[('v', arrows[x][1])]
+            D_[l, pre, suf] += 1
+    return D_
+DLc = [DLclass(c) for c in cl]
+def defect(Dl):
+    out = []
+    for l in range(d):
+        PD = [[sum((Pr[a][x] * int(Dl[l][x, y]) for x in range(d) if Dl[l][x, y]), R(0)) for y in range(d)] for a in range(d)]
+        for a in range(d):
+            for b in range(d):
+                lhs = sum((Pr[m][l] * int(Dl[m][a, b]) for m in range(d) if Dl[m][a, b]), R(0))
+                out.append(lhs - sum((PD[a][y] * Pr[b][y] for y in range(d) if PD[a][y]), R(0)))
+    return out
+defects = [defect(D_) for D_ in DLc]
+nz = [k for k in range(len(defects[0])) if any(defects[c][k] for c in range(len(cl)))]
+ss = lambda f: str(f).replace('**', '^')
+src = f"""LIB "primdec.lib";
+ring r = 0,({','.join(vs)}),dp;
+ideal I = {','.join(ss(e) for e in rem) if rem else '0'};
+list L = minAssGTZ(I);
+ideal DF = {','.join(ss(defects[c][k]) for c in range(len(cl)) for k in nz) if nz else '0'};
+int i;
+for (i = 1; i <= size(L); i++) {{
+  ideal Gi = std(L[i]);
+  print("PRIME " + string(i) + " DIM " + string(dim(Gi)));
+  print("GENS " + string(Gi));
+  intvec iv = indepSet(Gi); print("INDEP " + string(iv));
+  ideal NFd = reduce(DF, Gi); print("NFD " + string(NFd));
+  kill iv; kill NFd; kill Gi;
+}}
+print("END");
+quit;
+"""
+open(A.out + '_base.sing', 'w').write(src)
+res = subprocess.run(["Singular", "-q", "--no-rc", A.out + '_base.sing'], capture_output=True, text=True, timeout=20000)
+out = res.stdout
+assert "END" in out and "? error" not in out + res.stderr and "overflow" not in out + res.stderr, \
+    "Singular decomposition failed: " + (out + res.stderr)[-800:]
+loc = {v: sp.Symbol(v) for v in vs}; Sv = [sp.Symbol(v) for v in vs]
+parse = lambda line: [sp.sympify(g.replace('^', '**'), locals=loc) for g in line.split(',') if g.strip()]
+comps = []
+for blk in out.split("PRIME ")[1:]:
+    m_ = re.match(r"(\d+) DIM (-?\d+)", blk)
+    comps.append((int(m_.group(1)), int(m_.group(2)), parse(re.search(r"GENS (.*)", blk).group(1)),
+                  [int(x) for x in re.search(r"INDEP (.*)", blk).group(1).split(',')], parse(re.search(r"NFD (.*)", blk).group(1))))
+# Der, Der_Δ, class torus derivations
+QQ = sp.QQ
+def nullsp(rows, n):
+    if not rows: return [sp.Matrix([1 if i == j else 0 for i in range(n)]) for j in range(n)]
+    Nm = DomainMatrix.from_list_sympy(len(rows), n, rows).convert_to(QQ).nullspace().to_Matrix()
+    return [Nm.row(k).T for k in range(Nm.rows)]
+rows = []
+for i in range(d):
+    for j in range(d):
+        for m in range(d):
+            row = [0] * (d * d)
+            for k in range(d):
+                if M[i, j, k]: row[m * d + k] += int(M[i, j, k])
+            for r_ in range(d):
+                if M[r_, j, m]: row[r_ * d + i] -= int(M[r_, j, m])
+                if M[i, r_, m]: row[r_ * d + j] -= int(M[i, r_, m])
+            if any(row): rows.append(row)
+Der = [sp.Matrix(d, d, list(v)) for v in nullsp(rows, d * d)]
+DLs = [sp.Matrix(DL[l].tolist()) for l in range(d)]
+cond = [sum((list(sum((D[m, l] * DLs[m] for m in range(d)), sp.zeros(d, d)) - D * DLs[l] - DLs[l] * D.T) for l in range(d)), [])
+        for D in Der]
+cx = nullsp([list(r) for r in sp.Matrix(cond).T.tolist()], len(Der))
+DerD = [sum((c[k] * Der[k] for k in range(len(Der))), sp.zeros(d, d)) for c in cx]
+Ec = [sp.diag(*[0 if b[0] == 'v' else sum(1 for x in b[1] if x in c) for b in basis]) for c in cl]
+PrE = sp.Matrix([[e.as_expr() for e in row] for row in Pr])
+print(f"{A.quiver} V = {A.block}: presolved to {len(rem)} equations in {len(vs)} coordinates; {len(comps)} components; "
+      f"dim Der = {len(Der)}, dim Der_Δ = {len(DerD)}, classes {len(cl)}; t = {time.time() - t0:.0f}s", flush=True)
+def singular(lines, fn, tmo=1800):
+    open(fn, 'w').write("\n".join(lines))
+    try: res = subprocess.run(["Singular", "-q", "--no-rc", fn], capture_output=True, text=True, timeout=tmo)
+    except subprocess.TimeoutExpired: return ""
+    return "" if ("? error" in res.stdout + res.stderr or "overflow" in res.stdout + res.stderr) else res.stdout
+def points(gl, iv, k):
+    pts = []
+    for t in range(12 * k):
+        vals = {Sv[j]: sp.Integer(rng.randint(-5, 5)) for j in range(len(vs)) if iv[j] == 1}
+        g2 = [g for g in (sp.expand(g.subs(vals)) for g in gl) if g != 0]
+        unk = sorted(set().union(*[g.free_symbols for g in g2]), key=str) if g2 else []
+        try: sols = sp.solve(g2, unk, dict=True) if g2 else [{}]
+        except Exception: sols = []
+        for so in sols:
+            if len(so) < len(unk) or not all(x.is_rational for x in so.values()): continue
+            pt = dict(vals); pt.update(so)
+            for v in Sv: pt.setdefault(v, sp.Integer(rng.randint(-5, 5)))
+            pts.append(pt); break
+        if len(pts) >= k: break
+    return pts
+for i_, dim_, gens, indep, nf in comps:
+    n_ = len(nz); wv = sp.symbols(f'w0:{len(cl)}')
+    lin = []
+    for k in range(n_):
+        e = sp.expand(sum(wv[c] * nf[c * n_ + k] for c in range(len(cl))))
+        if e != 0:
+            for co in (sp.Poly(e, *Sv).coeffs() if Sv else [e]): lin.append([sp.expand(co).coeff(w) for w in wv])
+    W = nullsp(lin, len(cl))
+    h = DerD + [sum((w[c] * Ec[c] for c in range(len(cl))), sp.zeros(d, d)) for w in W]
+    m = len(h)
+    Mrows_all = [list((D * PrE - PrE * D).applyfunc(sp.expand)) for D in h]
+    cols = [j for j in range(d * d) if any(Mrows_all[i][j] != 0 for i in range(m))]
+    Mrows = [[Mrows_all[i][j] for j in cols] for i in range(m)]
+    if dim_ <= 0:
+        print(f"  component {i_}: dim {dim_} (points)", flush=True); continue
+    res_r = []
+    for r in range(dim_ - 1, -1, -1):
+        F = []; status = None
+        for it in range(80):
+            out = singular([f'LIB "primdec.lib";', f"ring R = 0,({','.join(vs)}),dp;",
+                            f"ideal J = {','.join([str(g).replace('**', '^') for g in gens] + [str(f).replace('**', '^') for f in F]) or '0'};",
+                            "list L = minAssGTZ(J); int i;",
+                            f"for (i = 1; i <= size(L); i++) {{ ideal Gi = std(L[i]); if (dim(Gi) > {r}) {{ print(\"COMP \" + string(dim(Gi))); "
+                            "print(\"GENS \" + string(Gi)); intvec iv = indepSet(Gi); print(\"INDEP \" + string(iv)); kill iv; } kill Gi; }",
+                            'print("END");', "quit;"], f"{A.out}_c{i_}.sing")
+            if "END" not in out: status = 'singular timeout'; break
+            above = [(int(b.split()[0]), parse(b.split("GENS ")[1].split("\n")[0]), [int(x) for x in b.split("INDEP ")[1].split("\n")[0].split(',')])
+                     for b in out.split("COMP ")[1:]]
+            if not above: status = 'ok'; break
+            added = False
+            for dm, gl, iv in above:
+                pts = points(gl, iv, 4)
+                if not pts: status = f'no rational point on a component of dim {dm}'; break
+                for pt in pts:
+                    Mv = sp.Matrix([[x.subs(pt) for x in row] for row in Mrows])
+                    if Mv.rank() <= r: continue
+                    _, pc = Mv.rref(); pc = list(pc)[:r + 1]
+                    _, pr = Mv[:, pc].T.rref(); pr = list(pr)[:r + 1]
+                    F.append(sp.expand(sp.Matrix([[Mrows[i][j] for j in pc] for i in pr]).det(method='berkowitz')))
+                    added = True; break
+                if not added and not status: status = f'rank ≤ {r} at every sampled point of a component of dim {dm}'
+                if status: break
+            if status: break
+        res_r.append((r, 'ok' if status == 'ok' else status))
+        if status != 'ok': break                    # the first failure is what matters
+    ok = all(s_ == 'ok' for _, s_ in res_r)
+    print(f"  component {i_}: dim {dim_}; W_Z = {[list(w) for w in W]}; " +
+          ("finitely many orbits: True" if ok else f"FAILS at r = {res_r[-1][0]}: {res_r[-1][1]}") + f"; t = {time.time() - t0:.0f}s", flush=True)
