@@ -62,3 +62,27 @@ lets the v2.55 pipeline and the block census read the q = 7 orbits.
 - pcensus.py: the linear local-torus test in `finish()`.
 - run_batch.py: job 17.
 - logs/v2_56/: PREDICTIONS.md, results and run logs of the q = 3 and q = 5 checks.
+
+---
+
+## Addendum (2026-10-25): job 17 result
+
+Prediction 58 held: **1⇉2⇇3 + 1→3 + 2→4 has 1220 local-torus orbits over 𝔽₇**, as over 𝔽₃ and 𝔽₅.
+
+| q | folds N | G-orbits | G × grading-torus orbits | local-torus orbits | run time |
+|---|---|---|---|---|---|
+| 3 | 25,622 | 1,443 | 1,281 | 1220 | 666 s (GPU) |
+| 5 | 442,960 | 2,129 | 1,387 | 1220 | about 47 min (container CPU, v2.51) |
+| 7 | 3,390,442 | 3,215 | 1,529 | 1220 | 18,472 s (GPU) |
+
+- **Engine.** The batched portfolio did what it was meant to. The first order handled 23,597 of the 23,602 source
+  fibres, in 9,288 s. The 5 deferred fibres took 8,648 s under the second order. Nothing fell back to the depth-first
+  engine, and memory stayed bounded.
+- **Block census.** I made it at q = 3, 5, 7 from the saved representatives (logs/reps_pairs_in_short_tail_{3,5,7}.pkl;
+  logs/v2_56/block_census_tail.txt).
+  - There are 90 vertex blocks (4×4 now, with entries in {−1, 0, 1}; 22 blocks contain a −1).
+  - The local-torus count of every block is the same at all three primes.
+  - That is the per-block pattern v2.55 found for the joined-ends quiver and failed to find on the control. It
+    suggests that the v2.54 pipeline would pass block by block here.
+- **Other lines in the returned results.jsonl.** These agree with earlier rounds: triple_pair_in_short over 𝔽₅ = 752,
+  pairs_in_short over 𝔽₁₁ = 366, and two_pairs_short over 𝔽₇ = 2028 (run twice).

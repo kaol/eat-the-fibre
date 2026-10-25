@@ -1,0 +1,42 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+  kernel stage on cuda: 61946920 subspaces, subalgebras by dimension [1, 310, 1745, 1126, 226, 20, 1]
+  kernel stage: 15.0s
+two_pairs_short F_7: d=12, dim K=6, 915048 kernel folds in 153480 torus orbits; engine=torch
+  symmetry: 153480 torus orbits in 27994 H-orbits (H = G × T); 125486 fibres by transport; |N| = |ker(H → H|_K)| = 294
+  torch engine on cuda (AMD Radeon 880M, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 1024 MiB, group 4096
+  20480/27994 fibres computed, group 6/7, 3 stacked batches at column 7, t=62s
+  done in 153s; per column [parents, lifted, candidates, children] (brute force would check lifted·7^6): 6: [27994, 4097, 2167577, 1854185], 7: [76315, 15443, 764051, 667151], 8: [98870, 97653, 324265, 280081], 9: [24749, 23741, 31265, 31265], 10: [30801, 24958, 94368, 86838], 11: [34613, 34183, 85228, 77698]; N-quotient (|N| = 294) per column [frontier, kept]: 7: [1854185, 76315], 8: [667151, 98870], 9: [280081, 24749], 10: [31265, 30801], 11: [86838, 34613]
+{"name": "two_pairs_short", "p": 7, "d": 12, "kdim": 6, "nK": 915048, "reps": 153480, "N": 29947356, "fib": {"0": 903630, "1": 460, "7": 2521, "49": 1545, "343": 5556, "1225": 2, "2401": 504, "4459": 12, "5047": 2, "16807": 799, "66199": 1, "823543": 16}, "G": 1764, "orbits_G": 19808, "sizes_G": {"1": 19, "6": 23, "7": 34, "36": 9, "42": 262, "49": 49, "126": 8, "252": 1160, "294": 1684, "882": 76, "1764": 16484}, "orbits_GxGr": 4540, "sizes_GxGr": {"1": 19, "6": 23, "7": 34, "36": 9, "42": 106, "49": 49, "126": 12, "252": 128, "294": 304, "756": 16, "882": 16, "1512": 168, "1764": 988, "3528": 18, "5292": 60, "10584": 2590}, "transversal": {"lifted": 1322, "lifted_transversal": 427, "transversal_modp": 3114}, "classes": 3, "torus_preserving": 6, "torus_all": 216, "orbits_GxT": 4540, "sizes_GxT": {"1": 19, "6": 23, "7": 34, "36": 9, "42": 106, "49": 49, "126": 12, "252": 128, "294": 304, "756": 16, "882": 16, "1512": 168, "1764": 988, "3528": 18, "5292": 60, "10584": 2590}, "orbits_GxTloc": 2028, "local_torus_sizes": {"6": 7, "36": 11738, "216": 8063}, "t": 986}
+  kernel stage: cached in checkpoints/two_pairs_short_7.kernel.npz
+  kernel stage: 0.4s
+two_pairs_short F_7: d=12, dim K=6, 915048 kernel folds in 153480 torus orbits; engine=torch
+  resumed: 153480/153480 fibres done
+  symmetry: 153480 torus orbits in 27994 H-orbits (H = G × T); 125486 fibres by transport; |N| = |ker(H → H|_K)| = 294
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+  torch engine on cuda (AMD Radeon 880M, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 1024 MiB, group 4096
+  done in 0s; per column [parents, lifted, candidates, children] (brute force would check lifted·7^6): 
+{"name": "two_pairs_short", "p": 7, "d": 12, "kdim": 6, "nK": 915048, "reps": 153480, "N": 29947356, "fib": {"0": 903630, "1": 460, "7": 2521, "49": 1545, "343": 5556, "1225": 2, "2401": 504, "4459": 12, "5047": 2, "16807": 799, "66199": 1, "823543": 16}, "G": 1764, "orbits_G": 19808, "sizes_G": {"1": 19, "6": 23, "7": 34, "36": 9, "42": 262, "49": 49, "126": 8, "252": 1160, "294": 1684, "882": 76, "1764": 16484}, "orbits_GxGr": 4540, "sizes_GxGr": {"1": 19, "6": 23, "7": 34, "36": 9, "42": 106, "49": 49, "126": 12, "252": 128, "294": 304, "756": 16, "882": 16, "1512": 168, "1764": 988, "3528": 18, "5292": 60, "10584": 2590}, "transversal": {"lifted": 1322, "lifted_transversal": 427, "transversal_modp": 3114}, "classes": 3, "torus_preserving": 6, "torus_all": 216, "orbits_GxT": 4540, "sizes_GxT": {"1": 19, "6": 23, "7": 34, "36": 9, "42": 106, "49": 49, "126": 12, "252": 128, "294": 304, "756": 16, "882": 16, "1512": 168, "1764": 988, "3528": 18, "5292": 60, "10584": 2590}, "orbits_GxTloc": 2028, "local_torus_sizes": {"6": 7, "36": 11738, "216": 8063}, "t": 828}
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+  kernel stage on cuda: 61946920 subspaces, subalgebras by dimension [1, 263, 1070, 915, 244, 24, 1]
+  kernel stage: 28.5s
+pairs_in_short_tail F_7: d=18, dim K=6, 533832 kernel folds in 92572 torus orbits; engine=torch
+  symmetry: 92572 torus orbits in 23602 H-orbits (H = G × T); 68970 fibres by transport; |N| = |ker(H → H|_K)| = 294
+  order portfolio: 2 column orders, caps 1000000 / 20000000 rows per fibre, batches of 256 fibres, 23602 fibres
+  portfolio: order 0, 512/23602 fibres of this pass, by order {0: 511}, deferred 1, t=688s
+  portfolio: order 0, 5888/23602 fibres of this pass, by order {0: 5887}, deferred 1, t=764s
+  portfolio: order 0, 6144/23602 fibres of this pass, by order {0: 6143}, deferred 1, t=996s
+  portfolio: order 0, 8704/23602 fibres of this pass, by order {0: 8701}, deferred 3, t=2139s
+  portfolio: order 0, 9728/23602 fibres of this pass, by order {0: 9724}, deferred 4, t=6140s
+  portfolio: order 0, 13568/23602 fibres of this pass, by order {0: 13564}, deferred 4, t=6207s
+  portfolio: order 0, 18176/23602 fibres of this pass, by order {0: 18172}, deferred 4, t=6287s
+  portfolio: order 0, 19200/23602 fibres of this pass, by order {0: 19196}, deferred 4, t=6493s
+  portfolio: order 0, 20224/23602 fibres of this pass, by order {0: 20220}, deferred 4, t=6614s
+  portfolio: order 0, 20480/23602 fibres of this pass, by order {0: 20475}, deferred 5, t=9109s
+  portfolio: order 0, 22528/23602 fibres of this pass, by order {0: 22523}, deferred 5, t=9193s
+  portfolio: order 0, 23552/23602 fibres of this pass, by order {0: 23547}, deferred 5, t=9288s
+  portfolio: order 0 deferred 5 fibres: [932, 34319, 34361, 38367, 81564]
+  portfolio: order 1, 5/5 fibres of this pass, by order {0: 23597, 1: 5}, deferred 0, t=17936s
+  portfolio done in 17936s: fibres by order {0: 23597, 1: 5}; left for run(): []
+  torch engine on cuda (AMD Radeon 880M, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 512 MiB, group 4096
+  done in 0s; per column [parents, lifted, candidates, children] (brute force would check lifted·7^6): 6: [23607, 6231, 15581055, 13376643], 7: [569113, 115957, 171756766, 110906998], 8: [15330049, 95688, 176625, 155037], 9: [104631, 100361, 133103, 133103], 10: [132347, 132070, 30467, 5987], 11: [3035, 2354, 37718, 30548], 12: [7053, 4046, 176696, 137012], 13: [119436, 119436, 119892, 118152], 14: [108060, 106050, 3220232, 2014752], 15: [71154, 70945, 55274, 9668], 16: [9167, 9167, 11525, 11525], 17: [11270, 9331, 42481, 6595]; N-quotient (|N| = 294) per column [frontier, kept]: 7: [13376643, 570037], 8: [110906998, 28821609], 9: [155037, 104631], 10: [133103, 132347], 11: [5987, 3035], 12: [30548, 7053], 13: [137012, 119436], 14: [118152, 118116], 15: [2014752, 1598605], 16: [9668, 9167], 17: [11525, 11270]
+{"name": "pairs_in_short_tail", "p": 7, "d": 18, "kdim": 6, "nK": 533832, "reps": 92572, "N": 3390442, "fib": {"0": 526640, "1": 1329, "7": 3566, "49": 340, "175": 8, "343": 1810, "721": 6, "1225": 4, "1393": 1, "2401": 98, "10675": 1, "16807": 16, "30625": 1, "35329": 1, "117649": 3, "222607": 8}, "G": 1764, "orbits_G": 3215, "sizes_G": {"1": 81, "6": 82, "7": 94, "36": 21, "42": 352, "49": 45, "252": 157, "294": 593, "1764": 1790}, "orbits_GxGr": 1529, "sizes_GxGr": {"1": 81, "6": 82, "7": 94, "36": 21, "42": 232, "49": 45, "252": 129, "294": 227, "756": 4, "882": 8, "1512": 6, "1764": 293, "3528": 54, "5292": 24, "10584": 229}, "transversal": {"lifted": 1247, "lifted_transversal": 164, "transversal_modp": 402}, "classes": 4, "torus_preserving": 6, "torus_all": 1296, "orbits_GxT": 1529, "sizes_GxT": {"1": 81, "6": 82, "7": 94, "36": 21, "42": 232, "49": 45, "252": 129, "294": 227, "756": 4, "882": 8, "1512": 6, "1764": 293, "3528": 54, "5292": 24, "10584": 229}, "orbits_GxTloc": 1220, "local_torus_sizes": {"216": 1677, "1296": 1538}, "t": 18472}
