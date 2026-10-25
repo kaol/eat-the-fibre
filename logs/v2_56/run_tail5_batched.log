@@ -1,0 +1,18 @@
+  kernel stage: cached in checkpoints/pairs_in_short_tail_5.kernel.npz
+  kernel stage: 0.6s
+pairs_in_short_tail F_5: d=18, dim K=6, 169696 kernel folds in 45016 torus orbits; engine=torch
+  symmetry: 45016 torus orbits in 17434 H-orbits (H = G × T); 27582 fibres by transport; |N| = |ker(H → H|_K)| = 100
+  order portfolio: 2 column orders, caps 200000 / 3000000 rows per fibre, batches of 256 fibres, 17434 fibres
+  portfolio: order 0, 512/17434 fibres of this pass, by order {0: 511}, deferred 1, t=167s
+  portfolio: order 0, 4608/17434 fibres of this pass, by order {0: 4607}, deferred 1, t=262s
+  portfolio: order 0, 6400/17434 fibres of this pass, by order {0: 6397}, deferred 3, t=730s
+  portfolio: order 0, 6912/17434 fibres of this pass, by order {0: 6908}, deferred 4, t=1233s
+  portfolio: order 0, 12800/17434 fibres of this pass, by order {0: 12796}, deferred 4, t=1297s
+  portfolio: order 0, 14080/17434 fibres of this pass, by order {0: 14076}, deferred 4, t=1366s
+  portfolio: order 0, 14848/17434 fibres of this pass, by order {0: 14843}, deferred 5, t=1891s
+  portfolio: order 0, 17408/17434 fibres of this pass, by order {0: 17403}, deferred 5, t=1971s
+  portfolio: order 0 deferred 5 fibres: [612, 15989, 16019, 17763, 39020]
+  portfolio: order 1, 5/5 fibres of this pass, by order {0: 17429, 1: 5}, deferred 0, t=3010s
+  portfolio done in 3010s: fibres by order {0: 17429, 1: 5}; left for run(): []
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  done in 0s; per column [parents, lifted, candidates, children] (brute force would check lifted·5^6): 6: [17439, 5505, 1862881, 1502201], 7: [130645, 31884, 9729061, 5369161], 8: [930966, 24100, 39593, 33793], 9: [25543, 24417, 30981, 30981], 10: [30643, 30366, 9381, 4341], 11: [2683, 2018, 10154, 7814], 12: [3467, 2578, 30294, 22302], 13: [19494, 19494, 19384, 18992], 14: [18974, 17916, 1206780, 554193], 15: [15616, 15423, 13798, 4218], 16: [3959, 3959, 4859, 4859], 17: [4724, 3831, 10137, 3389]; N-quotient (|N| = 100) per column [frontier, kept]: 7: [1502201, 130645], 8: [5369161, 1795594], 9: [33793, 25543], 10: [30981, 30643], 11: [4341, 2683], 12: [7814, 3467], 13: [22302, 19494], 14: [18992, 18974], 15: [554193, 518890], 16: [4218, 3959], 17: [4859, 4724]

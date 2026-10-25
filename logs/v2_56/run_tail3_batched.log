@@ -1,0 +1,11 @@
+  kernel stage: cached in /tmp/claude-0/-home-claude/7a115a35-31ae-56f9-b5c9-69dafe1e1035/scratchpad/k3_P75.kernel.npz
+  kernel stage: 0.3s
+pairs_in_short_tail F_3: d=18, dim K=6, 32904 kernel folds in 17748 torus orbits; engine=torch
+  symmetry: 17748 torus orbits in 12210 H-orbits (H = G × T); 5538 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  order portfolio: 2 column orders, caps 5000 / 3000000 rows per fibre, batches of 256 fibres, 12210 fibres
+  portfolio: order 0, 10240/12210 fibres of this pass, by order {0: 10237}, deferred 3, t=130s
+  portfolio: order 0, 12210/12210 fibres of this pass, by order {0: 12205}, deferred 5, t=257s
+  portfolio: order 0 deferred 5 fibres: [14955, 14964, 15009, 17663, 17727]
+  portfolio done in 258s: fibres by order {0: 12205, 1: 5}; left for run(): []
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  done in 0s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^6): 6: [12215, 4779, 96653, 70499], 7: [20123, 7242, 74621, 39665], 8: [20004, 4882, 5973, 5193], 9: [4710, 4499, 5327, 5327], 10: [5327, 5050, 3417, 2985], 11: [2427, 1778, 2638, 2246], 12: [2012, 2012, 4828, 3996], 13: [3996, 3600, 129038, 79362], 14: [10667, 6541, 277737, 109846], 15: [6153, 5861, 376294, 138332], 16: [7887, 7887, 7304, 6728], 17: [6692, 6488, 2237, 1801]; N-quotient (|N| = 18) per column [frontier, kept]: 7: [70499, 20123], 8: [39665, 20004], 9: [5193, 4710], 10: [5327, 5327], 11: [2985, 2427], 12: [2246, 2012], 13: [3996, 3996], 14: [79362, 41665], 15: [109846, 107173], 16: [138332, 90562], 17: [6728, 6692]

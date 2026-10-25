@@ -49,6 +49,10 @@ BATCH = [
     # v2.42 (prediction committed in logs/v2_42/PREDICTIONS.md before this run): needs --save-reps for the shear merge
     ('two_pairs_short', 7, {'orbits_GxTloc': 2012}, "v2.42: 1⇉2⇉3 + 1→3 over F_7, linear in q (1668, 1840, 2012); "
                      "merged with c ↦ c + s·δ_aδ_b, 873 + 22q = 1027. OOM in the container (est. 1e7 folds)"),
+    # v2.56: job 14's quiver at the next prime. Batched order portfolio (fibre_torch.portfolio) and the linear local-torus
+    # test in finish(). Prediction (v2.51, v2.56): the local-torus count is constant in q, 1220.
+    ('pairs_in_short_tail', 7, {'orbits_GxTloc': 1220}, "P4 (part 3): 1⇉2⇇3 + 1→3 + 2→4 over F_7 (v2.56); 1220 at q = 3, 5",
+     {'ETF_CORDERS': '4,6,8,14,15,9,10,12,11,13;4,6,8,14,15,9,12,16,13,17,10,11', 'ETF_PCAP0': '1e6', 'ETF_PCAP': '2e7', 'ETF_MEM': '512'}),
 ]
 SAVE_REPS = '--save-reps' in sys.argv          # (before v2.43 this flag was accepted but silently not passed on)
 def reps_path(q, p): return os.path.join('logs', f'reps_{q}_{p}.pkl')

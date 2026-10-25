@@ -470,36 +470,55 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
     return fibres
 
 
-PORTFOLIO_CAP = int(float(os.environ.get('ETF_PCAP', '3e6')))      # frontier rows per fibre before trying the next order
-PORTFOLIO_TIME = float(os.environ.get('ETF_PTIME', '300'))          # seconds per attempt, for every order but the last
+PORTFOLIO_CAP = int(float(os.environ.get('ETF_PCAP', '3e6')))      # frontier rows per fibre, last order
+PORTFOLIO_CAP0 = int(float(os.environ.get('ETF_PCAP0', '2e5')))    # frontier rows per fibre, every earlier order
+PORTFOLIO_GROUP = int(os.environ.get('ETF_PGROUP', '256'))          # fibres per breadth-first batch
+PORTFOLIO_GCAP = int(float(os.environ.get('ETF_PGCAP', '0')) or 0)  # frontier rows per batch (default: 2 × the cap)
 
 
-def bfs_fibre(P, x0, cap, tmax=None):
-    """One fibre breadth-first, column by column, with P's column order: x0 (d, d) int8 with the K columns filled →
-    (rid, X) of its complete N-orbit representatives, or None as soon as a frontier exceeds `cap` rows. The children of
-    a column are the engine's own (level, quotient), so the result equals run()'s fibre after expand(). Also None when
-    tmax seconds pass."""
-    t0 = time.time()
-    rid, X = torch.zeros(1, dtype=torch.long, device=P.dev), torch.as_tensor(x0[None], device=P.dev)
+def bfs_group(P, X0, cap, gcap):
+    """Several fibres breadth-first at once, column by column, with P's column order. X0 (g, d, d) int8 with the K
+    columns filled; row i of every frontier carries rid = i (its fibre). A fibre is dropped ("dead") as soon as its own
+    frontier exceeds `cap` rows; if the batch's frontier exceeds `gcap` rows, the fibre with the largest frontier is
+    dropped until it fits. Returns (rid, X, alive): the complete N-orbit representatives of the fibres still alive,
+    and the alive mask. Children are the engine's own (level, quotient, per chunk and per rid), so each alive fibre's
+    result equals bfs on that fibre alone (v2.51) and run() after expand()."""
+    g = X0.shape[0]; dev = P.dev
+    alive = torch.ones(g, dtype=torch.bool, device=dev)
+    rid, X = torch.arange(g, device=dev), X0
     for c in range(P.kdim, P.d):
-        nb = P.parent_batch(c); kr, kx = [], []; n = 0
+        if not len(rid): break
+        nb = P.parent_batch(c); kr, kx = [], []
+        cnt = torch.zeros(g, dtype=torch.long, device=dev)
         for s in range(0, len(rid), nb):
-            for r2, x2 in level(P, rid[s:s + nb], X[s:s + nb], c):
+            pr, px = rid[s:s + nb], X[s:s + nb]
+            m = alive[pr]
+            if not bool(m.all()): pr, px = pr[m], px[m]
+            if not len(pr): continue
+            for r2, x2 in level(P, pr, px, c):
                 if P.sym and c + 1 < P.d and len(r2): r2, x2 = quotient(P, r2, x2, c + 1)
-                kr.append(r2); kx.append(x2); n += len(r2)
-                if n > cap or (tmax and time.time() - t0 > tmax): return None
-        if n == 0: return rid[:0], X[:0]
-        rid, X = torch.cat(kr), torch.cat(kx)
-    return rid, X
+                m2 = alive[r2]
+                if not bool(m2.all()): r2, x2 = r2[m2], x2[m2]
+                kr.append(r2); kx.append(x2); cnt += torch.bincount(r2, minlength=g)
+                died = (cnt > cap) & alive
+                while int(cnt[alive].sum()) - int(cnt[died].sum()) > gcap:
+                    died[torch.argmax(torch.where(alive & ~died, cnt, torch.full_like(cnt, -1)))] = True
+                if bool(died.any()):
+                    alive &= ~died; cnt[died] = 0
+                    keep = [alive[r_] for r_ in kr]
+                    kr = [r_[k_] for r_, k_ in zip(kr, keep)]; kx = [x_[k_] for x_, k_ in zip(kx, keep)]
+        rid = torch.cat(kr) if kr else rid[:0]; X = torch.cat(kx) if kx else X[:0]
+    return rid, X, alive
 
 
 def portfolio(C, alts, reps, fibres, save=lambda force=False: None, log=print, device=None, only=None, cap=None):
-    """Fill fibres[r] for the torus reps r (r ∈ only) not yet in fibres, trying for each fibre the column orders of
-    C, alts[0], alts[1], ... in turn (each a pcensus.setup context of the same quiver and prime, differing only in the
-    column order) and keeping the first breadth-first search whose frontier stays within `cap` rows. Fibres are stored
-    in C's column basis: X = P·B, so X_C = X_o · Binv_o · B_C. Fibres no order manages are left for run() (v2.51: the
-    explosion column depends on the fibre, so no single order is good for every fibre of 1⇉2⇇3 + 1→3 + 2→4)."""
-    cap = cap or PORTFOLIO_CAP
+    """Fill fibres[r] for the torus reps r (r ∈ only) not yet in fibres, trying the column orders of C, alts[0], …
+    (pcensus.setup contexts of the same quiver and prime, differing only in the column order) in turn. Each order
+    runs batched breadth-first search (bfs_group) over the fibres not yet done. A fibre that outgrows the cap
+    (ETF_PCAP0 for every order but the last, ETF_PCAP for the last) moves on to the next order. Fibres are stored in
+    C's column basis: X = P·B, so X_C = X_o · Binv_o · B_C. Fibres no order manages are left for run(), the
+    depth-first engine. (v2.51 introduced the portfolio one fibre at a time; v2.56 batches it for the GPU.)"""
+    cap_last = cap or PORTFOLIO_CAP
     dev = pick_device(device)
     ctxs = [C] + list(alts); plans = [Plan(c, dev) for c in ctxs]
     p, d, kdim = C['p'], C['d'], C['kdim']
@@ -508,25 +527,38 @@ def portfolio(C, alts, reps, fibres, save=lambda force=False: None, log=print, d
     conv = [torch.as_tensor((np.asarray(c['Binv']) % p) @ BC % p, dtype=torch.float32, device=dev) for c in ctxs]
     Kmat = np.asarray(C['Kmat'])
     todo = [r for r in (range(len(reps)) if only is None else only) if r not in fibres]
-    log(f"  order portfolio: {len(ctxs)} column orders, cap {cap} rows, {len(todo)} fibres")
-    t0 = last = time.time(); used = collections.Counter(); left = []
-    for i, r in enumerate(todo):
-        x0 = np.zeros((d, d), dtype=np.int8); x0[:, :kdim] = Kmat @ reps[r][0] % p
-        for k, P in enumerate(plans):
-            ta = time.time()
-            res = bfs_fibre(P, x0, cap, PORTFOLIO_TIME if k + 1 < len(plans) else None)
-            if time.time() - ta > 60 or res is None:
-                log(f"  portfolio: fibre {r}, order {k}: {'gave up' if res is None else 'done'} after {time.time() - ta:.0f}s")
-            if res is None: continue
-            rid, X = res
-            if P.sym and len(rid): rid, X = expand(P, rid, X)
-            Xc = P.md(P.mm(X.to(torch.float32), conv[k])).to(torch.int16).cpu().numpy() if len(X) else []
-            fibres[r] = list({x.astype(np.int8).tobytes(): x for x in Xc}.values())
-            used[k] += 1; save(); break
-        else:
-            left.append(r); used['none'] += 1
-        if time.time() - last > 60:
-            log(f"  portfolio: {i + 1}/{len(todo)} fibres, by order {dict(used)}, t={time.time() - t0:.0f}s"); last = time.time()
-    log(f"  portfolio done in {time.time() - t0:.0f}s: fibres by order {dict(used)}; left for run(): {left[:20]}"
-        + (" ..." if len(left) > 20 else ""))
+    log(f"  order portfolio: {len(ctxs)} column orders, caps {PORTFOLIO_CAP0} / {cap_last} rows per fibre, "
+        f"batches of {PORTFOLIO_GROUP} fibres, {len(todo)} fibres")
+    t0 = last = time.time(); used = collections.Counter()
+    for k, P in enumerate(plans):
+        cap = cap_last if k + 1 == len(plans) else PORTFOLIO_CAP0
+        gcap = PORTFOLIO_GCAP or 2 * cap
+        nxt = []
+        for g0 in range(0, len(todo), PORTFOLIO_GROUP):
+            grp = todo[g0:g0 + PORTFOLIO_GROUP]
+            X0 = np.zeros((len(grp), d, d), dtype=np.int8)
+            for i, r in enumerate(grp): X0[i, :, :kdim] = Kmat @ reps[r][0] % p
+            rid, X, alive = bfs_group(P, torch.as_tensor(X0, device=dev), cap, gcap)
+            if P.sym and len(rid):
+                ne = max(1, MEM // (10 * P.HL.shape[0] * d * d)); outs = []
+                for s in range(0, len(rid), ne): outs.append(expand(P, rid[s:s + ne], X[s:s + ne]))
+                rid = torch.cat([o[0] for o in outs]); X = torch.cat([o[1] for o in outs])
+            Xc = P.md(P.mm(X.to(torch.float32), conv[k])).to(torch.int16).cpu().numpy() if len(X) else np.zeros((0, d, d), np.int16)
+            ridn = rid.cpu().numpy(); al = alive.cpu().numpy()
+            by = collections.defaultdict(list)
+            for i_, x in zip(ridn, Xc): by[int(i_)].append(x)
+            for i, r in enumerate(grp):
+                if al[i]:
+                    fibres[r] = list({x.astype(np.int8).tobytes(): x for x in by.get(i, [])}.values()); used[k] += 1
+                else:
+                    nxt.append(r)
+            save()
+            if time.time() - last > 60:
+                log(f"  portfolio: order {k}, {g0 + len(grp)}/{len(todo)} fibres of this pass, by order {dict(used)}, "
+                    f"deferred {len(nxt)}, t={time.time() - t0:.0f}s"); last = time.time()
+        if nxt: log(f"  portfolio: order {k} deferred {len(nxt)} fibres: {nxt[:20]}" + (" ..." if len(nxt) > 20 else ""))
+        todo = nxt
+        if not todo: break
+    log(f"  portfolio done in {time.time() - t0:.0f}s: fibres by order {dict(used)}; left for run(): {todo[:20]}"
+        + (" ..." if len(todo) > 20 else ""))
     return fibres

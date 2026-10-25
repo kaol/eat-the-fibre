@@ -806,7 +806,7 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
             return x
         wcount = collections.Counter()
         Ws = list(itertools.product(range(1, p), repeat=len(cl)))
-        Dws = np.einsum('wc,cmab->wmab', np.array(Ws, dtype=np.int64), DLc) % p          # (W, d, d, d): Δ_w
+        Warr = np.array(Ws, dtype=np.int64)                                                # (W, classes)
         scs = []
         for w in Ws:
             wa = {a: w[k] for k, c in enumerate(cl) for a in c}
@@ -814,8 +814,11 @@ def finish(a, name, p, ctx, Kf, reps, phis, fibres, t0):
             scs.append(np.outer(diag, [pow(x, p - 2, p) for x in diag]))
         for i, P_ in enumerate(greps):
             P_ = P_.astype(np.int64)
-            # P compatible with Δ_w: Σ_m P[m,l] Δ_w[m] = P Δ_w[l] Pᵀ for every l, all weightings w at once
-            ok = ((np.einsum('ml,wmab->wlab', P_, Dws) - np.einsum('ai,wlij,bj->wlab', P_, Dws, P_)) % p == 0).all((1, 2, 3))
+            # P compatible with Δ_w: Σ_m P[m,l] Δ_w[m] = P Δ_w[l] Pᵀ for every l. The defect is linear in w:
+            # Σ_c w_c E_c with E_c = Σ_m P[m,l] Δ_c[m] − P Δ_c[l] Pᵀ, so all weightings are tested by one product
+            # (v2.56; before, two einsums over (W, d, d, d), the second one naive, cost W·d⁵ per representative).
+            Ecl = (np.einsum('ml,cmab->clab', P_, DLc) - np.einsum('ai,clij,bj->clab', P_, DLc, P_, optimize=True)) % p
+            ok = ((Warr @ Ecl.reshape(len(cl), -1)) % p == 0).all(1)
             for q in np.nonzero(ok)[0]:
                 kq = (P_ * scs[q] % p).astype(np.int8).tobytes(); assert kq in lab, "local torus move left the fold set"
                 a_, b_ = find(i), find(lab[kq])
