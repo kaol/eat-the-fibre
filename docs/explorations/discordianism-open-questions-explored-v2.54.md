@@ -70,10 +70,11 @@ on all sampled points, and no Singular call timed out (`logs/v2_54/orbit_strata.
 ## 4. Next
 
 1. The same pipeline on the next unobstructed quivers in the census: 1⇉2⇇3 + 1→3 + 2→4 (job 14's quiver, 1220
-   orbits), 1⇛2⇇3 + 1→3, and 1⇉2⇉3 + 1→3. The last one has v2.50's one-parameter behaviour families, but they are not
-   census moduli, since its local-torus count is 873 + 22q. So the pipeline should fail there, at the components
-   carrying those families, which tests the method.
-2. Write out the spreading-out step and find the exceptional primes (compare with q = 3).
+   orbits) and 1⇛2⇇3 + 1→3.
+2. A control: 1⇉2⇉3 + 1→3. It is obstructed (consecutive classes), and its merged count 873 + 22q grows. The pipeline
+   must fail there, at components with no open orbit or with dim Z_r > r, and it should fail where v2.44–v2.50 located
+   the moduli.
+3. Write out the spreading-out step and find the exceptional primes (compare with q = 3).
 
 ## Files
 
