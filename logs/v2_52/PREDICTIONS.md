@@ -17,3 +17,8 @@ the Δ condition of the arrow 1→3. Question: does the arrow kill the vertex-bl
     it has finitely many points, and they are exactly the 21 census blocks.
 48. The same system without the arrow-c condition (which is all of P_K's conditions on the unjoined 1⇉2⇇3, whose K is
     the same 5-dimensional algebra) projects onto a positive-dimensional set of vertex blocks.
+
+## Outcomes
+45a, 45b, 46 held (entries are in {0, 1}). 47 failed as stated: P_K plus the c condition is 1-dimensional; with the
+a, b conditions added, the elimination gives exactly the 21 census blocks. 48 held: dimension 2 without arrow
+conditions, 1 with a, b.

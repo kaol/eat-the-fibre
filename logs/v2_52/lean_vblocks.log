@@ -1,0 +1,16 @@
+⚠ [9047/9051] Replayed EatTheFibre.Basic
+warning: EatTheFibre/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: EatTheFibre/Basic.lean:63:8: automatically included section variable(s) unused in theorem `EatTheFibre.CoordAlg.mulₗ_apply`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: EatTheFibre/Basic.lean:71:8: automatically included section variable(s) unused in theorem `EatTheFibre.CoordAlg.deltaₗ_apply`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9048/9051] Replayed EatTheFibre.Poly
+warning: EatTheFibre/Poly.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file

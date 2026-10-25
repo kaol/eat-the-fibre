@@ -1,0 +1,3 @@
+pairs_in: 263 equations in 25 unknowns (arrow condition: False)
+elimination ideal: dim 2
+ 

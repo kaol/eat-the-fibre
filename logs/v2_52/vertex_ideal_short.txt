@@ -1,0 +1,3 @@
+pairs_in_short: 305 equations in 35 unknowns (arrow condition: True)
+elimination ideal: dim 1
+ 
