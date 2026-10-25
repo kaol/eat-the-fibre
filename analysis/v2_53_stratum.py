@@ -16,17 +16,20 @@ import pcensus as pc
 ap = argparse.ArgumentParser(); ap.add_argument('block'); ap.add_argument('out'); ap.add_argument('--components', action='store_true')
 a = ap.parse_args()
 V = [[int(ch) for ch in r] for r in a.block.split(',')]
-ctx = pc.setup('pairs_in_short', 7)
+QUIVER = os.environ.get('QUIVER', 'pairs_in_short')     # v2.55: any quiver
+ctx = pc.setup(QUIVER, 7)
 d, kdim, basis = ctx['d'], ctx['kdim'], ctx['basis']
 M = np.asarray(ctx['M']); DL = np.asarray(ctx['DL'])
 p = 7
 Kmat = sp.Matrix(((np.asarray(ctx['Kmat']) + p // 2) % p - p // 2).tolist())
 idx = {b: i for i, b in enumerate(basis)}
-Cb = [idx[('p', (1,))], idx[('p', (3,))], idx[('p', (4,))], idx[('p', (4, 2))], idx[('p', (4, 3))]]
+Cb = ([idx[('p', (1,))], idx[('p', (3,))], idx[('p', (4,))], idx[('p', (4, 2))], idx[('p', (4, 3))]]
+      if QUIVER == 'pairs_in_short' else list(ctx['Cidx']))      # v2.53's complement for pairs_in_short; else pcensus's
 Cmat = sp.Matrix([[1 if i == j else 0 for j in Cb] for i in range(d)])
 Bm = sp.Matrix.hstack(Kmat, Cmat); assert Bm.rank() == d
 Bi = Bm.inv()
-nv = 3
+nv = sum(1 for b in basis if b[0] == "v")
+NV = sum(1 for b in basis if b[0] == 'v')
 ks = sp.Matrix(kdim, kdim, lambda i, j: sp.Integer(V[i][j]) if i < nv and j < nv else sp.Symbol(f'k{i}{j}'))
 ys = sp.Matrix(d, len(Cb), lambda i, j: sp.Symbol(f'y{i}_{j}'))
 P = (sp.Matrix.hstack(Kmat * ks, ys) * Bi).applyfunc(sp.expand)

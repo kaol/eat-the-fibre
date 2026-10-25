@@ -22,15 +22,18 @@ ap.add_argument('--seed', type=int, default=53); ap.add_argument('--tries', type
 a = ap.parse_args(); random.seed(a.seed)
 V = [[int(ch) for ch in r] for r in a.block.split(',')]
 p = 7
-ctx = pc.setup('pairs_in_short', p)
+QUIVER = os.environ.get('QUIVER', 'pairs_in_short')     # v2.55: any quiver
+ctx = pc.setup(QUIVER, p)
 d, kdim, basis, arrows = ctx['d'], ctx['kdim'], ctx['basis'], ctx['arrows']
 M = np.asarray(ctx['M']); DL = np.asarray(ctx['DL'])
 Kmat = sp.Matrix(((np.asarray(ctx['Kmat']) + p // 2) % p - p // 2).tolist())
 idx = {b: i for i, b in enumerate(basis)}
-Cb = [idx[('p', (1,))], idx[('p', (3,))], idx[('p', (4,))], idx[('p', (4, 2))], idx[('p', (4, 3))]]
+Cb = ([idx[('p', (1,))], idx[('p', (3,))], idx[('p', (4,))], idx[('p', (4, 2))], idx[('p', (4, 3))]]
+      if QUIVER == 'pairs_in_short' else list(ctx['Cidx']))      # v2.53's complement for pairs_in_short; else pcensus's
 Cmat = sp.Matrix([[1 if i == j else 0 for j in Cb] for i in range(d)])
 Bi = sp.Matrix.hstack(Kmat, Cmat).inv()
-ks = sp.Matrix(kdim, kdim, lambda i, j: sp.Integer(V[i][j]) if i < 3 and j < 3 else sp.Symbol(f'k{i}{j}'))
+NV = sum(1 for b in basis if b[0] == 'v')
+ks = sp.Matrix(kdim, kdim, lambda i, j: sp.Integer(V[i][j]) if i < NV and j < NV else sp.Symbol(f'k{i}{j}'))
 ys = sp.Matrix(d, len(Cb), lambda i, j: sp.Symbol(f'y{i}_{j}'))
 P = (sp.Matrix.hstack(Kmat * ks, ys) * Bi).applyfunc(sp.expand)
 I = sp.eye(d); Q = (I - P).applyfunc(sp.expand)
