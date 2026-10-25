@@ -15,3 +15,11 @@ N = dim Z + 2.
     T_{W_Z}, and H_Z alone might not be enough.
 54. The total number of H_Z-orbits is then bounded by Σ_Z Σ_r (number of components of Z_r of dimension r), and this
     bound is at least 366.
+
+## Method change (before the full run; only 100,100,100 had been tried)
+- The dense combinations det(L·M·R) took more than 15 minutes on a single 5×5 case.
+- Random sparse genuine minors were mostly zero and gave bounds that were too weak on 100,100,100.
+- The run uses point-guided minors. Decompose Z ∩ V(F), take a rational point on each component of dimension > r,
+  and add an (r+1)-minor that is nonzero there (pivot rows and columns of M at the point). Stop when no component of
+  dimension > r is left; that gives dim Z_r ≤ r. If every sampled point of such a component has rank ≤ r, that is
+  reported as a (probable) failure of the criterion.
