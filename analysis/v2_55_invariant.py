@@ -16,7 +16,8 @@ sys.argv = ['v2_55_pipeline.py', quiver, block, outp]
 G = {'__name__': 'pl', '__file__': os.path.join(HERE, 'v2_55_pipeline.py')}
 with contextlib.redirect_stdout(io.StringIO()):
     exec(src, G)
-sp, comps, Sv, vs, cl, nz, DerD, Ec, PrE, d, nullsp = (G[k] for k in ('sp', 'comps', 'Sv', 'vs', 'cl', 'nz', 'DerD', 'Ec', 'PrE', 'd', 'nullsp'))
+sp, comps, Sv, vs, cl, nz, DerD, Ec, d, nullsp = (G[k] for k in ('sp', 'comps', 'Sv', 'vs', 'cl', 'nz', 'DerD', 'Ec', 'd', 'nullsp'))
+PrE = sp.Matrix([[e.as_expr() for e in row] for row in G['Pr']])   # (the pipeline keeps P in ring arithmetic since v2.57)
 i_, dim_, gens, indep, nf = [c for c in comps if c[0] == int(comp)][0]
 n_ = len(nz); wv = sp.symbols(f'w0:{len(cl)}'); lin = []
 for k in range(n_):

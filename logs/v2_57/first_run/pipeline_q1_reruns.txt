@@ -1,0 +1,9 @@
+== 0001,0001,0001,0001
+pairs_in_short_tail V = 0001,0001,0001,0001: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+== 100m,100m,100m,0000
+pairs_in_short_tail V = 100m,100m,100m,0000: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+== 001m,001m,001m,0000
+pairs_in_short_tail V = 001m,001m,001m,0000: presolved to a single point; 1 components
+  component 1: dim 0 (points)

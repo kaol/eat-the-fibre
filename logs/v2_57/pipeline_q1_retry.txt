@@ -1,0 +1,8 @@
+== 0010,0000,0010,0000
+pairs_in_short_tail V = 0010,0000,0010,0000: presolved to 966 equations in 18 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 35s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 36s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 38s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 40s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 42s
+== 0010,0000,0010,0010
+== 0000,0010,0010,0010

@@ -51,6 +51,9 @@ def stratum(quiver, V, complement=None):
         return out
     def matvec(A, v): return [sum((A[r][c] * v[c] for c in range(d) if A[r][c] and v[c]), R(0)) for r in range(d)]
     col = lambda A, j: [A[r][j] for r in range(d)]
+    if os.environ.get('FOLD_STAGED', '1') != '0':
+        return dict(R=R, xs=xs, names=names, P=P, eqs=None, ctx=ctx, complement=complement,
+                    gen=lambda P_: _equations(P_, R, d, nzM, DL))
     eqs = set()
     for c in range(d):
         Pc = matvec(P, col(P, c))
@@ -70,6 +73,87 @@ def stratum(quiver, V, complement=None):
                 eqs.add(lhs - rhs)
     eqs.discard(R(0))
     return dict(R=R, xs=xs, names=names, P=P, eqs=sorted(eqs, key=str), ctx=ctx, complement=complement)
+
+def _equations(P, R, d, nzM, DL, parts=('idem', 'delta', 'closure')):
+    """The fold equations of P (d×d ring elements): 'idem' P² = P; 'delta' Δ-compatibility; 'closure' image and
+    kernel closed under products (cubic, the expensive part)."""
+    Q = [[(R(1) if r == c else R(0)) - P[r][c] for c in range(d)] for r in range(d)]
+    def mul(x, y):
+        out = [R(0)] * d
+        for i, j, k, c in nzM:
+            if x[i] and y[j]: out[k] += c * x[i] * y[j]
+        return out
+    def matvec(A, v): return [sum((A[r][c] * v[c] for c in range(d) if A[r][c] and v[c]), R(0)) for r in range(d)]
+    col = lambda A, j: [A[r][j] for r in range(d)]
+    eqs = set()
+    if 'idem' in parts:
+        for c in range(d):
+            Pc = matvec(P, col(P, c))
+            for r in range(d): eqs.add(Pc[r] - P[r][c])
+    if 'delta' in parts:
+        for l in range(d):
+            DLl = DL[l]
+            PD = [[sum((P[a][x] * int(DLl[x, y]) for x in range(d) if DLl[x, y]), R(0)) for y in range(d)] for a in range(d)]
+            for a in range(d):
+                for b in range(d):
+                    lhs = sum((P[m][l] * int(DL[m][a, b]) for m in range(d) if DL[m][a, b]), R(0))
+                    eqs.add(lhs - sum((PD[a][y] * P[b][y] for y in range(d) if PD[a][y]), R(0)))
+    if 'closure' in parts:
+        for i in range(d):
+            for j in range(d):
+                u = mul(col(P, i), col(P, j)); w = mul(col(Q, i), col(Q, j))
+                Pu = matvec(P, u); Pw = matvec(P, w)
+                for r in range(d): eqs.add(Pu[r] - u[r]); eqs.add(Pw[r])
+    eqs.discard(R(0))
+    return eqs
+
+def stage1_presolve(S):
+    """Only the first stage of staged_presolve: P² = P and Δ-compatibility, presolved. Returns (remaining
+    equations, substitutions). The closure equations are then generated elsewhere (v2_55_pipeline with
+    CLOSURE_IN_SINGULAR=1 builds them inside Singular from the reduced P)."""
+    R, P, ctx = S['R'], S['P'], S['ctx']
+    d = ctx['d']; M = np.asarray(ctx['M'], dtype=np.int64); DL = np.asarray(ctx['DL'], dtype=np.int64)
+    nzM = [(i, j, k, int(M[i, j, k])) for i in range(d) for j in range(d) for k in range(d) if M[i, j, k]]
+    return presolve_fast(_equations(P, R, d, nzM, DL, ('idem', 'delta')), R)
+
+def staged_presolve(S, batch=None):
+    """v2.57: build and presolve in stages, to keep the polynomials small on d = 18.
+    1. P² = P and Δ-compatibility (quadratic), presolved; the substitutions are applied to P.
+    2. The closure equations (cubic), generated for one batch of column pairs (i, j) at a time from the current,
+       already reduced P. Each batch is presolved together with the equations still pending, and the new
+       substitutions are applied to P before the next batch.
+    The result generates the same ideal as presolving all equations at once: substitution commutes with generating
+    equations, and every equation is generated, so no condition is dropped. Only the order of substitutions differs.
+    Returns (remaining equations, substitutions in order)."""
+    R, P, ctx = S['R'], S['P'], S['ctx']
+    d = ctx['d']; M = np.asarray(ctx['M'], dtype=np.int64); DL = np.asarray(ctx['DL'], dtype=np.int64)
+    nzM = [(i, j, k, int(M[i, j, k])) for i in range(d) for j in range(d) for k in range(d) if M[i, j, k]]
+    batch = batch or int(os.environ.get('FOLD_BATCH', str(d)))
+    PS = presolve_markowitz if os.environ.get('PRESOLVE_RULE') == 'markowitz' else presolve_fast
+    pend, subs = PS(_equations(P, R, d, nzM, DL, ('idem', 'delta')), R)
+    def apply(P_, new):
+        for x, val in new: P_ = [[e.compose(x, val) for e in row] for row in P_]
+        return P_
+    P = apply(P, subs)
+    pairs = [(i, j) for i in range(d) for j in range(d)]
+    Q = lambda P_: [[(R(1) if r == c else R(0)) - P_[r][c] for c in range(d)] for r in range(d)]
+    def mul(x, y):
+        out = [R(0)] * d
+        for i, j, k, c in nzM:
+            if x[i] and y[j]: out[k] += c * x[i] * y[j]
+        return out
+    def matvec(A, v): return [sum((A[r][c] * v[c] for c in range(d) if A[r][c] and v[c]), R(0)) for r in range(d)]
+    for b0 in range(0, len(pairs), batch):
+        Qm = Q(P); eqs = set(pend)
+        for i, j in pairs[b0:b0 + batch]:
+            u = mul([P[r][i] for r in range(d)], [P[r][j] for r in range(d)])
+            w = mul([Qm[r][i] for r in range(d)], [Qm[r][j] for r in range(d)])
+            Pu = matvec(P, u); Pw = matvec(P, w)
+            for r in range(d): eqs.add(Pu[r] - u[r]); eqs.add(Pw[r])
+        eqs.discard(R(0))
+        pend, new = PS(eqs, R)
+        subs += new; P = apply(P, new)
+    return pend, subs
 
 def presolve(eqs, R):
     eqs = set(eqs); subs = []
@@ -130,3 +214,40 @@ def presolve_fast(eqs, R):
             occ.pop(v, None)
     out = sorted(set(E.values()), key=str)
     return out, subs
+
+def presolve_markowitz(eqs, R):
+    """Like presolve_fast, but each step picks, among all equations, the substitution x = val with the smallest fill
+    estimate (terms of val) × (equations containing x), the Markowitz rule of sparse elimination. Fewer, smaller
+    compositions on strata where the first-come order makes the polynomials grow (v2.57, Q₁ heavy blocks)."""
+    from collections import defaultdict
+    E = {i: e for i, e in enumerate(set(eqs)) if e}
+    gens = R.gens
+    def vars_of(e): return [i for i, g in enumerate(e.degrees()) if g]
+    occ = defaultdict(set)
+    for i, e in E.items():
+        for v in vars_of(e): occ[v].add(i)
+    subs = []
+    while True:
+        best = None
+        for i, e in E.items():
+            for v in vars_of(e):
+                if e.degree(gens[v]) != 1: continue
+                c = e.coeff_wrt(gens[v], 1)
+                if not (c.is_ground and c != 0): continue
+                cost = (len(e) - 1) * len(occ[v])
+                if best is None or cost < best[0]: best = (cost, i, v, c)
+        if best is None: break
+        _, i, v, c = best; e = E[i]; x = gens[v]
+        rest = e - c * x
+        if rest.degree(x) > 0: occ[v].discard(i); continue          # (cannot happen for degree 1 in x)
+        val = -rest * (1 / c.LC); subs.append((x, val))
+        for j in list(occ[v]):
+            old = E.pop(j, None)
+            if old is None: continue
+            for w in vars_of(old): occ[w].discard(j)
+            new = old.compose(x, val)
+            if new:
+                E[j] = new
+                for w in vars_of(new): occ[w].add(j)
+        occ.pop(v, None)
+    return sorted(set(E.values()), key=str), subs

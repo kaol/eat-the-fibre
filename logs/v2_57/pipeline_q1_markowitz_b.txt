@@ -1,0 +1,21 @@
+== 0000,0000,0000,00m1
+pairs_in_short_tail V = 0000,0000,0000,00m1: presolved to 3579 equations in 37 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 413s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 418s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 423s
+  component 4: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 437s
+== 1000,0010,0010,0000
+pairs_in_short_tail V = 1000,0010,0010,0000: presolved to 792 equations in 21 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 147s
+  component 1: dim 1; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 147s
+  component 2: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 149s
+  component 3: dim 6; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 158s
+  component 4: dim 6; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 170s
+== 0000,0000,0010,0010
+pairs_in_short_tail V = 0000,0000,0010,0010: presolved to 3829 equations in 26 coordinates; 6 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 267s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 267s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 271s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 274s
+  component 4: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 275s
+  component 5: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 281s
+  component 6: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 286s
+ALLDONE

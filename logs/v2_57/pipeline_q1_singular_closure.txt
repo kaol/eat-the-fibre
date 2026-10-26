@@ -1,0 +1,7 @@
+== 0010,0000,0010,0010
+Traceback (most recent call last):
+  File "/home/claude/eat-the-fibre/analysis/v2_55_pipeline.py", line 105, in <module>
+    assert "END" in out and "? error" not in out + res.stderr and "overflow" not in out + res.stderr, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Singular decomposition failed: 
+== 0000,0010,0010,0010
