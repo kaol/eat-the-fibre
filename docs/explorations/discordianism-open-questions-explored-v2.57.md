@@ -143,11 +143,12 @@ All 90 blocks were rerun from scratch with certificates. They ran in two streams
 | (a) minors recomputed | all agree |
 | (b) components lie in their strata, with the recorded dimensions | all, 0 errors |
 | (c) dim(prime + minors) ≤ r by `std` | **1190 of 1190 cuts verified**, 0 failures (`verify_certs_q1_s{0,1}.txt`) |
-| (d) coverage (the primes cover the stratum) | 138 of 139 non-point strata or leaves verified within 900 s; 4 more are single points; 1000,0100,0010,0001 (38 components) timed out, so it is rerun with a longer limit (`verify_certs_coverage_q1_1000010000100001.txt`) |
+| (d) coverage (the primes cover the stratum) | 138 of 139 non-point strata or leaves verified within 900 s; 4 more are single points; **not verified** for 1000,0100,0010,0001 (38 components): it timed out at 900 s, and a rerun was stopped after 2400 s of Singular (`verify_certs_coverage_q1_1000010000100001.txt`) |
 
 So the dimension bounds of the theorem rest on two separate computations: `minAssGTZ` in the pipeline and `std` in the
-checker. The decomposition itself is checked independently, by coverage, everywhere except the one stratum where that
-check has not finished.
+checker. The decomposition itself is checked independently, by coverage, everywhere except block 1000,0100,0010,0001. There,
+the claim that its 38 primes are all of its components rests on `minAssGTZ` alone, with the overflow guard of v2.55.
+The dimension cuts on those 38 primes are verified.
 
 ## 4. What changed in the code
 

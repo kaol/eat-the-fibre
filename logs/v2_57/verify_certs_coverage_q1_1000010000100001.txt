@@ -1,0 +1,1 @@
+stopped by hand after 2400 s of Singular (coverage of 1000,0100,0010,0001, 38 primes); not verified
