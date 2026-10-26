@@ -251,3 +251,132 @@ def presolve_markowitz(eqs, R):
                 for w in vars_of(new): occ[w].add(j)
         occ.pop(v, None)
     return sorted(set(E.values()), key=str), subs
+
+def _radical_factors(e, maxterms):
+    """Distinct non-constant irreducible factors of e over ℚ (monomials directly; factor_list only when e has at most
+    maxterms terms), or None when e was not factored."""
+    if len(e) == 1:
+        (mon, _), = e.items()
+        R = e.ring
+        return [R.gens[i] for i, k in enumerate(mon) if k]
+    if len(e) > maxterms: return None
+    hit = _FCACHE.get(e)
+    if hit is not None: return hit
+    R = e.ring
+    vi = [i for i, g in enumerate(e.degrees()) if g]                  # factor in ℚ[vars of e]: sympy's dense
+    key = tuple(vi)                                                   # factorisation is over every ring generator
+    if key not in _SUBRINGS: _SUBRINGS[key] = ring(','.join(str(R.gens[i]) for i in vi), QQ)[0]
+    Rs = _SUBRINGS[key]
+    es = Rs.from_dict({tuple(m[i] for i in vi): c for m, c in e.items()})
+    _, fl = es.factor_list()
+    out = []
+    for f, _ in fl:
+        if f.is_ground: continue
+        full = [0] * R.ngens
+        out.append(R.from_dict({tuple(_scatter(full, vi, m)): c for m, c in f.items()}))
+    _FCACHE[e] = out
+    return out
+
+_FCACHE, _SUBRINGS = {}, {}
+def _scatter(full, vi, m):
+    out = list(full)
+    for i, k in zip(vi, m): out[i] = k
+    return out
+
+def branch_presolve(S, batch=None, maxterms=None, log=None):
+    """v2.57: staged_presolve with case splits. The stratum is covered by finitely many leaves, each (remaining
+    equations, substitutions) as returned by staged_presolve; their varieties' union is the stratum.
+    After each presolve, every equation that factors (monomials always; others with ≤ maxterms terms) is replaced by
+    its radical part (a product of distinct irreducible factors), and if it has ≥ 2 factors f₁⋯f_k the branch splits
+    into branches with f_i added. The zero set is the union of the branches' zero sets, so the irreducible
+    components of the stratum are among the maximal irreducible components of the leaves.
+    Branches are disjoint: splitting f₁⋯f_k = 0 gives branches f_i = 0, f_1 ≠ 0, …, f_{i−1} ≠ 0, and a known-nonzero
+    factor is divided out of later equations (a stronger equation, so every leaf variety still lies in the stratum).
+    Returns a list of (remaining equations, substitutions, nonzero polynomials); the stratum is the union of the leaf
+    varieties V(remaining) (the inequations only prune: the union with them is already the whole stratum)."""
+    R, P0, ctx = S['R'], S['P'], S['ctx']
+    d = ctx['d']; M = np.asarray(ctx['M'], dtype=np.int64); DL = np.asarray(ctx['DL'], dtype=np.int64)
+    nzM = [(i, j, k, int(M[i, j, k])) for i in range(d) for j in range(d) for k in range(d) if M[i, j, k]]
+    batch = batch or int(os.environ.get('FOLD_BATCH', str(d)))
+    maxterms = maxterms or int(os.environ.get('FOLD_FACTOR_TERMS', '12'))
+    PS = presolve_markowitz if os.environ.get('PRESOLVE_RULE') == 'markowitz' else presolve_fast
+    pairs = [(i, j) for i in range(d) for j in range(d)]
+    def apply(P_, new):
+        for x, val in new: P_ = [[e.compose(x, val) for e in row] for row in P_]
+        return P_
+    def mul(x, y):
+        out = [R(0)] * d
+        for i, j, k, c in nzM:
+            if x[i] and y[j]: out[k] += c * x[i] * y[j]
+        return out
+    def matvec(A, v): return [sum((A[r][c] * v[c] for c in range(d) if A[r][c] and v[c]), R(0)) for r in range(d)]
+    mon = lambda f: f * (1 / f.LC)
+    def settle(eqs, P_, subs, nz):
+        """presolve + radical replacement + division by known-nonzero factors, until stable. Returns
+        ('leaf', eqs, P_, subs, nz), ('split', eqs, P_, subs, nz, factors) or ('empty',). nz: set of monic
+        polynomials known to be nonzero on this branch."""
+        eqs = set(eqs)
+        while True:
+            eqs.discard(R(0))
+            if any(e.is_ground for e in eqs): return ('empty',)
+            pend, new = PS(eqs, R)
+            subs = subs + new; P_ = apply(P_, new)
+            if any(e.is_ground and e != 0 for e in pend): return ('empty',)
+            if new:
+                nz2 = set()
+                for f in nz:
+                    for x, val in new: f = f.compose(x, val)
+                    if f == 0: return ('empty',)
+                    if not f.is_ground: nz2.add(mon(f))
+                nz = nz2
+            changed = bool(new); best = None; out = set()
+            for e in pend:
+                fs = _radical_factors(e, maxterms)
+                if fs is None: out.add(e); continue
+                fs = [mon(f) for f in fs]
+                kept = [f for f in fs if f not in nz]
+                if not kept: return ('empty',)
+                if len(kept) == 1:
+                    f = kept[0]
+                    if f != mon(e): changed = True
+                    out.add(f)
+                else:
+                    if len(kept) < len(fs): changed = True
+                    prod = kept[0]
+                    for f in kept[1:]: prod = prod * f
+                    out.add(prod)
+                    key = (len(kept), sum(len(f) for f in kept))
+                    if best is None or key < best[0]: best = (key, kept, prod)
+            eqs = out
+            if not changed:
+                if best is None: return ('leaf', sorted(eqs, key=str), P_, subs, nz)
+                return ('split', sorted(eqs - {best[2]}, key=str), P_, subs, nz, best[1])   # f_i = 0 implies e = 0
+    leaves = []
+    stack = [(set(_equations(P0, R, d, nzM, DL, ('idem', 'delta'))), P0, [], 0, frozenset())]   # (eqs, P, subs, next pair, nz)
+    nodes = 0
+    while stack:
+        eqs, P_, subs, b0, nz = stack.pop(); nodes += 1
+        if log and os.environ.get('FOLD_TRACE'):
+            log(f"node {nodes}: pair {b0}, {len(eqs)} eqs, {sum(len(e) for e in eqs)} terms, {len(R.gens) - len(subs)} unknowns")
+        r = settle(eqs, P_, subs, nz)
+        if r[0] == 'empty': continue
+        if r[0] == 'split':
+            _, eqs, P_, subs, nz, fs = r
+            fs = sorted(fs, key=lambda f: (len(f), str(f)))
+            for k in range(len(fs) - 1, -1, -1):      # branch k: f_k = 0 and f_0, …, f_{k-1} ≠ 0 (disjoint cover)
+                stack.append((set(eqs) | {fs[k]}, P_, subs, b0, frozenset(nz) | frozenset(fs[:k])))
+            continue
+        _, eqs, P_, subs, nz = r
+        if b0 >= len(pairs):
+            leaves.append((eqs, subs, sorted(nz, key=str)))
+            if log: log(f"leaf {len(leaves)}: {len(eqs)} equations, {len(R.gens) - len(subs)} unknowns, {len(nz)} nonzero; nodes {nodes}, stack {len(stack)}")
+            continue
+        Qm = [[(R(1) if r_ == c else R(0)) - P_[r_][c] for c in range(d)] for r_ in range(d)]
+        new = set(eqs)
+        for i, j in pairs[b0:b0 + batch]:
+            u = mul([P_[r_][i] for r_ in range(d)], [P_[r_][j] for r_ in range(d)])
+            w = mul([Qm[r_][i] for r_ in range(d)], [Qm[r_][j] for r_ in range(d)])
+            Pu = matvec(P_, u); Pw = matvec(P_, w)
+            for r_ in range(d): new.add(Pu[r_] - u[r_]); new.add(Pw[r_])
+        stack.append((new, P_, subs, b0 + batch, nz))
+    return leaves

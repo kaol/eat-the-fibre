@@ -1,0 +1,165 @@
+pairs_in_short_tail V = 0000,0000,0000,0001: 54 leaves (case-split presolve); t = 207s
+leaf 1/54 (0 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+leaf 2/54 (0 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 213s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 213s
+leaf 3/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 218s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 219s
+leaf 4/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 224s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 224s
+leaf 5/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 5 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 230s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 231s
+leaf 6/54 (0 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 236s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 236s
+leaf 7/54 (0 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 241s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 242s
+leaf 8/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 247s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 247s
+leaf 9/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 253s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 253s
+leaf 10/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 258s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 258s
+leaf 11/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 264s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 264s
+leaf 12/54 (4 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 270s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 270s
+leaf 13/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 276s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 276s
+leaf 14/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 281s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 282s
+leaf 15/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 287s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 288s
+leaf 16/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 293s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 293s
+leaf 17/54 (6 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 5 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 299s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 300s
+leaf 18/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 305s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 305s
+leaf 19/54 (0 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 311s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 311s
+leaf 20/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 316s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 316s
+leaf 21/54 (4 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 322s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 322s
+leaf 22/54 (0 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 327s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 327s
+leaf 23/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 332s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 333s
+leaf 24/54 (4 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 5 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 338s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 339s
+leaf 25/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 345s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 346s
+leaf 26/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 351s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 352s
+leaf 27/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 357s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 357s
+leaf 28/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 363s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 363s
+leaf 29/54 (7 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 6 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 369s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 370s
+leaf 30/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 376s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 376s
+leaf 31/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 382s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 382s
+leaf 32/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 388s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 388s
+leaf 33/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 394s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 394s
+leaf 34/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 400s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 400s
+leaf 35/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 405s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 406s
+leaf 36/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 411s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 412s
+leaf 37/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 418s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 418s
+leaf 38/54 (4 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 424s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 425s
+leaf 39/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 431s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 431s
+leaf 40/54 (7 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 6 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 437s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 438s
+leaf 41/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 443s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 443s
+leaf 42/54 (3 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 449s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 449s
+leaf 43/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 455s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 455s
+leaf 44/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 460s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 461s
+leaf 45/54 (6 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 5 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 466s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 467s
+leaf 46/54 (4 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 474s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 474s
+leaf 47/54 (6 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 6 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 480s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 481s
+leaf 48/54 (5 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 4 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 487s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 487s
+leaf 49/54 (7 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 6 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 493s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 494s
+leaf 50/54 (8 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 6 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 499s
+  component 1: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 500s
+leaf 51/54 (10 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 3 equations in 8 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 506s
+  component 1: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 508s
+leaf 52/54 (1 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 514s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 514s
+leaf 53/54 (2 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 1 equations in 3 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 520s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 520s
+leaf 54/54 (4 inequations):
+pairs_in_short_tail V = 0000,0000,0000,0001: presolved to 2 equations in 5 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 526s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 527s
+pairs_in_short_tail V = 0000,0000,0000,0001: all leaves done; every leaf exited cleanly
+exit 0

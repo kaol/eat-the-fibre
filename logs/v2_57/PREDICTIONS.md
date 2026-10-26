@@ -11,3 +11,12 @@ explicit invariant from v2_55_invariant.py); computationally unresolved (timeout
     many orbits on Folds(k̄Q₁) in characteristic 0.
 60. Regression: with the new presolve, the control's growing block 000,001,001 still has exactly one geometric failure,
     and pairs_in_short block 100,010,001 still has 16 components, all passing.
+
+## Outcome (recorded after the runs)
+
+- **59 held.** All 90 blocks are certified passes (`logs/v2_57/tally_q1.txt`, from `analysis/v2_57_tally.py`):
+  89 blocks with 372 components (353 pass every r, 19 points), and block 0000,0000,0000,0001 by the case-split presolve
+  (54 leaf primes covering the stratum, 53 pass, 1 point). No geometric failure, nothing unresolved.
+- **60 held.** `logs/v2_57/regression.txt`: 000,001,001 fails at exactly one component (dim 4), 100,010,001 has 16
+  components, all passing. The case-split mode was regressed too (`regression_branch.txt`): the control's 000,001,001
+  and 001,001,001 still fail exactly once each (dim 4 and dim 6), and pairs_in_short 100,010,001 passes on all leaves.
