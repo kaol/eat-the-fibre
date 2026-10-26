@@ -20,9 +20,14 @@ from sympy.polys.rings import ring
 import pcensus as pc
 BRANCH_CONSTS = set()   # v2.59: rationals whose primes may break a case-split step mod p (contents, leading coefficients,
                         # denominators of factors, constants that made a branch empty)
-def _bc(x):
+BRANCH_TAGS = set()     # v2.59: (num, den, where) for every constant other than ±1, to locate them
+def _bc(x, tag='?'):
     x = QQ(x)
-    if x != 0: BRANCH_CONSTS.add((int(x.numerator), int(x.denominator)))
+    if x != 0:
+        BRANCH_CONSTS.add((int(x.numerator), int(x.denominator)))
+        if abs(x) != 1: BRANCH_TAGS.add((int(x.numerator), int(x.denominator), tag))
+INTEGRAL = os.environ.get('FOLD_INTEGRAL') == '1'   # v2.59: pivots ±1 only, primitive (not monic) normalisation
+_unit = lambda c: (not INTEGRAL) or abs(c.LC) == 1
 PIVOTS = []    # v2.58: (variable, pivot coefficient c) of every presolve substitution x = −rest/c, in order
 
 PAIRS_IN_SHORT_C = [('p', (1,)), ('p', (3,)), ('p', (4,)), ('p', (4, 2)), ('p', (4, 3))]   # v2.53's complement
@@ -168,7 +173,7 @@ def presolve(eqs, R):
         for e in sorted(eqs, key=lambda e: (sum(1 for g in e.degrees() if g), len(e), e.LM)):
             for x in sorted((R.gens[i] for i, g in enumerate(e.degrees()) if g == 1), key=str):
                 c = e.coeff_wrt(x, 1)
-                if c.is_ground and c != 0:
+                if c.is_ground and c != 0 and _unit(c):
                     rest = e - c * x
                     if rest.degree(x) <= 0:
                         pick = (x, -rest * (1 / c.LC)); break
@@ -204,7 +209,7 @@ def presolve_fast(eqs, R):
             for v in sorted(vars_of(e), key=lambda v: str(gens[v])):
                 if e.degree(gens[v]) != 1: continue
                 c = e.coeff_wrt(gens[v], 1)
-                if c.is_ground and c != 0:
+                if c.is_ground and c != 0 and _unit(c):
                     rest = e - c * gens[v]
                     if rest.degree(gens[v]) <= 0: pick = (v, -rest * (1 / c.LC)); break
             if not pick: continue
@@ -240,7 +245,7 @@ def presolve_markowitz(eqs, R):
             for v in vars_of(e):
                 if e.degree(gens[v]) != 1: continue
                 c = e.coeff_wrt(gens[v], 1)
-                if not (c.is_ground and c != 0): continue
+                if not (c.is_ground and c != 0 and _unit(c)): continue
                 cost = (len(e) - 1) * len(occ[v])
                 if best is None or cost < best[0]: best = (cost, i, v, c)
         if best is None: break
@@ -264,7 +269,7 @@ def _radical_factors(e, maxterms):
     """Distinct non-constant irreducible factors of e over ℚ (monomials directly; factor_list only when e has at most
     maxterms terms), or None when e was not factored."""
     if len(e) == 1:
-        (mon, c1), = e.items(); _bc(c1)
+        (mon, c1), = e.items(); _bc(c1, 'monomial coefficient')
         R = e.ring
         return [R.gens[i] for i, k in enumerate(mon) if k]
     if len(e) > maxterms: return None
@@ -276,10 +281,9 @@ def _radical_factors(e, maxterms):
     if key not in _SUBRINGS: _SUBRINGS[key] = ring(','.join(str(R.gens[i]) for i in vi), QQ)[0]
     Rs = _SUBRINGS[key]
     es = Rs.from_dict({tuple(m[i] for i in vi): c for m, c in e.items()})
-    c0, fl = es.factor_list(); _bc(c0)
-    for f, _ in fl:
-        for c1 in f.coeffs(): _bc(QQ(1) / QQ(c1).denominator if QQ(c1).denominator != 1 else 1); _bc(QQ(c1).denominator)
-        _bc(f.LC)
+    c0, fl = es.factor_list(); _bc(c0, 'factor content')
+    for f, _ in fl:                         # e = c0 · ∏ f^k: only c0 and the factors' denominators matter mod p
+        for c1 in f.coeffs(): _bc(QQ(c1).denominator, 'factor denominator')
     out = []
     for f, _ in fl:
         if f.is_ground: continue
@@ -321,7 +325,12 @@ def branch_presolve(S, batch=None, maxterms=None, log=None):
             if x[i] and y[j]: out[k] += c * x[i] * y[j]
         return out
     def matvec(A, v): return [sum((A[r][c] * v[c] for c in range(d) if A[r][c] and v[c]), R(0)) for r in range(d)]
-    def mon(f): _bc(f.LC); return f * (1 / f.LC)
+    def mon(f):
+        if INTEGRAL:                       # primitive integral, positive leading coefficient; record the content
+            cont, pr = f.primitive()
+            if pr.LC < 0: cont, pr = -cont, -pr
+            _bc(cont, 'primitive content'); return pr
+        _bc(f.LC); return f * (1 / f.LC)
     def settle(eqs, P_, subs, nz):
         """presolve + radical replacement + division by known-nonzero factors, until stable. Returns
         ('leaf', eqs, P_, subs, nz), ('split', eqs, P_, subs, nz, factors) or ('empty',). nz: set of monic
@@ -330,12 +339,12 @@ def branch_presolve(S, batch=None, maxterms=None, log=None):
         while True:
             eqs.discard(R(0))
             for e in eqs:
-                if e.is_ground: _bc(e.LC)
+                if e.is_ground: _bc(e.LC, 'constant equation (branch empty)')
             if any(e.is_ground for e in eqs): return ('empty',)
             pend, new = PS(eqs, R)
             subs = subs + new; P_ = apply(P_, new)
             for e in pend:
-                if e.is_ground and e != 0: _bc(e.LC)
+                if e.is_ground and e != 0: _bc(e.LC, 'constant equation (branch empty)')
             if any(e.is_ground and e != 0 for e in pend): return ('empty',)
             if new:
                 nz2 = set()

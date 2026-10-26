@@ -1,0 +1,2 @@
+1000,0100,0010,0001 leaf 0: 38 components, 844 specialisation claims; candidate primes [2] (also checked directly: []); all claims hold at every candidate prime
+EXCEPTIONAL []

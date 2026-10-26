@@ -54,11 +54,15 @@ if a.mode == 'int':
             # radical certificate: the ideal Rq of the rational points of E3 (its associated primes), integral generators
             'list LL = minAssGTZ(E3); print("POINTS " + string(size(LL))); ideal Rq = LL[1]; int jj;',
             'for (jj = 2; jj <= size(LL); jj++) { Rq = intersect(Rq, LL[jj]); } Rq = std(Rq);',
-            'for (jj = 1; jj <= nvars(rq); jj++) { Rq = Rq + ideal(var(jj)^2 - var(jj)); }',
+            'for (jj = 1; jj <= nvars(rq); jj++) { Rq = Rq + ideal(var(jj)^3 - var(jj)); }',   # entries in {−1, 0, 1} (v2.59; v2.58 used v² − v, valid for Q₀'s 0/1 blocks)
             'setring rv; ideal Rz = imap(rq, Rq); int kk; int ok;',
             # every generator ρ of Rz: the least k ≤ 6 with ρ^k ∈ E (reduction by the strong GB E2 over ℤ, all LC 1)
             'for (jj = 1; jj <= size(Rz); jj++) { ok = 0; for (kk = 1; kk <= 6 && ok == 0; kk++) { if (reduce(Rz[jj]^kk, E2) == 0) { ok = kk; } } '
-            'print("RAD " + string(jj) + " k " + string(ok) + " : " + string(Rz[jj])); }']
+            'print("RAD " + string(jj) + " k " + string(ok) + " : " + string(Rz[jj])); }',
+            # R over ℤ: a strong basis; if every leading coefficient is 1 and vdim = #points over ℚ, then mod every p the
+            # quotient has dimension ≤ #points, so V(R mod p) is the set of reductions of the points
+            'option(redSB); ideal RS = std(Rz); string sr = ""; for (jj = 1; jj <= size(RS); jj++) { sr = sr + string(leadcoef(RS[jj])) + " "; }',
+            'print("RLC " + sr); setring rq; ideal RQ = std(imap(rv, RS)); print("RVDIM " + string(vdim(RQ)) + " RDIM " + string(dim(RQ)));']
 else:
     src += ['print("PDIM " + string(dim(E2)));', 'if (dim(E2) == 0) { print("VDIM " + string(vdim(E2))); list L = minAssGTZ(E2); print("POINTS " + string(size(L))); '
             'int i; for (i = 1; i <= size(L); i++) { print(std(L[i])); print("--"); } }']

@@ -10,7 +10,7 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.58) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.59) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
@@ -20,7 +20,7 @@ Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of t
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.58)
+## Where the fold story stands (v2.59)
 
 | result | status | round |
 |---|---|---|
@@ -68,4 +68,5 @@ mathematics forces them.
 | 1⇉2⇇3 + 1→3 + 2→4: local-torus count 1220 at q = 3, 5, 7 (job 17 on the GPU, batched order portfolio); its 90 vertex blocks each have a constant count | computed (pre-registered 58 held) | v2.56 |
 | **Folds(k̄(1⇉2⇇3 + 1→3 + 2→4)) is a finite union of census orbits (char 0)**: all 90 vertex blocks pass the v2.54 criterion (372 components + 54 case-split leaf primes; no failure, nothing unresolved); certified rerun with an independent checker (1190 dimension cuts by `std`, coverage by Rabinowitsch). First Program 3 observation: 6 of the 90 blocks restrict to no Q₀ block, so there is no restriction map Folds(Q₁) → Folds(Q₀) | **proved** (char 0; Singular + exact minors over ℚ, two independent dimension checks) | v2.57 |
 | **Conjecture 3ᶜ holds for 1⇉2⇇3 + 1→3**: a bound on the 𝔽_q census count uniform in q (all characteristics). The integral structure is unimodular and the presolve pivots are ±1; the vertex-block theorem holds over every field (elimination over ℤ); all 1441 specialisation claims hold at every prime (only candidate: 2, checked directly); Lang + Bézout give B ≈ 10^51.5. No exceptional prime | **proved** (modulo trusted Singular std/eliminate over ℤ and minAssGTZ over ℚ, cross-checked at p = 2, 3, 5) | v2.58 |
+| **Conjecture 3ᶜ holds for 1⇉2⇇3 + 1→3 + 2→4** (uniform in q, all characteristics): vertex blocks = the 90 census blocks over every field (elimination over ℤ); certified rerun with pivots; the case-split presolve made integral (all constants ±1); 5413 specialisation claims, candidates {2, 3} all checked directly; B ≈ 10^96.8 | **proved** (modulo the trusted Singular computations of v2.58) | v2.59 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |

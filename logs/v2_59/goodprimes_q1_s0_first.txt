@@ -1,0 +1,1 @@
+0000,0000,0000,0000 leaf 0: 30 components, 419 specialisation claims; candidate primes [] (also checked directly: [2]); all claims hold at every candidate prime
