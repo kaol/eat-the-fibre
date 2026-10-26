@@ -106,3 +106,8 @@ Dw = [sum((ws[c] * DLc[c][l] for c in range(len(DLc))), sp.zeros(d, d)) for l in
 # Δ φ_w (column l) = Σ_m Ph[m,l] DL[m];  (φ⊗φ) Δ_w (column l) = Ph Dw[l] Phᵀ
 okw = all(sp.expand(sum((Ph[m, l] * DLs[m] for m in range(d)), sp.zeros(d, d)) - Ph * Dw[l] * Ph.T) == sp.zeros(d, d) for l in range(d))
 print(f"Δ ∘ φ_w = (φ_w ⊗ φ_w) ∘ Δ_w over ℤ[w]: {okw}")
+# G preserves each class deletion (so W(P) is G-invariant) and commutes with the class weightings (so G × T acts)
+okc = all(sp.expand(sum((Phi[m, l] * DLc[c][m] for m in range(d)), sp.zeros(d, d)) - Phi * DLc[c][l] * Phi.T) == sp.zeros(d, d)
+          for c in range(len(DLc)) for l in range(d))
+comm = sp.expand(Phi * Ph - Ph * Phi) == sp.zeros(d, d)
+print(f"Δ_c ∘ Φ = (Φ ⊗ Φ) ∘ Δ_c for every class c over ℤ[g]: {okc}; Φ φ_w = φ_w Φ: {comm}")

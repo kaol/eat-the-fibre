@@ -1,0 +1,1 @@
+stopped by hand after 50 min with no lift finished (the ℤ-elimination of vertex_integral_q0.txt stands; see doc)

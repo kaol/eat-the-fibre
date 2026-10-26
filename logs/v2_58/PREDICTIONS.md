@@ -10,3 +10,11 @@ stratum coordinates and presolved equations are valid over ℤ, at every p.
     only of primes where the direct check in characteristic p passes. No exceptional prime. (If one fails, 2 first.)
 62. The vertex-block theorem of v2.52 holds over 𝔽̄_p for every p: the 21 blocks are the only vertex blocks of folds in
     every characteristic. (Most likely failure: p = 2.)
+
+## Outcome
+
+- **61 held.** 1441 claims over 21 strata; candidate primes only {2} (strata 100,000,000 and 100,010,001); direct checks
+  pass at 2 and at 3 for every stratum (goodprimes_q0.txt).
+- **62 held.** Elimination over ℤ: 44 basis elements, all leading coefficient 1; radical certificate ρ^k ∈ E_ℤ (k ≤ 2) for
+  the 35 generators of the 21-point ideal, which cuts exactly the 21 points over every field. Direct elimination over
+  𝔽₂, 𝔽₃, 𝔽₅: 21 points each.

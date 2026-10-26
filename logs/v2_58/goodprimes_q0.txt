@@ -1,0 +1,22 @@
+000,000,000 leaf 0: 14 components, 234 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+000,000,001 leaf 0: 6 components, 58 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+000,001,001 leaf 0: 4 components, 49 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+000,010,000 leaf 0: 4 components, 55 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+000,010,001 leaf 0: 6 components, 46 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+000,010,010 leaf 0: 4 components, 37 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+001,000,001 leaf 0: 4 components, 62 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+001,001,001 leaf 0: 7 components, 81 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+001,010,001 leaf 0: 6 components, 70 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+010,010,000 leaf 0: 4 components, 37 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+010,010,010 leaf 0: 7 components, 70 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,000,000 leaf 0: 6 components, 77 specialisation claims; candidate primes [2] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,000,001 leaf 0: 4 components, 58 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,000,100 leaf 0: 2 components, 17 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,001,001 leaf 0: 4 components, 73 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,010,000 leaf 0: 6 components, 92 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,010,001 leaf 0: 16 components, 221 specialisation claims; candidate primes [2] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,010,010 leaf 0: 6 components, 47 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,010,100 leaf 0: 3 components, 23 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,100,000 leaf 0: 2 components, 15 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+100,100,100 leaf 0: 3 components, 19 specialisation claims; candidate primes [] (also checked directly: [2, 3]); all claims hold at every candidate prime
+EXCEPTIONAL []
