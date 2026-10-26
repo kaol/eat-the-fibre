@@ -8,7 +8,7 @@ For a vertex block V of QUIVER:
 4. the orbit-dimension criterion (v2.54): for r = dim Z − 1, …, 0, an upper bound dim Z_r ≤ r by point-guided
    (r+1)-minors of M(P) = ([h, P])_{h ∈ 𝔥_Z}. r = dim Z − 1 failing with "rank ≤ r at every sampled point" means no
    open orbit; lower r failing means a boundary locus of dimension > r with orbits of dimension ≤ r (a modulus).
-Usage: python3 analysis/v2_55_pipeline.py QUIVER BLOCK OUT_PREFIX [--seed S]   (BLOCK: rows of V, e.g. 100,000,001)"""
+Usage: python3 analysis/v2_55_pipeline.py QUIVER BLOCK OUT_PREFIX [--seed S]   (BLOCK: rows of V, e.g. 100,000,001; m for −1, e.g. 100m,0000,001m,0000)"""
 import os, sys, re, random, subprocess, argparse, collections, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
 import numpy as np, sympy as sp
@@ -18,13 +18,13 @@ import singular_nohilb; singular_nohilb.install()   # minAssGTZ without the over
 ap = argparse.ArgumentParser(); ap.add_argument('quiver'); ap.add_argument('block'); ap.add_argument('out')
 ap.add_argument('--seed', type=int, default=55)
 A = ap.parse_args(); rng = random.Random(A.seed); t0 = time.time()
-V = [[int(ch) for ch in r] for r in A.block.split(',')]
+V = [[-1 if ch == 'm' else int(ch) for ch in r] for r in A.block.split(',')]   # 'm' = −1 (v2.57)
 S = fi.stratum(A.quiver, V)
 R, P, ctx = S['R'], S['P'], S['ctx']
 d, basis, arrows = ctx['d'], ctx['basis'], ctx['arrows']
 M = np.asarray(ctx['M']); DL = np.asarray(ctx['DL'])
 idx = {b: i for i, b in enumerate(basis)}
-rem, subs = fi.presolve(S['eqs'], R)
+rem, subs = (fi.presolve if os.environ.get('PRESOLVE') == 'v255' else fi.presolve_fast)(S['eqs'], R)   # v2.57: indexed presolve
 elim = {str(x) for x, _ in subs}
 vs = [n for n in S['names'] if n not in elim]                    # coordinates of the presolved stratum
 Pr = [[e for e in row] for row in P]

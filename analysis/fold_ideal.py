@@ -89,3 +89,44 @@ def presolve(eqs, R):
     return sorted(eqs, key=str), subs
 
 def to_expr(f): return f.as_expr()
+
+def presolve_fast(eqs, R):
+    """Same substitution rule as presolve (an equation linear in some variable with a constant coefficient is solved
+    for it), but with an index variable → equations, so a substitution touches only the equations that contain the
+    variable. Equations are visited in passes, each in (variables, terms, leading monomial) order of the pass start,
+    until a pass makes no substitution. The variety is the same as presolve's; the surviving coordinates can differ.
+    (v2.57: presolve composed every equation at every step, 1.4 M compositions and 856 s on a 236-unknown stratum.)"""
+    from collections import defaultdict
+    E = {i: e for i, e in enumerate(set(eqs)) if e}
+    gens = R.gens
+    def vars_of(e): return [i for i, g in enumerate(e.degrees()) if g]
+    occ = defaultdict(set)
+    for i, e in E.items():
+        for v in vars_of(e): occ[v].add(i)
+    subs = []; changed = True
+    while changed:
+        changed = False
+        order = sorted(E, key=lambda i: (len(vars_of(E[i])), len(E[i]), E[i].LM))
+        for i in order:
+            e = E.get(i)
+            if e is None: continue
+            pick = None
+            for v in sorted(vars_of(e), key=lambda v: str(gens[v])):
+                if e.degree(gens[v]) != 1: continue
+                c = e.coeff_wrt(gens[v], 1)
+                if c.is_ground and c != 0:
+                    rest = e - c * gens[v]
+                    if rest.degree(gens[v]) <= 0: pick = (v, -rest * (1 / c.LC)); break
+            if not pick: continue
+            v, val = pick; x = gens[v]; subs.append((x, val)); changed = True
+            for j in list(occ[v]):
+                old = E.pop(j, None)
+                if old is None: continue
+                for w in vars_of(old): occ[w].discard(j)
+                new = old.compose(x, val)
+                if new:
+                    E[j] = new
+                    for w in vars_of(new): occ[w].add(j)
+            occ.pop(v, None)
+    out = sorted(set(E.values()), key=str)
+    return out, subs
