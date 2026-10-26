@@ -18,6 +18,11 @@ import numpy as np, sympy as sp
 from sympy import QQ
 from sympy.polys.rings import ring
 import pcensus as pc
+BRANCH_CONSTS = set()   # v2.59: rationals whose primes may break a case-split step mod p (contents, leading coefficients,
+                        # denominators of factors, constants that made a branch empty)
+def _bc(x):
+    x = QQ(x)
+    if x != 0: BRANCH_CONSTS.add((int(x.numerator), int(x.denominator)))
 PIVOTS = []    # v2.58: (variable, pivot coefficient c) of every presolve substitution x = −rest/c, in order
 
 PAIRS_IN_SHORT_C = [('p', (1,)), ('p', (3,)), ('p', (4,)), ('p', (4, 2)), ('p', (4, 3))]   # v2.53's complement
@@ -259,7 +264,7 @@ def _radical_factors(e, maxterms):
     """Distinct non-constant irreducible factors of e over ℚ (monomials directly; factor_list only when e has at most
     maxterms terms), or None when e was not factored."""
     if len(e) == 1:
-        (mon, _), = e.items()
+        (mon, c1), = e.items(); _bc(c1)
         R = e.ring
         return [R.gens[i] for i, k in enumerate(mon) if k]
     if len(e) > maxterms: return None
@@ -271,7 +276,10 @@ def _radical_factors(e, maxterms):
     if key not in _SUBRINGS: _SUBRINGS[key] = ring(','.join(str(R.gens[i]) for i in vi), QQ)[0]
     Rs = _SUBRINGS[key]
     es = Rs.from_dict({tuple(m[i] for i in vi): c for m, c in e.items()})
-    _, fl = es.factor_list()
+    c0, fl = es.factor_list(); _bc(c0)
+    for f, _ in fl:
+        for c1 in f.coeffs(): _bc(QQ(1) / QQ(c1).denominator if QQ(c1).denominator != 1 else 1); _bc(QQ(c1).denominator)
+        _bc(f.LC)
     out = []
     for f, _ in fl:
         if f.is_ground: continue
@@ -313,7 +321,7 @@ def branch_presolve(S, batch=None, maxterms=None, log=None):
             if x[i] and y[j]: out[k] += c * x[i] * y[j]
         return out
     def matvec(A, v): return [sum((A[r][c] * v[c] for c in range(d) if A[r][c] and v[c]), R(0)) for r in range(d)]
-    mon = lambda f: f * (1 / f.LC)
+    def mon(f): _bc(f.LC); return f * (1 / f.LC)
     def settle(eqs, P_, subs, nz):
         """presolve + radical replacement + division by known-nonzero factors, until stable. Returns
         ('leaf', eqs, P_, subs, nz), ('split', eqs, P_, subs, nz, factors) or ('empty',). nz: set of monic
@@ -321,9 +329,13 @@ def branch_presolve(S, batch=None, maxterms=None, log=None):
         eqs = set(eqs)
         while True:
             eqs.discard(R(0))
+            for e in eqs:
+                if e.is_ground: _bc(e.LC)
             if any(e.is_ground for e in eqs): return ('empty',)
             pend, new = PS(eqs, R)
             subs = subs + new; P_ = apply(P_, new)
+            for e in pend:
+                if e.is_ground and e != 0: _bc(e.LC)
             if any(e.is_ground and e != 0 for e in pend): return ('empty',)
             if new:
                 nz2 = set()

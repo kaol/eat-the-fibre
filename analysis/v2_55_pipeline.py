@@ -65,7 +65,7 @@ if not vs:                       # every coordinate eliminated: the stratum is o
           f"{0 if empty else 1} components", flush=True)
     if not empty: print("  component 1: dim 0 (points)", flush=True)
     cert(dict(kind='stratum', vs=[], subs=[[str(x), str(v)] for x, v in subs], rem=[str(e) for e in rem],
-              nz=[str(f) for f in NZ], pivots=fi.PIVOTS, ncomp=0 if empty else 1))
+              nz=[str(f) for f in NZ], pivots=fi.PIVOTS, branch_consts=sorted(fi.BRANCH_CONSTS), ncomp=0 if empty else 1))
     if not empty: cert(dict(kind='component', comp=1, dim=0, gens=[], indep=[], W=None, cuts=[], result='point'))
     sys.exit(0)
 Pr = [[e for e in row] for row in P]
@@ -212,7 +212,7 @@ def points(gl, iv, k):
         if len(pts) >= k: break
     return pts
 cert(dict(kind='stratum', vs=vs, subs=[[str(x), str(v)] for x, v in subs], rem=[str(e) for e in rem],
-          nz=[str(f) for f in NZ], pivots=fi.PIVOTS, ncomp=len(comps), DerD=[[str(x) for x in D] for D in DerD],
+          nz=[str(f) for f in NZ], pivots=fi.PIVOTS, branch_consts=sorted(fi.BRANCH_CONSTS), ncomp=len(comps), DerD=[[str(x) for x in D] for D in DerD],
           Ec=[[int(x) for x in E.diagonal()] for E in Ec], classes=cl))
 for i_, dim_, gens, indep, nf in comps:
     n_ = len(nz); wv = sp.symbols(f'w0:{len(cl)}')
