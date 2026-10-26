@@ -1,0 +1,303 @@
+### 0010,0010,0010,0010 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0010,0010,0010,0010: presolved to 3782 equations in 26 coordinates; 14 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 379s
+  component 1: dim 0 (points)
+  component 2: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 392s
+  component 3: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 394s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 398s
+  component 5: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 401s
+  component 6: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 403s
+  component 7: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 405s
+  component 8: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 409s
+  component 9: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 414s
+  component 10: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 427s
+  component 11: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 438s
+  component 12: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 449s
+  component 13: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 459s
+  component 14: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 471s
+### exit 0
+### 0000,0000,0000,00m1 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0000,0000,00m1: presolved to 3579 equations in 37 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 434s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 446s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 452s
+  component 4: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 468s
+### exit 0
+### 1000,0100,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0100,0010,0001: presolved to 2247 equations in 46 coordinates; 38 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 158s
+  component 1: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 166s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 173s
+  component 3: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 176s
+  component 4: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 179s
+  component 5: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 184s
+  component 6: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 191s
+  component 7: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 203s
+  component 8: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 209s
+  component 9: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 222s
+  component 10: dim 0 (points)
+  component 11: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 234s
+  component 12: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 243s
+  component 13: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 254s
+  component 14: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 264s
+  component 15: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 275s
+  component 16: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 285s
+  component 17: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 296s
+  component 18: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 306s
+  component 19: dim 4; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 316s
+  component 20: dim 4; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 326s
+  component 21: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 335s
+  component 22: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 346s
+  component 23: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 356s
+  component 24: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 367s
+  component 25: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 1]]; finitely many orbits: True; t = 372s
+  component 26: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 380s
+  component 27: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 383s
+  component 28: dim 5; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 401s
+  component 29: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 408s
+  component 30: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 415s
+  component 31: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 424s
+  component 32: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 431s
+  component 33: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 446s
+  component 34: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 462s
+  component 35: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 479s
+  component 36: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 494s
+  component 37: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 1]]; finitely many orbits: True; t = 501s
+  component 38: dim 4; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 513s
+### exit 0
+### 0010,0000,0010,0010 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0010,0000,0010,0010: presolved to 3875 equations in 26 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 314s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 324s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 328s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 332s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 336s
+### exit 0
+### 1000,0000,0000,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0000,0000,0000: presolved to 1236 equations in 28 coordinates; 6 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 209s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 210s
+  component 2: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 211s
+  component 3: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 212s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 214s
+  component 5: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 217s
+  component 6: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 220s
+### exit 0
+### 1000,0010,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0010,0010,0001: presolved to 2640 equations in 41 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 349s
+  component 1: dim 1; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 361s
+  component 2: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 365s
+  component 3: dim 6; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 394s
+  component 4: dim 6; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 426s
+### exit 0
+### 0010,0010,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0010,0010,0010,0001: presolved to 2713 equations in 30 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 221s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 229s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 233s
+  component 4: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 247s
+### exit 0
+### 1000,0000,0000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0000,0000,0001: presolved to 4296 equations in 50 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 364s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 371s
+  component 2: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 373s
+  component 3: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 380s
+  component 4: dim 3; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 387s
+### exit 0
+### 0000,0100,0000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0100,0000,0001: presolved to 3044 equations in 40 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 212s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 217s
+  component 2: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 227s
+  component 3: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 239s
+  component 4: dim 6; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 274s
+### exit 0
+### 0000,0010,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0010,0010,0001: presolved to 2695 equations in 34 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 173s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 176s
+  component 2: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 177s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 181s
+  component 4: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 188s
+### exit 0
+### 0010,0000,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0010,0000,0010,0001: presolved to 2690 equations in 34 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 163s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 166s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 171s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 176s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 181s
+### exit 0
+### 1000,1000,0000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,1000,0000,0001: presolved to 522 equations in 14 coordinates; 2 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 112s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 113s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 114s
+### exit 0
+### 1000,0000,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0000,0010,0001: presolved to 2637 equations in 47 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 132s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 133s
+  component 2: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 147s
+  component 3: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 163s
+  component 4: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 174s
+### exit 0
+### 0000,0000,0010,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0000,0010,0000: presolved to 976 equations in 19 coordinates; 10 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 121s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 121s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 123s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 125s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 126s
+  component 5: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 128s
+  component 6: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 128s
+  component 7: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 131s
+  component 8: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 135s
+  component 9: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 137s
+  component 10: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 140s
+### exit 0
+### 0000,0010,0010,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0010,0010,0000: presolved to 990 equations in 18 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 117s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 118s
+  component 2: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 118s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 120s
+  component 4: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 123s
+### exit 0
+### 0010,0000,0010,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0010,0000,0010,0000: presolved to 966 equations in 18 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 122s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 122s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 124s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 126s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 128s
+### exit 0
+### 1000,0000,1000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0000,1000,0001: presolved to 366 equations in 16 coordinates; 2 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 83s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 84s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 85s
+### exit 0
+### 0100,0100,0100,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0100,0100,0100,0000: presolved to 832 equations in 16 coordinates; 7 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 91s
+  component 1: dim 0 (points)
+  component 2: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 92s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 94s
+  component 4: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 95s
+  component 5: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 97s
+  component 6: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 101s
+  component 7: dim 5; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 105s
+### exit 0
+### 0000,0100,0010,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0100,0010,0000: presolved to 634 equations in 16 coordinates; 6 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 87s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 89s
+  component 3: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 89s
+  component 4: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 90s
+  component 5: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 92s
+  component 6: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 94s
+### exit 0
+### 1000,1000,1000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,1000,1000,0001: presolved to 500 equations in 11 coordinates; 2 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 105s
+  component 1: dim 0 (points)
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 106s
+### exit 0
+### 0000,0100,0100,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0100,0100,0000: presolved to 834 equations in 16 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 120s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 121s
+  component 2: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 121s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 122s
+  component 4: dim 4; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 125s
+### exit 0
+### 1000,0100,1000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0100,1000,0001: presolved to 277 equations in 13 coordinates; 6 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 80s
+  component 1: dim 3; W_Z = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 81s
+  component 2: dim 3; W_Z = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 82s
+  component 3: dim 3; W_Z = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 83s
+  component 4: dim 3; W_Z = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 84s
+  component 5: dim 3; W_Z = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 85s
+  component 6: dim 2; W_Z = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 85s
+### exit 0
+### 0000,0100,0000,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0100,0000,0000: presolved to 806 equations in 18 coordinates; 4 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 85s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 85s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 86s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 88s
+  component 4: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 90s
+### exit 0
+### 1000,1000,0000,1000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,1000,0000,1000: presolved to 628 equations in 12 coordinates; 3 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 87s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 88s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 89s
+  component 3: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 90s
+### exit 0
+### 1000,0000,0000,1000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0000,0000,1000: presolved to 669 equations in 11 coordinates; 2 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 84s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 85s
+  component 2: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 85s
+### exit 0
+### 1000,1000,0000,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,1000,0000,0000: presolved to 119 equations in 8 coordinates; 2 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 80s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 80s
+  component 2: dim 3; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 81s
+### exit 0
+### 00m1,0000,0000,00m1 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 00m1,0000,0000,00m1: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 79s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 79s
+### exit 0
+### 0000,0001,0001,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0001,0001,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 81s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 81s
+### exit 0
+### 0001,0001,0000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0001,0001,0000,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 79s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 79s
+### exit 0
+### 100m,0000,001m,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 100m,0000,001m,0000: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 77s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 77s
+### exit 0
+### 100m,001m,001m,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 100m,001m,001m,0000: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 80s
+  component 1: dim 1; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 80s
+### exit 0
+### 1000,0000,0001,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0000,0001,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 82s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 82s
+### exit 0
+### 1000,0001,0001,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0001,0001,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 84s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 84s
+### exit 0
+### 1000,0001,1000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,0001,1000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 79s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 79s
+### exit 0
+### 0000,m001,m001,m001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,m001,m001,m001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 76s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 76s
+### exit 0
+### 0000,m001,0000,m001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,m001,0000,m001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 78s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 78s
+### exit 0
+### 0000,0000,m001,m001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0000,m001,m001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 77s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 77s
+### exit 0
+### 0000,0001,0000,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,0001,0000,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 79s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 80s
+### exit 0
+### 0000,001m,001m,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0000,001m,001m,0000: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 72s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 72s
+### exit 0
+### 0001,0000,0010,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 0001,0000,0010,0001: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 73s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 74s
+### exit 0
+### 001m,0000,001m,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 001m,0000,001m,0000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 74s
+  component 1: dim 2; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 74s
+### exit 0
+### 100m,0000,0000,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 100m,0000,0000,0000: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 80s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 80s
+### exit 0
+### 100m,0010,0010,0000 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 100m,0010,0010,0000: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 77s
+  component 1: dim 1; W_Z = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 77s
+### exit 0
+### 1000,1000,0001,0001 (PRESOLVE_RULE=markowitz FOLD_BATCH=6)
+pairs_in_short_tail V = 1000,1000,0001,0001: presolved to 0 equations in 1 coordinates; 1 components; dim Der = 28, dim Der_Δ = 4, classes 4; t = 82s
+  component 1: dim 1; W_Z = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]; finitely many orbits: True; t = 82s
+### exit 0
+### STREAM DONE

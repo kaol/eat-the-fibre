@@ -30,6 +30,13 @@ M = np.asarray(ctx['M']); DL = np.asarray(ctx['DL'])
 idx = {b: i for i, b in enumerate(basis)}
 CLOSURE_IN_SINGULAR = os.environ.get('CLOSURE_IN_SINGULAR') == '1'
 NZ = []                                                         # leaf inequations (BRANCH=1), saturated out below
+LEAF = 0
+import json
+CERT = os.environ.get('CERT')                                   # v2.57: JSON-lines certificate file (appended)
+def cert(rec):
+    if not CERT: return
+    rec = dict(quiver=A.quiver, block=A.block, leaf=LEAF, **rec)
+    with open(CERT, 'a') as fh: fh.write(json.dumps(rec) + "\n")
 if os.environ.get('BRANCH') == '1':
     # v2.57: case-split presolve (fold_ideal.branch_presolve). The stratum is the union of the leaf varieties; each leaf
     # runs the rest of this script in a forked child, so every irreducible component of the stratum is among the
@@ -40,7 +47,7 @@ if os.environ.get('BRANCH') == '1':
     for k_, (rem_, subs_, nz_) in enumerate(leaves):
         sys.stdout.flush(); pid = os.fork()
         if pid == 0:
-            rem, subs, NZ = rem_, subs_, nz_; A.out += f'_L{k_ + 1}'
+            rem, subs, NZ = rem_, subs_, nz_; A.out += f'_L{k_ + 1}'; LEAF = k_ + 1
             print(f"leaf {k_ + 1}/{len(leaves)} ({len(nz_)} inequations):", flush=True); break
         _, st_ = os.waitpid(pid, 0)
         if st_ != 0: failed.append((k_ + 1, st_))
@@ -57,6 +64,9 @@ if not vs:                       # every coordinate eliminated: the stratum is o
     print(f"{A.quiver} V = {A.block}: presolved to {'no point (inconsistent)' if empty else 'a single point'}; "
           f"{0 if empty else 1} components", flush=True)
     if not empty: print("  component 1: dim 0 (points)", flush=True)
+    cert(dict(kind='stratum', vs=[], subs=[[str(x), str(v)] for x, v in subs], rem=[str(e) for e in rem],
+              nz=[str(f) for f in NZ], ncomp=0 if empty else 1))
+    if not empty: cert(dict(kind='component', comp=1, dim=0, gens=[], indep=[], W=None, cuts=[], result='point'))
     sys.exit(0)
 Pr = [[e for e in row] for row in P]
 for x, val in subs: Pr = [[e.compose(x, val) for e in row] for row in Pr]
@@ -201,6 +211,9 @@ def points(gl, iv, k):
             pts.append(pt); break
         if len(pts) >= k: break
     return pts
+cert(dict(kind='stratum', vs=vs, subs=[[str(x), str(v)] for x, v in subs], rem=[str(e) for e in rem],
+          nz=[str(f) for f in NZ], ncomp=len(comps), DerD=[[str(x) for x in D] for D in DerD],
+          Ec=[[int(x) for x in E.diagonal()] for E in Ec], classes=cl))
 for i_, dim_, gens, indep, nf in comps:
     n_ = len(nz); wv = sp.symbols(f'w0:{len(cl)}')
     lin = []
@@ -215,10 +228,13 @@ for i_, dim_, gens, indep, nf in comps:
     cols = [j for j in range(d * d) if any(Mrows_all[i][j] for i in range(m))]
     Mrows = [[Mrows_all[i][j] for j in cols] for i in range(m)]
     if dim_ <= 0:
-        print(f"  component {i_}: dim {dim_} (points)", flush=True); continue
+        print(f"  component {i_}: dim {dim_} (points)", flush=True)
+        cert(dict(kind='component', comp=i_, dim=dim_, gens=[str(g) for g in gens], indep=indep,
+                  W=[[str(x) for x in w] for w in W], cuts=[], result='point')); continue
+    cuts = []
     res_r = []
     for r in range(dim_ - 1, -1, -1):
-        F = []; status = None
+        F = []; FP = []; status = None
         for it in range(80):
             out = singular([f'LIB "primdec.lib";', f"ring R = 0,({','.join(vs)}),dp;",
                             f"ideal J = {','.join([str(g).replace('**', '^') for g in gens] + [str(f).replace('**', '^') for f in F]) or '0'};",
@@ -241,12 +257,15 @@ for i_, dim_, gens, indep, nf in comps:
                     _, pc = Mv.rref(); pc = list(pc)[:r + 1]
                     _, pr = Mv[:, pc].T.rref(); pr = list(pr)[:r + 1]
                     F.append(_DM([[Mrows[i][j] for j in pc] for i in pr], (len(pr), len(pc)), KD).det())
+                    FP.append(dict(rows=[int(i) for i in pr], cols=[int(cols[j]) for j in pc], det=str(F[-1])))
                     added = True; break
                 if not added and not status: status = f'rank ≤ {r} at every sampled point of a component of dim {dm}'
                 if status: break
             if status: break
-        res_r.append((r, 'ok' if status == 'ok' else status))
+        res_r.append((r, 'ok' if status == 'ok' else status)); cuts.append(dict(r=r, status=status, minors=FP))
         if status != 'ok': break                    # the first failure is what matters
     ok = all(s_ == 'ok' for _, s_ in res_r)
+    cert(dict(kind='component', comp=i_, dim=dim_, gens=[str(g) for g in gens], indep=indep,
+              W=[[str(x) for x in w] for w in W], cuts=cuts, result='pass' if ok else 'fail'))
     print(f"  component {i_}: dim {dim_}; W_Z = {[list(w) for w in W]}; " +
           ("finitely many orbits: True" if ok else f"FAILS at r = {res_r[-1][0]}: {res_r[-1][1]}") + f"; t = {time.time() - t0:.0f}s", flush=True)

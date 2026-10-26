@@ -1,0 +1,18 @@
+pairs_in_short d 10 dim Der 20 dim Der_Δ 4
+  D: -1·p0←p0, 1·p1←p0 | D²=0: False | [D,D']=0 all: False
+  D: -1·p0←p1, 1·p1←p1 | D²=0: False | [D,D']=0 all: False
+  D: -1·p2←p2, 1·p3←p2, -1·p42←p42, 1·p43←p42 | D²=0: False | [D,D']=0 all: False
+  D: -1·p2←p3, 1·p3←p3, -1·p42←p43, 1·p43←p43 | D²=0: False | [D,D']=0 all: False
+  D(x)D(y) = 0 for all basis x, y: True
+  D(x)D(y) = 0 for all basis x, y: True
+  D(x)D(y) = 0 for all basis x, y: True
+  D(x)D(y) = 0 for all basis x, y: True
+pairs_in_short_tail d 18 dim Der 28 dim Der_Δ 4
+  D: -1·p0←p0, 1·p1←p0, -1·p05←p05, 1·p15←p05 | D²=0: False | [D,D']=0 all: False
+  D: -1·p0←p1, 1·p1←p1, -1·p05←p15, 1·p15←p15 | D²=0: False | [D,D']=0 all: False
+  D: -1·p2←p2, 1·p3←p2, -1·p25←p25, 1·p35←p25, -1·p42←p42, 1·p43←p42, -1·p425←p425, 1·p435←p425 | D²=0: False | [D,D']=0 all: False
+  D: -1·p2←p3, 1·p3←p3, -1·p25←p35, 1·p35←p35, -1·p42←p43, 1·p43←p43, -1·p425←p435, 1·p435←p435 | D²=0: False | [D,D']=0 all: False
+  D(x)D(y) = 0 for all basis x, y: True
+  D(x)D(y) = 0 for all basis x, y: True
+  D(x)D(y) = 0 for all basis x, y: True
+  D(x)D(y) = 0 for all basis x, y: True
