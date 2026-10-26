@@ -18,6 +18,7 @@ import numpy as np, sympy as sp
 from sympy import QQ
 from sympy.polys.rings import ring
 import pcensus as pc
+PIVOTS = []    # v2.58: (variable, pivot coefficient c) of every presolve substitution x = −rest/c, in order
 
 PAIRS_IN_SHORT_C = [('p', (1,)), ('p', (3,)), ('p', (4,)), ('p', (4, 2)), ('p', (4, 3))]   # v2.53's complement
 
@@ -168,7 +169,7 @@ def presolve(eqs, R):
                         pick = (x, -rest * (1 / c.LC)); break
             if pick: break
         if not pick: break
-        x, val = pick; subs.append(pick)
+        x, val = pick; subs.append(pick); PIVOTS.append((str(x), str(e.coeff_wrt(x, 1))))
         eqs = {e.compose(x, val) for e in eqs}; eqs.discard(R(0))
     return sorted(eqs, key=str), subs
 
@@ -203,6 +204,7 @@ def presolve_fast(eqs, R):
                     if rest.degree(gens[v]) <= 0: pick = (v, -rest * (1 / c.LC)); break
             if not pick: continue
             v, val = pick; x = gens[v]; subs.append((x, val)); changed = True
+            PIVOTS.append((str(x), str(e.coeff_wrt(x, 1))))
             for j in list(occ[v]):
                 old = E.pop(j, None)
                 if old is None: continue
@@ -241,6 +243,7 @@ def presolve_markowitz(eqs, R):
         rest = e - c * x
         if rest.degree(x) > 0: occ[v].discard(i); continue          # (cannot happen for degree 1 in x)
         val = -rest * (1 / c.LC); subs.append((x, val))
+        PIVOTS.append((str(x), str(c)))
         for j in list(occ[v]):
             old = E.pop(j, None)
             if old is None: continue
