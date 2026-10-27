@@ -21,7 +21,7 @@ The predictions are in logs/v2_64/PREDICTIONS.md, committed before any computati
 
 | # | Statement | Status |
 |---|---|---|
-| 77 | The census count of Q₂ is the same at q = 3, 5, 7 | **open**: 1773 at q = 3 (8346 s on one core). q = 5 and 7 are queued as GPU jobs 18 and 19 in run_batch.py |
+| 77 | The census count of Q₂ is the same at q = 3, 5, 7 | **held** (addendum): 1773 at q = 3, 5 and 7. q = 3 ran in the container (8346 s, one core); q = 5 and 7 ran as GPU jobs 18 and 19 on Strix (66 s and 1171 s) |
 | 78 | The direct char 0 pipeline certifies every block of Q₂ | **held**: 99 of 99 blocks, 594 components or leaf primes, no failure. One block (1000,010m,010m,0000) ran out of memory with both the default and the Markowitz presolve, and needed the integral case split (34 leaves) |
 | 79 | As for Q₁: mixed components only in cornerless blocks, all of rank ≤ 1 | **failed**: 43 mixed components in 12 blocks; 37 have rank > 1; 6 of the 12 blocks have a Q₀ corner (for example 0000,0100,0010,0001) |
 | 80 | The relative criterion passes over the 366 classes, and every λ = 0 fibre is finite | **half held**: every positive-dimensional fibre component passes (205 components). J-preserving λ = 0 fibres are finite (Lemma A). But kQ₀-preserving λ = 0 fibres include 77 components of dimension 1, 5 of dimension 2 and 1 of dimension 3 |
@@ -111,3 +111,25 @@ Step 3 is still per quiver. For Q₂ the mixed components sit in 12 of the 99 bl
   - pipeline_{aa,ab,rerun}.txt, certs_{aa,ab,rerun}.jsonl.xz, tally.txt;
   - kinds.txt, kinds_rerun.txt;
   - relative.txt.
+
+---
+
+## Addendum: jobs 18 and 19 (Strix GPU)
+
+`logs/v2_64/results_strix.jsonl`, `batch_strix.log`: **pairs_in_short_c4 has 1773 local-torus classes at q = 5 and at
+q = 7**, the same as at q = 3. Prediction 77 held.
+
+| q | folds | G-orbits | local-torus classes | time |
+|---|---|---|---|---|
+| 3 | 32 618 | 1986 | **1773** | 8346 s (container, 1 core) |
+| 5 | 428 576 | 2490 | **1773** | 66 s (GPU) |
+| 7 | 2 567 598 | 3098 | **1773** | 1171 s (GPU) |
+
+The two finite-field facts:
+- **The G-orbit count grows linearly**, 1986, 2490, 3098: the slope is 252 for 3 → 5, then 304 for 5 → 7.
+- **The local-torus count is flat.** The weightings absorb all of the growth, as for Q₀ (366) and Q₁ (1220).
+
+With the char 0 theorem of §1, Q₂ now has the same evidence as Q₁ had at v2.57: a certified char 0 finiteness theorem,
+and a constant count at three primes. The uniformity argument of v2.58–v2.59 (good primes, Lang, Bézout) applies once
+its certificates are checked for pivots and specialisation. The certificates are in `certs_*.jsonl.xz`; the pivot
+records are present for the blocks run after v2.58.

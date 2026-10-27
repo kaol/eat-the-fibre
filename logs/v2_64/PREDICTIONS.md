@@ -12,7 +12,7 @@ Program 3: test the leaf-extension mechanism on a second extension of Q₀, Q₂
 
 ## Outcome
 
-- **77 open**: 1773 at q = 3; q = 5, 7 queued as GPU jobs 18, 19 (the container's q = 5 run was not finished).
+- **77 held** (addendum): 1773 at q = 3, 5 and 7 (q = 5, 7 on the Strix GPU, jobs 18 and 19).
 - **78 held**: 99/99 blocks certified (one with the integral case split after two out-of-memory presolves).
 - **79 failed**: 43 mixed components (37 of rank > 1) in 12 blocks, 6 of them with a Q₀ corner.
 - **80 half held**: all 205 positive-dimensional fibre components pass; J-preserving λ = 0 fibres finite; but the
