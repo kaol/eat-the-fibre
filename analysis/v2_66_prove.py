@@ -81,7 +81,9 @@ elif os.path.exists(cert): os.remove(cert)
 plog = open(os.path.join(out, 'pipeline.txt'), 'a' if RESUME else 'w'); reruns = []
 for b in blocks:
     if b in done_blocks: continue
-    for mode in ({}, {'BRANCH': '1', 'FOLD_INTEGRAL': '1'}):
+    modes = [{}, {'BRANCH': '1', 'FOLD_INTEGRAL': '1'}]
+    if b in os.environ.get('BRANCH_FIRST', '').split(';'): modes = modes[::-1]     # blocks known to need the case split
+    for mi, mode in enumerate(modes):
         tmpc = cert + '.tmp'
         if os.path.exists(tmpc): os.remove(tmpc)
         try:
@@ -89,10 +91,11 @@ for b in blocks:
                                env=dict(os.environ, CERT=tmpc, **mode), capture_output=True, text=True, timeout=6000)
             rc_, o = r.returncode, r.stdout + r.stderr
         except subprocess.TimeoutExpired: rc_, o = -1, 'TIMEOUT'
+        if rc_ == 0 and 'singular timeout' in o and mi + 1 < len(modes): continue   # a timeout is not a failure: try the other mode
         if rc_ == 0:
             plog.write("\n".join(l for l in o.splitlines() if not l.startswith('leaf ')) + "\n"); plog.flush()
             with open(cert, 'a') as fh: fh.write(open(tmpc).read())
-            if mode: reruns.append(b)
+            if mode.get('BRANCH'): reruns.append(b)
             break
     else:
         plog.write(f"### {b}: FAILED in both modes\n"); plog.flush()

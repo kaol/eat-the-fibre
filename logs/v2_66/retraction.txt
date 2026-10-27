@@ -27,3 +27,4 @@ q = 3: 99 G-orbit representatives of S_short_c4 lifted; non-folds of pairs_in_sh
 q = 3: 6 G-orbit representatives of A2 lifted; non-folds of K2: 0; vertex blocks kept: True
 q = 3: 27 G-orbit representatives of S_in lifted; non-folds of pair_tgtin: 0; vertex blocks kept: True
 q = 3: 27 G-orbit representatives of S_in lifted; non-folds of pairs_in: 0; vertex blocks kept: True
+S_in ⇄ pair_tgtin: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}

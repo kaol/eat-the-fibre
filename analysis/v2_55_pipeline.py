@@ -191,7 +191,7 @@ def evaluate(f, pt):                                   # ring element at a point
     return out
 print(f"{A.quiver} V = {A.block}: presolved to {len(rem)} equations in {len(vs)} coordinates; {len(comps)} components; "
       f"dim Der = {len(Der)}, dim Der_Δ = {len(DerD)}, classes {len(cl)}; t = {time.time() - t0:.0f}s", flush=True)
-def singular(lines, fn, tmo=1800):
+def singular(lines, fn, tmo=int(os.environ.get('SING_TMO', '1800'))):   # v2.66: SING_TMO
     open(fn, 'w').write("\n".join(lines))
     try: res = subprocess.run(["Singular", "-q", "--no-rc", fn], capture_output=True, text=True, timeout=tmo)
     except subprocess.TimeoutExpired: return ""
@@ -211,6 +211,47 @@ def points(gl, iv, k):
             pts.append(pt); break
         if len(pts) >= k: break
     return pts
+def points_numeric(gl, iv, k):                     # v2.66: algebraic points (complex floats) when no rational one is found;
+    pts = []                                          # they only choose which minor to add, the cut itself is exact
+    for t in range(12 * k):
+        vals = {Sv[j]: sp.Integer(rng.randint(-5, 5)) for j in range(len(vs)) if iv[j] == 1}
+        g2 = [g for g in (sp.expand(g.subs(vals)) for g in gl) if g != 0]
+        unk = sorted(set().union(*[g.free_symbols for g in g2]), key=str) if g2 else []
+        try: sols = sp.solve(g2, unk, dict=True) if g2 else [{}]
+        except Exception: sols = []
+        for so in sols:
+            if len(so) < len(unk): continue
+            try: pt = {x: complex(sp.N(v, 30)) for x, v in so.items()}
+            except Exception: continue
+            pt.update({x: complex(int(v)) for x, v in vals.items()})
+            for v in Sv: pt.setdefault(v, complex(rng.randint(-5, 5)))
+            pts.append(pt); break
+        if len(pts) >= k: break
+    return pts
+def evaluate_num(f, pt):
+    vals = [0j] * len(R.gens)
+    for sym, v in pt.items(): vals[gpos[str(sym)]] = v
+    out = 0j
+    for mon, c in f.items():
+        t = complex(float(c))
+        for i, e in enumerate(mon):
+            if e: t *= vals[i] ** e
+        out += t
+    return out
+def numeric_pivots(Mn, r):                            # greedy column then row selection of an (r+1)-minor, numerically
+    import numpy as _np
+    tol = 1e-7 * max(1.0, _np.abs(Mn).max())
+    rk = lambda A: _np.linalg.matrix_rank(A, tol=tol) if A.size else 0
+    if rk(Mn) <= r: return None
+    pc = []
+    for j in range(Mn.shape[1]):
+        if rk(Mn[:, pc + [j]]) > len(pc): pc.append(j)
+        if len(pc) == r + 1: break
+    pr = []
+    for i in range(Mn.shape[0]):
+        if rk(Mn[pr + [i]][:, pc]) > len(pr): pr.append(i)
+        if len(pr) == r + 1: break
+    return (pr, pc) if len(pr) == len(pc) == r + 1 else None
 cert(dict(kind='stratum', vs=vs, subs=[[str(x), str(v)] for x, v in subs], rem=[str(e) for e in rem],
           nz=[str(f) for f in NZ], pivots=fi.PIVOTS, branch_consts=sorted(fi.BRANCH_CONSTS), branch_tags=sorted(fi.BRANCH_TAGS), ncomp=len(comps), DerD=[[str(x) for x in D] for D in DerD],
           Ec=[[int(x) for x in E.diagonal()] for E in Ec], classes=cl))
@@ -238,7 +279,8 @@ for i_, dim_, gens, indep, nf in comps:
         for it in range(80):
             out = singular([f'LIB "primdec.lib";', f"ring R = 0,({','.join(vs)}),dp;",
                             f"ideal J = {','.join([str(g).replace('**', '^') for g in gens] + [str(f).replace('**', '^') for f in F]) or '0'};",
-                            "list L = minAssGTZ(J); int i;",
+                            f"ideal Js = std(J); if (dim(Js) <= {r}) {{ print(\"END\"); quit; }}",   # v2.66: dimension first
+                            "list L = minAssGTZ(Js); int i;",
                             f"for (i = 1; i <= size(L); i++) {{ ideal Gi = std(L[i]); if (dim(Gi) > {r}) {{ print(\"COMP \" + string(dim(Gi))); "
                             "print(\"GENS \" + string(Gi)); intvec iv = indepSet(Gi); print(\"INDEP \" + string(iv)); kill iv; } kill Gi; }",
                             'print("END");', "quit;"], f"{A.out}_c{i_}.sing")
@@ -249,7 +291,17 @@ for i_, dim_, gens, indep, nf in comps:
             added = False
             for dm, gl, iv in above:
                 pts = points(gl, iv, 4)
-                if not pts: status = f'no rational point on a component of dim {dm}'; break
+                if not pts:
+                    import numpy as _np
+                    for pt in points_numeric(gl, iv, 4):
+                        sel = numeric_pivots(_np.array([[evaluate_num(x, pt) for x in row] for row in Mrows]), r)
+                        if sel is None: continue
+                        pr, pc = sel
+                        F.append(_DM([[Mrows[i][j] for j in pc] for i in pr], (len(pr), len(pc)), KD).det())
+                        FP.append(dict(rows=[int(i) for i in pr], cols=[int(cols[j]) for j in pc], det=str(F[-1]), numeric=True))
+                        added = True; break
+                    if not added: status = f'no rational point on a component of dim {dm}'; break
+                    continue
                 for pt in pts:
                     Mv = sp.Matrix([[sp.Rational(int(sp.QQ.numer(evaluate(x, pt))), int(sp.QQ.denom(evaluate(x, pt))))
                                      for x in row] for row in Mrows])

@@ -1,0 +1,9 @@
+K2 q = 3 (K2_3.pkl): 20 folds/reps; P(ker π) ⊆ ker π for 14, not for 6; blocks 6, blocks with some stable fold 6, blocks with only unstable folds 0
+K2 q = 5 (K2_5.pkl): 20 folds/reps; P(ker π) ⊆ ker π for 14, not for 6; blocks 6, blocks with some stable fold 6, blocks with only unstable folds 0
+pair_after q = 3 (pair_after_3.pkl): 71 folds/reps; P(ker π) ⊆ ker π for 51, not for 20; blocks 23, blocks with some stable fold 23, blocks with only unstable folds 0
+pair_after q = 3 (folds_pair_after_3.pkl): 219 folds/reps; P(ker π) ⊆ ker π for 99, not for 120; blocks 23, blocks with some stable fold 23, blocks with only unstable folds 0
+pair_srcout q = 3 (pair_srcout_3.pkl): 105 folds/reps; P(ker π) ⊆ ker π for 71, not for 34; blocks 27, blocks with some stable fold 27, blocks with only unstable folds 0
+pairs_in_short q = 3 (reps_pairs_in_short_3.pkl): 407 folds/reps; P(ker π) ⊆ ker π for 184, not for 223; blocks 21, blocks with some stable fold 21, blocks with only unstable folds 0
+pairs_in_short q = 5 (reps_pairs_in_short_5.pkl): 513 folds/reps; P(ker π) ⊆ ker π for 198, not for 315; blocks 21, blocks with some stable fold 21, blocks with only unstable folds 0
+pairs_in q = 3 (folds_pairs_in_3.pkl): 6376 folds/reps; P(ker π) ⊆ ker π for 2128, not for 4248; blocks 31, blocks with some stable fold 27, blocks with only unstable folds 4
+pairs_in q = 5 (folds_pairs_in_5.pkl): 59972 folds/reps; P(ker π) ⊆ ker π for 12612, not for 47360; blocks 39, blocks with some stable fold 27, blocks with only unstable folds 12
