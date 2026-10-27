@@ -23,7 +23,7 @@ ap.add_argument('--timeout', type=int, default=1800); ap.add_argument('--classes
 A = ap.parse_args(); rng = random.Random(62)
 root = os.path.dirname(HERE)
 classes = [json.loads(l) for l in open(A.classes or os.path.join(root, 'logs', 'v2_62', 'q0_classes.jsonl'))]
-c1 = pc.setup('pairs_in_short_tail', 3); c0 = pc.setup('pairs_in_short', 3)
+c1 = pc.setup(os.environ.get('LEAF_QUIVER', 'pairs_in_short_tail'), 3); c0 = pc.setup('pairs_in_short', 3)
 b1, b0 = c1['basis'], c0['basis']; d1, d0 = len(b1), len(b0)
 idx1 = {b: i for i, b in enumerate(b1)}; e4 = idx1[('v', 3)]
 M1 = np.asarray(c1['M'], dtype=np.int64); DL1 = np.asarray(c1['DL'], dtype=np.int64)

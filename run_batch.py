@@ -53,6 +53,10 @@ BATCH = [
     # test in finish(). Prediction (v2.51, v2.56): the local-torus count is constant in q, 1220.
     ('pairs_in_short_tail', 7, {'orbits_GxTloc': 1220}, "P4 (part 3): 1⇉2⇇3 + 1→3 + 2→4 over F_7 (v2.56); 1220 at q = 3, 5",
      {'ETF_CORDERS': '4,6,8,14,15,9,10,12,11,13;4,6,8,14,15,9,12,16,13,17,10,11', 'ETF_PCAP0': '1e6', 'ETF_PCAP': '2e7', 'ETF_MEM': '512'}),
+    # v2.64: the second leaf extension of pairs_in_short (sink leaf 3→4). The container computed q = 3 (1773 in 8346 s on
+    # one core); prediction 77: the local-torus count is the same at q = 5 and 7. Char 0 finiteness is certified (v2.64).
+    ('pairs_in_short_c4', 5, {'orbits_GxTloc': 1773}, "Q0 + 3→4 over F_5 (v2.64); 1773 at q = 3", {'ETF_MEM': '512'}),
+    ('pairs_in_short_c4', 7, {'orbits_GxTloc': 1773}, "Q0 + 3→4 over F_7 (v2.64); 1773 at q = 3", {'ETF_MEM': '512'}),
 ]
 SAVE_REPS = '--save-reps' in sys.argv          # (before v2.43 this flag was accepted but silently not passed on)
 def reps_path(q, p): return os.path.join('logs', f'reps_{q}_{p}.pkl')

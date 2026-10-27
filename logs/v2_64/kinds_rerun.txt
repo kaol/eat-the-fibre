@@ -1,0 +1,36 @@
+1000,010m,010m,0000 leaf 1: X0
+1000,010m,010m,0000 leaf 2: kQ-preserving
+1000,010m,010m,0000 leaf 3: kQ-preserving
+1000,010m,010m,0000 leaf 4: kQ-preserving
+1000,010m,010m,0000 leaf 5: kQ-preserving
+1000,010m,010m,0000 leaf 6: kQ-preserving
+1000,010m,010m,0000 leaf 7: kQ-preserving
+1000,010m,010m,0000 leaf 8: kQ-preserving
+1000,010m,010m,0000 leaf 9: kQ-preserving
+1000,010m,010m,0000 leaf 10: kQ-preserving
+1000,010m,010m,0000 leaf 11: kQ-preserving
+1000,010m,010m,0000 leaf 12: kQ-preserving
+1000,010m,010m,0000 leaf 13: kQ-preserving
+1000,010m,010m,0000 leaf 14: kQ-preserving
+1000,010m,010m,0000 leaf 15: kQ-preserving
+1000,010m,010m,0000 leaf 16: kQ-preserving
+1000,010m,010m,0000 leaf 17: kQ-preserving
+1000,010m,010m,0000 leaf 18: kQ-preserving
+1000,010m,010m,0000 leaf 19: kQ-preserving
+1000,010m,010m,0000 leaf 20: kQ-preserving
+1000,010m,010m,0000 leaf 21: kQ-preserving
+1000,010m,010m,0000 leaf 22: X0
+1000,010m,010m,0000 leaf 23: kQ-preserving
+1000,010m,010m,0000 leaf 24: kQ-preserving
+1000,010m,010m,0000 leaf 25: kQ-preserving
+1000,010m,010m,0000 leaf 26: kQ-preserving
+1000,010m,010m,0000 leaf 27: kQ-preserving
+1000,010m,010m,0000 leaf 28: kQ-preserving
+1000,010m,010m,0000 leaf 29: kQ-preserving
+1000,010m,010m,0000 leaf 30: kQ-preserving
+1000,010m,010m,0000 leaf 31: kQ-preserving
+1000,010m,010m,0000 leaf 32: kQ-preserving
+1000,010m,010m,0000 leaf 33: X0, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, X0, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving
+1000,010m,010m,0000 leaf 34: X0, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, X0, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving, kQ-preserving
+TALLY {'X0': 2, 'kQ-preserving': 30}
+blocks with mixed-kind components: []

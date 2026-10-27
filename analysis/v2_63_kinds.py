@@ -25,7 +25,7 @@ for (block, leaf), g in groups.items():
     st = g['stratum']; vs = st['vs']
     if block not in SS:
         V = [[-1 if ch == 'm' else int(ch) for ch in row] for row in block.split(',')]
-        SS[block] = fi.stratum('pairs_in_short_tail', V)
+        SS[block] = fi.stratum(os.environ.get('LEAF_QUIVER', 'pairs_in_short_tail'), V)
     S = SS[block]; R = S['R']; b1 = S['ctx']['basis']; d = len(b1)
     gl = {str(x): x for x in R.gens}
     parse = lambda s_: R(sp.sympify(s_, locals={k: sp.Symbol(k) for k in gl}))
