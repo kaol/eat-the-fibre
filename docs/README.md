@@ -10,7 +10,7 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.64) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.65) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
@@ -20,7 +20,7 @@ Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of t
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.64)
+## Where the fold story stands (v2.65)
 
 | result | status | round |
 |---|---|---|
@@ -74,4 +74,5 @@ mathematics forces them.
 | Q₀'s census classes in char 0, explicitly: 366 rational representatives, equal to the 𝔽_q count in every block; relative criterion for Q₀ → Q₁: over each of them the J- and kQ-preserving fibres (dims ≤ 3; finite when λ = 0) carry finitely many stabiliser orbits (145 components pass) | computed exactly (char 0; completeness of the orbit list rests on sampled rank tests) | v2.62 |
 | Sink-leaf lemmas: λ = 0 J-preserving lifts are given by characters of im P̄ (finitely many); λ = 0 kQ-preserving lifts by an idempotent of im P̄ ∩ ker Δ and Y with ΔY prescribed; rank-one folds are x ⊗ φ with x ∈ ker Δ, (φ⊗φ)Δ = 0. Q₁ in char 0: every component is J- or kQ-preserving except 6 rank-one mixed components in the 6 cornerless blocks | lemmas **proved** (char-free); classification exact over ℚ | v2.63 |
 | **Folds(k̄(1⇉2⇇3 + 1→3 + 3→4)) is a finite union of census orbits (char 0)**: 99 vertex blocks, all certified; 1773 local-torus classes at q = 3, 5, 7 (q = 5, 7 on the GPU, jobs 18, 19). As a leaf extension of Q₀ it falsifies two parts of the Q₁ picture: mixed folds of rank > 1 (37 components, some in blocks with a Q₀ corner) and positive-dimensional kQ-preserving λ = 0 families; the relative criterion still passes on all 205 fibre components | **proved** (char 0; Singular + exact minors over ℚ); census computed | v2.64 |
+| **Conjecture 3ᶜ holds for 1⇉2⇇3 + 1→3 + 3→4** (uniform in q, all characteristics): unimodular structure, pivots ±1, 99 vertex blocks over every field, 6423 specialisation claims (candidate 2 only, checked directly); B ≈ 10^65 | **proved** (modulo the trusted Singular computations of v2.58) | v2.65 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |
