@@ -26,3 +26,12 @@ coincide (same strong Gröbner basis leading terms over ℤ, same vdim, same poi
     of the strong Gröbner basis, vdim, points) does not depend on m. Tested on K4 (vs K2), K3_before (vs pair_before),
     K3_tgtin (vs pair_tgtin), K3_after2, K3_mid, K3_tgtfork, K3_srcboth (vs the pair_ versions).
 88. Control: with a class of size 1 (A2 = 1→2 vs K2; A3 = 1→2→3 vs pair_after) the vertex ideal differs.
+
+Added after the first multiplicity results (K4 = K2, K3_before = pair_before, K3_tgtin = pair_tgtin: held; control
+A2 vs K2 and A3 vs pair_after: the ideals differ (88 held) but the point sets are equal), before computing:
+
+89. Simplification: for an unobstructed quiver Q, the vertex blocks of Q are the vertex blocks of its simplification Q^s
+    (each parallel class replaced by one arrow), as point sets. Tested on pair_srcout/S_srcout, pairs_in_short/S_short,
+    pair_after2/A4, pair_mid/A4, pair_tgtfork/S_tgtfork, pair_srcboth/S_srcboth, pairs_in_short_c4/S_short_c4.
+90. It fails for the obstructed pairs_in = 1⇉2⇇3 (unjoined converging classes, Theorem 3): there the vertex variety is
+    positive-dimensional (v2.52), while S_in = 1→2←3 has finitely many folds (v2.16), so finitely many blocks.
