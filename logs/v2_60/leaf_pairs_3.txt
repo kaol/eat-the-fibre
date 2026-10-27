@@ -1,0 +1,45 @@
+pairs_in_short → pairs_in_short_tail (sink leaf), q = 3: census classes 366 → 1220
+  kinds: split, compression a fold: 617; kQ only, compression a fold: 307; J only, compression a fold: 280; neither, compression not a fold: 16
+  split classes by λ: {frozenset({0}): 366, frozenset({1}): 251}; trivial lifts P̄ ⊕ 0: 366 (over distinct Q classes: 366)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 299, without: 0
+  classes over several Q classes: 0; Q classes hit 366 of 366; fibre sizes {1: 47, 2: 140, 3: 85, 4: 46, 5: 15, 6: 7, 7: 4, 9: 9, 10: 2, 15: 8, 17: 1, 21: 1, 34: 1}
+K2 → pair_after (sink leaf), q = 3: census classes 20 → 71
+  kinds: split, compression a fold: 36; J only, compression a fold: 19; kQ only, compression a fold: 14; neither, compression not a fold: 2
+  split classes by λ: {frozenset({0}): 20, frozenset({1}): 16}; trivial lifts P̄ ⊕ 0: 20 (over distinct Q classes: 20)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 19, without: 0
+  classes over several Q classes: 0; Q classes hit 20 of 20; fibre sizes {1: 1, 2: 5, 3: 6, 4: 4, 5: 2, 6: 1, 8: 1}
+K2 → pair_srcout (sink leaf), q = 3: census classes 20 → 101
+  kinds: split, compression a fold: 36; kQ only, compression a fold: 30; J only, compression a fold: 28; neither, compression not a fold: 4; neither, compression a fold: 3
+  split classes by λ: {frozenset({0}): 20, frozenset({1}): 16}; trivial lifts P̄ ⊕ 0: 20 (over distinct Q classes: 20)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 22, without: 6
+  classes over several Q classes: 0; Q classes hit 20 of 20; fibre sizes {2: 3, 3: 1, 4: 5, 5: 4, 6: 3, 7: 2, 8: 2}
+K2 → pair_tgtin (source leaf), q = 3: census classes 20 → 101
+  kinds: split, compression a fold: 36; kQ only, compression a fold: 30; J only, compression a fold: 28; neither, compression not a fold: 4; neither, compression a fold: 3
+  split classes by λ: {frozenset({0}): 20, frozenset({1}): 16}; trivial lifts P̄ ⊕ 0: 20 (over distinct Q classes: 20)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 22, without: 6
+  classes over several Q classes: 0; Q classes hit 20 of 20; fibre sizes {2: 3, 3: 1, 4: 5, 5: 4, 6: 3, 7: 2, 8: 2}
+pair_after → pair_after2 (sink leaf), q = 3: census classes 71 → 334
+  kinds: split, compression a fold: 127; kQ only, compression a fold: 104; J only, compression a fold: 81; neither, compression not a fold: 22
+  split classes by λ: {frozenset({0}): 71, frozenset({1}): 56}; trivial lifts P̄ ⊕ 0: 71 (over distinct Q classes: 71)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 81, without: 0
+  classes over several Q classes: 0; Q classes hit 71 of 71; fibre sizes {1: 4, 2: 15, 3: 10, 4: 9, 5: 16, 6: 5, 7: 6, 8: 3, 10: 1, 11: 1, 15: 1}
+pair_after → pair_tgtfork (sink leaf), q = 3: census classes 71 → 414
+  kinds: split, compression a fold: 131; J only, compression a fold: 125; kQ only, compression a fold: 118; neither, compression not a fold: 37; neither, compression a fold: 3
+  split classes by λ: {frozenset({0}): 71, frozenset({1}): 60}; trivial lifts P̄ ⊕ 0: 71 (over distinct Q classes: 71)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 95, without: 32
+  classes over several Q classes: 0; Q classes hit 71 of 71; fibre sizes {1: 1, 2: 10, 3: 4, 4: 11, 5: 17, 6: 10, 7: 8, 8: 4, 9: 2, 10: 1, 12: 2, 15: 1}
+pair_srcout → pair_srcboth (source leaf), q = 3: census classes 101 → 485
+  kinds: split, compression a fold: 161; kQ only, compression a fold: 145; J only, compression a fold: 142; neither, compression not a fold: 32; neither, compression a fold: 5
+  split classes by λ: {frozenset({0}): 101, frozenset({1}): 60}; trivial lifts P̄ ⊕ 0: 101 (over distinct Q classes: 101)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 140, without: 11
+  classes over several Q classes: 0; Q classes hit 101 of 101; fibre sizes {1: 2, 2: 22, 3: 21, 4: 13, 5: 16, 6: 9, 7: 7, 8: 3, 9: 4, 10: 1, 12: 2, 15: 1}
+K3 → K3_after (sink leaf), q = 3: census classes 34 → 120
+  kinds: split, compression a fold: 61; J only, compression a fold: 33; kQ only, compression a fold: 24; neither, compression not a fold: 2
+  split classes by λ: {frozenset({0}): 34, frozenset({1}): 27}; trivial lifts P̄ ⊕ 0: 34 (over distinct Q classes: 34)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 33, without: 0
+  classes over several Q classes: 0; Q classes hit 34 of 34; fibre sizes {1: 2, 2: 8, 3: 11, 4: 6, 5: 4, 6: 1, 8: 1, 9: 1}
+K3 → K3_srcout (sink leaf), q = 3: census classes 34 → 183
+  kinds: split, compression a fold: 61; kQ only, compression a fold: 57; J only, compression a fold: 49; neither, compression not a fold: 8; neither, compression a fold: 8
+  split classes by λ: {frozenset({0}): 34, frozenset({1}): 27}; trivial lifts P̄ ⊕ 0: 34 (over distinct Q classes: 34)
+  J-only G-orbit representatives with P(kQ) ⊆ kQ ⊕ k e_v: 39, without: 10
+  classes over several Q classes: 0; Q classes hit 34 of 34; fibre sizes {2: 5, 3: 2, 4: 8, 5: 5, 6: 4, 7: 4, 8: 4, 9: 2}

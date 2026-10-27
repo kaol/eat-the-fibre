@@ -1,0 +1,8 @@
+q = 7: Q⁺ census classes 1220, Q census classes 366
+classes by (all P(J)⊆J, all P(kQ)⊆kQ, all compressions folds, some compression fold):
+  (True, True, True, True): 617
+  (False, True, True, True): 307
+  (True, False, True, True): 280
+  (False, False, False, False): 16
+J-preserving classes with a single base class: 897; classes whose G-orbits map to several base classes: 0
+Q classes hit: 366 of 366; fibre sizes (number of Q⁺ classes over one Q class): {1: 47, 2: 150, 3: 129, 4: 37, 5: 3}

@@ -1,0 +1,9 @@
+q = 3: split G-orbit representatives satisfying (*): 692, violating: 0
+split classes 617; by (λ, μ ≠ 0) of their G-orbits: [(0, False)]: 366, [(1, False)]: 228, [(1, True)]: 23
+classes containing a trivial lift P̄ ⊕ 0: 366
+q = 5: split G-orbit representatives satisfying (*): 890, violating: 0
+split classes 617; by (λ, μ ≠ 0) of their G-orbits: [(0, False)]: 366, [(1, False)]: 228, [(1, True)]: 23
+classes containing a trivial lift P̄ ⊕ 0: 366
+q = 7: split G-orbit representatives satisfying (*): 1152, violating: 0
+split classes 617; by (λ, μ ≠ 0) of their G-orbits: [(0, False)]: 366, [(1, False)]: 228, [(1, True)]: 23
+classes containing a trivial lift P̄ ⊕ 0: 366

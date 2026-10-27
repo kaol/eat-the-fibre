@@ -11,3 +11,10 @@ kinds; the 897 J-preserving classes lie over all 366 Q₀ classes, with fibre si
     hand from ΔP = (P⊗P)Δ; checked on every split census representative at q = 3, 5, 7.
 68. Every Q₀ fold P̄ has the trivial lift P̄ ⊕ 0 (λ = 0, μ = 0), a fold in every characteristic; so Q₀'s classes inject
     into Q₁'s split classes (366 of the 617), and the other 251 split classes have λ = 1 or μ ≠ 0.
+
+## Outcome
+
+- **66 held**: q = 7 gives 617 / 307 / 280 / 16 and the same fibre distribution.
+- **67 held**: (*) on every split representative (692, 890, 1152 at q = 3, 5, 7); proved by hand (doc §2).
+- **68 held**: 366 trivial lifts (all of Q₀'s classes), and the other 251 split classes all have λ = 1 (228 with μ = 0,
+  exactly over the Q₀ classes with P̄(B) ⊆ B; 23 with μ ≠ 0). λ = 0 forces the trivial lift (proved).
