@@ -23,7 +23,7 @@ for V in blocks:
     cells = []; locs = []
     for p in ps:
         N, L, Go = rows[p]; cells.append(f"{N.get(V, 0):>8} {Go.get(V, 0):>4} {L.get(V, 0):>4}"); locs.append(L.get(V, 0)); tot[p] += L.get(V, 0)
-    a, b = ps[-2], ps[-1]
-    deg = round(math.log(rows[b][0][V] / rows[a][0][V]) / math.log(b / a)) if rows[a][0].get(V) and rows[b][0].get(V) else None
+    a, b = (ps[-2], ps[-1]) if len(ps) > 1 else (ps[0], ps[0])
+    deg = None if a == b else round(math.log(rows[b][0][V] / rows[a][0][V]) / math.log(b / a)) if rows[a][0].get(V) and rows[b][0].get(V) else None
     print(f"{fmt(V):13} | " + " | ".join(cells) + f" | {deg} | {len(set(locs)) == 1}")
 print("local-torus orbits per prime:", dict(tot))
