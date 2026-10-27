@@ -126,7 +126,8 @@ q = 7**, the same as at q = 3. Prediction 77 held.
 | 7 | 2 567 598 | 3098 | **1773** | 1171 s (GPU) |
 
 The two finite-field facts:
-- **The G-orbit count grows linearly**, 1986, 2490, 3098: the slope is 252 for 3 → 5, then 304 for 5 → 7.
+- **The G-orbit count grows with q**, 1986, 2490, 3098: it rises by 504 from q = 3 to 5 and by 608 from 5 to 7, so not
+  linearly.
 - **The local-torus count is flat.** The weightings absorb all of the growth, as for Q₀ (366) and Q₁ (1220).
 
 With the char 0 theorem of §1, Q₂ now has the same evidence as Q₁ had at v2.57: a certified char 0 finiteness theorem,
