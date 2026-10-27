@@ -73,6 +73,7 @@ def singular(lines, fn, tmo=None):
     try: rr = subprocess.run(["Singular", "-q", "--no-rc", fn], capture_output=True, text=True, timeout=tmo or A.timeout)
     except subprocess.TimeoutExpired: return None
     out = rr.stdout + rr.stderr
+    if "? " in out and os.environ.get('RDEBUG'): print("SINGULAR ERROR", out[-600:], flush=True)
     return None if "? " in out else out
 def parse_comps(out):
     res = []
@@ -174,7 +175,7 @@ for ci in range(A.start, min(A.stop, len(classes))):
                                 if Mv.rank() <= r: continue
                                 _, pc_ = Mv.rref(); pc_ = list(pc_)[:r + 1]
                                 _, pr_ = Mv[:, pc_].T.rref(); pr_ = list(pr_)[:r + 1]
-                                F.append(str(sp.expand(Msym.extract(pr_, pc_).det())))
+                                F.append(str(sp.numer(sp.together(sp.expand(Msym.extract(pr_, pc_).det())))))   # cleared denominators (Singular reads a^2/9 as a^(2/9))
                                 added = True; break
                             if not added and not status: status = f'rank ≤ {r} at every sampled point (dim {dm})'
                             if status: break

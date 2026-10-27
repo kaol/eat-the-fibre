@@ -1,0 +1,5 @@
+LIB "primdec.lib"; ring R = 0,(k13,k23,k30,k33,k43,y4_0),dp;
+ideal J = k33 - 1,k30,k23,-k13,y4_0,k33 - y4_0;
+list L = minAssGTZ(J); int i;
+for (i = 1; i <= size(L); i++) { ideal G = std(L[i]); if (dim(G) == 0) { print("COMP " + string(G)); intvec iv = indepSet(G); print("INDEP " + string(iv)); kill iv; } kill G; }
+print("END"); quit;

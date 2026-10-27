@@ -1,0 +1,4 @@
+class 83 (000,010,000) kind Q λ = 1: components [('3', 'pass')]
+class 88 (000,010,001) kind Q λ = 1: components [('3', 'pass')]
+class 150 (001,010,001) kind Q λ = 1: components [('3', 'pass')]
+class 152 (001,010,001) kind Q λ = 1: components [('3', 'pass')]

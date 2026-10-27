@@ -16,3 +16,13 @@ J-preserving λ = 0 fibre with two points (the trivial lift and one J-only lift)
 75. (Added before the full run; 4 classes tried.) Relative criterion over the 366 class representatives
     (analysis/v2_62_relative.py): every positive-dimensional component of every one-sided fibre (kinds J and Q, λ = 0, 1)
     passes, so Stab(P̄)° has finitely many orbits on each; no fibre component has dimension above 3.
+
+## Outcome
+
+- **72 failed in part**: fibre dimensions ≤ 3 held, but 5 kQ-preserving λ = 1 fibres are unions of several positive-
+  dimensional components (not affine).
+- **73 held**: every λ = 0 fibre is finite, on the sample and over all 366 classes.
+- **74 failed as stated** (523 representatives, several per orbit); after exact merging: 366 classes, equal to the census
+  count in each of the 21 blocks.
+- **75 held**: 145 positive-dimensional fibre components (dims 1–3) all pass; 4 were first unresolved because of a
+  Singular parsing bug (x^2/9 read as x^(2/9)), fixed and rerun.
