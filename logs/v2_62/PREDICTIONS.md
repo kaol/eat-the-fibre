@@ -13,3 +13,6 @@ J-preserving λ = 0 fibre with two points (the trivial lift and one J-only lift)
     orbit representatives of Q₀ (analysis/v2_62_orbits.py: one rational point of maximal rank on each orbit closure
     found among the certified cut varieties) number exactly the census local-torus count in every one of the 21 blocks,
     366 in total.
+75. (Added before the full run; 4 classes tried.) Relative criterion over the 366 class representatives
+    (analysis/v2_62_relative.py): every positive-dimensional component of every one-sided fibre (kinds J and Q, λ = 0, 1)
+    passes, so Stab(P̄)° has finitely many orbits on each; no fibre component has dimension above 3.
