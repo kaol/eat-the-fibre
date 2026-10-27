@@ -1,0 +1,20 @@
+K2 V = 00,00: presolved to 83 equations in 6 coordinates; 3 components; dim Der = 6, dim Der_Δ = 2, classes 1; t = 0s
+  component 1: dim 0 (points)
+  component 2: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 0s
+  component 3: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 1s
+K2 V = 10,00: presolved to 64 equations in 5 coordinates; 2 components; dim Der = 6, dim Der_Δ = 2, classes 1; t = 0s
+  component 1: dim 1; W_Z = [[1]]; finitely many orbits: True; t = 0s
+  component 2: dim 1; W_Z = [[1]]; finitely many orbits: True; t = 0s
+K2 V = 00,01: presolved to 64 equations in 5 coordinates; 2 components; dim Der = 6, dim Der_Δ = 2, classes 1; t = 0s
+  component 1: dim 1; W_Z = [[1]]; finitely many orbits: True; t = 0s
+  component 2: dim 1; W_Z = [[1]]; finitely many orbits: True; t = 0s
+K2 V = 10,01: presolved to 25 equations in 4 coordinates; 3 components; dim Der = 6, dim Der_Δ = 2, classes 1; t = 0s
+  component 1: dim 0 (points)
+  component 2: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 0s
+  component 3: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 1s
+K2 V = 10,10: presolved to 53 equations in 4 coordinates; 2 components; dim Der = 6, dim Der_Δ = 2, classes 1; t = 0s
+  component 1: dim 0 (points)
+  component 2: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 0s
+K2 V = 01,01: presolved to 53 equations in 4 coordinates; 2 components; dim Der = 6, dim Der_Δ = 2, classes 1; t = 0s
+  component 1: dim 0 (points)
+  component 2: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 0s

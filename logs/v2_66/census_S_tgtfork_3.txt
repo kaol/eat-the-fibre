@@ -1,0 +1,5 @@
+  kernel stage on cpu: 212 subspaces, subalgebras by dimension [1, 15, 25, 10, 1]
+  kernel stage: 1.7s
+S_tgtfork F_3: d=9, dim K=4, 432 kernel folds in 432 torus orbits; jobs=1
+  symmetry: 432 torus orbits in 432 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 2
+{"name": "S_tgtfork", "p": 3, "d": 9, "kdim": 4, "nK": 432, "reps": 432, "N": 148, "fib": {"0": 284, "1": 148}, "G": 1, "orbits_G": 148, "sizes_G": {"1": 148}, "orbits_GxGr": 148, "sizes_GxGr": {"1": 148}, "transversal": {"lifted": 148, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 3, "torus_preserving": 4, "torus_all": 8, "orbits_GxT": 148, "sizes_GxT": {"1": 148}, "orbits_GxTloc": 148, "local_torus_sizes": {"4": 8, "8": 140}, "t": 6}

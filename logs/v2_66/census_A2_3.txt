@@ -1,0 +1,5 @@
+  kernel stage on cpu: 6 subspaces, subalgebras by dimension [1, 3, 1]
+  kernel stage: 2.1s
+A2 F_3: d=3, dim K=2, 8 kernel folds in 8 torus orbits; jobs=1
+  symmetry: 8 torus orbits in 8 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 2
+{"name": "A2", "p": 3, "d": 3, "kdim": 2, "nK": 8, "reps": 8, "N": 6, "fib": {"0": 2, "1": 6}, "G": 1, "orbits_G": 6, "sizes_G": {"1": 6}, "orbits_GxGr": 6, "sizes_GxGr": {"1": 6}, "transversal": {"lifted": 6, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 1, "torus_preserving": 2, "torus_all": 2, "orbits_GxT": 6, "sizes_GxT": {"1": 6}, "orbits_GxTloc": 6, "local_torus_sizes": {"2": 6}, "t": 2}

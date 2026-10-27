@@ -1,0 +1,90 @@
+A3: 65 equations in 21 unknowns, mode int
+LC 1 LM k22^2
+LC 1 LM k21*k22
+LC 1 LM k01*k22
+LC 1 LM k21^2
+LC 1 LM k20*k21
+LC 1 LM k12*k21
+LC 1 LM k11*k21
+LC 1 LM k10*k21
+LC 1 LM k02*k21
+LC 1 LM k00*k21
+LC 1 LM k20^2
+LC 1 LM k11*k20
+LC 1 LM k02*k20
+LC 1 LM k01*k20
+LC 1 LM k00*k20
+LC 1 LM k12^2
+LC 1 LM k11*k12
+LC 1 LM k10*k12
+LC 1 LM k01*k12
+LC 1 LM k11^2
+LC 1 LM k10*k11
+LC 1 LM k02*k11
+LC 1 LM k01*k11
+LC 1 LM k10^2
+LC 1 LM k02*k10
+LC 1 LM k01*k10
+LC 1 LM k00*k10
+LC 1 LM k02^2
+LC 1 LM k01*k02
+LC 1 LM k00*k02
+LC 1 LM k01^2
+LC 1 LM k00*k01
+LC 1 LM k00^2
+LC 1 LM k12*k20*k22
+LC 1 LM k10*k20*k22
+LC 1 LM k02*k12*k22
+LC 1 LM k00*k12*k22
+QDIM 0 VDIM 23
+POINTS 23
+RAD 1 k 1 : k22^2-k22
+RAD 2 k 1 : k21*k22
+RAD 3 k 1 : k01*k22
+RAD 4 k 1 : k21^2-k21
+RAD 5 k 1 : k20*k21
+RAD 6 k 1 : k12*k21
+RAD 7 k 1 : k11*k21-k21
+RAD 8 k 1 : k10*k21
+RAD 9 k 1 : k02*k21
+RAD 10 k 1 : k00*k21
+RAD 11 k 1 : k20^2+2*k20*k22-k20
+RAD 12 k 1 : k11*k20
+RAD 13 k 1 : k02*k20
+RAD 14 k 1 : k01*k20
+RAD 15 k 1 : k00*k20+k20*k22-k20
+RAD 16 k 1 : k12^2-2*k12*k22+k12
+RAD 17 k 1 : k11*k12
+RAD 18 k 1 : k10*k12-k12*k20+k12*k22-k12
+RAD 19 k 1 : k01*k12
+RAD 20 k 1 : k11^2-k11
+RAD 21 k 1 : k10*k11
+RAD 22 k 1 : k02*k11
+RAD 23 k 1 : k01*k11-k01
+RAD 24 k 1 : k10^2+2*k12*k20-k10
+RAD 25 k 1 : k02*k10+k12*k22-k12
+RAD 26 k 1 : k01*k10
+RAD 27 k 1 : k00*k10+k12*k20-k10
+RAD 28 k 1 : k02^2-2*k02*k22+k02
+RAD 29 k 1 : k01*k02
+RAD 30 k 1 : k00*k02+k02*k22-k02
+RAD 31 k 1 : k01^2-k01
+RAD 32 k 1 : k00*k01
+RAD 33 k 1 : k00^2-k00
+RAD 34 k 1 : k12*k20*k22-k12*k20
+RAD 35 k 1 : k10*k20*k22+k12*k20
+RAD 36 k 1 : k02*k12*k22-k02*k12+k12*k22-k12
+RAD 37 k 1 : k00*k12*k22-k00*k12-k12*k22+k12
+RAD 38 k 1 : k00^3-k00
+RAD 39 k 1 : k01^3-k01
+RAD 40 k 1 : k02^3-k02
+RAD 41 k 1 : k10^3-k10
+RAD 42 k 1 : k11^3-k11
+RAD 43 k 1 : k12^3-k12
+RAD 44 k 1 : k20^3-k20
+RAD 45 k 1 : k21^3-k21
+RAD 46 k 1 : k22^3-k22
+RLC 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+RVDIM 23 RDIM 0
+DONE
+ 

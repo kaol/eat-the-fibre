@@ -49,6 +49,8 @@ QUIVERS.update({
     'S_tgtfork': (4, [(0, 1), (1, 2), (1, 3)]),
     'S_srcboth': (4, [(0, 1), (0, 2), (3, 1)]),
     'S_short_c4': (4, [(0, 1), (2, 1), (0, 2), (2, 3)]),
+    'A5': (5, [(0, 1), (1, 2), (2, 3), (3, 4)]),
+    'S_short_tail': (4, [(0, 1), (2, 1), (0, 2), (1, 3)]),
     'two_pairs': (3, [(0, 1), (0, 1), (1, 2), (1, 2)]),                 # 1⇉2⇉3
     'two_pairs_sep': (4, [(0, 1), (0, 1), (1, 2), (2, 3), (2, 3)]),     # 1⇉2→3⇉4
     'pair_after3': (5, [(0, 1), (0, 1), (1, 2), (2, 3), (3, 4)]),       # 1⇉2→3→4→5
@@ -331,7 +333,7 @@ def symmetry_plan(ctx, reps, phis):
                 tg_new, first = np.unique(tg_new, return_index=True); par_new = par_new[first]
                 root[tg_new] = r0; par[tg_new] = par_new; pgen[tg_new] = gi_; ptor[tg_new] = imgs_tl[gi_][1][par_new]
                 bfs.append(tg_new); nxt.append(tg_new)
-            frontier = np.concatenate(nxt)
+            frontier = np.concatenate(nxt) if nxt else np.zeros(0, np.int64)   # no generators: quiver without parallel arrows
     Lh = {}; trans = {}
     for blk in bfs:                                                      # parents precede children in BFS order
         for r in blk:

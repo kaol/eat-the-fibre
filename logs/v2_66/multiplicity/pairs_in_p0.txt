@@ -1,0 +1,4 @@
+pairs_in: 345 equations in 39 unknowns, mode p=0
+PDIM 1
+DONE
+ 

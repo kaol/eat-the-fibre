@@ -1,0 +1,5 @@
+  kernel stage on cpu: 212 subspaces, subalgebras by dimension [1, 15, 25, 10, 1]
+  kernel stage: 2.2s
+S_short_c4 F_3: d=10, dim K=4, 432 kernel folds in 432 torus orbits; jobs=1
+  symmetry: 432 torus orbits in 432 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 2
+{"name": "S_short_c4", "p": 3, "d": 10, "kdim": 4, "nK": 432, "reps": 432, "N": 99, "fib": {"0": 333, "1": 99}, "G": 1, "orbits_G": 99, "sizes_G": {"1": 99}, "orbits_GxGr": 99, "sizes_GxGr": {"1": 99}, "transversal": {"lifted": 99, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 4, "torus_preserving": 2, "torus_all": 16, "orbits_GxT": 99, "sizes_GxT": {"1": 99}, "orbits_GxTloc": 99, "local_torus_sizes": {"4": 1, "8": 18, "16": 80}, "t": 9}

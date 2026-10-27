@@ -1,0 +1,8 @@
+pair_srcboth: d = 8, kdim = 5; Δ: rank 3 = d − kdim: True; elementary divisors [1]
+Kmat: integral, in ker Δ over ℤ; gcd of maximal minors 1 (1: saturated basis, rank kdim mod every p)
+B = [Kmat | e_C], C = [('p', (0,)), ('p', (2,)), ('p', (3,))]: det B = -1
+census G (2 parameters over ℤ): Φ is multiplicative: True; Δ-compatible as an identity over ℤ[g]: True
+Der_Δ basis (dim 2) = integral combinations of the tangents of G at 1: True (so mod every p the pipeline's 𝔥 basis lies in Lie G_p)
+class weightings φ_w: algebra automorphisms over ℤ[w^±1]: True
+Δ ∘ φ_w = (φ_w ⊗ φ_w) ∘ Δ_w over ℤ[w]: True
+Δ_c ∘ Φ = (Φ ⊗ Φ) ∘ Δ_c for every class c over ℤ[g]: True; Φ φ_w = φ_w Φ: True

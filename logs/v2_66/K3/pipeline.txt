@@ -1,0 +1,28 @@
+K3 V = 00,00: presolved to 193 equations in 14 coordinates; 5 components; dim Der = 12, dim Der_Δ = 6, classes 1; t = 3s
+  component 1: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 20s
+  component 2: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 35s
+  component 3: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 41s
+  component 4: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 47s
+  component 5: dim 0 (points)
+K3 V = 10,00: presolved to 144 equations in 12 coordinates; 3 components; dim Der = 12, dim Der_Δ = 6, classes 1; t = 2s
+  component 1: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 181s
+  component 2: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 182s
+  component 3: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 183s
+K3 V = 00,01: presolved to 144 equations in 12 coordinates; 3 components; dim Der = 12, dim Der_Δ = 6, classes 1; t = 1s
+  component 1: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 125s
+  component 2: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 126s
+  component 3: dim 2; W_Z = [[1]]; finitely many orbits: True; t = 126s
+K3 V = 10,01: presolved to 73 equations in 10 coordinates; 5 components; dim Der = 12, dim Der_Δ = 6, classes 1; t = 1s
+  component 1: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 7s
+  component 2: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 12s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 14s
+  component 5: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 17s
+K3 V = 10,10: presolved to 130 equations in 10 coordinates; 3 components; dim Der = 12, dim Der_Δ = 6, classes 1; t = 1s
+  component 1: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 8s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 10s
+K3 V = 01,01: presolved to 130 equations in 10 coordinates; 3 components; dim Der = 12, dim Der_Δ = 6, classes 1; t = 1s
+  component 1: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 7s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1]]; finitely many orbits: True; t = 10s

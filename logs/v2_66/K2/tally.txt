@@ -1,0 +1,7 @@
+00,00                    PASS       3 components (2 pass, 1 points)  [pipeline.txt]
+10,00                    PASS       2 components (2 pass, 0 points)  [pipeline.txt]
+00,01                    PASS       2 components (2 pass, 0 points)  [pipeline.txt]
+10,01                    PASS       3 components (2 pass, 1 points)  [pipeline.txt]
+10,10                    PASS       2 components (1 pass, 1 points)  [pipeline.txt]
+01,01                    PASS       2 components (1 pass, 1 points)  [pipeline.txt]
+blocks 6: PASS 6, FAIL 0, UNRESOLVED 0; components/leaf primes checked 14

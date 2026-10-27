@@ -1,0 +1,30 @@
+K4: 263 equations in 31 unknowns, mode int
+LC 1 LM k10*k11
+LC 1 LM k10^2
+LC 1 LM k01*k10
+LC 1 LM k00*k10
+LC 1 LM k01^2
+LC 1 LM k00*k01
+LC 1 LM k00^2
+LC 1 LM k11^3
+LC 1 LM k01*k11^2
+LC 1 LM k00*k11^2
+QDIM 0 VDIM 8
+POINTS 6
+RAD 1 k 2 : k11^2-k11
+RAD 2 k 1 : k10*k11
+RAD 3 k 2 : k01*k11-k01
+RAD 4 k 2 : k10^2-k10
+RAD 5 k 1 : k01*k10
+RAD 6 k 2 : k00*k10-k10
+RAD 7 k 2 : k01^2-k01
+RAD 8 k 1 : k00*k01
+RAD 9 k 2 : k00^2-k00
+RAD 10 k 2 : k00^3-k00
+RAD 11 k 2 : k01^3-k01
+RAD 12 k 2 : k10^3-k10
+RAD 13 k 2 : k11^3-k11
+RLC 1 1 1 1 1 1 1 1 1 
+RVDIM 6 RDIM 0
+DONE
+ 

@@ -10,3 +10,7 @@ results_v224.jsonl
 logs/*_container.log
 !data/results.jsonl
 *.kernel.npz
+logs/v2_66/*/scratch/
+logs/v2_66/*/certs.jsonl
+logs/v2_66/*/certs.jsonl.tmp
+logs/v2_66/multiplicity/*_tmp*

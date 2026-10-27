@@ -1,0 +1,8 @@
+vertex block  | F_3: folds, G-orb, loc | deg est | loc constant
+00 00         |      334    7    7 | None | True
+00 01         |      126    5    5 | None | True
+01 01         |      190    5    5 | None | True
+10 00         |      126    5    5 | None | True
+10 01         |      334    7    7 | None | True
+10 10         |      190    5    5 | None | True
+local-torus orbits per prime: {3: 34}

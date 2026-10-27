@@ -1,0 +1,8 @@
+pair_after → pair_before: σ = (2, 1, 0), α = [0, 1, 2]; anti-isomorphism True; Δ' r = τ (r⊗r) Δ True
+q = 3: 71 G-orbit representatives of pair_after mapped; non-folds of pair_before: 0; local-torus classes of pair_after: 71
+pair_srcout → pair_tgtin: σ = (1, 0, 2), α = [0, 1, 2]; anti-isomorphism True; Δ' r = τ (r⊗r) Δ True
+q = 3: 105 G-orbit representatives of pair_srcout mapped; non-folds of pair_tgtin: 0; local-torus classes of pair_srcout: 101
+K2 → K2: σ = (1, 0), α = [0, 1]; anti-isomorphism True; Δ' r = τ (r⊗r) Δ True
+K3 → K3: σ = (1, 0), α = [0, 1, 2]; anti-isomorphism True; Δ' r = τ (r⊗r) Δ True
+pair_mid → pair_mid: σ = (3, 2, 1, 0), α = [0, 1, 3, 2]; anti-isomorphism True; Δ' r = τ (r⊗r) Δ True
+pair_srcboth → pair_srcboth: σ = (1, 0, 3, 2), α = [0, 1, 3, 2]; anti-isomorphism True; Δ' r = τ (r⊗r) Δ True

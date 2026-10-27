@@ -1,0 +1,29 @@
+A3 ⇄ pair_after: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 23 G-orbit representatives of A3 lifted; non-folds of pair_after: 0; vertex blocks kept: True
+A3 ⇄ K3_after: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 23 G-orbit representatives of A3 lifted; non-folds of K3_after: 0; vertex blocks kept: True
+S_srcout ⇄ pair_srcout: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 27 G-orbit representatives of S_srcout lifted; non-folds of pair_srcout: 0; vertex blocks kept: True
+S_short ⇄ pairs_in_short: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 21 G-orbit representatives of S_short lifted; non-folds of pairs_in_short: 0; vertex blocks kept: True
+S_short ⇄ triple_pair_in_short: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 21 G-orbit representatives of S_short lifted; non-folds of triple_pair_in_short: 0; vertex blocks kept: True
+A4 ⇄ pair_mid: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 100 G-orbit representatives of A4 lifted; non-folds of pair_mid: 0; vertex blocks kept: True
+A4 ⇄ pair_after2: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 100 G-orbit representatives of A4 lifted; non-folds of pair_after2: 0; vertex blocks kept: True
+S_tgtfork ⇄ pair_tgtfork: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+S_srcboth ⇄ pair_srcboth: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+S_short_c4 ⇄ pairs_in_short_c4: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+S_in ⇄ pairs_in: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+A2 ⇄ K2: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+A5 ⇄ pair_after3: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 563 G-orbit representatives of A5 lifted; non-folds of pair_after3: 0; vertex blocks kept: True
+S_short_tail ⇄ pairs_in_short_tail: {'pi_hom': True, 'iota_hom': True, 'pi_coalg': True, 'iota_coalg': True, 'pi_iota_id': True}
+q = 3: 90 G-orbit representatives of S_short_tail lifted; non-folds of pairs_in_short_tail: 0; vertex blocks kept: True
+q = 3: 148 G-orbit representatives of S_tgtfork lifted; non-folds of pair_tgtfork: 0; vertex blocks kept: True
+q = 3: 123 G-orbit representatives of S_srcboth lifted; non-folds of pair_srcboth: 0; vertex blocks kept: True
+q = 3: 99 G-orbit representatives of S_short_c4 lifted; non-folds of pairs_in_short_c4: 0; vertex blocks kept: True
+q = 3: 6 G-orbit representatives of A2 lifted; non-folds of K2: 0; vertex blocks kept: True
+q = 3: 27 G-orbit representatives of S_in lifted; non-folds of pair_tgtin: 0; vertex blocks kept: True
+q = 3: 27 G-orbit representatives of S_in lifted; non-folds of pairs_in: 0; vertex blocks kept: True

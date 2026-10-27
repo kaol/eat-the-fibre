@@ -1,0 +1,38 @@
+{
+ "quiver": "K3_after",
+ "integral": {
+  "snf1": true,
+  "saturated": true,
+  "detB": "1",
+  "group_identities": true
+ },
+ "vertex": {
+  "arrows": "0,3",
+  "zero_dim": true,
+  "points": 23,
+  "unit_LC": true,
+  "radical": true,
+  "point_ideal_unit_LC": true,
+  "point_ideal_vdim": 23
+ },
+ "pipeline": {
+  "tally": "blocks 23: PASS 23, FAIL 0, UNRESOLVED 0; components/leaf primes checked 75",
+  "case_split_blocks": []
+ },
+ "pivots": {
+  "1": 684,
+  "-1": 526
+ },
+ "branch_consts": [],
+ "goodprimes": {
+  "strata": 21,
+  "claims": 1073,
+  "candidates": {
+   "2": 7,
+   "3": 4
+  },
+  "exceptional": "[]",
+  "cross_check_unresolved": 0
+ },
+ "bound_log10": 53.6
+}
