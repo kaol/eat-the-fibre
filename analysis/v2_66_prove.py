@@ -58,9 +58,29 @@ open(os.path.join(out, 'blocks_census_format.txt'), 'w').write('vertex block |\n
     ' '.join(r.replace('m', '-1') for r in b.split(',')) + ' | 0 0 0\n' for b in blocks))
 # 3
 cert = os.path.join(out, 'certs.jsonl')
-if os.path.exists(cert): os.remove(cert)
-plog = open(os.path.join(out, 'pipeline.txt'), 'w'); reruns = []
+RESUME = os.environ.get('RESUME') == '1'          # keep finished blocks (a turn end kills the run; rerun with RESUME=1)
+done_blocks = set()
+if RESUME and os.path.exists(cert):
+    good = []
+    for l in open(cert):
+        try: r = json.loads(l); good.append(l if l.endswith('\n') else l + '\n')
+        except ValueError: break
+    open(cert, 'w').write(''.join(good))
+    recs = [json.loads(l) for l in good]
+    for b in {r['block'] for r in recs}:
+        st = [r for r in recs if r['block'] == b and r['kind'] == 'stratum']
+        if st and all(sum(1 for r in recs if r['block'] == b and r['leaf'] == x['leaf'] and r['kind'] != 'stratum') == x.get('ncomp', 0) for x in st):
+            done_blocks.add(b)
+    keep = [r for r in recs if r['block'] in done_blocks]
+    open(cert, 'w').write(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in keep))
+    old = open(os.path.join(out, 'pipeline.txt')).read() if os.path.exists(os.path.join(out, 'pipeline.txt')) else ''
+    chunks = re.split(r'(?m)^(?=\S+ V = )', old)
+    kept = [c for c in chunks if (m := re.match(r'\S+ V = (\S+?):', c)) and m.group(1) in done_blocks]
+    open(os.path.join(out, 'pipeline.txt'), 'w').write(''.join(kept))
+elif os.path.exists(cert): os.remove(cert)
+plog = open(os.path.join(out, 'pipeline.txt'), 'a' if RESUME else 'w'); reruns = []
 for b in blocks:
+    if b in done_blocks: continue
     for mode in ({}, {'BRANCH': '1', 'FOLD_INTEGRAL': '1'}):
         tmpc = cert + '.tmp'
         if os.path.exists(tmpc): os.remove(tmpc)

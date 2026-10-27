@@ -18,3 +18,11 @@ the q = 3 censuses of pair_before and pair_mid started but not finished):
     bijection Folds(Q) → Folds(Q^op) compatible with the census group and the weightings. pair_before = pair_after^op,
     so its q = 3 census has 71 local-torus classes (pair_after's); pair_tgtin = pair_srcout^op (both 101, already known).
 86. The vertex blocks of pair_before and pair_mid at q = 3 are exactly the vertex-ideal points (23 and 100).
+
+Added after seeing that the vertex ideals of K2/K3, pair_after/K3_after, pair_srcout/K3_srcout and Q₀/triple_pair_in_short
+coincide (same strong Gröbner basis leading terms over ℤ, same vdim, same points), before computing any of the following:
+
+87. Multiplicity independence of the vertex step: for every class of size m ≥ 2, the vertex ideal over ℤ (leading terms
+    of the strong Gröbner basis, vdim, points) does not depend on m. Tested on K4 (vs K2), K3_before (vs pair_before),
+    K3_tgtin (vs pair_tgtin), K3_after2, K3_mid, K3_tgtfork, K3_srcboth (vs the pair_ versions).
+88. Control: with a class of size 1 (A2 = 1→2 vs K2; A3 = 1→2→3 vs pair_after) the vertex ideal differs.
