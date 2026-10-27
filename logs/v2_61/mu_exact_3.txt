@@ -1,0 +1,7 @@
+q = 3 dump: 388 G-orbit representatives are folds over ℚ; their λ = 1 μ-fibres:
+  affine dim 0, identity lift (μ = 0) absent: 3
+  affine dim 0, identity lift (μ = 0) present: 224
+  affine dim 1, identity lift (μ = 0) present: 17
+  affine dim 2, identity lift (μ = 0) present: 1
+  empty, identity lift (μ = 0) absent: 143
+non-affine fibres: []
