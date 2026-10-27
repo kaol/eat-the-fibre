@@ -9,3 +9,8 @@ Q₀ → Q₁ all have rank 1.
 76. In characteristic 0, every irreducible component of every stratum of Q₁ outside the 6 blocks whose corner is not a
     Q₀ block is J-preserving or kQ-preserving on all of it (analysis/v2_63_kinds.py); the components in the 6 blocks are
     mixed, and P has rank ≤ 1 on all of them.
+
+## Outcome
+
+- **76 held**: 234 split, 98 J-preserving, 88 kQ-preserving, and 6 mixed components, the mixed ones exactly in the 6
+  cornerless blocks, each with rank ≤ 1 identically (logs/v2_63/kinds_q1.txt).

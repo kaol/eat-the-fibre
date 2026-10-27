@@ -1,0 +1,21 @@
+K2 → pair_after
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 16
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 3
+K2 → pair_srcout
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 20
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 12
+pair_after → pair_after2
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 61
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 36
+pair_after → pair_tgtfork
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 79
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 38
+K3 → K3_after
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 28
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 3
+K3 → K3_srcout
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 35
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 23
+pairs_in_short → pairs_in_short_tail
+    ('J-kind λ=0', 'P_J = 0', 'ξ∘P̄ = ξ', 'ξ multiplicative on im P̄') 276
+    ('Q-kind λ=0', 'P_J = 0', '−y idempotent', 'y ∈ im P̄', 'y ∈ K', 'Y(J) ⊆ im P̄') 27

@@ -1,0 +1,9 @@
+K2 → pair_after : neither classes 2 ; ranks {frozenset({1}): 2}
+K2 → pair_srcout : neither classes 7 ; ranks {frozenset({1}): 2, frozenset({2}): 5}
+K2 → pair_tgtin : neither classes 7 ; ranks {frozenset({1}): 2, frozenset({2}): 5}
+pair_after → pair_after2 : neither classes 22 ; ranks {frozenset({1}): 10, frozenset({2}): 10, frozenset({4}): 2}
+pair_after → pair_tgtfork : neither classes 40 ; ranks {frozenset({1}): 10, frozenset({2}): 22, frozenset({3}): 2, frozenset({4}): 3, frozenset({9}): 3}
+pair_srcout → pair_srcboth : neither classes 37 ; ranks {frozenset({1}): 10, frozenset({2}): 22, frozenset({3}): 2, frozenset({4}): 3}
+K3 → K3_after : neither classes 2 ; ranks {frozenset({1}): 2}
+K3 → K3_srcout : neither classes 16 ; ranks {frozenset({1}): 2, frozenset({2}): 7, frozenset({3}): 7}
+pairs_in_short → pairs_in_short_tail : neither classes 16 ; ranks {frozenset({1}): 16}
