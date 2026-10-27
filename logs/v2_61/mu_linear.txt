@@ -1,0 +1,22 @@
+000,000,000: 333 fold equations of μ-degree ≥ 2: 333 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+000,000,001: 204 fold equations of μ-degree ≥ 2: 204 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+000,001,001: 248 fold equations of μ-degree ≥ 2: 248 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+000,010,000: 49 fold equations of μ-degree ≥ 2: 49 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+000,010,001: 49 fold equations of μ-degree ≥ 2: 49 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+000,010,010: 0 fold equations of μ-degree ≥ 2: 0 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+001,000,001: 206 fold equations of μ-degree ≥ 2: 206 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+001,001,001: 248 fold equations of μ-degree ≥ 2: 248 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+001,010,001: 49 fold equations of μ-degree ≥ 2: 49 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+010,010,000: 0 fold equations of μ-degree ≥ 2: 0 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+010,010,010: 0 fold equations of μ-degree ≥ 2: 0 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,000,000: 455 fold equations of μ-degree ≥ 2: 455 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,000,001: 220 fold equations of μ-degree ≥ 2: 220 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,000,100: 144 fold equations of μ-degree ≥ 2: 144 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,001,001: 252 fold equations of μ-degree ≥ 2: 252 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,010,000: 49 fold equations of μ-degree ≥ 2: 49 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,010,001: 49 fold equations of μ-degree ≥ 2: 49 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,010,010: 0 fold equations of μ-degree ≥ 2: 0 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,010,100: 21 fold equations of μ-degree ≥ 2: 21 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,100,000: 201 fold equations of μ-degree ≥ 2: 201 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+100,100,100: 206 fold equations of μ-degree ≥ 2: 206 in L, 0 in √L, 0 neither -> the λ = 1 lift conditions are linear in μ at every point of the stratum
+TALLY {'linear': 21}

@@ -1,0 +1,119 @@
+000,000,000 component 1 (dim 0): generic μ-fibre affine dim 0, identity lift present
+000,000,000 component 2 (dim 2): generic μ-fibre empty
+000,000,000 component 3 (dim 2): generic μ-fibre empty
+000,000,000 component 4 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,000,000 component 5 (dim 3): generic μ-fibre empty
+000,000,000 component 6 (dim 2): generic μ-fibre empty
+000,000,000 component 7 (dim 2): generic μ-fibre empty
+000,000,000 component 8 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,000,000 component 9 (dim 3): generic μ-fibre empty
+000,000,000 component 10 (dim 5): generic μ-fibre empty
+000,000,000 component 11 (dim 5): generic μ-fibre empty
+000,000,000 component 12 (dim 5): generic μ-fibre affine dim 0, identity lift present
+000,000,000 component 13 (dim 5): generic μ-fibre empty
+000,000,000 component 14 (dim 5): generic μ-fibre empty
+000,000,001 component 1 (dim 1): generic μ-fibre affine dim 0, identity lift present
+000,000,001 component 2 (dim 3): generic μ-fibre empty
+000,000,001 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,000,001 component 4 (dim 1): generic μ-fibre affine dim 0, identity lift present
+000,000,001 component 5 (dim 4): generic μ-fibre empty
+000,000,001 component 6 (dim 4): generic μ-fibre affine dim 0, identity lift present
+000,001,001 component 1 (dim 1): generic μ-fibre affine dim 0, identity lift present
+000,001,001 component 2 (dim 1): generic μ-fibre affine dim 0, identity lift present
+000,001,001 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,001,001 component 4 (dim 4): generic μ-fibre affine dim 0, identity lift present
+000,010,000 component 1 (dim 2): generic μ-fibre affine dim 0, identity lift present
+000,010,000 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,010,000 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,010,000 component 4 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,010,001 component 1 (dim 0): generic μ-fibre affine dim 0, identity lift present
+000,010,001 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+000,010,001 component 3 (dim 2): generic μ-fibre affine dim 0, identity lift present
+000,010,001 component 4 (dim 2): generic μ-fibre empty
+000,010,001 component 5 (dim 4): generic μ-fibre affine dim 0, identity lift present
+000,010,001 component 6 (dim 4): generic μ-fibre empty
+000,010,010 component 1 (dim 1): generic μ-fibre empty
+000,010,010 component 2 (dim 1): generic μ-fibre empty
+000,010,010 component 3 (dim 3): generic μ-fibre empty
+000,010,010 component 4 (dim 4): generic μ-fibre empty
+001,000,001 component 1 (dim 2): generic μ-fibre affine dim 0, identity lift present
+001,000,001 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,000,001 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,000,001 component 4 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,001,001 component 1 (dim 0): generic μ-fibre affine dim 0, identity lift present
+001,001,001 component 2 (dim 2): generic μ-fibre empty
+001,001,001 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,001,001 component 4 (dim 2): generic μ-fibre empty
+001,001,001 component 5 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,001,001 component 6 (dim 5): generic μ-fibre empty
+001,001,001 component 7 (dim 5): generic μ-fibre affine dim 0, identity lift present
+001,010,001 component 1 (dim 2): generic μ-fibre affine dim 0, identity lift present
+001,010,001 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,010,001 component 3 (dim 3): generic μ-fibre empty
+001,010,001 component 4 (dim 3): generic μ-fibre affine dim 0, identity lift present
+001,010,001 component 5 (dim 5): generic μ-fibre affine dim 0, identity lift present
+001,010,001 component 6 (dim 5): generic μ-fibre empty
+010,010,000 component 1 (dim 1): generic μ-fibre empty
+010,010,000 component 2 (dim 3): generic μ-fibre empty
+010,010,000 component 3 (dim 1): generic μ-fibre empty
+010,010,000 component 4 (dim 4): generic μ-fibre empty
+010,010,010 component 1 (dim 0): generic μ-fibre empty
+010,010,010 component 2 (dim 2): generic μ-fibre empty
+010,010,010 component 3 (dim 3): generic μ-fibre empty
+010,010,010 component 4 (dim 2): generic μ-fibre empty
+010,010,010 component 5 (dim 3): generic μ-fibre empty
+010,010,010 component 6 (dim 5): generic μ-fibre empty
+010,010,010 component 7 (dim 5): generic μ-fibre empty
+100,000,000 component 1 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,000,000 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,000,000 component 3 (dim 2): generic μ-fibre empty
+100,000,000 component 4 (dim 3): generic μ-fibre empty
+100,000,000 component 5 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,000,000 component 6 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,000,001 component 1 (dim 4): generic μ-fibre affine dim 0, identity lift present
+100,000,001 component 2 (dim 5): generic μ-fibre affine dim 0, identity lift present
+100,000,001 component 3 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,000,001 component 4 (dim 4): generic μ-fibre affine dim 0, identity lift present
+100,000,100 component 1 (dim 2): generic μ-fibre affine dim 0, identity lift present
+100,000,100 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,001,001 component 1 (dim 6): generic μ-fibre affine dim 0, identity lift present
+100,001,001 component 2 (dim 6): generic μ-fibre affine dim 0, identity lift present
+100,001,001 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,001,001 component 4 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,010,000 component 1 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,010,000 component 2 (dim 4): generic μ-fibre empty
+100,010,000 component 3 (dim 4): generic μ-fibre affine dim 0, identity lift present
+100,010,000 component 4 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,010,000 component 5 (dim 3): generic μ-fibre empty
+100,010,000 component 6 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,010,001 component 1 (dim 4): generic μ-fibre empty
+100,010,001 component 2 (dim 4): generic μ-fibre empty
+100,010,001 component 3 (dim 4): generic μ-fibre empty
+100,010,001 component 4 (dim 3): generic μ-fibre affine dim 0
+100,010,001 component 5 (dim 3): generic μ-fibre empty
+100,010,001 component 6 (dim 3): generic μ-fibre empty
+100,010,001 component 7 (dim 4): generic μ-fibre affine dim 0, identity lift present
+100,010,001 component 8 (dim 5): generic μ-fibre affine dim 0, identity lift present
+100,010,001 component 9 (dim 2): generic μ-fibre empty
+100,010,001 component 10 (dim 4): generic μ-fibre empty
+100,010,001 component 11 (dim 4): generic μ-fibre empty
+100,010,001 component 12 (dim 0): generic μ-fibre affine dim 0, identity lift present
+100,010,001 component 13 (dim 2): generic μ-fibre empty
+100,010,001 component 14 (dim 2): generic μ-fibre empty
+100,010,001 component 15 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,010,001 component 16 (dim 3): generic μ-fibre empty
+100,010,010 component 1 (dim 2): generic μ-fibre empty
+100,010,010 component 2 (dim 4): generic μ-fibre empty
+100,010,010 component 3 (dim 4): generic μ-fibre empty
+100,010,010 component 4 (dim 0): generic μ-fibre empty
+100,010,010 component 5 (dim 2): generic μ-fibre empty
+100,010,010 component 6 (dim 2): generic μ-fibre empty
+100,010,100 component 1 (dim 2): generic μ-fibre affine dim 0, identity lift present
+100,010,100 component 2 (dim 3): generic μ-fibre empty
+100,010,100 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,100,000 component 1 (dim 1): generic μ-fibre affine dim 0, identity lift present
+100,100,000 component 2 (dim 3): generic μ-fibre affine dim 0, identity lift present
+100,100,100 component 1 (dim 0): generic μ-fibre affine dim 0, identity lift present
+100,100,100 component 2 (dim 2): generic μ-fibre empty
+100,100,100 component 3 (dim 3): generic μ-fibre affine dim 0, identity lift present
+TALLY {('affine dim 0', True): 60, ('empty', False): 57, ('affine dim 0', False): 1}
