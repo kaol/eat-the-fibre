@@ -4,7 +4,7 @@
 for three quivers, one at a time. This round runs the whole procedure end to end on every small unobstructed quiver in
 the census list, as a breadth and falsification test, and finds structure in its first step.
 - **Conjecture 3ᶜ is proved for 13 more quivers** (§1): K₂, K₃, the ten one-class quivers with 3 or 4 vertices,
-  and the five-vertex path 1⇉2→3→4→5 (563 vertex blocks). The fourteenth, 1⇛2⇇3 + 1→3, is
+  and the five-vertex 1⇉2→3→4→5 (563 vertex blocks). The fourteenth, 1⇛2⇇3 + 1→3, is
   certified in characteristic 0 except for two components of one vertex block, which need more memory than this
   container has (§1).
 - **Duality (proved, char-free).** Path reversal turns folds of Q into folds of Q^op, compatibly with the census
