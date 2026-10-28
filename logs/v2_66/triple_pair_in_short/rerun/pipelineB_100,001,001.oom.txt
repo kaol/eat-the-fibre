@@ -1,0 +1,6 @@
+triple_pair_in_short V = 100,001,001: 116 leaves (case-split presolve); t = 3020s
+leaf 1/116 (0 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 422 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3021s
+  component 1: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3032s
+  component 2: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3033s
+  component 3: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3039s

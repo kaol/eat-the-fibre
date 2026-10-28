@@ -3,8 +3,10 @@
 *v2.54–v2.65 proved Conjecture 3ᶜ (finitely many census classes, with a bound uniform in q, in every characteristic)
 for three quivers, one at a time. This round runs the whole procedure end to end on every small unobstructed quiver in
 the census list, as a breadth and falsification test, and finds structure in its first step.
-- **Conjecture 3ᶜ is proved for 12 more quivers** (§1): K₂, K₃ and the ten one-class quivers with 3 or 4 vertices.
-  The thirteenth, 1⇛2⇇3 + 1→3, and the five-vertex 1⇉2→3→4→5 are still running (§1).
+- **Conjecture 3ᶜ is proved for 13 more quivers** (§1): K₂, K₃, the ten one-class quivers with 3 or 4 vertices,
+  and the five-vertex path 1⇉2→3→4→5 (563 vertex blocks). The fourteenth, 1⇛2⇇3 + 1→3, is
+  certified in characteristic 0 except for two components of one vertex block, which need more memory than this
+  container has (§1).
 - **Duality (proved, char-free).** Path reversal turns folds of Q into folds of Q^op, compatibly with the census
   group. So every theorem here also holds for the opposite quivers (§2).
 - **The collapse lemma (proved, char-free).** Collapsing every parallel class to one arrow is a retraction
@@ -23,7 +25,7 @@ later commits, each before its computation (one exception, see 85).
 
 | # | Statement | Status |
 |---|---|---|
-| 83 | On each of the 13 quivers: zero-dimensional vertex ideal, every component passes, no exceptional prime, so 3ᶜ holds uniformly | **held on the 12 finished quivers**; 1⇛2⇇3 + 1→3 still running: no genuine failure so far, two pipeline steps needed a rerun (§1) |
+| 83 | On each of the 13 quivers: zero-dimensional vertex ideal, every component passes, no exceptional prime, so 3ᶜ holds uniformly | **held on 12 of the 13**, and also on the added 1⇉2→3→4→5. **Open on 1⇛2⇇3 + 1→3:** 20 of 21 blocks pass and their specialisation claims hold at every prime. In the last block, 2 of 61 leaf components ran out of memory. No component failed the criterion anywhere (§1) |
 | 84 | The vertex blocks are the census blocks at q = 3 | **held** on all 12 quivers with saved q = 3 representatives (10 from v2.60, pair_before and pair_mid computed here): equal as sets |
 | 85 | Duality; pair_before has 71 classes at q = 3 | **held** (71). The duality is proved (§2). *Caveat:* the pair_before census had finished when the prediction was committed (same shell command), though I had not read it |
 | 86 | Vertex blocks of pair_before, pair_mid = census blocks | **held** (23, 100) |
@@ -62,6 +64,7 @@ For one quiver, the driver runs the scripts of v2.55–v2.59 in order:
 | 1→2⇉3→4 | 100 | 2 | 174 | 1194 | — | 41.4 | 257 |
 | 1⇉2, 2→3, 2→4 | 148 | 2 | 263 | 2142 | — | 43.1 | 414 |
 | 1⇉2, 1→3, 4→2 | 123 | 2 | 318 | 2071 | — | 15.3 | 485 |
+| 1⇉2→3→4→5 | 563 | 2 | 1262 | 8637 | — | 39.0 | 1770 |
 
 Every row passes every check:
 - a unimodular structure (Smith form 1, det B = ±1);
@@ -94,8 +97,42 @@ quiver by quiver. Three gaps showed up, and each was closed generally rather tha
    dim std(J) ≤ r before decomposing (`v2_55_pipeline.py`, same results and faster on small blocks). The driver
    treats a timeout as "try the case split", and the Singular timeout can be raised (SING_TMO).
 
-The cost is dominated by the largest blocks: the zero block of 1⇛2⇇3 + 1→3 alone took 45 minutes, with 23
+4. **Memory** (the container has about 6 GB). Three fixes:
+   - The specialisation step on the 567 strata of 1⇉2→3→4→5 was killed. It now runs in batches of blocks
+     (`v2_66_goodprimes_chunked.py`).
+   - Forked case-split leaves of a 3 GB parent were killed. The leaves are now written to disk (LEAF_DUMP) and run
+     one process each (`v2_66_run_leaves.py`).
+   - Two Singular computations remain (below).
+
+All the fixes above keep certificates in the same format and leave every passing result unchanged. The rerun of a
+1⇛2→3 block and of a 1⇉2→3→4→5 leaf gave identical verdicts. The chosen minors differ, which is expected because the
+pivot order changed.
+
+The cost is dominated by the largest blocks. The zero block of 1⇛2⇇3 + 1→3 alone took 45 minutes, with 23
 components up to dimension 8.
+
+**1⇉2→3→4→5** (a pair followed by three single arrows):
+- **Vertex step:** 563 vertex blocks, rechecked directly at p = 2.
+- **Pipeline:** 1262 components or leaf primes, all pass. One block was case split (5 leaves); its branch constants
+  are ±1.
+- **Specialisation:** 8637 specialisation claims, no candidate prime.
+- **Bound and census:** B ≈ 10^39. The census found 1770 classes at q = 3.
+
+**1⇛2⇇3 + 1→3** (`triple_pair_in_short/`; 3 + 2 parallel arrows, joined ends; census 752 at q = 3 and 5):
+- **Vertex step:** 21 vertex blocks, the same as Q₀'s (prediction 87). Unit leading coefficients.
+- **20 of the 21 blocks pass.** That is 180 components, including 7 points. Two blocks needed the gap fixes 2 and 3.
+- **Specialisation on those 20 blocks:** 3640 claims. The candidate primes are 2, 3, 5, 7, 13, 17, 19, 31, 37, 41,
+  47, 67, 173 and 587. All were checked directly, and every claim holds at each. One redundant full cross-check
+  (the zero block at p = 2) timed out; the targeted check at 2 passed.
+- **Block 100,001,001, default run.** Its 30 coordinates give 6 components. Five pass. Component 1 has dimension 10;
+  its cut at r = 6 exhausts memory in Singular.
+- **Block 100,001,001, case split.** It has 116 leaves; 95 are empty after saturation, and the rest carry 61
+  components. 59 pass. Two do not: leaf 114 (dimension 9, at r = 6) and leaf 116 (dimension 10, at r = 7). Both are
+  the same kind of component as component 1 (weighting rank 2), and both were killed for memory. Run alone, Singular
+  reached 6.1 GB after 60 minutes.
+
+So for 1⇛2⇇3 + 1→3 the char 0 finiteness theorem is open on exactly two irreducible components of one stratum.
+Nothing has failed the criterion; the computation is unfinished. Uniformity is proved on the other 20 strata.
 
 ## 2. Duality (proved; `analysis/v2_66_duality.py`, `duality.txt`)
 
@@ -238,7 +275,9 @@ modulus is precisely the failure of ker π-stability at the vertex level.
 
 1. **Prove S, or the inclusion VB(Q) ⊆ VB(Q^s), for unobstructed Q.** Start with one class (Conjecture 3ᵖ's
    setting), where the vertex ideal's extra structure is visible in K₂ (vdim 8 vs 6).
-2. **Finish 1⇉2→3→4→5** (563 blocks; running: no failure in the first 424 blocks).
+2. **Finish 1⇛2⇇3 + 1→3**: two components of block 100,001,001 (leaves 114 and 116, dimensions 9 and 10, at
+   r = 6 and 7) need a machine with more than 6 GB for Singular. Inputs: `rerun/leaves_100,001,001.json.xz`, and
+   `analysis/v2_66_run_leaves.py … 114 116`.
 3. **Program 3**, as carried from v2.65: finiteness in Lemma B, the mixed kind, the λ = 1 bound. Conjecture S gives
    the leaf step a base point in every stratum.
 
@@ -247,11 +286,16 @@ modulus is precisely the failure of ker π-stability at the vertex level.
 - **analysis/:**
   - v2_66_prove.py (end-to-end driver, resumable with RESUME=1);
   - v2_66_vertex_badprimes.py, v2_66_table.py;
-  - v2_66_duality.py, v2_66_retraction.py, v2_66_multiplicity.py, v2_66_kerpi.py.
+  - v2_66_duality.py, v2_66_retraction.py, v2_66_multiplicity.py, v2_66_kerpi.py;
+  - v2_66_goodprimes_chunked.py (specialisation in batches), v2_66_run_leaves.py (case-split leaves as separate
+    processes).
 - **Changed:**
   - v2_53_block_census.py (one-prime input);
-  - v2_55_pipeline.py: numeric points to choose minors when no rational point is found, dim std(J) checked before
-    minAssGTZ, SING_TMO;
+  - v2_55_pipeline.py:
+    - numeric points to choose minors when no rational point is found;
+    - linear variables eliminated (elimpart) and dim std checked before minAssGTZ;
+    - sparsest pivot rows and columns for the minors;
+    - LEAF_DUMP / LEAF_LOAD / LEAVES (one leaf per process), COMPS, SING_TMO;
   - pcensus.py: multiplicity variants and simplifications (K4, A2–A5, K3_*, S_*), and symmetry_plan for quivers
     without parallel arrows (no group generators).
 - **logs/v2_66/:**

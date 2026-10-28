@@ -1,0 +1,286 @@
+triple_pair_in_short V = 100,001,001: 116 leaves (case-split presolve); t = 3068s
+leaf 1/116 (0 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 422 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3070s
+  component 1: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3080s
+  component 2: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3081s
+  component 3: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3086s
+leaf 2/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 422 equations in 18 coordinates; 1 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3103s
+  component 1: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3111s
+leaf 3/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 423 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3122s
+leaf 4/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 423 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3132s
+leaf 5/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 422 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3140s
+leaf 6/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 423 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3149s
+leaf 7/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 422 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3157s
+leaf 8/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 422 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3166s
+leaf 9/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 421 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3174s
+leaf 10/116 (0 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 428 equations in 16 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3183s
+  component 1: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3189s
+  component 2: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3191s
+  component 3: dim 4; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3193s
+leaf 11/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 437 equations in 17 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3201s
+  component 1: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3214s
+  component 2: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3218s
+  component 3: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3221s
+leaf 12/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 434 equations in 17 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3230s
+  component 1: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3242s
+  component 2: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3245s
+  component 3: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3248s
+leaf 13/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 442 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3257s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3278s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3284s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3289s
+leaf 14/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 476 equations in 17 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3300s
+  component 1: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3317s
+  component 2: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3320s
+  component 3: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3323s
+leaf 15/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 488 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3333s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3363s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3370s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3377s
+leaf 16/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 496 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3388s
+leaf 17/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 507 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3400s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3426s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3432s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3438s
+leaf 18/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 510 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3449s
+leaf 19/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 520 equations in 19 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3461s
+  component 1: dim 9; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3518s
+  component 2: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3528s
+  component 3: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3540s
+leaf 20/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 324 equations in 17 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3549s
+  component 1: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3565s
+  component 2: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3569s
+  component 3: dim 5; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3573s
+leaf 21/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3581s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3611s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3618s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3625s
+leaf 22/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 335 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3633s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3664s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3670s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3678s
+leaf 23/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 344 equations in 19 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3687s
+  component 1: dim 9; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3739s
+  component 2: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3752s
+  component 3: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 3765s
+leaf 24/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 324 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3772s
+leaf 25/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3779s
+leaf 26/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 335 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3786s
+leaf 27/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 344 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3794s
+leaf 28/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 324 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3802s
+leaf 29/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3809s
+leaf 30/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 335 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3816s
+leaf 31/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 344 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3823s
+leaf 32/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 323 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3831s
+leaf 33/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3838s
+leaf 34/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 334 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3846s
+leaf 35/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 343 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3853s
+leaf 36/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 324 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3861s
+leaf 37/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3868s
+leaf 38/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 335 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3875s
+leaf 39/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 344 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3883s
+leaf 40/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 323 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3891s
+leaf 41/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3898s
+leaf 42/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 334 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3907s
+leaf 43/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 343 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3914s
+leaf 44/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 323 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3921s
+leaf 45/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3928s
+leaf 46/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 334 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3935s
+leaf 47/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 343 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3942s
+leaf 48/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 322 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3949s
+leaf 49/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 331 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3956s
+leaf 50/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3964s
+leaf 51/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 342 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3971s
+leaf 52/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 324 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3978s
+leaf 53/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3986s
+leaf 54/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 335 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3993s
+leaf 55/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 344 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4001s
+leaf 56/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 323 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4008s
+leaf 57/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4015s
+leaf 58/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 334 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4022s
+leaf 59/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 343 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4029s
+leaf 60/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 323 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4036s
+leaf 61/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4043s
+leaf 62/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 334 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4050s
+leaf 63/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 343 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4057s
+leaf 64/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 322 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4064s
+leaf 65/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 331 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4071s
+leaf 66/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4078s
+leaf 67/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 342 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4085s
+leaf 68/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 323 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4092s
+leaf 69/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4099s
+leaf 70/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 334 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4106s
+leaf 71/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 343 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4112s
+leaf 72/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 322 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4119s
+leaf 73/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 331 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4126s
+leaf 74/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4133s
+leaf 75/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 342 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4139s
+leaf 76/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 322 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4146s
+leaf 77/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 331 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4153s
+leaf 78/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 333 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4160s
+leaf 79/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 342 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4167s
+leaf 80/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 321 equations in 17 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4174s
+leaf 81/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 330 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4181s
+leaf 82/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 332 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4188s
+leaf 83/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 341 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4195s
+leaf 84/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 328 equations in 18 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4201s
+leaf 85/116 (3 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 339 equations in 19 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4208s
+leaf 86/116 (1 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 502 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4217s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4243s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4248s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4254s
+leaf 87/116 (2 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 517 equations in 19 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4262s
+  component 1: dim 9; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4314s
+  component 2: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4325s
+  component 3: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4336s
+leaf 88/116 (4 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 578 equations in 21 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4345s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4405s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4414s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4426s
+leaf 89/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 601 equations in 22 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4434s
+leaf 90/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 591 equations in 22 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4445s
+leaf 91/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 612 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4455s
+leaf 92/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 591 equations in 22 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4465s
+leaf 93/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 612 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4475s
+leaf 94/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 604 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4486s
+leaf 95/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 623 equations in 24 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4497s
+leaf 96/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 601 equations in 22 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4507s
+leaf 97/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 612 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4518s
+leaf 98/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 612 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4529s
+leaf 99/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 623 equations in 24 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4540s
+leaf 100/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 640 equations in 25 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4551s
+leaf 101/116 (5 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 612 equations in 22 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4562s
+leaf 102/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 635 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4572s
+leaf 103/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 627 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4581s
+leaf 104/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 647 equations in 24 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4592s
+leaf 105/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 627 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4602s
+leaf 106/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 647 equations in 24 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4612s
+leaf 107/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 638 equations in 24 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4623s
+  component 1: dim 9; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4774s
+  component 2: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4791s
+  component 3: dim 7; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 4815s
+leaf 108/116 (8 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 657 equations in 25 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4826s
+leaf 109/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 635 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4837s
+leaf 110/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 647 equations in 24 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4848s
+leaf 111/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 647 equations in 24 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4858s
+leaf 112/116 (8 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 657 equations in 25 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4868s
+leaf 113/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 674 equations in 26 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4879s
+leaf 114/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 684 equations in 26 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 4893s
+leaf 115/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 684 equations in 26 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 6471s
+leaf 116/116 (7 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 700 equations in 27 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 6500s
+triple_pair_in_short V = 100,001,001: all leaves done; FAILED leaves [(114, 9), (115, 9), (116, 9)]

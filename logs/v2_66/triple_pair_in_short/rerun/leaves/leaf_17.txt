@@ -1,0 +1,5 @@
+leaf 17/116 (3 inequations, loaded):
+triple_pair_in_short V = 100,001,001: presolved to 507 equations in 18 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 190s
+  component 1: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 217s
+  component 2: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 222s
+  component 3: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 228s

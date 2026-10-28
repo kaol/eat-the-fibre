@@ -1,0 +1,3 @@
+triple_pair_in_short V = 100,001,001: 116 leaves (case-split presolve); t = 3133s
+leaf 114/116 (6 inequations):
+triple_pair_in_short V = 100,001,001: presolved to 684 equations in 26 coordinates; 3 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 3141s

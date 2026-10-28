@@ -1,0 +1,6 @@
+triple_pair_in_short V = 100,001,001: presolved to 1064 equations in 30 coordinates; 6 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 233s
+  component 2: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 315s
+  component 3: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 396s
+  component 4: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 416s
+  component 5: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 427s
+  component 6: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 428s

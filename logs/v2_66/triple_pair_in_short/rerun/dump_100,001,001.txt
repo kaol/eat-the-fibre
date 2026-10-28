@@ -1,0 +1,2 @@
+triple_pair_in_short V = 100,001,001: 116 leaves (case-split presolve); t = 3215s
+leaves written to logs/v2_66/triple_pair_in_short/rerun/leaves_100,001,001.json

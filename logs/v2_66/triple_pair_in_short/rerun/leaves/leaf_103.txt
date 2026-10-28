@@ -1,0 +1,2 @@
+leaf 103/116 (6 inequations, loaded):
+triple_pair_in_short V = 100,001,001: presolved to 627 equations in 23 coordinates; 0 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 289s

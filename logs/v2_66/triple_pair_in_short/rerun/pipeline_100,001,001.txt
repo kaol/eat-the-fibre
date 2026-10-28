@@ -1,1 +1,7 @@
-triple_pair_in_short V = 100,001,001: presolved to 1064 equations in 30 coordinates; 6 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 561s
+triple_pair_in_short V = 100,001,001: presolved to 1064 equations in 30 coordinates; 6 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 229s
+  component 1: dim 10; W_Z = [[0, 1, 0], [1, 0, 1]]; FAILS at r = 6: singular timeout; t = 5770s
+  component 2: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 5835s
+  component 3: dim 8; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 5917s
+  component 4: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 5937s
+  component 5: dim 6; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 5951s
+  component 6: dim 2; W_Z = [[0, 1, 0], [1, 0, 1]]; finitely many orbits: True; t = 5952s

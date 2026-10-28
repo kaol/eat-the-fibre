@@ -1,0 +1,21 @@
+000,000,000 leaf 0: 23 components, 669 specialisation claims; candidate primes [2, 3, 5] (also checked directly: [2]); all claims hold at every candidate prime; cross-check unresolved at [(2, 'unresolved')]
+100,000,000 leaf 0: 9 components, 152 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+000,010,000 leaf 0: 6 components, 176 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+100,010,000 leaf 0: 10 components, 237 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+000,000,001 leaf 0: 10 components, 156 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+100,000,001 leaf 0: 6 components, 127 specialisation claims; candidate primes [2, 3, 5] (also checked directly: [2]); all claims hold at every candidate prime
+000,010,001 leaf 0: 9 components, 107 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+000,010,010 leaf 0: 6 components, 105 specialisation claims; candidate primes [2, 3, 5] (also checked directly: [2]); all claims hold at every candidate prime
+100,010,010 leaf 0: 10 components, 106 specialisation claims; candidate primes [2] (also checked directly: [2]); all claims hold at every candidate prime
+100,000,100 leaf 0: 3 components, 53 specialisation claims; candidate primes [2] (also checked directly: [2]); all claims hold at every candidate prime
+100,100,100 leaf 0: 5 components, 66 specialisation claims; candidate primes [] (also checked directly: [2]); all claims hold at every candidate prime
+100,010,100 leaf 0: 5 components, 80 specialisation claims; candidate primes [2, 3, 5] (also checked directly: [2]); all claims hold at every candidate prime
+100,100,000 leaf 0: 3 components, 44 specialisation claims; candidate primes [2] (also checked directly: [2]); all claims hold at every candidate prime
+001,000,001 leaf 0: 6 components, 213 specialisation claims; candidate primes [2, 3, 5] (also checked directly: [2]); all claims hold at every candidate prime
+001,010,001 leaf 0: 9 components, 191 specialisation claims; candidate primes [2, 3, 5, 7, 13, 17, 19, 31, 37, 41, 47, 67, 173, 587] (also checked directly: [2]); all claims hold at every candidate prime
+000,001,001 leaf 0: 6 components, 161 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+100,010,001 leaf 0: 26 components, 460 specialisation claims; candidate primes [] (also checked directly: [2]); all claims hold at every candidate prime; ['dim: unresolved (DIM 1 top 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \nDIM 1 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 \nDIM 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 )', 'parsed (111, 26, 323) claims, expected (161, 26, 323)']
+010,010,000 leaf 0: 6 components, 91 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+010,010,010 leaf 0: 11 components, 202 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+001,001,001 leaf 0: 11 components, 244 specialisation claims; candidate primes [2, 3] (also checked directly: [2]); all claims hold at every candidate prime
+EXCEPTIONAL []

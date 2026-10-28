@@ -14,3 +14,7 @@ logs/v2_66/*/scratch/
 logs/v2_66/*/certs.jsonl
 logs/v2_66/*/certs.jsonl.tmp
 logs/v2_66/multiplicity/*_tmp*
+logs/v2_66/*/rerun/leaves/scr*
+logs/v2_66/*/rerun/leaves/*.jsonl
+logs/v2_66/*/rerun/leaves_*.json
+logs/v2_66/triple_pair_in_short/rerun/certs*_100,001,001*.jsonl

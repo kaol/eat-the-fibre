@@ -112,7 +112,11 @@ for l in open(cert):
         bc |= set(map(tuple, r.get('branch_consts', [])))
 summ['pivots'] = dict(piv); summ['branch_consts'] = sorted(bc)
 # 4
-rc, txt = run([sys.executable, 'analysis/v2_58_goodprimes.py', cert, os.path.join(SCR, 'gp'), '--timeout', '2400', '--always', '2'], 'goodprimes.txt')
+# in batches (a single run on 1⇉2→3→4→5 was killed for memory); resumes from an existing goodprimes.txt when RESUME=1
+if not RESUME and os.path.exists(os.path.join(out, 'goodprimes.txt')): os.remove(os.path.join(out, 'goodprimes.txt'))
+run([sys.executable, 'analysis/v2_66_goodprimes_chunked.py', cert, os.path.join(SCR, 'gp'), os.path.join(out, 'goodprimes.txt'),
+     '--batch', '20', '--timeout', '2400', '--always', '2'], 'goodprimes_run.log')
+txt = open(os.path.join(out, 'goodprimes.txt')).read()
 cands = collections.Counter(); claims = 0; strata = 0
 for l in txt.splitlines():
     mm = re.match(r"^(\S+) leaf (\d+): \d+ components, (\d+) specialisation claims; candidate primes \[(.*?)\]", l)
@@ -120,8 +124,8 @@ for l in txt.splitlines():
         strata += 1; claims += int(mm.group(3))
         for p in mm.group(4).split(','):
             if p.strip(): cands[int(p)] += 1
-exc = re.search(r"EXCEPTIONAL (.*)", txt)
-summ['goodprimes'] = dict(strata=strata, claims=claims, candidates=dict(cands), exceptional=exc.group(1) if exc else 'unresolved',
+exc = (re.findall(r"EXCEPTIONAL (.*)", txt) or [None])[-1]
+summ['goodprimes'] = dict(strata=strata, claims=claims, candidates=dict(cands), exceptional=exc if exc else 'unresolved',
                           cross_check_unresolved=txt.count('cross-check unresolved'))
 # 5
 rc, txt = run([sys.executable, 'analysis/v2_58_bound.py', cert, Q], 'bound.txt')

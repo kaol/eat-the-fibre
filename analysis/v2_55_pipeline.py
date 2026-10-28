@@ -37,14 +37,34 @@ def cert(rec):
     if not CERT: return
     rec = dict(quiver=A.quiver, block=A.block, leaf=LEAF, **rec)
     with open(CERT, 'a') as fh: fh.write(json.dumps(rec) + "\n")
-if os.environ.get('BRANCH') == '1':
+def _leaf_parse(s_):
+    gl_ = {str(g): g for g in R.gens}
+    return R(sp.sympify(s_.replace('^', '**'), locals={k: sp.Symbol(k) for k in gl_}))
+if os.environ.get('LEAF_LOAD'):
+    # v2.66: one leaf of a case split written by LEAF_DUMP, run in a fresh process (forked leaf children of a large
+    # parent were killed for memory); LEAVES must name exactly one leaf
+    _D = json.load(open(os.environ['LEAF_LOAD'])); LEAF = int(os.environ['LEAVES'])
+    _rem, _subs, _nz = _D['leaves'][LEAF - 1]
+    rem = [_leaf_parse(e) for e in _rem]; subs = [(R.gens[[str(g) for g in R.gens].index(x)], _leaf_parse(v)) for x, v in _subs]
+    NZ = [_leaf_parse(e) for e in _nz]; A.out += f'_L{LEAF}'
+    fi.PIVOTS[:] = [tuple(p) for p in _D['pivots']]; fi.BRANCH_CONSTS |= {tuple(c) for c in _D['consts']}; fi.BRANCH_TAGS |= {tuple(c) for c in _D['tags']}
+    print(f"leaf {LEAF}/{len(_D['leaves'])} ({len(NZ)} inequations, loaded):", flush=True)
+elif os.environ.get('BRANCH') == '1':
     # v2.57: case-split presolve (fold_ideal.branch_presolve). The stratum is the union of the leaf varieties; each leaf
     # runs the rest of this script in a forked child, so every irreducible component of the stratum is among the
     # (saturated) leaf primes checked below. Leaf primes need not be components (one may lie in another leaf's).
     leaves = fi.branch_presolve(S)
     print(f"{A.quiver} V = {A.block}: {len(leaves)} leaves (case-split presolve); t = {time.time() - t0:.0f}s", flush=True)
+    if os.environ.get('LEAF_DUMP'):
+        json.dump(dict(leaves=[[[str(e) for e in r_], [[str(x), str(v)] for x, v in s_], [str(f) for f in n_]] for r_, s_, n_ in leaves],
+                       pivots=[list(p) for p in fi.PIVOTS], consts=sorted(fi.BRANCH_CONSTS), tags=sorted(fi.BRANCH_TAGS)),
+                  open(os.environ['LEAF_DUMP'], 'w'))
+        print("leaves written to", os.environ['LEAF_DUMP'], flush=True); sys.exit(0)
     failed = []
+    fi._FCACHE.clear(); import gc; gc.collect()       # v2.66: smaller parent before forking (children were OOM-killed)
+    ONLY_LEAVES = {int(x) for x in os.environ.get('LEAVES', '').split(',') if x.strip()}   # v2.66: rerun these leaves only
     for k_, (rem_, subs_, nz_) in enumerate(leaves):
+        if ONLY_LEAVES and k_ + 1 not in ONLY_LEAVES: continue
         sys.stdout.flush(); pid = os.fork()
         if pid == 0:
             rem, subs, NZ = rem_, subs_, nz_; A.out += f'_L{k_ + 1}'; LEAF = k_ + 1
@@ -255,7 +275,9 @@ def numeric_pivots(Mn, r):                            # greedy column then row s
 cert(dict(kind='stratum', vs=vs, subs=[[str(x), str(v)] for x, v in subs], rem=[str(e) for e in rem],
           nz=[str(f) for f in NZ], pivots=fi.PIVOTS, branch_consts=sorted(fi.BRANCH_CONSTS), branch_tags=sorted(fi.BRANCH_TAGS), ncomp=len(comps), DerD=[[str(x) for x in D] for D in DerD],
           Ec=[[int(x) for x in E.diagonal()] for E in Ec], classes=cl))
+ONLY = {int(x) for x in os.environ.get('COMPS', '').split(',') if x.strip()}   # v2.66: run only these components
 for i_, dim_, gens, indep, nf in comps:
+    if ONLY and i_ not in ONLY: continue
     n_ = len(nz); wv = sp.symbols(f'w0:{len(cl)}')
     lin = []
     for k in range(n_):
@@ -268,6 +290,10 @@ for i_, dim_, gens, indep, nf in comps:
     Mrows_all = [[e for row in commutator(D) for e in row] for D in h]
     cols = [j for j in range(d * d) if any(Mrows_all[i][j] for i in range(m))]
     Mrows = [[Mrows_all[i][j] for j in cols] for i in range(m)]
+    # v2.66: prefer sparse minors: pivot columns and rows are chosen greedily in order of increasing term count
+    nterm = lambda e: len(e.terms()) if e else 0
+    corder = sorted(range(len(cols)), key=lambda j: (sum(nterm(Mrows[i][j]) for i in range(m)), j))
+    rorder = sorted(range(m), key=lambda i: (sum(nterm(e) for e in Mrows[i]), i))
     if dim_ <= 0:
         print(f"  component {i_}: dim {dim_} (points)", flush=True)
         cert(dict(kind='component', comp=i_, dim=dim_, gens=[str(g) for g in gens], indep=indep,
@@ -277,11 +303,14 @@ for i_, dim_, gens, indep, nf in comps:
     for r in range(dim_ - 1, -1, -1):
         F = []; FP = []; status = None
         for it in range(80):
-            out = singular([f'LIB "primdec.lib";', f"ring R = 0,({','.join(vs)}),dp;",
+            # v2.66: eliminate the variables that occur linearly first (presolve.lib elimpart: V(J) is the graph of the
+            # substitution SB over V(J1), J1 in the remaining variables), then check the dimension before decomposing
+            out = singular([f'LIB "primdec.lib"; LIB "presolve.lib";', f"ring R = 0,({','.join(vs)}),dp;",
                             f"ideal J = {','.join([str(g).replace('**', '^') for g in gens] + [str(f).replace('**', '^') for f in F]) or '0'};",
-                            f"ideal Js = std(J); if (dim(Js) <= {r}) {{ print(\"END\"); quit; }}",   # v2.66: dimension first
+                            "list EP = elimpart(J); ideal J1 = EP[1]; ideal SB = EP[3]; int ne = size(EP[2]);",
+                            f"ideal Js = std(J1); if (dim(Js) - ne <= {r}) {{ print(\"END\"); quit; }}",
                             "list L = minAssGTZ(Js); int i;",
-                            f"for (i = 1; i <= size(L); i++) {{ ideal Gi = std(L[i]); if (dim(Gi) > {r}) {{ print(\"COMP \" + string(dim(Gi))); "
+                            f"for (i = 1; i <= size(L); i++) {{ ideal Gi = std(L[i] + SB); if (dim(Gi) > {r}) {{ print(\"COMP \" + string(dim(Gi))); "
                             "print(\"GENS \" + string(Gi)); intvec iv = indepSet(Gi); print(\"INDEP \" + string(iv)); kill iv; } kill Gi; }",
                             'print("END");', "quit;"], f"{A.out}_c{i_}.sing")
             if "END" not in out: status = 'singular timeout'; break
@@ -294,9 +323,10 @@ for i_, dim_, gens, indep, nf in comps:
                 if not pts:
                     import numpy as _np
                     for pt in points_numeric(gl, iv, 4):
-                        sel = numeric_pivots(_np.array([[evaluate_num(x, pt) for x in row] for row in Mrows]), r)
+                        Mn = _np.array([[evaluate_num(x, pt) for x in row] for row in Mrows])
+                        sel = numeric_pivots(Mn[_np.ix_(rorder, corder)], r)
                         if sel is None: continue
-                        pr, pc = sel
+                        pr, pc = [rorder[i] for i in sel[0]], [corder[j] for j in sel[1]]
                         F.append(_DM([[Mrows[i][j] for j in pc] for i in pr], (len(pr), len(pc)), KD).det())
                         FP.append(dict(rows=[int(i) for i in pr], cols=[int(cols[j]) for j in pc], det=str(F[-1]), numeric=True))
                         added = True; break
@@ -306,8 +336,8 @@ for i_, dim_, gens, indep, nf in comps:
                     Mv = sp.Matrix([[sp.Rational(int(sp.QQ.numer(evaluate(x, pt))), int(sp.QQ.denom(evaluate(x, pt))))
                                      for x in row] for row in Mrows])
                     if Mv.rank() <= r: continue
-                    _, pc = Mv.rref(); pc = list(pc)[:r + 1]
-                    _, pr = Mv[:, pc].T.rref(); pr = list(pr)[:r + 1]
+                    _, pc = Mv[:, corder].rref(); pc = [corder[j] for j in list(pc)[:r + 1]]
+                    _, pr = Mv[rorder, pc].T.rref(); pr = [rorder[i] for i in list(pr)[:r + 1]]
                     F.append(_DM([[Mrows[i][j] for j in pc] for i in pr], (len(pr), len(pc)), KD).det())
                     FP.append(dict(rows=[int(i) for i in pr], cols=[int(cols[j]) for j in pc], det=str(F[-1])))
                     added = True; break
