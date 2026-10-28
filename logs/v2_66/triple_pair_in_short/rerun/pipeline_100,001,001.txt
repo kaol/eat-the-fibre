@@ -1,0 +1,1 @@
+triple_pair_in_short V = 100,001,001: presolved to 1064 equations in 30 coordinates; 6 components; dim Der = 28, dim Der_Δ = 8, classes 3; t = 561s

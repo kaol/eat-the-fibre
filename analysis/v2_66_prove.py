@@ -88,7 +88,7 @@ for b in blocks:
         if os.path.exists(tmpc): os.remove(tmpc)
         try:
             r = subprocess.run([sys.executable, '-u', 'analysis/v2_55_pipeline.py', Q, b, os.path.join(SCR, 'p_' + b)], cwd=ROOT,
-                               env=dict(os.environ, CERT=tmpc, **mode), capture_output=True, text=True, timeout=6000)
+                               env=dict(os.environ, CERT=tmpc, **mode), capture_output=True, text=True, timeout=int(os.environ.get('PIPE_TMO', '6000')))
             rc_, o = r.returncode, r.stdout + r.stderr
         except subprocess.TimeoutExpired: rc_, o = -1, 'TIMEOUT'
         if rc_ == 0 and 'singular timeout' in o and mi + 1 < len(modes): continue   # a timeout is not a failure: try the other mode

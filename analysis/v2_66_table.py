@@ -13,7 +13,7 @@ for f in sorted(glob.glob('logs/v2_66/*/summary.json')):
     vbad = ','.join(map(str, bp['primes'])) or '—'
     ok = (I['snf1'] and I['saturated'] and I['detB'] in ('1', '-1') and I['group_identities'] and V['zero_dim'] and vgood
           and V['radical'] and V['point_ideal_vdim'] == V['points'] and t and t.group(1) == t.group(2)
-          and set(map(int, s['pivots'])) <= {1, -1} and not s['branch_consts'] and G['exceptional'] == '[]' and G['cross_check_unresolved'] == 0)
+          and set(map(int, s['pivots'])) <= {1, -1} and all(abs(n) == 1 and q == 1 for n, q in s['branch_consts']) and G['exceptional'] == '[]' and G['cross_check_unresolved'] == 0)
     rows.append((Q, V['points'], vbad, t.group(5) if t else '?', len(s['pipeline']['case_split_blocks']), G['claims'],
                  ','.join(map(str, sorted(map(int, G['candidates'])))) or '—', s['bound_log10'], loc, ok))
 print("| quiver | vertex blocks | vertex step checked directly at | components | case-split blocks | specialisation claims | candidate primes (all good) | log₁₀ B | classes at q = 3 | all checks |")

@@ -1,0 +1,45 @@
+{
+ "quiver": "pair_after3",
+ "integral": {
+  "snf1": true,
+  "saturated": true,
+  "detB": "-1",
+  "group_identities": true
+ },
+ "vertex": {
+  "arrows": "0,2,3,4",
+  "zero_dim": true,
+  "points": 563,
+  "unit_LC": false,
+  "radical": true,
+  "point_ideal_unit_LC": false,
+  "point_ideal_vdim": 563
+ },
+ "pipeline": {
+  "tally": "blocks 563: PASS 563, FAIL 0, UNRESOLVED 0; components/leaf primes checked 1262",
+  "case_split_blocks": []
+ },
+ "pivots": {
+  "1": 105615,
+  "-1": 41426
+ },
+ "branch_consts": [
+  [
+   -1,
+   1
+  ],
+  [
+   1,
+   1
+  ]
+ ],
+ "goodprimes": {
+  "strata": 505,
+  "claims": 8637,
+  "candidates": {},
+  "exceptional": "[]",
+  "cross_check_unresolved": 0,
+  "note": "v2_66_goodprimes_chunked.py after an out-of-memory kill of the single run"
+ },
+ "bound_log10": 39.0
+}
