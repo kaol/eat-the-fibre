@@ -1,0 +1,1 @@
+pair_srcout: {'nodes': 76, 'connected': 76, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; problems 0 []; blocks without output 0

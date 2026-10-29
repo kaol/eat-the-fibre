@@ -1,0 +1,1 @@
+0000,0000,0000,0001: {'nodes': 16, 'connected': 16, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; problems []

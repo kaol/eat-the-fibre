@@ -1,0 +1,2 @@
+pair_after3 V = 1000m,00100,00100,00000,00000 leaf 0 comps all: 1 coordinates, dim Der_Δ = 2, classes 4, 6 orbit-matrix columns; t = 7s
+RESULT 1000m,00100,00100,00000,00000: {'nodes': 1, 'connected': 1, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; t = 8s

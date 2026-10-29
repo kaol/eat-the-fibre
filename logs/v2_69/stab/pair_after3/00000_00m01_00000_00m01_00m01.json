@@ -1,0 +1,1 @@
+{"block": "00000,00m01,00000,00m01,00m01", "tally": {"nodes": 1, "connected": 1, "disconnected": 0, "dimension_mismatch": 0, "no_point": 0, "W_defect_larger": 0}, "nodes": [{"path": "X1", "dim": 1, "dimH": 6, "stab_components": 1, "stab_dims": [5], "expected": 5, "W": 4, "W_defect": 4}]}

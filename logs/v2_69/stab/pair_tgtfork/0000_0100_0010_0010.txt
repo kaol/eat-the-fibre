@@ -1,0 +1,2 @@
+pair_tgtfork V = 0000,0100,0010,0010 leaf 0 comps all: 14 coordinates, dim Der_Δ = 2, classes 3, 45 orbit-matrix columns; t = 1s
+RESULT 0000,0100,0010,0010: {'nodes': 3, 'connected': 3, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; t = 2s

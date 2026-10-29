@@ -24,3 +24,4 @@ logs/v2_67/*.pkl
 logs/v2_67/q1_certs_all.jsonl
 logs/v2_67/q2_certs_all.jsonl
 logs/v2_68/**/*.sing
+logs/v2_69/**/*.sing

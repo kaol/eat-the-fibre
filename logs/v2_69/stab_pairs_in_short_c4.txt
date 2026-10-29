@@ -1,0 +1,1 @@
+pairs_in_short_c4: {'nodes': 1672, 'connected': 1672, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; problems 0 []; blocks without output 0

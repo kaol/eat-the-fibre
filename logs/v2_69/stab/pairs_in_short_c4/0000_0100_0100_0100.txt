@@ -1,0 +1,2 @@
+pairs_in_short_c4 V = 0000,0100,0100,0100 leaf 0 comps all: 17 coordinates, dim Der_Δ = 4, classes 4, 72 orbit-matrix columns; t = 2s
+RESULT 0000,0100,0100,0100: {'nodes': 14, 'connected': 14, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; t = 6s

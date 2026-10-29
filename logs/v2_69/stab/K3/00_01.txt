@@ -1,0 +1,2 @@
+K3 V = 00,01 leaf 0 comps all: 12 coordinates, dim Der_Δ = 6, classes 1, 18 orbit-matrix columns; t = 0s
+RESULT 00,01: {'nodes': 4, 'connected': 4, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; t = 3s

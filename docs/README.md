@@ -10,7 +10,7 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.68) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.69) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
@@ -20,7 +20,7 @@ Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of t
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.68)
+## Where the fold story stands (v2.69)
 
 | result | status | round |
 |---|---|---|
@@ -83,4 +83,5 @@ mathematics forces them.
 | The census counts geometric orbits: on 17 quivers and 1427 vertex blocks, the geometric orbit count of the local census groups (char 0) equals the 𝔽₃ local-torus class count, block by block (8072 in all). Conjecture G: equality for every q on unobstructed quivers | computed; conjectured in general | v2.67 |
 | Lemma C (contained orbits): a characteristic-free finiteness recursion needing no invariance of the nodes; orbit trees specialise to all p outside the primes of their ℤ-certificates (leading coefficients, Rabinowitsch integers); bad primes redone directly in char p | **proved** | v2.68 |
 | **Conjecture 3ᶜ holds for 1⇛2⇇3 + 1→3** (uniform in q, every characteristic): block 100,001,001 specialises for p ∉ {2, 3}; p = 2 (326 nodes) and p = 3 (72) directly; bound ≈ 10^85.3. With it, 3ᶜ is proved for all 17 unobstructed quivers of the original census list | **proved** (modulo trusted Singular) | v2.68 |
+| **Conjecture G for p ≫ 0**: on all 17 quivers, census count = geometric orbit count for every q prime to some N (not yet computed). Stabilisers at the dense orbits are connected (6696 of 6696 nodes, exact over ℚ) and the defect-compatible weightings equal W(Y) at every node; then Lang (rational points on O_Y, H¹ of a connected stabiliser) and spreading out | **proved** (non-effective N) | v2.69 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |

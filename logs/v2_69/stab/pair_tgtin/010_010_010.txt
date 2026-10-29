@@ -1,0 +1,2 @@
+pair_tgtin V = 010,010,010 leaf 0 comps all: 5 coordinates, dim Der_Δ = 2, classes 2, 12 orbit-matrix columns; t = 0s
+RESULT 010,010,010: {'nodes': 3, 'connected': 3, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; t = 1s

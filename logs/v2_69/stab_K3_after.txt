@@ -1,0 +1,1 @@
+K3_after: {'nodes': 97, 'connected': 97, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; problems 0 []; blocks without output 0

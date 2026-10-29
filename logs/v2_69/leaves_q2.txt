@@ -1,0 +1,1 @@
+1000,010m,010m,0000: {'nodes': 14, 'connected': 14, 'disconnected': 0, 'dimension_mismatch': 0, 'no_point': 0, 'W_defect_larger': 0}; problems []
