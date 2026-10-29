@@ -1,0 +1,1 @@
+1000,010m,010m,0000: 34 leaves, 59 distinct orbit closures, geometric orbits 59; problems []

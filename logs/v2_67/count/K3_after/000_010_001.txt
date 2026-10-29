@@ -1,11 +1,11 @@
-K3_after V = 000,010,001 leaf 0 comp all: dim 4, 26 coordinates, dim 𝔥 = 8, 54 orbit-matrix columns; t = 0s
-  X1: dim 4: dense orbit (minor 124 chars, rational point); boundary dim 2 after 3 closure rounds, 1 primes [2]; t = 0s
-  X1.1: dim 2: dense orbit (minor 9 chars, rational point); boundary dim -1 after 3 closure rounds, 0 primes []; t = 1s
-  X2: dim 6: dense orbit (minor 306 chars, rational point); boundary dim 5 after 7 closure rounds, 2 primes [5, 5]; t = 1s
-  X2.1: dim 5: dense orbit (minor 244 chars, rational point); boundary dim 4 after 7 closure rounds, 1 primes [4]; t = 2s
-  X2.1.1: dim 4: dense orbit (minor 39 chars, rational point); boundary dim 3 after 6 closure rounds, 1 primes [3]; t = 2s
-  X2.1.1.1: dim 3: dense orbit (minor 28 chars, rational point); boundary dim -1 after 5 closure rounds, 0 primes []; t = 3s
-  X2.2: dim 5: dense orbit (minor 208 chars, rational point); boundary dim 4 after 6 closure rounds, 2 primes [4, 4]; t = 3s
-  X2.2.2: dim 4: dense orbit (minor 41 chars, rational point); boundary dim 3 after 5 closure rounds, 1 primes [3]; t = 3s
-  X3: dim 2: dense orbit (minor 10 chars, rational point); boundary dim 0 after 2 closure rounds, 1 primes [0]; t = 4s
+K3_after V = 000,010,001 leaf 0 comps all: 26 coordinates, dim Der_Δ = 6, classes 2, 54 orbit-matrix columns; t = 0s
+  X1: dim 4: dense orbit (dim 𝔥_Y 8, minor 124 chars, rational point); boundary dim 2 after 3 closure rounds, 1 primes [2]; t = 0s
+  X1.1: dim 2: dense orbit (dim 𝔥_Y 8, minor 9 chars, rational point); boundary dim -1 after 3 closure rounds, 0 primes []; t = 1s
+  X2: dim 6: dense orbit (dim 𝔥_Y 8, minor 306 chars, rational point); boundary dim 5 after 7 closure rounds, 2 primes [5, 5]; t = 2s
+  X2.1: dim 5: dense orbit (dim 𝔥_Y 8, minor 244 chars, rational point); boundary dim 4 after 7 closure rounds, 1 primes [4]; t = 2s
+  X2.1.1: dim 4: dense orbit (dim 𝔥_Y 8, minor 39 chars, rational point); boundary dim 3 after 6 closure rounds, 1 primes [3]; t = 2s
+  X2.1.1.1: dim 3: dense orbit (dim 𝔥_Y 8, minor 28 chars, rational point); boundary dim -1 after 5 closure rounds, 0 primes []; t = 3s
+  X2.2: dim 5: dense orbit (dim 𝔥_Y 8, minor 208 chars, rational point); boundary dim 4 after 6 closure rounds, 2 primes [4, 4]; t = 3s
+  X2.2.2: dim 4: dense orbit (dim 𝔥_Y 8, minor 41 chars, rational point); boundary dim 3 after 5 closure rounds, 1 primes [3]; t = 3s
+  X3: dim 2: dense orbit (dim 𝔥_Y 8, minor 10 chars, rational point); boundary dim 0 after 2 closure rounds, 1 primes [0]; t = 4s
 RESULT finitely many orbits: {'primes': 10, 'dense': 9, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 10; t = 4s

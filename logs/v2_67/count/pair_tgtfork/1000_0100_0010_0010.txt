@@ -1,0 +1,8 @@
+pair_tgtfork V = 1000,0100,0010,0010 leaf 0 comps all: 12 coordinates, dim Der_Δ = 2, classes 3, 31 orbit-matrix columns; t = 0s
+  X2: dim 2: dense orbit (dim 𝔥_Y 4, minor 10 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 1s
+  X2.1: dim 1: dense orbit (dim 𝔥_Y 4, minor 5 chars, rational point); boundary dim -1 after 2 closure rounds, 0 primes []; t = 1s
+  X3: dim 2: dense orbit (dim 𝔥_Y 4, minor 10 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 1s
+  X4: dim 2: dense orbit (dim 𝔥_Y 4, minor 10 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 1s
+  X5: dim 2: dense orbit (dim 𝔥_Y 4, minor 10 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 1s
+  X6: dim 2: dense orbit (dim 𝔥_Y 4, minor 18 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 1s
+RESULT finitely many orbits: {'primes': 7, 'dense': 6, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 7; t = 1s

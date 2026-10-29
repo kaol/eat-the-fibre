@@ -10,7 +10,7 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.66) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.67) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
@@ -20,7 +20,7 @@ Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of t
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.66)
+## Where the fold story stands (v2.67)
 
 | result | status | round |
 |---|---|---|
@@ -78,4 +78,7 @@ mathematics forces them.
 | **Conjecture 3ᶜ holds for 13 more quivers** (uniform in q, all characteristics), by the whole procedure run end to end (`v2_66_prove.py`): K₂, K₃, 1⇉2→3, 1→2⇉3, 1⇉2 + 1→3, 1⇉2 + 3→2, 1⇛2→3, 1⇛2 + 1→3, 1⇉2→3→4, 1→2⇉3→4, 1⇉2 + 2→3 + 2→4, 1⇉2 + 1→3 + 4→2, 1⇉2→3→4→5; with duality also their opposites and those of Q₀, Q₁, Q₂. 1⇛2⇇3 + 1→3: 20 of 21 strata certified and uniform; two components of the last exceed the container's memory | **proved** (modulo trusted Singular) | v2.66 |
 | Duality: path reversal gives Folds(kQ) ≅ Folds(kQ^op) compatibly with the census group. Collapse lemma: P ↦ ιPπ embeds Folds(kQ^s) (Q^s: one arrow per class) into Folds(kQ), keeping the vertex block; conversely πPι is a fold of kQ^s whenever P preserves ker π | **proved** (char-free) | v2.66 |
 | Conjecture S: for unobstructed Q the vertex blocks are exactly the folds of Q^s (one fold of Q^s per block); vertex ideals independent of the class size m ≥ 2. Fails for 1⇉2⇇3 exactly on Theorem 3's 4(q − 2) blocks, which carry no ker π-preserving fold | conjectured; verified on 24 unobstructed quivers (elimination over ℚ) | v2.66 |
+| Orbit stratification by invariant boundaries (Lemma O): each H-stable prime with a dense orbit, its complement cut out by the vector-field closure of one minor; returns the orbit closures and their number. Replaces the v2.54 cut where that ran out of memory | **proved** (char 0) | v2.67 |
+| **Folds(k̄(1⇛2⇇3 + 1→3)) is a finite union of census orbits (char 0)**: all 21 blocks, including the component that the v2.54 cut could not finish (51 GB) | **proved** (char 0; uniformity open on one block) | v2.67 |
+| The census counts geometric orbits: on 17 quivers and 1427 vertex blocks, the geometric orbit count of the local census groups (char 0) equals the 𝔽₃ local-torus class count, block by block (8072 in all). Conjecture G: equality for every q on unobstructed quivers | computed; conjectured in general | v2.67 |
 | Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | conjectured; 1⇉2⇇3 + 1→3 has 366 orbits at q = 3, 5, 7; two tests handed over | v2.28 |

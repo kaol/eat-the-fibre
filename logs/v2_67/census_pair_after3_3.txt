@@ -1,0 +1,11 @@
+  kernel stage on cpu: 56632 subspaces, subalgebras by dimension [1, 64, 251, 265, 108, 18, 1]
+  kernel stage: 2.1s
+pair_after3 F_3: d=19, dim K=6, 36984 kernel folds in 23294 torus orbits; engine=torch
+  symmetry: 23294 torus orbits in 23294 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 6
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  done in 20s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^6): 6: [23294, 9010, 20646, 19974], 7: [9496, 6216, 9690, 8094], 8: [7155, 4184, 4184, 4184], 9: [4184, 2572, 2503, 2503], 10: [2501, 2501, 2517, 2517], 11: [2517, 2057, 2273, 1827], 12: [1775, 1775, 2259, 2015], 13: [2015, 2015, 2015, 2015], 14: [2015, 2011, 2015, 2015], 15: [2013, 1991, 2073, 1799], 16: [1799, 1799, 2041, 1925], 17: [1862, 1861, 1863, 1863], 18: [1863, 1833, 2012, 1802]; N-quotient (|N| = 6) per column [frontier, kept]: 7: [19974, 9496], 8: [8094, 7155], 9: [4184, 4184], 10: [2503, 2501], 11: [2517, 2517], 12: [1827, 1775], 13: [2015, 2015], 14: [2015, 2015], 15: [2015, 2013], 16: [1799, 1799], 17: [1925, 1862], 18: [1863, 1863]
+{"name": "pair_after3", "p": 3, "d": 19, "kdim": 6, "nK": 36984, "reps": 23294, "N": 5405, "fib": {"0": 34503, "1": 1208, "3": 1257, "9": 8, "15": 2, "27": 2, "51": 2, "57": 1, "111": 1}, "G": 6, "orbits_G": 1770, "sizes_G": {"1": 562, "2": 323, "3": 371, "6": 514}, "orbits_GxGr": 1770, "sizes_GxGr": {"1": 562, "2": 323, "3": 371, "6": 514}, "transversal": {"lifted": 1770, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 4, "torus_preserving": 8, "torus_all": 16, "orbits_GxT": 1770, "sizes_GxT": {"1": 562, "2": 323, "3": 371, "6": 514}, "orbits_GxTloc": 1770, "local_torus_sizes": {"8": 8, "16": 1762}, "t": 41}
+
+real	0m41.323s
+user	0m55.853s
+sys	0m5.062s

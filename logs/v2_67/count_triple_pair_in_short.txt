@@ -1,0 +1,22 @@
+000,000,000              finitely many orbits   orbits  106  census 106  ok
+100,000,000              finitely many orbits   orbits   16  census 16  ok
+000,010,000              finitely many orbits   orbits   31  census 31  ok
+100,010,000              finitely many orbits   orbits   29  census 29  ok
+000,000,001              finitely many orbits   orbits   29  census 29  ok
+100,000,001              finitely many orbits   orbits   42  census 42  ok
+000,010,001              finitely many orbits   orbits   23  census 23  ok
+000,010,010              finitely many orbits   orbits   21  census 21  ok
+100,010,010              finitely many orbits   orbits   21  census 21  ok
+100,000,100              finitely many orbits   orbits   16  census 16  ok
+100,100,100              finitely many orbits   orbits   12  census 12  ok
+100,010,100              finitely many orbits   orbits   11  census 11  ok
+100,100,000              finitely many orbits   orbits   10  census 10  ok
+001,000,001              finitely many orbits   orbits   31  census 31  ok
+001,010,001              finitely many orbits   orbits   42  census 42  ok
+000,001,001              finitely many orbits   orbits   21  census 21  ok
+100,010,001              finitely many orbits   orbits   85  census 85  ok
+010,010,000              finitely many orbits   orbits   20  census 20  ok
+010,010,010              finitely many orbits   orbits   57  census 57  ok
+001,001,001              finitely many orbits   orbits   57  census 57  ok
+100,001,001              finitely many orbits   orbits   72  census 72  ok
+TOTAL orbits 752 census 752; blocks 21, skipped 0, mismatches 0 []

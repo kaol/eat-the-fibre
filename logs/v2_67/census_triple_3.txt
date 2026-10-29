@@ -1,13 +1,7 @@
   kernel stage on cpu: 56632 subspaces, subalgebras by dimension [1, 92, 448, 445, 156, 21, 1]
-  kernel stage: 31.8s
-triple_pair_in_short F_3: d=11, dim K=6, 108736 kernel folds in 56028 torus orbits; jobs=1
+  kernel stage: 23.7s
+triple_pair_in_short F_3: d=11, dim K=6, 108736 kernel folds in 56028 torus orbits; engine=torch
   symmetry: 56028 torus orbits in 3444 H-orbits (H = G × T); 52584 fibres by transport; |N| = |ker(H → H|_K)| = 54
-  133/56028 fibres done, 3311 open, 29334 queued tasks, 238 tasks run, t=96s
-  138/56028 fibres done, 3306 open, 3815 queued tasks, 26613 tasks run, t=172s
-  141/56028 fibres done, 3303 open, 3613 queued tasks, 27328 tasks run, t=232s
-  306/56028 fibres done, 3138 open, 3236 queued tasks, 28225 tasks run, t=292s
-  764/56028 fibres done, 2680 open, 2699 queued tasks, 29569 tasks run, t=353s
-  961/56028 fibres done, 2483 open, 2650 queued tasks, 31070 tasks run, t=413s
-  964/56028 fibres done, 2480 open, 6269 queued tasks, 32833 tasks run, t=473s
-  965/56028 fibres done, 2479 open, 4222 queued tasks, 34880 tasks run, t=533s
-  967/56028 fibres done, 2477 open, 12728 queued tasks, 36778 tasks run, t=593s
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  done in 8s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^6): 6: [3444, 1219, 43745, 33701], 7: [5574, 2277, 38209, 23386], 8: [6368, 1535, 2629, 2097], 9: [1772, 1427, 2513, 2513], 10: [2513, 2410, 2155, 1921]; N-quotient (|N| = 54) per column [frontier, kept]: 7: [33701, 5574], 8: [23386, 6368], 9: [2097, 1772], 10: [2513, 2513]
+{"name": "triple_pair_in_short", "p": 3, "d": 11, "kdim": 6, "nK": 108736, "reps": 56028, "N": 316612, "fib": {"0": 100796, "1": 130, "3": 2915, "9": 1376, "27": 2548, "81": 448, "243": 405, "729": 114, "2187": 4}, "G": 2592, "orbits_G": 836, "sizes_G": {"1": 18, "2": 8, "3": 16, "6": 23, "8": 6, "9": 22, "16": 3, "18": 8, "24": 12, "27": 20, "36": 18, "48": 12, "54": 61, "72": 82, "108": 18, "144": 43, "216": 114, "288": 3, "324": 2, "432": 189, "648": 26, "864": 40, "1296": 78, "2592": 14}, "orbits_GxGr": 772, "sizes_GxGr": {"1": 18, "2": 8, "3": 16, "6": 21, "8": 6, "9": 22, "12": 1, "16": 3, "18": 8, "24": 12, "27": 20, "36": 18, "48": 12, "54": 39, "72": 82, "108": 29, "144": 43, "216": 112, "288": 3, "324": 2, "432": 150, "648": 16, "864": 52, "1296": 47, "1728": 4, "2592": 24, "5184": 4}, "transversal": {"lifted": 627, "lifted_transversal": 56, "transversal_modp": 88}, "classes": 3, "torus_preserving": 2, "torus_all": 8, "orbits_GxT": 772, "sizes_GxT": {"1": 18, "2": 8, "3": 16, "6": 21, "8": 6, "9": 22, "12": 1, "16": 3, "18": 8, "24": 12, "27": 20, "36": 18, "48": 12, "54": 39, "72": 82, "108": 29, "144": 43, "216": 112, "288": 3, "324": 2, "432": 150, "648": 16, "864": 52, "1296": 47, "1728": 4, "2592": 24, "5184": 4}, "orbits_GxTloc": 752, "local_torus_sizes": {"4": 223, "8": 613}, "t": 44}

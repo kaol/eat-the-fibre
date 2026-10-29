@@ -1,5 +1,5 @@
-pair_after V = 010,010,010 leaf 0 comp all: dim 2, 5 coordinates, dim 𝔥 = 4, 12 orbit-matrix columns; t = 0s
-  X2: dim 2: dense orbit (minor 11 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 0s
-  X2.1: dim 1: dense orbit (minor 5 chars, rational point); boundary dim -1 after 2 closure rounds, 0 primes []; t = 0s
-  X3: dim 2: dense orbit (minor 11 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 0s
+pair_after V = 010,010,010 leaf 0 comps all: 5 coordinates, dim Der_Δ = 2, classes 2, 12 orbit-matrix columns; t = 0s
+  X2: dim 2: dense orbit (dim 𝔥_Y 4, minor 11 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 0s
+  X2.1: dim 1: dense orbit (dim 𝔥_Y 4, minor 5 chars, rational point); boundary dim -1 after 2 closure rounds, 0 primes []; t = 0s
+  X3: dim 2: dense orbit (dim 𝔥_Y 4, minor 11 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 0s
 RESULT finitely many orbits: {'primes': 4, 'dense': 3, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 4; t = 0s

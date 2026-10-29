@@ -1,0 +1,1 @@
+RESULT finitely many orbits: point stratum; geometric H-orbits 1; t = 0s

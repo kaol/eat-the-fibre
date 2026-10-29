@@ -1,0 +1,7 @@
+pairs_in_short_c4 V = 1000,1000,1000,0000 leaf 0 comps all: 7 coordinates, dim Der_Δ = 4, classes 4, 20 orbit-matrix columns; t = 1s
+  X2: dim 2: dense orbit (dim 𝔥_Y 8, minor 6 chars, rational point); boundary dim 1 after 1 closure rounds, 1 primes [1]; t = 1s
+  X2.1: dim 1: dense orbit (dim 𝔥_Y 8, minor 5 chars, rational point); boundary dim -1 after 2 closure rounds, 0 primes []; t = 2s
+  X3: dim 3: dense orbit (dim 𝔥_Y 8, minor 15 chars, rational point); boundary dim 2 after 2 closure rounds, 2 primes [2, 2]; t = 2s
+  X3.1: dim 2: dense orbit (dim 𝔥_Y 8, minor 6 chars, rational point); boundary dim 1 after 1 closure rounds, 1 primes [1]; t = 2s
+  X3.2: dim 2: dense orbit (dim 𝔥_Y 8, minor 10 chars, rational point); boundary dim 1 after 3 closure rounds, 1 primes [1]; t = 2s
+RESULT finitely many orbits: {'primes': 6, 'dense': 5, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 6; t = 2s

@@ -1,0 +1,11 @@
+pairs_in_short_c4 V = 1000,0000,0000,0000 leaf 0 comps all: 30 coordinates, dim Der_Δ = 4, classes 4, 68 orbit-matrix columns; t = 2s
+  X1: dim 3: dense orbit (dim 𝔥_Y 7, minor 140 chars, rational point); boundary dim 2 after 4 closure rounds, 1 primes [2]; t = 2s
+  X1.1: dim 2: dense orbit (dim 𝔥_Y 8, minor 58 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 2s
+  X1.1.1: dim 1: dense orbit (dim 𝔥_Y 8, minor 43 chars, rational point); boundary dim -1 after 2 closure rounds, 0 primes []; t = 2s
+  X2: dim 3: dense orbit (dim 𝔥_Y 7, minor 74 chars, rational point); boundary dim 2 after 3 closure rounds, 1 primes [2]; t = 3s
+  X2.1: dim 2: dense orbit (dim 𝔥_Y 8, minor 59 chars, rational point); boundary dim -1 after 3 closure rounds, 0 primes []; t = 3s
+  X3: dim 2: dense orbit (dim 𝔥_Y 8, minor 18 chars, rational point); boundary dim 1 after 2 closure rounds, 1 primes [1]; t = 3s
+  X4: dim 3: dense orbit (dim 𝔥_Y 8, minor 29 chars, rational point); boundary dim 2 after 3 closure rounds, 1 primes [2]; t = 3s
+  X5: dim 1: dense orbit (dim 𝔥_Y 8, minor 4 chars, rational point); boundary dim 0 after 1 closure rounds, 1 primes [0]; t = 4s
+  X6: dim 1: dense orbit (dim 𝔥_Y 8, minor 5 chars, rational point); boundary dim -1 after 2 closure rounds, 0 primes []; t = 4s
+RESULT finitely many orbits: {'primes': 10, 'dense': 9, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 10; t = 4s

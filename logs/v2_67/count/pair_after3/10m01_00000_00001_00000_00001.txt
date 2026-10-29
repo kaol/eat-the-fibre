@@ -1,0 +1,3 @@
+pair_after3 V = 10m01,00000,00001,00000,00001 leaf 0 comps all: 1 coordinates, dim Der_Δ = 2, classes 4, 6 orbit-matrix columns; t = 4s
+  X1: dim 1: dense orbit (dim 𝔥_Y 6, minor 3 chars, rational point); boundary dim 0 after 1 closure rounds, 1 primes [0]; t = 4s
+RESULT finitely many orbits: {'primes': 2, 'dense': 1, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 2; t = 4s

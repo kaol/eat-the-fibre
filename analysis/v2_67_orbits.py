@@ -65,6 +65,9 @@ def xi(Cd, x):
     m = re.fullmatch(r'k(\d)(\d)', x); i, j = int(m.group(1)), int(m.group(2))
     return sum((Cd[a][b] * KlQ[i][a] * KmQ[b][j] for a in range(d) if KlQ[i][a] for b in range(d) if KmQ[b][j] and Cd[a][b]), R(0))
 XIB = [[xi(Cd, x) for x in vs] for Cd in CB]
+ELIM = [x for x in S['names'] if x not in vs] if A.leafmode else []
+XCE = [xi(Pr, x) for x in ELIM]                            # the eliminated coordinates as functions of vs
+XFB = [[xi(Cd, x) for x in ELIM] for Cd in CB]             # the true field on them
 ss = lambda e: str(e).replace('**', '^') if e else '0'
 cols = [(a, b) for a in range(d) for b in range(d) if any(Cd[a][b] for Cd in CB)]
 MB = [[Cd[a][b] for a, b in cols] for Cd in CB]
@@ -219,9 +222,12 @@ def local_weights(gens, tag):
     for m in re.finditer(r"^T (\d+) (\d+) (.*)$", o, re.M):
         add(('t', int(m.group(2))), int(m.group(1)) - 1, m.group(3))
     rows = list(eqs.values())
+    drows = [v for k, v in eqs.items() if k[0][0] == 'd']
+    LASTW['defect_only'] = NCL - (sp.Matrix(drows).rank() if drows else 0)
     if not rows: return [[sp.Integer(1) if i == j else sp.Integer(0) for i in range(NCL)] for j in range(NCL)]
     Nm = sp.Matrix(rows).nullspace()
     return [[v[i] for i in range(NCL)] for v in Nm]
+LASTW = {}
 
 stats = {'primes': 0, 'dense': 0, 'points': 0, 'nodense': 0, 'unresolved': 0}
 NODES = {}                                                 # canonical reduced Gröbner basis → node (primes are shared)
@@ -235,7 +241,7 @@ def stratify(gens, path, check_tangent=False):
         stats['points'] += 1; node.update(result='points', geometric=vd); return key
     Wb = local_weights(gens, f'w{n_}')
     act = active(Wb); XI = combine(act, XIB); Mrows = combine(act, MB)
-    node['weights'] = [[str(x) for x in w] for w in Wb]
+    node['weights'] = [[str(x) for x in w] for w in Wb]; node['weights_defect_only'] = LASTW.get('defect_only')
     f, how = choose_minor(gens, iv, dim_, Mrows)
     if f is None:
         stats['nodense'] += 1; node['result'] = 'no dense orbit found at sampled points'
@@ -246,6 +252,12 @@ def stratify(gens, path, check_tangent=False):
     if check_tangent:
         lines += ['for (i = 1; i <= size(I); i++) { for (a = 1; a <= ' + str(NH) + '; a++) { if (reduce(xi(I[i], a), G) != 0) '
                   '{ print("NOTTANGENT " + string(i) + " " + string(a)); print("END"); quit; } } }']
+        if ELIM:   # a leaf's graph need not be H-stable: the field on the eliminated coordinates must match too
+            XF = combine(act, XFB)
+            lines += [f"matrix XC[1][{len(ELIM)}] = " + ",".join(ss(e) for e in XCE) + ";",
+                      f"matrix XF[{NH}][{len(ELIM)}] = " + ",".join(ss(XF[a][e]) for a in range(NH) for e in range(len(ELIM))) + ";",
+                      'int e; for (a = 1; a <= ' + str(NH) + '; a++) { for (e = 1; e <= ' + str(len(ELIM)) + '; e++) { '
+                      'if (reduce(XF[a, e] - xi(XC[1, e], a), G) != 0) { print("NOTTANGENT graph " + string(e) + " " + string(a)); print("END"); quit; } } }']
     lines += ["G = std(G + f); ideal NEW = f; int rounds = 0;",
               "while (size(NEW) > 0) { rounds++; ideal NX = 0; for (i = 1; i <= size(NEW); i++) { for (a = 1; a <= " + str(NH) +
               "; a++) { g = reduce(xi(NEW[i], a), G); if (g != 0) { NX = NX + g; G = std(G + g); } } } NEW = simplify(NX, 2); kill NX; }",
