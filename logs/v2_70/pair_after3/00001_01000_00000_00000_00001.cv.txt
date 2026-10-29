@@ -1,0 +1,2 @@
+pair_after3 V = 00001,01000,00000,00000,00001 leaf 0 comps all: 8 coordinates, dim Der_Δ = 2, classes 4, 18 orbit-matrix columns; t = 7s
+COVER {'block': '00001,01000,00000,00000,00001', 'roots': 2, 'K': 9, 'lck_primes': [], 'power_fail': 0, 'rab': [], 'rab_fail': 0, 'candidates': []}; t = 8s

@@ -1,0 +1,4 @@
+pair_after3 V = 10000,00000,00000,00010,00001 leaf 0 comps all: 8 coordinates, dim Der_Δ = 2, classes 4, 16 orbit-matrix columns; t = 75s
+node 0: dim 1, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 76s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 76s
+RESULT nodes 3, problems [], candidate primes []; t = 76s

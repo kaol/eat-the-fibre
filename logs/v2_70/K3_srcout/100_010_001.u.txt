@@ -1,0 +1,12 @@
+K3_srcout V = 100,010,001 leaf 0 comps all: 12 coordinates, dim Der_Δ = 6, classes 2, 18 orbit-matrix columns; t = 0s
+node 0: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 1s
+node 1: dim 3, LC(I) primes [], closure dim 1, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 1s
+node 2: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 1s
+node 3: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 1s
+node 4: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 2s
+node 6: dim 4, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 2s
+node 7: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 2s
+node 8: dim 4, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 2s
+node 9: dim 4, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 2s
+node 10: dim 4, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 3s
+RESULT nodes 11, problems [], candidate primes [2]; t = 3s

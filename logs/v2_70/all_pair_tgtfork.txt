@@ -1,0 +1,1 @@
+pair_tgtfork: gcert tally {'nodes': 266, 'certified_points': 816, 'checks_failed': 0, 'timeouts': 0, 'points': 128, 'points_failed': 0}; candidates (script, prime): blocks {('gc', '2'): 41, ('gc', '3'): 12, ('u', '2'): 1, ('u', '3'): 1}; primes ['2', '3']; problems 0 []; missing 0 []

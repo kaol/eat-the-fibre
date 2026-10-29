@@ -1,0 +1,7 @@
+pairs_in_short_c4 V = 1000,1000,1000,0001 leaf 0 comps all: 7 coordinates, dim Der_Δ = 4, classes 4, 20 orbit-matrix columns; t = 2s
+node 1: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 3s
+node 3: dim 3, LC(I) primes [], closure dim 2, children 2, all claims exact; t = 3s
+node 4: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 3s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 3s
+RESULT nodes 6, problems [], candidate primes [2]; t = 3s

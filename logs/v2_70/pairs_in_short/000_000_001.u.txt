@@ -1,0 +1,16 @@
+pairs_in_short V = 000,000,001 leaf 0 comps all: 17 coordinates, dim Der_Δ = 4, classes 3, 53 orbit-matrix columns; t = 0s
+node 0: dim 1, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 1s
+node 2: dim 3, LC(I) primes [], closure dim 2, children 2, all claims exact; t = 1s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 1s
+node 4: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 2s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 6: dim 3, LC(I) primes [], closure dim 2, children 2, all claims exact; t = 2s
+node 7: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 8: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 2s
+node 9: dim 4, LC(I) primes [], closure dim 3, children 2, all claims exact; t = 2s
+node 10: dim 3, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 3s
+node 11: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 3s
+node 12: dim 3, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 3s
+node 13: dim 4, LC(I) primes [], closure dim 3, children 2, all claims exact; t = 3s
+node 14: dim 3, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 3s
+RESULT nodes 15, problems [], candidate primes []; t = 3s

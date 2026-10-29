@@ -1,0 +1,12 @@
+pair_after3 V = 10000,01000,00100,00000,00001 leaf 0 comps all: 16 coordinates, dim Der_Δ = 2, classes 4, 26 orbit-matrix columns; t = 6s
+node 0: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 7s
+node 1: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 7s
+node 2: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 7s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 7s
+node 4: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 7s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 8s
+node 6: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 8s
+node 7: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 8s
+node 8: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 8s
+node 9: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 9s
+RESULT nodes 11, problems [], candidate primes [2]; t = 9s

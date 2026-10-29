@@ -1,0 +1,1 @@
+pair_after3: gcert tally {'nodes': 1206, 'certified_points': 3656, 'checks_failed': 0, 'timeouts': 0, 'points': 500, 'points_failed': 0}; candidates (script, prime): blocks {('gc', '2'): 211, ('gc', '3'): 135, ('u', '2'): 8}; primes ['2', '3']; problems 0 []; missing 0 []

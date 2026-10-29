@@ -1,0 +1,2 @@
+pair_mid V = 1000,0100,0010,0001 leaf 0 comps all: 22 coordinates, dim Der_Δ = 2, classes 3, 56 orbit-matrix columns; t = 1s
+COVER {'block': '1000,0100,0010,0001', 'roots': 12, 'K': 116, 'lck_primes': [], 'power_fail': 0, 'rab': [], 'rab_fail': 0, 'candidates': []}; t = 2s

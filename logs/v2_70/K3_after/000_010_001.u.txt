@@ -1,0 +1,11 @@
+K3_after V = 000,010,001 leaf 0 comps all: 26 coordinates, dim Der_Δ = 6, classes 2, 54 orbit-matrix columns; t = 0s
+node 0: dim 4, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 1s
+node 1: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 1s
+node 2: dim 6, LC(I) primes [], closure dim 5, children 2, issues ['radical membership needs 1/N, N in [6]']; t = 4s
+node 3: dim 5, LC(I) primes [], closure dim 4, children 1, issues ['radical membership needs 1/N, N in [2, 4, 12]']; t = 7s
+node 4: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [4]']; t = 8s
+node 5: dim 3, LC(I) primes [], closure dim 1, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 8s
+node 6: dim 5, LC(I) primes [], closure dim 4, children 2, issues ['radical membership needs 1/N, N in [2, 4]']; t = 9s
+node 7: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 9s
+node 8: dim 2, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 9s
+RESULT nodes 10, problems [], candidate primes [2, 3]; t = 9s

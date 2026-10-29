@@ -1,0 +1,1 @@
+{"block": "000,001,001", "p": 0, "results": {"0": {"dim": 2, "lci": [], "dimp": 2, "dimJ": 0, "fin": false, "defects": ["ok", "ok"], "lck": ["1", "1"], "lcc": ["1", "1"], "pm_fail": 1, "pm_total": 2, "rab": ["2"], "rab_fail": 0, "issues": ["radical membership needs 1/N, N in [2]"]}, "1": {"dim": 0, "lci": ["1", "1"], "dimp": 0}}, "candidates": [2], "problems": []}

@@ -1,0 +1,7 @@
+pairs_in_short_c4 V = 100m,0100,100m,0000 leaf 0 comps all: 8 coordinates, dim Der_Δ = 4, classes 4, 20 orbit-matrix columns; t = 2s
+node 0: dim 3, LC(I) primes [], closure dim 2, children 2, all claims exact; t = 3s
+node 1: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 3s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 3s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 3s
+node 4: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 3s
+RESULT nodes 5, problems [], candidate primes []; t = 3s

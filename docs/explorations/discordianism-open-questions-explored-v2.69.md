@@ -141,6 +141,13 @@ the stabiliser over ℤ: its strong ℤ-basis, and a check that the single compo
 acting trivially on A, O_Y(𝔽_q) would split into as many classes as A has conjugacy classes. The census, which
 counts one class per node, would then be larger. Prediction 100 was the census agreement read backwards.
 
+**Amendment (v2.70).** The proof of Lemma L above used two facts without checking them; v2.70 §1 checks both.
+- **The census torus.** The census's weighting moves are the non-zero points of a *linear* space. They form the
+  torus T_{W(Y)}(𝔽_q) only because every W(Y) is the span of a partition of the classes.
+- **0-dimensional nodes.** The weighting moves compatible at such a point fix it.
+
+v2.70 also makes the theorem effective: N = 6 for all 17 quivers, up to three case-split blocks.
+
 ## 3. Next
 
 1. **Effective N.** Compute the stabiliser ideals over ℤ, as v2.68 did for the trees, and check (a)–(d) at the

@@ -1,0 +1,2 @@
+pair_tgtfork V = 0000,0000,m010,m010 leaf 0 comps all: 12 coordinates, dim Der_Δ = 2, classes 3, 46 orbit-matrix columns; t = 1s
+COVER {'block': '0000,0000,m010,m010', 'roots': 2, 'K': 13, 'lck_primes': [], 'power_fail': 0, 'rab': [], 'rab_fail': 0, 'candidates': []}; t = 1s

@@ -1,0 +1,5 @@
+pair_srcboth V = 0000,01m0,0000,m001 leaf 0 comps all: 7 coordinates, dim Der_Δ = 2, classes 3, 25 orbit-matrix columns; t = 0s
+  X1: point, W_x 1: candidates {}
+  X2: dim 2, W 1: candidates [{'2': ['G1lc', 'Sjac', 'Slc'], '23': ['G1lc', 'Sjac', 'Slc']}, {'2': ['G1lc', 'Sjac', 'Slc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '19': ['G1lc', 'Sjac', 'Slc']}] -> [2]; t = 1s
+  X2.1: dim 1, W 1: candidates [{'3': ['G1lc', 'Slc']}, {'2': ['Slc'], '5': ['Slc'], '41': ['G1lc']}, {'2': ['Slc'], '11': ['Slc'], '43': ['G1lc']}] -> []; t = 1s
+RESULT 0000,01m0,0000,m001: {'nodes': 2, 'certified_points': 6, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates ['2']; t = 1s

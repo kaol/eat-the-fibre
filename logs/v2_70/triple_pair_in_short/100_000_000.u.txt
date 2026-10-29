@@ -1,0 +1,17 @@
+triple_pair_in_short V = 100,000,000 leaf 0 comps all: 38 coordinates, dim Der_Δ = 8, classes 3, 79 orbit-matrix columns; t = 1s
+node 0: dim 6, LC(I) primes [], closure dim 5, children 1, issues ['radical membership needs 1/N, N in [2, 6, 12]']; t = 24s
+node 1: dim 5, LC(I) primes [], closure dim 4, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 26s
+node 2: dim 4, LC(I) primes [], closure dim 2, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 26s
+node 3: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [6]']; t = 27s
+node 4: dim 3, LC(I) primes [], closure dim 1, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 28s
+node 5: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 28s
+node 6: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 29s
+node 7: dim 3, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 29s
+node 8: dim 5, LC(I) primes [], closure dim 4, children 1, issues ['radical membership needs 1/N, N in [4]']; t = 30s
+node 9: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 31s
+node 10: dim 4, LC(I) primes [], closure dim 3, children 1, all claims exact; t = 31s
+node 11: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 32s
+node 12: dim 3, LC(I) primes [], closure dim 1, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 32s
+node 13: dim 2, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 33s
+node 15: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 33s
+RESULT nodes 16, problems [], candidate primes [2, 3]; t = 33s

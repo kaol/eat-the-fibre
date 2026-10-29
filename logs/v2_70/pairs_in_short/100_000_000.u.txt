@@ -1,0 +1,11 @@
+pairs_in_short V = 100,000,000 leaf 0 comps all: 27 coordinates, dim Der_Δ = 4, classes 3, 63 orbit-matrix columns; t = 0s
+node 0: dim 3, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 1s
+node 1: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 1s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 2s
+node 3: dim 3, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 2s
+node 4: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 2s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 6: dim 3, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 3s
+node 7: dim 1, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 3s
+node 9: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 3s
+RESULT nodes 10, problems [], candidate primes [2]; t = 3s

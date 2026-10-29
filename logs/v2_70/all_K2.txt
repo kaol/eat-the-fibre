@@ -1,0 +1,1 @@
+K2: gcert tally {'nodes': 14, 'certified_points': 42, 'checks_failed': 0, 'timeouts': 0, 'points': 6, 'points_failed': 0}; candidates (script, prime): blocks {('gc', '2'): 4}; primes ['2']; problems 0 []; missing 0 []

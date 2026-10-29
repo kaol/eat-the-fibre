@@ -1,0 +1,2 @@
+K3 V = 00,00 leaf 0 comps all: 14 coordinates, dim Der_Δ = 6, classes 1, 21 orbit-matrix columns; t = 0s
+COVER {'block': '00,00', 'roots': 5, 'K': 28, 'lck_primes': [], 'power_fail': 0, 'rab': [], 'rab_fail': 0, 'candidates': []}; t = 1s

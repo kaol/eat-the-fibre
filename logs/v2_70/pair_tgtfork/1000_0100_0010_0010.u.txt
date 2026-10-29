@@ -1,0 +1,8 @@
+pair_tgtfork V = 1000,0100,0010,0010 leaf 0 comps all: 12 coordinates, dim Der_Δ = 2, classes 3, 31 orbit-matrix columns; t = 1s
+node 1: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 1s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 1s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 4: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 6: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+RESULT nodes 7, problems [], candidate primes []; t = 2s

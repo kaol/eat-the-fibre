@@ -1,0 +1,2 @@
+pair_srcboth V = 0001,0001,0001,0001 leaf 0 comps all: 7 coordinates, dim Der_Δ = 2, classes 3, 21 orbit-matrix columns; t = 0s
+COVER {'block': '0001,0001,0001,0001', 'roots': 5, 'K': 10, 'lck_primes': [], 'power_fail': 0, 'rab': [], 'rab_fail': 0, 'candidates': []}; t = 1s

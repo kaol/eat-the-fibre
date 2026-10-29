@@ -1,0 +1,4 @@
+pairs_in_short_tail V = 100m,0000,0010,0000 leaf 0 comps all: 1 coordinates, dim Der_Δ = 4, classes 4, 4 orbit-matrix columns; t = 6s
+  X1: dim 1, W 4: candidates [{'17': ['G1lc', 'Sjac', 'Slc'], '3': ['G1lc', 'Sjac', 'Slc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '19': ['G1lc', 'Sjac', 'Slc']}, {}] -> []; t = 7s
+  X1.1: point, W_x 4: candidates {}
+RESULT 100m,0000,0010,0000: {'nodes': 1, 'certified_points': 3, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates []; t = 7s

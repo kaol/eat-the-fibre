@@ -1,0 +1,5 @@
+pair_srcboth V = 0100,0100,0100,0000 leaf 0 comps all: 7 coordinates, dim Der_Δ = 2, classes 3, 21 orbit-matrix columns; t = 0s
+node 1: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 1s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 1s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 1s
+RESULT nodes 4, problems [], candidate primes []; t = 1s

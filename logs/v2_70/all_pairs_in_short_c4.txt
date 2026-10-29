@@ -1,0 +1,1 @@
+pairs_in_short_c4: gcert tally {'nodes': 1672, 'certified_points': 5603, 'checks_failed': 0, 'timeouts': 0, 'points': 86, 'points_failed': 0}; candidates (script, prime): blocks {('gc', '2'): 95, ('gc', '3'): 89, ('gc', '5'): 3, ('gc', '7'): 1, ('u', '2'): 70, ('u', '3'): 3}; primes ['2', '3', '5', '7']; problems 0 []; missing 0 []

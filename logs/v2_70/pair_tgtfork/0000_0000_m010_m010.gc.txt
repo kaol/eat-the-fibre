@@ -1,0 +1,5 @@
+pair_tgtfork V = 0000,0000,m010,m010 leaf 0 comps all: 12 coordinates, dim Der_Δ = 2, classes 3, 46 orbit-matrix columns; t = 1s
+  X1: dim 2, W 2: candidates [{'5': ['G1lc', 'Slc', 'den'], '2': ['G1lc'], '23': ['G1lc']}, {'3': ['G1lc', 'Slc', 'den'], '29': ['G1lc', 'Slc', 'den'], '53': ['G1lc']}, {'23': ['G1lc', 'Slc', 'den'], '3': ['G1lc'], '7': ['G1lc']}] -> []; t = 2s
+  X1.1: dim 1, W 2: candidates [{'2': ['G1lc', 'Slc'], '13': ['G1lc', 'Slc']}, {'7': ['Slc'], '2': ['G1lc'], '5': ['G1lc']}, {'2': ['G1lc', 'Slc'], '3': ['G1lc', 'Slc']}] -> [2]; t = 3s
+  X2: point, W_x 3: candidates {}
+RESULT 0000,0000,m010,m010: {'nodes': 2, 'certified_points': 6, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates ['2']; t = 3s

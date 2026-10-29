@@ -1,0 +1,11 @@
+pair_after2 V = 0000,0000,0000,0000 leaf 0 comps all: 8 coordinates, dim Der_Δ = 2, classes 3, 16 orbit-matrix columns; t = 1s
+node 1: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 2: dim 1, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 2s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 4: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 6: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 7: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 8: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 2s
+node 9: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 3s
+RESULT nodes 10, problems [], candidate primes []; t = 3s

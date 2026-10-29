@@ -12,6 +12,9 @@ G_ = {'__name__': 'v2_68c', '__file__': os.path.join(HERE, 'v2_67_orbits.py')}
 exec(compile(src, 'v2_67_orbits', 'exec'), G_)
 sp = G_['sp']; R = G_['R']; vs = G_['vs']; ss = G_['ss']; st = G_['st']
 T = json.load(open(tree)); roots = [T['nodes'][k]['gens'] for k in T['roots'] if k]
+if any(k == '' for k in T['roots']):                        # a root is the zero ideal: it is the whole stratum, coverage is trivial
+    res = dict(block=block, roots=len(T['roots']), K=0, lck_primes=[], power_fail=0, rab=[], rab_fail=0, candidates=[], trivial=True)
+    json.dump(res, open(out + '.json', 'w')); print(f"COVER {res}; t = {time.time() - t0:.0f}s"); sys.exit(0)
 def integral(e):
     den = 1; num = 0
     for c in e.coeffs(): den = den * int(c.denominator) // math.gcd(den, int(c.denominator))

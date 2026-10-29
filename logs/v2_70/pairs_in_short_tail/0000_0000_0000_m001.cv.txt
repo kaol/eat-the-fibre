@@ -1,0 +1,2 @@
+pairs_in_short_tail V = 0000,0000,0000,m001 leaf 0 comps all: 15 coordinates, dim Der_Δ = 4, classes 4, 47 orbit-matrix columns; t = 6s
+COVER {'block': '0000,0000,0000,m001', 'roots': 2, 'K': 15, 'lck_primes': [], 'power_fail': 0, 'rab': [], 'rab_fail': 0, 'candidates': []}; t = 7s

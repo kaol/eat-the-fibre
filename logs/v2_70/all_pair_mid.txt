@@ -1,0 +1,1 @@
+pair_mid: gcert tally {'nodes': 157, 'certified_points': 480, 'checks_failed': 0, 'timeouts': 0, 'points': 80, 'points_failed': 0}; candidates (script, prime): blocks {('gc', '2'): 15, ('gc', '3'): 8, ('u', '2'): 3}; primes ['2', '3']; problems 0 []; missing 0 []

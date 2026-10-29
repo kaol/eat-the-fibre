@@ -1,0 +1,1 @@
+triple_pair_in_short: gcert tally {'nodes': 734, 'certified_points': 3701, 'checks_failed': 3, 'timeouts': 3, 'points': 18, 'points_failed': 0}; candidates (script, prime): blocks {('gc', '2'): 21, ('gc', '3'): 21, ('gc', '5'): 5, ('u', '2'): 21, ('u', '3'): 18}; primes ['2', '3', '5']; problems 0 []; missing 0 []
