@@ -1,9 +1,0 @@
-LIB "primdec.lib";
-ring R = 0,(y0_6,y0_7,y1_6,y1_7,y2_6,y2_7,y3_6,y3_7,y5_6,y5_7,y6_3,y6_4,y7_6,y7_7,y9_3,y9_4),dp;
-option(redSB);
-matrix XI[5][16] = y0_6 - y0_7,0,y1_6 - y1_7,0,y2_6 - y2_7,0,y3_6 - y3_7,0,-y5_7,-y5_7,y6_3 - y6_4,0,y7_6 - y7_7,0,-y9_4 + 1,-y9_4 + 1,0,y0_6 - y0_7,0,y1_6 - y1_7,0,y2_6 - y2_7,0,y3_6 - y3_7,y5_6,y5_6,0,y6_3 - y6_4,0,y7_6 - y7_7,y9_3,y9_3,-y0_6,-y0_7,-y1_6,-y1_7,-y2_6,-y2_7,-y3_6,-y3_7,0,0,-y6_3,-y6_4,-y7_6,-y7_7,0,0,-y0_6,-y0_7,-y1_6,-y1_7,-y2_6,-y2_7,-y3_6,-y3_7,-y5_6,-y5_7,0,0,-y7_6,-y7_7,0,0,-y0_6,-y0_7,-y1_6,-y1_7,-y2_6,-y2_7,-y3_6,-y3_7,-y5_6,-y5_7,0,0,0,0,0,0;
-proc xi(poly h, int a) { poly g = 0; int b; for (b = 1; b <= 16; b++) { g = g + diff(h, var(b)) * XI[a, b]; } return(g); }
-ideal G = std(ideal(y9_3 - y9_4,y7_7,y7_6,y6_4,y6_3,y5_7,y5_6,y3_7,y3_6,y1_7,y1_6,y0_7 - y2_7,y0_6 - y2_6,y2_6*y9_4 - y2_6 - y2_7*y9_4));
-print("DIM " + string(dim(G)));
-intvec iv = indepSet(G); print("INDEP " + string(iv));
-print("END"); quit;
