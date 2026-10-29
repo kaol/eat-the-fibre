@@ -43,3 +43,14 @@ representatives of v2.56 and v2.64, read with a numpy-only unpickler):
 
 96. Equality block by block on every block without a case split: Q₁ = 1⇉2⇇3 + 1→3 + 2→4 on 89 of its 90 blocks
     (total 1220 − 17 = 1203), Q₂ = 1⇉2⇇3 + 1→3 + 3→4 on 98 of its 99 blocks (total 1773 − 15 = 1758).
+
+96 held: Q₁ 1203 = 1203 on 89 blocks (one block first gave an unknown geometric count: its 36 primes matched the
+census 36, and one prime with only algebraic sample points was then counted with absPrimdecGTZ: 1 component), Q₂
+1758 = 1758 on 98 blocks. Before running the case-split blocks (analysis/v2_67_leafunion.py: orbit stratification
+per leaf, H-stable leaf primes only, nodes identified across leaves by their reduced Gröbner basis in all
+coordinates):
+
+97. Q₁ block 0000,0000,0000,0001 gives 17 and Q₂ block 1000,010m,010m,0000 gives 15, the census counts, so the
+    geometric orbit count equals the census on all of Q₁ (1220) and Q₂ (1773). For 1⇉2→3→4→5 the per-block equality
+    holds on every block and the total is 1770 (the Strix census), with the case-split block 00000,00000,0010m,00000,00000
+    giving 7 (computed before its census).

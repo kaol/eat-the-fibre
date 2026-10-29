@@ -22,6 +22,7 @@ singular_nohilb.install()
 ap = argparse.ArgumentParser(); ap.add_argument('cert'); ap.add_argument('block'); ap.add_argument('leaf', type=int)
 ap.add_argument('comp'); ap.add_argument('out'); ap.add_argument('--seed', type=int, default=67)
 ap.add_argument('--tmo', type=int, default=20000)
+ap.add_argument('--leafmode', action='store_true', help='case-split leaf: skip roots that are not H-stable; record full-coordinate keys')
 A = ap.parse_args(); rng = random.Random(A.seed); t0 = time.time()
 op = lzma.open if A.cert.endswith('.xz') else open
 st = None; comps = []
@@ -257,6 +258,9 @@ def stratify(gens, path, check_tangent=False):
         stats['unresolved'] += 1; node['result'] = 'singular timeout/error'
         print(f"  {path}: dim {dim_}: SINGULAR timeout/error; t = {time.time() - t0:.0f}s", flush=True); return key
     assert "FININ" not in o, "chosen minor lies in I_X"
+    if "NOTTANGENT" in o and A.leafmode:                   # a leaf prime that is not H-stable is not a component
+        stats['primes'] -= 1; stats['dense'] -= 0; node['result'] = 'not H-stable (not a component of the stratum)'
+        print(f"  {path}: not H-stable: skipped", flush=True); return key
     assert "NOTTANGENT" not in o, "vector fields not tangent to the input prime: " + o[o.index("NOTTANGENT"):][:40]
     m = re.search(r"CLOSED (\d+) DIM (-?\d+)", o)
     kids = [(int(b.split()[0]), b.split("GENS ")[1].split("\n")[0].split(',')) for b in o.split("COMP ")[1:]]
@@ -280,8 +284,22 @@ for c in comps:
     assert nd['dim'] == c['dim'], (nd['dim'], c['dim'])
     if c.get('W') is not None and nd.get('weights') is not None and len(nd['weights']) != len(c['W']):
         print(f"  note: X{c['comp']} local weightings {len(nd['weights'])} vs pipeline W_Z {len(c['W'])}", flush=True)
+for k_, nd in NODES.items():                               # dense orbit seen only at algebraic points: count the
+    if nd.get('result') == 'dense orbit' and nd.get('geometric') is None:   # geometric components (absPrimdecGTZ)
+        o = singular(RING + [f"ideal I = {k_};", "def SA = absPrimdecGTZ(I); setring SA; int i;",
+                             'for (i = 1; i <= size(absolute_primes); i++) { print("CONJ " + string(absolute_primes[i][2])); }',
+                             'print("END"); quit;'], 'abs' + str(abs(hash(k_)) % 10**8))
+        if o: nd['geometric'] = sum(int(x) for x in re.findall(r"CONJ (\d+)", o)); nd['geometric_by'] = 'absPrimdecGTZ'
+if A.leafmode:                                             # canonical key in all coordinates (graph of the leaf's substitutions)
+    rel = [f"{x}-({v.replace('**', '^')})" for x, v in st['subs']]
+    for k_, nd in NODES.items():
+        if nd.get('result') not in ('dense orbit', 'points'): continue
+        o = singular([f"ring RF = 0,({','.join(S['names'])}),dp;", "option(redSB);", f"ideal I = {','.join(([k_] if k_ else []) + rel) or '0'};",
+                      'ideal G = std(I); print("FULL " + string(G));', 'print("END"); quit;'], 'full' + str(len(k_)) + '_' + str(abs(hash(k_)) % 10**8))
+        nd['fullkey'] = re.search(r"FULL (.*)", o).group(1)
+NODES_OK = {k_: nd for k_, nd in NODES.items() if not str(nd.get('result', '')).startswith('not H-stable')}
 ok = stats['nodense'] == 0 and stats['unresolved'] == 0
-geo = [n.get('geometric') for n in NODES.values()]
+geo = [n.get('geometric') for n in NODES_OK.values()]
 count = sum(geo) + roots.count(None) if all(g is not None for g in geo) else None
 json.dump(dict(block=A.block, leaf=A.leaf, comps=[c['comp'] for c in comps], quiver=Q, roots=roots, nodes=NODES,
                stats=stats, orbits=count), open(A.out + '.json', 'w'))
