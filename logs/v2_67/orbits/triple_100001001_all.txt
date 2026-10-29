@@ -1,0 +1,15 @@
+triple_pair_in_short V = 100,001,001 leaf 0 comp all: dim 10, 30 coordinates, dim 𝔥 = 10, 65 orbit-matrix columns; t = 0s
+  X1: dim 10: dense orbit (minor 11669 chars, rational point); boundary dim 9 after 5 closure rounds, 5 primes [9, 9, 9, 9, 9]; t = 10s
+  X1.1: dim 9: dense orbit (minor 1441 chars, rational point); boundary dim 8 after 6 closure rounds, 4 primes [8, 8, 8, 8]; t = 24s
+  X1.1.1: dim 8: dense orbit (minor 3274 chars, rational point); boundary dim 7 after 6 closure rounds, 3 primes [7, 7, 7]; t = 25s
+  X1.1.1.1: dim 7: dense orbit (minor 1456 chars, rational point); boundary dim 6 after 7 closure rounds, 2 primes [6, 6]; t = 25s
+  X1.1.1.1.1: dim 6: dense orbit (minor 1276 chars, rational point); boundary dim 5 after 7 closure rounds, 1 primes [5]; t = 25s
+  X1.1.1.1.1.1: dim 5: dense orbit (minor 1131 chars, rational point); boundary dim -1 after 6 closure rounds, 0 primes []; t = 25s
+  X1.1.1.1.2: dim 6: dense orbit (minor 1311 chars, rational point); boundary dim 5 after 6 closure rounds, 1 primes [5]; t = 26s
+  X1.1.1.2: dim 7: dense orbit (minor 2914 chars, rational point); boundary dim 6 after 6 closure rounds, 2 primes [6, 6]; t = 26s
+  X1.1.1.2.2: dim 6: dense orbit (minor 2626 chars, rational point); boundary dim 5 after 5 closure rounds, 1 primes [5]; t = 26s
+  X1.1.1.3: dim 7: dense orbit (minor 2985 chars, rational point); boundary dim 6 after 5 closure rounds, 2 primes [6, 6]; t = 27s
+  X1.1.2: dim 8: dense orbit (minor 6477 chars, rational point); boundary dim 7 after 6 closure rounds, 3 primes [7, 7, 7]; t = 29s
+  X1.1.2.1: dim 7: dense orbit (minor 27 chars, rational point); boundary dim 6 after 8 closure rounds, 2 primes [6, 6]; t = 30s
+  X1.1.2.1.1: dim 6: dense orbit (minor 1285 chars, rational point); boundary dim 5 after 7 closure rounds, 1 primes [5]; t = 31s
+  X1.1.2.3: dim 7: dense orbit (minor 2985 chars, rational point); boundary dim 6 after 5 closure rounds, 2 primes [6, 6]; t = 32s

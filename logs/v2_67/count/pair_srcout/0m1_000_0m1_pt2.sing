@@ -1,0 +1,8 @@
+LIB "primdec.lib";
+ring R = 0,(k03,k23,k31,k33,y4_0,y4_1),dp;
+option(redSB);
+matrix XI[4][6] = k03,k23,-k31,0,-k33 - y4_0,-y4_1,-k03,-k23,k31,0,y4_0,y4_1,-k03,-k23,k31,0,0,y4_1,0,0,0,0,0,-y4_1;
+proc xi(poly h, int a) { poly g = 0; int b; for (b = 1; b <= 6; b++) { g = g + diff(h, var(b)) * XI[a, b]; } return(g); }
+ideal G = std(ideal(y4_1,y4_0,k33,k31,k23,k03));
+print("VDIM " + string(vdim(G)));
+print("END"); quit;

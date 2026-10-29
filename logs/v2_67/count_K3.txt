@@ -1,0 +1,7 @@
+00,00                    finitely many orbits   orbits    7  census 7  ok
+10,00                    finitely many orbits   orbits    5  census 5  ok
+00,01                    finitely many orbits   orbits    5  census 5  ok
+10,01                    finitely many orbits   orbits    7  census 7  ok
+10,10                    finitely many orbits   orbits    5  census 5  ok
+01,01                    finitely many orbits   orbits    5  census 5  ok
+TOTAL orbits 34 census 34; blocks 6, skipped 0, mismatches 0 []

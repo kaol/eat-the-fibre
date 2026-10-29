@@ -1,0 +1,6 @@
+K3_after V = 000,000,m01 leaf 0 comp all: dim 4, 23 coordinates, dim 𝔥 = 8, 55 orbit-matrix columns; t = 0s
+  X1: dim 4: dense orbit (minor 52 chars, rational point); boundary dim 2 after 5 closure rounds, 1 primes [2]; t = 1s
+  X1.1: dim 2: dense orbit (minor 9 chars, rational point); boundary dim -1 after 3 closure rounds, 0 primes []; t = 1s
+  X2: dim 4: dense orbit (minor 71 chars, rational point); boundary dim 3 after 5 closure rounds, 1 primes [3]; t = 2s
+  X2.1: dim 3: dense orbit (minor 28 chars, rational point); boundary dim -1 after 5 closure rounds, 0 primes []; t = 2s
+RESULT finitely many orbits: {'primes': 5, 'dense': 4, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 5; t = 2s

@@ -1,0 +1,13 @@
+  kernel stage on cpu: 56632 subspaces, subalgebras by dimension [1, 92, 448, 445, 156, 21, 1]
+  kernel stage: 31.8s
+triple_pair_in_short F_3: d=11, dim K=6, 108736 kernel folds in 56028 torus orbits; jobs=1
+  symmetry: 56028 torus orbits in 3444 H-orbits (H = G × T); 52584 fibres by transport; |N| = |ker(H → H|_K)| = 54
+  133/56028 fibres done, 3311 open, 29334 queued tasks, 238 tasks run, t=96s
+  138/56028 fibres done, 3306 open, 3815 queued tasks, 26613 tasks run, t=172s
+  141/56028 fibres done, 3303 open, 3613 queued tasks, 27328 tasks run, t=232s
+  306/56028 fibres done, 3138 open, 3236 queued tasks, 28225 tasks run, t=292s
+  764/56028 fibres done, 2680 open, 2699 queued tasks, 29569 tasks run, t=353s
+  961/56028 fibres done, 2483 open, 2650 queued tasks, 31070 tasks run, t=413s
+  964/56028 fibres done, 2480 open, 6269 queued tasks, 32833 tasks run, t=473s
+  965/56028 fibres done, 2479 open, 4222 queued tasks, 34880 tasks run, t=533s
+  967/56028 fibres done, 2477 open, 12728 queued tasks, 36778 tasks run, t=593s

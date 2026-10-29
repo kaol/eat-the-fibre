@@ -35,6 +35,8 @@ assert st and comps, "stratum/component not found"
 Ws = {json.dumps(c['W']) for c in comps if c['dim'] > 0}
 assert len(Ws) <= 1, "components with different weightings: run them separately"
 comp = next((c for c in comps if c['dim'] > 0), comps[0])
+if not st['vs']:                                            # a point stratum: one fold (or none)
+    print(f"RESULT finitely many orbits: point stratum; geometric H-orbits {st['ncomp']}; t = 0s"); sys.exit(0)
 Q = st['quiver']; V = [[-1 if ch == 'm' else int(ch) for ch in row] for row in A.block.split(',')]
 S = fi.stratum(Q, V); R = S['R']; ctx = S['ctx']; d = ctx['d']; kdim = ctx['kdim']; compl = S['complement']
 gl = {str(g): g for g in R.gens}; loc = {k: sp.Symbol(k) for k in gl}

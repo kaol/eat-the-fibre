@@ -1,0 +1,9 @@
+LIB "primdec.lib";
+ring R = 0,(k03,k04,k13,k14,k31,k32,k33,k34,k41,k42,k43,k44,y4_0,y4_1,y5_0,y5_1),dp;
+option(redSB);
+matrix XI[8][16] = k03,k03,k13,k13,-k31 - k41,-k32 - k42,-k43,k33 - k34 - k44,0,0,k43,k43,-k33 - y4_0 - y5_0,-y4_1 - y5_1,-k43,0,-k03,0,-k13,0,k31,k32,0,k34,0,0,-k43,0,y4_0,y4_1,0,0,0,-k03,0,-k13,k41,k42,k43,-k33 + k44,0,0,0,-k43,y5_0,y5_1,0,0,k04,k04,k14,k14,0,0,k34,k34,-k31 - k41,-k32 - k42,-k33 - k43 + k44,-k34,-k34,0,-k44 - y4_0 - y5_0,-y4_1 - y5_1,-k04,0,-k14,0,0,0,-k34,0,k31,k32,k33 - k44,k34,0,0,y4_0,y4_1,0,-k04,0,-k14,0,0,0,-k34,k41,k42,k43,0,0,0,y5_0,y5_1,-k03,-k04,-k13,-k14,k31,k32,0,0,k41,k42,0,0,0,y4_1,0,y5_1,0,0,0,0,0,0,0,0,0,0,0,0,0,-y4_1,0,-y5_1;
+proc xi(poly h, int a) { poly g = 0; int b; for (b = 1; b <= 16; b++) { g = g + diff(h, var(b)) * XI[a, b]; } return(g); }
+ideal G = std(ideal(y5_1,y4_1,k41,k33 + k44 - 1,k31,k14,k13,k04,k03,-k34*y5_0 + k44*y4_0,k43*y4_0 + k44*y5_0 - y5_0,k34*k43 + k44^2 - k44,k32*k43 + k42*k44,-k32*k44 + k32 + k34*k42));
+print("DIM " + string(dim(G)));
+intvec iv = indepSet(G); print("INDEP " + string(iv));
+print("END"); quit;

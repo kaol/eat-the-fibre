@@ -23,3 +23,10 @@ as finite), and after one block of 1⇉2→3 (100,010,001) gave 7 geometric H-or
     1⇉2→3→4 (no case-split blocks, saved q = 3 representatives), the number of geometric H-orbits on the stratum
     (distinct H-stable primes met, each with a dense orbit at a rational point, plus the points of 0-dimensional
     primes) equals the number of local-torus classes in that block at q = 3. Summed: 20, 34, 71, 101, 120, 183, 334.
+
+Added after prediction 93 held on all seven quivers (20, 34, 71, 101, 120, 183, 334: equal block by block), before
+running these:
+
+94. The same block-by-block equality for 1→2⇉3 (71), 1⇉2 + 3→2 (101), 1→2⇉3→4 (257), 1⇉2 + 2→3 + 2→4 (414),
+    1⇉2 + 1→3 + 4→2 (485), and Q₀ = 1⇉2⇇3 + 1→3 (366, v2.58 certificates, v2.53 block census). For Q₁, Q₂ and
+    1⇉2→3→4→5 on the blocks without a case split.

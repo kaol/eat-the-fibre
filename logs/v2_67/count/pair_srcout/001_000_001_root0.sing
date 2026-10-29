@@ -1,0 +1,9 @@
+LIB "primdec.lib";
+ring R = 0,(k03,k13,k31,k32,k33,y4_0,y4_1),dp;
+option(redSB);
+matrix XI[4][7] = k03,k13,-k31,-k32,0,-k33 - y4_0,-y4_1,-k03,-k13,k31,k32,0,y4_0,y4_1,-k03,-k13,k31,k32,0,0,y4_1,0,0,0,0,0,0,-y4_1;
+proc xi(poly h, int a) { poly g = 0; int b; for (b = 1; b <= 7; b++) { g = g + diff(h, var(b)) * XI[a, b]; } return(g); }
+ideal G = std(ideal(y4_1,y4_0,k33,k31,k13,k03));
+print("DIM " + string(dim(G)));
+intvec iv = indepSet(G); print("INDEP " + string(iv));
+print("END"); quit;

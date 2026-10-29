@@ -1,0 +1,9 @@
+K3_srcout V = 000,01m,000 leaf 0 comp all: dim 5, 16 coordinates, dim 𝔥 = 8, 30 orbit-matrix columns; t = 0s
+  X1: dim 5: dense orbit (minor 65 chars, rational point); boundary dim 4 after 4 closure rounds, 2 primes [4, 4]; t = 1s
+  X1.1: dim 4: dense orbit (minor 50 chars, rational point); boundary dim 3 after 3 closure rounds, 1 primes [3]; t = 1s
+  X1.1.1: dim 3: dense orbit (minor 13 chars, rational point); boundary dim -1 after 5 closure rounds, 0 primes []; t = 1s
+  X1.2: dim 4: dense orbit (minor 18 chars, rational point); boundary dim 3 after 6 closure rounds, 1 primes [3]; t = 1s
+  X2: dim 2: dense orbit (minor 7 chars, rational point); boundary dim 0 after 2 closure rounds, 1 primes [0]; t = 2s
+  X3: dim 4: dense orbit (minor 36 chars, rational point); boundary dim 2 after 4 closure rounds, 1 primes [2]; t = 2s
+  X3.1: dim 2: dense orbit (minor 9 chars, rational point); boundary dim -1 after 3 closure rounds, 0 primes []; t = 2s
+RESULT finitely many orbits: {'primes': 8, 'dense': 7, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 8; t = 2s

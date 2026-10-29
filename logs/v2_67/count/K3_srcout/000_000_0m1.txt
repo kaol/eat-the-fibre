@@ -1,0 +1,16 @@
+K3_srcout V = 000,000,0m1 leaf 0 comp all: dim 5, 16 coordinates, dim 𝔥 = 8, 30 orbit-matrix columns; t = 0s
+  X1: dim 5: dense orbit (minor 104 chars, rational point); boundary dim 4 after 5 closure rounds, 2 primes [4, 4]; t = 1s
+  X1.1: dim 4: dense orbit (minor 38 chars, rational point); boundary dim 3 after 5 closure rounds, 1 primes [3]; t = 1s
+  X1.1.1: dim 3: dense orbit (minor 13 chars, rational point); boundary dim -1 after 5 closure rounds, 0 primes []; t = 1s
+  X1.2: dim 4: dense orbit (minor 18 chars, rational point); boundary dim 3 after 6 closure rounds, 1 primes [3]; t = 1s
+  X2: dim 5: dense orbit (minor 104 chars, rational point); boundary dim 4 after 5 closure rounds, 2 primes [4, 4]; t = 2s
+  X2.1: dim 4: dense orbit (minor 38 chars, rational point); boundary dim 3 after 5 closure rounds, 1 primes [3]; t = 2s
+  X4: dim 6: dense orbit (minor 161 chars, rational point); boundary dim 5 after 5 closure rounds, 1 primes [5]; t = 2s
+  X4.1: dim 5: dense orbit (minor 49 chars, rational point); boundary dim 4 after 5 closure rounds, 2 primes [4, 4]; t = 2s
+  X4.1.1: dim 4: dense orbit (minor 38 chars, rational point); boundary dim 2 after 4 closure rounds, 1 primes [2]; t = 3s
+  X4.1.1.1: dim 2: dense orbit (minor 9 chars, rational point); boundary dim -1 after 3 closure rounds, 0 primes []; t = 3s
+  X4.1.2: dim 4: dense orbit (minor 36 chars, rational point); boundary dim 2 after 4 closure rounds, 1 primes [2]; t = 3s
+  X5: dim 6: dense orbit (minor 161 chars, rational point); boundary dim 5 after 5 closure rounds, 1 primes [5]; t = 3s
+  X5.1: dim 5: dense orbit (minor 49 chars, rational point); boundary dim 4 after 5 closure rounds, 2 primes [4, 4]; t = 3s
+  X5.1.1: dim 4: dense orbit (minor 38 chars, rational point); boundary dim 2 after 4 closure rounds, 1 primes [2]; t = 3s
+RESULT finitely many orbits: {'primes': 15, 'dense': 14, 'points': 1, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 15; t = 3s
