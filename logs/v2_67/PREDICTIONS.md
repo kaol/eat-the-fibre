@@ -37,3 +37,9 @@ special); the triple quiver's q = 3 census (torch engine, 46 s) gives 72 classes
 geometric orbits found there before the census was computed. Before running the other 20 blocks:
 
 95. 1⇛2⇇3 + 1→3: the geometric orbit count equals the census class count in every one of its 21 blocks; total 752.
+
+95 held: 752 = 752, all 21 blocks equal. Before running Q₁ and Q₂ (v2.59 and v2.64 certificates; q = 3 census
+representatives of v2.56 and v2.64, read with a numpy-only unpickler):
+
+96. Equality block by block on every block without a case split: Q₁ = 1⇉2⇇3 + 1→3 + 2→4 on 89 of its 90 blocks
+    (total 1220 − 17 = 1203), Q₂ = 1⇉2⇇3 + 1→3 + 3→4 on 98 of its 99 blocks (total 1773 − 15 = 1758).

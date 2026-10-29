@@ -4,9 +4,15 @@ number of folds with each block (the sum of G-orbit sizes), and the number of lo
 Usage: python3 -I analysis/v2_53_block_census.py REPS_q1.pkl REPS_q2.pkl ..."""
 import sys, pickle, math, collections
 import numpy as np
+class SafeU(pickle.Unpickler):                        # v2.67: numpy arrays only (some pickles were uploaded)
+    OK = {('numpy._core.numeric', '_frombuffer'), ('numpy', 'dtype'), ('numpy._core.multiarray', '_reconstruct'), ('numpy', 'ndarray'),
+          ('numpy.core.numeric', '_frombuffer'), ('numpy.core.multiarray', '_reconstruct')}
+    def find_class(self, mod, name):
+        if (mod, name) in self.OK: return super().find_class(mod, name)
+        raise pickle.UnpicklingError(f"blocked {mod}.{name}")
 rows = {}
 for f in sys.argv[1:]:
-    R = pickle.load(open(f, 'rb')); p = R['p']; basis = R['basis']
+    R = SafeU(open(f, 'rb')).load(); p = R['p']; basis = R['basis']
     vid = [i for i, b in enumerate(basis) if b[0] == 'v']
     N = collections.Counter(); loc = collections.defaultdict(set); gorb = collections.Counter()
     for P, sz, l in zip(R['greps'], R['gsizes'], R['loc']):

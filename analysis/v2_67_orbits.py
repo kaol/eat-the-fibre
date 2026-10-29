@@ -32,9 +32,6 @@ for l in op(A.cert, 'rt'):
     if r['kind'] == 'stratum': st = r
     elif A.comp == 'all' or r.get('comp') in {int(x) for x in A.comp.split(',')}: comps.append(r)
 assert st and comps, "stratum/component not found"
-Ws = {json.dumps(c['W']) for c in comps if c['dim'] > 0}
-assert len(Ws) <= 1, "components with different weightings: run them separately"
-comp = next((c for c in comps if c['dim'] > 0), comps[0])
 if not st['vs']:                                            # a point stratum: one fold (or none)
     print(f"RESULT finitely many orbits: point stratum; geometric H-orbits {st['ncomp']}; t = 0s"); sys.exit(0)
 Q = st['quiver']; V = [[-1 if ch == 'm' else int(ch) for ch in row] for row in A.block.split(',')]
@@ -45,17 +42,17 @@ Pr = [row[:] for row in S['P']]
 for x, v in st['subs']:
     xv, vv = gl[x], parse(v); Pr = [[e.compose(xv, vv) for e in row] for row in Pr]
 vs = st['vs']; nv = len(vs)
-# 𝔥: Der_Δ and the component's weightings
+# 𝔥 at a prime Y: Der_Δ plus the class weightings w with Σ_c w_c (Δ_c-defect) ≡ 0 on Y whose vector fields are
+# tangent to Y (the local torus of v2.23 at the generic point of Y); computed per prime, so it grows down the tree
 DerD = [sp.Matrix(d, d, [sp.Rational(x) for x in D]) for D in st['DerD']]
 Ec = [sp.diag(*e) for e in st['Ec']]
-W = [[sp.Rational(x) for x in w] for w in (comp['W'] or [])]
-H = DerD + [sum((w[c] * Ec[c] for c in range(len(Ec))), sp.zeros(d, d)) for w in W]
+NCL = len(Ec); ND = len(DerD); BASE = DerD + Ec
 def rc(q): return sp.QQ(int(sp.fraction(q)[0]), int(sp.fraction(q)[1]))
 def comm(D):
     Dr = [[rc(D[a, b]) for b in range(d)] for a in range(d)]
     return [[sum((Pr[k][b] * Dr[a][k] for k in range(d) if Dr[a][k]), R(0)) - sum((Pr[a][k] * Dr[k][b] for k in range(d) if Dr[k][b]), R(0))
              for b in range(d)] for a in range(d)]
-C = [comm(D) for D in H]
+CB = [comm(D) for D in BASE]
 p7 = 7
 Kmat = sp.Matrix(((np.asarray(ctx['Kmat']) + p7 // 2) % p7 - p7 // 2).tolist())
 Bm = sp.Matrix.hstack(Kmat, sp.Matrix([[1 if i == j else 0 for j in compl] for i in range(d)]))
@@ -66,30 +63,63 @@ def xi(Cd, x):
     if m: return Cd[int(m.group(1))][compl[int(m.group(2))]]
     m = re.fullmatch(r'k(\d)(\d)', x); i, j = int(m.group(1)), int(m.group(2))
     return sum((Cd[a][b] * KlQ[i][a] * KmQ[b][j] for a in range(d) if KlQ[i][a] for b in range(d) if KmQ[b][j] and Cd[a][b]), R(0))
-XI = [[xi(Cd, x) for x in vs] for Cd in C]
+XIB = [[xi(Cd, x) for x in vs] for Cd in CB]
 ss = lambda e: str(e).replace('**', '^') if e else '0'
-cols = [(a, b) for a in range(d) for b in range(d) if any(Cd[a][b] for Cd in C)]
-Mrows = [[Cd[a][b] for a, b in cols] for Cd in C]
+cols = [(a, b) for a in range(d) for b in range(d) if any(Cd[a][b] for Cd in CB)]
+MB = [[Cd[a][b] for a, b in cols] for Cd in CB]
 nterm = lambda e: len(e.terms()) if e else 0
-corder = sorted(range(len(cols)), key=lambda j: (sum(nterm(Mrows[i][j]) for i in range(len(H))), j))
-rorder = sorted(range(len(H)), key=lambda i: (sum(nterm(e) for e in Mrows[i]), i))
+# class Δ-defects (as in v2_55_pipeline.py): Σ_m P[m,l] Δ_c[m] − P Δ_c[l] Pᵀ
+arrows = ctx['arrows']; basis = ctx['basis']; idx = {b_: i for i, b_ in enumerate(basis)}
+cl = st['classes']
+def DLclass(c):
+    D_ = np.zeros((d, d, d), dtype=np.int64)
+    for l, b_ in enumerate(basis):
+        if b_[0] == 'v': continue
+        for k, x in enumerate(b_[1]):
+            if x not in c: continue
+            pre = idx[('p', b_[1][:k])] if k > 0 else idx[('v', arrows[x][0])]
+            suf = idx[('p', b_[1][k + 1:])] if k + 1 < len(b_[1]) else idx[('v', arrows[x][1])]
+            D_[l, pre, suf] += 1
+    return D_
+def defect(Dl):
+    out = []
+    for l in range(d):
+        PD = [[sum((Pr[a][x] * int(Dl[l][x, y]) for x in range(d) if Dl[l][x, y]), R(0)) for y in range(d)] for a in range(d)]
+        for a in range(d):
+            for b in range(d):
+                lhs = sum((Pr[m][l] * int(Dl[m][a, b]) for m in range(d) if Dl[m][a, b]), R(0))
+                out.append(lhs - sum((PD[a][y] * Pr[b][y] for y in range(d) if PD[a][y]), R(0)))
+    return out
+defects = [defect(DLclass(c)) for c in cl]
+nzd = [k for k in range(len(defects[0])) if any(defects[c][k] for c in range(NCL))]
+DFSTR = ','.join(ss(defects[c][k]) for c in range(NCL) for k in nzd) or '0'
+XESTR = f"matrix XE[{NCL}][{nv}] = " + ",".join(ss(XIB[ND + c][b]) for c in range(NCL) for b in range(nv)) + ";"
+def active(Wb):
+    """coefficient rows over BASE of the active fields: Der_Δ, then Σ_c w_c E_c for w in Wb"""
+    return [[1 if j == i else 0 for j in range(ND + NCL)] for i in range(ND)] + [[0] * ND + [rc(x) for x in w] for w in Wb]
+def combine(rows, B):
+    out = []
+    for co in rows:
+        out.append([sum((rc(sp.Rational(str(co[j]))) * B[j][t] for j in range(len(co)) if co[j] and B[j][t]), R(0)) for t in range(len(B[0]))])
+    return out
 gpos = {str(g): i for i, g in enumerate(R.gens)}
 from sympy.polys.matrices import DomainMatrix as _DM
 KD = R.to_domain()
-print(f"{Q} V = {A.block} leaf {A.leaf} comp {A.comp}: dim {comp['dim']}, {nv} coordinates, dim 𝔥 = {len(H)}, "
+print(f"{Q} V = {A.block} leaf {A.leaf} comps {A.comp}: {nv} coordinates, dim Der_Δ = {ND}, classes {NCL}, "
       f"{len(cols)} orbit-matrix columns; t = {time.time() - t0:.0f}s", flush=True)
-
+from sympy.polys.matrices import DomainMatrix as _DM
+KD = R.to_domain()
+gpos = {str(g): i for i, g in enumerate(R.gens)}
 def singular(lines, tag):
     fn = f"{A.out}_{tag}.sing"; open(fn, 'w').write("\n".join(lines))
     try: r = subprocess.run(["Singular", "-q", "--no-rc", fn], capture_output=True, text=True, timeout=A.tmo)
     except subprocess.TimeoutExpired: return None
     o = r.stdout + r.stderr
     return None if ("? error" in o or "END" not in o) else o
-HEAD = [f'LIB "primdec.lib";', f"ring R = 0,({','.join(vs)}),dp;", "option(redSB);",
-        f"matrix XI[{len(H)}][{nv}] = " + ",".join(ss(XI[a][b]) for a in range(len(H)) for b in range(nv)) + ";",
-        f"proc xi(poly h, int a) {{ poly g = 0; int b; for (b = 1; b <= {nv}; b++) {{ g = g + diff(h, var(b)) * XI[a, b]; }} return(g); }}"]
-NH = len(H)
-
+RING = [f'LIB "primdec.lib";', f"ring R = 0,({','.join(vs)}),dp;", "option(redSB);"]
+def head(XI):
+    return RING + [f"matrix XI[{len(XI)}][{nv}] = " + ",".join(ss(XI[a][b]) for a in range(len(XI)) for b in range(nv)) + ";",
+                   f"proc xi(poly h, int a) {{ poly g = 0; int b; for (b = 1; b <= {nv}; b++) {{ g = g + diff(h, var(b)) * XI[a, b]; }} return(g); }}"]
 def evalr(e, pt):
     out = sp.Rational(0)
     for mon, c in e.items():
@@ -110,7 +140,7 @@ def points(gens, iv, k=3):
     Sv = [sp.Symbol(v) for v in vs]; gs = [sp.sympify(g.replace('^', '**'), locals=loc) for g in gens]
     rat, num = [], []
     for t in range(16 * k):
-        vals = {Sv[j]: sp.Integer(rng.randint(-5, 5)) for j in range(nv) if iv[j] == 1}
+        vals = {Sv[j]: sp.Integer(rng.randint(-60, 60)) for j in range(nv) if iv[j] == 1}
         g2 = [g for g in (sp.expand(g.subs(vals)) for g in gs) if g != 0]
         unk = sorted(set().union(*[g.free_symbols for g in g2]), key=str) if g2 else []
         try: sols = sp.solve(g2, unk, dict=True) if g2 else [{}]
@@ -118,7 +148,7 @@ def points(gens, iv, k=3):
         for so in sols:
             if len(so) < len(unk): continue
             pt = dict(vals); pt.update(so)
-            for v in Sv: pt.setdefault(v, sp.Integer(rng.randint(-5, 5)))
+            for v in Sv: pt.setdefault(v, sp.Integer(rng.randint(-60, 60)))
             full = [0] * len(R.gens)
             if all(x.is_rational for x in pt.values()):
                 for s_, v in pt.items(): full[gpos[str(s_)]] = sp.Rational(v)
@@ -131,8 +161,17 @@ def points(gens, iv, k=3):
             break
         if len(rat) >= k: break
     return rat, num
-def choose_minor(gens, iv, e):
+def choose_minor(gens, iv, e, Mrows):
     """an e × e minor of the orbit matrix not vanishing at a sampled point of V(gens) (None if none found)"""
+    nr = len(Mrows)
+    corder = sorted(range(len(cols)), key=lambda j: (sum(nterm(Mrows[i][j]) for i in range(nr)), j))
+    rorder = sorted(range(nr), key=lambda i: (sum(nterm(x) for x in Mrows[i]), i))
+    if e > nr: return None, None
+    for attempt in range(4):                               # rank can drop at special points: sample again
+        f_, how_ = _choose(gens, iv, e, Mrows, corder, rorder)
+        if f_ is not None: return f_, how_
+    return None, None
+def _choose(gens, iv, e, Mrows, corder, rorder):
     rat, num = points(gens, iv)
     for pt in rat:
         Mv = sp.Matrix([[evalr(x, pt) for x in row] for row in Mrows])
@@ -155,30 +194,54 @@ def choose_minor(gens, iv, e):
         pr, pc = [rorder[i] for i in pr], [corder[j] for j in pc]
         return _DM([[Mrows[i][j] for j in pc] for i in pr], (e, e), KD).det(), 'numeric'
     return None, None
-
 def info(gens, tag):
-    o = singular(HEAD + [f"ideal G = std(ideal({','.join(gens) or '0'}));", 'print("DIM " + string(dim(G)));',
-                         'intvec iv = indepSet(G); print("INDEP " + string(iv));', 'print("END"); quit;'], tag)
-    return int(re.search(r"DIM (-?\d+)", o).group(1)), [int(x) for x in re.search(r"INDEP (.*)", o).group(1).split(',')]
+    o = singular(RING + [f"ideal G = std(ideal({','.join(gens) or '0'}));", 'print("DIM " + string(dim(G)));',
+                         'print("VDIM " + string(vdim(G)));', 'intvec iv = indepSet(G); print("INDEP " + string(iv));', 'print("END"); quit;'], tag)
+    return (int(re.search(r"DIM (-?\d+)", o).group(1)), [int(x) for x in re.search(r"INDEP (.*)", o).group(1).split(',')],
+            int(re.search(r"VDIM (-?\d+)", o).group(1)))
+def local_weights(gens, tag):
+    """basis of {w : Σ_c w_c defect_c ∈ I_Y and Σ_c w_c ξ_{E_c}(I_Y) ⊆ I_Y}"""
+    lines = RING + [XESTR, f"ideal I = {','.join(gens) or '0'}; ideal G = std(I);", f"ideal DF = {DFSTR};",
+                    'ideal NFD = reduce(DF, G); int c; int i; int b; poly g;',
+                    'for (c = 1; c <= ncols(DF); c++) { print("D " + string(c) + " " + string(NFD[c])); }',
+                    f'for (c = 1; c <= {NCL}; c++) {{ for (i = 1; i <= size(I); i++) {{ g = 0; for (b = 1; b <= {nv}; b++) '
+                    '{ g = g + diff(I[i], var(b)) * XE[c, b]; } print("T " + string(c) + " " + string(i) + " " + string(reduce(g, G))); } }',
+                    'print("END"); quit;']
+    o = singular(lines, tag)
+    nk = len(nzd); eqs = {}
+    def add(key, c, poly):
+        if poly.strip() == '0': return
+        for mon, co in parse(poly).terms():
+            eqs.setdefault((key, mon), [sp.Rational(0)] * NCL)[c] += sp.Rational(int(co.numerator), int(co.denominator))
+    for m in re.finditer(r"^D (\d+) (.*)$", o, re.M) if nk else []:
+        j = int(m.group(1)) - 1; add(('d', j % nk), j // nk, m.group(2))
+    for m in re.finditer(r"^T (\d+) (\d+) (.*)$", o, re.M):
+        add(('t', int(m.group(2))), int(m.group(1)) - 1, m.group(3))
+    rows = list(eqs.values())
+    if not rows: return [[sp.Integer(1) if i == j else sp.Integer(0) for i in range(NCL)] for j in range(NCL)]
+    Nm = sp.Matrix(rows).nullspace()
+    return [[v[i] for i in range(NCL)] for v in Nm]
 
 stats = {'primes': 0, 'dense': 0, 'points': 0, 'nodense': 0, 'unresolved': 0}
 NODES = {}                                                 # canonical reduced Gröbner basis → node (primes are shared)
-def info0(gens, tag):
-    o = singular(HEAD + [f"ideal G = std(ideal({','.join(gens) or '0'}));", 'print("VDIM " + string(vdim(G)));', 'print("END"); quit;'], tag)
-    return int(re.search(r"VDIM (-?\d+)", o).group(1))
-def stratify(gens, dim_, iv, path, check_tangent=False):
+def stratify(gens, path, check_tangent=False):
     key = ','.join(gens)
     if key in NODES: return key
+    n_ = stats['primes'] = stats['primes'] + 1
+    dim_, iv, vd = info(gens, f'i{n_}')
     node = NODES[key] = dict(path=path, dim=dim_, gens=gens)
-    stats['primes'] += 1
     if dim_ <= 0:
-        stats['points'] += 1; node.update(result='points', geometric=info0(gens, 'pt' + str(stats['primes']))); return key
-    f, how = choose_minor(gens, iv, dim_)
+        stats['points'] += 1; node.update(result='points', geometric=vd); return key
+    Wb = local_weights(gens, f'w{n_}')
+    act = active(Wb); XI = combine(act, XIB); Mrows = combine(act, MB)
+    node['weights'] = [[str(x) for x in w] for w in Wb]
+    f, how = choose_minor(gens, iv, dim_, Mrows)
     if f is None:
         stats['nodense'] += 1; node['result'] = 'no dense orbit found at sampled points'
-        print(f"  {path}: dim {dim_}: NO DENSE ORBIT at sampled points", flush=True); return key
-    lines = HEAD + [f"ideal I = {','.join(gens) or '0'};", "ideal G = std(I); int a; int i; poly g;",
-                    f"poly f = {ss(f)};", 'if (reduce(f, G) == 0) { print("FININ"); print("END"); quit; }']
+        print(f"  {path}: dim {dim_}: NO DENSE ORBIT at sampled points (dim 𝔥_Y = {len(act)})", flush=True); return key
+    NH = len(XI)
+    lines = head(XI) + [f"ideal I = {','.join(gens) or '0'};", "ideal G = std(I); int a; int i; poly g;",
+                        f"poly f = {ss(f)};", 'if (reduce(f, G) == 0) { print("FININ"); print("END"); quit; }']
     if check_tangent:
         lines += ['for (i = 1; i <= size(I); i++) { for (a = 1; a <= ' + str(NH) + '; a++) { if (reduce(xi(I[i], a), G) != 0) '
                   '{ print("NOTTANGENT " + string(i) + " " + string(a)); print("END"); quit; } } }']
@@ -187,38 +250,39 @@ def stratify(gens, dim_, iv, path, check_tangent=False):
               "; a++) { g = reduce(xi(NEW[i], a), G); if (g != 0) { NX = NX + g; G = std(G + g); } } } NEW = simplify(NX, 2); kill NX; }",
               'print("CLOSED " + string(rounds) + " DIM " + string(dim(G)));',
               "list L = minAssGTZ(G);",
-              'for (i = 1; i <= size(L); i++) { ideal Gi = std(L[i]); print("COMP " + string(dim(Gi))); print("GENS " + string(Gi)); '
-              'intvec iv = indepSet(Gi); print("INDEP " + string(iv)); kill iv; kill Gi; }', 'print("END"); quit;']
-    o = singular(lines, 'n' + str(stats['primes']))
+              'for (i = 1; i <= size(L); i++) { ideal Gi = std(L[i]); print("COMP " + string(dim(Gi))); print("GENS " + string(Gi)); kill Gi; }',
+              'print("END"); quit;']
+    o = singular(lines, f'n{n_}')
     if o is None:
         stats['unresolved'] += 1; node['result'] = 'singular timeout/error'
         print(f"  {path}: dim {dim_}: SINGULAR timeout/error; t = {time.time() - t0:.0f}s", flush=True); return key
     assert "FININ" not in o, "chosen minor lies in I_X"
     assert "NOTTANGENT" not in o, "vector fields not tangent to the input prime: " + o[o.index("NOTTANGENT"):][:40]
     m = re.search(r"CLOSED (\d+) DIM (-?\d+)", o)
-    kids = [(int(b.split()[0]), b.split("GENS ")[1].split("\n")[0].split(','), [int(x) for x in b.split("INDEP ")[1].split("\n")[0].split(',')])
-            for b in o.split("COMP ")[1:]]
+    kids = [(int(b.split()[0]), b.split("GENS ")[1].split("\n")[0].split(',')) for b in o.split("COMP ")[1:]]
     kids = [k for k in kids if k[0] >= 0]                 # the unit ideal (empty boundary) has dim -1
     assert all(k[0] < dim_ for k in kids), "boundary not of lower dimension"
     stats['dense'] += 1
     node.update(result='dense orbit', minor=ss(f), minor_point=how, geometric=1 if how == 'rational' else None,
-                closure_rounds=int(m.group(1)), boundary_dim=int(m.group(2)))
-    print(f"  {path}: dim {dim_}: dense orbit (minor {len(ss(f))} chars, {how} point); boundary dim {m.group(2)} after "
+                closure_rounds=int(m.group(1)), boundary_dim=int(m.group(2)), h_dim=NH)
+    print(f"  {path}: dim {dim_}: dense orbit (dim 𝔥_Y {NH}, minor {len(ss(f))} chars, {how} point); boundary dim {m.group(2)} after "
           f"{m.group(1)} closure rounds, {len(kids)} primes {[k[0] for k in kids]}; t = {time.time() - t0:.0f}s", flush=True)
-    node['children'] = [stratify(g, dm, iv_, f"{path}.{n + 1}") for n, (dm, g, iv_) in enumerate(kids)]
+    node['children'] = [stratify(g, f"{path}.{k + 1}") for k, (dm, g) in enumerate(kids)]
     return key
 
 roots = []
-for n, c in enumerate(comps):
+for c in comps:
     gens = [g.replace('**', '^') for g in c['gens'] if g.strip() not in ('', '0')]
     if c['dim'] <= 0 and not gens:                          # a point stratum: one fold
         roots.append(None); stats['points'] += 1; stats['primes'] += 1; continue
-    dim0, iv0 = info(gens, f'root{n}')
-    assert dim0 == c['dim'], (dim0, c['dim'])
-    roots.append(stratify(gens, dim0, iv0, f"X{c['comp']}", check_tangent=True))
+    roots.append(stratify(gens, f"X{c['comp']}", check_tangent=True))
+    nd = NODES[roots[-1]]
+    assert nd['dim'] == c['dim'], (nd['dim'], c['dim'])
+    if c.get('W') is not None and nd.get('weights') is not None and len(nd['weights']) != len(c['W']):
+        print(f"  note: X{c['comp']} local weightings {len(nd['weights'])} vs pipeline W_Z {len(c['W'])}", flush=True)
 ok = stats['nodense'] == 0 and stats['unresolved'] == 0
 geo = [n.get('geometric') for n in NODES.values()]
 count = sum(geo) + roots.count(None) if all(g is not None for g in geo) else None
-json.dump(dict(block=A.block, leaf=A.leaf, comps=[c['comp'] for c in comps], quiver=Q, h_dim=len(H), roots=roots, nodes=NODES,
+json.dump(dict(block=A.block, leaf=A.leaf, comps=[c['comp'] for c in comps], quiver=Q, roots=roots, nodes=NODES,
                stats=stats, orbits=count), open(A.out + '.json', 'w'))
 print(f"RESULT {'finitely many orbits' if ok else 'NOT ESTABLISHED'}: {stats}; geometric H-orbits {count}; t = {time.time() - t0:.0f}s", flush=True)
