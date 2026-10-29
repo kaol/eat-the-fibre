@@ -30,3 +30,10 @@ running these:
 94. The same block-by-block equality for 1→2⇉3 (71), 1⇉2 + 3→2 (101), 1→2⇉3→4 (257), 1⇉2 + 2→3 + 2→4 (414),
     1⇉2 + 1→3 + 4→2 (485), and Q₀ = 1⇉2⇇3 + 1→3 (366, v2.58 certificates, v2.53 block census). For Q₁, Q₂ and
     1⇉2→3→4→5 on the blocks without a case split.
+
+Results so far (before this addition): 93 held on all seven quivers; 94 held on all six quivers named, after two
+script fixes (a Singular `size` vs `ncols` bug that dropped defect equations, and resampling when a random point is
+special); the triple quiver's q = 3 census (torch engine, 46 s) gives 72 classes in block 100,001,001, equal to the 72
+geometric orbits found there before the census was computed. Before running the other 20 blocks:
+
+95. 1⇛2⇇3 + 1→3: the geometric orbit count equals the census class count in every one of its 21 blocks; total 752.
