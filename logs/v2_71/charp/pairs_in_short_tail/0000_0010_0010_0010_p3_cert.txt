@@ -1,0 +1,17 @@
+pairs_in_short_tail V = 0000,0010,0010,0010 leaf 0 comps all: 26 coordinates, dim Der_Δ = 4, classes 4, 114 orbit-matrix columns; t = 4s
+  Z1: dim 1: certified (2 points tried); t = 9s
+  Z1.1: point: point certified
+  Z2: dim 1: certified (1 points tried); t = 16s
+  Z3: dim 3: certified (1 points tried); t = 17s
+  Z3.1: dim 2: certified (3 points tried); t = 19s
+  Z3.1.1: dim 1: certified (1 points tried); t = 23s
+  Z3.2: dim 2: certified (1 points tried); t = 24s
+  Z4: dim 3: certified (1 points tried); t = 25s
+  Z4.1: dim 2: certified (1 points tried); t = 26s
+  Z5: dim 4: certified (2 points tried); t = 27s
+  Z5.1: dim 3: certified (1 points tried); t = 29s
+  Z5.1.1: dim 2: certified (1 points tried); t = 30s
+  Z5.2: dim 3: certified (1 points tried); t = 31s
+  Z6: dim 4: certified (1 points tried); t = 33s
+  Z6.1: dim 3: certified (2 points tried); t = 34s
+RESULT 0000,0010,0010,0010 at p = 3: {'nodes': 14, 'certified': 15, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 15; t = 34s

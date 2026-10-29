@@ -1,0 +1,16 @@
+triple_pair_in_short V = 100,010,100 leaf 0 comps all: 15 coordinates, dim Der_Δ = 8, classes 3, 24 orbit-matrix columns; t = 1s
+  Z1: dim 6: certified (2 points tried); t = 2s
+  Z1.1: dim 5: certified (1 points tried); t = 2s
+  Z1.1.1: dim 4: certified (1 points tried); t = 3s
+  Z1.2: dim 5: certified (1 points tried); t = 3s
+  Z1.2.1: dim 4: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 4s
+  Z1.2.1.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 4s
+  Z2: dim 6: certified (2 points tried); t = 5s
+  Z2.1: dim 5: certified (1 points tried); t = 6s
+  Z3: dim 3: certified (1 points tried); t = 6s
+  Z3.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 7s
+  Z3.1.1: dim 1: certified (1 points tried); t = 9s
+  Z4: dim 5: certified (1 points tried); t = 10s
+  Z4.1: dim 3: certified (1 points tried); t = 11s
+  Z5: dim 5: certified (1 points tried); t = 12s
+RESULT 100,010,100 at p = 3: {'nodes': 14, 'certified': 11, 'no_top_orbit': 3, 'failed': 0, 'points': 0}; census count over every 𝔽_(p^k) = 11; t = 12s

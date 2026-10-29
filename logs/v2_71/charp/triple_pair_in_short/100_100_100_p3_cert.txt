@@ -1,0 +1,14 @@
+triple_pair_in_short V = 100,100,100 leaf 0 comps all: 14 coordinates, dim Der_Δ = 8, classes 3, 29 orbit-matrix columns; t = 1s
+  Z1: dim 4: certified (1 points tried); t = 2s
+  Z1.1: dim 3: certified (1 points tried); t = 2s
+  Z2: point: point certified
+  Z3: dim 4: certified (1 points tried); t = 4s
+  Z3.1: dim 2: certified (1 points tried); t = 5s
+  Z4: dim 5: certified (5 points tried); t = 5s
+  Z4.1: dim 4: certified (1 points tried); t = 6s
+  Z4.2: dim 4: certified (2 points tried); t = 6s
+  Z5: dim 6: certified (1 points tried); t = 7s
+  Z5.1: dim 5: certified (3 points tried); t = 8s
+  Z5.1.1: dim 4: certified (1 points tried); t = 9s
+  Z5.1.2: dim 4: certified (2 points tried); t = 10s
+RESULT 100,100,100 at p = 3: {'nodes': 11, 'certified': 12, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 12; t = 10s

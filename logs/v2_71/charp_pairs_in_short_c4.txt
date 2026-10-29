@@ -1,0 +1,4 @@
+  1000_0100_0001_0001: char 0 count 30; char-3 tree {'nodes': 30, 'minor': 29, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 29, 'certified': 30, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; AGREES
+  1000_0100_0010_0000: char 0 count 42; char-3 tree {'nodes': 48, 'minor': 46, 'points': 2, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 46, 'certified': 42, 'no_top_orbit': 6, 'failed': 0, 'points': 2}; AGREES
+  1000_0100_0010_0001: char 0 count 70; char-3 tree {'nodes': 76, 'minor': 74, 'points': 2, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 74, 'certified': 70, 'no_top_orbit': 6, 'failed': 0, 'points': 2}; AGREES
+pairs_in_short_c4 at p = 3: 3/3 blocks certified with the char 0 count

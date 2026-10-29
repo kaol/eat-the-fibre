@@ -1,0 +1,5 @@
+K2 V = 00,01 leaf 0 comps all: 5 coordinates, dim Der_Δ = 2, classes 1, 10 orbit-matrix columns; t = 0s
+  X1: dim 1, W 1: candidates [{'17': ['G1lc', 'Sjac', 'Slc'], '3': ['G1lc', 'Sjac', 'Slc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '13': ['G1lc', 'Sjac', 'Slc']}, {'5': ['G1lc', 'Sjac', 'Slc']}] -> []; t = 1s
+  X1.1: point, W_x 1: candidates {}
+  X2: dim 1, W 1: candidates [{'2': ['G1lc', 'Slc'], '3': ['G1lc', 'Slc']}, {'2': ['Slc'], '7': ['Slc'], '29': ['G1lc']}, {'3': ['G1lc', 'Slc']}] -> []; t = 1s
+RESULT 00,01: {'nodes': 2, 'certified_points': 6, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates []; t = 1s

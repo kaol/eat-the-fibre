@@ -1,0 +1,24 @@
+triple_pair_in_short V = 000,010,001 leaf 0 comps all: 25 coordinates, dim Der_Δ = 8, classes 3, 56 orbit-matrix columns; t = 1s
+node 1: dim 5, LC(I) primes [], closure dim 4, children 1, issues ['radical membership fails for 1 generators']; t = 2s
+node 2: dim 4, LC(I) primes [], closure dim 3, children 1, all claims exact; t = 2s
+node 3: dim 3, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 3s
+node 4: dim 6, LC(I) primes [], closure dim 5, children 1, all claims exact; t = 3s
+node 5: dim 5, LC(I) primes [], closure dim 4, children 1, all claims exact; t = 3s
+node 6: dim 4, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 3s
+node 7: dim 2, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 4s
+node 8: dim 6, LC(I) primes [], closure dim 5, children 2, all claims exact; t = 4s
+node 9: dim 5, LC(I) primes [], closure dim 4, children 1, all claims exact; t = 5s
+node 10: dim 4, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 5s
+node 11: dim 5, LC(I) primes [], closure dim 4, children 1, all claims exact; t = 6s
+node 12: dim 6, LC(I) primes [], closure dim 5, children 2, all claims exact; t = 6s
+node 13: dim 5, LC(I) primes [], closure dim 4, children 1, all claims exact; t = 7s
+node 14: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 7s
+node 15: dim 1, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 7s
+node 16: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 8s
+node 17: dim 6, LC(I) primes [], closure dim 5, children 2, all claims exact; t = 8s
+node 18: dim 4, LC(I) primes [], closure dim 3, children 1, all claims exact; t = 8s
+node 19: dim 3, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 9s
+node 20: dim 5, LC(I) primes [], closure dim 3, children 1, all claims exact; t = 9s
+node 21: dim 6, LC(I) primes [], closure dim 5, children 2, all claims exact; t = 9s
+node 22: dim 4, LC(I) primes [], closure dim 3, children 1, all claims exact; t = 10s
+RESULT nodes 23, problems [], candidate primes []; t = 10s

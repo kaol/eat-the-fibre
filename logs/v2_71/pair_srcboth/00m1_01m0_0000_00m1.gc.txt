@@ -1,0 +1,5 @@
+pair_srcboth V = 00m1,01m0,0000,00m1 leaf 0 comps all: 8 coordinates, dim Der_Δ = 2, classes 3, 22 orbit-matrix columns; t = 0s
+  X1: dim 1, W 2: candidates [{'2': ['G1lc', 'Slc'], '13': ['G1lc', 'Slc']}, {'7': ['Slc'], '2': ['G1lc'], '3': ['G1lc']}, {'2': ['G1lc', 'Slc'], '3': ['G1lc', 'Slc']}] -> [2]; t = 2s
+  X2: dim 2, W 2: candidates [{'2': ['G1lc', 'Sjac', 'Slc'], '5': ['G1lc', 'Sjac', 'Slc'], '11': ['G1lc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '3': ['G1lc', 'Sjac', 'Slc'], '5': ['G1lc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '13': ['G1lc', 'Sjac', 'Slc'], '3': ['G1lc']}] -> [2]; t = 3s
+  X2.1: dim 1, W 2: candidates [{'61': ['G1lc', 'Slc']}, {'11': ['Slc'], '2': ['G1lc'], '5': ['G1lc']}, {'11': ['G1lc', 'Slc'], '3': ['G1lc', 'Slc']}] -> []; t = 3s
+RESULT 00m1,01m0,0000,00m1: {'nodes': 3, 'certified_points': 9, 'checks_failed': 0, 'timeouts': 0, 'points': 0, 'points_failed': 0}; setup primes []; candidates ['2']; t = 3s
