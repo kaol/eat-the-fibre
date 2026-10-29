@@ -22,6 +22,11 @@ This round makes it effective.
   - at the 0-dimensional nodes, the weighting moves fix the point.
   Both are now checked.*
 
+**Erratum (found in v2.71).** v2_70_gcert.py intersected the separation primes over points separately from the
+other candidates: (∩_x cand(x)) ∪ (∩_x sep(x)). The sound set is ∩_x (cand(x) ∪ sep(x)), because a single point
+must certify every claim at once. The former can miss a prime that one point fails by certificate and another by
+separation. Theorem G₅ below therefore rests on the v2.71 rerun, which uses the sound combination.
+
 ---
 
 ## 0. Results
