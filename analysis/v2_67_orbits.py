@@ -22,6 +22,7 @@ singular_nohilb.install()
 ap = argparse.ArgumentParser(); ap.add_argument('cert'); ap.add_argument('block'); ap.add_argument('leaf', type=int)
 ap.add_argument('comp'); ap.add_argument('out'); ap.add_argument('--seed', type=int, default=67)
 ap.add_argument('--tmo', type=int, default=20000)
+ap.add_argument('--fixed', action='store_true', help='keep the root component\'s weightings for the whole tree (no local growth)')
 ap.add_argument('--leafmode', action='store_true', help='case-split leaf: skip roots that are not H-stable; record full-coordinate keys')
 A = ap.parse_args(); rng = random.Random(A.seed); t0 = time.time()
 op = lzma.open if A.cert.endswith('.xz') else open
@@ -231,7 +232,7 @@ LASTW = {}
 
 stats = {'primes': 0, 'dense': 0, 'points': 0, 'nodense': 0, 'unresolved': 0}
 NODES = {}                                                 # canonical reduced Gröbner basis → node (primes are shared)
-def stratify(gens, path, check_tangent=False):
+def stratify(gens, path, check_tangent=False, Wfix=None):
     key = ','.join(gens)
     if key in NODES: return key
     n_ = stats['primes'] = stats['primes'] + 1
@@ -239,7 +240,7 @@ def stratify(gens, path, check_tangent=False):
     node = NODES[key] = dict(path=path, dim=dim_, gens=gens)
     if dim_ <= 0:
         stats['points'] += 1; node.update(result='points', geometric=vd); return key
-    Wb = local_weights(gens, f'w{n_}')
+    Wb = Wfix if (A.fixed and Wfix is not None) else local_weights(gens, f'w{n_}')
     act = active(Wb); XI = combine(act, XIB); Mrows = combine(act, MB)
     node['weights'] = [[str(x) for x in w] for w in Wb]; node['weights_defect_only'] = LASTW.get('defect_only')
     f, how = choose_minor(gens, iv, dim_, Mrows)
@@ -283,7 +284,7 @@ def stratify(gens, path, check_tangent=False):
                 closure_rounds=int(m.group(1)), boundary_dim=int(m.group(2)), h_dim=NH)
     print(f"  {path}: dim {dim_}: dense orbit (dim 𝔥_Y {NH}, minor {len(ss(f))} chars, {how} point); boundary dim {m.group(2)} after "
           f"{m.group(1)} closure rounds, {len(kids)} primes {[k[0] for k in kids]}; t = {time.time() - t0:.0f}s", flush=True)
-    node['children'] = [stratify(g, f"{path}.{k + 1}") for k, (dm, g) in enumerate(kids)]
+    node['children'] = [stratify(g, f"{path}.{k + 1}", Wfix=Wb) for k, (dm, g) in enumerate(kids)]
     return key
 
 roots = []
