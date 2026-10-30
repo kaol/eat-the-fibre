@@ -1,0 +1,27 @@
+  kernel stage on cpu: 2052656 subspaces, subalgebras by dimension [1, 163, 863, 1416, 917, 246, 27, 1]
+  kernel stage: 35.3s
+K3_after_fork F_3: d=22, dim K=7, 735324 kernel folds in 401276 torus orbits; engine=torch
+  symmetry: 401276 torus orbits in 48626 H-orbits (H = G × T); 352650 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  12288/48626 fibres computed, group 4/12, 15 stacked batches at column 21, t=60s
+  20480/48626 fibres computed, group 6/12, 15 stacked batches at column 20, t=120s
+  36864/48626 fibres computed, group 10/12, 40 stacked batches at column 16, t=185s
+  36864/48626 fibres computed, group 10/12, 66 stacked batches at column 20, t=247s
+  36864/48626 fibres computed, group 10/12, 48 stacked batches at column 20, t=309s
+  36864/48626 fibres computed, group 10/12, 30 stacked batches at column 17, t=371s
+  36864/48626 fibres computed, group 10/12, 29 stacked batches at column 18, t=431s
+  36864/48626 fibres computed, group 10/12, 23 stacked batches at column 17, t=494s
+  36864/48626 fibres computed, group 10/12, 19 stacked batches at column 17, t=555s
+  36864/48626 fibres computed, group 10/12, 18 stacked batches at column 21, t=617s
+  36864/48626 fibres computed, group 10/12, 123 stacked batches at column 19, t=721s
+  36864/48626 fibres computed, group 10/12, 104 stacked batches at column 19, t=783s
+  36864/48626 fibres computed, group 10/12, 87 stacked batches at column 20, t=846s
+  36864/48626 fibres computed, group 10/12, 72 stacked batches at column 20, t=906s
+  36864/48626 fibres computed, group 10/12, 62 stacked batches at column 20, t=966s
+  36864/48626 fibres computed, group 10/12, 52 stacked batches at column 20, t=1029s
+  36864/48626 fibres computed, group 10/12, 44 stacked batches at column 21, t=1090s
+  36864/48626 fibres computed, group 10/12, 28 stacked batches at column 20, t=1153s
+  36864/48626 fibres computed, group 10/12, 144 stacked batches at column 19, t=1344s
+  36864/48626 fibres computed, group 10/12, 135 stacked batches at column 20, t=1407s
+  36864/48626 fibres computed, group 10/12, 125 stacked batches at column 20, t=1468s
+  36864/48626 fibres computed, group 10/12, 115 stacked batches at column 20, t=1532s

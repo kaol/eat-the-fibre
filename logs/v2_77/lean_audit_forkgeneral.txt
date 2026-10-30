@@ -1,0 +1,15 @@
+'EatTheFibre.fork_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.fork_general_rigid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.forkM_general_rigid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.fork_forkM_general_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+@fork_general : ∀ {Q : FinQuiver} [inst : Fintype Q.Path] (C : Fork Q) {k : Type u_1} [inst_1 : CommRing k] (t : k),
+  (Q.pathAlg k).IsFold (CoordAlg.pushM C.ret (Reflect.evalM Q_K3_tgtfork.forkP t)) ∧
+    (Q.pathAlg k).IsFold (CoordAlg.pushM C.ret (Reflect.evalM Q_K3_tgtfork.forkMP t))
+@fork_general_rigid : ∀ {Q : FinQuiver} [inst : Fintype Q.Path] (C : Fork Q) {k : Type u_1} [inst_1 : CommRing k]
+  {h : Matrix Q.Path Q.Path k} {g00 g01 g02 g10 g11 g12 wa wb wc t t' : k},
+  (∀ (v : Fin 15 → k),
+      h.mulVec (CoordAlg.pushV C.ret v) =
+        CoordAlg.pushV C.ret ((Q_K3_tgtfork.substK g00 g01 g02 g10 g11 g12 wa wb wc).mulVec v)) →
+    h * CoordAlg.pushM C.ret (Reflect.evalM Q_K3_tgtfork.forkP t) =
+        CoordAlg.pushM C.ret (Reflect.evalM Q_K3_tgtfork.forkP t') * h →
+      t = t'

@@ -72,4 +72,5 @@ import EatTheFibre.Gen.two_pairs_short_curveB
 import EatTheFibre.Gen.pairs_in_short_vblocks
 import EatTheFibre.Gen.K3_tgtfork
 import EatTheFibre.Gen.K3_tgtfork_rigid
+import EatTheFibre.ForkGeneral
 import EatTheFibre.Audit

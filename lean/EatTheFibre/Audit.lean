@@ -66,6 +66,7 @@ import EatTheFibre.Gen.orbits_thm3F4
 import EatTheFibre.Discordia.Logic
 import EatTheFibre.Discordia.Ops
 import EatTheFibre.Gen.K3_tgtfork_rigid
+import EatTheFibre.ForkGeneral
 
 open EatTheFibre
 
@@ -292,3 +293,7 @@ open EatTheFibre
 #print axioms Q_K3_tgtfork.fork_rigid_GT
 #print axioms Q_K3_tgtfork.forkM_rigid_GT
 #print axioms Q_K3_tgtfork.fork_forkM_disjoint
+#print axioms fork_general
+#print axioms fork_general_rigid
+#print axioms forkM_general_rigid
+#print axioms fork_forkM_general_disjoint

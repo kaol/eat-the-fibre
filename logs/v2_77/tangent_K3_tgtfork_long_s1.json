@@ -1,0 +1,23 @@
+{
+ "quiver": "K3_tgtfork_long",
+ "paths": [
+  [
+   3,
+   5
+  ],
+  [
+   4
+  ]
+ ],
+ "seed": 1,
+ "dim_h": 10,
+ "rank_T": 6,
+ "family_dirs": 4,
+ "moduli": 1,
+ "point": {
+  "l0": "-2/3",
+  "m0": "-8/7",
+  "l1": "4/3",
+  "m1": "4"
+ }
+}

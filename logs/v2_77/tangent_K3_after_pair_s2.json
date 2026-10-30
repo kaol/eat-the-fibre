@@ -1,0 +1,24 @@
+{
+ "quiver": "K3_after_pair",
+ "paths": [
+  [
+   3,
+   4
+  ],
+  [
+   3,
+   5
+  ]
+ ],
+ "seed": 2,
+ "dim_h": 11,
+ "rank_T": 7,
+ "family_dirs": 4,
+ "moduli": 0,
+ "point": {
+  "l0": "-2",
+  "m0": "1/2",
+  "l1": "1",
+  "m1": "-1/5"
+ }
+}
