@@ -1,0 +1,1 @@
+  kernel stage on cpu: 2052656 subspaces, subalgebras by dimension [1, 163, 863, 1416, 917, 246, 27, 1]

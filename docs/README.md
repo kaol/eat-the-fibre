@@ -10,7 +10,7 @@ arrow deletion Δ (ΔP = (P⊗P)Δ). The census engine at the repository root co
 |---|---|
 | `v0-le-chat/` | Le Chat's v0 axioms, its explorations v1.1–v1.3, and its citation correction |
 | `axioms/` | v1 axioms (refinement of v0, machine-checked), the review of v1.1–v1.3, and the v2 axioms |
-| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.74) |
+| `explorations/` | `discordianism-open-questions-explored-v2.N.md`, one per round (v2.1–v2.75) |
 | `../verify/` | the machine checks cited by the documents: `axioms/` (v1, v2), `v2_1-5/`, then one folder `v2_N/` per round with `verify_v2_N.py` |
 | `../data/` | raw data of the v2.23 batch: the census checkpoints and their results (see `data/README.md`) |
 | `../lean/` | Lean 4 + Mathlib formalization (v2.29–v2.44): basis criterion, conjugation and vertex-block lemmas, Theorems 1–4 on their base quivers, Theorems 3 and 4 on every acyclic quiver, rigidity, controls; the v2 axioms derived (`Discordia/`); see `lean/README.md` |
@@ -20,7 +20,7 @@ Tags such as **[Zn]** in a document refer to checks in the `verify_v2_N.py` of t
 **proved**, **verified (exact)**, **numerical**, **conjectured**. Discordian glosses are descriptive labels: nothing in the
 mathematics forces them.
 
-## Where the fold story stands (v2.74)
+## Where the fold story stands (v2.75)
 
 | result | status | round |
 |---|---|---|
@@ -33,7 +33,7 @@ mathematics forces them.
 | Conjecture 3\*ˡ (Aut_Δ and local class-torus moves) | **false** (theorem): 1⇉2⇉3 has the explicit family P_t with H-invariant t; counts 678 + 19(q − 1) | v2.25–v2.26 |
 | consecutive parallel classes u⇉v⇉w (u, w distinct, non-adjacent): explicit family with invariant w′/(xz) | proved (Theorem 2) | v2.27 |
 | converging or diverging classes u⇉v⇇w: three families whose invariant is the vertex block (π₀P on kQ₀) | proved (Theorem 3); 1⇉2⇇3 has 449 + 4(q − 2) orbits at q = 3, 5, 7, 11 | v2.27 |
-| Conjecture 3ᵖ (3\*ˡ for one parallel class) | supported by every one-class quiver tested | v2.25 |
+| Conjecture 3ᵖ (3\*ˡ for one parallel class) | **false** (v2.75): 1⇛2, 2→3, 2→4 has one parallel class and Theorem 5's family | v2.25, v2.75 |
 | Conjecture 3ᵛ (finite iff no two classes of size ≥ 2 share a vertex) | **false**: 1⇉2⇇3 + 1→3 (366 orbits over 𝔽₃ and 𝔽₅) | v2.27 |
 | Conjecture 3ʰ (infinite iff Theorem 2 or 3 applies) | **false**: 1⇉2⇉3 + 1→3 grows (by Theorem 4; with all of Aut_Δ°, 939 → 983 over 𝔽₃, 𝔽₅) | v2.27, v2.28 |
 | consecutive classes on any acyclic quiver: family vanishing on all vertices, invariant read off the image | proved (Theorem 4) | v2.28 |
@@ -88,4 +88,6 @@ mathematics forces them.
 | **Conjecture G for every odd q** (Theorem G_odd): on all 17 quivers, census count over 𝔽_q = geometric orbit count for every odd prime power q (three case-split blocks excepted). p = 3: 1390 blocks via the char 0 trees (1925 direct char-3 node checks); the 34 blocks whose trees do not specialise via char-3 trees with one group per root, where 1323 nodes are certified and 199 provably contain no orbit (Lemma N: orbit rank > dim at a point), reproducing the char 0 count on every block. Includes the v2.70 erratum (separation primes combined per point) and full rerun | **proved** (modulo trusted Singular) | v2.71 |
 | **Conjecture G for every q** (Theorem G): on all 17 quivers, census count over 𝔽_q = geometric orbit count for every prime power q (three case-split blocks excepted). p = 2: no vertex blocks collide mod 2; census at q = 2 equals the char 0 count on all 17; Lemma L at 2 via char 0 trees (1211 blocks) and char-2 trees (213 blocks, 6905 nodes: 3940 certified, 2965 without orbit by Lemma N) | **proved** (modulo trusted Singular) | v2.72 |
 | **Conjecture G complete on the 17 quivers**: census count over 𝔽_q = geometric orbit count for every prime power q and every vertex block, including the three case-split blocks (leaf charts: case split, leaf saturation, containment in H-stable roots, root trees and cross-tree separation over ℤ; p = 2 by char-2 trees in leaf charts, and v2.59's integral split for Q₁'s block). Counts 20, 34, 71, 71, 101, 101, 120, 183, 334, 257, 414, 485, 366, 752, 1220, 1773, 1770 for every q | **proved** (modulo trusted Singular) | v2.73 |
-| Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | **false at multiplicity 3** (v2.74): 1⇛2, 2→3, 2→4 has one parallel class but infinitely many orbits (two 7-dimensional components with generic orbit rank 6 and certified invariants y0_7·y6_8/(y0_8·y6_7), y3_7·y6_8/(y3_8·y6_7)); census 708, 710 at q = 2, 3. Its multiplicity-2 version is finite (414). Holds on all multiplicity-2 quivers tested, and on 1⇛2→3→4 (finite, uniformly in q) | v2.28, v2.74 |
+| **Theorem 5 (fork family)**: Q acyclic, a class a₁…a_n : i→j with n ≥ 3, two arrows x, x′ from j to sinks, each alone in its class. P = (a₁ ↦ a₂) + N with N(u·a₁·y) = u·(λ_y e_i + m_y(a₂ − a₃)) is a fold over every commutative ring; the cross-ratio of (⟨vertices⟩, V, δ_x, δ_x′), δ_y = P(w·y), w spanning ker(P|V), is invariant under the census symmetries and equals λm′/(λ′m). So infinitely many orbits over every infinite field, ≥ q − 1 census classes in one block; dually at the source. n ≥ 3 is exactly ⟨a₂…a_n⟩ ∩ ker σ ≠ 0 (Δ needs the correction in ker σ). v2.74's invariants φ₁₂, φ₁₃ are this cross-ratio | **proved** (paper, §2 of v2.75); on 1⇛2, 2→3, 2→4 **Lean 4** (folds over every ring, rigidity under every census symmetry with no hypotheses, the two families disjoint); fold identities and symbolic invariance on six more quivers | v2.75 |
+| Conjecture 3ᶜ (finite iff no consecutive classes and no converging/diverging pair with unjoined ends; the "if" half of the converse is Theorems 3 and 4) | **false at multiplicity 3** (v2.74): 1⇛2, 2→3, 2→4 has one parallel class but infinitely many orbits (two 7-dimensional components with generic orbit rank 6 and certified invariants y0_7·y6_8/(y0_8·y6_7), y3_7·y6_8/(y3_8·y6_7)); census 708, 710 at q = 2, 3. Its multiplicity-2 version is finite (414). Holds on all multiplicity-2 quivers tested, and on 1⇛2→3→4 (finite, uniformly in q). v2.75: the counterexample is Theorem 5; 1⇛2, 2→3→5, 2→4 (one sink tail, outside Theorem 5) also grows, 3417 → 3423 | v2.28, v2.74, v2.75 |
+| Conjecture 3ᶜ′: finite iff no consecutive classes, no converging/diverging pair with unjoined ends, and every class of size ≥ 3 has at most one arrow leaving its target and at most one entering its source | conjectured; fits every multiplicity-3 quiver examined: 6 proved finite, 4 flat at q = 2, 3, 5 infinite by Theorem 5, 1 growing | v2.75 |
