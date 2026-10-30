@@ -70,3 +70,4 @@ K3_after_pair F_3: d=21, dim K=7, 595632 kernel folds in 305720 torus orbits; en
   8192/22934 fibres computed, group 3/6, 107 stacked batches at column 16, t=4439s
   8192/22934 fibres computed, group 3/6, 102 stacked batches at column 17, t=4499s
   8192/22934 fibres computed, group 3/6, 100 stacked batches at column 16, t=4561s
+  8192/22934 fibres computed, group 3/6, 99 stacked batches at column 18, t=4621s
