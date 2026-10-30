@@ -1,0 +1,8 @@
+pair_after3 V = 00000,00000,m0001,00000,m0001 leaf 0 comps all: 10 coordinates, dim Der_Δ = 2, classes 4, 36 orbit-matrix columns; t = 14s
+  X1: point, W_x 4: candidates {}
+  X2: dim 2, W 4: candidates [{'17': ['G1lc', 'Sjac', 'Slc', 'sep'], '3': ['G1lc', 'Sjac', 'Slc', 'sep'], '5': ['G1lc']}, {'5': ['G1lc', 'Sjac', 'Slc', 'sep'], '19': ['G1lc'], '3': ['G1lc']}, {'37': ['G1lc', 'Sjac', 'Slc', 'sep'], '2': ['G1lc'], '11': ['G1lc']}] -> []; t = 17s
+  X2.1: dim 1, W 4: candidates [{'2': ['G1lc', 'Slc'], '3': ['G1lc', 'Slc'], '5': ['G1lc', 'Slc']}, {'2': ['Slc'], '3': ['Slc'], '11': ['G1lc'], '5': ['G1lc']}, {'3': ['G1lc', 'Slc']}] -> []; t = 18s
+  X3: dim 2, W 4: candidates [{'3': ['G1lc', 'Sjac', 'Slc', 'sep'], '2': ['G1lc'], '7': ['G1lc']}, {'2': ['G1lc', 'Sjac', 'Slc', 'sep'], '5': ['G1lc', 'Sjac', 'Slc', 'sep'], '3': ['G1lc']}, {'47': ['G1lc', 'Sjac', 'Slc', 'sep'], '41': ['G1lc']}] -> []; t = 20s
+  X4: dim 2, W 4: candidates [{'2': ['G1lc', 'Sjac', 'Slc', 'sep'], '7': ['G1lc', 'Sjac', 'Slc', 'sep'], '3': ['G1lc']}, {'19': ['G1lc', 'Sjac', 'Slc', 'sep'], '23': ['G1lc']}, {'3': ['G1lc', 'Sjac', 'Slc', 'sep'], '19': ['G1lc']}] -> []; t = 21s
+  X5: dim 2, W 4: candidates [{'41': ['G1lc', 'Sjac', 'Slc', 'sep'], '3': ['G1lc'], '5': ['G1lc']}, {'3': ['G1lc', 'Sjac', 'Slc', 'sep'], '5': ['G1lc', 'Sjac', 'Slc', 'sep'], '2': ['G1lc']}, {'5': ['G1lc', 'Sjac', 'Slc', 'sep'], '7': ['G1lc', 'Sjac', 'Slc', 'sep'], '2': ['G1lc']}] -> []; t = 22s
+RESULT 00000,00000,m0001,00000,m0001: {'nodes': 5, 'certified_points': 15, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates []; t = 22s

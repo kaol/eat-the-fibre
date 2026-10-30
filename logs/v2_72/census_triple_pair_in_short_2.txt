@@ -1,0 +1,5 @@
+  kernel stage on cpu: 2825 subspaces, subalgebras by dimension [1, 36, 142, 161, 73, 14, 1]
+  kernel stage: 1.6s
+triple_pair_in_short F_2: d=11, dim K=6, 11452 kernel folds in 11452 torus orbits; jobs=2
+  symmetry: 11452 torus orbits in 2752 H-orbits (H = G × T); 8700 fibres by transport; |N| = |ker(H → H|_K)| = 8
+{"name": "triple_pair_in_short", "p": 2, "d": 11, "kdim": 6, "nK": 11452, "reps": 11452, "N": 14529, "fib": {"0": 9739, "1": 53, "2": 598, "4": 304, "8": 490, "16": 107, "32": 121, "40": 8, "64": 29, "128": 3}, "G": 48, "orbits_G": 752, "sizes_G": {"1": 26, "2": 38, "3": 9, "4": 30, "6": 24, "8": 66, "12": 146, "24": 332, "48": 81}, "orbits_GxGr": 752, "sizes_GxGr": {"1": 26, "2": 38, "3": 9, "4": 30, "6": 24, "8": 66, "12": 146, "24": 332, "48": 81}, "transversal": {"lifted": 1, "lifted_transversal": 0, "transversal_modp": 56}, "classes": 3, "torus_preserving": 1, "torus_all": 1, "orbits_GxT": 752, "sizes_GxT": {"1": 26, "2": 38, "3": 9, "4": 30, "6": 24, "8": 66, "12": 146, "24": 332, "48": 81}, "orbits_GxTloc": 752, "local_torus_sizes": {"1": 752}, "t": 29}

@@ -1,0 +1,11 @@
+K3_after V = 000,010,000 leaf 0 comps all: 14 coordinates, dim Der_Δ = 6, classes 2, 21 orbit-matrix columns; t = 0s
+000,010,000 at p = 2: 3 components of the stratum, dims [4, 2, 2]; t = 1s
+  Z1: dim 4: minor found (rank -1 at a closed point); boundary [3]; t = 1s
+  Z1.1: dim 3: minor found (rank -1 at a closed point); boundary [2, 2]; t = 1s
+  Z1.1.1: dim 2: minor found (rank -1 at a closed point); boundary []; t = 1s
+  Z1.1.2: dim 2: minor found (rank -1 at a closed point); boundary []; t = 1s
+  Z2: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 1s
+  Z2.1: dim 1: minor found (rank 1 at a closed point); boundary [0]; t = 2s
+  Z3: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 2s
+  Z3.1: dim 1: minor found (rank 1 at a closed point); boundary []; t = 2s
+RESULT p = 2: finitely many classes: {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; t = 2s

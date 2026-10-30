@@ -1,0 +1,35 @@
+pairs_in_short_c4 V = 0m01,0000,0000,0m01 leaf 0 comps all: 17 coordinates, dim Der_Δ = 4, classes 4, 72 orbit-matrix columns; t = 1s
+0m01,0000,0000,0m01 at p = 2: 6 components of the stratum, dims [1, 1, 4, 4, 5, 5]; t = 3s
+  Z1: dim 1: minor found (rank -1 at a closed point); boundary [0]; t = 3s
+  Z2: dim 1: minor found (rank -1 at a closed point); boundary []; t = 3s
+  Z3: dim 4: minor found (rank -1 at a closed point); boundary [3, 3, 3]; t = 4s
+  Z3.1: dim 3: minor found (rank -1 at a closed point); boundary [2, 2]; t = 5s
+  Z3.1.1: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 5s
+  Z3.1.1.1: dim 1: minor found (rank -1 at a closed point); boundary []; t = 5s
+  Z3.1.2: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 5s
+  Z3.2: dim 3: minor found (rank -1 at a closed point); boundary [2, 2]; t = 5s
+  Z3.2.2: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 5s
+  Z3.3: dim 3: minor found (rank -1 at a closed point); boundary [2, 2]; t = 5s
+  Z4: dim 4: minor found (rank -1 at a closed point); boundary [3, 3, 3]; t = 6s
+  Z4.1: dim 3: minor found (rank -1 at a closed point); boundary [2, 2]; t = 6s
+  Z4.1.1: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 6s
+  Z4.2: dim 3: minor found (rank -1 at a closed point); boundary [2, 2]; t = 6s
+  Z5: dim 5: minor found (rank -1 at a closed point); boundary [4, 4, 4, 4]; t = 6s
+  Z5.1: dim 4: minor found (rank -1 at a closed point); boundary [3, 3]; t = 6s
+  Z5.1.1: dim 3: minor found (rank -1 at a closed point); boundary [2]; t = 6s
+  Z5.1.1.1: dim 2: minor found (rank -1 at a closed point); boundary []; t = 6s
+  Z5.1.2: dim 3: minor found (rank -1 at a closed point); boundary [2]; t = 6s
+  Z5.2: dim 4: minor found (rank -1 at a closed point); boundary [3, 3, 3]; t = 6s
+  Z5.2.1: dim 3: minor found (rank 3 at a closed point); boundary [2]; t = 6s
+  Z5.2.1.1: dim 2: minor found (rank -1 at a closed point); boundary []; t = 6s
+  Z5.2.2: dim 3: minor found (rank -1 at a closed point); boundary [2]; t = 6s
+  Z5.3: dim 4: minor found (rank 4 at a closed point); boundary [3, 3]; t = 7s
+  Z5.3.2: dim 3: minor found (rank -1 at a closed point); boundary [2]; t = 7s
+  Z5.4: dim 4: minor found (rank -1 at a closed point); boundary [3, 3]; t = 7s
+  Z6: dim 5: minor found (rank -1 at a closed point); boundary [4, 4, 4]; t = 7s
+  Z6.1: dim 4: minor found (rank -1 at a closed point); boundary [3, 3, 3]; t = 7s
+  Z6.1.1: dim 3: minor found (rank 3 at a closed point); boundary [2]; t = 7s
+  Z6.1.1.1: dim 2: minor found (rank -1 at a closed point); boundary []; t = 7s
+  Z6.1.2: dim 3: minor found (rank -1 at a closed point); boundary [2]; t = 7s
+  Z6.2: dim 4: minor found (rank -1 at a closed point); boundary [3, 3]; t = 7s
+RESULT p = 2: finitely many classes: {'nodes': 33, 'minor': 32, 'points': 1, 'inconclusive': 0, 'error': 0}; t = 7s

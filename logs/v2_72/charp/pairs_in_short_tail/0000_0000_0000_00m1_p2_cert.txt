@@ -1,0 +1,22 @@
+pairs_in_short_tail V = 0000,0000,0000,00m1 leaf 0 comps all: 37 coordinates, dim Der_Δ = 4, classes 4, 132 orbit-matrix columns; t = 3s
+  Z1: point: point certified
+  Z2: dim 3: certified (3 points tried); t = 8s
+  Z2.1: dim 2: certified (2 points tried); t = 10s
+  Z2.1.1: dim 1: certified (1 points tried); t = 17s
+  Z2.2: dim 2: certified (2 points tried); t = 19s
+  Z3: dim 5: certified (4 points tried); t = 20s
+  Z3.1: dim 4: certified (1 points tried); t = 22s
+  Z3.1.1: dim 3: certified (1 points tried); t = 23s
+  Z3.1.1.1: dim 2: certified (1 points tried); t = 26s
+  Z3.1.2: dim 3: certified (1 points tried); t = 27s
+  Z3.2: dim 4: certified (8 points tried); t = 30s
+  Z3.2.2: dim 3: certified (2 points tried); t = 31s
+  Z3.2.2.1: dim 2: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 2, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 33s
+  Z3.3: dim 4: certified (9 points tried); t = 35s
+  Z4: dim 3: certified (1 points tried); t = 36s
+  Z4.1: dim 2: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 2, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 38s
+  Z4.1.1: dim 1: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 1, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 45s
+  Z4.2: dim 2: certified (2 points tried); t = 47s
+  Z4.2.1: dim 1: certified (1 points tried); t = 54s
+  Z4.3: dim 2: certified (1 points tried); t = 55s
+RESULT 0000,0000,0000,00m1 at p = 2: {'nodes': 19, 'certified': 17, 'no_top_orbit': 3, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 17; t = 55s

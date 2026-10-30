@@ -1,0 +1,4 @@
+K3_after V = 000,001,001 leaf 0 comps all: 2 coordinates, dim Der_Δ = 6, classes 2, 3 orbit-matrix columns; t = 1s
+  X1: dim 2, W 2: candidates [{'97': ['G1lc', 'Slc'], '17': ['G1lc', 'Slc'], '3': ['G1lc', 'Slc']}, {'2': ['G1lc', 'Slc'], '7': ['G1lc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '5': ['G1lc', 'Slc']}] -> []; t = 2s
+  X1.1: point, W_x 2: candidates {}
+RESULT 000,001,001: {'nodes': 1, 'certified_points': 3, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates []; t = 2s

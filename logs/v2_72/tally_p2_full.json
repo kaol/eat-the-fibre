@@ -1,0 +1,1350 @@
+{
+ "K2": {
+  "nodes": {
+   "dense": 14,
+   "points": 6
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "3": 1,
+   "5": 2,
+   "2": 3
+  }
+ },
+ "K3": {
+  "nodes": {
+   "dense": 28,
+   "points": 6
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [
+   "00_00",
+   "00_01",
+   "01_01",
+   "10_00",
+   "10_01",
+   "10_10"
+  ],
+  "hard": [],
+  "direct": {
+   "2": 22,
+   "3": 13,
+   "5": 8,
+   "7": 1,
+   "17": 1,
+   "11": 1,
+   "19": 1
+  }
+ },
+ "K3_after": {
+  "nodes": {
+   "dense": 97,
+   "points": 21
+  },
+  "primes": {
+   "2": 1,
+   "3": 2
+  },
+  "fail3": [
+   [
+    "100_010_001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 4 generators"
+    ]
+   ]
+  ],
+  "resolved3": [
+   "000_000_000",
+   "000_000_001",
+   "000_000_m01",
+   "000_001_001",
+   "000_010_000",
+   "000_010_001",
+   "000_010_010",
+   "000_m01_m01",
+   "001_000_001",
+   "010_010_000",
+   "010_010_010",
+   "100_000_000",
+   "100_000_001",
+   "100_000_100",
+   "100_001_001",
+   "100_010_000",
+   "100_100_000",
+   "100_100_001",
+   "100_100_100",
+   "10m_000_000"
+  ],
+  "hard": [],
+  "direct": {
+   "2": 68,
+   "3": 44,
+   "5": 20,
+   "7": 9,
+   "23": 2,
+   "11": 1,
+   "13": 1
+  }
+ },
+ "K3_srcout": {
+  "nodes": {
+   "dense": 158,
+   "points": 25
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [
+   "000_000_000",
+   "000_000_001",
+   "000_000_0m1",
+   "000_001_001",
+   "000_010_000",
+   "000_010_001",
+   "000_010_010",
+   "000_01m_000",
+   "001_000_001",
+   "001_001_001",
+   "001_010_001",
+   "010_010_000",
+   "010_010_001",
+   "010_010_010",
+   "01m_01m_000",
+   "0m1_000_0m1",
+   "100_000_000",
+   "100_000_001",
+   "100_000_0m1",
+   "100_000_100",
+   "100_001_001",
+   "100_010_000",
+   "100_010_001",
+   "100_010_010",
+   "100_01m_000",
+   "100_100_000",
+   "100_100_100"
+  ],
+  "hard": [],
+  "direct": {
+   "2": 117,
+   "3": 87,
+   "5": 38,
+   "7": 15,
+   "13": 1,
+   "11": 2
+  }
+ },
+ "pair_after": {
+  "nodes": {
+   "dense": 48,
+   "points": 21
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [
+   "100_010_001"
+  ],
+  "hard": [],
+  "direct": {
+   "2": 9,
+   "3": 4,
+   "5": 1
+  }
+ },
+ "pair_after2": {
+  "nodes": {
+   "dense": 234,
+   "points": 93
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [
+   "1000_0100_0010_0000",
+   "1000_0100_0010_0001"
+  ],
+  "hard": [],
+  "direct": {
+   "3": 31,
+   "2": 41,
+   "7": 1,
+   "5": 1
+  }
+ },
+ "pair_after3": {
+  "nodes": {
+   "dense": 1206,
+   "points": 500
+  },
+  "primes": {
+   "2": 8
+  },
+  "fail3": [
+   [
+    "10000_01000_00100_00000_00000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "10000_01000_00100_00000_00001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "10000_01000_00100_00001_00001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "10000_01000_00100_00010_00000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 3 generators",
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "10000_01000_00100_00010_00001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 4 generators",
+     "radical membership fails for 3 generators"
+    ]
+   ],
+   [
+    "10000_0100m_00100_00000_00000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000m_01000_0010m_00000_00000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000m_0100m_0010m_00000_00000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ]
+  ],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "5": 16,
+   "2": 274,
+   "7": 13,
+   "3": 127
+  }
+ },
+ "pair_before": {
+  "nodes": {
+   "dense": 48,
+   "points": 21
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [
+   "100_010_001"
+  ],
+  "hard": [],
+  "direct": {
+   "2": 9,
+   "3": 4,
+   "5": 1
+  }
+ },
+ "pair_mid": {
+  "nodes": {
+   "dense": 157,
+   "points": 80
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [
+   "0000_0100_0010_0001",
+   "1000_0100_0010_0000",
+   "1000_0100_0010_0001"
+  ],
+  "hard": [],
+  "direct": {
+   "3": 16,
+   "2": 28,
+   "7": 2,
+   "5": 3
+  }
+ },
+ "pair_srcboth": {
+  "nodes": {
+   "dense": 379,
+   "points": 106
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "3": 64,
+   "2": 96,
+   "5": 17,
+   "7": 2
+  }
+ },
+ "pair_srcout": {
+  "nodes": {
+   "dense": 76,
+   "points": 25
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "2": 16,
+   "5": 1,
+   "3": 11,
+   "13": 1
+  }
+ },
+ "pair_tgtfork": {
+  "nodes": {
+   "dense": 266,
+   "points": 128
+  },
+  "primes": {
+   "3": 1
+  },
+  "fail3": [],
+  "resolved3": [
+   "1000_0100_0010_0001"
+  ],
+  "hard": [],
+  "direct": {
+   "3": 19,
+   "2": 60,
+   "5": 2,
+   "7": 2
+  }
+ },
+ "pair_tgtin": {
+  "nodes": {
+   "dense": 76,
+   "points": 25
+  },
+  "primes": {},
+  "fail3": [],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "2": 16,
+   "5": 1,
+   "3": 11,
+   "13": 1
+  }
+ },
+ "pairs_in_short": {
+  "nodes": {
+   "dense": 348,
+   "points": 18
+  },
+  "primes": {
+   "3": 2
+  },
+  "fail3": [],
+  "resolved3": [
+   "000_000_000",
+   "000_001_001",
+   "000_010_000",
+   "001_000_001",
+   "001_001_001",
+   "010_010_000",
+   "010_010_010",
+   "100_000_000",
+   "100_001_001",
+   "100_010_000",
+   "100_010_001",
+   "100_100_100"
+  ],
+  "hard": [],
+  "direct": {
+   "2": 209,
+   "7": 8,
+   "3": 98,
+   "17": 2,
+   "5": 20,
+   "11": 3
+  }
+ },
+ "pairs_in_short_c4": {
+  "nodes": {
+   "dense": 1672,
+   "points": 86
+  },
+  "primes": {
+   "2": 70,
+   "3": 3
+  },
+  "fail3": [
+   [
+    "0000_0000_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0000_0m01",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0000_m001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0m01",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0m01_0m01",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0001_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0001_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0001_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0010_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0010_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0000_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0100_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0100_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0100_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_010m_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_010m_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_010m_010m_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0000_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0000_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0001_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0001_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0100_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0100_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0001_0100_0100_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0000_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0000_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0010_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0010_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_010m_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0000_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0100_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0100_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0100_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "010m_010m_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "010m_010m_010m_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0m01_0000_0000_0m01",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0m01_0000_0m01_0m01",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_1000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_1000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_1000_1000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0001_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "1000_0001_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0001_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0001_1000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0010_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 7 generators",
+     "radical membership fails for 4 generators"
+    ]
+   ],
+   [
+    "1000_0100_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "1000_0100_0001_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "1000_0100_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0100_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_010m_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_1000_1000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_1000_1000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_1000_1000_1000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "100m_0000_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "100m_0000_100m_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "100m_010m_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "100m_100m_100m_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ]
+  ],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "5": 121,
+   "2": 926,
+   "7": 41,
+   "3": 474,
+   "31": 2,
+   "11": 13,
+   "13": 3,
+   "19": 2,
+   "29": 1,
+   "59": 1,
+   "17": 1,
+   "23": 1
+  }
+ },
+ "pairs_in_short_tail": {
+  "nodes": {
+   "dense": 1123,
+   "points": 77
+  },
+  "primes": {
+   "2": 40,
+   "3": 8
+  },
+  "fail3": [
+   [
+    "0000_0000_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0000_00m1",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0000_m001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0000_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0010_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0010_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0010_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0000_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "0000_0100_0100_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0000_0100_0100_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0000_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0000_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0010_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0010_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0010_0010_0010_0010",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "0010_0100_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 2 generators"
+    ]
+   ],
+   [
+    "0100_0100_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0000_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0100_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "0100_0100_0100_0100",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_1000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_1000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0000_1000_1000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0010_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 5 generators",
+     "radical membership fails for 4 generators"
+    ]
+   ],
+   [
+    "1000_0010_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 4 generators",
+     "radical membership fails for 4 generators"
+    ]
+   ],
+   [
+    "1000_0100_0000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0100_0000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0100_0010_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0100_0010_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_0100_1000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 2 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_1000_1000_0000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_1000_1000_0001",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators",
+     "radical membership fails for 1 generators"
+    ]
+   ],
+   [
+    "1000_1000_1000_1000",
+    "C1-C4 at 2",
+    [
+     "radical membership fails for 1 generators"
+    ]
+   ]
+  ],
+  "resolved3": [],
+  "hard": [],
+  "direct": {
+   "5": 78,
+   "2": 592,
+   "7": 26,
+   "3": 299,
+   "31": 1,
+   "11": 12,
+   "23": 1,
+   "13": 3,
+   "17": 1,
+   "19": 2
+  }
+ },
+ "triple_pair_in_short": {
+  "nodes": {
+   "dense": 734,
+   "points": 18
+  },
+  "primes": {
+   "3": 18
+  },
+  "fail3": [],
+  "resolved3": [
+   "000_000_000",
+   "000_000_001",
+   "000_001_001",
+   "000_010_000",
+   "000_010_001",
+   "000_010_010",
+   "001_000_001",
+   "001_001_001",
+   "001_010_001",
+   "010_010_000",
+   "010_010_010",
+   "100_000_000",
+   "100_000_001",
+   "100_000_100",
+   "100_001_001",
+   "100_010_000",
+   "100_010_001",
+   "100_010_010",
+   "100_010_100",
+   "100_100_000",
+   "100_100_100"
+  ],
+  "hard": [],
+  "direct": {
+   "3": 459,
+   "2": 608,
+   "5": 209,
+   "7": 108,
+   "53": 1,
+   "11": 30,
+   "13": 14,
+   "37": 1,
+   "29": 3,
+   "17": 5,
+   "19": 9,
+   "23": 1
+  }
+ }
+}

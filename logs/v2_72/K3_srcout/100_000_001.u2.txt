@@ -1,0 +1,4 @@
+K3_srcout V = 100,000,001 leaf 0 comps all: 12 coordinates, dim Der_Δ = 6, classes 2, 18 orbit-matrix columns; t = 0s
+node 0: dim 3, LC(I) primes [], closure dim 2, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 2s
+node 2: dim 2, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 2s
+RESULT nodes 3, problems [], candidate primes []; t = 2s

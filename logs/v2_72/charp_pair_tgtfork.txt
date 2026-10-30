@@ -1,0 +1,2 @@
+  1000_0100_0010_0001: char 0 count 32; char-2 tree {'nodes': 53, 'minor': 52, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 52, 'certified': 32, 'no_top_orbit': 21, 'failed': 0, 'points': 1}; AGREES
+pair_tgtfork at p = 2: 1/1 blocks certified with the char 0 count

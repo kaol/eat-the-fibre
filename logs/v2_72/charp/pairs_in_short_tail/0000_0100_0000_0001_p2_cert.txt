@@ -1,0 +1,47 @@
+pairs_in_short_tail V = 0000,0100,0000,0001 leaf 0 comps all: 40 coordinates, dim Der_Δ = 4, classes 4, 124 orbit-matrix columns; t = 3s
+  Z1: dim 2: certified (3 points tried); t = 6s
+  Z1.1: dim 1: certified (2 points tried); t = 14s
+  Z1.1.1: point: point certified
+  Z1.2: dim 1: certified (1 points tried); t = 23s
+  Z2: dim 4: certified (3 points tried); t = 25s
+  Z2.1: dim 3: certified (1 points tried); t = 27s
+  Z2.1.1: dim 2: certified (1 points tried); t = 30s
+  Z2.1.1.1: dim 1: certified (1 points tried); t = 37s
+  Z2.1.2: dim 2: certified (1 points tried); t = 39s
+  Z2.2: dim 3: certified (2 points tried); t = 42s
+  Z2.2.2: dim 2: certified (1 points tried); t = 44s
+  Z2.3: dim 3: certified (5 points tried); t = 47s
+  Z3: dim 4: certified (7 points tried); t = 49s
+  Z3.1: dim 3: certified (1 points tried); t = 51s
+  Z3.1.1: dim 2: certified (1 points tried); t = 54s
+  Z3.1.1.1: dim 1: certified (1 points tried); t = 62s
+  Z3.1.2: dim 2: certified (1 points tried); t = 64s
+  Z3.2: dim 3: certified (3 points tried); t = 67s
+  Z3.2.2: dim 2: certified (2 points tried); t = 69s
+  Z3.3: dim 3: certified (2 points tried); t = 71s
+  Z4: dim 6: certified (1 points tried); t = 73s
+  Z4.1: dim 5: no top orbit (8 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 6}]); t = 75s
+  Z4.1.1: dim 4: no top orbit (10 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 79s
+  Z4.1.1.1: dim 3: no top orbit (3 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 82s
+  Z4.1.1.1.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 84s
+  Z4.1.1.2: dim 3: no top orbit (3 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 3, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 86s
+  Z4.1.2: dim 3: no top orbit (5 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 3, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 90s
+  Z4.1.2.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 92s
+  Z4.1.2.1.1: dim 1: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 99s
+  Z4.1.3: dim 4: no top orbit (3 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 4, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 102s
+  Z4.2: dim 5: certified (1 points tried); t = 103s
+  Z4.2.1: dim 4: certified (4 points tried); t = 105s
+  Z4.2.1.1: dim 3: certified (1 points tried); t = 107s
+  Z4.2.1.1.1: dim 2: certified (1 points tried); t = 110s
+  Z4.2.1.2: dim 3: certified (2 points tried); t = 111s
+  Z4.2.2: dim 4: certified (4 points tried); t = 114s
+  Z4.2.2.2: dim 3: certified (2 points tried); t = 116s
+  Z4.2.3: dim 4: certified (4 points tried); t = 119s
+  Z4.3: dim 5: certified (8 points tried); t = 121s
+  Z4.3.3: dim 4: certified (3 points tried); t = 122s
+  Z4.3.3.2: dim 3: certified (1 points tried); t = 124s
+  Z4.3.4: dim 4: certified (1 points tried); t = 126s
+  Z4.4: dim 5: certified (5 points tried); t = 128s
+  Z4.4.3: dim 4: certified (2 points tried); t = 129s
+  Z4.5: dim 5: certified (12 points tried); t = 134s
+RESULT 0000,0100,0000,0001 at p = 2: {'nodes': 44, 'certified': 36, 'no_top_orbit': 9, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 36; t = 134s

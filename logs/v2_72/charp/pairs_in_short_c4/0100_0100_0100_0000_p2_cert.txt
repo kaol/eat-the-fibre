@@ -1,0 +1,27 @@
+pairs_in_short_c4 V = 0100,0100,0100,0000 leaf 0 comps all: 16 coordinates, dim Der_Δ = 4, classes 4, 52 orbit-matrix columns; t = 1s
+  Z1: point: point certified
+  Z2: dim 2: certified (1 points tried); t = 3s
+  Z2.1: dim 1: certified (1 points tried); t = 6s
+  Z3: dim 3: certified (1 points tried); t = 6s
+  Z3.1: dim 2: certified (2 points tried); t = 7s
+  Z3.2: dim 2: certified (1 points tried); t = 8s
+  Z4: dim 2: certified (1 points tried); t = 9s
+  Z4.1: dim 1: certified (1 points tried); t = 11s
+  Z5: dim 3: certified (1 points tried); t = 12s
+  Z5.1: dim 2: certified (2 points tried); t = 12s
+  Z5.2: dim 2: certified (2 points tried); t = 13s
+  Z6: dim 5: certified (1 points tried); t = 14s
+  Z6.1: dim 4: certified (7 points tried); t = 15s
+  Z6.1.1: dim 3: certified (3 points tried); t = 16s
+  Z6.1.1.1: dim 2: certified (1 points tried); t = 16s
+  Z6.1.2: dim 3: certified (1 points tried); t = 17s
+  Z6.2: dim 4: certified (1 points tried); t = 18s
+  Z6.2.2: dim 3: certified (1 points tried); t = 18s
+  Z6.3: dim 4: certified (2 points tried); t = 19s
+  Z7: dim 5: certified (8 points tried); t = 20s
+  Z7.1: dim 4: certified (4 points tried); t = 20s
+  Z7.1.1: dim 3: certified (1 points tried); t = 21s
+  Z7.1.2: dim 3: certified (1 points tried); t = 22s
+  Z7.2: dim 4: certified (2 points tried); t = 23s
+  Z7.3: dim 4: certified (2 points tried); t = 23s
+RESULT 0100,0100,0100,0000 at p = 2: {'nodes': 24, 'certified': 25, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 25; t = 23s

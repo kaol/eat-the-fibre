@@ -4,8 +4,8 @@ certified count with the char 0 count of the block (dense nodes + points of the 
 Usage: python3 analysis/v2_71_charp_all.py QUIVER CERT P"""
 import sys, os, json, subprocess
 Q, cert, P = sys.argv[1], sys.argv[2], int(sys.argv[3])
-tal = json.load(open('logs/v2_71/tally.json'))[Q]
-outd = f'logs/v2_71/charp/{Q}'; os.makedirs(outd, exist_ok=True)
+tal = json.load(open(os.environ.get('CHARP_TALLY', 'logs/v2_71/tally.json')))[Q]
+outd = f"{os.environ.get('CHARP_OUT', 'logs/v2_71/charp')}/{Q}"; os.makedirs(outd, exist_ok=True)
 rows = []
 for b in sorted({x[0] for x in tal['fail3']} | set(tal.get('resolved3', []))):
     f = f'logs/v2_67/count/{Q}/{b}.json'; T0 = json.load(open(f)); blk = T0['block']

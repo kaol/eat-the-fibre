@@ -19,7 +19,7 @@ Usage: python3 analysis/v2_70_gcert.py CERT BLOCK TREE.json OUT [NPTS]"""
 import os, sys, json, re, time, itertools, math, subprocess, zlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 cert, block, tree, out = sys.argv[1:5]; NPTS = int(sys.argv[5]) if len(sys.argv) > 5 else 3; t0 = time.time()
-TMO = int(os.environ.get('GCERT_TMO', '1200')); MAXPTS = int(os.environ.get('GCERT_MAXPTS', '40')); SMALLP = {int(x) for x in os.environ.get('GCERT_EXEMPT', '2').split(',')}
+TMO = int(os.environ.get('GCERT_TMO', '1200')); MAXPTS = int(os.environ.get('GCERT_MAXPTS', '40')); SMALLP = {int(x) for x in os.environ.get('GCERT_EXEMPT', '2').split(',') if x}
 sys.argv = ['v2_67_orbits.py', cert, block, os.environ.get('STAB_LEAF', '0'), 'all', out + '_o', '--tmo', str(TMO)] + (['--leafmode'] if os.environ.get('STAB_LEAF') else [])
 src = open(os.path.join(HERE, 'v2_67_orbits.py')).read(); src = src[:src.index("stats = {'primes'")]
 G_ = {'__name__': 'v2_70', '__file__': os.path.join(HERE, 'v2_67_orbits.py')}

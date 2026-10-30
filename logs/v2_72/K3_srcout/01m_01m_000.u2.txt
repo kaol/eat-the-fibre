@@ -1,0 +1,11 @@
+K3_srcout V = 01m,01m,000 leaf 0 comps all: 14 coordinates, dim Der_Δ = 6, classes 2, 30 orbit-matrix columns; t = 0s
+node 0: dim 5, LC(I) primes [], closure dim 4, children 2, issues ['radical membership fails for 2 generators']; t = 3s
+node 1: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership fails for 1 generators']; t = 3s
+node 2: dim 3, LC(I) primes [], closure dim 2, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 3s
+node 3: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership fails for 2 generators']; t = 4s
+node 5: dim 6, LC(I) primes [], closure dim 5, children 1, issues ['radical membership fails for 1 generators']; t = 4s
+node 6: dim 5, LC(I) primes [], closure dim 4, children 2, issues ['radical membership fails for 2 generators']; t = 5s
+node 7: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership fails for 1 generators']; t = 5s
+node 8: dim 2, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 5s
+node 9: dim 4, LC(I) primes [], closure dim 2, children 1, issues ['radical membership fails for 1 generators']; t = 6s
+RESULT nodes 10, problems [], candidate primes []; t = 6s

@@ -11,7 +11,8 @@ node. For each node Z of dimension e > 0 this script finds an 𝔽_p-point x of 
       the open H_fix-orbit, H_x·x = O_Z (one census class at most, as moves at points of O_Z lie in H_x);
   S   the stabiliser of x in H_x over 𝔽_p: affine-linear in g, one minimal prime of dimension dim H_x − e, tangent
       space at 1 of that dimension (Jacobian rank mod p): smooth and connected, so Lang gives exactly one class;
-  sep x ∉ Z' for every other node Z' of dimension e (some generator of I_Z' non-zero at x).
+  (sep: x ∉ Z' for the other nodes of dimension e is recorded but not required: nodes are distinct 𝔽_p-primes and G1
+  makes each certified node the closure of its orbit, so distinct certified nodes have distinct orbits.)
 Or, for a node Z that is not H-stable at p (possible in characteristic p, where the closures are only ξ-stable): a
 point where the orbit matrix has rank > e. The generic rank on Z is then > e, so no orbit of dimension e lies in Z (a
 dense orbit O ⊆ Z would meet the open set of rank > e, but rank ≤ dim O at every point of O): Z contributes no class,
@@ -72,10 +73,12 @@ def find_points(gens, tag, want=4, rounds=4):
         tries = []
         for t in range(25): tries.append([rng.randrange(P) for _ in vs])
         lines = ['LIB "primdec.lib";', f"ring Rp = {P},({','.join(vs)}),dp;", "option(redSB);", f"ideal Z = std(ideal({gens}));",
-                 'intvec iv = indepSet(Z); print("IV " + string(iv)); int i; int j; ideal S; list L;']
+                 'intvec iv = indepSet(Z); print("IV " + string(iv)); int i; int j; int kk; intvec iv2; ideal S; list L;', f'system("random", {rng.randrange(1, 2**30)});']
         for t, vals in enumerate(tries):
             lines.append(f"ideal A{t} = {','.join(f'{v}-({vals[j]})' for j, v in enumerate(vs))};")
             lines.append(f"S = 0; for (j = 1; j <= {len(vs)}; j++) {{ if (iv[j] == 1) {{ S = S + A{t}[j]; }} }} S = std(Z + S);"
+                         # a positive-dimensional fibre (small fields: the generic fibre may have no 𝔽_p-point): fix more coordinates
+                         f" kk = 0; while (dim(S) > 0 && kk < 40) {{ kk++; iv2 = indepSet(S); for (j = 1; j <= {len(vs)}; j++) {{ if (iv2[j] == 1) {{ S = std(S + ideal(var(j) - random(0, {P - 1}))); break; }} }} }}"
                          f' if (dim(S) == 0) {{ L = minAssGTZ(S); for (i = 1; i <= size(L); i++) {{ if (vdim(std(L[i])) == 1) {{ print("PT " + string(std(L[i]))); }} }} }}')
         lines.append('print("END"); quit;')
         o = run_sing(lines, f'{tag}_pts{rd}')
@@ -182,7 +185,7 @@ for k, nd in NODES.items():
             [int(x) for x in re.findall(r"CDIM (-?\d+)", o)] == [dimH - e]
         chk['separated'] = all(any(gens_eval(k2, sol)) for k2 in byd[e] if k2 != k)
         rec['tried'].append(chk)
-        if all(v for k_, v in chk.items() if k_ != 'rank_value'): rec.update(result='certified', W_x=r_, point=sol); break
+        if all(v for k_, v in chk.items() if k_ not in ('rank_value', 'separated')): rec.update(result='certified', W_x=r_, point=sol); break
     if rec.get('result') not in ('certified', 'no top orbit'): rec['result'] = 'FAILED'
     tally[{'certified': 'certified', 'no top orbit': 'no_top_orbit'}.get(rec['result'], 'failed')] += 1
     res.append(rec)

@@ -1,0 +1,22 @@
+  000_000_000: char 0 count 11; char-2 tree {'nodes': 22, 'minor': 21, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 21, 'certified': 11, 'no_top_orbit': 11, 'failed': 0, 'points': 1}; AGREES
+  000_000_001: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  000_000_m01: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  000_001_001: char 0 count 2; char-2 tree {'nodes': 3, 'minor': 2, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 2, 'certified': 2, 'no_top_orbit': 1, 'failed': 0, 'points': 1}; AGREES
+  000_010_000: char 0 count 5; char-2 tree {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; AGREES
+  000_010_001: char 0 count 10; char-2 tree {'nodes': 26, 'minor': 25, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 25, 'certified': 10, 'no_top_orbit': 16, 'failed': 0, 'points': 1}; AGREES
+  000_010_010: char 0 count 5; char-2 tree {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; AGREES
+  000_m01_m01: char 0 count 2; char-2 tree {'nodes': 3, 'minor': 2, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 2, 'certified': 2, 'no_top_orbit': 1, 'failed': 0, 'points': 1}; AGREES
+  001_000_001: char 0 count 2; char-2 tree {'nodes': 3, 'minor': 2, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 2, 'certified': 2, 'no_top_orbit': 1, 'failed': 0, 'points': 1}; AGREES
+  010_010_000: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  010_010_010: char 0 count 7; char-2 tree {'nodes': 14, 'minor': 13, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 13, 'certified': 7, 'no_top_orbit': 7, 'failed': 0, 'points': 1}; AGREES
+  100_000_000: char 0 count 5; char-2 tree {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; AGREES
+  100_000_001: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  100_000_100: char 0 count 5; char-2 tree {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; AGREES
+  100_001_001: char 0 count 2; char-2 tree {'nodes': 3, 'minor': 2, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 2, 'certified': 2, 'no_top_orbit': 1, 'failed': 0, 'points': 1}; AGREES
+  100_010_000: char 0 count 7; char-2 tree {'nodes': 14, 'minor': 13, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 13, 'certified': 7, 'no_top_orbit': 7, 'failed': 0, 'points': 1}; AGREES
+  100_010_001: char 0 count 16; char-2 tree {'nodes': 37, 'minor': 36, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 36, 'certified': 15, 'no_top_orbit': 21, 'failed': 1, 'points': 1}; CHECK
+  100_100_000: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  100_100_001: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  100_100_100: char 0 count 7; char-2 tree {'nodes': 14, 'minor': 13, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 13, 'certified': 7, 'no_top_orbit': 7, 'failed': 0, 'points': 1}; AGREES
+  10m_000_000: char 0 count 2; char-2 tree {'nodes': 3, 'minor': 2, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 2, 'certified': 2, 'no_top_orbit': 1, 'failed': 0, 'points': 1}; AGREES
+K3_after at p = 2: 20/21 blocks certified with the char 0 count

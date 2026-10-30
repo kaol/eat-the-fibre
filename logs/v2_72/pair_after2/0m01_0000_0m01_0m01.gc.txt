@@ -1,0 +1,5 @@
+pair_after2 V = 0m01,0000,0m01,0m01 leaf 0 comps all: 6 coordinates, dim Der_Δ = 2, classes 3, 16 orbit-matrix columns; t = 2s
+  X1: dim 1, W 3: candidates [{'17': ['G1lc', 'Sjac', 'Slc'], '3': ['G1lc', 'Sjac', 'Slc']}, {'2': ['G1lc', 'Sjac', 'Slc'], '3': ['G1lc', 'Sjac', 'Slc'], '5': ['G1lc', 'Sjac', 'Slc']}, {'53': ['G1lc', 'Sjac', 'Slc']}] -> []; t = 4s
+  X1.1: point, W_x 3: candidates {}
+  X2: dim 1, W 3: candidates [{'3': ['G1lc', 'Slc']}, {'2': ['Slc'], '29': ['Slc'], '59': ['G1lc']}, {'31': ['G1lc', 'Slc']}] -> []; t = 5s
+RESULT 0m01,0000,0m01,0m01: {'nodes': 2, 'certified_points': 6, 'checks_failed': 0, 'timeouts': 0, 'points': 1, 'points_failed': 0}; setup primes []; candidates []; t = 5s

@@ -1,0 +1,9 @@
+pair_after3 V = 10000,01000,00100,00000,00000 leaf 0 comps all: 16 coordinates, dim Der_Δ = 2, classes 4, 26 orbit-matrix columns; t = 4s
+  Z1: dim 2: certified (1 points tried); t = 5s
+  Z1.1: dim 1: certified (1 points tried); t = 7s
+  Z2: dim 2: certified (1 points tried); t = 8s
+  Z3: dim 2: certified (1 points tried); t = 8s
+  Z4: dim 2: certified (1 points tried); t = 9s
+  Z5: dim 2: certified (1 points tried); t = 9s
+  Z6: point: point certified
+RESULT 10000,01000,00100,00000,00000 at p = 2: {'nodes': 6, 'certified': 7, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 7; t = 10s

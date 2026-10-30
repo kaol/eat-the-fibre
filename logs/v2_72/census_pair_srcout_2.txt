@@ -1,0 +1,5 @@
+  kernel stage on cpu: 67 subspaces, subalgebras by dimension [1, 12, 18, 8, 1]
+  kernel stage: 1.2s
+pair_srcout F_2: d=6, dim K=4, 218 kernel folds in 218 torus orbits; jobs=2
+  symmetry: 218 torus orbits in 218 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 2
+{"name": "pair_srcout", "p": 2, "d": 6, "kdim": 4, "nK": 218, "reps": 218, "N": 167, "fib": {"0": 128, "1": 35, "2": 44, "4": 11}, "G": 2, "orbits_G": 101, "sizes_G": {"1": 35, "2": 66}, "orbits_GxGr": 101, "sizes_GxGr": {"1": 35, "2": 66}, "transversal": {"lifted": 1, "lifted_transversal": 0, "transversal_modp": 4}, "classes": 2, "torus_preserving": 1, "torus_all": 1, "orbits_GxT": 101, "sizes_GxT": {"1": 35, "2": 66}, "orbits_GxTloc": 101, "local_torus_sizes": {"1": 101}, "t": 1}

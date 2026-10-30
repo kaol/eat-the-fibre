@@ -1,0 +1,8 @@
+  kernel stage on cpu: 2825 subspaces, subalgebras by dimension [1, 48, 186, 210, 94, 17, 1]
+  kernel stage: 1.7s
+pair_after3 F_2: d=19, dim K=6, 21246 kernel folds in 21246 torus orbits; jobs=2
+  symmetry: 21246 torus orbits in 21246 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 2
+  3237/21246 fibres done, 18009 open, 18003 queued tasks, 6303 tasks run, t=62s
+  8089/21246 fibres done, 13157 open, 13150 queued tasks, 13912 tasks run, t=122s
+  16259/21246 fibres done, 4987 open, 4981 queued tasks, 24380 tasks run, t=182s
+{"name": "pair_after3", "p": 2, "d": 19, "kdim": 6, "nK": 21246, "reps": 21246, "N": 2655, "fib": {"0": 19539, "1": 885, "2": 806, "4": 8, "6": 2, "10": 2, "18": 2, "20": 1, "38": 1}, "G": 2, "orbits_G": 1770, "sizes_G": {"1": 885, "2": 885}, "orbits_GxGr": 1770, "sizes_GxGr": {"1": 885, "2": 885}, "transversal": {"lifted": 1, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 4, "torus_preserving": 1, "torus_all": 1, "orbits_GxT": 1770, "sizes_GxT": {"1": 885, "2": 885}, "orbits_GxTloc": 1770, "local_torus_sizes": {"1": 1770}, "t": 211}

@@ -1,0 +1,401 @@
+[
+ {
+  "block": "000_000_000",
+  "char0": 106,
+  "tree": {
+   "nodes": 500,
+   "minor": 498,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 498,
+   "certified": 106,
+   "no_top_orbit": 394,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "000_000_001",
+  "char0": 29,
+  "tree": {
+   "nodes": 103,
+   "minor": 102,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 102,
+   "certified": 29,
+   "no_top_orbit": 74,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_001_001",
+  "char0": 21,
+  "tree": {
+   "nodes": 63,
+   "minor": 62,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 62,
+   "certified": 21,
+   "no_top_orbit": 42,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_010_000",
+  "char0": 31,
+  "tree": {
+   "nodes": 83,
+   "minor": 81,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 81,
+   "certified": 31,
+   "no_top_orbit": 52,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "000_010_001",
+  "char0": 23,
+  "tree": {
+   "nodes": 56,
+   "minor": 55,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 55,
+   "certified": 23,
+   "no_top_orbit": 33,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_010_010",
+  "char0": 21,
+  "tree": {
+   "nodes": 47,
+   "minor": 46,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 46,
+   "certified": 21,
+   "no_top_orbit": 26,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "001_000_001",
+  "char0": 31,
+  "tree": {
+   "nodes": 85,
+   "minor": 83,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 83,
+   "certified": 31,
+   "no_top_orbit": 54,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "001_001_001",
+  "char0": 57,
+  "tree": {
+   "nodes": 291,
+   "minor": 289,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 289,
+   "certified": 57,
+   "no_top_orbit": 234,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "001_010_001",
+  "char0": 42,
+  "tree": {
+   "nodes": 103,
+   "minor": 103,
+   "points": 0,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 103,
+   "certified": 42,
+   "no_top_orbit": 61,
+   "failed": 0,
+   "points": 0
+  },
+  "ok": true
+ },
+ {
+  "block": "010_010_000",
+  "char0": 20,
+  "tree": {
+   "nodes": 58,
+   "minor": 57,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 57,
+   "certified": 20,
+   "no_top_orbit": 38,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "010_010_010",
+  "char0": 57,
+  "tree": {
+   "nodes": 283,
+   "minor": 281,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 281,
+   "certified": 57,
+   "no_top_orbit": 226,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_000",
+  "char0": 16,
+  "tree": {
+   "nodes": 51,
+   "minor": 49,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 49,
+   "certified": 16,
+   "no_top_orbit": 35,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_001",
+  "char0": 42,
+  "tree": {
+   "nodes": 113,
+   "minor": 112,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 112,
+   "certified": 42,
+   "no_top_orbit": 71,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_100",
+  "char0": 16,
+  "tree": {
+   "nodes": 40,
+   "minor": 39,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 39,
+   "certified": 16,
+   "no_top_orbit": 24,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_001_001",
+  "char0": 72,
+  "tree": {
+   "nodes": 326,
+   "minor": 326,
+   "points": 0,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 326,
+   "certified": 72,
+   "no_top_orbit": 254,
+   "failed": 0,
+   "points": 0
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_000",
+  "char0": 29,
+  "tree": {
+   "nodes": 122,
+   "minor": 121,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 121,
+   "certified": 29,
+   "no_top_orbit": 93,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_001",
+  "char0": 85,
+  "tree": {
+   "nodes": 373,
+   "minor": 371,
+   "points": 2,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 371,
+   "certified": 85,
+   "no_top_orbit": 288,
+   "failed": 0,
+   "points": 2
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_010",
+  "char0": 21,
+  "tree": {
+   "nodes": 42,
+   "minor": 41,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 41,
+   "certified": 21,
+   "no_top_orbit": 21,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_100",
+  "char0": 11,
+  "tree": {
+   "nodes": 20,
+   "minor": 20,
+   "points": 0,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 20,
+   "certified": 11,
+   "no_top_orbit": 9,
+   "failed": 0,
+   "points": 0
+  },
+  "ok": true
+ },
+ {
+  "block": "100_100_000",
+  "char0": 10,
+  "tree": {
+   "nodes": 20,
+   "minor": 19,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 19,
+   "certified": 10,
+   "no_top_orbit": 10,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_100_100",
+  "char0": 12,
+  "tree": {
+   "nodes": 29,
+   "minor": 28,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 28,
+   "certified": 12,
+   "no_top_orbit": 17,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ }
+]

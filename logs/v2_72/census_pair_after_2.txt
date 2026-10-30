@@ -1,0 +1,5 @@
+  kernel stage on cpu: 67 subspaces, subalgebras by dimension [1, 12, 18, 8, 1]
+  kernel stage: 1.0s
+pair_after F_2: d=8, dim K=4, 218 kernel folds in 218 torus orbits; jobs=2
+  symmetry: 218 torus orbits in 218 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 2
+{"name": "pair_after", "p": 2, "d": 8, "kdim": 4, "nK": 218, "reps": 218, "N": 108, "fib": {"0": 152, "1": 34, "2": 30, "4": 1, "10": 1}, "G": 2, "orbits_G": 71, "sizes_G": {"1": 34, "2": 37}, "orbits_GxGr": 71, "sizes_GxGr": {"1": 34, "2": 37}, "transversal": {"lifted": 1, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 2, "torus_preserving": 1, "torus_all": 1, "orbits_GxT": 71, "sizes_GxT": {"1": 34, "2": 37}, "orbits_GxTloc": 71, "local_torus_sizes": {"1": 71}, "t": 1}

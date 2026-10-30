@@ -1,0 +1,16 @@
+pairs_in_short_tail V = 0000,0000,0010,0010 leaf 0 comps all: 26 coordinates, dim Der_Δ = 4, classes 4, 114 orbit-matrix columns; t = 10s
+node 0: dim 1, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 12s
+node 2: dim 3, LC(I) primes [], closure dim 2, children 2, all claims exact; t = 13s
+node 3: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 14s
+node 4: dim 1, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 14s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 15s
+node 6: dim 3, LC(I) primes [], closure dim 2, children 2, all claims exact; t = 16s
+node 7: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 17s
+node 8: dim 1, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 17s
+node 9: dim 4, LC(I) primes [], closure dim 3, children 2, issues ['radical membership fails for 1 generators']; t = 18s
+node 10: dim 3, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 19s
+node 11: dim 2, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 20s
+node 12: dim 3, LC(I) primes [], closure dim 2, children 1, issues ['radical membership fails for 1 generators']; t = 21s
+node 13: dim 4, LC(I) primes [], closure dim 3, children 2, issues ['radical membership fails for 1 generators']; t = 22s
+node 14: dim 3, LC(I) primes [], closure dim 2, children 1, all claims exact; t = 22s
+RESULT nodes 15, problems [], candidate primes []; t = 22s

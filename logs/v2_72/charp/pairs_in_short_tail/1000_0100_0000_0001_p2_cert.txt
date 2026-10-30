@@ -1,0 +1,36 @@
+pairs_in_short_tail V = 1000,0100,0000,0001 leaf 0 comps all: 48 coordinates, dim Der_Δ = 4, classes 4, 135 orbit-matrix columns; t = 3s
+  Z1: dim 3: certified (1 points tried); t = 6s
+  Z1.1: dim 2: certified (1 points tried); t = 9s
+  Z1.1.1: dim 1: certified (1 points tried); t = 18s
+  Z1.2: dim 2: certified (2 points tried); t = 20s
+  Z2: dim 3: certified (4 points tried); t = 23s
+  Z2.2: dim 2: certified (1 points tried); t = 25s
+  Z3: dim 3: certified (2 points tried); t = 27s
+  Z3.2: dim 2: certified (2 points tried); t = 29s
+  Z4: dim 3: certified (1 points tried); t = 31s
+  Z4.2: dim 2: certified (1 points tried); t = 33s
+  Z5: dim 3: certified (1 points tried); t = 36s
+  Z5.2: dim 2: certified (2 points tried); t = 38s
+  Z6: dim 1: certified (1 points tried); t = 47s
+  Z6.1: point: point certified
+  Z7: dim 2: certified (2 points tried); t = 52s
+  Z7.1: dim 1: certified (1 points tried); t = 61s
+  Z8: dim 4: certified (1 points tried); t = 63s
+  Z8.1: dim 3: certified (1 points tried); t = 65s
+  Z8.1.1: dim 2: certified (1 points tried); t = 68s
+  Z8.2: dim 3: certified (1 points tried); t = 70s
+  Z9: dim 4: certified (1 points tried); t = 72s
+  Z9.1: dim 3: certified (1 points tried); t = 75s
+  Z10: dim 5: certified (1 points tried); t = 76s
+  Z10.1: dim 4: certified (2 points tried); t = 78s
+  Z10.1.1: dim 3: certified (2 points tried); t = 81s
+  Z10.1.2: dim 3: certified (4 points tried); t = 84s
+  Z10.2: dim 4: certified (1 points tried); t = 86s
+  Z10.3: dim 4: certified (2 points tried); t = 88s
+  Z11: dim 5: certified (4 points tried); t = 90s
+  Z11.1: dim 4: certified (4 points tried); t = 92s
+  Z11.1.1: dim 3: certified (2 points tried); t = 95s
+  Z11.2: dim 4: certified (2 points tried); t = 97s
+  Z12: dim 4: certified (1 points tried); t = 99s
+  Z12.1: dim 3: certified (1 points tried); t = 101s
+RESULT 1000,0100,0000,0001 at p = 2: {'nodes': 33, 'certified': 34, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 34; t = 101s

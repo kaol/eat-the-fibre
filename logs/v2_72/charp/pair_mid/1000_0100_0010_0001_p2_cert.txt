@@ -1,0 +1,15 @@
+pair_mid V = 1000,0100,0010,0001 leaf 0 comps all: 22 coordinates, dim Der_Δ = 2, classes 3, 56 orbit-matrix columns; t = 1s
+  Z1: dim 2: certified (1 points tried); t = 2s
+  Z1.1: dim 1: certified (1 points tried); t = 6s
+  Z2: dim 2: certified (1 points tried); t = 8s
+  Z3: dim 2: certified (1 points tried); t = 9s
+  Z4: dim 2: certified (1 points tried); t = 11s
+  Z5: dim 2: certified (1 points tried); t = 12s
+  Z6: dim 2: certified (1 points tried); t = 13s
+  Z7: dim 2: certified (1 points tried); t = 14s
+  Z8: dim 2: certified (1 points tried); t = 15s
+  Z9: dim 2: certified (1 points tried); t = 17s
+  Z10: dim 2: certified (2 points tried); t = 17s
+  Z11: dim 2: certified (1 points tried); t = 19s
+  Z12: point: point certified
+RESULT 1000,0100,0010,0001 at p = 2: {'nodes': 12, 'certified': 13, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 13; t = 20s

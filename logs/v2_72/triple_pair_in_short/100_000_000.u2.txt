@@ -1,0 +1,17 @@
+triple_pair_in_short V = 100,000,000 leaf 0 comps all: 38 coordinates, dim Der_Δ = 8, classes 3, 79 orbit-matrix columns; t = 1s
+node 0: dim 6, LC(I) primes [], closure dim 5, children 1, issues ['radical membership fails for 5 generators']; t = 2s
+node 1: dim 5, LC(I) primes [], closure dim 4, children 1, issues ['radical membership fails for 6 generators']; t = 3s
+node 2: dim 4, LC(I) primes [], closure dim 3, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 3s
+node 3: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership fails for 1 generators']; t = 4s
+node 4: dim 3, LC(I) primes [], closure dim 2, children 1, issues ['radical membership fails for 3 generators']; t = 4s
+node 5: dim 1, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 5s
+node 6: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership fails for 4 generators']; t = 5s
+node 7: dim 3, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 5s
+node 8: dim 5, LC(I) primes [], closure dim 4, children 1, issues ['radical membership fails for 2 generators']; t = 6s
+node 9: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 6s
+node 10: dim 4, LC(I) primes [], closure dim 3, children 1, all claims exact; t = 7s
+node 11: dim 4, LC(I) primes [], closure dim 3, children 1, issues ['radical membership fails for 2 generators']; t = 7s
+node 12: dim 3, LC(I) primes [], closure dim 2, children 0, issues ['1 ∉ J (empty boundary): candidate primes from J']; t = 8s
+node 13: dim 2, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 8s
+node 15: dim 2, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 9s
+RESULT nodes 16, problems [], candidate primes []; t = 9s

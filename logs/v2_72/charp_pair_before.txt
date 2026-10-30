@@ -1,0 +1,2 @@
+  100_010_001: char 0 count 7; char-2 tree {'nodes': 7, 'minor': 6, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 6, 'certified': 7, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; AGREES
+pair_before at p = 2: 1/1 blocks certified with the char 0 count

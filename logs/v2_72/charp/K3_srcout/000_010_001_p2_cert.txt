@@ -1,0 +1,19 @@
+K3_srcout V = 000,010,001 leaf 0 comps all: 16 coordinates, dim Der_Δ = 6, classes 2, 27 orbit-matrix columns; t = 0s
+  Z1: dim 5: certified (9 points tried); t = 1s
+  Z1.1: dim 4: certified (1 points tried); t = 2s
+  Z1.1.1: dim 3: certified (1 points tried); t = 3s
+  Z1.1.1.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 4s
+  Z1.1.1.2: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 4s
+  Z1.2: dim 4: certified (1 points tried); t = 5s
+  Z1.2.1: dim 3: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 3, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 6s
+  Z1.2.1.2: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 6s
+  Z1.2.2: dim 3: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 3, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 7s
+  Z1.2.2.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 8s
+  Z2: dim 2: certified (1 points tried); t = 9s
+  Z2.1: dim 1: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 0}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 12s
+  Z2.1.1: point: point certified
+  Z3: dim 4: certified (2 points tried); t = 13s
+  Z3.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 14s
+  Z3.1.1: dim 2: certified (1 points tried); t = 15s
+  Z3.1.1.1: dim 1: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 18s
+RESULT 000,010,001 at p = 2: {'nodes': 16, 'certified': 8, 'no_top_orbit': 9, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 8; t = 18s

@@ -1,0 +1,11 @@
+pairs_in_short_c4 V = 1000,1000,1000,1000 leaf 0 comps all: 7 coordinates, dim Der_Δ = 4, classes 4, 24 orbit-matrix columns; t = 2s
+  Z1: point: point certified
+  Z2: dim 2: certified (1 points tried); t = 3s
+  Z2.1: dim 1: certified (1 points tried); t = 4s
+  Z3: dim 2: certified (3 points tried); t = 4s
+  Z4: dim 3: certified (6 points tried); t = 5s
+  Z4.1: dim 2: certified (2 points tried); t = 5s
+  Z4.2: dim 2: certified (1 points tried); t = 5s
+  Z5: dim 3: certified (1 points tried); t = 6s
+  Z5.1: dim 2: certified (2 points tried); t = 6s
+RESULT 1000,1000,1000,1000 at p = 2: {'nodes': 8, 'certified': 9, 'no_top_orbit': 0, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 9; t = 6s

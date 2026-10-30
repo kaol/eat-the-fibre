@@ -1,0 +1,7 @@
+  00_00: char 0 count 7; char-2 tree {'nodes': 14, 'minor': 13, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 13, 'certified': 7, 'no_top_orbit': 7, 'failed': 0, 'points': 1}; AGREES
+  00_01: char 0 count 5; char-2 tree {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; AGREES
+  01_01: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+  10_00: char 0 count 5; char-2 tree {'nodes': 9, 'minor': 8, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; AGREES
+  10_01: char 0 count 7; char-2 tree {'nodes': 14, 'minor': 13, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 13, 'certified': 7, 'no_top_orbit': 7, 'failed': 0, 'points': 1}; AGREES
+  10_10: char 0 count 5; char-2 tree {'nodes': 10, 'minor': 9, 'points': 1, 'inconclusive': 0, 'error': 0}; certificates {'nodes': 9, 'certified': 5, 'no_top_orbit': 5, 'failed': 0, 'points': 1}; AGREES
+K3 at p = 2: 6/6 blocks certified with the char 0 count

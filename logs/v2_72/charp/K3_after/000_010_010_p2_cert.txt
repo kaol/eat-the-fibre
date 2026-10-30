@@ -1,0 +1,11 @@
+K3_after V = 000,010,010 leaf 0 comps all: 12 coordinates, dim Der_Δ = 6, classes 2, 21 orbit-matrix columns; t = 0s
+  Z1: dim 4: certified (1 points tried); t = 1s
+  Z1.1: dim 3: certified (1 points tried); t = 2s
+  Z1.1.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 3s
+  Z1.1.2: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 4s
+  Z2: dim 2: certified (2 points tried); t = 4s
+  Z2.1: dim 1: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 6s
+  Z2.1.1: point: point certified
+  Z3: dim 2: certified (1 points tried); t = 8s
+  Z3.1: dim 1: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 10s
+RESULT 000,010,010 at p = 2: {'nodes': 8, 'certified': 5, 'no_top_orbit': 4, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 5; t = 10s

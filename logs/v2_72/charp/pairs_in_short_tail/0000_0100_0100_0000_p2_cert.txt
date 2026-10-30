@@ -1,0 +1,15 @@
+pairs_in_short_tail V = 0000,0100,0100,0000 leaf 0 comps all: 16 coordinates, dim Der_Δ = 4, classes 4, 52 orbit-matrix columns; t = 3s
+  Z1: dim 1: certified (2 points tried); t = 7s
+  Z1.1: point: point certified
+  Z2: dim 1: certified (1 points tried); t = 10s
+  Z3: dim 3: certified (5 points tried); t = 11s
+  Z3.1: dim 2: certified (1 points tried); t = 12s
+  Z3.1.1: dim 1: certified (1 points tried); t = 15s
+  Z3.2: dim 2: certified (1 points tried); t = 15s
+  Z4: dim 4: certified (3 points tried); t = 16s
+  Z4.1: dim 3: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 3, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 17s
+  Z4.1.1: dim 2: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 2, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 18s
+  Z4.2: dim 3: certified (2 points tried); t = 19s
+  Z4.2.1: dim 2: certified (1 points tried); t = 20s
+  Z4.3: dim 3: certified (1 points tried); t = 20s
+RESULT 0000,0100,0100,0000 at p = 2: {'nodes': 12, 'certified': 11, 'no_top_orbit': 2, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 11; t = 20s

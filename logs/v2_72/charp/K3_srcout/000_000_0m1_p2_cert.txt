@@ -1,0 +1,41 @@
+K3_srcout V = 000,000,0m1 leaf 0 comps all: 16 coordinates, dim Der_Δ = 6, classes 2, 30 orbit-matrix columns; t = 0s
+  Z1: dim 5: certified (1 points tried); t = 1s
+  Z1.1: dim 4: certified (1 points tried); t = 2s
+  Z1.1.1: dim 3: certified (1 points tried); t = 3s
+  Z1.1.1.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 3s
+  Z1.1.1.2: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 5s
+  Z1.1.2: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 5s
+  Z1.2: dim 4: certified (1 points tried); t = 6s
+  Z1.2.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 6s
+  Z1.2.1.2: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 7s
+  Z1.2.2: dim 3: no top orbit (3 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 3, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 8s
+  Z1.2.2.1: dim 2: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 3}]); t = 8s
+  Z1.3: dim 4: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 9s
+  Z2: dim 5: certified (1 points tried); t = 9s
+  Z2.1: dim 4: certified (1 points tried); t = 10s
+  Z2.1.2: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 11s
+  Z2.3: dim 4: no top orbit (6 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 4, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 12s
+  Z3: point: point certified
+  Z4: dim 6: certified (1 points tried); t = 15s
+  Z4.1: dim 5: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 6}]); t = 16s
+  Z4.1.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 17s
+  Z4.1.1.1: dim 2: certified (1 points tried); t = 18s
+  Z4.1.1.1.1: dim 1: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 23s
+  Z4.1.2: dim 4: certified (1 points tried); t = 24s
+  Z4.1.2.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 25s
+  Z4.2: dim 5: certified (1 points tried); t = 26s
+  Z4.2.1: dim 4: certified (1 points tried); t = 27s
+  Z4.2.1.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 28s
+  Z4.2.2: dim 4: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 29s
+  Z4.2.2.2: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 30s
+  Z4.2.2.2.1: dim 2: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': True, 'rank_value': 2, 'G1': False, 'S_affine_g': True, 'S_tangent': True, 'S_connected': True, 'separated': False}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 31s
+  Z4.2.2.2.1.1: dim 1: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}]); t = 36s
+  Z5: dim 6: certified (3 points tried); t = 37s
+  Z5.1: dim 5: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 6}]); t = 38s
+  Z5.1.1: dim 3: no top orbit (2 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 2}, {'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 39s
+  Z5.2: dim 5: certified (1 points tried); t = 40s
+  Z5.2.1: dim 4: certified (2 points tried); t = 41s
+  Z5.2.1.1: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 42s
+  Z5.2.2: dim 4: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 5}]); t = 43s
+  Z5.2.2.2: dim 3: no top orbit (1 points tried: [{'coords': True, 'W_partition': True, 'rank': False, 'rank_value': 4}]); t = 44s
+RESULT 000,000,0m1 at p = 2: {'nodes': 38, 'certified': 15, 'no_top_orbit': 24, 'failed': 0, 'points': 1}; census count over every 𝔽_(p^k) = 15; t = 44s

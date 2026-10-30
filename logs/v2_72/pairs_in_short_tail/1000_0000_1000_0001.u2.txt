@@ -1,0 +1,9 @@
+pairs_in_short_tail V = 1000,0000,1000,0001 leaf 0 comps all: 16 coordinates, dim Der_Δ = 4, classes 4, 40 orbit-matrix columns; t = 11s
+node 0: dim 2, LC(I) primes [], closure dim 1, children 2, all claims exact; t = 12s
+node 1: dim 1, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 13s
+node 3: dim 1, LC(I) primes [], closure dim 0, children 1, all claims exact; t = 13s
+node 4: dim 3, LC(I) primes [], closure dim 2, children 2, issues ['radical membership fails for 1 generators']; t = 13s
+node 5: dim 2, LC(I) primes [], closure dim 1, children 1, all claims exact; t = 14s
+node 6: dim 1, LC(I) primes [], closure dim -1, children 0, all claims exact; t = 14s
+node 7: dim 2, LC(I) primes [], closure dim 1, children 1, issues ['radical membership fails for 1 generators']; t = 14s
+RESULT nodes 8, problems [], candidate primes []; t = 14s

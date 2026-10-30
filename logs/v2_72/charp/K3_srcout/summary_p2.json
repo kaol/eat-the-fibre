@@ -1,0 +1,515 @@
+[
+ {
+  "block": "000_000_000",
+  "char0": 11,
+  "tree": {
+   "nodes": 22,
+   "minor": 21,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 21,
+   "certified": 11,
+   "no_top_orbit": 11,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_000_001",
+  "char0": 7,
+  "tree": {
+   "nodes": 14,
+   "minor": 13,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 13,
+   "certified": 7,
+   "no_top_orbit": 7,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_000_0m1",
+  "char0": 15,
+  "tree": {
+   "nodes": 39,
+   "minor": 38,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 38,
+   "certified": 15,
+   "no_top_orbit": 24,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_001_001",
+  "char0": 5,
+  "tree": {
+   "nodes": 9,
+   "minor": 8,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 8,
+   "certified": 5,
+   "no_top_orbit": 4,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_010_000",
+  "char0": 5,
+  "tree": {
+   "nodes": 9,
+   "minor": 8,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 8,
+   "certified": 5,
+   "no_top_orbit": 4,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_010_001",
+  "char0": 8,
+  "tree": {
+   "nodes": 17,
+   "minor": 16,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 16,
+   "certified": 8,
+   "no_top_orbit": 9,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_010_010",
+  "char0": 5,
+  "tree": {
+   "nodes": 9,
+   "minor": 8,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 8,
+   "certified": 5,
+   "no_top_orbit": 4,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "000_01m_000",
+  "char0": 8,
+  "tree": {
+   "nodes": 17,
+   "minor": 16,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 16,
+   "certified": 8,
+   "no_top_orbit": 9,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "001_000_001",
+  "char0": 5,
+  "tree": {
+   "nodes": 9,
+   "minor": 8,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 8,
+   "certified": 5,
+   "no_top_orbit": 4,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "001_001_001",
+  "char0": 7,
+  "tree": {
+   "nodes": 14,
+   "minor": 13,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 13,
+   "certified": 7,
+   "no_top_orbit": 7,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "001_010_001",
+  "char0": 8,
+  "tree": {
+   "nodes": 17,
+   "minor": 16,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 16,
+   "certified": 8,
+   "no_top_orbit": 9,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "010_010_000",
+  "char0": 5,
+  "tree": {
+   "nodes": 10,
+   "minor": 9,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 9,
+   "certified": 5,
+   "no_top_orbit": 5,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "010_010_001",
+  "char0": 10,
+  "tree": {
+   "nodes": 27,
+   "minor": 26,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 26,
+   "certified": 10,
+   "no_top_orbit": 17,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "010_010_010",
+  "char0": 7,
+  "tree": {
+   "nodes": 14,
+   "minor": 13,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 13,
+   "certified": 7,
+   "no_top_orbit": 7,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "01m_01m_000",
+  "char0": 10,
+  "tree": {
+   "nodes": 27,
+   "minor": 26,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 26,
+   "certified": 10,
+   "no_top_orbit": 17,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "0m1_000_0m1",
+  "char0": 8,
+  "tree": {
+   "nodes": 17,
+   "minor": 16,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 16,
+   "certified": 8,
+   "no_top_orbit": 9,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_000",
+  "char0": 5,
+  "tree": {
+   "nodes": 9,
+   "minor": 8,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 8,
+   "certified": 5,
+   "no_top_orbit": 4,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_001",
+  "char0": 3,
+  "tree": {
+   "nodes": 6,
+   "minor": 5,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 5,
+   "certified": 3,
+   "no_top_orbit": 3,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_0m1",
+  "char0": 3,
+  "tree": {
+   "nodes": 6,
+   "minor": 5,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 5,
+   "certified": 3,
+   "no_top_orbit": 3,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_000_100",
+  "char0": 5,
+  "tree": {
+   "nodes": 9,
+   "minor": 8,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 8,
+   "certified": 5,
+   "no_top_orbit": 4,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_001_001",
+  "char0": 3,
+  "tree": {
+   "nodes": 5,
+   "minor": 5,
+   "points": 0,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 5,
+   "certified": 3,
+   "no_top_orbit": 2,
+   "failed": 0,
+   "points": 0
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_000",
+  "char0": 7,
+  "tree": {
+   "nodes": 14,
+   "minor": 13,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 13,
+   "certified": 7,
+   "no_top_orbit": 7,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_001",
+  "char0": 11,
+  "tree": {
+   "nodes": 22,
+   "minor": 21,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 21,
+   "certified": 11,
+   "no_top_orbit": 11,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_010_010",
+  "char0": 7,
+  "tree": {
+   "nodes": 14,
+   "minor": 13,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 13,
+   "certified": 7,
+   "no_top_orbit": 7,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_01m_000",
+  "char0": 3,
+  "tree": {
+   "nodes": 5,
+   "minor": 5,
+   "points": 0,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 5,
+   "certified": 3,
+   "no_top_orbit": 2,
+   "failed": 0,
+   "points": 0
+  },
+  "ok": true
+ },
+ {
+  "block": "100_100_000",
+  "char0": 5,
+  "tree": {
+   "nodes": 10,
+   "minor": 9,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 9,
+   "certified": 5,
+   "no_top_orbit": 5,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ },
+ {
+  "block": "100_100_100",
+  "char0": 7,
+  "tree": {
+   "nodes": 14,
+   "minor": 13,
+   "points": 1,
+   "inconclusive": 0,
+   "error": 0
+  },
+  "cert": {
+   "nodes": 13,
+   "certified": 7,
+   "no_top_orbit": 7,
+   "failed": 0,
+   "points": 1
+  },
+  "ok": true
+ }
+]
