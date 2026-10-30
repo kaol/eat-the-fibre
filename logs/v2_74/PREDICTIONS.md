@@ -10,3 +10,15 @@ appears) on unobstructed quivers beyond the census list: K₄, 1⇛2→3→4 (K3
      orbit count of the v2.67 trees, block by block.
 117. The chain completes on all five without new methods: every node certified at every p (candidates {2, 3} resolved
      by direct checks or char-p trees); Conjecture G holds on all five at every q.
+
+## Addendum (before the checks below; after the census and the identity-block pipeline)
+
+Observed: census of 1⇛2, 2→3, 2→4 is 708 at q = 2 and 710 at q = 3; the difference sits in block
+1000,0100,0010,0001 (111 vs 113); the v2.55 pipeline marks two of its 29 components (12, 13, dimension 7) "fail":
+orbit rank ≤ 6 at every sampled point.
+
+118. On components 12 and 13 the generic orbit rank (exact, by fraction-free elimination over the function field of the
+     component, with 𝔥 = Der_Δ + all three class weightings) is 6 < 7: each carries a one-parameter family of orbits,
+     so 1⇛2, 2→3, 2→4 has infinitely many orbits (a counterexample to Conjecture 3ᶜ at multiplicity 3; its
+     multiplicity-2 version 1⇉2, 2→3, 2→4 is finite, 414).
+119. Its census grows with q: the q = 5 count exceeds 710.
