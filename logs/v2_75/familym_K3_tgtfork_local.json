@@ -1,0 +1,25 @@
+{
+ "quiver": "K3_tgtfork",
+ "mode": "mult",
+ "cls": [
+  0,
+  1,
+  2
+ ],
+ "tails": [
+  3,
+  4
+ ],
+ "c": "local",
+ "ell": "sigma0",
+ "d": 15,
+ "params": [
+  "l3",
+  "m3",
+  "l4",
+  "m4"
+ ],
+ "idem": 0,
+ "delta": 0,
+ "closure": 0
+}

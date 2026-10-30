@@ -1,0 +1,2 @@
+Terminated
+logs/v2_75/run_census.sh: line 5:  1970 Killed                  python3 pcensus.py $Q $p --engine torch --out $o.json > $o.txt 2>&1

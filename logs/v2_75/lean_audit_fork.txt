@@ -1,0 +1,12 @@
+'EatTheFibre.Q_K3_tgtfork.fork_isFold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.Q_K3_tgtfork.forkM_isFold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.Q_K3_tgtfork.forkBad_check_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.Q_K3_tgtfork.fork_rigid_GT' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.Q_K3_tgtfork.forkM_rigid_GT' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EatTheFibre.Q_K3_tgtfork.fork_forkM_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Q_K3_tgtfork.fork_isFold : ∀ {k : Type u_1} [inst : CommRing k] (t : k),
+  (Q_K3_tgtfork.alg k).IsFold (Reflect.evalM Q_K3_tgtfork.forkP t)
+@Q_K3_tgtfork.fork_rigid_GT : ∀ {k : Type u_1} [inst : CommRing k] {g00 g01 g02 g10 g11 g12 wa wb wc t t' : k},
+  Q_K3_tgtfork.substK g00 g01 g02 g10 g11 g12 wa wb wc * Reflect.evalM Q_K3_tgtfork.forkP t =
+      Reflect.evalM Q_K3_tgtfork.forkP t' * Q_K3_tgtfork.substK g00 g01 g02 g10 g11 g12 wa wb wc →
+    t = t'

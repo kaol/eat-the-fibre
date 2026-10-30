@@ -1,0 +1,83 @@
+== Gen.K3_tgtfork 12:07:49
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:305:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:310:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:310:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:310:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:315:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:315:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:315:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:320:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:320:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:320:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:325:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:325:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:325:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:330:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:330:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:330:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:335:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:335:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:335:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Build completed successfully (9050 jobs).
+== Gen.K3_tgtfork_rigid 12:38:37
+warning: EatTheFibre/Gen/K3_tgtfork.lean:305:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:310:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:310:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:310:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:315:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:315:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:315:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:320:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:320:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:320:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:325:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:325:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:325:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:330:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:330:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:330:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:335:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:335:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: EatTheFibre/Gen/K3_tgtfork.lean:335:61: Unused tactic linter: `ring` does nothing.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9051/9051] Built EatTheFibre.Gen.K3_tgtfork_rigid (111s)
+Build completed successfully (9051 jobs).
+LEANDONE

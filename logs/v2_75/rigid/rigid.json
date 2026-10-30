@@ -1,0 +1,17 @@
+{
+ "src": {
+  "n_entries": 41,
+  "std": "t-tp,\nwb-wc,\ng02,\ng01,\ng00+g10-g11,\ng10*wc-g11*wc+g11-g12,\ng11*wa-g12*wa-1\n   ? `sat` undefined or  `int` expected while building `sat(`\n   ? error occurred in or before logs/v2_75/rigid/rigid_src.sing line 6: `ideal Q = sat(E, ideal(wa*wb*wc))[1];`\n   ? expected ideal-expression. type 'help ideal;'\n   ? `Q` is undefined\n   ? error occurred in or before logs/v2_75/rigid/rigid_src.sing line 7: `t(Q, ideal(g00*g11 - g01*g10 + g00*g12 - g02*g10 + g01*g12 - g02*g11 + 0))[1];`",
+  "sat": "? `Q` is not defined\n   ? error occurred in or before logs/v2_75/rigid/rigid_src.sing line 8: `print(\""
+ },
+ "others": {
+  "n_entries": 53,
+  "std": "t-tp,\nwb-wc,\ng02,\ng01,\ng00+g10-g11,\ng10*wc-g11*wc+g11-g12,\ng11*wa-g12*wa-1\n   ? `sat` undefined or  `int` expected while building `sat(`\n   ? error occurred in or before logs/v2_75/rigid/rigid_others.sing line 6: `ideal Q = sat(E, ideal(wa*wb*wc))[1];`\n   ? expected ideal-expression. type 'help ideal;'\n   ? `Q` is undefined\n   ? error occurred in or before logs/v2_75/rigid/rigid_others.sing line 7: `t(Q, ideal(g00*g11 - g01*g10 + g00*g12 - g02*g10 + g01*g12 - g02*g11 + 0))[1];`",
+  "sat": "? `Q` is not defined\n   ? error occurred in or before logs/v2_75/rigid/rigid_others.sing line 8: `print(\""
+ },
+ "src_vs_others": {
+  "n_entries": 55,
+  "std": "1\n   ? `sat` undefined or  `int` expected while building `sat(`\n   ? error occurred in or before logs/v2_75/rigid/rigid_src_vs_others.sing line 6: `ideal Q = sat(E, ideal(wa*wb*wc))[1];`\n   ? expected ideal-expression. type 'help ideal;'\n   ? `Q` is undefined\n   ? error occurred in or before logs/v2_75/rigid/rigid_src_vs_others.sing line 7: `t(Q, ideal(g00*g11 - g01*g10 + g00*g12 - g02*g10 + g01*g12 - g02*g11 + 0))[1];`",
+  "sat": "? `Q` is not defined\n   ? error occurred in or before logs/v2_75/rigid/rigid_src_vs_others.sing line 8: `print(\""
+ }
+}

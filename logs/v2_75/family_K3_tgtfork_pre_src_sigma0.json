@@ -1,0 +1,21 @@
+{
+ "quiver": "K3_tgtfork_pre",
+ "cls": [
+  1,
+  2,
+  3
+ ],
+ "tails": [
+  4,
+  5
+ ],
+ "c": "src",
+ "ell": "sigma0",
+ "d": 26,
+ "idem": 0,
+ "delta": 8,
+ "closure": 0,
+ "groebner": [
+  "1"
+ ]
+}

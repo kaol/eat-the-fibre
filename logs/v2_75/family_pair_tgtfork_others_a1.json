@@ -1,0 +1,22 @@
+{
+ "quiver": "pair_tgtfork",
+ "cls": [
+  0,
+  1,
+  1
+ ],
+ "tails": [
+  2,
+  3
+ ],
+ "c": "others",
+ "ell": "a1",
+ "d": 12,
+ "idem": 0,
+ "delta": 2,
+ "closure": 0,
+ "groebner": [
+  "m1",
+  "m2"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "src": {
+  "target": "t-tp",
+  "cofactors": {
+   "1": "t",
+   "2": "-tp",
+   "15": "-t",
+   "16": "1"
+  },
+  "entries": {
+   "1": "-g00*wa*wb + 1",
+   "2": "-g00*wa*wc + 1",
+   "15": "-g00*wa*wb + g11*wa - g12*wa",
+   "16": "-g00*tp*wa*wc + g11*t*wa - g12*t*wa"
+  },
+  "residual": "0",
+  "integral": true
+ },
+ "others": {
+  "target": "t-tp",
+  "cofactors": {
+   "1": "t",
+   "2": "-tp",
+   "27": "-t",
+   "28": "1"
+  },
+  "entries": {
+   "1": "-g00*wa*wb + 1",
+   "2": "-g00*wa*wc + 1",
+   "27": "-g00*wa*wb + g11*wa - g12*wa",
+   "28": "-g00*tp*wa*wc + g11*t*wa - g12*t*wa"
+  },
+  "residual": "0",
+  "integral": true
+ },
+ "src_vs_others": {
+  "target": "1",
+  "cofactors": {
+   "1": "1"
+  },
+  "entries": {
+   "1": "1"
+  },
+  "residual": "0",
+  "integral": true
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "quiver": "K3_tgtfork_long",
+ "mode": "mult",
+ "cls": [
+  0,
+  1,
+  2
+ ],
+ "tails": [
+  3,
+  4
+ ],
+ "c": "local",
+ "ell": "sigma0",
+ "d": 21,
+ "params": [
+  "l3",
+  "m3",
+  "l4",
+  "m4"
+ ],
+ "idem": 0,
+ "delta": 3,
+ "closure": 1,
+ "groebner": [
+  "l3",
+  "m3"
+ ]
+}

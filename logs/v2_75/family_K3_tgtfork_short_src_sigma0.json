@@ -1,0 +1,18 @@
+{
+ "quiver": "K3_tgtfork_short",
+ "cls": [
+  0,
+  1,
+  2
+ ],
+ "tails": [
+  3,
+  4
+ ],
+ "c": "src",
+ "ell": "sigma0",
+ "d": 16,
+ "idem": 0,
+ "delta": 0,
+ "closure": 0
+}

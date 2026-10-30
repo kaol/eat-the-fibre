@@ -1,0 +1,6 @@
+ring r = integer,(g00,g01,g02,g10,g11,g12,wa,wb,wc,t,tp),dp;
+option(redSB);
+ideal E = -g00*wa*wb + 1,-g00*wa*wc + 1,-g01*wa*wb,-g01*wa*wc,-g02*wa*wb,-g02*wa*wc,-g00*wa*wb + 1,-g00*wa*wc + 1,-g01*wa*wb,-g01*wa*wc,-g02*wa*wb,-g02*wa*wc,-g00*wa*wb + 1,-g00*wa*wc + 1,-g01*wa*wb,-g01*wa*wc,-g02*wa*wb,-g02*wa*wc,g01*wa,g01*wa,g02*wa,g01*wa - g02*wa,g01*t*wa - g02*t*wa,-g00*wa - g10*wa + g11*wa,-g01*wa,-g02*wa,-g00*wa*wb + g11*wa - g12*wa,-g00*tp*wa*wc + g11*t*wa - g12*t*wa,-g01*wa*wb,-g01*tp*wa*wc,-g02*wa*wb,-g02*tp*wa*wc,g00*wa - g01*wa + g10*wa - g11*wa,g00*wa*wb - g01*wa + g02*wa - g11*wa + g12*wa,g00*tp*wa*wc - g01*t*wa + g02*t*wa - g11*t*wa + g12*t*wa,g01*wa*wb,g01*tp*wa*wc,g02*wa*wb,g02*tp*wa*wc,g01*wa*wb,g01*wa*wb,g02*wa*wb,g01*wa*wc,g01*wa*wc,g02*wa*wc,-g00*wa*wb - g10*wa*wb + g11*wa*wb,-g01*wa*wb,-g02*wa*wb,-g00*wa*wc - g10*wa*wc + g11*wa*wc,-g01*wa*wc,-g02*wa*wc,g00*wa*wb - g01*wa*wb + g10*wa*wb - g11*wa*wb,g00*wa*wc - g01*wa*wc + g10*wa*wc - g11*wa*wc;
+matrix T = lift(E, ideal(t-tp));
+int i; for (i = 1; i <= nrows(T); i++) { if (T[i,1] != 0) { print("COF " + string(i) + " " + string(T[i,1])); } }
+print("END"); quit;

@@ -17,6 +17,7 @@ python3 gen/gen_line.py REPS.pkl 5107 LOG 0    # regenerate Gen/two_pairs_short_
 python3 gen/gen_short_families.py ../logs/v2_42/curves_two_pairs_short_5_merged.txt REPS_5_merged.pkl   # Gen/two_pairs_short_fam{1..18}.lean (v2.49)
 python3 gen/gen_curve.py ../logs/v2_50/curve_A.json A   # Gen/two_pairs_short_curve{A,B}.lean (v2.50; B with curve_B.json)
 python3 gen/gen_vblocks.py ../logs/v2_52/realise_7.json   # Gen/pairs_in_short_vblocks.lean (v2.52)
+python3 gen/gen_fork.py                                    # Gen/K3_tgtfork{,_rigid}.lean (v2.75; needs Singular for the lift)
 ```
 
 ## What is proved
@@ -51,6 +52,7 @@ python3 gen/gen_vblocks.py ../logs/v2_52/realise_7.json   # Gen/pairs_in_short_v
 | `Gen/two_pairs_short_fam{1..18}.lean` | v2.49: the 18 inner families of 1⇉2⇉3 + 1→3, P_t = Inn(1 + t·x)·P₀·Inn⁻¹; `famk_isFold`, `famk_one_orbit` (all built; audit 184 results, standard axioms only) |
 | `Gen/two_pairs_short_curve{A,B}.lean` | v2.50: the slice line C = p + s·v inside the divisor component L_A / L_B; `curveA_isFold`, `curveB_isFold` |
 | `Gen/pairs_in_short_vblocks.lean` | v2.52: an integer fold for each of the 21 vertex blocks of 1⇉2⇇3 + 1→3; `vbk_isFold`, k = 1..21 (that there are no others is a Singular elimination, `analysis/v2_52_vertex_ideal.py`) |
+| `Gen/K3_tgtfork.lean`, `Gen/K3_tgtfork_rigid.lean` | v2.75 (Theorem 5 on its base quiver 1⇛2, 2→3, 2→4): `fork_isFold`, `forkM_isFold` (the fork families P_t, P⁻_t are folds over every commutative ring, every t); `forkBad_check_fails` (with ℓ₀ = a2 ∉ ker σ, Δ fails); `fork_rigid_GT`, `forkM_rigid_GT` (substK·P_t = P_t'·substK ⇒ t = t', for every census symmetry substK, no hypotheses: a four-term integer certificate); `fork_forkM_disjoint` (no census symmetry joins the two families over a nontrivial ring) |
 | `Transport.lean` | v2.34: `twist` (Δ transported along an algebra automorphism), `twist_delta`, **`transport`**: φPφ⁻¹ is a fold iff P is a fold for Δ^φ |
 | `Audit.lean` | `#print axioms`: only `propext`, `Classical.choice`, `Quot.sound` (no `sorry`, no `native_decide`) |
 

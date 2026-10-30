@@ -1,0 +1,20 @@
+{
+ "quiver": "K3_tgtfork",
+ "cls": [
+  0,
+  1,
+  2
+ ],
+ "tails": [
+  3,
+  4
+ ],
+ "c": "others",
+ "phi_P": "l3*m4/(l4*m3)",
+ "err_P": null,
+ "phi_SPSinv": "l3*m4/(l4*m3)",
+ "err_SPSinv": null,
+ "equal": true,
+ "matches_formula": true,
+ "nsymbols": 11
+}

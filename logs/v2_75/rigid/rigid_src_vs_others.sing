@@ -1,0 +1,9 @@
+ring r = 0,(g00,g01,g02,g10,g11,g12,wa,wb,wc,t,tp),dp;
+option(redSB);
+ideal E = 1,1,-g00*wa*wb,-g00*wa*wc,-g01*wa*wb,-g01*wa*wc,-g02*wa*wb,-g02*wa*wc,-g00*wa*wb,-g00*wa*wc,-g01*wa*wb,-g01*wa*wc,-g02*wa*wb,-g02*wa*wc,-g00*wa*wb,-g00*wa*wc,-g01*wa*wb,-g01*wa*wc,-g02*wa*wb,-g02*wa*wc,g01*wa,g01*wa,g02*wa,g01*wa - g02*wa,g01*t*wa - g02*t*wa,-g00*wa - g10*wa + g11*wa,-g01*wa,-g02*wa,-g00*wa*wb + g11*wa - g12*wa,-g00*tp*wa*wc + g11*t*wa - g12*t*wa,-g01*wa*wb,-g01*tp*wa*wc,-g02*wa*wb,-g02*tp*wa*wc,g00*wa - g01*wa + g10*wa - g11*wa,g00*wa*wb - g01*wa + g02*wa - g11*wa + g12*wa,g00*tp*wa*wc - g01*t*wa + g02*t*wa - g11*t*wa + g12*t*wa,g01*wa*wb,g01*tp*wa*wc,g02*wa*wb,g02*tp*wa*wc,g01*wa*wb,g01*wa*wb,g02*wa*wb,g01*wa*wc,g01*wa*wc,g02*wa*wc,-g00*wa*wb - g10*wa*wb + g11*wa*wb,-g01*wa*wb,-g02*wa*wb,-g00*wa*wc - g10*wa*wc + g11*wa*wc,-g01*wa*wc,-g02*wa*wc,g00*wa*wb - g01*wa*wb + g10*wa*wb - g11*wa*wb,g00*wa*wc - g01*wa*wc + g10*wa*wc - g11*wa*wc;
+ideal S = std(E);
+print("STD"); print(S);
+ideal Q = sat(E, ideal(wa*wb*wc))[1];
+Q = sat(Q, ideal(g00*g11 - g01*g10 + g00*g12 - g02*g10 + g01*g12 - g02*g11 + 0))[1];
+print("SAT"); print(std(Q));
+print("END"); quit;

@@ -1,0 +1,18 @@
+{
+ "quiver": "K4_tgtfork",
+ "cls": [
+  0,
+  1,
+  2
+ ],
+ "tails": [
+  4,
+  5
+ ],
+ "c": "local",
+ "ell": "sigma0",
+ "d": 18,
+ "idem": 0,
+ "delta": 0,
+ "closure": 0
+}
