@@ -4,3 +4,30 @@ pair_tgtfork3 F_3: d=16, dim K=6, 36984 kernel folds in 23294 torus orbits; engi
   symmetry: 23294 torus orbits in 23294 H-orbits (H = G × T); 0 fibres by transport; |N| = |ker(H → H|_K)| = 6
   torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
   12288/23294 fibres computed, group 4/6, 22 stacked batches at column 13, t=61s
+  12288/23294 fibres computed, group 4/6, 16 stacked batches at column 12, t=123s
+  12288/23294 fibres computed, group 4/6, 15 stacked batches at column 14, t=185s
+  12288/23294 fibres computed, group 4/6, 10 stacked batches at column 11, t=247s
+  16384/23294 fibres computed, group 5/6, 1 stacked batches at column 6, t=308s
+  16384/23294 fibres computed, group 5/6, 11 stacked batches at column 11, t=369s
+  16384/23294 fibres computed, group 5/6, 5 stacked batches at column 10, t=430s
+  20480/23294 fibres computed, group 6/6, 82 stacked batches at column 10, t=550s
+  20480/23294 fibres computed, group 6/6, 83 stacked batches at column 13, t=610s
+  20480/23294 fibres computed, group 6/6, 76 stacked batches at column 11, t=671s
+  20480/23294 fibres computed, group 6/6, 76 stacked batches at column 13, t=732s
+  20480/23294 fibres computed, group 6/6, 67 stacked batches at column 11, t=795s
+  20480/23294 fibres computed, group 6/6, 65 stacked batches at column 12, t=855s
+  20480/23294 fibres computed, group 6/6, 62 stacked batches at column 13, t=918s
+  20480/23294 fibres computed, group 6/6, 54 stacked batches at column 11, t=980s
+  20480/23294 fibres computed, group 6/6, 52 stacked batches at column 12, t=1041s
+  20480/23294 fibres computed, group 6/6, 49 stacked batches at column 13, t=1104s
+  20480/23294 fibres computed, group 6/6, 41 stacked batches at column 11, t=1166s
+  20480/23294 fibres computed, group 6/6, 39 stacked batches at column 12, t=1226s
+  20480/23294 fibres computed, group 6/6, 37 stacked batches at column 13, t=1286s
+  20480/23294 fibres computed, group 6/6, 32 stacked batches at column 13, t=1347s
+  20480/23294 fibres computed, group 6/6, 24 stacked batches at column 11, t=1408s
+  20480/23294 fibres computed, group 6/6, 24 stacked batches at column 13, t=1472s
+  20480/23294 fibres computed, group 6/6, 15 stacked batches at column 11, t=1532s
+  20480/23294 fibres computed, group 6/6, 13 stacked batches at column 12, t=1592s
+  20480/23294 fibres computed, group 6/6, 12 stacked batches at column 13, t=1653s
+  done in 1658s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^6): 6: [23294, 8970, 18270, 18270], 7: [8970, 6389, 23533, 18735], 8: [12562, 10272, 87212, 44942], 9: [42231, 39005, 1812921, 516035], 10: [515296, 515296, 521056, 519250], 11: [519250, 519250, 543888, 528956], 12: [528956, 528956, 515442, 515442], 13: [515442, 514342, 68501, 63195], 14: [58052, 57146, 41187, 24443], 15: [21864, 21582, 5535, 4261]; N-quotient (|N| = 6) per column [frontier, kept]: 7: [18270, 8970], 8: [18735, 12562], 9: [44942, 42231], 10: [516035, 515296], 11: [519250, 519250], 12: [528956, 528956], 13: [515442, 515442], 14: [63195, 58052], 15: [24443, 21864]
+{"name": "pair_tgtfork3", "p": 3, "d": 16, "kdim": 6, "nK": 36984, "reps": 23294, "N": 12496, "fib": {"0": 32636, "1": 3253, "3": 1027, "9": 24, "27": 33, "81": 1, "255": 9, "2679": 1}, "G": 6, "orbits_G": 4092, "sizes_G": {"1": 1411, "2": 921, "3": 439, "6": 1321}, "orbits_GxGr": 4092, "sizes_GxGr": {"1": 1411, "2": 921, "3": 439, "6": 1321}, "transversal": {"lifted": 4092, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 4, "torus_preserving": 4, "torus_all": 16, "orbits_GxT": 4092, "sizes_GxT": {"1": 1411, "2": 921, "3": 439, "6": 1321}, "orbits_GxTloc": 3714, "local_torus_sizes": {"4": 288, "8": 750, "16": 3054}, "t": 1683}
