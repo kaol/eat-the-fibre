@@ -22,3 +22,6 @@ orbit rank ≤ 6 at every sampled point.
      so 1⇛2, 2→3, 2→4 has infinitely many orbits (a counterexample to Conjecture 3ᶜ at multiplicity 3; its
      multiplicity-2 version 1⇉2, 2→3, 2→4 is finite, 414).
 119. Its census grows with q: the q = 5 count exceeds 710.
+120. (Added while the q = 5 census runs, after certifying the invariants φ₁₂ = y0_7·y6_8/(y0_8·y6_7) and
+     φ₁₃ = y3_7·y6_8/(y3_8·y6_7) on components 12 and 13.) The census of 1⇛2, 2→3, 2→4 is 706 + 2(q − 1): 714 at
+     q = 5.
