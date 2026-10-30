@@ -95,3 +95,5 @@ K3_after_fork F_3: d=22, dim K=7, 735324 kernel folds in 401276 torus orbits; en
   36864/48626 fibres computed, group 10/12, 77 stacked batches at column 20, t=6246s
   36864/48626 fibres computed, group 10/12, 59 stacked batches at column 20, t=6308s
   36864/48626 fibres computed, group 10/12, 40 stacked batches at column 19, t=6368s
+  36864/48626 fibres computed, group 10/12, 22 stacked batches at column 19, t=6431s
+  36864/48626 fibres computed, group 10/12, 14 stacked batches at column 17, t=6491s
