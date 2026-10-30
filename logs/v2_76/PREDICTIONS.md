@@ -25,3 +25,13 @@ S(x) ∝ x. All three make sense for two distinct *paths* π, π′ from j to si
      becomes "two distinct paths from j to sinks" (dually, from sources to i).
 132. Hence 128 is refined: the 6 extra classes of K3_tgtfork_long include ≥ 2(q − 1) − ... from this family; the
      q = 2 → 3 jump of K3_after_fork's census is nonzero.
+
+## Addendum 2 (after 131 held; before the censuses below)
+
+Observed: the path family is a fold on 1⇛2→3⇉4 (π = b·c₁, π′ = b·c₂, through the 2-class c₁, c₂), but φ is not
+H-invariant there (the class substitution mixes the two paths).
+
+133. 1⇛2→3⇉4 (K3_after_pair) is flat at q = 2, 3: what matters is the descendants of j forming a chain of vertices,
+     not the number of paths.
+134. The census jumps from q = 2 to q = 3 are at least the number of vertex-part families found by
+     analysis/v2_76_vertexpart.py: 4 for 1⇛2→3, 3→4, 3→5 and 4 for 1⇛2, 2→3, 2→4, 3→4.

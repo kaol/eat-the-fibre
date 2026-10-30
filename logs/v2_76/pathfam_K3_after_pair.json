@@ -1,0 +1,35 @@
+{
+ "quiver": "K3_after_pair",
+ "cls": [
+  0,
+  1,
+  2
+ ],
+ "paths": [
+  [
+   3,
+   4
+  ],
+  [
+   3,
+   5
+  ]
+ ],
+ "d": 21,
+ "params": [
+  "l0",
+  "m0",
+  "l1",
+  "m1"
+ ],
+ "idem": 0,
+ "delta": 0,
+ "closure": 0,
+ "phi_P": "l0*m1/(l1*m0)",
+ "err_P": null,
+ "phi_SPSinv": "(g2_00**2*l1*m1 - g2_00*g2_01*l0*m1 - g2_00*g2_01*l1*m0 + g2_00*l0*m1 - g2_00*l1*m1 + g2_01**2*l0*m0 - g2_01*l0*m0 + g2_01*l1*m0)/(g2_00**2*l1*m1 - g2_00*g2_01*l0*m1 - g2_00*g2_01*l1*m0 + g2_00*l1*m0 - g2_00*l1*m1 + g2_01**2*l0*m0 - g2_01*l0*m0 + g2_01*l0*m1)",
+ "err_SPSinv": null,
+ "inv_random": null,
+ "invariant": false,
+ "formula": true
+}

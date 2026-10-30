@@ -55,6 +55,7 @@ QUIVERS.update({
     # v2.76
     'K3_tgtfork_sq': (4, [(0, 1)] * 3 + [(1, 2), (1, 3), (2, 3)]),      # 1⇛2, 2→3, 2→4, 3→4 (no sink tail pair)
     'K3_after_fork': (5, [(0, 1)] * 3 + [(1, 2), (2, 3), (2, 4)]),     # 1⇛2→3, 3→4, 3→5 (one arrow leaves 2)
+    'K3_after_pair': (4, [(0, 1)] * 3 + [(1, 2)] + [(2, 3)] * 2),        # 1⇛2→3⇉4 (two paths 2→4 through a 2-class)
     # v2.66: simplifications (every parallel class reduced to one arrow)
     'S_srcout': (3, [(0, 1), (0, 2)]),
     'S_in': (3, [(0, 1), (2, 1)]),

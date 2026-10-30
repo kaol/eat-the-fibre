@@ -1,5 +1,6 @@
 """v2.75: the intrinsic cross-ratio φ of a fold P (sympy d×d matrix over any field of fractions) on a quiver with a
-class C of parallel arrows i→j and two arrows x, x' out of j, each alone in its class.
+class C of parallel arrows i→j and two arrows x, x' out of j, each alone in its class (v2.76: or two paths from j,
+through arrows each alone in its class, given as tuples).
 
   V = ⟨C⟩; P(V) ⊆ V is required; w spans ker(P|V) (one-dimensional is required);
   δ_y = P(w·y) for y = x, x', split as δ_y = (vertex part) + (V part) + (rest); rest = 0 is required;
@@ -23,7 +24,8 @@ def phi(P, basis, cls_arrows, x, x2, simplify=sp.cancel):
     parts = []
     for y in (x, x2):
         vec = sp.zeros(d, 1)
-        for k, a in enumerate(cls_arrows): vec[idx[('p', (a, y))]] += w[k]
+        yy = tuple(y) if isinstance(y, (tuple, list)) else (y,)      # v2.76: a tail may be a path
+        for k, a in enumerate(cls_arrows): vec[idx[('p', (a,) + yy)]] += w[k]
         dl = (P * vec).applyfunc(simplify)
         rest = [r for r in range(d) if r not in Vi and r not in vert and dl[r] != 0]
         if rest: return None, f'δ has components outside vertices ⊕ V: {[basis[r] for r in rest]}'
