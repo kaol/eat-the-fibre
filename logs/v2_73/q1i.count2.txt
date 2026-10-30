@@ -1,0 +1,1 @@
+COUNT p = 2: 16 certified orbit closures across charts (42 certified nodes) + 1 fixed point leaves = 17

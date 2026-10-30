@@ -1,0 +1,2 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 39 comps all: 4 coordinates, dim Der_Δ = 4, classes 4, 20 orbit-matrix columns; t = 3s
+LEAF 39: vs 4, ncomp 1, checks {'B': 'ok', 'C': 'ok'}, root 6, candidates {'2': ['A', 'A', 'A', 'A']}

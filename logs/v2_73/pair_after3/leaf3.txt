@@ -1,0 +1,2 @@
+pair_after3 V = 00000,00000,0010m,00000,00000 leaf 3 comps all: 1 coordinates, dim Der_Δ = 2, classes 4, 8 orbit-matrix columns; t = 4s
+LEAF 3: vs 1, ncomp 1, checks {'B': 'ok', 'C': 'ok (identically)'}, root 0, candidates {}

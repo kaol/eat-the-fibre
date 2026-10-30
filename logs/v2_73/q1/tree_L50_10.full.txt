@@ -1,0 +1,2 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 50 comps all: 6 coordinates, dim Der_Δ = 4, classes 4, 32 orbit-matrix columns; t = 3s
+FULLPTS leaf 50: 14 points

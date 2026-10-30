@@ -1,0 +1,2 @@
+0000,0000,0000,0001: 54 leaves, 14 H-stable roots (representative leaves [3, 5, 20, 21, 32, 33, 39, 40, 46, 47, 50, 51, 53, 54])
+done

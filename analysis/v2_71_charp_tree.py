@@ -20,7 +20,7 @@ import os, sys, json, re, time, random, math
 HERE = os.path.dirname(os.path.abspath(__file__))
 cert, block, P, tree, out = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4], sys.argv[5]
 t0 = time.time(); rng = random.Random(68 + P)
-sys.argv = ['v2_67_orbits.py', cert, block, '0', 'all', out + '_o', '--tmo', os.environ.get('CHARP_TMO', '600')]
+sys.argv = ['v2_67_orbits.py', cert, block, os.environ.get('STAB_LEAF', '0'), 'all', out + '_o', '--tmo', os.environ.get('CHARP_TMO', '600')] + (['--leafmode'] if os.environ.get('STAB_LEAF') else [])   # v2.73: leaf charts
 src = open(os.path.join(HERE, 'v2_67_orbits.py')).read(); src = src[:src.index("stats = {'primes'")]
 G_ = {'__name__': 'v2_68p', '__file__': os.path.join(HERE, 'v2_67_orbits.py')}
 exec(compile(src, 'v2_67_orbits', 'exec'), G_)
@@ -98,7 +98,7 @@ def group(Wrows):
 def run(lines, tag): return G_['singular'](lines, tag)
 def roots_at_p():
     HEAD = [f'LIB "primdec.lib";', f"ring Rp = {P},({','.join(vs)}),dp;", "option(redSB);"]
-    rem = [r.replace('**', '^') for r in st['rem']] or ['0']
+    rem = [r.replace('**', '^') for r in (json.loads(os.environ['CHARP_ROOTGENS']) if os.environ.get('CHARP_ROOTGENS') else st['rem'])] or ['0']   # v2.73: an H-stable root's leaf prime
     o = run(HEAD + [f"ideal I = {','.join(rem)};", "list L = minAssGTZ(I); int i;",
                     'for (i = 1; i <= size(L); i++) { ideal Gi = std(L[i]); print("COMP " + string(dim(Gi))); print("GENS " + string(Gi)); kill Gi; }',
                     'print("END"); quit;'], 'roots')

@@ -1,0 +1,2 @@
+logs/v2_73/q2: count 16 (14 dense, 2 points); candidate primes [2]; hard failures 2 [('tree_L27_7', 'point not separated', 'X1.1'), ('leaf22', 'point not separated', 'point')]
+  2: ['C1-C4 tree_L15_2', 'C1-C4 tree_L21_4', 'C1-C4 tree_L26_6']

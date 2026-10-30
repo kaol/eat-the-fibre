@@ -1,0 +1,2 @@
+pairs_in_short_c4 V = 1000,010m,010m,0000 leaf 19 comps all: 3 coordinates, dim Der_Δ = 4, classes 4, 18 orbit-matrix columns; t = 2s
+FULLPTS leaf 19: 6 points

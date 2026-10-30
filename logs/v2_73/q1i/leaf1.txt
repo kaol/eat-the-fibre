@@ -1,0 +1,2 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 1 comps all: 0 coordinates, dim Der_Δ = 4, classes 4, 0 orbit-matrix columns; t = 4s
+LEAF 1: vs 0, ncomp 1, checks {'B': 'ok', 'C': 'no containing root found', 'P_G_fixes': True, 'P_W_fixes': True}, root None, candidates {}

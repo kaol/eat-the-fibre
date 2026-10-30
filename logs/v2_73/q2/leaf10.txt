@@ -1,0 +1,2 @@
+pairs_in_short_c4 V = 1000,010m,010m,0000 leaf 10 comps all: 4 coordinates, dim Der_Δ = 4, classes 4, 35 orbit-matrix columns; t = 2s
+LEAF 10: vs 4, ncomp 1, checks {'B': 'ok', 'C': 'ok'}, root 4, candidates {}

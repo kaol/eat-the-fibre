@@ -1,0 +1,6 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 54 comps all: 5 coordinates, dim Der_Δ = 4, classes 4, 20 orbit-matrix columns; t = 3s
+  Z1: dim 3: certified (1 points tried); t = 4s
+  Z1.1: dim 2: certified (1 points tried); t = 5s
+  Z1.1.1: dim 1: certified (1 points tried); t = 6s
+  Z1.2: dim 2: certified (2 points tried); t = 6s
+RESULT 0000,0000,0000,0001 at p = 2: {'nodes': 4, 'certified': 4, 'no_top_orbit': 0, 'failed': 0, 'points': 0}; census count over every 𝔽_(p^k) = 4; t = 6s

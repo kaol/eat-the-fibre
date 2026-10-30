@@ -1,0 +1,176 @@
+{
+ "count": 17,
+ "dense": 16,
+ "points": 1,
+ "primes": {
+  "2": [
+   "C1-C4 tree_L3_0",
+   "C1-C4 tree_L46_8",
+   "C1-C4 tree_L47_9",
+   "C1-C4 tree_L50_10",
+   "C1-C4 tree_L51_11",
+   "C1-C4 tree_L53_12",
+   "C1-C4 tree_L54_13",
+   "C1-C4 tree_L5_1",
+   "leaf10:A",
+   "leaf11:A",
+   "leaf12:A",
+   "leaf13:A",
+   "leaf14:A",
+   "leaf15:A",
+   "leaf16:A",
+   "leaf17:A",
+   "leaf18:A",
+   "leaf19:A",
+   "leaf1:A",
+   "leaf20:A",
+   "leaf21:A",
+   "leaf22:A",
+   "leaf23:A",
+   "leaf24:A",
+   "leaf25:A",
+   "leaf26:A",
+   "leaf27:A",
+   "leaf28:A",
+   "leaf29:A",
+   "leaf2:A",
+   "leaf30:A",
+   "leaf31:A",
+   "leaf32:A",
+   "leaf33:A",
+   "leaf34:A",
+   "leaf35:A",
+   "leaf36:A",
+   "leaf37:A",
+   "leaf38:A",
+   "leaf39:A",
+   "leaf3:A",
+   "leaf40:A",
+   "leaf41:A",
+   "leaf42:A",
+   "leaf43:A",
+   "leaf44:A",
+   "leaf45:A",
+   "leaf46:A",
+   "leaf47:A",
+   "leaf48:A",
+   "leaf49:A",
+   "leaf4:A",
+   "leaf50:A",
+   "leaf51:A",
+   "leaf52:A",
+   "leaf53:A",
+   "leaf54:A",
+   "leaf5:A",
+   "leaf6:A",
+   "leaf7:A",
+   "leaf8:A",
+   "leaf9:A"
+  ]
+ },
+ "hard": [],
+ "nodes": [
+  [
+   "tree_L54_13",
+   "X1.1.1",
+   1,
+   []
+  ],
+  [
+   "tree_L54_13",
+   "X1.1",
+   2,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.1.1.1",
+   2,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.2.2",
+   3,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.1.2",
+   3,
+   []
+  ],
+  [
+   "tree_L5_1",
+   "X1.2",
+   2,
+   []
+  ],
+  [
+   "tree_L5_1",
+   "X1.1.1",
+   1,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.3",
+   4,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.1.1",
+   3,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.2",
+   4,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1.1",
+   4,
+   []
+  ],
+  [
+   "tree_L51_11",
+   "X1",
+   5,
+   []
+  ],
+  [
+   "tree_L54_13",
+   "X1.2",
+   2,
+   []
+  ],
+  [
+   "tree_L54_13",
+   "X1",
+   3,
+   []
+  ],
+  [
+   "tree_L5_1",
+   "X1",
+   3,
+   []
+  ],
+  [
+   "tree_L5_1",
+   "X1.1",
+   2,
+   []
+  ],
+  [
+   "leaf1",
+   "point",
+   0,
+   []
+  ]
+ ]
+}

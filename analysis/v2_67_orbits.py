@@ -33,8 +33,14 @@ for l in op(A.cert, 'rt'):
     if r['block'] != A.block or r['leaf'] != A.leaf: continue
     if r['kind'] == 'stratum': st = r
     elif A.comp == 'all' or r.get('comp') in {int(x) for x in A.comp.split(',')}: comps.append(r)
+if st and 'DerD' not in st and os.environ.get('NO_POINT_EXIT'):   # v2.73: a point leaf's record has no group data: borrow it
+    for l in op(A.cert, 'rt'):
+        if f'"block": "{A.block}"' not in l: continue
+        r_ = json.loads(l)
+        if r_['kind'] == 'stratum' and r_.get('DerD') is not None:
+            st = dict(st, **{k_: r_[k_] for k_ in ('DerD', 'Ec', 'classes') if k_ in r_}); break
 assert st and comps, "stratum/component not found"
-if not st['vs']:                                            # a point stratum: one fold (or none)
+if not st['vs'] and not os.environ.get('NO_POINT_EXIT'):   # a point stratum: one fold (or none) (v2.73: NO_POINT_EXIT keeps the setup)
     print(f"RESULT finitely many orbits: point stratum; geometric H-orbits {st['ncomp']}; t = 0s"); sys.exit(0)
 Q = st['quiver']; V = [[-1 if ch == 'm' else int(ch) for ch in row] for row in A.block.split(',')]
 S = fi.stratum(Q, V); R = S['R']; ctx = S['ctx']; d = ctx['d']; kdim = ctx['kdim']; compl = S['complement']

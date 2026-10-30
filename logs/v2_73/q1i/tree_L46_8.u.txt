@@ -1,0 +1,4 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 46 comps all: 4 coordinates, dim Der_Δ = 4, classes 4, 24 orbit-matrix columns; t = 3s
+node 0: dim 3, LC(I) primes [], closure dim 2, children 1, issues ['radical membership needs 1/N, N in [2]']; t = 4s
+node 1: dim 2, LC(I) primes [], closure dim -2, children 0, all claims exact; t = 4s
+RESULT nodes 2, problems [], candidate primes [2]; t = 4s

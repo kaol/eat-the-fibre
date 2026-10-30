@@ -1,0 +1,21 @@
+{
+ "leaf": 12,
+ "vs": 1,
+ "ncomp": 1,
+ "branch_consts": [
+  [
+   -1,
+   1
+  ],
+  [
+   1,
+   1
+  ]
+ ],
+ "cand": {},
+ "checks": {
+  "B": "ok",
+  "C": "ok (identically)"
+ },
+ "root_of_leaf": 2
+}

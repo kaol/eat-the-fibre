@@ -1,0 +1,2 @@
+00000,00000,0010m,00000,00000: 5 leaves, 2 H-stable roots (representative leaves [3, 5])
+done

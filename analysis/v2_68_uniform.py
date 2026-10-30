@@ -22,7 +22,7 @@ ap = argparse.ArgumentParser(); ap.add_argument('cert'); ap.add_argument('block'
 ap.add_argument('--p', type=int, default=0); ap.add_argument('--only', default=''); ap.add_argument('--tmo', type=int, default=20000)
 U = ap.parse_args(); t0 = time.time()
 # reuse the setup of v2_67_orbits.py (stratum, Pr, fields, orbit matrix, defects, minors)
-sys.argv = ['v2_67_orbits.py', U.cert, U.block, '0', 'all', U.out + '_o']
+sys.argv = ['v2_67_orbits.py', U.cert, U.block, os.environ.get('STAB_LEAF', '0'), 'all', U.out + '_o'] + (['--leafmode'] if os.environ.get('STAB_LEAF') else [])   # v2.73: a case-split leaf's chart
 src = open(os.path.join(HERE, 'v2_67_orbits.py')).read(); src = src[:src.index("stats = {'primes'")]
 G_ = {'__name__': 'v2_68', '__file__': os.path.join(HERE, 'v2_67_orbits.py')}
 exec(compile(src, 'v2_67_orbits', 'exec'), G_)

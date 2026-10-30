@@ -1,0 +1,14 @@
+  tree_L20_2: {'nodes': 1, 'certified': 1, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L21_3: {'nodes': 2, 'certified': 2, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L32_4: {'nodes': 1, 'certified': 1, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L33_5: {'nodes': 2, 'certified': 2, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L39_6: {'nodes': 2, 'certified': 2, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L3_0: {'nodes': 2, 'certified': 2, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L40_7: {'nodes': 4, 'certified': 4, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L46_8: {'nodes': 2, 'certified': 2, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L47_9: {'nodes': 4, 'certified': 4, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L50_10: {'nodes': 4, 'certified': 4, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L51_11: {'nodes': 8, 'certified': 8, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L53_12: {'nodes': 2, 'certified': 2, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L54_13: {'nodes': 4, 'certified': 4, 'no_top_orbit': 0, 'failed': 0, 'points': 0}
+  tree_L5_1: {'nodes': 4, 'certified': 4, 'no_top_orbit': 0, 'failed': 0, 'points': 0}

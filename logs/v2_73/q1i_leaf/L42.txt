@@ -1,0 +1,3 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 42 comps all: 3 coordinates, dim Der_Δ = 4, classes 4, 28 orbit-matrix columns; t = 3s
+  X1: not H-stable: skipped
+RESULT finitely many orbits: {'primes': 0, 'dense': 0, 'points': 0, 'nodense': 0, 'unresolved': 0}; geometric H-orbits 0; t = 3s

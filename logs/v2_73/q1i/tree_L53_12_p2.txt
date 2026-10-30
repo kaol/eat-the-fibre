@@ -1,0 +1,5 @@
+pairs_in_short_tail V = 0000,0000,0000,0001 leaf 53 comps all: 3 coordinates, dim Der_Δ = 4, classes 4, 16 orbit-matrix columns; t = 3s
+0000,0000,0000,0001 at p = 2: 1 components of the stratum, dims [2]; t = 4s
+  Z1: dim 2: minor found (rank -1 at a closed point); boundary [1]; t = 4s
+  Z1.1: dim 1: minor found (rank -1 at a closed point); boundary []; t = 4s
+RESULT p = 2: finitely many classes: {'nodes': 2, 'minor': 2, 'points': 0, 'inconclusive': 0, 'error': 0}; t = 4s

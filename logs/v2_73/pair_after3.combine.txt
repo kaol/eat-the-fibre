@@ -1,0 +1,1 @@
+logs/v2_73/pair_after3: count 3 (2 dense, 1 points); candidate primes []; hard failures 0 []
