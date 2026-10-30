@@ -29,3 +29,5 @@ logs/v2_70/**/*.sing
 logs/v2_71/**/*.sing
 logs/v2_72/**/*.sing
 logs/v2_73/**/*.sing
+logs/v2_74/**/*.sing
+logs/v2_74/*.pkl

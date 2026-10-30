@@ -1,0 +1,478 @@
+K3_after2 V = 0000,0000,0000,0000: presolved to 273 equations in 18 coordinates; 17 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 24s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 27s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 30s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 34s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 38s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 41s
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 45s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 48s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 51s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 53s
+  component 10: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 55s
+  component 11: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 57s
+  component 12: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 59s
+  component 13: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 61s
+  component 14: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 63s
+  component 15: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 65s
+  component 16: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 67s
+  component 17: dim 0 (points)
+K3_after2 V = 1000,0000,0000,0000: presolved to 208 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 17s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+K3_after2 V = 0000,0100,0000,0000: presolved to 208 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 1000,0100,0000,0000: presolved to 119 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 9s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 12s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 17s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+K3_after2 V = 0000,0000,0010,0000: presolved to 1001 equations in 33 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 318s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 326s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 337s
+K3_after2 V = 1000,0000,0010,0000: presolved to 639 equations in 29 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 21s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 32s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 34s
+K3_after2 V = 0000,0100,0010,0000: presolved to 821 equations in 29 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 46s
+  component 1: dim 6; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 661s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 665s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 667s
+K3_after2 V = 1000,0100,0010,0000: presolved to 513 equations in 27 coordinates; 11 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 17s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+  component 3: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 55s
+  component 4: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 78s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 88s
+  component 6: dim 0 (points)
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 93s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 98s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 103s
+  component 10: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 107s
+  component 11: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 111s
+K3_after2 V = 0000,0000,0000,0001: presolved to 276 equations in 18 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 35s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 38s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 41s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 45s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 49s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 50s
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 52s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 54s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 56s
+  component 9: dim 0 (points)
+K3_after2 V = 1000,0000,0000,0001: presolved to 210 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 0000,0100,0000,0001: presolved to 210 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 9s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 12s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 12s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+K3_after2 V = 1000,0100,0000,0001: presolved to 115 equations in 14 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 9s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 12s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 17s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 5: dim 0 (points)
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 23s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+K3_after2 V = 0000,0000,0010,0001: presolved to 1828 equations in 36 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 51s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 63s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 81s
+K3_after2 V = 1000,0000,0010,0001: presolved to 913 equations in 32 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 25s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+K3_after2 V = 0000,0100,0010,0001: presolved to 1241 equations in 32 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 23s
+  component 1: dim 6; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 134s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 141s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 143s
+K3_after2 V = 1000,0100,0010,0001: presolved to 777 equations in 30 coordinates; 21 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 37s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 49s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 60s
+  component 5: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 91s
+  component 6: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 121s
+  component 7: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 150s
+  component 8: dim 5; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 182s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 194s
+  component 10: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 205s
+  component 11: dim 0 (points)
+  component 12: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 213s
+  component 13: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 219s
+  component 14: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 226s
+  component 15: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 233s
+  component 16: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 240s
+  component 17: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 246s
+  component 18: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 253s
+  component 19: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 260s
+  component 20: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 267s
+  component 21: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 274s
+K3_after2 V = 0000,0000,0001,0001: presolved to 280 equations in 16 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 29s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 36s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 38s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 39s
+  component 5: dim 0 (points)
+K3_after2 V = 1000,0000,0001,0001: presolved to 211 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+K3_after2 V = 0000,0100,0001,0001: presolved to 211 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 1000,0100,0001,0001: presolved to 117 equations in 14 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+  component 5: dim 0 (points)
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 25s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 27s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 29s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 31s
+K3_after2 V = 0000,0000,0010,0010: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 1000,0000,0010,0010: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 5s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 6s
+K3_after2 V = 0000,0010,0010,0010: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 7s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 7s
+K3_after2 V = 1000,0010,0010,0010: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 6s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 6s
+K3_after2 V = 0000,0001,0000,0001: presolved to 359 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 30s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 34s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 35s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 35s
+K3_after2 V = 1000,0001,0000,0001: presolved to 302 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 15s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+K3_after2 V = 0000,0001,0001,0001: presolved to 364 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 36s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 40s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 40s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 41s
+K3_after2 V = 1000,0001,0001,0001: presolved to 304 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 17s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+K3_after2 V = 0000,010m,0000,0000: presolved to 285 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 13s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 16s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 17s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 17s
+K3_after2 V = 1000,010m,0000,0000: presolved to 211 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 0000,0010,0010,0000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 6s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 6s
+K3_after2 V = 1000,0010,0010,0000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 5s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 5s
+K3_after2 V = 10m0,0000,0000,10m0: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 5s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 5s
+K3_after2 V = 10m0,10m0,0000,10m0: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 0000,0100,0000,0100: presolved to 258 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+K3_after2 V = 0100,0100,0000,0100: presolved to 267 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 17s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 22s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+K3_after2 V = 0000,0100,0100,0100: presolved to 260 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+K3_after2 V = 0100,0100,0100,0100: presolved to 265 equations in 14 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 15s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 23s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 29s
+  component 5: dim 0 (points)
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 31s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 34s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 36s
+K3_after2 V = 0000,0000,0000,0m01: presolved to 284 equations in 16 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 13s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 16s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 23s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 5: dim 0 (points)
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 30s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 31s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+K3_after2 V = 0m01,0000,0000,0m01: presolved to 314 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 23s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 27s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+K3_after2 V = 0000,0000,0m01,0m01: presolved to 293 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 22s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 30s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 31s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+K3_after2 V = 0m01,0000,0m01,0m01: presolved to 318 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 25s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 29s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 30s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 31s
+K3_after2 V = 1000,0000,0000,1000: presolved to 258 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 19s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 23s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+K3_after2 V = 1000,1000,0000,1000: presolved to 267 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 25s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 32s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 34s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 35s
+K3_after2 V = 1000,0000,1000,1000: presolved to 1014 equations in 23 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 360s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 371s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 373s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 375s
+K3_after2 V = 1000,1000,1000,1000: presolved to 995 equations in 23 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 397s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 407s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 416s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 426s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 435s
+  component 5: dim 0 (points)
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 441s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 446s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 452s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 457s
+K3_after2 V = 1000,0000,0010,1000: presolved to 636 equations in 26 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 40s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 52s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 54s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 56s
+K3_after2 V = 1000,1000,0010,1000: presolved to 833 equations in 23 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 223s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 243s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 251s
+  component 3: dim 0 (points)
+K3_after2 V = 0000,0000,0000,m001: presolved to 284 equations in 16 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 26s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 31s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 35s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 40s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 45s
+  component 5: dim 0 (points)
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 48s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 50s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 53s
+  component 9: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 55s
+K3_after2 V = 0000,m001,0000,m001: presolved to 314 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 55s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 61s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 62s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 63s
+K3_after2 V = 0000,0000,m001,m001: presolved to 293 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 43s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 48s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 54s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 57s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 59s
+K3_after2 V = 0000,m001,m001,m001: presolved to 318 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 96s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 102s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 103s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 104s
+K3_after2 V = 0000,0000,0010,m001: presolved to 1112 equations in 29 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 34s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 52s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 63s
+  component 3: dim 0 (points)
+K3_after2 V = 0000,0000,m010,m001: presolved to 1433 equations in 29 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 66s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 90s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 102s
+  component 3: dim 0 (points)
+K3_after2 V = 0000,0000,m010,m010: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 0000,m010,m010,m010: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 8s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 8s
+K3_after2 V = 1000,0010,0010,1000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 8s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 9s
+K3_after2 V = 0000,010m,010m,0000: presolved to 283 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 21s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 27s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 27s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+K3_after2 V = 010m,010m,010m,0000: presolved to 323 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 23s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 36s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 38s
+K3_after2 V = 100m,0000,100m,0000: presolved to 283 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 88s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 94s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 94s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 95s
+K3_after2 V = 100m,100m,100m,0000: presolved to 323 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 66s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 70s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 77s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 79s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 81s
+K3_after2 V = 0000,0100,0100,0000: presolved to 188 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 16s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 22s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 22s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 23s
+K3_after2 V = 0100,0100,0100,0000: presolved to 200 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 16s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 30s
+K3_after2 V = 0000,0100,0100,0001: presolved to 192 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 20s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 21s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 22s
+K3_after2 V = 0100,0100,0100,0001: presolved to 203 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 15s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 29s
+K3_after2 V = 0001,0100,0100,0001: presolved to 271 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 17s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 23s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+K3_after2 V = 1000,0000,1000,0000: presolved to 1009 equations in 23 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 136s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 145s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 146s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 147s
+K3_after2 V = 1000,1000,1000,0000: presolved to 986 equations in 23 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 143s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 153s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 163s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 171s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 177s
+K3_after2 V = 1000,0000,1000,0001: presolved to 192 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 21s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 27s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+K3_after2 V = 1000,1000,1000,0001: presolved to 201 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 30s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 34s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 40s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 42s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 45s
+K3_after2 V = 0000,0000,m010,0000: presolved to 1030 equations in 26 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 158s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 173s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 181s
+  component 3: dim 0 (points)
+K3_after2 V = 0000,m010,m010,0000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 8s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 8s
+K3_after2 V = 0000,0000,m010,0001: presolved to 1127 equations in 29 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 40s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 58s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 69s
+  component 3: dim 0 (points)
+K3_after2 V = 1000,0001,1000,0001: presolved to 271 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 23s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 28s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 29s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 30s
+K3_after2 V = 10m0,10m0,0000,0000: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 100m,100m,0000,0000: presolved to 323 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 33s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 38s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 41s
+K3_after2 V = 1000,1000,0000,0000: presolved to 196 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 20s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 24s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 26s
+K3_after2 V = 1000,1000,0010,0000: presolved to 833 equations in 26 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 75s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 90s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 95s
+  component 3: dim 0 (points)
+K3_after2 V = 1000,1000,0000,0001: presolved to 199 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 1000,1000,0010,0001: presolved to 1432 equations in 29 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 57s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 74s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 82s
+  component 3: dim 0 (points)
+K3_after2 V = 1000,1000,0010,0010: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 1000,1000,0001,0001: presolved to 198 equations in 12 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 12s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 16s
+K3_after2 V = 0001,0001,0000,0001: presolved to 392 equations in 17 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 29s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 32s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 35s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 37s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 38s
+  component 5: dim 0 (points)
+K3_after2 V = 0001,0001,0001,0001: presolved to 394 equations in 17 coordinates; 9 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 29s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 33s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 36s
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 39s
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 43s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 44s
+  component 6: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 46s
+  component 7: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 48s
+  component 8: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 50s
+  component 9: dim 0 (points)
+K3_after2 V = 100m,010m,0000,0000: presolved to 221 equations in 14 coordinates; 5 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 10s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+  component 2: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+  component 3: dim 0 (points)
+  component 4: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 17s
+  component 5: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+K3_after2 V = 010m,010m,0000,0000: presolved to 323 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 14s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 16s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+K3_after2 V = 0001,0000,0000,0001: presolved to 359 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 97s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 100s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 101s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 101s
+K3_after2 V = 0001,0100,0000,0001: presolved to 302 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 10s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+K3_after2 V = 0001,0000,0001,0001: presolved to 364 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 111s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 115s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 115s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 116s
+K3_after2 V = 0001,0100,0001,0001: presolved to 304 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 11s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 100m,0000,0000,0000: presolved to 285 equations in 16 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 15s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 18s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 19s
+K3_after2 V = 100m,0100,0000,0000: presolved to 211 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 10s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+  component 2: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+  component 3: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s
+K3_after2 V = 0010,0000,0010,0000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 5s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 5s
+K3_after2 V = 0010,0010,0010,0000: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 0010,0000,0010,0010: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 5s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 5s
+K3_after2 V = 0010,0010,0010,0010: presolved to a single point; 1 components
+  component 1: dim 0 (points)
+K3_after2 V = 10m0,0000,0000,0000: presolved to 0 equations in 2 coordinates; 1 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 5s
+  component 1: dim 2; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 5s
+K3_after2 V = 0100,0100,0000,0001: presolved to 199 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 8s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 11s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+K3_after2 V = 0100,0100,0001,0001: presolved to 198 equations in 12 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 10s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 13s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 15s
+K3_after2 V = 0100,0100,0000,0000: presolved to 196 equations in 14 coordinates; 3 components; dim Der = 23, dim Der_Δ = 6, classes 3; t = 10s
+  component 1: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 12s
+  component 2: dim 0 (points)
+  component 3: dim 4; W_Z = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; finitely many orbits: True; t = 14s

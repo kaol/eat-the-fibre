@@ -1,0 +1,7 @@
+  kernel stage on cpu: 374 subspaces, subalgebras by dimension [1, 24, 78, 64, 17, 1]
+  kernel stage: 1.2s
+K4 F_2: d=6, dim K=5, 3782 kernel folds in 3782 torus orbits; engine=torch
+  symmetry: 3782 torus orbits in 106 H-orbits (H = G × T); 3676 fibres by transport; |N| = |ker(H → H|_K)| = 8
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  done in 0s; per column [parents, lifted, candidates, children] (brute force would check lifted·2^5): 5: [106, 48, 188, 188]
+{"name": "K4", "p": 2, "d": 6, "kdim": 5, "nK": 3782, "reps": 3782, "N": 4324, "fib": {"0": 2482, "1": 20, "2": 504, "4": 728, "8": 48}, "G": 1344, "orbits_G": 48, "sizes_G": {"1": 6, "7": 2, "8": 6, "56": 18, "112": 8, "168": 2, "336": 6}, "orbits_GxGr": 48, "sizes_GxGr": {"1": 6, "7": 2, "8": 6, "56": 18, "112": 8, "168": 2, "336": 6}, "transversal": {"lifted": 1, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 1, "torus_preserving": 1, "torus_all": 1, "orbits_GxT": 48, "sizes_GxT": {"1": 6, "7": 2, "8": 6, "56": 18, "112": 8, "168": 2, "336": 6}, "orbits_GxTloc": 48, "local_torus_sizes": {"1": 48}, "t": 2}
