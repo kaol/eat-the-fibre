@@ -1,0 +1,12 @@
+  kernel stage on cpu: 29212 subspaces, subalgebras by dimension [1, 66, 321, 503, 350, 117, 18, 1]
+  kernel stage: 16.5s
+K3_after_pair F_2: d=21, dim K=7, 74812 kernel folds in 74812 torus orbits; engine=torch
+  symmetry: 74812 torus orbits in 18980 H-orbits (H = G × T); 55832 fibres by transport; |N| = |ker(H → H|_K)| = 8
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  0/18980 fibres computed, group 1/5, 14 stacked batches at column 20, t=65s
+  4096/18980 fibres computed, group 2/5, 15 stacked batches at column 17, t=129s
+  4096/18980 fibres computed, group 2/5, 10 stacked batches at column 14, t=191s
+  12288/18980 fibres computed, group 4/5, 18 stacked batches at column 16, t=253s
+  16384/18980 fibres computed, group 5/5, 4 stacked batches at column 10, t=313s
+  done in 353s; per column [parents, lifted, candidates, children] (brute force would check lifted·2^7): 7: [18980, 7142, 17388, 17180], 8: [7281, 4890, 8689, 7383], 9: [7383, 2839, 4343, 4343], 10: [2839, 2714, 3305, 3012], 11: [3012, 2769, 11956, 5858], 12: [5209, 4635, 101615, 34110], 13: [31370, 31364, 31794, 31557], 14: [31557, 31041, 23738, 19940], 15: [19339, 18843, 19603, 19232], 16: [19232, 19027, 8579, 8088], 17: [8072, 7668, 7694, 7414], 18: [7414, 7280, 4963, 4245], 19: [4073, 3783, 3353, 3088], 20: [3088, 2945, 3350, 2896]; N-quotient (|N| = 8) per column [frontier, kept]: 8: [17180, 7281], 9: [7383, 7383], 10: [4343, 2839], 11: [3012, 3012], 12: [5858, 5209], 13: [34110, 31370], 14: [31557, 31557], 15: [19940, 19339], 17: [8088, 8072], 19: [4245, 4073], 20: [3088, 3088]
+{"name": "K3_after_pair", "p": 2, "d": 21, "kdim": 7, "nK": 74812, "reps": 74812, "N": 33255, "fib": {"0": 69806, "1": 385, "2": 2588, "4": 1178, "8": 468, "10": 4, "12": 36, "16": 132, "20": 48, "32": 91, "40": 3, "52": 8, "56": 16, "64": 2, "96": 12, "104": 11, "128": 6, "178": 6, "200": 1, "304": 1, "574": 1, "620": 6, "624": 1, "704": 1, "964": 1}, "G": 48, "orbits_G": 2236, "sizes_G": {"1": 151, "2": 183, "3": 78, "4": 124, "6": 122, "8": 113, "12": 607, "24": 754, "48": 104}, "orbits_GxGr": 2236, "sizes_GxGr": {"1": 151, "2": 183, "3": 78, "4": 124, "6": 122, "8": 113, "12": 607, "24": 754, "48": 104}, "transversal": {"lifted": 1, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 3, "torus_preserving": 1, "torus_all": 1, "orbits_GxT": 2236, "sizes_GxT": {"1": 151, "2": 183, "3": 78, "4": 124, "6": 122, "8": 113, "12": 607, "24": 754, "48": 104}, "orbits_GxTloc": 2236, "local_torus_sizes": {"1": 2236}, "t": 386}

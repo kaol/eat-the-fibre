@@ -1,0 +1,6 @@
+  kernel stage on cpu: 2052656 subspaces, subalgebras by dimension [1, 163, 863, 1416, 917, 246, 27, 1]
+  kernel stage: 58.9s
+K3_after_fork F_3: d=22, dim K=7, 735324 kernel folds in 401276 torus orbits; engine=torch
+  symmetry: 401276 torus orbits in 48626 H-orbits (H = G × T); 352650 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  torch engine on cpu (torch 2.14.1+cpu, 2 threads); mem budget 1024 MiB, group 4096
+  0/48626 fibres computed, group 1/12, 14 stacked batches at column 20, t=63s
