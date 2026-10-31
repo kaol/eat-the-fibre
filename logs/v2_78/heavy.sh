@@ -8,15 +8,14 @@
 # Outputs (all text; the *.pkl representatives are gitignored and stay on the machine):
 #   logs/v2_78/census_<Q>_<q>.{json,txt}, logs/v2_78/<Q>.blockcensus.txt, logs/v2_78/<Q>.blockdiff_<a>_<b>.txt,
 #   logs/v2_78/drv/<Q>.prove.txt (+ logs/v2_78/drv/<Q>/ without scratch/)
-# Tunables: ETF_MEM (MiB per torch working set; default here 4096), CENSUS_DEVICE (e.g. cpu, to use system RAM
+# Tunables: ETF_MEM (MiB per torch working set; default here 1024, halved automatically on out-of-memory), CENSUS_DEVICE (e.g. cpu, to use system RAM
 #   instead of the iGPU's share), OMP/torch threads follow the machine.
 # v2.78 rerun: fibre_torch's quotient step now budgets pack's int64 copies (it overran ETF_MEM about threefold:
-#   HIP OOM at ETF_MEM = 8192), and expandable segments avoid the allocator fragmentation seen in that log.
+#   HIP OOM at ETF_MEM = 8192); the prefilter also overruns (8 GB card at 4096), so the engine now recovers from
+#   allocation failures by halving its budgets and redoing the parent batch (expandable segments: not on HIP).
 set -u
 cd "$(dirname "$0")/../.."
-export ETF_MEM=${ETF_MEM:-4096}
-export PYTORCH_HIP_ALLOC_CONF=${PYTORCH_HIP_ALLOC_CONF:-expandable_segments:True}
-export PYTORCH_CUDA_ALLOC_CONF=${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}
+export ETF_MEM=${ETF_MEM:-1024}   # the engine now halves this itself after an allocation failure (v2.78)
 DEV=${CENSUS_DEVICE:+--device $CENSUS_DEVICE}
 O=logs/v2_78
 census () {   # QUIVER q

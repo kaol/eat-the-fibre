@@ -17,7 +17,7 @@ Soundness: prefilter equations ⊆ check conditions, encoded exactly ⇒ survivo
 Arithmetic: residues in [0, p) stored as float32. Every contraction goes through mm(), which asserts
 len · (p−1)² < 2^24 (exact in float32). Plan() also runs a device self-test against int64 numpy.
 
-Env: ETF_MEM (MiB per working set, default 1024), ETF_GROUP (fibres per checkpoint group, default 4096),
+Env: ETF_MEM (MiB per working set, default 1024; halved on each allocation failure, v2.78), ETF_GROUP (fibres per checkpoint group, default 4096),
      ETF_OUT (MiB of children per chunk yielded by level(), default ETF_MEM),
      ETF_HOST_STACK=0 (keep pending batches on the device instead of in host memory),
      ETF_XCHECK=1 (per-parent comparison with pcensus.lift/check; slow, for validation)."""
@@ -29,6 +29,35 @@ EXACT = 1 << 24
 MEM = int(os.environ.get('ETF_MEM', '1024') or 1024) << 20
 GROUP = int(os.environ.get('ETF_GROUP', '4096') or 4096)
 XCHECK = int(os.environ.get('ETF_XCHECK', '0') or 0)
+MIN_MEM = 16 << 20                                                  # v2.78: OOM recovery stops halving here
+FAULT = int(os.environ.get('ETF_FAULT_EVERY', '0') or 0)            # tests only: simulate an OOM every FAULT-th step,
+FAULT_MAX = int(os.environ.get('ETF_FAULT_MAX', '3') or 3)          # at most FAULT_MAX times
+_fault_n = [0, 0]
+
+
+def _is_oom(e):
+    """a device or host allocation failure (torch.OutOfMemoryError on CUDA/HIP, RuntimeError from the CPU allocator)"""
+    return isinstance(e, getattr(torch, 'OutOfMemoryError', ())) or any(
+        t in str(e).lower() for t in ('out of memory', "can't allocate memory", 'cannot allocate memory'))
+
+
+def _maybe_fault():
+    if FAULT:
+        _fault_n[0] += 1
+        if _fault_n[0] % FAULT == 0 and _fault_n[1] < FAULT_MAX:
+            _fault_n[1] += 1; raise RuntimeError("simulated out of memory (ETF_FAULT_EVERY)")
+
+
+def _shrink(log, where):
+    """v2.78: halve every batch budget after an allocation failure (the budgets are estimates; on an 8 GB card the
+    prefilter overran ETF_MEM = 4096). Work in flight is redone from its parent batch; the per-fibre dedupe at the end
+    absorbs children produced twice, so the result does not change."""
+    global MEM
+    if MEM <= MIN_MEM: return False
+    MEM = max(MIN_MEM, MEM // 2)
+    if torch.cuda.is_available(): torch.cuda.empty_cache()
+    log(f"  out of memory in {where}: batch budget halved to {MEM >> 20} MiB")
+    return True
 OUT = (int(os.environ.get('ETF_OUT_BYTES', '0') or 0)                 # children (int8 bytes) per yielded chunk;
        or int(os.environ.get('ETF_OUT', '0') or 0) << 20 or MEM)      # ETF_OUT_BYTES is for the tests
 HOST_STACK = int(os.environ.get('ETF_HOST_STACK', '1') or 0)          # pending batches wait in host memory
@@ -436,28 +465,39 @@ def run(C, reps, fibres, save=lambda force=False: None, log=print, device=None, 
         while stack:
             item = stack.pop()
             if item[0] == 'gen':         # a parent batch's children, produced lazily one chunk at a time, so the stack
-                _, c, gen = item         # holds at most one pending chunk per column instead of all of them
-                for rid2, X2 in gen:
-                    stack.append(item)
-                    if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
-                    if len(rid2): stack.append((c + 1, rid2.to(home), X2.to(home)))
-                    break
+                _, c, gen, prid, pX = item   # holds at most one pending chunk per column instead of all of them
+                try:
+                    for rid2, X2 in gen:
+                        _maybe_fault()
+                        stack.append(item)
+                        if P.sym and c + 1 < d and len(rid2): rid2, X2 = quotient(P, rid2, X2, c + 1)
+                        if len(rid2): stack.append((c + 1, rid2.to(home), X2.to(home)))
+                        break
+                except (RuntimeError, MemoryError) as e:
+                    if not _is_oom(e) or not _shrink(log, f"column {c}"): raise
+                    if stack and stack[-1] is item: stack.pop()
+                    stack.append((c, prid, pX))          # redo the whole parent batch with the smaller budgets
                 continue
             c, rid, X = item
             rid, X = rid.to(dev), X.to(dev)
             if c == d:                   # expand multiplies by |N|: slice so each image set fits the budget.
                 # Peak per slice ≈ 10× the int8 images: int8 images (1×), pack()'s int64 copy (8×), the key concat (≈1×).
                 # (Sizing by the int8 images alone asked for 9.2 GB on 1⇉2⇉3 + 1→3 over 𝔽₇, |N| = 294.)
-                ne = max(1, MEM // (10 * P.HL.shape[0] * d * d)) if P.sym else len(rid)
-                for s in range(0, len(rid), ne):
-                    r_, X_ = expand(P, rid[s:s + ne], X[s:s + ne])
-                    for r, x in zip(r_.cpu().numpy(), X_.cpu().numpy()): out[int(r)].append(x.astype(np.int16))
+                try:
+                    ne = max(1, MEM // (10 * P.HL.shape[0] * d * d)) if P.sym else len(rid)
+                    for s in range(0, len(rid), ne):
+                        _maybe_fault()
+                        r_, X_ = expand(P, rid[s:s + ne], X[s:s + ne])
+                        for r, x in zip(r_.cpu().numpy(), X_.cpu().numpy()): out[int(r)].append(x.astype(np.int16))
+                except (RuntimeError, MemoryError) as e:     # slices already stored are stored again: deduped below
+                    if not _is_oom(e) or not _shrink(log, "expand"): raise
+                    stack.append((c, rid.to(home), X.to(home)))
                 continue
             nb = P.parent_batch(c)
             if len(rid) > nb:
                 stack += [(c, rid[s:s + nb].to(home), X[s:s + nb].to(home)) for s in range(0, len(rid), nb)][::-1]
                 continue
-            stack.append(('gen', c, level(P, rid, X, c)))
+            stack.append(('gen', c, level(P, rid, X, c), rid.to(home), X.to(home)))
             del rid, X
             if time.time() - last > 60:
                 log(f"  {ndone}/{len(todo)} fibres computed, group {g0 // GROUP + 1}/{-(-len(todo) // GROUP)}, "
