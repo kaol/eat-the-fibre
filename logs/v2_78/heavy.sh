@@ -8,22 +8,31 @@
 # Outputs (all text; the *.pkl representatives are gitignored and stay on the machine):
 #   logs/v2_78/census_<Q>_<q>.{json,txt}, logs/v2_78/<Q>.blockcensus.txt, logs/v2_78/<Q>.blockdiff_<a>_<b>.txt,
 #   logs/v2_78/drv/<Q>.prove.txt (+ logs/v2_78/drv/<Q>/ without scratch/)
-# Tunables: ETF_MEM (MiB per torch working set; default here 8192), OMP/torch threads follow the machine.
+# Tunables: ETF_MEM (MiB per torch working set; default here 4096), CENSUS_DEVICE (e.g. cpu, to use system RAM
+#   instead of the iGPU's share), OMP/torch threads follow the machine.
+# v2.78 rerun: fibre_torch's quotient step now budgets pack's int64 copies (it overran ETF_MEM about threefold:
+#   HIP OOM at ETF_MEM = 8192), and expandable segments avoid the allocator fragmentation seen in that log.
 set -u
 cd "$(dirname "$0")/../.."
-export ETF_MEM=${ETF_MEM:-8192}
+export ETF_MEM=${ETF_MEM:-4096}
+export PYTORCH_HIP_ALLOC_CONF=${PYTORCH_HIP_ALLOC_CONF:-expandable_segments:True}
+export PYTORCH_CUDA_ALLOC_CONF=${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}
+DEV=${CENSUS_DEVICE:+--device $CENSUS_DEVICE}
 O=logs/v2_78
 census () {   # QUIVER q
   local o=$O/census_$1_$2
   if [ -s $o.json ]; then echo "skip $o"; return; fi
   echo "== census $1 q=$2 $(date)"
-  python3 pcensus.py $1 $2 --engine torch --out $o.json --save-reps $O/reps_$1_$2.pkl \
-    --checkpoint $O/ckpt_$1_$2.pkl > $o.txt 2>&1
-  echo "   done $(date): $(python3 -c "import json; print(json.load(open('$o.json'))['orbits_GxTloc'])")"
+  python3 pcensus.py $1 $2 --engine torch $DEV --out $o.json --save-reps $O/reps_$1_$2.pkl \
+    --checkpoint $O/ckpt_$1_$2.pkl >> $o.txt 2>&1
+  if [ -s $o.json ]; then echo "   done $(date): $(python3 -c "import json; print(json.loads(open('$o.json').read().splitlines()[-1])['orbits_GxTloc'])")"
+  else echo "   FAILED $(date):"; tail -n 3 $o.txt | sed 's/^/     /'; fi
 }
 blocks () {   # QUIVER q1 q2 [q3]
   local Q=$1; shift; local args=""
-  for q in "$@"; do args="$args $O/reps_${Q}_$q.pkl"; done
+  for q in "$@"; do
+    if [ ! -s $O/reps_${Q}_$q.pkl ]; then echo "   no block census for $Q: q=$q missing"; return; fi
+    args="$args $O/reps_${Q}_$q.pkl"; done
   python3 -I analysis/v2_53_block_census.py $args > $O/$Q.blockcensus.txt
   # pairwise differences (blocks identified mod 2 when q = 2 is involved)
   python3 analysis/v2_77_blockdiff.py $O/$Q.blockcensus.txt > $O/$Q.blockdiff.txt || true
@@ -32,8 +41,10 @@ driver () {   # QUIVER
   mkdir -p $O/drv
   if [ -s $O/drv/$1.prove.txt ] && tail -1 $O/drv/$1.prove.txt | grep -q '"quiver"'; then echo "skip driver $1"; return; fi
   echo "== driver $1 $(date)"
+  command -v Singular > /dev/null || { echo "   Singular not on PATH: skipped"; return; }
   RESUME=1 python3 analysis/v2_66_prove.py $1 $O/drv/$1 >> $O/drv/$1.prove.txt 2>&1
-  echo "   done $(date)"
+  if tail -1 $O/drv/$1.prove.txt | grep -q '"quiver"'; then echo "   done $(date)"
+  else echo "   FAILED $(date):"; tail -n 5 $O/drv/$1.prove.txt | sed 's/^/     /'; fi
 }
 run () {
   case $1 in

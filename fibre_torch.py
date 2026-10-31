@@ -303,7 +303,9 @@ def orbit_keys(P, X, g, c):
     are left out: n fixes PK, so (n·X)[:, :kdim] = X[:, :kdim]."""
     k = P.kdim
     L_, R_ = P.HL[g], P.HR[g][:, :c, k:c]; m = len(g); keys = []
-    CB = max(1, MEM // (3 * F32 * m * P.d * (c - k + 1)))
+    # v2.78: per element, the float32 products (3 × 4 bytes) and pack's int64 copies (pad/reshape and v·pw, 3 × 8 bytes);
+    # the old budget counted only the first, so a batch could exceed ETF_MEM about threefold (HIP OOM at ETF_MEM = 8192)
+    CB = max(1, MEM // ((3 * F32 + 3 * 8) * m * P.d * (c - k + 1)))
     for s in range(0, X.shape[0], CB):
         img = P.mm(L_[None], P.mm(X[s:s + CB, None, :, :c].to(torch.float32), R_[None]))    # (n, m, d, c − kdim)
         kw = pack(P, img.transpose(2, 3).reshape(*img.shape[:2], -1))                      # (n, m, words)
