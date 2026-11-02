@@ -1,0 +1,23 @@
+{
+ "quiver": "K3_after_pair",
+ "paths": [
+  [
+   3,
+   4
+  ],
+  [
+   3,
+   5
+  ]
+ ],
+ "X": [
+  0,
+  2
+ ],
+ "seed": 1,
+ "fold_identically": true,
+ "fold_at_point": true,
+ "dim_h": 11,
+ "rank_T": 7,
+ "moduli": 0
+}
