@@ -31,3 +31,4 @@ logs/v2_72/**/*.sing
 logs/v2_73/**/*.sing
 logs/v2_74/**/*.sing
 logs/v2_74/*.pkl
+logs/v2_79/pipe/*.sing
