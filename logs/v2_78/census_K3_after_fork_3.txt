@@ -1,0 +1,45 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/root/eat-the-fibre/fibre_torch.py:59: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  self.inv = torch.as_tensor([0] + [pow(a, p - 2, p) for a in range(1, p)], dtype=torch.float32, device=dev)
+  kernel stage on cuda: 2052656 subspaces, subalgebras by dimension [1, 163, 863, 1416, 917, 246, 27, 1]
+  kernel stage: 11.5s
+K3_after_fork F_3: d=22, dim K=7, 735324 kernel folds in 401276 torus orbits; engine=torch
+  symmetry: 401276 torus orbits in 48626 H-orbits (H = G × T); 352650 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  torch engine on cuda (AMD Radeon Graphics, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 4096 MiB, group 4096
+Traceback (most recent call last):
+  File "/root/eat-the-fibre/pcensus.py", line 876, in <module>
+    main()
+  File "/root/eat-the-fibre/pcensus.py", line 717, in main
+    fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device, only=src)
+  File "/root/eat-the-fibre/fibre_torch.py", line 440, in run
+    for rid2, X2 in gen:
+  File "/root/eat-the-fibre/fibre_torch.py", line 363, in level
+    cons, kap0, N, free = prefilter(P, S)
+                          ^^^^^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 210, in prefilter
+    cons, kap0, N, free = solve_affine(P, torch.cat(rows, 1))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 219, in solve_affine
+    A, prow, cons = rref(P, Ab)
+                    ^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 241, in rref
+    An = P.md(A - A[:, :, j:j + 1] * pr[:, None, :])
+                  ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: HIP out of memory. Tried to allocate 290.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 222.00 MiB is free. Of the allocated memory 6.14 GiB is allocated by PyTorch, and 1.18 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[W1031 10:02:13.850826889 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+  kernel stage: cached in logs/v2_78/ckpt_K3_after_fork_3.kernel.npz
+  kernel stage: 1.5s
+K3_after_fork F_3: d=22, dim K=7, 735324 kernel folds in 401276 torus orbits; engine=torch
+  symmetry: 401276 torus orbits in 48626 H-orbits (H = G × T); 352650 fibres by transport; |N| = |ker(H → H|_K)| = 18
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+  torch engine on cuda (AMD Radeon Graphics, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 1024 MiB, group 4096
+  36864/48626 fibres computed, group 10/12, 81 stacked batches at column 20, t=60s
+  36864/48626 fibres computed, group 10/12, 142 stacked batches at column 20, t=120s
+  36864/48626 fibres computed, group 10/12, 30 stacked batches at column 20, t=180s
+  36864/48626 fibres computed, group 10/12, 126 stacked batches at column 20, t=240s
+  40960/48626 fibres computed, group 11/12, 16 stacked batches at column 20, t=300s
+  45056/48626 fibres computed, group 12/12, 46 stacked batches at column 19, t=360s
+  done in 396s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^7): 7: [48626, 15439, 79479, 75573], 8: [17449, 10521, 22785, 18025], 9: [14273, 8623, 34661, 24981], 10: [21330, 19210, 6503, 6503], 11: [6503, 6503, 8999, 7415], 12: [7415, 7233, 7843, 7077], 13: [6915, 6535, 7425, 5225], 14: [4981, 4976, 19190, 15896], 15: [15896, 15894, 601730, 288334], 16: [288334, 220694, 549718, 263120], 17: [243584, 242812, 597478, 281154], 18: [262366, 262261, 5080909, 2354831], 19: [2354831, 2354789, 163339, 162287], 20: [162287, 161875, 24039, 20393], 21: [20393, 20305, 12047, 8323]; N-quotient (|N| = 18) per column [frontier, kept]: 8: [75573, 17449], 9: [18025, 14273], 10: [24981, 21330], 11: [6503, 6503], 12: [7415, 7415], 13: [7077, 6915], 14: [5225, 4981], 15: [15896, 15896], 16: [288334, 288334], 17: [263120, 243584], 18: [281154, 262366], 19: [2354831, 2354831], 20: [162287, 162287], 21: [20393, 20393]
+{"name": "K3_after_fork", "p": 3, "d": 22, "kdim": 7, "nK": 735324, "reps": 401276, "N": 239781, "fib": {"0": 688695, "1": 4359, "3": 35520, "9": 6448, "27": 180, "57": 12, "81": 7, "111": 48, "243": 36, "297": 1, "657": 4, "729": 1, "2037": 12, "22545": 1}, "G": 432, "orbits_G": 5027, "sizes_G": {"1": 767, "8": 449, "9": 718, "36": 718, "72": 2166, "144": 143, "216": 9, "432": 57}, "orbits_GxGr": 5023, "sizes_GxGr": {"1": 767, "8": 449, "9": 718, "36": 718, "72": 2166, "144": 143, "216": 9, "432": 49, "864": 4}, "transversal": {"lifted": 4226, "lifted_transversal": 0, "transversal_modp": 4}, "classes": 4, "torus_preserving": 8, "torus_all": 16, "orbits_GxT": 5023, "sizes_GxT": {"1": 767, "8": 449, "9": 718, "36": 718, "72": 2166, "144": 143, "216": 9, "432": 49, "864": 4}, "orbits_GxTloc": 4903, "local_torus_sizes": {"8": 220, "16": 4807}, "t": 661}

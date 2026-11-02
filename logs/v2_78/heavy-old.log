@@ -1,0 +1,55 @@
+nohup: ignoring input
+== census K3_after_fork q=2 Sat Oct 31 10:00:27 UTC 2026
+   done Sat Oct 31 10:01:30 UTC 2026: 4899
+== census K3_after_fork q=3 Sat Oct 31 10:01:30 UTC 2026
+   FAILED Sat Oct 31 10:02:14 UTC 2026:
+                       ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 290.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 222.00 MiB is free. Of the allocated memory 6.14 GiB is allocated by PyTorch, and 1.18 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:02:13.850826889 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+   no block census for K3_after_fork: q=3 missing
+== census K3_after_pair q=2 Sat Oct 31 10:02:14 UTC 2026
+   FAILED Sat Oct 31 10:02:28 UTC 2026:
+                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 288.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 202.00 MiB is free. Of the allocated memory 6.04 GiB is allocated by PyTorch, and 1.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:02:28.132353636 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+== census K3_after_pair q=3 Sat Oct 31 10:02:28 UTC 2026
+   FAILED Sat Oct 31 10:03:02 UTC 2026:
+                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 322.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 116.00 MiB is free. Of the allocated memory 6.84 GiB is allocated by PyTorch, and 605.55 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:03:01.519067468 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+   no block census for K3_after_pair: q=2 missing
+== census K3_tgtfork q=2 Sat Oct 31 10:03:02 UTC 2026
+   done Sat Oct 31 10:03:11 UTC 2026: 708
+== census K3_tgtfork q=3 Sat Oct 31 10:03:11 UTC 2026
+   FAILED Sat Oct 31 10:03:22 UTC 2026:
+                       ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 344.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 356.00 MiB is free. Of the allocated memory 6.45 GiB is allocated by PyTorch, and 758.27 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:03:21.901927186 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+== census K3_tgtfork q=5 Sat Oct 31 10:03:22 UTC 2026
+   FAILED Sat Oct 31 10:03:41 UTC 2026:
+                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 356.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 296.00 MiB is free. Of the allocated memory 5.82 GiB is allocated by PyTorch, and 1.43 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:03:41.142472124 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+   no block census for K3_tgtfork: q=3 missing
+== census K3_tgtfork_long q=2 Sat Oct 31 10:03:41 UTC 2026
+   done Sat Oct 31 10:04:11 UTC 2026: 3417
+== census K3_tgtfork_long q=3 Sat Oct 31 10:04:11 UTC 2026
+   FAILED Sat Oct 31 10:04:48 UTC 2026:
+                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 346.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 418.00 MiB is free. Of the allocated memory 5.28 GiB is allocated by PyTorch, and 1.85 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:04:47.195143991 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+== census K3_tgtfork_long q=5 Sat Oct 31 10:04:48 UTC 2026
+   FAILED Sat Oct 31 10:07:09 UTC 2026:
+                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     torch.OutOfMemoryError: HIP out of memory. Tried to allocate 342.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 182.00 MiB is free. Of the allocated memory 6.33 GiB is allocated by PyTorch, and 1.03 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+     [W1031 10:07:08.480247042 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+   no block census for K3_tgtfork_long: q=3 missing
+== driver K3_mid Sat Oct 31 10:07:09 UTC 2026
+   done Sat Oct 31 12:55:20 UTC 2026
+== driver K3_srcboth Sat Oct 31 12:55:20 UTC 2026
+   done Sat Oct 31 13:27:47 UTC 2026
+== driver K3_tgtinout Sat Oct 31 13:27:47 UTC 2026
+   done Sat Oct 31 22:54:51 UTC 2026
+== driver K3_srcout_after Sat Oct 31 22:54:51 UTC 2026
+   done Sun Nov  1 06:45:02 UTC 2026
+ALL DONE Sun Nov  1 06:45:02 UTC 2026

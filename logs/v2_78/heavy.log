@@ -1,0 +1,17 @@
+nohup: ignoring input
+skip logs/v2_78/census_K3_after_fork_2
+== census K3_after_fork q=3 Sun Nov  1 07:53:13 UTC 2026
+   done Sun Nov  1 08:04:35 UTC 2026: 4903
+== census K3_after_pair q=2 Sun Nov  1 08:04:35 UTC 2026
+   done Sun Nov  1 08:05:32 UTC 2026: 2236
+== census K3_after_pair q=3 Sun Nov  1 08:05:32 UTC 2026
+   done Sun Nov  1 10:22:40 UTC 2026: 2240
+skip logs/v2_78/census_K3_tgtfork_2
+== census K3_tgtfork q=3 Sun Nov  1 10:22:41 UTC 2026
+   done Sun Nov  1 10:23:29 UTC 2026: 710
+== census K3_tgtfork q=5 Sun Nov  1 10:23:29 UTC 2026
+   done Sun Nov  1 10:44:02 UTC 2026: 714
+skip logs/v2_78/census_K3_tgtfork_long_2
+== census K3_tgtfork_long q=3 Sun Nov  1 10:44:02 UTC 2026
+   done Sun Nov  1 10:50:24 UTC 2026: 3423
+== census K3_tgtfork_long q=5 Sun Nov  1 10:50:24 UTC 2026

@@ -1,0 +1,168 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/root/eat-the-fibre/fibre_torch.py:59: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  self.inv = torch.as_tensor([0] + [pow(a, p - 2, p) for a in range(1, p)], dtype=torch.float32, device=dev)
+  kernel stage on cuda: 2052656 subspaces, subalgebras by dimension [1, 172, 935, 1317, 775, 210, 25, 1]
+  kernel stage: 11.6s
+K3_after_pair F_3: d=21, dim K=7, 595632 kernel folds in 305720 torus orbits; engine=torch
+  symmetry: 305720 torus orbits in 22934 H-orbits (H = G × T); 282786 fibres by transport; |N| = |ker(H → H|_K)| = 54
+  torch engine on cuda (AMD Radeon Graphics, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 4096 MiB, group 4096
+Traceback (most recent call last):
+  File "/root/eat-the-fibre/pcensus.py", line 876, in <module>
+    main()
+  File "/root/eat-the-fibre/pcensus.py", line 717, in main
+    fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device, only=src)
+  File "/root/eat-the-fibre/fibre_torch.py", line 440, in run
+    for rid2, X2 in gen:
+  File "/root/eat-the-fibre/fibre_torch.py", line 363, in level
+    cons, kap0, N, free = prefilter(P, S)
+                          ^^^^^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 210, in prefilter
+    cons, kap0, N, free = solve_affine(P, torch.cat(rows, 1))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 219, in solve_affine
+    A, prow, cons = rref(P, Ab)
+                    ^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 241, in rref
+    An = P.md(A - A[:, :, j:j + 1] * pr[:, None, :])
+              ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: HIP out of memory. Tried to allocate 322.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 116.00 MiB is free. Of the allocated memory 6.84 GiB is allocated by PyTorch, and 605.55 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[W1031 10:03:01.519067468 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+  kernel stage: cached in logs/v2_78/ckpt_K3_after_pair_3.kernel.npz
+  kernel stage: 1.2s
+K3_after_pair F_3: d=21, dim K=7, 595632 kernel folds in 305720 torus orbits; engine=torch
+  symmetry: 305720 torus orbits in 22934 H-orbits (H = G × T); 282786 fibres by transport; |N| = |ker(H → H|_K)| = 54
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+  torch engine on cuda (AMD Radeon Graphics, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 1024 MiB, group 4096
+  8192/22934 fibres computed, group 3/6, 122 stacked batches at column 13, t=64s
+  8192/22934 fibres computed, group 3/6, 91 stacked batches at column 15, t=124s
+  8192/22934 fibres computed, group 3/6, 110 stacked batches at column 14, t=184s
+  8192/22934 fibres computed, group 3/6, 37 stacked batches at column 14, t=244s
+  8192/22934 fibres computed, group 3/6, 66 stacked batches at column 17, t=304s
+  8192/22934 fibres computed, group 3/6, 88 stacked batches at column 17, t=364s
+  8192/22934 fibres computed, group 3/6, 112 stacked batches at column 18, t=424s
+  8192/22934 fibres computed, group 3/6, 38 stacked batches at column 15, t=484s
+  8192/22934 fibres computed, group 3/6, 63 stacked batches at column 16, t=544s
+  8192/22934 fibres computed, group 3/6, 95 stacked batches at column 18, t=604s
+  8192/22934 fibres computed, group 3/6, 103 stacked batches at column 13, t=664s
+  8192/22934 fibres computed, group 3/6, 33 stacked batches at column 16, t=724s
+  8192/22934 fibres computed, group 3/6, 54 stacked batches at column 16, t=784s
+  8192/22934 fibres computed, group 3/6, 74 stacked batches at column 14, t=845s
+  8192/22934 fibres computed, group 3/6, 103 stacked batches at column 16, t=905s
+  8192/22934 fibres computed, group 3/6, 26 stacked batches at column 14, t=965s
+  8192/22934 fibres computed, group 3/6, 48 stacked batches at column 14, t=1025s
+  8192/22934 fibres computed, group 3/6, 78 stacked batches at column 16, t=1085s
+  8192/22934 fibres computed, group 3/6, 101 stacked batches at column 16, t=1145s
+  8192/22934 fibres computed, group 3/6, 23 stacked batches at column 17, t=1205s
+  8192/22934 fibres computed, group 3/6, 135 stacked batches at column 16, t=1265s
+  8192/22934 fibres computed, group 3/6, 44 stacked batches at column 16, t=1325s
+  8192/22934 fibres computed, group 3/6, 106 stacked batches at column 15, t=1385s
+  8192/22934 fibres computed, group 3/6, 94 stacked batches at column 14, t=1445s
+  16384/22934 fibres computed, group 5/6, 300 stacked batches at column 18, t=1505s
+  16384/22934 fibres computed, group 5/6, 222 stacked batches at column 17, t=1565s
+  16384/22934 fibres computed, group 5/6, 143 stacked batches at column 17, t=1625s
+  16384/22934 fibres computed, group 5/6, 61 stacked batches at column 15, t=1685s
+  16384/22934 fibres computed, group 5/6, 194 stacked batches at column 14, t=1745s
+  16384/22934 fibres computed, group 5/6, 309 stacked batches at column 13, t=1807s
+  16384/22934 fibres computed, group 5/6, 96 stacked batches at column 14, t=1867s
+  16384/22934 fibres computed, group 5/6, 204 stacked batches at column 14, t=1927s
+  16384/22934 fibres computed, group 5/6, 282 stacked batches at column 13, t=1991s
+  16384/22934 fibres computed, group 5/6, 71 stacked batches at column 14, t=2051s
+  16384/22934 fibres computed, group 5/6, 125 stacked batches at column 14, t=2111s
+  16384/22934 fibres computed, group 5/6, 297 stacked batches at column 13, t=2171s
+  16384/22934 fibres computed, group 5/6, 80 stacked batches at column 14, t=2231s
+  16384/22934 fibres computed, group 5/6, 311 stacked batches at column 14, t=2291s
+  16384/22934 fibres computed, group 5/6, 91 stacked batches at column 14, t=2352s
+  16384/22934 fibres computed, group 5/6, 322 stacked batches at column 14, t=2412s
+  16384/22934 fibres computed, group 5/6, 105 stacked batches at column 14, t=2472s
+  16384/22934 fibres computed, group 5/6, 324 stacked batches at column 14, t=2532s
+  16384/22934 fibres computed, group 5/6, 106 stacked batches at column 13, t=2592s
+  16384/22934 fibres computed, group 5/6, 343 stacked batches at column 14, t=2652s
+  16384/22934 fibres computed, group 5/6, 128 stacked batches at column 14, t=2712s
+  16384/22934 fibres computed, group 5/6, 362 stacked batches at column 14, t=2772s
+  16384/22934 fibres computed, group 5/6, 141 stacked batches at column 14, t=2832s
+  16384/22934 fibres computed, group 5/6, 375 stacked batches at column 14, t=2892s
+  16384/22934 fibres computed, group 5/6, 154 stacked batches at column 14, t=2952s
+  16384/22934 fibres computed, group 5/6, 380 stacked batches at column 14, t=3012s
+  16384/22934 fibres computed, group 5/6, 163 stacked batches at column 14, t=3072s
+  16384/22934 fibres computed, group 5/6, 388 stacked batches at column 14, t=3132s
+  16384/22934 fibres computed, group 5/6, 209 stacked batches at column 14, t=3192s
+  16384/22934 fibres computed, group 5/6, 402 stacked batches at column 13, t=3265s
+  16384/22934 fibres computed, group 5/6, 182 stacked batches at column 14, t=3326s
+  16384/22934 fibres computed, group 5/6, 403 stacked batches at column 13, t=3388s
+  16384/22934 fibres computed, group 5/6, 183 stacked batches at column 14, t=3448s
+  16384/22934 fibres computed, group 5/6, 402 stacked batches at column 13, t=3511s
+  16384/22934 fibres computed, group 5/6, 186 stacked batches at column 14, t=3571s
+  16384/22934 fibres computed, group 5/6, 390 stacked batches at column 13, t=3635s
+  16384/22934 fibres computed, group 5/6, 173 stacked batches at column 14, t=3696s
+  16384/22934 fibres computed, group 5/6, 390 stacked batches at column 13, t=3757s
+  16384/22934 fibres computed, group 5/6, 172 stacked batches at column 14, t=3817s
+  16384/22934 fibres computed, group 5/6, 397 stacked batches at column 13, t=3877s
+  16384/22934 fibres computed, group 5/6, 176 stacked batches at column 14, t=3937s
+  16384/22934 fibres computed, group 5/6, 145 stacked batches at column 14, t=3997s
+  16384/22934 fibres computed, group 5/6, 243 stacked batches at column 14, t=4057s
+  16384/22934 fibres computed, group 5/6, 165 stacked batches at column 15, t=4117s
+  16384/22934 fibres computed, group 5/6, 72 stacked batches at column 15, t=4177s
+  16384/22934 fibres computed, group 5/6, 197 stacked batches at column 16, t=4237s
+  16384/22934 fibres computed, group 5/6, 101 stacked batches at column 14, t=4297s
+  16384/22934 fibres computed, group 5/6, 230 stacked batches at column 16, t=4357s
+  16384/22934 fibres computed, group 5/6, 137 stacked batches at column 16, t=4418s
+  16384/22934 fibres computed, group 5/6, 45 stacked batches at column 16, t=4478s
+  16384/22934 fibres computed, group 5/6, 161 stacked batches at column 15, t=4538s
+  16384/22934 fibres computed, group 5/6, 67 stacked batches at column 14, t=4598s
+  16384/22934 fibres computed, group 5/6, 226 stacked batches at column 16, t=4658s
+  16384/22934 fibres computed, group 5/6, 129 stacked batches at column 14, t=4718s
+  16384/22934 fibres computed, group 5/6, 37 stacked batches at column 16, t=4778s
+  16384/22934 fibres computed, group 5/6, 260 stacked batches at column 14, t=4838s
+  16384/22934 fibres computed, group 5/6, 171 stacked batches at column 16, t=4898s
+  16384/22934 fibres computed, group 5/6, 74 stacked batches at column 15, t=4958s
+  16384/22934 fibres computed, group 5/6, 303 stacked batches at column 13, t=5018s
+  16384/22934 fibres computed, group 5/6, 212 stacked batches at column 14, t=5078s
+  16384/22934 fibres computed, group 5/6, 121 stacked batches at column 15, t=5138s
+  16384/22934 fibres computed, group 5/6, 330 stacked batches at column 13, t=5209s
+  16384/22934 fibres computed, group 5/6, 241 stacked batches at column 15, t=5269s
+  16384/22934 fibres computed, group 5/6, 154 stacked batches at column 16, t=5329s
+  16384/22934 fibres computed, group 5/6, 62 stacked batches at column 16, t=5389s
+  16384/22934 fibres computed, group 5/6, 272 stacked batches at column 15, t=5449s
+  16384/22934 fibres computed, group 5/6, 181 stacked batches at column 15, t=5510s
+  16384/22934 fibres computed, group 5/6, 91 stacked batches at column 16, t=5570s
+  16384/22934 fibres computed, group 5/6, 321 stacked batches at column 15, t=5630s
+  16384/22934 fibres computed, group 5/6, 229 stacked batches at column 15, t=5690s
+  16384/22934 fibres computed, group 5/6, 136 stacked batches at column 14, t=5750s
+  16384/22934 fibres computed, group 5/6, 51 stacked batches at column 16, t=5810s
+  16384/22934 fibres computed, group 5/6, 275 stacked batches at column 15, t=5870s
+  16384/22934 fibres computed, group 5/6, 179 stacked batches at column 14, t=5930s
+  16384/22934 fibres computed, group 5/6, 91 stacked batches at column 16, t=5990s
+  16384/22934 fibres computed, group 5/6, 317 stacked batches at column 16, t=6050s
+  16384/22934 fibres computed, group 5/6, 227 stacked batches at column 16, t=6110s
+  16384/22934 fibres computed, group 5/6, 136 stacked batches at column 16, t=6170s
+  16384/22934 fibres computed, group 5/6, 48 stacked batches at column 16, t=6230s
+  16384/22934 fibres computed, group 5/6, 281 stacked batches at column 16, t=6291s
+  16384/22934 fibres computed, group 5/6, 188 stacked batches at column 15, t=6351s
+  16384/22934 fibres computed, group 5/6, 97 stacked batches at column 15, t=6411s
+  16384/22934 fibres computed, group 5/6, 307 stacked batches at column 14, t=6471s
+  16384/22934 fibres computed, group 5/6, 218 stacked batches at column 16, t=6531s
+  16384/22934 fibres computed, group 5/6, 123 stacked batches at column 14, t=6591s
+  16384/22934 fibres computed, group 5/6, 35 stacked batches at column 16, t=6651s
+  16384/22934 fibres computed, group 5/6, 228 stacked batches at column 15, t=6711s
+  16384/22934 fibres computed, group 5/6, 138 stacked batches at column 16, t=6771s
+  16384/22934 fibres computed, group 5/6, 235 stacked batches at column 13, t=6834s
+  16384/22934 fibres computed, group 5/6, 223 stacked batches at column 13, t=6906s
+  16384/22934 fibres computed, group 5/6, 222 stacked batches at column 13, t=6975s
+  16384/22934 fibres computed, group 5/6, 222 stacked batches at column 13, t=7045s
+  16384/22934 fibres computed, group 5/6, 221 stacked batches at column 13, t=7115s
+  16384/22934 fibres computed, group 5/6, 220 stacked batches at column 13, t=7185s
+  16384/22934 fibres computed, group 5/6, 216 stacked batches at column 13, t=7254s
+  16384/22934 fibres computed, group 5/6, 203 stacked batches at column 13, t=7322s
+  16384/22934 fibres computed, group 5/6, 214 stacked batches at column 13, t=7388s
+  16384/22934 fibres computed, group 5/6, 210 stacked batches at column 13, t=7457s
+  16384/22934 fibres computed, group 5/6, 207 stacked batches at column 13, t=7525s
+  16384/22934 fibres computed, group 5/6, 209 stacked batches at column 13, t=7593s
+  16384/22934 fibres computed, group 5/6, 198 stacked batches at column 13, t=7661s
+  16384/22934 fibres computed, group 5/6, 209 stacked batches at column 13, t=7728s
+  16384/22934 fibres computed, group 5/6, 203 stacked batches at column 13, t=7797s
+  16384/22934 fibres computed, group 5/6, 202 stacked batches at column 13, t=7866s
+  16384/22934 fibres computed, group 5/6, 65 stacked batches at column 14, t=7926s
+  done in 7982s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^7): 7: [22934, 7992, 40072, 38668], 8: [8270, 5370, 36362, 31260], 9: [18315, 4206, 7768, 7768], 10: [4206, 3563, 8471, 6245], 11: [6245, 6002, 846282, 320876], 12: [221381, 207703, 119459101, 42258069], 13: [41109239, 41109233, 41113933, 41111445], 14: [41111445, 41110497, 15096830, 14547196], 15: [14299451, 14208509, 14362845, 14235639], 16: [14235396, 14234130, 996318, 980520], 17: [980388, 966483, 936532, 933858], 18: [933858, 933724, 107056, 83902], 19: [81660, 80156, 12007, 9529], 20: [9529, 9386, 10572, 5636]; N-quotient (|N| = 54) per column [frontier, kept]: 8: [38668, 8270], 9: [31260, 18315], 10: [7768, 4206], 11: [6245, 6245], 12: [320876, 221381], 13: [42258069, 41109239], 14: [41111445, 41111445], 15: [14547196, 14299451], 16: [14235639, 14235396], 17: [980520, 980388], 18: [933858, 933858], 19: [83902, 81660], 20: [9529, 9529]
+{"name": "K3_after_pair", "p": 3, "d": 21, "kdim": 7, "nK": 595632, "reps": 305720, "N": 468472, "fib": {"0": 575504, "1": 1042, "3": 11671, "9": 4732, "27": 1518, "45": 108, "57": 36, "81": 576, "99": 60, "171": 96, "243": 136, "297": 27, "315": 12, "459": 16, "729": 2, "801": 36, "891": 18, "1143": 12, "1449": 12, "1755": 1, "3537": 1, "7527": 1, "7875": 12, "9801": 1, "10827": 1, "15345": 1}, "G": 2592, "orbits_G": 2240, "sizes_G": {"1": 100, "2": 51, "3": 81, "6": 102, "8": 51, "9": 81, "16": 27, "18": 43, "24": 54, "27": 62, "36": 81, "48": 68, "54": 51, "72": 320, "108": 62, "144": 191, "216": 345, "288": 15, "432": 295, "648": 22, "864": 56, "1296": 66, "2592": 16}, "orbits_GxGr": 2240, "sizes_GxGr": {"1": 100, "2": 51, "3": 81, "6": 102, "8": 51, "9": 81, "16": 27, "18": 43, "24": 54, "27": 62, "36": 81, "48": 68, "54": 51, "72": 320, "108": 62, "144": 191, "216": 345, "288": 15, "432": 295, "648": 22, "864": 56, "1296": 66, "2592": 16}, "transversal": {"lifted": 1722, "lifted_transversal": 0, "transversal_modp": 0}, "classes": 3, "torus_preserving": 8, "torus_all": 8, "orbits_GxT": 2240, "sizes_GxT": {"1": 100, "2": 51, "3": 81, "6": 102, "8": 51, "9": 81, "16": 27, "18": 43, "24": 54, "27": 62, "36": 81, "48": 68, "54": 51, "72": 320, "108": 62, "144": 191, "216": 345, "288": 15, "432": 295, "648": 22, "864": 56, "1296": 66, "2592": 16}, "orbits_GxTloc": 2240, "local_torus_sizes": {"8": 2240}, "t": 8207}

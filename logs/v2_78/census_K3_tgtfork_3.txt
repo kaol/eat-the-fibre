@@ -1,0 +1,39 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/root/eat-the-fibre/fibre_torch.py:59: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  self.inv = torch.as_tensor([0] + [pow(a, p - 2, p) for a in range(1, p)], dtype=torch.float32, device=dev)
+  kernel stage on cuda: 56632 subspaces, subalgebras by dimension [1, 83, 302, 349, 146, 22, 1]
+  kernel stage: 6.7s
+K3_tgtfork F_3: d=15, dim K=6, 65376 kernel folds in 35712 torus orbits; engine=torch
+  symmetry: 35712 torus orbits in 4376 H-orbits (H = G × T); 31336 fibres by transport; |N| = |ker(H → H|_K)| = 18
+  torch engine on cuda (AMD Radeon Graphics, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 4096 MiB, group 4096
+Traceback (most recent call last):
+  File "/root/eat-the-fibre/pcensus.py", line 876, in <module>
+    main()
+  File "/root/eat-the-fibre/pcensus.py", line 717, in main
+    fibre_torch.run(ctx, reps, fibres, save, log=lambda s: print(s, flush=True), device=a.device, only=src)
+  File "/root/eat-the-fibre/fibre_torch.py", line 440, in run
+    for rid2, X2 in gen:
+  File "/root/eat-the-fibre/fibre_torch.py", line 363, in level
+    cons, kap0, N, free = prefilter(P, S)
+                          ^^^^^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 210, in prefilter
+    cons, kap0, N, free = solve_affine(P, torch.cat(rows, 1))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 219, in solve_affine
+    A, prow, cons = rref(P, Ab)
+                    ^^^^^^^^^^^
+  File "/root/eat-the-fibre/fibre_torch.py", line 241, in rref
+    An = P.md(A - A[:, :, j:j + 1] * pr[:, None, :])
+                  ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: HIP out of memory. Tried to allocate 344.00 MiB. GPU 0 has a total capacity of 7.98 GiB of which 356.00 MiB is free. Of the allocated memory 6.45 GiB is allocated by PyTorch, and 758.27 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[W1031 10:03:21.901927186 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+  kernel stage: cached in logs/v2_78/ckpt_K3_tgtfork_3.kernel.npz
+  kernel stage: 0.1s
+K3_tgtfork F_3: d=15, dim K=6, 65376 kernel folds in 35712 torus orbits; engine=torch
+  symmetry: 35712 torus orbits in 4376 H-orbits (H = G × T); 31336 fibres by transport; |N| = |ker(H → H|_K)| = 18
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+  torch engine on cuda (AMD Radeon Graphics, HIP 6.4.43484-123eb5128, torch 2.9.1+rocm6.4); mem budget 1024 MiB, group 4096
+  done in 5s; per column [parents, lifted, candidates, children] (brute force would check lifted·3^6): 6: [4376, 1482, 6442, 6442], 7: [1482, 1067, 3529, 2973], 8: [2020, 1797, 27637, 14215], 9: [13898, 13898, 33972, 17144], 10: [17144, 17144, 40094, 19662], 11: [19662, 19497, 124121, 70006], 12: [68656, 68565, 12523, 12355], 13: [12316, 12177, 4705, 3687], 14: [2921, 2872, 2240, 1552]; N-quotient (|N| = 18) per column [frontier, kept]: 7: [6442, 1482], 8: [2973, 2020], 9: [14215, 13898], 10: [17144, 17144], 11: [19662, 19662], 12: [70006, 68656], 13: [12355, 12316], 14: [3687, 2921]
+{"name": "K3_tgtfork", "p": 3, "d": 15, "kdim": 6, "nK": 65376, "reps": 35712, "N": 50696, "fib": {"0": 61112, "1": 836, "3": 2640, "9": 538, "27": 144, "57": 48, "81": 4, "243": 36, "297": 4, "729": 1, "903": 12, "8649": 1}, "G": 432, "orbits_G": 766, "sizes_G": {"1": 148, "8": 86, "9": 68, "36": 68, "72": 286, "144": 68, "216": 8, "432": 34}, "orbits_GxGr": 762, "sizes_GxGr": {"1": 148, "8": 86, "9": 68, "36": 68, "72": 286, "144": 68, "216": 8, "432": 26, "864": 4}, "transversal": {"lifted": 582, "lifted_transversal": 0, "transversal_modp": 4}, "classes": 3, "torus_preserving": 4, "torus_all": 8, "orbits_GxT": 762, "sizes_GxT": {"1": 148, "8": 86, "9": 68, "36": 68, "72": 286, "144": 68, "216": 8, "432": 26, "864": 4}, "orbits_GxTloc": 710, "local_torus_sizes": {"4": 138, "8": 628}, "t": 33}
